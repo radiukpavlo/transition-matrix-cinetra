@@ -281,20 +281,11 @@ version, and [10.5281/zenodo.23269592](https://doi.org/10.5281/zenodo.23269592) 
 
 ## Use of generative AI
 
-Under the authors' direction, the large language model Claude Opus 5.5 (Anthropic) drafted the study protocol and
-the manuscript text from the authors' decisions and the frozen results, wrote the code of the analysis pipeline and
-of all figures, and drew Figures 1, 2 and S1 through that code from a specification in which every label cites its
-source in the article. No image was generated or edited by a generative AI tool, and no reported number was
-computed by one: the scans are unmodified crops of ACDC test images, and every number is taken from the recorded
-outputs of the frozen pipeline. This release, including its export tooling, `tools/` and documentation, was
-prepared the same way. The authors reviewed all code, text and figures and take full responsibility for them.
+Under the authors' direction, the large language model Claude Opus 5.5 (Anthropic) drafted the study protocol and wrote the code of all figures. No image was generated or edited by a generative AI tool, and no reported number was computed by one. The authors reviewed all code, text and figures and take full responsibility for them. Cloud GPU training was supported by computing credits from Modal Labs, and the use of Claude by API credits from Anthropic's AI for Science program.
 
 ## Acknowledgments
 
-We thank the organizers of the ACDC, M&Ms-1 and M&Ms-2 challenges and the contributing centres for making the
-datasets available. We are grateful to Anthropic for API credits provided through its AI for Science program, which
-made it possible to use Claude in this study, and to Modal Labs for cloud computing credits, which covered the cloud
-GPU training in this study.
+We thank the organizers of the ACDC, M&Ms-1 and M&Ms-2 challenges and the contributing centres for making the datasets available. We are grateful to Anthropic for API credits provided through its AI for Science program, which made it possible to use Claude in this study, and to Modal Labs for cloud computing credits, which covered the cloud GPU training in this study.
 
 ## Authors
 
