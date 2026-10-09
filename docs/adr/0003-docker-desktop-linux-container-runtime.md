@@ -1,4 +1,4 @@
-> Public edition of `docs/adr/0003-docker-desktop-linux-container-runtime.md` of the authors' development repository (commit `2426d0b7d39c`); operational details are replaced as listed in EDITIONS.md.
+> Public edition of `docs/adr/0003-docker-desktop-linux-container-runtime.md` of the authors' development repository (commit `7d2adbe546f7`); operational details are replaced as listed in EDITIONS.md.
 
 # ADR-0003: Execution runtime: a CPU-first Linux container on Docker Desktop
 

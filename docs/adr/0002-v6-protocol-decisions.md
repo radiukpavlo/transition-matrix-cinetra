@@ -1,4 +1,4 @@
-> Public edition of `docs/adr/0002-v6-protocol-decisions.md` of the authors' development repository (commit `2426d0b7d39c`); operational details are replaced as listed in EDITIONS.md.
+> Public edition of `docs/adr/0002-v6-protocol-decisions.md` of the authors' development repository (commit `0b2da05101f4`); operational details are replaced as listed in EDITIONS.md.
 
 # ADR-0002: CMR-TRANS-AUDIT protocol 6.0.0 decisions
 

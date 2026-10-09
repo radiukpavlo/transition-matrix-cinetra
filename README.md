@@ -7,6 +7,7 @@
 Code, registered protocol, frozen results and fitted bundles of a once-only, registered evaluation</p>
 
 <p align="center">
+  <a href="https://doi.org/10.5281/zenodo.23269591"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.23269591.svg" alt="DOI 10.5281/zenodo.23269591"></a>
   <a href="protocol/registration/README.md"><img src="https://img.shields.io/badge/protocol-registered%20%26%20signed-1f6feb" alt="Protocol registered and signed"></a>
   <a href="#reproduce-the-study"><img src="https://img.shields.io/badge/code-byte--identical%20to%20the%20registration-2ea44f" alt="Code byte-identical to the registration"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-green" alt="Code licence MIT"></a>
@@ -262,15 +263,19 @@ changed by anything here.
 
 ## How to cite
 
-Please cite the article once it is published; until then, cite this repository ([CITATION.cff](CITATION.cff)):
+Please cite the article once it is published; until then, cite this repository ([CITATION.cff](CITATION.cff)). It is
+archived at Zenodo: [10.5281/zenodo.23269591](https://doi.org/10.5281/zenodo.23269591) resolves to the latest
+version, and [10.5281/zenodo.23269592](https://doi.org/10.5281/zenodo.23269592) to v1.0.0.
 
 ```bibtex
 @software{radiuk2026cinetra,
-  author  = {Radiuk, Pavlo and Barmak, Oleksander and Klymenko, Liliana and Krak, Iurii},
-  title   = {{CINETRA}: A Multi-Vendor Audit of Semantic Concept Transfer in Cardiac MRI ({code, protocol and frozen results})},
-  year    = {2026},
-  version = {v1.0.0},
-  url     = {https://github.com/radiukpavlo/transition-matrix-cinetra}
+  author    = {Radiuk, Pavlo and Barmak, Oleksander and Klymenko, Liliana and Krak, Iurii},
+  title     = {{CINETRA}: A Multi-Vendor Audit of Semantic Concept Transfer in Cardiac MRI ({code, protocol and frozen results})},
+  year      = {2026},
+  version   = {v1.0.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23269591},
+  url       = {https://github.com/radiukpavlo/transition-matrix-cinetra}
 }
 ```
 

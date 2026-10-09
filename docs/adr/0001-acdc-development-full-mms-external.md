@@ -1,4 +1,4 @@
-> Public edition of `docs/adr/0001-acdc-development-full-mms-external.md` of the authors' development repository (commit `2426d0b7d39c`); operational details are replaced as listed in EDITIONS.md.
+> Public edition of `docs/adr/0001-acdc-development-full-mms-external.md` of the authors' development repository (commit `0b2da05101f4`); operational details are replaced as listed in EDITIONS.md.
 
 # ADR-0001: ACDC development with the complete labelled M&Ms-1 release as the external cohort
 

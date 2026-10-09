@@ -3,6 +3,14 @@ message: "If you use this software, results or protocol, please cite it as below
 title: "CINETRA: A Multi-Vendor Audit of Semantic Concept Transfer in Cardiac MRI (code, protocol and frozen results)"
 type: software
 version: v1.0.0
+doi: 10.5281/zenodo.23269591
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23269591
+    description: "Zenodo archive, all versions (resolves to the latest)"
+  - type: doi
+    value: 10.5281/zenodo.23269592
+    description: "Zenodo archive of v1.0.0"
 repository-code: "https://github.com/radiukpavlo/transition-matrix-cinetra"
 license: [MIT, CC-BY-4.0, CC-BY-NC-SA-4.0]
 abstract: >-

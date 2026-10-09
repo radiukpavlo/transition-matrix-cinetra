@@ -1912,9 +1912,9 @@
   {
    "path": "docs/V601_RESULTS_FREEZE_2026-10-03.md",
    "kind": "doc-edition",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:docs/V601_RESULTS_FREEZE_2026-10-03.md",
-   "sha256": "69d9f2637d03240e0780992ae44933a17f92b93c2da7eb169ddd4441136a079d",
-   "blob": "6143162c8bab6bd95d9c9e94b2f8b58836f2f0b9",
+   "source": "590196aa924129540d124305ce7ecf18b6da2ac3:docs/V601_RESULTS_FREEZE_2026-10-03.md",
+   "sha256": "6f1533dad963153cc60920d6f3a516bd7984c3812d88087458c55ca6718865e8",
+   "blob": "ce85256a93123d4dd7c5f9f767c4e302e99fd5ed",
    "edits": {
     "local paths": 2,
     "payment remarks": 1,
@@ -1925,9 +1925,9 @@
   {
    "path": "docs/NEURAL_ENCODER_EXPERIMENT_PROTOCOL.md",
    "kind": "doc-edition",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:docs/NEURAL_ENCODER_EXPERIMENT_PROTOCOL.md",
-   "sha256": "98d26d2b4849477447201fd582297cffb53fb6324ce44d607bf098d1f3fcbc42",
-   "blob": "af181fad702a5dfd1aee3aa9cfac145aa5ab931d",
+   "source": "5d88a3041ca9f604b1066e85cb138b91802f1df3:docs/NEURAL_ENCODER_EXPERIMENT_PROTOCOL.md",
+   "sha256": "52315255a897be5514336e1a4fb0707eca4eb8efc45b06ea974232dd7eb99315",
+   "blob": "3c10ed286baab4cb35a786af03cc159830d54438",
    "edits": {
     "storage locations": 1,
     "links to unreleased documents": 3
@@ -1937,9 +1937,9 @@
   {
    "path": "docs/adr/0001-acdc-development-full-mms-external.md",
    "kind": "doc-edition",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:docs/adr/0001-acdc-development-full-mms-external.md",
-   "sha256": "16c887e8ff5f34a7bac7907369310a71850b1b120c2a782966d2ec0eee530af0",
-   "blob": "f3f2b58a235171e0039e4796390e614bcbf3b742",
+   "source": "0b2da05101f4231f7dcc4b8cf40f93c3e89ab303:docs/adr/0001-acdc-development-full-mms-external.md",
+   "sha256": "2a440e6b144b6f5ddf67d5670d8274033e94d047720dee317d9973b932fcce42",
+   "blob": "3a323814c85ae1854355f94e7120f0ccf2676410",
    "edits": {
     "links to unreleased documents": 1
    },
@@ -1948,9 +1948,9 @@
   {
    "path": "docs/adr/0002-v6-protocol-decisions.md",
    "kind": "doc-edition",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:docs/adr/0002-v6-protocol-decisions.md",
-   "sha256": "7b81e39af90b7b758aabb3df02ae4069ec4332369d05deeafa4f95ddbb3200e7",
-   "blob": "f830f448b10dd342ff586a5ca9d74a89b0b4cadd",
+   "source": "0b2da05101f4231f7dcc4b8cf40f93c3e89ab303:docs/adr/0002-v6-protocol-decisions.md",
+   "sha256": "2b780db046599c28318c12833575226c3d833f43121e67ae2191e92475f95aa0",
+   "blob": "f82dcd618ee4dd16653c95d9a5b638b083ae2ca6",
    "edits": {
     "links to unreleased documents": 1
    },
@@ -1959,9 +1959,9 @@
   {
    "path": "docs/adr/0003-docker-desktop-linux-container-runtime.md",
    "kind": "doc-edition",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:docs/adr/0003-docker-desktop-linux-container-runtime.md",
-   "sha256": "6c17221e4cf0a3f2038c50600e6a44b58994953f103f36b2a4037bac74e7c539",
-   "blob": "43a2636ba2578ee8a1118b71f70902ec971f6ebe",
+   "source": "7d2adbe546f7f725c50a8eaed2e5d0e453bf194d:docs/adr/0003-docker-desktop-linux-container-runtime.md",
+   "sha256": "a60ac9c09ec29baf6afdb9ee2a03999b2d8dbbfbe17a52279b3299c11376e6db",
+   "blob": "a98b45a452990939c481cec26842d10f8a81e6bd",
    "edits": {
     "local paths": 3,
     "links to unreleased documents": 2
@@ -5579,7 +5579,7 @@
   {
    "path": "figures/figure01_pipeline.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure01_pipeline.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure01_pipeline.pdf",
    "sha256": "46e08663d7254029c513d6f38966748294cfe909678f8478e58c674a38f3bcb5",
    "blob": "937c8a3b6ad8d35925d355deefb3081eee4030f8",
    "licence": "CC-BY-NC-SA-4.0"
@@ -5587,7 +5587,7 @@
   {
    "path": "figures/figure01_pipeline.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure01_pipeline.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure01_pipeline.png",
    "sha256": "db109e23cccfb919db605284d3da04f43d27aa7fdf3662d1290e833ad65b7582",
    "blob": "2558ffc2e722e90f3868b30d88a8982f154f12e9",
    "licence": "CC-BY-NC-SA-4.0"
@@ -5595,7 +5595,7 @@
   {
    "path": "figures/figure02_worked_example_a.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure02_worked_example_a.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure02_worked_example_a.pdf",
    "sha256": "76589a2498956101a725385c226d07dfa32b88ab65fe5a6e4364b9633279c8e0",
    "blob": "46779a11cbb542a71dfbb64bd64756b3c5b67b5c",
    "licence": "CC-BY-NC-SA-4.0"
@@ -5603,7 +5603,7 @@
   {
    "path": "figures/figure02_worked_example_a.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure02_worked_example_a.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure02_worked_example_a.png",
    "sha256": "3917e5e3d8a39a847c7ed8a010e0f062f908ab75be02ba1f7a8629dd55e27592",
    "blob": "fa2a90100e86069e18c82942109d7e3ce91b7d48",
    "licence": "CC-BY-NC-SA-4.0"
@@ -5611,7 +5611,7 @@
   {
    "path": "figures/figure02_worked_example_b.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure02_worked_example_b.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure02_worked_example_b.pdf",
    "sha256": "7452827c1cc4da7eb8645fc83150b64989293334370686741377ade8a3adf2e3",
    "blob": "400e437534ce8b98dd92c592b4cc7eaf14a6c0a1",
    "licence": "CC-BY-NC-SA-4.0"
@@ -5619,7 +5619,7 @@
   {
    "path": "figures/figure02_worked_example_b.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure02_worked_example_b.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure02_worked_example_b.png",
    "sha256": "1186ecbf8bd4aea73791f8a487e9cdc8140af1309d961975890899bb8164ce0d",
    "blob": "f35e908292f23a55d3c22e735ba2882ab57692fe",
    "licence": "CC-BY-NC-SA-4.0"
@@ -5627,7 +5627,7 @@
   {
    "path": "figures/figure03_rho_forest.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure03_rho_forest.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure03_rho_forest.pdf",
    "sha256": "2dff1a9990b0bd06d0615343c6287289fdfc5ae676f208ced29382828422812a",
    "blob": "9c1a5919a079c1515b358656725b482e0f6c6fa3",
    "licence": "CC-BY-4.0"
@@ -5635,7 +5635,7 @@
   {
    "path": "figures/figure03_rho_forest.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure03_rho_forest.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure03_rho_forest.png",
    "sha256": "0ebe0c497fd682ba7f2f7a42bdf5fc3eb119e2035647333803af5f4cf4eccf81",
    "blob": "83cde0ccd71ef8498ee444ea2eff5f030a6dd48b",
    "licence": "CC-BY-4.0"
@@ -5643,7 +5643,7 @@
   {
    "path": "figures/figure04_target_heatmap.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure04_target_heatmap.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure04_target_heatmap.pdf",
    "sha256": "aab48cfce3bf700e0fe264733957f96534ace166ed94e1baca47f0734c1683f0",
    "blob": "1aaeacbc9a6356118cf37925ef376f5c024ec472",
    "licence": "CC-BY-4.0"
@@ -5651,7 +5651,7 @@
   {
    "path": "figures/figure04_target_heatmap.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure04_target_heatmap.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure04_target_heatmap.png",
    "sha256": "546751551ff64177cae83b9e58abe001ff35024dc0ae2e881d9690f47681c5bc",
    "blob": "a365cb61122c3423002de7bc220e6d95db4f345b",
    "licence": "CC-BY-4.0"
@@ -5659,7 +5659,7 @@
   {
    "path": "figures/figure05_representations_a.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure05_representations_a.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure05_representations_a.pdf",
    "sha256": "c069e2c15dbb3653c7286a1421cba1a2d8189d73fb35116135b8280915223441",
    "blob": "c01857dd40f8105dbfaad876b4a1b892d5d703a7",
    "licence": "CC-BY-4.0"
@@ -5667,7 +5667,7 @@
   {
    "path": "figures/figure05_representations_a.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure05_representations_a.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure05_representations_a.png",
    "sha256": "cd86c43dac0f544942e6db550e761625f52d54184120f91c0f1b9249659015e3",
    "blob": "0bad458ebfc09be77eb3016509dc6f1de93321b7",
    "licence": "CC-BY-4.0"
@@ -5675,7 +5675,7 @@
   {
    "path": "figures/figure05_representations_b.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure05_representations_b.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure05_representations_b.pdf",
    "sha256": "0706539d8a17c70cb67c1fc228988c6420a6407cda1e9b1cc2b9de49b8251a2d",
    "blob": "7c9530f5fa88d9858fa3e0269acdfffd94d5aee4",
    "licence": "CC-BY-4.0"
@@ -5683,7 +5683,7 @@
   {
    "path": "figures/figure05_representations_b.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure05_representations_b.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure05_representations_b.png",
    "sha256": "48932d8c559c5e077d1a3b740304eb8f3796f8266ef50644a7f721bd3322ea4b",
    "blob": "74a63f58f71e892280ff898fe21ff567d0788ee7",
    "licence": "CC-BY-4.0"
@@ -5691,7 +5691,7 @@
   {
    "path": "figures/figure05_representations_c.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure05_representations_c.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure05_representations_c.pdf",
    "sha256": "e173a53d9d8575cce8d6bdcb33465b2307df490e84d4a4f94b7177c2c3a62dc0",
    "blob": "62039378cb6976b0cdc7fda46264aac2e59e36a1",
    "licence": "CC-BY-4.0"
@@ -5699,7 +5699,7 @@
   {
    "path": "figures/figure05_representations_c.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure05_representations_c.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure05_representations_c.png",
    "sha256": "9ccc5d02e2e3780e7809a21892321b8e17d8e9a9c1701a61225c06c3fe17b8c9",
    "blob": "a488cb4492bafdf2888228faa9ef7676d706b96d",
    "licence": "CC-BY-4.0"
@@ -5707,7 +5707,7 @@
   {
    "path": "figures/figure06_harmonization_a.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure06_harmonization_a.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure06_harmonization_a.pdf",
    "sha256": "af3302ee4a58823801056aad7797d459a72e15d026b398a2c412950f7f274c87",
    "blob": "95f4f41489637f94302db00dd1bdfd1b3a12b22c",
    "licence": "CC-BY-4.0"
@@ -5715,7 +5715,7 @@
   {
    "path": "figures/figure06_harmonization_a.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure06_harmonization_a.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure06_harmonization_a.png",
    "sha256": "3d7993d8a60b54d7322d12415ae0fc1bb97ca6afa46176099644dc62feb3c28a",
    "blob": "88bac8749a7bc184df0e24a5e5f80f65b6583f6b",
    "licence": "CC-BY-4.0"
@@ -5723,7 +5723,7 @@
   {
    "path": "figures/figure06_harmonization_b.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure06_harmonization_b.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure06_harmonization_b.pdf",
    "sha256": "518b7739e7264a8fedec5097fe39b49b49d1ee5ace971389323aab1a030567d4",
    "blob": "a3272056e47164472e3765b9b43d829ce56c7638",
    "licence": "CC-BY-4.0"
@@ -5731,7 +5731,7 @@
   {
    "path": "figures/figure06_harmonization_b.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure06_harmonization_b.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure06_harmonization_b.png",
    "sha256": "690b85baaa60375a29dd962def0be6726c2c2eba0b208d3518fba8198c58a7ea",
    "blob": "b25d515ad43e141a82f3f95c973edd18e23cde5a",
    "licence": "CC-BY-4.0"
@@ -5739,7 +5739,7 @@
   {
    "path": "figures/figure07_rule_admission_a.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure07_rule_admission_a.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure07_rule_admission_a.pdf",
    "sha256": "bb97e024db21e1561eb38161f33b9817e7f1e72d1351c30db005ac97e6940fbc",
    "blob": "764184ab21e6c6bda4ae5f6195cd20019fe95010",
    "licence": "CC-BY-4.0"
@@ -5747,7 +5747,7 @@
   {
    "path": "figures/figure07_rule_admission_a.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure07_rule_admission_a.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure07_rule_admission_a.png",
    "sha256": "e9c6b13648ffbc4e7bdfc099b50b97ea2ee9d36045ec1a6e6265c9778dd61ce2",
    "blob": "65959bc277b08d00f1f1cad1d4371fa2713dc97d",
    "licence": "CC-BY-4.0"
@@ -5755,7 +5755,7 @@
   {
    "path": "figures/figure07_rule_admission_b.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure07_rule_admission_b.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure07_rule_admission_b.pdf",
    "sha256": "0a713e0f115f3145646876c3647bd2bcb165cea37fce0689006535350f81f267",
    "blob": "b12d90a6f613f66342bf75c275db5973a326adcc",
    "licence": "CC-BY-4.0"
@@ -5763,7 +5763,7 @@
   {
    "path": "figures/figure07_rule_admission_b.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure07_rule_admission_b.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure07_rule_admission_b.png",
    "sha256": "0eeba746d0e6c1635fd3c3dfd881ca35da8446360b4f12d2cf6663c1da7d654c",
    "blob": "4776301a3ac73a9835fddd9db420620b5d02d9f6",
    "licence": "CC-BY-4.0"
@@ -5771,7 +5771,7 @@
   {
    "path": "figures/figure07_rule_admission_c.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure07_rule_admission_c.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure07_rule_admission_c.pdf",
    "sha256": "e6a347ac4512383656082b94999c870c5375329607d530f083e9ba9a9c6b175a",
    "blob": "81843022d2aed15a3b2590c05a7503ac7b83f5b1",
    "licence": "CC-BY-4.0"
@@ -5779,7 +5779,7 @@
   {
    "path": "figures/figure07_rule_admission_c.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figure07_rule_admission_c.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figure07_rule_admission_c.png",
    "sha256": "ee630b4430f07a46e561dcd066fb7b1d454403f7249c9d2482160956d8fce2ba",
    "blob": "d3d0892ab46d15fc908c20ab283a80250969dfb5",
    "licence": "CC-BY-4.0"
@@ -5787,7 +5787,7 @@
   {
    "path": "figures/figureS1_cohort_flow.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS1_cohort_flow.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS1_cohort_flow.pdf",
    "sha256": "fa1c152ddd2ed79c31002b041649d573bcd207b49f5340baf209287a098745e0",
    "blob": "74f7e221240100801b1e49695cd5208e80aee34f",
    "licence": "CC-BY-4.0"
@@ -5795,7 +5795,7 @@
   {
    "path": "figures/figureS1_cohort_flow.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS1_cohort_flow.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS1_cohort_flow.png",
    "sha256": "d563e26f0e446044faaf01594663c0ae3c17c466eb465605871d1a1a5d1a558f",
    "blob": "55881ff462d53b34350a60c4833a0f2679ae20b6",
    "licence": "CC-BY-4.0"
@@ -5803,7 +5803,7 @@
   {
    "path": "figures/figureS2_risk_coverage_a.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS2_risk_coverage_a.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS2_risk_coverage_a.pdf",
    "sha256": "680aac8bd7691e8a85be87f4946a70040d728c8cf004f78ce54356a01148e000",
    "blob": "79e0f9e0d8541ac775476ab1b6d3c2990af98c08",
    "licence": "CC-BY-4.0"
@@ -5811,7 +5811,7 @@
   {
    "path": "figures/figureS2_risk_coverage_a.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS2_risk_coverage_a.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS2_risk_coverage_a.png",
    "sha256": "967fcbd783c30781d96931bec1768a90ed58e361d570008fd8eaddda9e3c7239",
    "blob": "fddb5906a6e98bfd27db3228b5f9f79e7434058d",
    "licence": "CC-BY-4.0"
@@ -5819,7 +5819,7 @@
   {
    "path": "figures/figureS2_risk_coverage_b.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS2_risk_coverage_b.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS2_risk_coverage_b.pdf",
    "sha256": "84e3468df4a271964b3cf38781184e4cd32f84e0a3455c8f3d2a424cf51dc031",
    "blob": "210c0b30b588a0dde01cbbc2d980479327a1bc04",
    "licence": "CC-BY-4.0"
@@ -5827,7 +5827,7 @@
   {
    "path": "figures/figureS2_risk_coverage_b.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS2_risk_coverage_b.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS2_risk_coverage_b.png",
    "sha256": "c42c7271357ba0bf5c1521217c3950491c414c8000bb52ad2fb7de271a5b63ae",
    "blob": "febff292a380443642867aed2957f8038b7f1139",
    "licence": "CC-BY-4.0"
@@ -5835,7 +5835,7 @@
   {
    "path": "figures/figureS2_risk_coverage_c.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS2_risk_coverage_c.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS2_risk_coverage_c.pdf",
    "sha256": "9cc98179bf6da0c056b69a28ce7481e97fb259a6671d5c4fcf60f4e27282d22f",
    "blob": "5412796b7a021458aa47270b23240552e04c6330",
    "licence": "CC-BY-4.0"
@@ -5843,7 +5843,7 @@
   {
    "path": "figures/figureS2_risk_coverage_c.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS2_risk_coverage_c.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS2_risk_coverage_c.png",
    "sha256": "ebf47904017b0f8fa91b35ce2421e32d9284e46318675d576427a4cee064fb90",
    "blob": "d7d77e8db6b47906b50e5d28fe9854609bf7bbae",
    "licence": "CC-BY-4.0"
@@ -5851,7 +5851,7 @@
   {
    "path": "figures/figureS3_data_efficiency_a.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS3_data_efficiency_a.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS3_data_efficiency_a.pdf",
    "sha256": "89e3223d6356265641f599242db5e8bff3c109fc660dadb45e9769cdff025c3e",
    "blob": "293f54f44e24aad19bc46a7f8e2bc5d7385df092",
    "licence": "CC-BY-4.0"
@@ -5859,7 +5859,7 @@
   {
    "path": "figures/figureS3_data_efficiency_a.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS3_data_efficiency_a.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS3_data_efficiency_a.png",
    "sha256": "404378d5c19f64cba8da02ee9069b4d149c56c3c919ee78aecf342e430d60939",
    "blob": "ff6d2b35f327faa75e7c6d33c37de9b8c2e0eed0",
    "licence": "CC-BY-4.0"
@@ -5867,7 +5867,7 @@
   {
    "path": "figures/figureS3_data_efficiency_b.pdf",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS3_data_efficiency_b.pdf",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS3_data_efficiency_b.pdf",
    "sha256": "5d2050a32110aafd57c9a43b1de199c9d2f627d41a65e82f0a187091617b81f0",
    "blob": "6524873bc6c2cae4266f0affc6dceb4a2ab84da1",
    "licence": "CC-BY-4.0"
@@ -5875,7 +5875,7 @@
   {
    "path": "figures/figureS3_data_efficiency_b.png",
    "kind": "figure",
-   "source": "2426d0b7d39c4a28e9c87f23721e6fbd105c86ab:manuscript/article/figures/paper1/figureS3_data_efficiency_b.png",
+   "source": "818f2e275bcca5b11b9195025fce0f05a3082e30:manuscript/article/figures/paper1/figureS3_data_efficiency_b.png",
    "sha256": "e98d2ceddcff72f76941db67dd9cceb43c91d70c427e8495ba0c2c3f9c3de562",
    "blob": "c609f1e017f69b58d055ef8edbe8e51ae9840c28",
    "licence": "CC-BY-4.0"
@@ -5916,8 +5916,8 @@
    "path": "CITATION.cff",
    "kind": "authored",
    "source": "scripts/release/public/CITATION.cff",
-   "sha256": "d8fb17d7d674f57e4c7eeee6d55b77d36a7f9688521204a50447d815ef8dd11e",
-   "blob": "98d35baa663b96a1c500d092f732f6af7cd4cf80",
+   "sha256": "0bf9b915a9cbb590295168dfeb0f30d21b732c58150a8a3758f84dc951c58408",
+   "blob": "39dbd31f0f31095adf4ca15934e8405f9302bdab",
    "licence": "MIT"
   },
   {
@@ -5956,8 +5956,8 @@
    "path": "README.md",
    "kind": "authored",
    "source": "scripts/release/public/README.md.tmpl",
-   "sha256": "2e39ade56e398772b4eadf40d50d970a81a795d7fda0d8212880e14ad8268b53",
-   "blob": "16d612887d44726440d600b08d5bbaaa4dbddd89",
+   "sha256": "bb98d666f547030ab1c1ef5eb52caa08c5ba831657f7cdf0689cc7dd0bdf151e",
+   "blob": "92a61b7197ad4d403b9ec8ac9d75b69380671297",
    "licence": "CC-BY-4.0"
   },
   {
