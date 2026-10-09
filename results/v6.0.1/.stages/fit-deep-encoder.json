@@ -1,0 +1,74 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d19c5a041ce1f8eb0f40bd6cfdb025b205e55c36",
+      "dirty": false
+    },
+    "config_hash": "154f8f62b827469843b20ac5ebad700bb6fe5087649efc2c10c748858af791a2",
+    "inputs": {
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/inner_folds.parquet": "7dc447fdce15486c6ac905d9f5840eb39d9524570ba01b35f06bc3b63b00e8ee",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:deep_encoder/features/A_D20_acdc_dev.parquet": "8b81c6aa2d98e440a5874324008929069baec775d15bb27f96fa4cf12f275017",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:deep_encoder/FROZEN_D20.json": "abb4cf7062966ea6620814c29b3d2a12e595b692c2ee3ae422ffc2fcdb22ba80",
+      "run:deep_encoder/fit_record.json": "14a1a16b4f8d356fbd6f3be1f6cffb6584eef81aacdebb71e5263999d340d8c2",
+      "run:deep_encoder/formal/d_model_ACDC_dev.parquet": "31ee6b1ad4db6f119db49ccc50a63833df164dcf6d803cb996c836489818babd",
+      "run:deep_encoder/formal/d_model_crossfit_ACDC_dev.parquet": "86bbea1c87675f80ef5346092fc411d8b6d9fb72b6c4473271e8037f22a9919d",
+      "run:deep_encoder/formal/d_model_predictor.joblib": "45b4aeaaca9710f9b3c5cbdb1d1216459807dc87545d142b17cf17d16c184de6",
+      "run:deep_encoder/formal/d_model_predictor.json": "32a06668e4d6df0bf05a6cb1f66fa67c94cabcce8061311c846ca4ce24ad98c9",
+      "run:deep_encoder/formal/fold_predictors/predictor_fold1.json": "4618bf2ef06c0b4f044b5a7967a6be1a4e5ab028508c670600d096038a4fa436",
+      "run:deep_encoder/formal/fold_predictors/predictor_fold2.json": "c5d8d86d36cd7db8ee0a2df3436c87d4c62b8523a36960825fab6025e7e7229f",
+      "run:deep_encoder/formal/fold_predictors/predictor_fold3.json": "8e501cc97a5006d40c7b5d4283ef7ad5f94a9e51b848a8973a34e84ddba43b5b",
+      "run:deep_encoder/formal/fold_predictors/predictor_fold4.json": "be5ef96d7ee2e761cf42108b258126d60d00bcb97e968b7365747ae57c2d779f",
+      "run:deep_encoder/formal/fold_predictors/predictor_fold5.json": "5d4f75b41c0e31b6c9931e8dd4f5e467be815fee19079e7ca8e6eb4207f1aa64",
+      "run:deep_encoder/oof/bhat_oof_ACDC_dev.parquet": "a9bea3341c16523f9f31a5d3fbd4befd64c755dde2645693ae1a3728390bc19f",
+      "run:deep_encoder/predictions.parquet": "63fe2499c4505249bef4a5673235f41b96d1184cd8e4128a0e782ef4de8dd38f",
+      "run:deep_encoder/transitions/fold_models/transition_fold1.json": "7883dc9fbef25d40a032d4d063e1efb56b0385720c064303b839b8e39d74889e",
+      "run:deep_encoder/transitions/fold_models/transition_fold2.json": "a1cd1b3f1fe7bfe151d61a8599bbcc9010f0b1673aecd11a79b2f634bcfbfb0d",
+      "run:deep_encoder/transitions/fold_models/transition_fold3.json": "08f2402f95db6a7b2b2cb68638e84adf6f1d8e51cd764c17c42971fe8e1d796c",
+      "run:deep_encoder/transitions/fold_models/transition_fold4.json": "9f1ff5325ec34a22fe4aca6c59268bf76391ad5a3e05739f4d7cb268b31ed2cc",
+      "run:deep_encoder/transitions/fold_models/transition_fold5.json": "4b16e0b02b591c9fbd64ac590791dc9bb238d64fb0b3b27275b75b0dde098bd7",
+      "run:deep_encoder/transitions/lambda_selection.json": "6e057aa7cada5d877fc2eca946e94fd819381571862adf8708732e7a88e81bb3",
+      "run:deep_encoder/transitions/lambda_selection.parquet": "6e4518c5f27d9402b53fbfc8a1d4239f0956c4d026daa5d458b097c4db8b616e",
+      "run:deep_encoder/transitions/transition_model.json": "300b2a561799b6e96ed5c1c6a8b85a7794e27bc2ab2c183a28a7e5493e3aba79"
+    },
+    "params": {
+      "config_sections": [
+        "deep_encoder",
+        "deep_encoder.tta",
+        "formal.audited_predictor",
+        "transition",
+        "registry",
+        "cohorts.qc_severity"
+      ],
+      "neural_input": false
+    },
+    "stage": "fit-deep-encoder",
+    "status": "BUILT"
+  },
+  "payload_sha256": "aa151fb89244b448dd55df36b938958255d5ca197cf6b2b629e624cd2caff83e",
+  "run_log": {
+    "host": "a16e721d696c",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 5.803,
+    "started_utc": "2026-10-03T11:37:31+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

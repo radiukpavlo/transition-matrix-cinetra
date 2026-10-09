@@ -1,0 +1,48 @@
+# Trust analyses S1-S4 (protocol-v6.0.1 amendment item 14; docs/MANUSCRIPT_PROTOCOL_V2_2026-10-02.md E and J). Lane L57.
+# Every threshold, reference and temperature is fitted on acdc_dev out-of-fold outputs only (fit-trust) and frozen by
+# hash (trust/trust_bundle.json) before the once-only evaluations (evaluate-trust --split). Estimation only.
+# On mms2_external every S-analysis is prospective; on acdc_test and mms_external "registered after unblinding".
+specification_version: "6.0.1"
+status: registered_with_protocol_v6.0.1
+predictors: [audited_predictor, d20_predictor, f9]   # f9 = primary seed only (configs/probes.yaml f9b.seeds[0])
+representations: [descriptors, d20, f9b]
+evaluation_partitions: [acdc_test, mms_external, mms2_external]
+s1_selective_prediction:
+  confidence: max_softmax
+  coverages: {tau50: 0.50, tau80: 0.80}
+  threshold_rule: "tau_c = the k-th largest acdc_dev out-of-fold confidence, k = ceil(c * n); accept when confidence >= tau_c"
+  risk: misclassification_rate_among_accepted_reference_known_cases
+  curve: risk_coverage_at_every_distinct_confidence
+  aurc: step_integral_of_risk_over_coverage      # equals the mean selective risk over k = 1..n without ties
+  intervals: {aurc: cluster_bootstrap, proportions: wilson}
+  rule_routes_alongside: {rulebook: d_model, file: "metrics/routes_{rulebook}_{partition}.json", fields: [accepted_coverage, covered_fidelity, n_accepted, n_attempted]}
+s2_ood:
+  score: mahalanobis_distance                   # sqrt((y - m)' P (y - m)) with the Ledoit-Wolf precision P
+  standardization: fit_partition_mean_sd        # zero-variance removal, population SD (as the v6 standardizer)
+  covariance: ledoit_wolf
+  pca_components: {d20: 50}                     # D20: 50-component PCA on standardized features, fitted on acdc_dev
+  out_of_fold: "per outer fold k the reference is fitted on the other folds (F9b: encoder k's activations of its fitting patients) and scores fold k"
+  flag_quantile: 0.95                           # flag threshold = 95th percentile of the acdc_dev out-of-fold scores
+  quantile_method: linear
+  vendor_column: vendor                         # cohort metadata; ACDC has none (reported as not_recorded)
+  error_target: misclassified_by_paired_predictor   # configs/probes.yaml pairing
+  reconstruction_error: "mean over primary-family targets of |Bhat - B| / acdc_dev fit SD"
+  correlation: spearman
+s3_harmonization:
+  variants:
+    H-a: target_partition_mean_sd               # unlabelled target partition, all its rows with finite A
+    H-b: per_vendor_mean_sd_within_target       # vendor metadata only
+  frozen: [transition_T, lambda, predictor]
+  forbidden_inputs: [B, labels, outcomes]       # asserted in code (tmmri.experiments.trust.harmonize.assert_label_free)
+  min_rows_per_vendor: 10                       # smaller vendor groups use the H-a statistics (recorded)
+  degenerate_sd: keep_frozen_sd                 # a kept column with target SD <= 1e-12 keeps the frozen SD (recorded)
+  reporting: transductive_adaptation
+s4_calibration:
+  temperature: {objective: nll_on_acdc_dev_out_of_fold_logits, bounds: [0.05, 20.0], parametrization: log_temperature, xatol: 1.0e-10}
+  logits_fallback: log_probabilities           # softmax(log p / T) == softmax(logit / T): exact when logits are not recorded
+  ece_bins: 10
+  primary_binning: equal_mass                   # configs/bootstrap.yaml calibration (v6 metric code)
+  companion_binning: equal_width                # reliability diagrams and NEURAL-TM-1.0 comparability
+  log_loss_clip: 1.0e-15
+min_clusters: 20                                # strata below 20 clusters: NE (J)
+outputs: {fit: trust/, evaluate: "trust/{partition}/"}

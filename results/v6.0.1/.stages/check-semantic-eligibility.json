@@ -1,0 +1,58 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "cacfd0a86c4e79f49c79f7e9d80a045455a2df695f63fd8274115513720ce001",
+    "inputs": {
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/d_model_ACDC_dev.parquet": "31ee6b1ad4db6f119db49ccc50a63833df164dcf6d803cb996c836489818babd",
+      "run:oof/bhat_oof_ACDC_dev.parquet": "b735e0820b374ebfa64849337e815669bc965590b373b1aa69c41a20d459e0a4",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:thresholds/d_model_wedd_gaussian_mm_v1_stability.parquet": "484579ab8e14b96321ff93bff9012891dc806d85288c8f0992aeb88aa3a0c705",
+      "run:thresholds/dataset_label_wedd_gaussian_mm_v1_stability.parquet": "484579ab8e14b96321ff93bff9012891dc806d85288c8f0992aeb88aa3a0c705",
+      "run:thresholds/measured_oracle_wedd_gaussian_mm_v1_stability.parquet": "6c82d8df8d711e3e86f9ee6267df1d4b12fd5a74344815ff632cd30d08cbcd80",
+      "run:transitions/comparator_mean.parquet": "032882146e2b2376f7848f6ffa92199bf6161f29cc4f89009c711d5b2031fa74"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:rules/rule_anchor_manifest.parquet": "778505ebef43ee9362d8b82a8e2aab5d132120166f4a158f918b0178ffb20b0d",
+      "run:rules/semantic_eligibility.json": "791f4fc37cf7d783d898a4d9fb29e0aee8090f68ae4c9087b90a7116e5544cca",
+      "run:rules/semantic_eligibility.parquet": "1bfd2e675d5d51b199e0f1c0a4dc0f649cba0ed1194b07b7d43c2f48a8ba1dad"
+    },
+    "params": {
+      "config_sections": [
+        "rule_policy.rulebooks",
+        "rule_policy.eligibility_gates",
+        "registry",
+        "cohorts.qc_severity",
+        "wedd.primary_profile"
+      ],
+      "profile": "wedd_gaussian_mm_v1"
+    },
+    "stage": "check-semantic-eligibility",
+    "status": "BUILT"
+  },
+  "payload_sha256": "fe87172c975841c7a51c4f5fe418b1f9cb0ef6d7b50d453c620fff2a8360f2ae",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 0.274,
+    "started_utc": "2026-10-03T09:42:42+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

@@ -1,0 +1,48 @@
+{
+  "abstention": 0.9125,
+  "abstention_by_reason": {
+    "FEATURE_UNSTABLE": {
+      "n": 44,
+      "rate": 0.1375
+    },
+    "MATCH_NONE": {
+      "n": 247,
+      "rate": 0.771875
+    },
+    "QC_RV_EDV_LE_ESV": {
+      "n": 1,
+      "rate": 0.003125
+    }
+  },
+  "accepted_coverage": 0.0875,
+  "activation": 0.0875,
+  "audit_tax": {
+    "accepted_coverage": 0.0875,
+    "base_reference_accuracy": 0.6818181818181818,
+    "difference_rule_minus_base": 0.0,
+    "n_same_subset": 22,
+    "rule_reference_accuracy": 0.6818181818181818
+  },
+  "conflict_encounter_rate": 0.0,
+  "conflict_rate": 0.0,
+  "covered_fidelity": 0.6428571428571429,
+  "covered_reference_accuracy": 0.6818181818181818,
+  "faithful_coverage": 0.05625,
+  "n_accepted": 28,
+  "n_accepted_reference_known": 22,
+  "n_attempted": 320,
+  "n_clusters": 318,
+  "n_processed": 319,
+  "n_qc_abstain": 1,
+  "reference": "crosswalk_same_definition_only",
+  "route_has_empirical_support": true,
+  "routes": {
+    "EXACT_ACCEPT": 28,
+    "NO_MATCH_ABSTAIN": 247,
+    "QC_ABSTAIN": 1,
+    "UNAVAILABLE_FEATURE_ABSTAIN": 44
+  },
+  "rulebook": "dataset_label",
+  "soft_candidates_rate": 0.0,
+  "split": "mms_external"
+}

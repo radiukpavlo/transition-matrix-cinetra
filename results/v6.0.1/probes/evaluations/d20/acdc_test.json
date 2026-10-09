@@ -1,0 +1,962 @@
+{
+  "alt_bundle_freeze": [
+    {
+      "bundle_sha256": "617382a030eb6415de4f379e5e1dd33be49e77bd960a85140eccbb5045f5d089",
+      "n_files": 21,
+      "record": "deep_encoder/FROZEN_D20.json",
+      "record_sha256": "abb4cf7062966ea6620814c29b3d2a12e595b692c2ee3ae422ffc2fcdb22ba80"
+    }
+  ],
+  "bootstrap": {
+    "min_valid_fraction": 0.95,
+    "n_bins": 10,
+    "n_boot": 2000,
+    "seed": 20260928
+  },
+  "bundle": "d20",
+  "classes": [
+    "DCM",
+    "HCM",
+    "MINF",
+    "NOR",
+    "RV"
+  ],
+  "dataset": "ACDC",
+  "descriptor_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "descriptor_pipeline": {
+    "predictor": {
+      "metrics": {
+        "bootstrap": {
+          "draw": "SeedSequence(seed).spawn(replicates)[r]; clusters numbered by first row",
+          "interval": "percentile_95",
+          "min_valid_fraction": 0.95,
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "cluster_id",
+          "valid_replicate": "finite; for balanced accuracy, macro-F1 and macro AUROC the replicate must contain every reference class of the evaluated sample (macro averages over the same classes)"
+        },
+        "classes": [
+          "DCM",
+          "HCM",
+          "MINF",
+          "NOR",
+          "RV"
+        ],
+        "companions": {
+          "confusion_matrix": {
+            "columns_d_model": [
+              "DCM",
+              "HCM",
+              "MINF",
+              "NOR",
+              "RV"
+            ],
+            "counts": [
+              [
+                9,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                7,
+                0,
+                3,
+                0
+              ],
+              [
+                0,
+                0,
+                10,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                1,
+                8,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                10
+              ]
+            ],
+            "rows_reference": [
+              "DCM",
+              "HCM",
+              "MINF",
+              "NOR",
+              "RV"
+            ]
+          },
+          "per_class_recall": {
+            "DCM": {
+              "n_reference": 10,
+              "reason": null,
+              "recall": 0.9,
+              "status": "EVALUATED"
+            },
+            "HCM": {
+              "n_reference": 10,
+              "reason": null,
+              "recall": 0.7,
+              "status": "EVALUATED"
+            },
+            "MINF": {
+              "n_reference": 10,
+              "reason": null,
+              "recall": 1.0,
+              "status": "EVALUATED"
+            },
+            "NOR": {
+              "n_reference": 10,
+              "reason": null,
+              "recall": 0.8,
+              "status": "EVALUATED"
+            },
+            "RV": {
+              "n_reference": 10,
+              "reason": null,
+              "recall": 1.0,
+              "status": "EVALUATED"
+            }
+          }
+        },
+        "counts": {
+          "n_clusters": 50,
+          "n_evaluable": 50,
+          "n_no_decision": 0,
+          "n_reference_outside_predictor_classes": 0,
+          "n_reference_unknown": 0,
+          "n_rows": 50
+        },
+        "ece_binning": "equal_mass",
+        "ece_bins": 10,
+        "ece_realized_bins": [
+          {
+            "abs_gap": 0.09945932130599844,
+            "accuracy": 0.4,
+            "bin_id": 0,
+            "count": 5,
+            "mean_confidence": 0.49945932130599846
+          },
+          {
+            "abs_gap": 0.4369523196751748,
+            "accuracy": 1.0,
+            "bin_id": 1,
+            "count": 5,
+            "mean_confidence": 0.5630476803248252
+          },
+          {
+            "abs_gap": 0.3280393992651326,
+            "accuracy": 1.0,
+            "bin_id": 2,
+            "count": 5,
+            "mean_confidence": 0.6719606007348674
+          },
+          {
+            "abs_gap": 0.03378173890465197,
+            "accuracy": 0.8,
+            "bin_id": 3,
+            "count": 5,
+            "mean_confidence": 0.7662182610953481
+          },
+          {
+            "abs_gap": 0.06680004752976121,
+            "accuracy": 0.8,
+            "bin_id": 4,
+            "count": 5,
+            "mean_confidence": 0.8668000475297613
+          },
+          {
+            "abs_gap": 0.14124245375216637,
+            "accuracy": 0.8,
+            "bin_id": 5,
+            "count": 5,
+            "mean_confidence": 0.9412424537521664
+          },
+          {
+            "abs_gap": 0.03154401464346501,
+            "accuracy": 1.0,
+            "bin_id": 6,
+            "count": 5,
+            "mean_confidence": 0.968455985356535
+          },
+          {
+            "abs_gap": 0.013277865941132228,
+            "accuracy": 1.0,
+            "bin_id": 7,
+            "count": 5,
+            "mean_confidence": 0.9867221340588678
+          },
+          {
+            "abs_gap": 0.004562401729555021,
+            "accuracy": 1.0,
+            "bin_id": 8,
+            "count": 5,
+            "mean_confidence": 0.995437598270445
+          },
+          {
+            "abs_gap": 0.00034994322834280833,
+            "accuracy": 1.0,
+            "bin_id": 9,
+            "count": 5,
+            "mean_confidence": 0.9996500567716572
+          }
+        ],
+        "metrics": {
+          "accuracy": {
+            "ci_lower": 0.78,
+            "ci_upper": 0.96,
+            "estimate": 0.88,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "balanced_accuracy": {
+            "ci_lower": 0.7899871794871796,
+            "ci_upper": 0.96,
+            "estimate": 0.8800000000000001,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          },
+          "brier": {
+            "ci_lower": 0.11790933388301364,
+            "ci_upper": 0.32934565148235534,
+            "definition": "multiclass",
+            "estimate": 0.2129486423414735,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece": {
+            "ci_lower": 0.0739676847311038,
+            "ci_upper": 0.20579148827443067,
+            "estimate": 0.11560095059753807,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece_equal_width": {
+            "bins": 10,
+            "estimate": 0.08576224122783938,
+            "role": "companion"
+          },
+          "log_loss": {
+            "clip": 1e-15,
+            "estimate": 0.4144267040577559,
+            "reason": null,
+            "role": "descriptive_companion",
+            "status": "EVALUATED"
+          },
+          "macro_f1": {
+            "ci_lower": 0.7776653890249444,
+            "ci_upper": 0.9567076116689185,
+            "estimate": 0.8792283739652159,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          },
+          "macro_ovr_auroc": {
+            "ci_lower": 0.9548935948276844,
+            "ci_upper": 0.9977097696026792,
+            "estimate": 0.9795,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          }
+        },
+        "probabilities": "recorded",
+        "reason": null,
+        "status": "EVALUATED"
+      },
+      "name": "audited_predictor",
+      "non_equivalent": null,
+      "provenance": {
+        "logits": "decision_function",
+        "n_rows": 50,
+        "source": "derived: run:formal/d_model_predictor.joblib on formal/A_ACDC.parquet, checked against run:inference/d_model_acdc_test.parquet"
+      }
+    },
+    "representation": {
+      "name": "descriptors",
+      "rho": {
+        "ci_lower": 0.473339563327321,
+        "ci_upper": 0.6192633930212394,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 50,
+        "n_clusters": 50,
+        "n_clusters_partition_rows": 50,
+        "n_estimable": 7,
+        "n_units": 50,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.5525082970070413,
+        "rho_j": {
+          "lv_edv_ml": 0.47104953595036914,
+          "lv_ef_percent": 0.7941059453963755,
+          "lv_esv_ml": 0.6452456956672601,
+          "lv_myocardial_mass_ed_g": 0.38717817231600493,
+          "rv_edv_ml": 0.45094080242374934,
+          "rv_ef_percent": 0.5683433197067898,
+          "rv_esv_ml": 0.5506946075887409
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            0.31446833959106396,
+            0.5998884436522828
+          ],
+          "lv_ef_percent": [
+            0.7467936106255111,
+            0.8333722304695546
+          ],
+          "lv_esv_ml": [
+            0.5357452319910024,
+            0.7441777328276303
+          ],
+          "lv_myocardial_mass_ed_g": [
+            0.1370561153738314,
+            0.5868608659175103
+          ],
+          "rv_edv_ml": [
+            0.2973638665229041,
+            0.5781837778643044
+          ],
+          "rv_ef_percent": [
+            0.40784546713496317,
+            0.6799549234004711
+          ],
+          "rv_esv_ml": [
+            0.3957343762478888,
+            0.6749258879788035
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      }
+    }
+  },
+  "estimation_only": true,
+  "evidence": "registered_after_unblinding",
+  "freeze_order": null,
+  "label": "registered after unblinding",
+  "partition": "acdc_test",
+  "predictors": {
+    "d20_predictor": {
+      "primary_seed": null,
+      "seeds": {
+        "-1": {
+          "metrics": {
+            "bootstrap": {
+              "draw": "SeedSequence(seed).spawn(replicates)[r]; clusters numbered by first row",
+              "interval": "percentile_95",
+              "min_valid_fraction": 0.95,
+              "replicates": 2000,
+              "seed": 20260928,
+              "unit": "cluster_id",
+              "valid_replicate": "finite; for balanced accuracy, macro-F1 and macro AUROC the replicate must contain every reference class of the evaluated sample (macro averages over the same classes)"
+            },
+            "classes": [
+              "DCM",
+              "HCM",
+              "MINF",
+              "NOR",
+              "RV"
+            ],
+            "companions": {
+              "confusion_matrix": {
+                "columns_d_model": [
+                  "DCM",
+                  "HCM",
+                  "MINF",
+                  "NOR",
+                  "RV"
+                ],
+                "counts": [
+                  [
+                    5,
+                    0,
+                    1,
+                    1,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    5,
+                    2,
+                    0
+                  ],
+                  [
+                    5,
+                    1,
+                    3,
+                    0,
+                    1
+                  ],
+                  [
+                    2,
+                    0,
+                    2,
+                    3,
+                    3
+                  ],
+                  [
+                    3,
+                    0,
+                    0,
+                    2,
+                    5
+                  ]
+                ],
+                "rows_reference": [
+                  "DCM",
+                  "HCM",
+                  "MINF",
+                  "NOR",
+                  "RV"
+                ]
+              },
+              "per_class_recall": {
+                "DCM": {
+                  "n_reference": 10,
+                  "reason": null,
+                  "recall": 0.5,
+                  "status": "EVALUATED"
+                },
+                "HCM": {
+                  "n_reference": 10,
+                  "reason": null,
+                  "recall": 0.2,
+                  "status": "EVALUATED"
+                },
+                "MINF": {
+                  "n_reference": 10,
+                  "reason": null,
+                  "recall": 0.3,
+                  "status": "EVALUATED"
+                },
+                "NOR": {
+                  "n_reference": 10,
+                  "reason": null,
+                  "recall": 0.3,
+                  "status": "EVALUATED"
+                },
+                "RV": {
+                  "n_reference": 10,
+                  "reason": null,
+                  "recall": 0.5,
+                  "status": "EVALUATED"
+                }
+              }
+            },
+            "counts": {
+              "n_clusters": 50,
+              "n_evaluable": 50,
+              "n_no_decision": 0,
+              "n_reference_outside_predictor_classes": 0,
+              "n_reference_unknown": 0,
+              "n_rows": 50
+            },
+            "ece_binning": "equal_mass",
+            "ece_bins": 10,
+            "ece_realized_bins": [
+              {
+                "abs_gap": 0.3790090251045072,
+                "accuracy": 0.0,
+                "bin_id": 0,
+                "count": 5,
+                "mean_confidence": 0.3790090251045072
+              },
+              {
+                "abs_gap": 0.29416572503287747,
+                "accuracy": 0.2,
+                "bin_id": 1,
+                "count": 5,
+                "mean_confidence": 0.4941657250328775
+              },
+              {
+                "abs_gap": 0.14080839565524406,
+                "accuracy": 0.4,
+                "bin_id": 2,
+                "count": 5,
+                "mean_confidence": 0.5408083956552441
+              },
+              {
+                "abs_gap": 0.622331767978722,
+                "accuracy": 0.0,
+                "bin_id": 3,
+                "count": 5,
+                "mean_confidence": 0.622331767978722
+              },
+              {
+                "abs_gap": 0.30784480630107836,
+                "accuracy": 0.4,
+                "bin_id": 4,
+                "count": 5,
+                "mean_confidence": 0.7078448063010784
+              },
+              {
+                "abs_gap": 0.3616536050828497,
+                "accuracy": 0.4,
+                "bin_id": 5,
+                "count": 5,
+                "mean_confidence": 0.7616536050828497
+              },
+              {
+                "abs_gap": 0.017328996919033557,
+                "accuracy": 0.8,
+                "bin_id": 6,
+                "count": 5,
+                "mean_confidence": 0.8173289969190336
+              },
+              {
+                "abs_gap": 0.49138367998221766,
+                "accuracy": 0.4,
+                "bin_id": 7,
+                "count": 5,
+                "mean_confidence": 0.8913836799822177
+              },
+              {
+                "abs_gap": 0.5605177719194543,
+                "accuracy": 0.4,
+                "bin_id": 8,
+                "count": 5,
+                "mean_confidence": 0.9605177719194543
+              },
+              {
+                "abs_gap": 0.395407276648128,
+                "accuracy": 0.6,
+                "bin_id": 9,
+                "count": 5,
+                "mean_confidence": 0.995407276648128
+              }
+            ],
+            "metrics": {
+              "accuracy": {
+                "ci_lower": 0.24,
+                "ci_upper": 0.5,
+                "estimate": 0.36,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "balanced_accuracy": {
+                "ci_lower": 0.24101476301476307,
+                "ci_upper": 0.49648268398268397,
+                "estimate": 0.36,
+                "n_boot_valid": 1999,
+                "reason": null,
+                "status": "EVALUATED",
+                "valid_fraction": 0.9995
+              },
+              "brier": {
+                "ci_lower": 0.6572690479796719,
+                "ci_upper": 1.0153069203823828,
+                "definition": "multiclass",
+                "estimate": 0.8453607070892708,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "ece": {
+                "ci_lower": 0.2746021361452038,
+                "ci_upper": 0.48655418592247723,
+                "estimate": 0.3570451050624112,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "ece_equal_width": {
+                "bins": 10,
+                "estimate": 0.3570451050624113,
+                "role": "companion"
+              },
+              "log_loss": {
+                "clip": 1e-15,
+                "estimate": 1.9527410661395448,
+                "reason": null,
+                "role": "descriptive_companion",
+                "status": "EVALUATED"
+              },
+              "macro_f1": {
+                "ci_lower": 0.22110782430130257,
+                "ci_upper": 0.4787195552985026,
+                "estimate": 0.35318015318015317,
+                "n_boot_valid": 1999,
+                "reason": null,
+                "status": "EVALUATED",
+                "valid_fraction": 0.9995
+              },
+              "macro_ovr_auroc": {
+                "ci_lower": 0.6306497190150938,
+                "ci_upper": 0.8086925337797707,
+                "estimate": 0.7195,
+                "n_boot_valid": 1999,
+                "reason": null,
+                "status": "EVALUATED",
+                "valid_fraction": 0.9995
+              }
+            },
+            "probabilities": "recorded",
+            "reason": null,
+            "status": "EVALUATED"
+          },
+          "non_equivalent": null,
+          "paired_vs_audited_predictor": {
+            "bootstrap": {
+              "paired": "same cluster draw for both",
+              "replicates": 2000,
+              "seed": 20260928,
+              "unit": "cluster_id"
+            },
+            "direction": "comparator_minus_reference",
+            "metrics": {
+              "accuracy": {
+                "ci_lower": -0.6599999999999999,
+                "ci_upper": -0.36,
+                "comparator": 0.36,
+                "difference": -0.52,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.88,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "balanced_accuracy": {
+                "ci_lower": -0.655402958152958,
+                "ci_upper": -0.3613865546218488,
+                "comparator": 0.36,
+                "difference": -0.5200000000000001,
+                "n_boot_valid": 1999,
+                "reason": null,
+                "reference": 0.8800000000000001,
+                "status": "EVALUATED",
+                "valid_fraction": 0.9995
+              },
+              "brier": {
+                "ci_lower": 0.43888697965687284,
+                "ci_upper": 0.814462106766483,
+                "comparator": 0.8453607070892708,
+                "difference": 0.6324120647477973,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.2129486423414735,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "ece": {
+                "ci_lower": 0.12824597320527942,
+                "ci_upper": 0.3672188172244385,
+                "comparator": 0.3570451050624112,
+                "difference": 0.24144415446487316,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.11560095059753807,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "log_loss": {
+                "ci_lower": 0.9801732831812123,
+                "ci_upper": 2.0928161842887683,
+                "comparator": 1.9527410661395448,
+                "difference": 1.538314362081789,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.4144267040577559,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "macro_f1": {
+                "ci_lower": -0.6717051327108461,
+                "ci_upper": -0.37377719296836953,
+                "comparator": 0.35318015318015317,
+                "difference": -0.5260482207850627,
+                "n_boot_valid": 1999,
+                "reason": null,
+                "reference": 0.8792283739652159,
+                "status": "EVALUATED",
+                "valid_fraction": 0.9995
+              },
+              "macro_ovr_auroc": {
+                "ci_lower": -0.34806811191602743,
+                "ci_upper": -0.17356214205938522,
+                "comparator": 0.7195,
+                "difference": -0.26,
+                "n_boot_valid": 1999,
+                "reason": null,
+                "reference": 0.9795,
+                "status": "EVALUATED",
+                "valid_fraction": 0.9995
+              }
+            },
+            "n_clusters": 50,
+            "n_paired": 50,
+            "reason": null,
+            "status": "EVALUATED"
+          },
+          "provenance": {
+            "logits": "log_probabilities",
+            "n_rows": 50,
+            "source": "derived: run:deep_encoder/formal/d_model_predictor.joblib on run:deep_encoder/features/A_D20_acdc_test.parquet"
+          }
+        }
+      }
+    }
+  },
+  "representations": {
+    "d20": {
+      "primary_seed": null,
+      "seeds": {
+        "-1": {
+          "paired_vs_descriptors": {
+            "bootstrap": {
+              "replicates": 2000,
+              "seed": 20260928,
+              "unit": "cluster_id",
+              "weighting": "patient"
+            },
+            "ci_lower": -0.6078518619809536,
+            "ci_upper": -0.4107743421871034,
+            "difference": -0.5149078235051828,
+            "direction": "comparator_minus_reference",
+            "estimable_targets": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "family": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "n_boot_valid": 2000,
+            "n_clusters": 50,
+            "n_rows": 50,
+            "n_units": 50,
+            "reason": null,
+            "rho_comparator": 0.03760047350185847,
+            "rho_j": {
+              "lv_edv_ml": {
+                "ci_lower": -0.5932452180051764,
+                "ci_upper": -0.20609130266054357,
+                "comparator": 0.07433383033368623,
+                "difference": -0.3967157056166829,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.47104953595036914,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "lv_ef_percent": {
+                "ci_lower": -0.9244034988977059,
+                "ci_upper": -0.6163650272855136,
+                "comparator": 0.029045813463032588,
+                "difference": -0.7650601319333429,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.7941059453963755,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "lv_esv_ml": {
+                "ci_lower": -0.6827385714286798,
+                "ci_upper": -0.34244694735487663,
+                "comparator": 0.12938883794195588,
+                "difference": -0.5158568577253042,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.6452456956672601,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "lv_myocardial_mass_ed_g": {
+                "ci_lower": -0.5690609703932165,
+                "ci_upper": -0.086725954605713,
+                "comparator": 0.04825789177293782,
+                "difference": -0.3389202805430671,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.38717817231600493,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "rv_edv_ml": {
+                "ci_lower": -0.5756379208559826,
+                "ci_upper": -0.2563685422249073,
+                "comparator": 0.031203448575448545,
+                "difference": -0.4197373538483008,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.45094080242374934,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "rv_ef_percent": {
+                "ci_lower": -0.8688650900275141,
+                "ci_upper": -0.5525156447164843,
+                "comparator": -0.14416287133638028,
+                "difference": -0.71250619104317,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.5683433197067898,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              },
+              "rv_esv_ml": {
+                "ci_lower": -0.6101163752892484,
+                "ci_upper": -0.26034636365526403,
+                "comparator": 0.09513636376232848,
+                "difference": -0.4555582438264124,
+                "n_boot_valid": 2000,
+                "reason": null,
+                "reference": 0.5506946075887409,
+                "status": "EVALUATED",
+                "valid_fraction": 1.0
+              }
+            },
+            "rho_reference": 0.5525082970070413,
+            "rows_rule": "per target, rows where the reference value and both reconstructions are finite",
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "rho": {
+            "ci_lower": -0.060708396504089324,
+            "ci_upper": 0.12304661703825819,
+            "estimable_targets": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "family": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "interval": "percentile_95",
+            "min_estimable": 5,
+            "n_boot": 2000,
+            "n_boot_valid": 2000,
+            "n_cases": 50,
+            "n_clusters": 50,
+            "n_clusters_partition_rows": 50,
+            "n_estimable": 7,
+            "n_units": 50,
+            "normalization": "fit_partition_sd",
+            "reason": null,
+            "resampling_unit": "cluster_id",
+            "rho": 0.03760047350185847,
+            "rho_j": {
+              "lv_edv_ml": 0.07433383033368623,
+              "lv_ef_percent": 0.029045813463032588,
+              "lv_esv_ml": 0.12938883794195588,
+              "lv_myocardial_mass_ed_g": 0.04825789177293782,
+              "rv_edv_ml": 0.031203448575448545,
+              "rv_ef_percent": -0.14416287133638028,
+              "rv_esv_ml": 0.09513636376232848
+            },
+            "rho_j_ci": {
+              "lv_edv_ml": [
+                -0.13918593991400693,
+                0.24302103051691926
+              ],
+              "lv_ef_percent": [
+                -0.15127051649941106,
+                0.18933597442047237
+              ],
+              "lv_esv_ml": [
+                -0.025590796351553192,
+                0.27294719246515897
+              ],
+              "lv_myocardial_mass_ed_g": [
+                -0.1884149961293397,
+                0.23817676611028685
+              ],
+              "rv_edv_ml": [
+                -0.11561453808020203,
+                0.15258414429534709
+              ],
+              "rv_ef_percent": [
+                -0.3148830845958728,
+                -0.011440748715400984
+              ],
+              "rv_esv_ml": [
+                -0.022864547516763697,
+                0.21087702526219929
+              ]
+            },
+            "seed": 20260928,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0,
+            "weighting": "patient"
+          }
+        }
+      }
+    }
+  },
+  "rows": {
+    "class_reference": "acdc_class",
+    "n_excluded_critical_qc": 0,
+    "n_partition_rows": 50,
+    "n_predictor_rows": 50,
+    "n_rho_rows": 50
+  },
+  "schema": "tmmri.alt_bundle_evaluation/1"
+}

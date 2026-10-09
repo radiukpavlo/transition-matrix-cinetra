@@ -1,0 +1,6 @@
+{
+  "eligible_rules": 2,
+  "file": "rulebook.json",
+  "gate_substrate": "nested_inner_oof",
+  "rulebook": "dataset_label"
+}

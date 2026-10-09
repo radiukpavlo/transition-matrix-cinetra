@@ -1,0 +1,345 @@
+{
+  "bundle_sha256": "d0ab5a17dfa9218fd2c272cd0d82bef0b3e7822fe158e12d81c989e9c402eaa5",
+  "cache_manifest_sha256": "fd8a867792ea682640aef71ec15e6c764fdc3d00a477ad4d740e4b81d8092fa1",
+  "ensemble": false,
+  "fits": [
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/5f22fff31750f4c9/model.pt",
+      "checkpoint_sha256": "7703fee862e1b14626befc7205fe091b870f594827698ba5ba558879e51a2ab7",
+      "encoder_id": "fold1",
+      "fit_id": "5f22fff31750f4c9",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 1,
+      "primary": true,
+      "record_sha256": "035f123679aae3c2e0757c117a17ce59c25f3cdd1db3ee15e1f23e6851dfd2d0",
+      "refit_epochs": 21,
+      "seed": 20261011
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/1375ec8f066cc4f8/model.pt",
+      "checkpoint_sha256": "19d43eabb8ba5ae5f36aeac0d549667fb553ec5a6c1641d9b02aa7b2db6c084e",
+      "encoder_id": "fold1",
+      "fit_id": "1375ec8f066cc4f8",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 1,
+      "primary": false,
+      "record_sha256": "20769655638222037c9d49bb952a0a8e1499528ed16b2a6a5aa14caed7461d92",
+      "refit_epochs": 17,
+      "seed": 20261012
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/f62714ddea32fbd2/model.pt",
+      "checkpoint_sha256": "0668b18abb5ec59fd59b7a18790592a866f0cf75f6bcad282094cfd485e2502d",
+      "encoder_id": "fold1",
+      "fit_id": "f62714ddea32fbd2",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 1,
+      "primary": false,
+      "record_sha256": "43f3c3707017e5803725eeb0aa3a0b210d8592bf780561fa9966cb749b7f5d21",
+      "refit_epochs": 24,
+      "seed": 20261013
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/6744864dc26bb3c9/model.pt",
+      "checkpoint_sha256": "21af4b97b7d1782dac6887f9dcdc7c10c06b55544f3548acfdd0ff4a093138a2",
+      "encoder_id": "fold2",
+      "fit_id": "6744864dc26bb3c9",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 2,
+      "primary": true,
+      "record_sha256": "9b722ebcad3559042759cab830b7c95ed2b7f6ec5fc0973aaf6f32aaf503962a",
+      "refit_epochs": 21,
+      "seed": 20261011
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/465357b7b743109a/model.pt",
+      "checkpoint_sha256": "a408e083f0a4e5afcb7665841d23615c6b6779801db1ada95b335e105eb17abb",
+      "encoder_id": "fold2",
+      "fit_id": "465357b7b743109a",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 2,
+      "primary": false,
+      "record_sha256": "d8575489acb07f75a4084a264a048949efc53f3deecbb4ef3bbf5d0a4e91a317",
+      "refit_epochs": 15,
+      "seed": 20261012
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/ad364beff9aeb26d/model.pt",
+      "checkpoint_sha256": "b75bce7f6e8cf998e7ba2e5f55f63999ff2ae50b5505c3f5fbc99f46416b39c7",
+      "encoder_id": "fold2",
+      "fit_id": "ad364beff9aeb26d",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 2,
+      "primary": false,
+      "record_sha256": "52f7fa601daa657a7da9c3218229a76ecafa0430ddb8f8567f841d0507885b96",
+      "refit_epochs": 32,
+      "seed": 20261013
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/56b30c5870494b83/model.pt",
+      "checkpoint_sha256": "261c89de67d2f2108547630c6e7364a7d80ff496ad5b357934ed91b180e0f8e1",
+      "encoder_id": "fold3",
+      "fit_id": "56b30c5870494b83",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 3,
+      "primary": true,
+      "record_sha256": "c24647064fb6f87531e5e0ff39d01027fefa0bb815bfe12d0510331b5b1f190b",
+      "refit_epochs": 12,
+      "seed": 20261011
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/6b7b72646aac15f4/model.pt",
+      "checkpoint_sha256": "4be29427d33a1a951b42dda0d1e4690d6f0c2245587d3a7ee28fd698f7d47268",
+      "encoder_id": "fold3",
+      "fit_id": "6b7b72646aac15f4",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 3,
+      "primary": false,
+      "record_sha256": "e7b2573f05d48dcadcabd57ea8c6e8c440ac75af2b94f3133de9ed976be802b4",
+      "refit_epochs": 12,
+      "seed": 20261012
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/1d097b18db3bf0c8/model.pt",
+      "checkpoint_sha256": "ef7f70eb52d12b08f18d0fcd9bd8e8d1d0b8f0e151db8f30a5071f19439083fc",
+      "encoder_id": "fold3",
+      "fit_id": "1d097b18db3bf0c8",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 3,
+      "primary": false,
+      "record_sha256": "b42102e50159eae504b38562f36d5e75164d61de705ae33627f110f54c84f1ea",
+      "refit_epochs": 14,
+      "seed": 20261013
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/e79ace442df8fba1/model.pt",
+      "checkpoint_sha256": "7971f1a7b7a62d2d2f1c5aafe27961198efd46d719da2d2f5eb4c3ad20b2557f",
+      "encoder_id": "fold4",
+      "fit_id": "e79ace442df8fba1",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 4,
+      "primary": true,
+      "record_sha256": "b7370d91442f7c7b909aa6882a78b3db51f89c238b276ba93cbea57847502068",
+      "refit_epochs": 29,
+      "seed": 20261011
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/a21a05754e66e65b/model.pt",
+      "checkpoint_sha256": "28330272d7291fcb17ccca1db7f4ee2a00c8fe0cfd944bc94fd61a0ccc9460a8",
+      "encoder_id": "fold4",
+      "fit_id": "a21a05754e66e65b",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 4,
+      "primary": false,
+      "record_sha256": "9fde6978cb09bf367384c2f27f79d6fc680ebfebc19a1fe2220a083ffd960129",
+      "refit_epochs": 16,
+      "seed": 20261012
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/4713c3bf4b246ec9/model.pt",
+      "checkpoint_sha256": "488513058faa0bdf9394b2b227f8793ffbe50f6d72e6fa087f36ededd49eb659",
+      "encoder_id": "fold4",
+      "fit_id": "4713c3bf4b246ec9",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 4,
+      "primary": false,
+      "record_sha256": "07ab02702fb2a314b32175b0172e9f2e144415a7177cf81cc40e035cb0e16057",
+      "refit_epochs": 25,
+      "seed": 20261013
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/0890dcfa438e38be/model.pt",
+      "checkpoint_sha256": "9273f9f359c9182cbcd05cfee50e682953b684010526b0fa6905b8de9c26cbdf",
+      "encoder_id": "fold5",
+      "fit_id": "0890dcfa438e38be",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 5,
+      "primary": true,
+      "record_sha256": "41e054ed94ef2de976dc7a943d1e7b63b666bb4982044b9f4b6df1acf00383a8",
+      "refit_epochs": 14,
+      "seed": 20261011
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/ee6d6d4e812eaef0/model.pt",
+      "checkpoint_sha256": "5468ffb20e8096d5990cfb965732975e97e265651cded1baaf1bce411029c1ea",
+      "encoder_id": "fold5",
+      "fit_id": "ee6d6d4e812eaef0",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 5,
+      "primary": false,
+      "record_sha256": "e1819396aea2b1e0dc4f211afab9645a3524d610161a0d5c4566380207c9e931",
+      "refit_epochs": 24,
+      "seed": 20261012
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/727b0be94bfc8e6f/model.pt",
+      "checkpoint_sha256": "759cb86db2064b8b99e55543b002ac3f7c90c54547a989b1351e2d86d573ea33",
+      "encoder_id": "fold5",
+      "fit_id": "727b0be94bfc8e6f",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": 5,
+      "primary": false,
+      "record_sha256": "33e763734daea56eadd63f4f2cad8eddf15de09b0191a2cb215bb66704e2803e",
+      "refit_epochs": 15,
+      "seed": 20261013
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/7581584233dc31c4/model.pt",
+      "checkpoint_sha256": "6ec3515d3b78fbf4dddbaa0e3d2bb4318142eec334fec01f959d2213b852fb4e",
+      "encoder_id": "final",
+      "fit_id": "7581584233dc31c4",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": "final",
+      "primary": true,
+      "record_sha256": "d2aca248766ba3c88980104ebedc8445295d3c6f99a016f8bfd363a84c717e0d",
+      "refit_epochs": 18,
+      "seed": 20261011
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/932af384115f1700/model.pt",
+      "checkpoint_sha256": "7c66941e3897bfc23436bfc6c9ecb3ca40193196c8c71992b891edb33e66fb11",
+      "encoder_id": "final",
+      "fit_id": "932af384115f1700",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": "final",
+      "primary": false,
+      "record_sha256": "42cf67dfd7290e17fbf416665745de5edd98a7bed2240c57c801520b8c8b6981",
+      "refit_epochs": 11,
+      "seed": 20261012
+    },
+    {
+      "backend": "modal",
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "checkpoint": "neural_f9/checkpoints/02297ae72cfff7b4/model.pt",
+      "checkpoint_sha256": "6fcbbc614d2f32a3c7fe2fa217767e8de3fcc6c77346a32b8455acd0709eef3b",
+      "encoder_id": "final",
+      "fit_id": "02297ae72cfff7b4",
+      "gpu_name": "NVIDIA L40S",
+      "outer_fold": "final",
+      "primary": false,
+      "record_sha256": "5f24bcd7c634a16d22b74478a9aa9a5d049ec30fd4ae0cfdabda80464fadac7b",
+      "refit_epochs": 15,
+      "seed": 20261013
+    }
+  ],
+  "model_id": "f9",
+  "n_wave1_records": 324,
+  "not_estimable": [],
+  "primary_seed": 20261011,
+  "protocol_tag": "protocol-v6.0.1",
+  "run_id": "v6-replication-20261003-1241",
+  "schema": "tmmri.f9_bundle/1",
+  "seed_selection": "forbidden",
+  "seeds": [
+    20261011,
+    20261012,
+    20261013
+  ],
+  "selection_table_sha256": "d589efd633e9b2349e346449140d0cb0aef279194b2ea1ce1f99046098dff82c",
+  "training_config_sha256": "c7cfd681a671554d8ca05719b6461dbaa0676a47d3557335c3586c2374040d4a",
+  "validity_gate": {
+    "oof_macro_f1": 0.5421231127113479,
+    "oof_predictions_sha256": "81b39673a8a07bb016cd609507eccdc47dc6fc9da818de25f4b72d1d1a4eb909",
+    "passed": true,
+    "report": "run:neural_f9/validity_gate.json",
+    "report_sha256": "98833830ac4e9cd1be15ab29555e011c00e3d534f77c4b9953fecf8b20fda038",
+    "seed": 20261011
+  },
+  "wave1_records_sha256": "9718f799ff2d55b86317054a14fed44a067b927f2a5a7084bbcfe0e0ec0e7b72",
+  "wave1_specs_sha256": "bfcae8c43249c8a481b97d6dbba2eabc241f855fb1008739bc1383104bc0e9e6",
+  "wave2_specs_sha256": "802216e4964565cc19ccee9cf0bf1b1cd014d20fe6f3f2221b9ab660ea14d2b4",
+  "weights": {
+    "file": "resnet18-f37072fd.pth",
+    "name": "resnet18_imagenet1k_v1",
+    "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "url": "https://download.pytorch.org/models/resnet18-f37072fd.pth"
+  }
+}

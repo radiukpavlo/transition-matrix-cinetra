@@ -1,0 +1,16 @@
+{
+  "analysis": "B3",
+  "included": {
+    "mms_external": "MMS"
+  },
+  "mms_external": {
+    "n": {
+      "A": 94,
+      "other_vendors": 225
+    },
+    "n_excluded_critical_qc": 1
+  },
+  "not_executed": {},
+  "note": "descriptive; vendor and centre are confounded in M&Ms-1",
+  "vendor": "A"
+}

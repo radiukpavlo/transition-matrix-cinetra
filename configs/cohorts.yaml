@@ -1,0 +1,326 @@
+# Public edition of the registered file `configs/cohorts.yaml` (protocol-v6.0.1, git blob `8a2920739495`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
+# Cohort definitions, eligibility and QC severity (SPECIFICATION.md 6.0.0, Sections 4, 7 and 12.4). Decisions D1, D2, D7, D8, D16, D21.
+# Tracked manifests carry identifiers, release split, relative paths, sizes, SHA-256 and eligibility/membership flags only;
+# vendor and centre are read from the mounted information CSV at run time; never pathology or demographics.
+specification_version: "6.0.0"
+acdc:
+  dataset_id: ACDC
+  role: development_and_internal_test
+  release: "ACDC 2017 challenge release (Creatis, Universite de Lyon); 150 patients"
+  licence: "research use; mandatory citation of Bernard O et al., IEEE Trans Med Imaging 2018;37(11):2514-2525"
+  source_mount: /sources/acdc                  # read-only; host default ./data/raw/acdc/database (.env.example)
+  file_manifest: registry/sources/acdc_release_file_manifest.csv   # 1,056 files with SHA-256
+  source_binding: configs/source_bindings/acdc.json
+  layout:
+    training: "training/patientNNN/"           # patient001-patient100
+    testing: "testing/patientNNN/"             # patient101-patient150
+    per_patient_files: [Info.cfg, MANDATORY_CITATION.md, "patientNNN_4d.nii.gz", "patientNNN_frameEE.nii.gz", "patientNNN_frameEE_gt.nii.gz", "patientNNN_frameSS.nii.gz", "patientNNN_frameSS_gt.nii.gz"]
+    frame_file_rule: "EE = Info.cfg ED and SS = Info.cfg ES, zero-padded to two digits"
+    never_read: ["patientNNN_4d.nii.gz (primary pipeline uses the released ED/ES frame files)"]
+  info_cfg_fields: {ED: "1-based ED frame number", ES: "1-based ES frame number", Group: "ACDC class", Height: "cm", Weight: "kg", NbFrame: "frame count"}
+  frame_index_convention: "ed_frame_index = Info.cfg ED - 1 (0-based, same convention as M&Ms)"
+  label_map: {0: 0, 1: 3, 2: 2, 3: 1}           # release 1 RV cavity, 2 myocardium, 3 LV cavity -> project 1 LV, 2 MYO, 3 RV (1<->3 swap)
+  geometry_rule: "frame-file affines are unit-scaled for all 150 patients; slice increment from header pixdim (z_spacing_method nifti_header_pixdim_unscaled_affine; commit 8ed5a40)"
+  roles: {training: acdc_dev, testing: acdc_test}
+  classes: [DCM, HCM, MINF, NOR, RV]           # registry label_tables.Y_acdc
+  eligibility: "Info.cfg present; both ED/ES frame images and masks decodable; eligibility never depends on class or QC outcome"
+  qc_consequence: "critical QC rows are excluded from every fit and routed QC_ABSTAIN at inference"
+mms:
+  dataset_id: MMS
+  role: external_test
+  release: "M&Ms-1 open dataset (Campello VM et al., IEEE Trans Med Imaging 2021;40(12):3543-3554); complete release, 345 cases"
+  licence: "M&Ms Research Use Agreement: verbatim personal research copy allowed (clause 4); no distribution of any portion (clause 5); citation required"
+  source_mount: /sources/mms                   # read-only; host default <local path>
+  integrity_source: "BACKUP_MANIFEST.sha256 on the backup drive (691 files)"
+  file_manifest: registry/sources/mms_full_release_manifest.csv   # identifiers, release split, paths, sizes, SHA-256, flags (no vendor/centre)
+  source_binding: configs/source_bindings/mms.json
+  release_splits: {Training/Labeled: 150, Training/Unlabeled: 25, Validation: 34, Testing: 136}
+  layout:
+    case_folder: "<release_split>/<ID>/"
+    files: ["<ID>_sa.nii.gz (4D cine)", "<ID>_sa_gt.nii.gz (4D mask)"]
+  info_csv:
+    name_on_mount: "211230_M&Ms_Dataset_information_diagnosis_opendataset.csv"
+    name_in_repository: "data/raw/mms/211230_MnMs_Dataset_information_diagnosis_opendataset.csv"
+    sha256: 612b76738262dcca277e2fe9afba2c1bfea869543fb6af82a68fe30097433fbd   # byte-identical copies
+    columns: ["", "External code", VendorName, Vendor, Centre, ED, ES, Age, Pathology, Sex, Height, Weight]
+    key: "External code"
+    rows: 345
+  frame_index_convention: "CSV ED and ES are 0-based frame indices"
+  vendor_centre_map:
+    A: {vendor_name: Siemens, centres: [1]}
+    B: {vendor_name: Philips, centres: [2, 3]}
+    C: {vendor_name: GE, centres: [4]}
+    D: {vendor_name: Canon, centres: [5]}
+  label_map: {0: 0, 1: 1, 2: 2, 3: 3}          # identity: 1 LV, 2 MYO, 3 RV
+  mask_decoding: "np.rint before label comparison (132 uint8 masks carry scl_slope 3/255)"
+  geometry_rule: "affine voxel-scaled in all 345 files; geometry from the mask header, identical to the image header"
+  eligibility:
+    name: labelled_320
+    rule: "release_split in {Training/Labeled, Validation, Testing}; CSV ED != ES; ED and ES inside the frame count; the mask is annotated on exactly the CSV ED and ES frames"
+    expected_count: 320
+    by_vendor: {A: 95, B: 125, C: 50, D: 50}
+    by_release_split: {Training/Labeled: 150, Validation: 34, Testing: 136}
+  exclusions:
+    - {code: MMS_RELEASE_UNLABELED, cases: 25, rule: "release_split == Training/Unlabeled (vendor C, centre 4); CSV ED = ES = 0 placeholders"}
+    - {code: MMS_DUPLICATE_CASE, pairs: [[C5Q2Y5, E9L4N2], [A8C9H8, Q0Q1Y4]], rule: "voxel-identical image, mask, affine and metadata; all four are Training/Unlabeled and already excluded"}
+  crosswalk: registry/semantic_registry.yaml#label_tables.mms_to_acdc     # Decision D8
+  strata: [vendor, centre, release_split, pathology, mms100_member]      # Decision D16
+  mms100_member:
+    source: registry/sources/mms_100_source_normalization_manifest.csv
+    key: case_id
+    expected_members: 100
+    by_release_split: {Testing: 50, Training/Labeled: 32, Validation: 18}
+    by_vendor: {A: 24, B: 22, C: 29, D: 25}
+    status: previously_unblinded_under_v5
+  never_analysed_stratum: {name: mms_external_never_analysed, rule: "mms_external minus mms100 members", expected_count: 220}
+  no_endpoint_before_M0: true                  # staging and hash verification only
+duplicate_image_pairs:                         # [PRESPEC] PI decision of 2026-09-28 (protocol/amendments.md); SPECIFICATION.md 4.5, 12.2, 13.1
+  detection: decoded_voxel_duplicates_within_and_across_cohorts   # validate-cohort check on the SHA-256 of the decoded staged ED/ES image voxels
+  rule: "validate-cohort --strict passes only when every detected pair is declared here with its detected frames and its action is applied; an undeclared pair, or a declared pair whose staged members no longer match on the declared frames, fails"
+  cluster_rule: "the two members of a declared pair share one bootstrap cluster_id '<DATASET>:<id1>+<id2>' (ids sorted) wherever both appear; every other case is its own cluster (cluster_id = sample_id)"
+  exclusion_rule: "an exclusion from acdc_dev, acdc_test or mms_external makes the case ineligible (exclusion_reason = reason_code; no fold, no fitting, selection or gating); an exclusion from mms_refit_eval removes the case from that partition only"
+  pairs:
+    - id: ACDC_DUP_055_118
+      cohort: acdc
+      ids: [patient055, patient118]            # training (MINF) and testing; different masks and source file hashes
+      matched_frames: [ED, ES]
+      action: exclude
+      exclude: {case: patient055, from: acdc_dev}
+      keep: {patient118: acdc_test}
+      reason_code: DUPLICATE_IMAGE_OF_TEST_CASE
+    - id: ACDC_DUP_074_076
+      cohort: acdc
+      ids: [patient074, patient076]            # both training (NOR); different masks and source file hashes
+      matched_frames: [ED, ES]
+      action: exclude
+      exclude: {case: patient076, from: acdc_dev}   # keep the lower identifier
+      keep: {patient074: acdc_dev}
+      reason_code: DUPLICATE_IMAGE_WITHIN_PARTITION
+    - id: MMS_DUP_A7G0P5_K3R0Y7
+      cohort: mms
+      ids: [A7G0P5, K3R0Y7]                    # Training/Labeled and Validation; different masks and source file hashes
+      matched_frames: [ED, ES]
+      action: exclude_and_cluster
+      exclude: {case: K3R0Y7, from: mms_refit_eval}  # A7G0P5 is in mms_refit_train
+      keep: {A7G0P5: mms_refit_train}
+      reason_code: DUPLICATE_IMAGE_OF_REFIT_TRAIN_CASE
+      note: "both stay in mms_external (320) as one bootstrap cluster"
+    - id: MMS_DUP_C8J7L5_C8O0P2
+      cohort: mms
+      ids: [C8J7L5, C8O0P2]                    # Validation and Testing; ED image only; different masks and source file hashes
+      matched_frames: [ED]
+      action: cluster
+      reason_code: null
+      note: "both stay in every partition in which they appear, as one bootstrap cluster"
+qc_severity:                                   # Decision D21 [INHERITED from P6; PRESPEC]
+  critical:                                    # row excluded from every fit; QC_ABSTAIN at inference
+    - missing_ed_or_es_mask
+    - ed_es_frame_out_of_range
+    - ed_equals_es
+    - missing_lv_ed_present
+    - missing_lv_es_present
+    - missing_rv_ed_present
+    - missing_rv_es_present
+    - missing_myo_ed_present
+    - missing_myo_es_present
+    - unexpected_label_value
+    - invalid_label_mapping
+    - integer_label_gaussian_smoothed
+    - high_mask_overlap_before_resolution
+    - spacing_nonpositive
+    - z_spacing_unavailable_for_volume
+    - lv_edv_le_lvesv
+    - rv_edv_le_rvesv
+    - lv_ef_outside_0_100
+    - rv_ef_outside_0_100
+    - myocardial_mass_nonpositive
+  high:                                        # feature-level masking (cells QC_BLOCKED); other features retained
+    - ed_es_masks_identical
+    - wall_thickness_invalid_global
+    - wall_thickness_invalid_es
+  moderate:                                    # retained; reported and used as stratifier or sensitivity
+    - extreme_robust_outlier
+    - qc_temporal_metadata_review_flag
+    - lv_rv_sv_discrepancy_gt_15_ml
+  informational:                               # retained
+    - sphericity_short_axis_approximation
+    - aha_mapping_not_feasible
+    - bsa_unavailable
+    - bmi_gt_40_mosteller_caution
+    - z_spacing_header_pixdim_fallback
+  feature_masks:
+    ed_es_masks_identical: [lv_esv_ml, lv_sv_ml, lv_ef_percent, rv_esv_ml, rv_sv_ml, rv_ef_percent, lv_myo_volume_es_ml, global_wall_thickness_es_mm, global_wall_thickening_percent, lv_area_mean_es_mm2, rv_area_mean_es_mm2, lv_compactness_mean_es, rv_compactness_mean_es, lv_eccentricity_mean_es, rv_eccentricity_mean_es]
+    wall_thickness_invalid_global: [global_wall_thickness_ed_mm, global_wall_thickness_es_mm, global_wall_thickening_percent]
+    wall_thickness_invalid_es: [global_wall_thickness_es_mm, global_wall_thickening_percent]
+  reason_payloads: "a token may carry a payload after ':' (for example unexpected_label_value:[4]); severity is keyed by the prefix"
+  unknown_reason_policy: fail_closed           # an unregistered reason is a contract error (QC_UNREGISTERED_REASON); never defaults to moderate
+  notes:
+    lv_rv_sv_discrepancy_gt_15_ml: "moderate, masks nothing: LV-RV stroke-volume mismatch also reflects regurgitation and basal-slice conventions; 15 mL is an engineering review trigger, not a clinical cut-off"
+    ed_es_masks_identical: "identical masks also trigger the critical lv_edv_le_lvesv; the high entry records the mechanism"
+qc_outlier_reference:
+  method: "robust z = 0.6745 * (x - median) / MAD; flag |z| > 3.5"   # [PRESPEC]
+  reference_partition: acdc_dev                # fitted once on ACDC development; frozen for acdc_test and mms_external (Decision D16)
+  refit_arm_reference_partition: mms_refit_train
+  features: transition_candidates              # registry features with transition_role candidate or candidate_secondary
+  min_reference_values: 5
+  zero_mad: no_flag
+  severity: moderate
+qc_panels:
+  random_per_partition: 20                     # [PRESPEC] acdc_dev, acdc_test, mms_external
+  include_all_high_and_critical: true
+  render: "ED and ES mid-ventricular short-axis slices with mask overlays and registry values"
+  output: artifacts/<run_id>/qc/panels/
+  manual_review_table: artifacts/<run_id>/qc/manual_review.parquet
+  adjudication_default: pending_review
+  partitions: {ACDC: [acdc_dev, acdc_test], MMS: [mms_external]}   # MMS panels only after M0 (build-semantics --dataset mms)
+  random_selection_salt: "qc-panel-v6|"         # [PRESPEC] pre-freeze clarification (amendments 2026-09-28): no seed is configured for the random panels
+  random_selection_rule: "within each partition, the cases not already selected for a critical or high QC reason, sorted by SHA256(salt + sample_id) hex digest ascending (ties by sample_id); the first random_per_partition"
+  note: "Automated QC is computational triage, not expert adjudication"
+# ------------------------------------------------------------------------------------------------------------------
+# protocol-v6.0.1 amendment (M&Ms-2; docs/MANUSCRIPT_PROTOCOL_V2_2026-10-02.md C-D, protocol 1.0 C.2-C.5). Read only by
+# the M&Ms-2 stages (src/tmmri/ingest/mms2.py, src/tmmri/mms2_stages.py), which hash this section explicitly; it is
+# excluded from the digest of the whole cohorts section (tmmri.config AMENDMENT_SCOPED_KEYS), so the v6.0.0 records and
+# the frozen v6.0.0 bundle stay valid.
+mms2:
+  dataset_id: MMS2
+  role: prospective_external_test
+  amendment: protocol-v6.0.1
+  lock_tag: protocol-v6.0.1                    # extract-mms2 and every M&Ms-2 compute stage refuse (exit 3) unless this annotated tag exists and HEAD descends from it
+  release: "M&Ms-2 challenge release (Multi-Disease, Multi-View and Multi-Center Right Ventricular Segmentation in Cardiac MRI); 360 subjects"
+  licence: "M&Ms-2 Research Use Agreement: personal research copy only; no distribution of any portion; citation required"
+  source_binding: configs/source_bindings/mms2.json
+  receipt: registry/sources/mms2.yaml          # archive MnM2.rar size and SHA-256; split-manifest SHA-256
+  split_manifest: registry/sources/mms2_split_manifest.csv
+  subjects: {first: "001", last: "360", count: 360}
+  partitions: {mms2_external: 180, mms2_sealed: 180}   # rule in configs/splits.yaml mms2
+  inputs:
+    files: {ed_image: "<ID>_SA_ED.nii.gz", ed_mask: "<ID>_SA_ED_gt.nii.gz", es_image: "<ID>_SA_ES.nii.gz", es_mask: "<ID>_SA_ES_gt.nii.gz"}
+    ignored: ["<ID>_SA_CINE.nii.gz (short-axis cine)", "<ID>_LA_* (long-axis images, masks and cine)"]
+    phases: from_file_names                    # ED and ES are separate 3D files; no frame index
+    extraction: "only the 4 x 180 = 720 mms2_external entries are named in the tar -T list; mms2_sealed entries are never extracted"
+    archive_layout:                            # member names read before the tag with the owner's approval (2 October 2026; file names only, no image or row content)
+      case_member: "MnM2/dataset/<ID>/<FILE>"  # <ID>_SA_ED, _SA_ED_gt, _SA_ES, _SA_ES_gt (.nii.gz), plus SA_CINE and long-axis files (ignored)
+      info_csv: MnM2/dataset_information.csv
+      readme: MnM2/readme.txt
+      listing_entries: 3964                    # all archive entries (files and folders); recorded against the listing, informational
+      check: "selection is by unique file name (HUMAN_GATE when a short-axis ED/ES name or the CSV is missing or repeated); the folder template and entry count are compared and recorded in the extraction receipt, never blocking"
+  case_ids:                                    # owner decision C (2 October 2026)
+    split_key: "raw zero-padded subject code 001-360 (registry/sources/mms2_split_manifest.csv; the split hash)"
+    case_id: "MMS2_<code> (= patient_id; e.g. MMS2_001)"
+    sample_id: "MMS2:MMS2_<code>"
+    reason: "no purely numeric token is ever a case identifier, so the case-identifier guard of tables and figures never trips on counts"
+  label_map: {0: 0, 1: 1, 2: 2, 3: 3}          # identity: 1 LV, 2 MYO, 3 RV (after np.rint)
+  geometry_rule: "v6 rule: the affine is voxel-scaled (column norms equal the header pixdim) or unit-scaled (then the header pixdim is the voxel size, z_spacing_method nifti_header_pixdim_unscaled_affine); any other affine, or image/mask or ED/ES headers with different shape, affine or pixdim, is rejected at staging with INPUT_GEOMETRY_INCONSISTENT"
+  evidence_profile: mms                        # registry evidence_sources key reused for M&Ms-2 (same evidence tiers; no height/weight, so BSA features are MISSING_SOURCE)
+  typed_b_metadata:                            # overlay of registry metadata_columns applied to the typed-B contract of MMS2 rows only (the frozen registry stays unchanged)
+    dataset_source: {enum_add: [MMS2]}
+    split: {enum_add: [mms2_external]}
+    ed_frame_index: {required: false, note: "null for M&Ms-2: separate ED and ES files, phases from the file names"}
+    es_frame_index: {required: false, note: "null for M&Ms-2"}
+  registry_vendor_names: [Siemens, GE, Philips]   # normalized VENDOR values that enter typed-B scanner_vendor; any other release string leaves it null
+  info_csv:
+    name_in_archive: dataset_information.csv
+    external_copy: MMS2_INFO_EXTERNAL.csv      # the only CSV written: external rows, original header and strings
+    status: header_read_before_tag_with_owner_approval   # 2 October 2026: the header line only (column names), no subject row; values are checked at extraction
+    header_observed: "SUBJECT_CODE,DISEASE,VENDOR,SCANNER,FIELD (comma-separated, CRLF line endings; no SEX and no AGE column)"
+    read_by: "src/tmmri/ingest/mms2.py only, into memory; mms2_sealed rows are dropped before any write and their values are never parsed"
+    key: SUBJECT_CODE
+    columns:                                   # exactly these five; an unknown or missing column fails closed (HUMAN_GATE, exit 8)
+      SUBJECT_CODE: {role: case_id, type: subject_code}            # integer 1-360 or zero-padded 001-360 (fail closed otherwise)
+      DISEASE:                                 # fail closed (HUMAN_GATE) only on a value outside this synonym table (case-insensitive, white space trimmed)
+        role: pathology
+        type: category
+        values: [NOR, LV, HCM, ARR, FALL, CIA, TRI, DRV]
+        aliases:
+          Normal: NOR
+          Dilated left ventricle: LV
+          Hypertrophic cardiomyopathy: HCM
+          Congenital arrhythmogenesis: ARR
+          Arrhythmogenic: ARR
+          Tetralogy of Fallot: FALL
+          Interatrial communication: CIA
+          Tricuspid regurgitation: TRI
+          Dilated right ventricle: DRV
+          RV: DRV                              # the release spells dilated right ventricle "RV" (distinct values read before the tag, owner decision D-2, 3 October 2026)
+      VENDOR: {role: vendor, type: vendor}     # data-driven descriptive stratum: any value accepted and kept verbatim (vendor_release); normalized to Siemens, GE or Philips when it names exactly one of them, else kept as is
+      SCANNER: {role: scanner, type: free_text}             # data-driven descriptive stratum; verbatim
+      FIELD: {role: field_strength, type: free_text}        # data-driven descriptive stratum; verbatim string (never parsed or range-checked)
+    pathology_codes:                           # release codes (M&Ms-2 challenge description)
+      NOR: normal
+      LV: dilated left ventricle
+      HCM: hypertrophic cardiomyopathy
+      ARR: congenital arrhythmogenesis
+      FALL: tetralogy of Fallot
+      CIA: interatrial communication
+      TRI: tricuspid regurgitation
+      DRV: dilated right ventricle
+  crosswalk:                                   # evaluation-only (Decision D8 vocabulary); there is no MINF in M&Ms-2
+    NOR: {acdc: NOR, compatibility: HARMONIZABLE_SAME_DEFINITION, pathology_group: NOR}
+    HCM: {acdc: HCM, compatibility: HARMONIZABLE_SAME_DEFINITION, pathology_group: HCM}
+    LV: {acdc: DCM, compatibility: HARMONIZABLE_NOT_EXACT, pathology_group: DLV, note: "non-equivalent: ACDC DCM also requires LVEF < 40 %"}
+    ARR: {acdc: RV, compatibility: HARMONIZABLE_NOT_EXACT, pathology_group: RV_FAMILY}
+    FALL: {acdc: RV, compatibility: HARMONIZABLE_NOT_EXACT, pathology_group: RV_FAMILY}
+    CIA: {acdc: RV, compatibility: HARMONIZABLE_NOT_EXACT, pathology_group: RV_FAMILY}
+    TRI: {acdc: RV, compatibility: HARMONIZABLE_NOT_EXACT, pathology_group: RV_FAMILY}
+    DRV: {acdc: RV, compatibility: HARMONIZABLE_NOT_EXACT, pathology_group: RV_FAMILY}
+  crosswalk_rule: "class metrics on the same-definition subset (NOR, HCM) only; the non-equivalent strata (DLV -> DCM; RV_FAMILY -> RV, pooled as one predeclared stratum) are reported as d_model distributions and never pooled"
+  duplicates:
+    detection: decoded_voxel_sha256_of_the_staged_ed_es_images      # the decoded-voxel rule of validate-cohort, against ACDC, M&Ms-1 and within M&Ms-2
+    rule: "every mms2_external case whose decoded ED or ES image voxels equal those of an ACDC, M&Ms-1 or other M&Ms-2 case is excluded from mms2_external with the reason code below (both members of a within-M&Ms-2 match); ACDC and M&Ms-1 cases are unchanged; the link to mms2_sealed (never extracted under v6) is recorded for the v7 ingest"
+    reason_codes: {acdc: DUPLICATE_IMAGE_OF_ACDC_CASE, mms1: DUPLICATE_IMAGE_OF_MMS1_CASE, within_mms2: DUPLICATE_IMAGE_WITHIN_MMS2}
+  reason_codes:                                # M&Ms-2 codes (registry/reason_codes.yaml belongs to the frozen v6.0.0 bundle and stays unchanged)
+    INPUT_GEOMETRY_INCONSISTENT: "affine scaling differs from the header pixdim (neither voxel- nor unit-scaled), or image/mask or ED/ES headers differ; case not staged"
+    DUPLICATE_IMAGE_OF_ACDC_CASE: "decoded ED or ES image voxels equal an ACDC case; excluded from mms2_external"
+    DUPLICATE_IMAGE_OF_MMS1_CASE: "decoded ED or ES image voxels equal an M&Ms-1 case; excluded from mms2_external"
+    DUPLICATE_IMAGE_WITHIN_MMS2: "decoded ED or ES image voxels equal another mms2_external case; both excluded"
+    HUMAN_GATE: "a release fact (archive layout, CSV column or value) differs from this declaration; fail closed (exit 8) for an owner decision"
+  qc_severity: "the v6 QC severity model (qc_severity above) applies unchanged"
+  qc_panels: {partitions: [mms2_external]}     # same selection rule, salt and count as qc_panels above
+  strata:
+    prespecified: [pathology_group]            # pathology_group pools ARR, FALL, CIA, TRI and DRV as RV_FAMILY (family F_MMS2_external_reconstruction)
+    descriptive: [vendor, scanner, field_strength]   # owner decision B: data-driven descriptive strata (values unverified before the tag); never tested
+    not_available: "centre, release split, sex and age are not columns of the release CSV (header read before the tag): reported as not available"
+  endpoints:
+    h_primary_3:
+      id: H-primary-3
+      partition: mms2_external
+      bundle: "the unchanged v6.0.0 bundle (artifacts/<run_id>/.stages/FROZEN.json, hash-verified)"
+      estimand: rho                            # the primary estimand of configs/bootstrap.yaml primary_test, 95 % cluster bootstrap
+      rule: "passes when the 95 % cluster-bootstrap lower bound of rho exceeds 0.10"
+      threshold: 0.10
+      family: own_one_test_family
+      precision: "with about 180 clusters it passes only if rho is about 0.28 or more"
+    h4:                                        # Decision D36: second confirmatory family (owner risk management), declared before any M&Ms-2 byte is read
+      id: H4
+      partition: mms2_external                 # confirmatory here only
+      descriptive_partitions: [acdc_test, mms_external]   # same code, labelled "registered after unblinding"; never a test
+      bundle: "the unchanged v6.0.0 bundle (artifacts/<run_id>/.stages/FROZEN.json, hash-verified)"
+      origin: "generated on the historical M&Ms-1 evaluation (per-target rho_j: LVEF 0.63 and RVEF 0.50 transferred, the absolute volumes did not); tested prospectively on mms2_external"
+      multiplicity: {method: bonferroni_within_family, family_alpha: 0.05, n_tests: 2, interval: two_sided_percentile_97_5}   # each test judged by its two-sided 97.5 % interval
+      family_scope: "separate from H-primary-3 (its own one-test family) and from F6; no further adjustment"
+      bootstrap:
+        replicates: 2000
+        seed: 20260928
+        unit: cluster_id                       # paired: the same cluster draw for every member of a comparison
+        sub_seed_rule: "first 4 bytes (big-endian) of SHA256('<seed>|<hypothesis id>'): H4a 1958159060, H4b 1591327988"
+      ne_rules: "the v6 rules: too few estimable targets (rho_EF: both EF targets; delta_rho: bootstrap.yaml primary_test.min_estimable_targets) or fewer than fixed_model_bootstrap.min_valid_fraction valid replicates give NE with a reason"
+      record: "metrics/confirmatory_h4/h4_<partition>.json (evaluate-h4 --split <partition>; once-only)"
+      hypotheses:
+        h4a:
+          id: H4a
+          name: ratio concepts transfer
+          estimand: rho_EF
+          definition: "rho of (E1) with the code of H-primary-3 (fit-SD-normalized MAE of ridge against the train-mean predictor), restricted to the ejection-fraction targets of the registry primary family"
+          targets: [lv_ef_percent, rv_ef_percent]
+          threshold: 0.10
+          rule: "passes when the two-sided 97.5 % cluster-bootstrap lower bound of rho_EF exceeds 0.10; both EF targets must be estimable, otherwise NE"
+        h4b:
+          id: H4b
+          name: label-free harmonization helps
+          estimand: delta_rho
+          harmonization: H-a                   # S3 variant H-a (configs/trust.yaml s3_harmonization): A re-standardized with the unlabelled target partition's mean and SD
+          definition: "rho(S3 H-a; T, lambda and the predictor frozen) minus rho(frozen bundle) over the primary family, on the same rows"
+          threshold: 0.0
+          rule: "passes when the two-sided 97.5 % paired cluster-bootstrap lower bound of delta_rho exceeds 0"
+    secondary_family: F_MMS2_external_reconstruction    # per-target and prespecified-stratum tests; BH within this family only
+    other_measures: "label-free shift-audit AUROC acdc_dev versus mms2_external; audited-predictor accuracy, macro-F1, one-vs-rest AUROC and ECE on NOR+HCM; d_model distributions of DLV and RV_FAMILY; routes, coverage and fidelity of both rulebooks"

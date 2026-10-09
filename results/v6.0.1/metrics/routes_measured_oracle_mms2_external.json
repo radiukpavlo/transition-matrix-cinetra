@@ -1,0 +1,31 @@
+{
+  "abstention": 1.0,
+  "abstention_by_reason": {
+    "RULEBOOK_EMPTY": {
+      "n": 180,
+      "rate": 1.0
+    }
+  },
+  "accepted_coverage": 0.0,
+  "activation": 0.0,
+  "audit_tax": null,
+  "conflict_encounter_rate": 0.0,
+  "conflict_rate": 0.0,
+  "covered_fidelity": null,
+  "covered_reference_accuracy": null,
+  "faithful_coverage": 0.0,
+  "n_accepted": 0,
+  "n_accepted_reference_known": 0,
+  "n_attempted": 180,
+  "n_clusters": 180,
+  "n_processed": 180,
+  "n_qc_abstain": 0,
+  "reference": "crosswalk_same_definition_only",
+  "route_has_empirical_support": false,
+  "routes": {
+    "EMPTY_RULEBOOK": 180
+  },
+  "rulebook": "measured_oracle",
+  "soft_candidates_rate": 0.0,
+  "split": "mms2_external"
+}

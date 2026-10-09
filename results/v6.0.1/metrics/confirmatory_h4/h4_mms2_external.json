@@ -1,0 +1,433 @@
+{
+  "analysis_label": null,
+  "bootstrap": {
+    "interval": "percentile_two_sided_97.5",
+    "level": 0.975,
+    "min_valid_fraction": 0.95,
+    "paired": "the same cluster draw for both members of delta_rho",
+    "replicates": 2000,
+    "seed": 20260928,
+    "sub_seed_rule": "first 4 bytes (big-endian) of SHA256('<seed>|<hypothesis id>'): H4a 1958159060, H4b 1591327988",
+    "sub_seeds": {
+      "H4a": 1958159060,
+      "H4b": 1591327988
+    },
+    "unit": "cluster_id"
+  },
+  "bundle": "the unchanged v6.0.0 bundle (artifacts/<run_id>/.stages/FROZEN.json, hash-verified)",
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "confirmatory": true,
+  "evidence": "confirmatory; prospective (protocol-v6.0.1)",
+  "family": "H4",
+  "family_decision": {
+    "confirmatory": true,
+    "failed": [
+      "H4b"
+    ],
+    "family": "H4",
+    "multiplicity": {
+      "family_alpha": 0.05,
+      "interval": "two_sided_percentile_97_5",
+      "interval_level": 0.975,
+      "method": "bonferroni_within_family",
+      "n_tests": 2,
+      "per_test_alpha": 0.025
+    },
+    "not_estimable": [],
+    "passed": [
+      "H4a"
+    ],
+    "scope": "separate from H-primary-3 (its own one-test family) and from F6; no further adjustment"
+  },
+  "fitting": "none on the evaluated partition except the label-free H-a mean and SD of A (transductive, S3)",
+  "h4a": {
+    "ci_lower": 0.5578134272967761,
+    "ci_upper": 0.6516436392788455,
+    "estimable_targets": [
+      "lv_ef_percent",
+      "rv_ef_percent"
+    ],
+    "estimand": "rho_EF",
+    "family": [
+      "lv_ef_percent",
+      "rv_ef_percent"
+    ],
+    "interval": "percentile_two_sided_97.5",
+    "level": 0.975,
+    "min_estimable": 2,
+    "n_boot": 2000,
+    "n_boot_valid": 2000,
+    "n_cases": 180,
+    "n_clusters": 180,
+    "n_estimable": 2,
+    "n_units": 180,
+    "normalization": "fit_partition_sd",
+    "reason": null,
+    "resampling_unit": "cluster_id",
+    "rho": 0.6057473369352957,
+    "rho_j": {
+      "lv_ef_percent": 0.665847485371887,
+      "rv_ef_percent": 0.5456471884987044
+    },
+    "rho_j_ci": {
+      "lv_ef_percent": [
+        0.6202198297241456,
+        0.7084843988607288
+      ],
+      "rv_ef_percent": [
+        0.47116132976412256,
+        0.6117573762657673
+      ]
+    },
+    "seed": 1958159060,
+    "status": "EVALUATED",
+    "valid_fraction": 1.0,
+    "weighting": "patient"
+  },
+  "h4b": {
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 1591327988,
+      "unit": "cluster_id",
+      "weighting": "patient"
+    },
+    "ci_lower": -0.018784544546842058,
+    "ci_upper": 0.02210988314741308,
+    "comparator": "H-a",
+    "difference": 0.0011874423766931597,
+    "direction": "comparator_minus_reference",
+    "estimable_targets": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "estimand": "delta_rho",
+    "family": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "harmonization": {
+      "fallback_groups": [],
+      "groups": {
+        "all": {
+          "degenerate_kept_columns": [],
+          "n_fit_rows": 180,
+          "n_rows": 180
+        }
+      },
+      "label_free_assertion": "passed (representation columns only; B and labels read only to evaluate)",
+      "statistics": {
+        "all": {
+          "group": "all",
+          "mu": [
+            0.1802751429213229,
+            0.2213207341833864,
+            0.0875578786704782,
+            0.024003059757083087,
+            0.25676023385601476,
+            0.9586817879830563,
+            0.587880049687996,
+            0.1851872359642385,
+            0.6328187257244259,
+            0.4603534809455021,
+            0.7349461048257842,
+            0.016138165134226747,
+            0.19878569512633398,
+            0.08651535848018387,
+            0.18691988909331733,
+            0.14412812542044443,
+            0.23836120153781337,
+            0.009664283525597813,
+            0.57764801639424,
+            0.16724027841604852,
+            0.6024321609724018,
+            0.468641000615349,
+            0.7026468068617292,
+            0.015515763357118965,
+            0.18567536530979475,
+            0.22604680909971542,
+            0.09104126074466462,
+            0.024993509294656092,
+            0.2656873797607769,
+            0.9732252812108678,
+            0.4935684302581324,
+            0.20259096319721925,
+            0.5103526367247062,
+            0.3068627471588229,
+            0.6766083542823158,
+            0.008430997401916284,
+            0.2032973840467496,
+            0.0709283646944321,
+            0.19671927789664906,
+            0.15978064009470752,
+            0.23869379788088002,
+            0.009884856887467743,
+            0.5101363011076935,
+            0.1721938916926218,
+            0.5405674548252584,
+            0.37353356334006466,
+            0.6470911741810527,
+            0.008458864499748189,
+            0.016138165134226747,
+            0.008430997401916284,
+            0.007707167732310472,
+            0.009664283525597813,
+            0.009884856887467743,
+            -0.0002205733618699234,
+            0.015515763357118965,
+            0.008458864499748189,
+            0.007056898857370767
+          ],
+          "n_rows": 180,
+          "sd": [
+            0.043381247423428713,
+            0.031864385031068976,
+            0.04837219967126788,
+            0.026657276722459173,
+            0.08480031493779222,
+            0.01617653552335362,
+            0.18604892061561593,
+            0.054942757591920556,
+            0.21467428668117539,
+            0.1685484790609665,
+            0.23202120068881305,
+            0.007002744395987347,
+            0.08700433537776192,
+            0.032087324399601345,
+            0.08830819822589209,
+            0.07258114644335087,
+            0.10458961716197691,
+            0.003725652653817692,
+            0.15679693873433193,
+            0.04712524797334864,
+            0.17192145288606617,
+            0.14794576025153192,
+            0.1848872276667378,
+            0.007479279612621245,
+            0.04410445083136708,
+            0.03167777223082609,
+            0.04916210688294533,
+            0.027486127832710452,
+            0.08686432154406802,
+            0.012403400557357926,
+            0.15932307729944686,
+            0.0716986348705796,
+            0.18081870531470218,
+            0.11245385805826004,
+            0.2281710659751173,
+            0.005594944443821839,
+            0.09173754017429886,
+            0.029194553041393304,
+            0.09169258086244826,
+            0.07678154806385133,
+            0.10842846482261213,
+            0.0038044287722666555,
+            0.14535542810793606,
+            0.05345555491142115,
+            0.16547461922606965,
+            0.12218507801817582,
+            0.1830596810048971,
+            0.005373596236145012,
+            0.007002744395987347,
+            0.005594944443821839,
+            0.0032342281566954388,
+            0.003725652653817692,
+            0.0038044287722666555,
+            0.0010054544486898357,
+            0.007479279612621245,
+            0.005373596236145012,
+            0.003162148792797095
+          ]
+        }
+      },
+      "variant": "H-a"
+    },
+    "interval": "percentile_two_sided_97.5",
+    "level": 0.975,
+    "n_boot_valid": 2000,
+    "n_cases": 180,
+    "n_clusters": 180,
+    "n_rows": 180,
+    "n_units": 180,
+    "reason": null,
+    "reference": "frozen",
+    "rho_comparator": 0.3124289606956953,
+    "rho_j": {
+      "lv_edv_ml": {
+        "ci_lower": 0.048597605874201,
+        "ci_upper": 0.12305558137412277,
+        "comparator": 0.14672365901745477,
+        "difference": 0.08433961744902974,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "reference": 0.06238404156842503,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "lv_ef_percent": {
+        "ci_lower": -0.1597443980876226,
+        "ci_upper": -0.06144392920362007,
+        "comparator": 0.5556842475668242,
+        "difference": -0.11016323780506276,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "reference": 0.665847485371887,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "lv_esv_ml": {
+        "ci_lower": 0.024685934478314152,
+        "ci_upper": 0.09711060479443366,
+        "comparator": 0.4117528351145553,
+        "difference": 0.05864609416974198,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "reference": 0.3531067409448133,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "lv_myocardial_mass_ed_g": {
+        "ci_lower": -0.22388143490214268,
+        "ci_upper": -0.05734598553632048,
+        "comparator": 0.13630163314904264,
+        "difference": -0.13984755898508716,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "reference": 0.2761491921341298,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "rv_edv_ml": {
+        "ci_lower": 0.001983262601752222,
+        "ci_upper": 0.10409411887014254,
+        "comparator": 0.13484089213036432,
+        "difference": 0.052210324888751436,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "reference": 0.08263056724161288,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "rv_ef_percent": {
+        "ci_lower": -0.054990661374232815,
+        "ci_upper": 0.0168187080507034,
+        "comparator": 0.5252348556072857,
+        "difference": -0.02041233289141875,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "reference": 0.5456471884987044,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "rv_esv_ml": {
+        "ci_lower": 0.02899208804357156,
+        "ci_upper": 0.14327249790810903,
+        "comparator": 0.27646460228434055,
+        "difference": 0.08353918981089781,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "reference": 0.19292541247344275,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      }
+    },
+    "rho_reference": 0.31124151831900215,
+    "rows_rule": "per target, rows where the reference value and both reconstructions are finite",
+    "status": "EVALUATED",
+    "trust_s3_harmonization": {
+      "degenerate_sd": "keep_frozen_sd",
+      "forbidden_inputs": [
+        "B",
+        "labels",
+        "outcomes"
+      ],
+      "frozen": [
+        "transition_T",
+        "lambda",
+        "predictor"
+      ],
+      "min_rows_per_vendor": 10,
+      "reporting": "transductive_adaptation",
+      "variants": {
+        "H-a": "target_partition_mean_sd",
+        "H-b": "per_vendor_mean_sd_within_target"
+      }
+    },
+    "valid_fraction": 1.0
+  },
+  "hypotheses": {
+    "H4a": {
+      "definition": "rho of (E1) with the code of H-primary-3 (fit-SD-normalized MAE of ridge against the train-mean predictor), restricted to the ejection-fraction targets of the registry primary family",
+      "estimand": "rho_EF",
+      "id": "H4a",
+      "name": "ratio concepts transfer",
+      "rule": "passes when the two-sided 97.5 % cluster-bootstrap lower bound of rho_EF exceeds 0.10; both EF targets must be estimable, otherwise NE",
+      "targets": [
+        "lv_ef_percent",
+        "rv_ef_percent"
+      ],
+      "threshold": 0.1
+    },
+    "H4b": {
+      "definition": "rho(S3 H-a; T, lambda and the predictor frozen) minus rho(frozen bundle) over the primary family, on the same rows",
+      "estimand": "delta_rho",
+      "harmonization": "H-a",
+      "id": "H4b",
+      "name": "label-free harmonization helps",
+      "rule": "passes when the two-sided 97.5 % paired cluster-bootstrap lower bound of delta_rho exceeds 0",
+      "threshold": 0.0
+    }
+  },
+  "n_cases": 180,
+  "n_clusters": 180,
+  "origin": "generated on the historical M&Ms-1 evaluation (per-target rho_j: LVEF 0.63 and RVEF 0.50 transferred, the absolute volumes did not); tested prospectively on mms2_external",
+  "partition": "mms2_external",
+  "reconstructions": "reconstructed/bhat_mms2_external.parquet (evaluate:mms2_external; raw B-hat, the H-primary substrate)",
+  "reference": "fit-partition (acdc_dev) mean and SD; never re-estimated on the evaluated partition",
+  "results": [
+    {
+      "ci_lower": 0.5578134272967761,
+      "ci_upper": 0.6516436392788455,
+      "criterion_met": true,
+      "estimand": "rho_EF",
+      "estimate": 0.6057473369352957,
+      "hypothesis_id": "H4a",
+      "interval": "percentile_two_sided_97.5",
+      "n_cases": 180,
+      "n_clusters": 180,
+      "passed": true,
+      "reason": null,
+      "rule": "passes when the two-sided 97.5 % cluster-bootstrap lower bound of rho_EF exceeds 0.10; both EF targets must be estimable, otherwise NE",
+      "status": "PASSED",
+      "tested": true,
+      "threshold": 0.1
+    },
+    {
+      "ci_lower": -0.018784544546842058,
+      "ci_upper": 0.02210988314741308,
+      "criterion_met": false,
+      "estimand": "delta_rho",
+      "estimate": 0.0011874423766931597,
+      "hypothesis_id": "H4b",
+      "interval": "percentile_two_sided_97.5",
+      "n_cases": 180,
+      "n_clusters": 180,
+      "passed": false,
+      "reason": null,
+      "rule": "passes when the two-sided 97.5 % paired cluster-bootstrap lower bound of delta_rho exceeds 0",
+      "status": "FAILED",
+      "tested": true,
+      "threshold": 0.0
+    }
+  ],
+  "schema": "tmmri.h4_family/1"
+}

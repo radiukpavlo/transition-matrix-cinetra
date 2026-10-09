@@ -1,0 +1,62 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+      "dirty": false
+    },
+    "config_hash": "ef026f9477e5c133abb4c310eff938e3766e03456904bb6413ff747df7058615",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/evaluate__mms_external.json": "3b40f0ddad22d32636928e25d3d5e70397a469b5c06d88b0a6750504e221c272",
+      "run:comparators/cart_f8/FROZEN_F8.json": "a210c91735665677541812383ef5b491649bd9bd96648962a9f0b53dd07e9ac1",
+      "run:contracts/cohort_MMS.parquet": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/A_MMS.parquet": "e5ee5bf7f2356864eba7e159a56496e81071998df9c456b86d0cc334f18e9930",
+      "run:inference/d_model_mms_external.parquet": "d71c7e1b02a136e7e84c0a79ba1d61bc36e546edfc7776df9fa4af716bf4dfb6",
+      "run:reconstructed/bhat_mms_external.parquet": "651cf14606df69d5705206b2602315b2f746df0bf68ff0c21c9b0a01785d5c22",
+      "run:semantics/B_MMS.parquet": "9d721414227b06d18f45fc579decca4b114dcea774847d1b736075f8ddfbbe3b"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:comparators/cart_f8/evaluation/leaves_mms_external.parquet": "4b8e72ce1ecb6c3934422277ccfe4d9b0176eeae22a958e6d3a6d5ade5d5e5b5",
+      "run:comparators/cart_f8/evaluation/metrics_mms_external.json": "542d2fefa6a410fc01cf9f0c28b6aedf5ad48e1a94f1902bf5e1cc698768b4de",
+      "run:comparators/cart_f8/evaluation/predictions_mms_external.parquet": "725802a1d1d9278fc0f56dbd55e0b2b5ffd0f0f9ce72168b545483b78ccea56f"
+    },
+    "params": {
+      "config_sections": [
+        "registry.primary_rulebook_antecedent_candidates",
+        "registry.label_tables",
+        "cohorts.qc_severity",
+        "reason_codes"
+      ],
+      "lane_configs": [
+        "configs/cart_f8.yaml"
+      ],
+      "split": "mms_external",
+      "status": "post_hoc"
+    },
+    "stage": "evaluate-cart-surrogate:mms_external",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "118cf6146b6059c00baaa3e120d94aba40f8be310df14ac3a4b29db3abf76e01",
+  "run_log": {
+    "host": "80d9975082e2",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 0.174,
+    "started_utc": "2026-10-03T13:30:29+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

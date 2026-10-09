@@ -1,0 +1,77 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "71dd627cec8dd020866a614f75f5413f08c4b799df19483be5abe0e05e392ca7",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/evaluate__acdc_test.json": "afa7951963c65623710c97adfc30fa3defd6584ec2984d947b8f54b25749450e",
+      "run:.stages/evaluate__mms_external.json": "3b40f0ddad22d32636928e25d3d5e70397a469b5c06d88b0a6750504e221c272",
+      "run:.stages/fit-refit-arm.json": "55b9aa4fc3a0183d00e3480e941881d768b7fa45a17848180bc7fbb9cfc3ca6a",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/cohort_MMS.parquet": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:formal/A_MMS.parquet": "e5ee5bf7f2356864eba7e159a56496e81071998df9c456b86d0cc334f18e9930",
+      "run:formal/d_model_crossfit_ACDC_dev.parquet": "70c4f247a20aa3c0f0bf38074eb7e5a642de810cf7948dbecfbcc99b4362eb62",
+      "run:formal/d_model_predictor.joblib": "553193fd260f2394128e8ea1742ea364e74e75e5a01c3ebfe98ae8d175e55bc6",
+      "run:formal/refit_arm/d_model_mms_refit.parquet": "d5c3054155365bddcf363de0a15a53242cef6e896d68fc6897ec7316247cf51e",
+      "run:formal/refit_arm/d_model_predictor.joblib": "a6757d94e98ca9106ddc545fbd2226e93f2d072e0bf076b26282e0bd918400bf",
+      "run:inference/d_model_acdc_test.parquet": "6c837fa91d5fd1d3ac74953f940f9e1cfa86988f907516244cd4a92e3f0c6c6b",
+      "run:inference/d_model_mms_external.parquet": "d71c7e1b02a136e7e84c0a79ba1d61bc36e546edfc7776df9fa4af716bf4dfb6",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:semantics/B_MMS.parquet": "9d721414227b06d18f45fc579decca4b114dcea774847d1b736075f8ddfbbe3b",
+      "run:semantics/refit_arm/B_MMS_refit.parquet": "f81c9c19d5593389c0efa987319f8a5bd9cdeebf4ed685201e00de07f69db42d"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:metrics/predictor_acdc_dev_oof.json": "3088fddd6860595f9bc4decdceb839d671a09d940a041f4a793bf2494075eb14",
+      "run:metrics/predictor_acdc_test.json": "a160f14a18593668eb86e8853e9bdef2699ac41efa55491662f5645b59572125",
+      "run:metrics/predictor_confusion.parquet": "19e9e291b1c4d7593ef96541872d2412534f1c64839038b07791d052be51d3d7",
+      "run:metrics/predictor_mms_external.json": "efa9edae1a21b356dda1e6ec370ec48d9f02e14a8c5dec2a7b72cefc850770f4",
+      "run:metrics/predictor_summary.json": "b400c3b735a2010a1da642dbe62881fe1a2ff67e756a7a33c74c433f4522f191",
+      "run:metrics/refit_arm/predictor_mms_refit_eval.json": "23d25c94dd03f7c3ed715ac4135d78c742e6d74ca47af4a8f5746558b18f3c01"
+    },
+    "params": {
+      "config_sections": [
+        "formal.audited_predictor",
+        "formal.comparator_predictor",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.calibration",
+        "cohorts.qc_severity",
+        "registry.label_tables"
+      ],
+      "partitions": [
+        "acdc_dev_oof",
+        "acdc_test",
+        "mms_external",
+        "mms_refit_eval"
+      ]
+    },
+    "stage": "summarize-predictor",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "6760133f37bebb9e2c3039abf313c9dd19fc7560e442a4e2abc88a4fb86519a4",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 2.366,
+    "started_utc": "2026-10-03T09:45:28+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

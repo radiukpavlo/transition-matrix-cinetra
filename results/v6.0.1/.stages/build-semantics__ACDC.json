@@ -1,0 +1,51 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "679c8f325cf63803e551703cb441b30790841753f73ef394ab052f800af7648a",
+    "inputs": {
+      "data:manifests/staging_ACDC.json": "6a1f70128dee7420f79b65c02719917887a00a101eac6b38adb5672a57f59160",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:qc/manual_review.parquet": "d017034719d1333c607ed8fe9179ce676149f896cce53af968d4ed45f6c119f9",
+      "run:qc/outlier_reference.json": "3a35ea7875fe344ef1e8595ecfea3f78073f0be07468d093e2434f69b046024c",
+      "run:qc/panels_ACDC.json": "94b92b19aaef24bd4678960f37283078fb42e03ea2269e1a65aa03a22c807baa",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "params": {
+      "config_sections": [
+        "cohorts",
+        "registry",
+        "reason_codes",
+        "transition.targets.primary_family"
+      ]
+    },
+    "stage": "build-semantics:ACDC",
+    "status": "BUILT"
+  },
+  "payload_sha256": "4da605c77732b62baa1dc24d7d8499723b9d382b4e49a10505121af55d465af0",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 18.759,
+    "started_utc": "2026-10-03T09:42:04+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

@@ -1,0 +1,160 @@
+# Public edition of the registered file `configs/f9_cnn.yaml` (protocol-v6.0.1, git blob `c575500d8062`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
+# F9, the trained CNN comparator registered by the protocol-v6.0.1 amendment (docs/MANUSCRIPT_PROTOCOL_V2_2026-10-02.md,
+# Section D item 10, Section E S5 and Section H). Architecture and training are NEURAL-TM-1.0 Sections 4.1-4.2 verbatim
+# (docs/NEURAL_ENCODER_EXPERIMENT_PROTOCOL.md; protocol/neural_encoder_v6.0.1.design.json), with the F9 seeds of protocol 2.1.
+# Code: src/tmmri/neural/ (model, data, fit_spec, train, selection, f9_stages); Modal backend scripts/cloud/modal_train.py.
+# F9 results cannot change paper 2's frozen design (firewall). After the protocol-v6.0.1 tag a change to any value needs a
+# dated row in protocol/amendments.md and a new tag.
+specification_version: "6.0.1"
+protocol_tag: protocol-v6.0.1
+design_id: NEURAL-TM-1.0
+model_id: f9
+status: implemented_not_run
+class_order: [DCM, HCM, MINF, NOR, RV]          # registry label_tables.Y_acdc; logits, probabilities and the head follow it
+training_partition: acdc_dev                     # nothing fitted or selected reads acdc_test, M&Ms-1 or M&Ms-2 rows
+
+input:                                           # contract C3 tensor cache written by build-tensor-cache (configs/neural_input.yaml)
+  cache: neural_cache/acdc_dev                   # <sample_id>.npz (float32 ed/es in [0,1], ed_geom/es_geom) + manifest.csv
+  size_pixels: [224, 224]
+  inplane_spacing_mm: 1.5                        # augmentation translations are converted with this spacing
+  channels: grey_replicated_to_3_at_model_input  # never stored; F9Net.forward replicates and normalizes
+  channel_mean: [0.485, 0.456, 0.406]
+  channel_sd: [0.229, 0.224, 0.225]
+  geometry_scalars: [centred_slice_position_mm_div_100, corrected_slice_increment_mm_div_10]
+  verify_npz_sha256: true                        # every job checks the manifest SHA-256 and every file it reads
+
+weights:                                         # SHA-256 pinned before training (NEURAL-TM-1.0 4.1)
+  registry: registry/weights.yaml                # written by verify-torch-weights; F9 references the entry by name
+  name: resnet18_imagenet1k_v1
+  torchvision_enum: ResNet18_Weights.IMAGENET1K_V1
+  file: resnet18-f37072fd.pth                    # torchvision file name; local copy under $TORCH_HOME/hub/checkpoints/
+
+architecture:
+  backbone: torchvision_resnet18                 # shared across all slices of both phases
+  backbone_global_pool: spatial_mean_512         # equals AdaptiveAvgPool2d(1); written as a mean so the CUDA backward is deterministic
+  slice_projection: {in_features: 514, out_features: 128, activation: GELU, shared_across_phases: true}   # 512 pool + 2 geometry scalars
+  attention: {layers: [128, 64, 1], activation: tanh, softmax: over_valid_slices_only, shared_across_phases: true}
+  phase_pooling: [attention_weighted_mean, elementwise_max]   # 256 per phase; padding positions never contribute
+  phase_combination: [ED, ES, ED_minus_ES]                    # 768
+  bottleneck: {layers: [768, 256, 64], activation: GELU_after_each_linear, dropout_after_first_gelu: 0.25}
+  activations_A: 64                              # the last 64 activations (contract C4 activations a_000..a_063)
+  head: Linear(64,5)                             # no skip connection, measured concept, metadata bypass or second head
+  batchnorm: running_statistics_frozen_at_pretrained_values_in_every_candidate_affine_trainable_only_in_unfrozen_blocks
+
+candidates:                                      # exactly six; other ResNet layers stay frozen
+  - {id: c1, unfreeze: layer4, lr_backbone: 0.00001}
+  - {id: c2, unfreeze: layer4, lr_backbone: 0.00003}
+  - {id: c3, unfreeze: layer4, lr_backbone: 0.0001}
+  - {id: c4, unfreeze: layer3+layer4, lr_backbone: 0.00001}
+  - {id: c5, unfreeze: layer3+layer4, lr_backbone: 0.00003}
+  - {id: c6, unfreeze: layer3+layer4, lr_backbone: 0.0001}
+new_layer_lr_multiplier: 10                      # slice projection, attention, bottleneck and head train at 10x the backbone rate
+
+optimizer: {name: AdamW, weight_decay: 0.0001, betas: [0.9, 0.999], eps: 0.00000001, weight_decay_scope: all_trainable_parameters}
+gradient_clip_norm: 5.0
+schedule: {name: cosine, t_max_epochs: 80, step: per_epoch, eta_min: 0.0, refit: same_schedule_stopped_at_refit_epochs}
+batch:
+  effective_patients: 4
+  micro_batch_patients: 4                        # no accumulation on 24-48 GB cards; a smaller value accumulates to the same weighted mean
+  patient_order: reshuffled_each_epoch           # numpy default_rng([seed, epoch]); torch reseeded per epoch from SHA-256(seed|epoch)
+loss: {name: class_weighted_cross_entropy, class_weights: inverse_frequency_on_fitting_patients_normalized_to_mean_1, reduction: weighted_mean_over_patients}
+epochs: {max: 80}
+early_stopping:
+  metric: validation_cross_entropy               # unweighted mean over validation patients
+  min_epoch: 20                                  # earliest stop; the selected checkpoint may be any earlier epoch
+  patience: 12
+  min_delta: 0.0001                              # an epoch improves only when CE < best - min_delta; ties keep the earlier checkpoint
+  training_metrics_select_checkpoints: false
+augmentation:                                    # training only; one transform per patient, shared across phases and slices
+  dihedral: d4_uniform_per_patient               # 6.0.1 (owner issue O1; SPECIFICATION.md 8.6): first one of the 8 in-plane D4 elements (4 rotations x optional transpose; exact pixel permutation), drawn uniformly from the per-patient RNG before the steps below; geometry scalars unchanged (src/tmmri/neural/dihedral.py)
+  rotation_degrees: [-10, 10]
+  translation_mm_each_axis: [-10, 10]            # 1.5 mm per pixel
+  intensity_multiplier: [0.9, 1.1]
+  noise_sd: 0.01                                 # [0,1] intensity units, then clip to [0, 1]
+  interpolation: bilinear
+  padding: zeros
+  forbidden: [reflection_outside_d4, elastic, scaling, phase_exchange, mixup]   # 6.0.1: reflections only as D4 elements (deviation from NEURAL-TM-1.0 4.2)
+  evaluation: deterministic_no_random_augmentation   # every evaluation output is the inference tta below (validation, selection, cross-hardware QC)
+inference:                                       # 6.0.1 (owner issue O1): every F9 prediction and activation (infer-f9, validation, S5, S6, qualification)
+  tta: d4_mean_8                                 # mean of the logits and of the 64-d activations A over the 8 D4 transforms of the ED and ES images; probabilities = Float64 softmax of the mean logits
+
+selection:                                       # NEURAL-TM-1.0 4.2; protocol 2.1 D item 10
+  n_folds: 3
+  salt: "f9-select-v6.0.1|"
+  rule: "within each class sort the fitting-set clusters by SHA256(salt + fitting_set_hash + '|' + cluster_id) ascending (ties by cluster_id); 0-based rank r; selection fold = (r mod 3) + 1"
+  fitting_set_hash: first_16_hex_of_sha256_of_newline_joined_sorted_sample_ids
+  macro_f1_classes: all_five                     # a missing class invalidates the fold; never dropped
+  insufficient_support: NE_INSUFFICIENT_CLASS_SUPPORT   # a class with fewer clusters than folds cannot reach every fold
+  order: [mean_macro_f1_desc, mean_cross_entropy_asc, unfrozen_block_count_asc, learning_rate_asc]
+refit:
+  data: all_fitting_patients
+  epochs: ceil_median_of_the_winner_three_selected_epochs
+  monitoring: none                               # no outer validation or test set is monitored during the refit
+
+seeds:
+  values: [20261011, 20261012, 20261013]         # distinct from paper 2 (20261001-20261003)
+  primary: 20261011                              # defines the primary frozen F9; all three are reported
+  seed_selection: forbidden
+  ensemble: false
+validity_gate:                                   # technical-validity gate of freeze-f9 (SPECIFICATION.md 8.6): a pre-evaluation bug check, never a tuning loop
+  seed: primary                                  # judged on the primary seed's fits and out-of-fold predictions only
+  oof_predictions: neural_f9/predictions_acdc_dev.parquet   # infer-f9 --split acdc_dev, run before freeze-f9: the is_oof rows of the fold encoders
+  min_oof_macro_f1: 0.30                         # (i) development out-of-fold macro-F1 over all five classes >= 0.30 (chance 0.20)
+  training_loss: final_epoch_below_epoch_1       # (ii) every refit: train_loss of its final epoch < that of epoch 1 (a single-epoch refit fails)
+  parameter_change: nonzero_in_every_unfrozen_block   # (iii) the training check recorded in every selected fit (the refits and the winners' selection fits)
+  on_failure:
+    reason: PRE_EVALUATION_BUG_CHECK             # freeze-f9 refuses (exit 7) and writes the report; no bundle is written
+    report: neural_f9/validity_gate.json
+    rule: "NEURAL-TM-1.0 pre-evaluation bug rule: fix the code, invalidate the affected development artifacts and rerun them under recorded code changes; a failure never changes a hyperparameter, a seed or a value of this gate"
+fitting_sets:
+  outer_folds: [1, 2, 3, 4, 5]                   # v6 outer folds of configs/splits.yaml: fitting set = acdc_dev minus fold k
+  final: all_acdc_dev                            # 98 patients
+fit_counts:
+  wave1_selection: 324                           # 6 fitting sets x 3 seeds x 6 candidates x 3 selection folds
+  wave2_refit: 18                                # 6 fitting sets x 3 seeds
+  total: 342
+  s5_total: 570                                  # S5: 2 fractions x 3 repeats x 5 outer folds x 19 (18 selection fits + 1 refit), primary seed
+
+numerics:                                        # contract C9; EXECUTION_ENVIRONMENT_SPEC.md 5.2 rules 5, 6 and 10
+  precision: ieee_fp32                           # TF32 off for cuDNN and cuBLAS; fp32_precision = ieee where the API exists
+  deterministic_algorithms: true
+  cudnn_benchmark: false
+  cublas_workspace_config: ":4096:8"             # set before CUDA initializes
+  execution: eager                               # no torch.compile
+  record: [device, gpu_name, gpu_uuid, driver, torch, cuda, cudnn, tf32_state]
+
+outputs:
+  run_subdir: neural_f9                          # contract C2
+  checkpoint_dir: neural_f9/checkpoints/<fit_id>  # model.pt (state_dict) + record.json (contract C8)
+  keep_resume_state_after_completion: false      # resume/ (last epoch, optimizer, scheduler, RNG) is removed once record.json exists
+  keep_selection_checkpoints: true               # model.pt of the selected epoch is kept for every selection fit
+
+backend:
+  local:
+    device: auto                                 # cuda when available, else cpu; GTX 1080 under EXECUTION_ENVIRONMENT_SPEC.md 5.2 rules 7-8
+    order: sequential
+  modal:                                         # CPE-1 (protocol/amendments.md 2026-10-02); parsed without PyYAML by scripts/cloud/modal_train.py
+    app: tmmri-neural
+    workspace: <workspace>
+    environment: main
+    client_version: "1.6.0"                      # pinned 3 October 2026 after uvx modal setup (workspace <workspace>); pin = the version printed by `uvx modal --version` after `uvx modal setup`; every Modal command refuses while null
+    gpu: L40S                                    # one pinned type, no fallback list; sm_89 has kernels in the cu126 wheels
+    cpu: 4.0
+    memory_mib: 16384
+    timeout_s: 21600
+    max_containers: 10
+    retries: 3
+    retry_backoff_coefficient: 2.0
+    retry_initial_delay_s: 10.0
+    preemptible: true                            # resume from the last epoch checkpoint; non-preemptible costs 3x
+    cache_volume: tmmri-neural-cache
+    runs_volume: tmmri-neural-runs
+    runs_volume_version: 2                       # many containers commit distinct files; confirmed by --qualify
+    cache_mount: /cache
+    runs_mount: /runs
+    cache_remote_prefix: /<run_id>/neural_cache/acdc_dev
+    runs_remote_prefix: /<run_id>/<fit_id>
+    upload_scope: neural_cache/acdc_dev          # upload-cache refuses every other file (CPE-1)
+    ledger: cloud/modal_ledger.csv
+    gpu_usd_per_hour: 1.95                       # pricing page, 2 October 2026; used only for the printed projection
+    projected_minutes_per_fit: 4.0               # [PROJECTED] replaced by the --qualify benchmark

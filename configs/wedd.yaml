@@ -1,0 +1,49 @@
+# Discretization (SPECIFICATION.md 6.0.0, Sections 11.3-11.4). Decision D11.
+# wedd_gaussian_mm_v1 is the same definition as CXR-TRANS-AUDIT SPECIFICATION.md 3.0.0 Section 11.3.1 [INHERITED from P4,
+# with the P5 stability gate]. The entropy runs over the rulebook consequent classes (five ACDC classes); after the
+# candidate-wise min-max normalization the logarithm base does not change the selected cut.
+specification_version: "6.0.0"
+precedence: [registry_states, wedd]             # no native symbolic states or registry cuts exist for the candidates
+applies_to: primary_rulebook_antecedent_candidates   # registry/semantic_registry.yaml
+primary_profile: wedd_gaussian_mm_v1
+supervision: rulebook_consequent                # d_model (d_model, measured_oracle) or dataset label (dataset_label)
+profiles:
+  wedd_gaussian_mm_v1:
+    kernel: gaussian
+    bandwidth: "0.9 * min(sd, IQR/1.349) * n^(-1/5)"
+    bandwidth_iqr_zero_fallback: "0.9 * sd * n^(-1/5)"
+    sd_zero: no_split
+    entropy_base: 2
+    weight_entropy: 0.65
+    weight_density: 0.35
+    normalization: candidate_wise_minmax_zero_range_to_zero
+    candidates: midpoints_adjacent_unique_values
+    min_leaf: "max(10, ceil(0.02 * N_fit_patients))"
+    min_gain_bits: 0.001
+    max_depth: 2
+    max_bins: 3
+    growth: best_first
+    tie_break: [larger_child_min_support, smaller_cut, lexicographic_node_path]
+    bins: right_closed
+    record: [candidates, entropy, density, normalization_extrema, bandwidth, supports, gain, selected_cut, node_path, fit_hash]
+  wedd_uniform_mm_v1: {inherits: wedd_gaussian_mm_v1, kernel: uniform_counting, role: sensitivity}
+  three_quantile_v1: {role: sensitivity, cuts: fit_partition_tertiles, duplicate_cuts_removed: true, note: "P6/v5 continuity (v5 learn_cutpoints)"}
+substrate: nested_oof_reconstructed_acdc_dev_values_after_inverse_transform   # original units
+measured_oracle_learns_own_thresholds: true    # thresholds fitted on measured B of acdc_dev
+stability_gate:                                 # [INHERITED, P5]
+  replicates: 500
+  resampling_unit: cluster_id                   # a declared duplicate-image pair is drawn as one cluster (configs/bootstrap.yaml; amendments 2026-09-28)
+  match_tolerance: 0.10_fit_iqr_fallback_0.10_fit_sd
+  recurrence_min: 0.60
+  missing_node_or_cut: non_recurrence
+per_object_stability:
+  fold_mappers: 5                               # the five outer-fold transitions
+  agreement_required: 4_of_5
+  failure_state: UNSTABLE_ESTIMATE
+sensitivity_grid:
+  weight_entropy: [0.0, 0.25, 0.5, 0.65, 0.75, 1.0]
+  bandwidth_multiplier: [0.5, 1.0, 2.0]
+  max_bins: [2, 3, 4]
+  max_depth: [3]                                # [PRESPEC] SPECIFICATION.md 11.3.1 "depth three in sensitivity"; amendments 2026-09-28
+  max_depth_evaluated_with: {max_bins: 4}       # a tree with at most three bins never exceeds depth two, so depth three is evaluated at four bins
+  design: one_factor_at_a_time_around_primary

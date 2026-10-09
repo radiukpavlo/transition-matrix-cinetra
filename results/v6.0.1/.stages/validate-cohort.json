@@ -1,0 +1,62 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "a6c1eebc4c1030681bf5d3a8f977159d5d9e68b188b05deb70f1b1c3e16b0ef9",
+    "inputs": {
+      "data:manifests/staging_ACDC.json": "6a1f70128dee7420f79b65c02719917887a00a101eac6b38adb5672a57f59160",
+      "data:manifests/staging_MMS.json": "800f5f8be78d7fc13e1a00c65c75f9f22cd6501bfe26a68b36855564d01c50df"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/cohort_MMS.parquet": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e",
+      "run:contracts/cohort_validation.json": "93ab8bc44e8144ef79a0bbb7e3f4bb49c9241e33c6099492f358aa22bfd2385c",
+      "run:contracts/inner_folds.parquet": "7dc447fdce15486c6ac905d9f5840eb39d9524570ba01b35f06bc3b63b00e8ee",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf"
+    },
+    "params": {
+      "config_sections": [
+        "study_v6.partition_sizes",
+        "study_v6.artifact_subfolders",
+        "cohorts",
+        "splits",
+        "source_bindings/acdc",
+        "source_bindings/mms",
+        "registry.label_tables"
+      ],
+      "mms_metadata": [],
+      "source_manifest_sha256": {
+        "ACDC": "66bc3b4f38902b93f5d8d977ee616b37994289feab1be4f9a39a064b8a4113b9",
+        "MMS": "7f56d5a22d373638bdbb93577ddd1048eb5edfccf701c288c1f3b15da848fcb5"
+      },
+      "strict": true,
+      "synthetic_count_waiver": false
+    },
+    "stage": "validate-cohort",
+    "status": "BUILT"
+  },
+  "payload_sha256": "25d845eb71f355e58cedbd02999f002a7997340b3062cffe95bfcd552d14e856",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 2.841,
+    "started_utc": "2026-10-03T09:42:02+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

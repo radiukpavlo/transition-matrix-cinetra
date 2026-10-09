@@ -1,0 +1,66 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "51595d73e93ae1e7c5f3454cc9ab26392b84b2ae6ae21bd71e2b18e68de454db",
+    "inputs": {
+      "run:contracts/inner_folds.parquet": "7dc447fdce15486c6ac905d9f5840eb39d9524570ba01b35f06bc3b63b00e8ee",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:formal/A_ACDC_p6_128.parquet": "3540a0b1f9494cdf0cd987569180435e013b20d15fe9e6dcd10794842d4f110f",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:oof/bhat_oof_ACDC_dev.parquet": "b735e0820b374ebfa64849337e815669bc965590b373b1aa69c41a20d459e0a4",
+      "run:oof/bhat_oof_ACDC_dev_p6.parquet": "d8737f2f6639b0d4ad064474c8b9e1b0bce83ecf00392497b366fd100d783a34",
+      "run:transitions/comparator_identity_transform_ridge.parquet": "c27aa36342935db4a8041cb59672ab0045f3b54fdce47709fc53589c34201db3",
+      "run:transitions/comparator_mean.parquet": "032882146e2b2376f7848f6ffa92199bf6161f29cc4f89009c711d5b2031fa74",
+      "run:transitions/comparator_pseudoinverse_p1.parquet": "f74f63f31e43554d21fd0a47eddcfc1513d04834202008f07714f9482d43245c",
+      "run:transitions/comparator_rbf_kernel_ridge.parquet": "6a5a9f9f8dab6a313a80af9db3a2d939ff92fb7d730d9df5f8cbb3de773cd139",
+      "run:transitions/comparator_ridge_global_lambda.parquet": "8f32c3ebb0181c5b2a3d3cf0ad2cf603c10298a2fd57c912906284db10a82675",
+      "run:transitions/fold_models/transition_fold1.json": "bd291c8e0af9b37ef6885a14d07d55eea6abcf2286c340187e30e3ae108ede3c",
+      "run:transitions/fold_models/transition_fold2.json": "b8dfbbea2b76fb29c1edcd470fd9a95635181284daa7042116a5400d08681772",
+      "run:transitions/fold_models/transition_fold3.json": "b9c5880b852610b5fe5928bd65b544585e17e367ae047042cafa290f8c55e553",
+      "run:transitions/fold_models/transition_fold4.json": "e697a456024d14da5fc517716242bbce06b2512f19c5ad967273016cd9512e06",
+      "run:transitions/fold_models/transition_fold5.json": "e8a5b8d4881ea3e017cfc4e5035a77f1028e90d2705d07334ddd9450149d5541",
+      "run:transitions/lambda_selection.json": "68c98d93d75ad03f58c4e3f68ce6bd08742d02d6df9d684af7571dedd38d746b",
+      "run:transitions/lambda_selection.parquet": "4beb1a6e1d3d04dc3e2ca7638cc5577d81492bf9705379a432db97818261848e",
+      "run:transitions/transition_model.json": "6c2f25349cfd7987a32337ca506415c8d946ab36e9f81a38d7b19790c866ba55"
+    },
+    "params": {
+      "config_sections": [
+        "transition",
+        "registry",
+        "cohorts.qc_severity"
+      ],
+      "nested_oof": true,
+      "profile": "ridge"
+    },
+    "stage": "fit-transition",
+    "status": "BUILT"
+  },
+  "payload_sha256": "261429e86b4b55d48e3b45df502ab88bf7b0c0db932dd66912ab220c5110a830",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 11.208,
+    "started_utc": "2026-10-03T09:42:27+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

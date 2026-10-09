@@ -1,0 +1,293 @@
+{
+  "descriptor_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "estimation_only": true,
+  "evidence": "registered_after_unblinding",
+  "freeze_order": null,
+  "label": "registered after unblinding",
+  "partition": "acdc_test",
+  "predictors": {
+    "audited_predictor": {
+      "aurc": {
+        "ci_lower": 0.0070143630485889185,
+        "ci_upper": 0.093287390146457,
+        "estimate": 0.038384452512564456,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "n_evaluable": 50,
+      "provenance": {
+        "logits": "decision_function",
+        "n_rows": 50,
+        "source": "derived: run:formal/d_model_predictor.joblib on formal/A_ACDC.parquet, checked against run:inference/d_model_acdc_test.parquet"
+      },
+      "tau50": {
+        "development": {
+          "coverage_target": 0.5,
+          "development_coverage": 0.5,
+          "k": 49,
+          "n": 98,
+          "n_accepted_development": 49,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.8790924461495404,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.9642857142857143,
+          "accuracy_accepted_wilson_95": [
+            0.8228780225664668,
+            0.9936674801509623
+          ],
+          "accuracy_full_coverage": 0.88,
+          "accuracy_full_coverage_wilson_95": [
+            0.7619518261679701,
+            0.9438239984906773
+          ],
+          "coverage": 0.56,
+          "coverage_wilson_95": [
+            0.4230602802165686,
+            0.6883780078874284
+          ],
+          "n": 50,
+          "n_accepted": 28,
+          "n_correct_accepted": 27,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.8790924461495404
+        }
+      },
+      "tau80": {
+        "development": {
+          "coverage_target": 0.8,
+          "development_coverage": 0.8061224489795918,
+          "k": 79,
+          "n": 98,
+          "n_accepted_development": 79,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.621272147892028,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.926829268292683,
+          "accuracy_accepted_wilson_95": [
+            0.8057255146228096,
+            0.9748021693660901
+          ],
+          "accuracy_full_coverage": 0.88,
+          "accuracy_full_coverage_wilson_95": [
+            0.7619518261679701,
+            0.9438239984906773
+          ],
+          "coverage": 0.82,
+          "coverage_wilson_95": [
+            0.6920394632569922,
+            0.9022980732976582
+          ],
+          "n": 50,
+          "n_accepted": 41,
+          "n_correct_accepted": 38,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.621272147892028
+        }
+      }
+    },
+    "d20_predictor": {
+      "aurc": {
+        "ci_lower": 0.32320059870129175,
+        "ci_upper": 0.7023495335223835,
+        "estimate": 0.5302072476413644,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "n_evaluable": 50,
+      "provenance": {
+        "logits": "log_probabilities",
+        "n_rows": 50,
+        "source": "derived: run:deep_encoder/formal/d_model_predictor.joblib on run:deep_encoder/features/A_D20_acdc_test.parquet"
+      },
+      "tau50": {
+        "development": {
+          "coverage_target": 0.5,
+          "development_coverage": 0.5,
+          "k": 49,
+          "n": 98,
+          "n_accepted_development": 49,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.693919619973515,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.5172413793103449,
+          "accuracy_accepted_wilson_95": [
+            0.34431021881994717,
+            0.6861390984731652
+          ],
+          "accuracy_full_coverage": 0.36,
+          "accuracy_full_coverage_wilson_95": [
+            0.24138749651846741,
+            0.49858983123887307
+          ],
+          "coverage": 0.58,
+          "coverage_wilson_95": [
+            0.4423344176857823,
+            0.7062499664528802
+          ],
+          "n": 50,
+          "n_accepted": 29,
+          "n_correct_accepted": 15,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.693919619973515
+        }
+      },
+      "tau80": {
+        "development": {
+          "coverage_target": 0.8,
+          "development_coverage": 0.8061224489795918,
+          "k": 79,
+          "n": 98,
+          "n_accepted_development": 79,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.4643066620694726,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.4090909090909091,
+          "accuracy_accepted_wilson_95": [
+            0.2768785562754973,
+            0.555902462589681
+          ],
+          "accuracy_full_coverage": 0.36,
+          "accuracy_full_coverage_wilson_95": [
+            0.24138749651846741,
+            0.49858983123887307
+          ],
+          "coverage": 0.88,
+          "coverage_wilson_95": [
+            0.7619518261679701,
+            0.9438239984906773
+          ],
+          "n": 50,
+          "n_accepted": 44,
+          "n_correct_accepted": 18,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.4643066620694726
+        }
+      }
+    },
+    "f9": {
+      "aurc": {
+        "ci_lower": 0.11287623841083387,
+        "ci_upper": 0.3570269634004178,
+        "estimate": 0.21435264330187145,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "n_evaluable": 50,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 50,
+        "sha256": "dba8334fc32a095fbc8acb05d0169b496972cc7b4bd5148e5b98e656f1da975f",
+        "source": "run:neural_f9/predictions.parquet"
+      },
+      "tau50": {
+        "development": {
+          "coverage_target": 0.5,
+          "development_coverage": 0.5,
+          "k": 49,
+          "n": 98,
+          "n_accepted_development": 49,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.7527816285432463,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.7777777777777778,
+          "accuracy_accepted_wilson_95": [
+            0.5924307113336742,
+            0.8939276054763996
+          ],
+          "accuracy_full_coverage": 0.58,
+          "accuracy_full_coverage_wilson_95": [
+            0.4423344176857823,
+            0.7062499664528802
+          ],
+          "coverage": 0.54,
+          "coverage_wilson_95": [
+            0.40398871399157477,
+            0.6703034780777566
+          ],
+          "n": 50,
+          "n_accepted": 27,
+          "n_correct_accepted": 21,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.7527816285432463
+        }
+      },
+      "tau80": {
+        "development": {
+          "coverage_target": 0.8,
+          "development_coverage": 0.8061224489795918,
+          "k": 79,
+          "n": 98,
+          "n_accepted_development": 79,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.5626505132710059,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.6190476190476191,
+          "accuracy_accepted_wilson_95": [
+            0.4681404026715268,
+            0.7500027423604485
+          ],
+          "accuracy_full_coverage": 0.58,
+          "accuracy_full_coverage_wilson_95": [
+            0.4423344176857823,
+            0.7062499664528802
+          ],
+          "coverage": 0.84,
+          "coverage_wilson_95": [
+            0.7148578393696501,
+            0.916625793219666
+          ],
+          "n": 50,
+          "n_accepted": 42,
+          "n_correct_accepted": 26,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.5626505132710059
+        }
+      }
+    }
+  },
+  "rule_routes": {
+    "accepted_coverage": 0.0,
+    "covered_fidelity": null,
+    "n_accepted": 0,
+    "n_attempted": 50,
+    "rulebook": "d_model",
+    "source": "run:metrics/routes_d_model_acdc_test.json"
+  },
+  "schema": "tmmri.s1_selective/1",
+  "trust_bundle": {
+    "bundle_sha256": "266b2889b6ce393b2ceb70a1438f17f97e0c6ee03617a24714506e5b2ab9908d",
+    "n_files": 7,
+    "record": "trust/trust_bundle.json",
+    "record_sha256": "6a002bb5cb183ce398a2f102f1599622813ae441b51860d58188d2b2c113c36d"
+  }
+}

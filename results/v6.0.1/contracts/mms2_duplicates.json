@@ -1,0 +1,13 @@
+{
+  "detection": "decoded_voxel_sha256_of_the_staged_ed_es_images",
+  "exclusions": [],
+  "missing_reference_cohorts": [],
+  "reference_cohorts": [
+    "ACDC",
+    "MMS",
+    "MMS2"
+  ],
+  "rule": "every mms2_external case whose decoded ED or ES image voxels equal those of an ACDC, M&Ms-1 or other M&Ms-2 case is excluded from mms2_external with the reason code below (both members of a within-M&Ms-2 match); ACDC and M&Ms-1 cases are unchanged; the link to mms2_sealed (never extracted under v6) is recorded for the v7 ingest",
+  "schema": "tmmri.mms2_duplicates/1",
+  "sealed_links": []
+}

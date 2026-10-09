@@ -1,0 +1,55 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "671bc848b518ecff4bcb3d2883fc58601d9967b38d08c1a4151cc9f0c2ac3614",
+    "inputs": {
+      "data:manifests/staging_ACDC.json": "6a1f70128dee7420f79b65c02719917887a00a101eac6b38adb5672a57f59160",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:transitions/transition_model.json": "6c2f25349cfd7987a32337ca506415c8d946ab36e9f81a38d7b19790c866ba55"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:equivariance/equivariance_cases_ACDC.parquet": "29e8c5d245ebc7ebba65b096858e957242b8a0055101ed47fbee34dced48b56c",
+      "run:equivariance/equivariance_selection_ACDC.json": "0fe0411daed87af9d97b7e258e494b7a79d6a2a9d6d9192c0d152bd99bce36ec",
+      "run:equivariance/equivariance_targets_ACDC.parquet": "6059097eaea76c8e118b2523e9c1df2c5fd1ddc46746b4b34c8e870d0bf605ee"
+    },
+    "params": {
+      "config_sections": [
+        "equivariance",
+        "formal",
+        "registry",
+        "cohorts",
+        "reason_codes",
+        "transition"
+      ],
+      "dataset": "ACDC"
+    },
+    "stage": "run-equivariance",
+    "status": "BUILT"
+  },
+  "payload_sha256": "f84a005e9f93dfc5be6999a011762c3ee11d14d9e824b4706d544de410cd144d",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 44.446,
+    "started_utc": "2026-10-03T09:47:46+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

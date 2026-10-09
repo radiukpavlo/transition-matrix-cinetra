@@ -1,0 +1,104 @@
+{
+  "bundle": "unchanged v6.0.0 bundle",
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "family": "own_one_test_family",
+  "hypothesis": {
+    "bundle": "the unchanged v6.0.0 bundle (artifacts/<run_id>/.stages/FROZEN.json, hash-verified)",
+    "estimand": "rho",
+    "family": "own_one_test_family",
+    "id": "H-primary-3",
+    "partition": "mms2_external",
+    "precision": "with about 180 clusters it passes only if rho is about 0.28 or more",
+    "rule": "passes when the 95 % cluster-bootstrap lower bound of rho exceeds 0.10",
+    "threshold": 0.1
+  },
+  "n_cases": 180,
+  "n_clusters": 180,
+  "result": {
+    "ci_lower": 0.23284663077687554,
+    "ci_upper": 0.3817447909296376,
+    "estimable_targets": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "family": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "hypothesis_id": "H-primary-3",
+    "in_hierarchy": true,
+    "interval": "percentile_95",
+    "min_estimable": 5,
+    "n_boot": 2000,
+    "n_boot_valid": 2000,
+    "n_cases": 180,
+    "n_clusters": 180,
+    "n_estimable": 7,
+    "n_formal_nonfinite": 0,
+    "n_units": 180,
+    "normalization": "fit_partition_sd",
+    "partition": "mms2_external",
+    "passed": true,
+    "plain_superiority": true,
+    "reason": null,
+    "resampling_unit": "cluster_id",
+    "rho": 0.31124151831900215,
+    "rho_j": {
+      "lv_edv_ml": 0.06238404156842503,
+      "lv_ef_percent": 0.665847485371887,
+      "lv_esv_ml": 0.3531067409448133,
+      "lv_myocardial_mass_ed_g": 0.2761491921341298,
+      "rv_edv_ml": 0.08263056724161288,
+      "rv_ef_percent": 0.5456471884987044,
+      "rv_esv_ml": 0.19292541247344275
+    },
+    "rho_j_ci": {
+      "lv_edv_ml": [
+        -0.09726998752002737,
+        0.19722127170183257
+      ],
+      "lv_ef_percent": [
+        0.6265110327451264,
+        0.7047590814724042
+      ],
+      "lv_esv_ml": [
+        0.1668083680433161,
+        0.5134247621602891
+      ],
+      "lv_myocardial_mass_ed_g": [
+        0.1547322250169543,
+        0.3826488593697817
+      ],
+      "rv_edv_ml": [
+        -0.057252779109878964,
+        0.20223790004846076
+      ],
+      "rv_ef_percent": [
+        0.4790342682648867,
+        0.6055732605023466
+      ],
+      "rv_esv_ml": [
+        0.06301800765314651,
+        0.31027124878906837
+      ]
+    },
+    "seed": 20260928,
+    "sesoi": 0.1,
+    "status": "PASSED",
+    "tested": true,
+    "valid_fraction": 1.0,
+    "weighting": "patient"
+  },
+  "rho_file": "metrics/primary_rho_mms2_external.json",
+  "schema": "tmmri.h_primary_3/1"
+}

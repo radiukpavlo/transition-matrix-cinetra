@@ -1,0 +1,966 @@
+{
+  "below_threshold": {
+    "reason": "STRATUM_BELOW_MIN_CASES",
+    "status": "NE"
+  },
+  "bland_altman": {
+    "source": "run:oof/bhat_oof_ACDC_dev.parquet",
+    "substrate": "nested out-of-fold B-hat of fit-transition",
+    "targets": {
+      "lv_edv_ml": {
+        "bias": -3.889092541296806,
+        "ci": {
+          "bias": [
+            -12.426413960639907,
+            4.682036868697465
+          ],
+          "loa_lower": [
+            -108.82895731856415,
+            -70.31553332297482
+          ],
+          "loa_upper": [
+            65.42189598916515,
+            96.85024567824792
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -89.04008050629128,
+        "loa_upper": 81.26189542369767,
+        "n": 98,
+        "n_boot_valid": 2000,
+        "n_clusters": 98,
+        "reason": null,
+        "sd_difference": 43.444381614793095,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "lv_ef_percent": {
+        "bias": 0.23232115341304801,
+        "ci": {
+          "bias": [
+            -0.6849852113858863,
+            1.210730009180004
+          ],
+          "loa_lower": [
+            -11.147953454505389,
+            -7.590666838640863
+          ],
+          "loa_upper": [
+            7.950420917758495,
+            11.615971769920877
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -9.310231398623008,
+        "loa_upper": 9.774873705449105,
+        "n": 98,
+        "n_boot_valid": 2000,
+        "n_clusters": 98,
+        "reason": null,
+        "sd_difference": 4.868649261242886,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "lv_esv_ml": {
+        "bias": -3.336986241219753,
+        "ci": {
+          "bias": [
+            -12.659140194233974,
+            6.590985522124017
+          ],
+          "loa_lower": [
+            -130.71748293637484,
+            -64.44408018017894
+          ],
+          "loa_upper": [
+            52.53357115643914,
+            137.7431271094376
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -98.4365097058719,
+        "loa_upper": 91.7625372234324,
+        "n": 98,
+        "n_boot_valid": 2000,
+        "n_clusters": 98,
+        "reason": null,
+        "sd_difference": 48.520165032985794,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "lv_myocardial_mass_ed_g": {
+        "bias": -3.068142094716994,
+        "ci": {
+          "bias": [
+            -10.343310118261131,
+            4.1315129677556515
+          ],
+          "loa_lower": [
+            -90.34254074346545,
+            -57.30978922533566
+          ],
+          "loa_upper": [
+            50.550484388972635,
+            87.10581156427261
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -73.86008272697978,
+        "loa_upper": 67.7237985375458,
+        "n": 98,
+        "n_boot_valid": 2000,
+        "n_clusters": 98,
+        "reason": null,
+        "sd_difference": 36.11833705727694,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "rv_edv_ml": {
+        "bias": -4.42427875376922,
+        "ci": {
+          "bias": [
+            -12.190766987825777,
+            2.897411967381917
+          ],
+          "loa_lower": [
+            -95.01459107479673,
+            -64.33071750436807
+          ],
+          "loa_upper": [
+            58.49869342978422,
+            81.85656139351366
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -79.60298333257138,
+        "loa_upper": 70.75442582503295,
+        "n": 98,
+        "n_boot_valid": 2000,
+        "n_clusters": 98,
+        "reason": null,
+        "sd_difference": 38.35648192796029,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "rv_ef_percent": {
+        "bias": -0.10989436900824791,
+        "ci": {
+          "bias": [
+            -1.5405022527782521,
+            1.2458174805405298
+          ],
+          "loa_lower": [
+            -16.483502649595422,
+            -11.222780005892583
+          ],
+          "loa_upper": [
+            10.470128905285716,
+            16.760656303325916
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -13.908483113383475,
+        "loa_upper": 13.688694375366978,
+        "n": 98,
+        "n_boot_valid": 2000,
+        "n_clusters": 98,
+        "reason": null,
+        "sd_difference": 7.040096298150626,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "rv_esv_ml": {
+        "bias": -4.390022326444155,
+        "ci": {
+          "bias": [
+            -9.379540311505002,
+            0.16006092970279007
+          ],
+          "loa_lower": [
+            -64.51870980883214,
+            -38.872556822878806
+          ],
+          "loa_upper": [
+            33.43509396540593,
+            51.65249138903452
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -51.575614940264884,
+        "loa_upper": 42.79557028737658,
+        "n": 98,
+        "n_boot_valid": 2000,
+        "n_clusters": 98,
+        "reason": null,
+        "sd_difference": 24.074281945826904,
+        "status": "EVALUATED",
+        "z": 1.96
+      }
+    }
+  },
+  "bootstrap": {
+    "interval": "percentile_95",
+    "replicates": 2000,
+    "seed": 20260928,
+    "unit": "cluster_id"
+  },
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "classes": [
+    "DCM",
+    "HCM",
+    "MINF",
+    "NOR",
+    "RV"
+  ],
+  "dataset": "ACDC",
+  "ece_bins": 10,
+  "evidence": "development (cross-fitted out-of-fold)",
+  "metrics_definition": "predictor_summary_v6 (SPECIFICATION.md 13.2; equal-mass ECE as frozen) plus ECE with equal-width bins and the multiclass Brier score (docs/MANUSCRIPT_PROTOCOL_2026-10-02.md Section F), one cluster draw per replicate",
+  "min_clusters_per_stratum": 20,
+  "models": {
+    "audited_predictor": {
+      "bootstrap": {
+        "draw": "SeedSequence(seed).spawn(replicates)[r]; clusters numbered by first row",
+        "interval": "percentile_95",
+        "min_valid_fraction": 0.95,
+        "replicates": 2000,
+        "seed": 20260928,
+        "unit": "cluster_id",
+        "valid_replicate": "finite; for balanced accuracy, macro-F1 and macro AUROC the replicate must contain every reference class of the evaluated sample (macro averages over the same classes)"
+      },
+      "brier": "multiclass sum over the classes",
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "companions": {
+        "confusion_matrix": {
+          "columns_d_model": [
+            "DCM",
+            "HCM",
+            "MINF",
+            "NOR",
+            "RV"
+          ],
+          "counts": [
+            [
+              17,
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              1,
+              17,
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              2,
+              15,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              18,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              18
+            ]
+          ],
+          "rows_reference": [
+            "DCM",
+            "HCM",
+            "MINF",
+            "NOR",
+            "RV"
+          ]
+        },
+        "per_class_recall": {
+          "DCM": {
+            "n_reference": 20,
+            "reason": null,
+            "recall": 0.85,
+            "status": "EVALUATED"
+          },
+          "HCM": {
+            "n_reference": 20,
+            "reason": null,
+            "recall": 0.85,
+            "status": "EVALUATED"
+          },
+          "MINF": {
+            "n_reference": 19,
+            "reason": null,
+            "recall": 0.7894736842105263,
+            "status": "EVALUATED"
+          },
+          "NOR": {
+            "n_reference": 19,
+            "reason": null,
+            "recall": 0.9473684210526315,
+            "status": "EVALUATED"
+          },
+          "RV": {
+            "n_reference": 20,
+            "reason": null,
+            "recall": 0.9,
+            "status": "EVALUATED"
+          }
+        }
+      },
+      "counts": {
+        "n_clusters": 98,
+        "n_evaluable": 98,
+        "n_no_decision": 0,
+        "n_reference_outside_predictor_classes": 0,
+        "n_reference_unknown": 0,
+        "n_rows": 98
+      },
+      "counts_partition": {
+        "n_excluded_critical_qc": 0,
+        "n_partition": 98,
+        "n_stored_oof": 98
+      },
+      "ece_binning": "equal_mass",
+      "ece_bins": 10,
+      "ece_equal_width_binning": "equal_width",
+      "ece_equal_width_bins": 10,
+      "ece_equal_width_realized_bins": [
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 0,
+          "count": 0,
+          "lower": 0.0,
+          "mean_confidence": NaN,
+          "upper": 0.1
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 1,
+          "count": 0,
+          "lower": 0.1,
+          "mean_confidence": NaN,
+          "upper": 0.2
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 2,
+          "count": 0,
+          "lower": 0.2,
+          "mean_confidence": NaN,
+          "upper": 0.30000000000000004
+        },
+        {
+          "abs_gap": 0.37144476355487116,
+          "accuracy": 0.0,
+          "bin_id": 3,
+          "count": 1,
+          "lower": 0.30000000000000004,
+          "mean_confidence": 0.37144476355487116,
+          "upper": 0.4
+        },
+        {
+          "abs_gap": 0.13855146463213397,
+          "accuracy": 0.6,
+          "bin_id": 4,
+          "count": 5,
+          "lower": 0.4,
+          "mean_confidence": 0.461448535367866,
+          "upper": 0.5
+        },
+        {
+          "abs_gap": 0.0024334259165659233,
+          "accuracy": 0.5454545454545454,
+          "bin_id": 5,
+          "count": 11,
+          "lower": 0.5,
+          "mean_confidence": 0.5478879713711113,
+          "upper": 0.6000000000000001
+        },
+        {
+          "abs_gap": 0.2154695216252951,
+          "accuracy": 0.8571428571428571,
+          "bin_id": 6,
+          "count": 7,
+          "lower": 0.6000000000000001,
+          "mean_confidence": 0.641673335517562,
+          "upper": 0.7000000000000001
+        },
+        {
+          "abs_gap": 0.2393293242967921,
+          "accuracy": 1.0,
+          "bin_id": 7,
+          "count": 9,
+          "lower": 0.7000000000000001,
+          "mean_confidence": 0.7606706757032079,
+          "upper": 0.8
+        },
+        {
+          "abs_gap": 0.0321122347583942,
+          "accuracy": 0.8823529411764706,
+          "bin_id": 8,
+          "count": 17,
+          "lower": 0.8,
+          "mean_confidence": 0.8502407064180764,
+          "upper": 0.9
+        },
+        {
+          "abs_gap": 0.012519733083681484,
+          "accuracy": 0.9583333333333334,
+          "bin_id": 9,
+          "count": 48,
+          "lower": 0.9,
+          "mean_confidence": 0.9708530664170149,
+          "upper": 1.0
+        }
+      ],
+      "ece_realized_bins": [
+        {
+          "abs_gap": 0.02142392411874533,
+          "accuracy": 0.5,
+          "bin_id": 0,
+          "count": 10,
+          "mean_confidence": 0.47857607588125467
+        },
+        {
+          "abs_gap": 0.12450119305097718,
+          "accuracy": 0.7,
+          "bin_id": 1,
+          "count": 10,
+          "mean_confidence": 0.5754988069490228
+        },
+        {
+          "abs_gap": 0.18529978384942414,
+          "accuracy": 0.9,
+          "bin_id": 2,
+          "count": 10,
+          "mean_confidence": 0.7147002161505759
+        },
+        {
+          "abs_gap": 0.0825632871439187,
+          "accuracy": 0.9,
+          "bin_id": 3,
+          "count": 10,
+          "mean_confidence": 0.8174367128560813
+        },
+        {
+          "abs_gap": 0.03648215538338173,
+          "accuracy": 0.9,
+          "bin_id": 4,
+          "count": 10,
+          "mean_confidence": 0.8635178446166183
+        },
+        {
+          "abs_gap": 0.12793557372122377,
+          "accuracy": 0.8,
+          "bin_id": 5,
+          "count": 10,
+          "mean_confidence": 0.9279355737212238
+        },
+        {
+          "abs_gap": 0.04436708671426415,
+          "accuracy": 1.0,
+          "bin_id": 6,
+          "count": 10,
+          "mean_confidence": 0.9556329132857359
+        },
+        {
+          "abs_gap": 0.01861253787509265,
+          "accuracy": 1.0,
+          "bin_id": 7,
+          "count": 10,
+          "mean_confidence": 0.9813874621249074
+        },
+        {
+          "abs_gap": 0.004855726703781316,
+          "accuracy": 1.0,
+          "bin_id": 8,
+          "count": 9,
+          "mean_confidence": 0.9951442732962187
+        },
+        {
+          "abs_gap": 0.0005456403297697809,
+          "accuracy": 1.0,
+          "bin_id": 9,
+          "count": 9,
+          "mean_confidence": 0.9994543596702302
+        }
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_lower": 0.7959183673469388,
+          "ci_upper": 0.9285714285714286,
+          "estimate": 0.8673469387755102,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "balanced_accuracy": {
+          "ci_lower": 0.7964054429552142,
+          "ci_upper": 0.9290785256410254,
+          "estimate": 0.8673684210526316,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "brier": {
+          "ci_lower": 0.128331056966051,
+          "ci_upper": 0.27601708761832,
+          "estimate": 0.1965268661965363,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "ece": {
+          "ci_lower": 0.04908680172440158,
+          "ci_upper": 0.13911763341343178,
+          "estimate": 0.06592314001910445,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "ece_equal_width": {
+          "ci_lower": 0.051059335982434804,
+          "ci_upper": 0.13154949135939822,
+          "estimate": 0.06020485225260585,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "log_loss": {
+          "clip": 1e-15,
+          "estimate": 0.36377121202194607,
+          "reason": null,
+          "role": "descriptive_companion",
+          "status": "EVALUATED"
+        },
+        "macro_f1": {
+          "ci_lower": 0.7930665103998991,
+          "ci_upper": 0.9248328084254646,
+          "estimate": 0.8675149411991517,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "macro_ovr_auroc": {
+          "ci_lower": 0.9636306160003867,
+          "ci_upper": 0.9928240988482134,
+          "estimate": 0.9801673243478707,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        }
+      },
+      "model_id": "audited_predictor",
+      "predictions": "run:formal/audited_predictor/predictions.parquet",
+      "probabilities": "recorded",
+      "probability_source": "stored outer-fold predictors (is_oof rows)",
+      "reason": null,
+      "status": "EVALUATED"
+    },
+    "measured_b_comparator": {
+      "bootstrap": {
+        "draw": "SeedSequence(seed).spawn(replicates)[r]; clusters numbered by first row",
+        "interval": "percentile_95",
+        "min_valid_fraction": 0.95,
+        "replicates": 2000,
+        "seed": 20260928,
+        "unit": "cluster_id",
+        "valid_replicate": "finite; for balanced accuracy, macro-F1 and macro AUROC the replicate must contain every reference class of the evaluated sample (macro averages over the same classes)"
+      },
+      "brier": "multiclass sum over the classes",
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "companions": {
+        "confusion_matrix": {
+          "columns_d_model": [
+            "DCM",
+            "HCM",
+            "MINF",
+            "NOR",
+            "RV"
+          ],
+          "counts": [
+            [
+              17,
+              0,
+              2,
+              0,
+              1
+            ],
+            [
+              0,
+              17,
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              19,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              19,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              19
+            ]
+          ],
+          "rows_reference": [
+            "DCM",
+            "HCM",
+            "MINF",
+            "NOR",
+            "RV"
+          ]
+        },
+        "per_class_recall": {
+          "DCM": {
+            "n_reference": 20,
+            "reason": null,
+            "recall": 0.85,
+            "status": "EVALUATED"
+          },
+          "HCM": {
+            "n_reference": 20,
+            "reason": null,
+            "recall": 0.85,
+            "status": "EVALUATED"
+          },
+          "MINF": {
+            "n_reference": 19,
+            "reason": null,
+            "recall": 1.0,
+            "status": "EVALUATED"
+          },
+          "NOR": {
+            "n_reference": 19,
+            "reason": null,
+            "recall": 1.0,
+            "status": "EVALUATED"
+          },
+          "RV": {
+            "n_reference": 20,
+            "reason": null,
+            "recall": 0.95,
+            "status": "EVALUATED"
+          }
+        }
+      },
+      "counts": {
+        "n_clusters": 98,
+        "n_evaluable": 98,
+        "n_no_decision": 0,
+        "n_reference_outside_predictor_classes": 0,
+        "n_reference_unknown": 0,
+        "n_rows": 98
+      },
+      "counts_partition": {
+        "n_excluded_critical_qc": 0,
+        "n_partition": 98,
+        "n_stored_oof": 98
+      },
+      "ece_binning": "equal_mass",
+      "ece_bins": 10,
+      "ece_equal_width_binning": "equal_width",
+      "ece_equal_width_bins": 10,
+      "ece_equal_width_realized_bins": [
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 0,
+          "count": 0,
+          "lower": 0.0,
+          "mean_confidence": NaN,
+          "upper": 0.1
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 1,
+          "count": 0,
+          "lower": 0.1,
+          "mean_confidence": NaN,
+          "upper": 0.2
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 2,
+          "count": 0,
+          "lower": 0.2,
+          "mean_confidence": NaN,
+          "upper": 0.30000000000000004
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 3,
+          "count": 0,
+          "lower": 0.30000000000000004,
+          "mean_confidence": NaN,
+          "upper": 0.4
+        },
+        {
+          "abs_gap": 0.21418340380294543,
+          "accuracy": 0.6666666666666666,
+          "bin_id": 4,
+          "count": 9,
+          "lower": 0.4,
+          "mean_confidence": 0.4524832628637212,
+          "upper": 0.5
+        },
+        {
+          "abs_gap": 0.3234518180053092,
+          "accuracy": 0.875,
+          "bin_id": 5,
+          "count": 8,
+          "lower": 0.5,
+          "mean_confidence": 0.5515481819946908,
+          "upper": 0.6000000000000001
+        },
+        {
+          "abs_gap": 0.36740971523137234,
+          "accuracy": 1.0,
+          "bin_id": 6,
+          "count": 13,
+          "lower": 0.6000000000000001,
+          "mean_confidence": 0.6325902847686277,
+          "upper": 0.7000000000000001
+        },
+        {
+          "abs_gap": 0.13250181425781005,
+          "accuracy": 0.8888888888888888,
+          "bin_id": 7,
+          "count": 18,
+          "lower": 0.7000000000000001,
+          "mean_confidence": 0.7563870746310788,
+          "upper": 0.8
+        },
+        {
+          "abs_gap": 0.07718447818894725,
+          "accuracy": 0.9333333333333333,
+          "bin_id": 8,
+          "count": 15,
+          "lower": 0.8,
+          "mean_confidence": 0.8561488551443861,
+          "upper": 0.9
+        },
+        {
+          "abs_gap": 0.02954620560616983,
+          "accuracy": 1.0,
+          "bin_id": 9,
+          "count": 35,
+          "lower": 0.9,
+          "mean_confidence": 0.9704537943938302,
+          "upper": 1.0
+        }
+      ],
+      "ece_realized_bins": [
+        {
+          "abs_gap": 0.14013304894607365,
+          "accuracy": 0.6,
+          "bin_id": 0,
+          "count": 10,
+          "mean_confidence": 0.45986695105392633
+        },
+        {
+          "abs_gap": 0.4298759870881662,
+          "accuracy": 1.0,
+          "bin_id": 1,
+          "count": 10,
+          "mean_confidence": 0.5701240129118338
+        },
+        {
+          "abs_gap": 0.35915011159344234,
+          "accuracy": 1.0,
+          "bin_id": 2,
+          "count": 10,
+          "mean_confidence": 0.6408498884065577
+        },
+        {
+          "abs_gap": 0.16228162559052473,
+          "accuracy": 0.9,
+          "bin_id": 3,
+          "count": 10,
+          "mean_confidence": 0.7377183744094753
+        },
+        {
+          "abs_gap": 0.1131075782761547,
+          "accuracy": 0.9,
+          "bin_id": 4,
+          "count": 10,
+          "mean_confidence": 0.7868924217238453
+        },
+        {
+          "abs_gap": 0.04699209086502987,
+          "accuracy": 0.9,
+          "bin_id": 5,
+          "count": 10,
+          "mean_confidence": 0.8530079091349702
+        },
+        {
+          "abs_gap": 0.08617922813281476,
+          "accuracy": 1.0,
+          "bin_id": 6,
+          "count": 10,
+          "mean_confidence": 0.9138207718671852
+        },
+        {
+          "abs_gap": 0.033753801022910146,
+          "accuracy": 1.0,
+          "bin_id": 7,
+          "count": 10,
+          "mean_confidence": 0.9662461989770899
+        },
+        {
+          "abs_gap": 0.013948197994612666,
+          "accuracy": 1.0,
+          "bin_id": 8,
+          "count": 9,
+          "mean_confidence": 0.9860518020053873
+        },
+        {
+          "abs_gap": 0.0031377783183198504,
+          "accuracy": 1.0,
+          "bin_id": 9,
+          "count": 9,
+          "mean_confidence": 0.9968622216816801
+        }
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_lower": 0.8775510204081632,
+          "ci_upper": 0.9795918367346939,
+          "estimate": 0.9285714285714286,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "balanced_accuracy": {
+          "ci_lower": 0.8807151871045902,
+          "ci_upper": 0.9750285087719297,
+          "estimate": 0.93,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "brier": {
+          "ci_lower": 0.11685849858539639,
+          "ci_upper": 0.2201138255974793,
+          "estimate": 0.16655078651183633,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "ece": {
+          "ci_lower": 0.1092976394396349,
+          "ci_upper": 0.19825615109966055,
+          "estimate": 0.14151539287721993,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "ece_equal_width": {
+          "ci_lower": 0.10012119452354441,
+          "ci_upper": 0.19403541784953182,
+          "estimate": 0.14151539287721998,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "log_loss": {
+          "clip": 1e-15,
+          "estimate": 0.3294053591669396,
+          "reason": null,
+          "role": "descriptive_companion",
+          "status": "EVALUATED"
+        },
+        "macro_f1": {
+          "ci_lower": 0.872659511325765,
+          "ci_upper": 0.9741771258503401,
+          "estimate": 0.9285199485199485,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "macro_ovr_auroc": {
+          "ci_lower": 0.979674723056373,
+          "ci_upper": 0.9982221907684684,
+          "estimate": 0.990270930490784,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        }
+      },
+      "model_id": "measured_b_comparator",
+      "predictions": "run:formal/measured_b_comparator/predictions.parquet",
+      "probabilities": "recorded",
+      "probability_source": "stored outer-fold predictors (is_oof rows)",
+      "reason": null,
+      "status": "EVALUATED"
+    }
+  },
+  "partition": "acdc_dev_oof",
+  "qc_rule": "critical-QC rows (QC_ABSTAIN) are excluded and counted",
+  "read_only": true,
+  "schema": "tmmri.predictor_extended/1",
+  "strata": {
+    "note": "acdc_dev has no vendor or centre strata (single release)"
+  }
+}

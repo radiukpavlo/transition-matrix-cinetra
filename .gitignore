@@ -1,0 +1,11 @@
+# Datasets, run roots and local outputs never enter this repository (dataset terms; see README "Data availability").
+/data/raw/*
+!/data/raw/README.md
+/artifacts/*
+!/artifacts/README.md
+/outputs/
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc

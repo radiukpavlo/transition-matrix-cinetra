@@ -1,0 +1,61 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+      "dirty": false
+    },
+    "config_hash": "706c97bd315eb4fb0668f7a2053386038ec0413985d081e4f814329b0bb29720",
+    "inputs": {
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/inner_folds.parquet": "7dc447fdce15486c6ac905d9f5840eb39d9524570ba01b35f06bc3b63b00e8ee",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:data_efficiency/descriptor/curves.json": "c4c9380b284fe0695a26b9a7331f3999b0ab9f0aee41b814d8d9fef8407d8085",
+      "run:data_efficiency/descriptor/oof_bhat.parquet": "ea37ae2218ca09913dc65c22513966f1bcaf5386f801ce911317dd9ca9c6221a",
+      "run:data_efficiency/descriptor/oof_d_model.parquet": "476eaffb29d7e3b69ed2aa7f5b71880ec09e5781fefa875c7b2c89347c093914",
+      "run:data_efficiency/descriptor/subsamples.parquet": "3bc0c82efcdab2648978f09410272a15d496c5e073d527ddc77190399fbc64c5",
+      "run:data_efficiency/descriptor/units.parquet": "a84cfedf71ee0bad84db3bf157bc097e25b803efa7807c7e1290bb6a71dd8dc7"
+    },
+    "params": {
+      "config_sections": [
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.primary_test",
+        "cohorts.qc_severity",
+        "data_centric.common",
+        "data_centric.data_efficiency",
+        "formal.audited_predictor",
+        "registry",
+        "splits.acdc.acdc_dev",
+        "transition"
+      ],
+      "step": "descriptor"
+    },
+    "stage": "run-data-efficiency:descriptor",
+    "status": "BUILT"
+  },
+  "payload_sha256": "73243899f22fce27e0cc5280bc8f950842a0637e6d249750fb9cfad247194054",
+  "run_log": {
+    "host": "cb6a573f30ad",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 18.915,
+    "started_utc": "2026-10-03T13:24:21+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

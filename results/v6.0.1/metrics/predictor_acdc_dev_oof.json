@@ -1,0 +1,187 @@
+{
+  "bootstrap": {
+    "draw": "SeedSequence(seed).spawn(replicates)[r]; clusters numbered by first row",
+    "interval": "percentile_95",
+    "min_valid_fraction": 0.95,
+    "replicates": 2000,
+    "seed": 20260928,
+    "unit": "cluster_id",
+    "valid_replicate": "finite; for balanced accuracy, macro-F1 and macro AUROC the replicate must contain every reference class of the evaluated sample (macro averages over the same classes)"
+  },
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "classes": [
+    "DCM",
+    "HCM",
+    "MINF",
+    "NOR",
+    "RV"
+  ],
+  "companions": {
+    "confusion_matrix": {
+      "columns_d_model": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "counts": [
+        [
+          17,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          1,
+          17,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          15,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          18,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          18
+        ]
+      ],
+      "rows_reference": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ]
+    },
+    "per_class_recall": {
+      "DCM": {
+        "n_reference": 20,
+        "reason": null,
+        "recall": 0.85,
+        "status": "EVALUATED"
+      },
+      "HCM": {
+        "n_reference": 20,
+        "reason": null,
+        "recall": 0.85,
+        "status": "EVALUATED"
+      },
+      "MINF": {
+        "n_reference": 19,
+        "reason": null,
+        "recall": 0.7894736842105263,
+        "status": "EVALUATED"
+      },
+      "NOR": {
+        "n_reference": 19,
+        "reason": null,
+        "recall": 0.9473684210526315,
+        "status": "EVALUATED"
+      },
+      "RV": {
+        "n_reference": 20,
+        "reason": null,
+        "recall": 0.9,
+        "status": "EVALUATED"
+      }
+    }
+  },
+  "counts": {
+    "n_clusters": 98,
+    "n_evaluable": 98,
+    "n_excluded_critical_qc": 0,
+    "n_no_decision": 0,
+    "n_partition": 98,
+    "n_recorded_predictions": 98,
+    "n_reference_outside_predictor_classes": 0,
+    "n_reference_unknown": 0,
+    "n_rows": 98
+  },
+  "ece_binning": "equal_mass",
+  "ece_bins": 10,
+  "ece_realized_bins": [],
+  "metrics": {
+    "accuracy": {
+      "ci_lower": 0.7959183673469388,
+      "ci_upper": 0.9285714285714286,
+      "estimate": 0.8673469387755102,
+      "n_boot_valid": 2000,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 1.0
+    },
+    "balanced_accuracy": {
+      "ci_lower": 0.7964054429552142,
+      "ci_upper": 0.9290785256410254,
+      "estimate": 0.8673684210526316,
+      "n_boot_valid": 2000,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 1.0
+    },
+    "ece": {
+      "ci_lower": null,
+      "ci_upper": null,
+      "estimate": null,
+      "reason": "OOF_PROBABILITIES_NOT_RECORDED",
+      "status": "NE"
+    },
+    "log_loss": {
+      "estimate": null,
+      "reason": "OOF_PROBABILITIES_NOT_RECORDED",
+      "status": "NE"
+    },
+    "macro_f1": {
+      "ci_lower": 0.7930665103998991,
+      "ci_upper": 0.9248328084254646,
+      "estimate": 0.8675149411991517,
+      "n_boot_valid": 2000,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 1.0
+    },
+    "macro_ovr_auroc": {
+      "ci_lower": null,
+      "ci_upper": null,
+      "estimate": null,
+      "reason": "OOF_PROBABILITIES_NOT_RECORDED",
+      "status": "NE"
+    }
+  },
+  "metrics_definition": "SPECIFICATION.md 13.2 Audited predictor; configs/bootstrap.yaml classification_metrics, calibration, fixed_model_bootstrap",
+  "note": "fit-predictor records the cross-fitted decisions only; the fold predictors and their probabilities are not part of the run, so AUROC, ECE and log loss are NE (never refitted here)",
+  "partition": "acdc_dev_oof",
+  "predictions": "formal/d_model_crossfit_ACDC_dev.parquet (d_model_crossfit)",
+  "predictor": "d_model_multinomial_lr_formal_a",
+  "probabilities": "not_recorded",
+  "probability_source": null,
+  "qc_rule": "critical-QC rows (QC_ABSTAIN) are excluded and counted",
+  "reason": null,
+  "reference": "acdc_class",
+  "schema": "tmmri.predictor_summary/1",
+  "semantic_comparator": {
+    "name": "measured_b_logistic_semantic_comparator",
+    "note": "configs/formal.yaml comparator_predictor is not fitted by any stage of this run and is never fitted here",
+    "reason": "COMPARATOR_NOT_FITTED_IN_RUN",
+    "role": "semantic_comparator_not_audited",
+    "status": "NE"
+  },
+  "status": "EVALUATED"
+}

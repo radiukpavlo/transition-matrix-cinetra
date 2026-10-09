@@ -1,0 +1,73 @@
+{
+  "fit_partition": "acdc_dev (out-of-fold logits)",
+  "objective": "nll_on_acdc_dev_out_of_fold_logits",
+  "predictors": {
+    "audited_predictor": {
+      "at_bound": false,
+      "bounds": [
+        0.05,
+        20.0
+      ],
+      "converged": true,
+      "log_temperature": -0.2169982035045582,
+      "logits": "recorded_logits",
+      "n": 98,
+      "nll_after": 0.3541793746962341,
+      "nll_before": 0.36377121202194596,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 98,
+        "sha256": "bc4b8458660d8c7459725c301660d7e428c88cec5dc5fae6ab9a2245f84c8295",
+        "source": "run:formal/audited_predictor/predictions.parquet"
+      },
+      "reason": null,
+      "status": "FITTED",
+      "temperature": 0.8049314153593212
+    },
+    "d20_predictor": {
+      "at_bound": false,
+      "bounds": [
+        0.05,
+        20.0
+      ],
+      "converged": true,
+      "log_temperature": 1.2609261924156177,
+      "logits": "recorded_logits",
+      "n": 98,
+      "nll_after": 1.4312421405978673,
+      "nll_before": 1.9868735271655986,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 98,
+        "sha256": "63fe2499c4505249bef4a5673235f41b96d1184cd8e4128a0e782ef4de8dd38f",
+        "source": "run:deep_encoder/predictions.parquet"
+      },
+      "reason": null,
+      "status": "FITTED",
+      "temperature": 3.52868821858615
+    },
+    "f9": {
+      "at_bound": false,
+      "bounds": [
+        0.05,
+        20.0
+      ],
+      "converged": true,
+      "log_temperature": 0.8317889108241494,
+      "logits": "recorded_logits",
+      "n": 98,
+      "nll_after": 1.0797671828712656,
+      "nll_before": 1.3374069280090606,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 98,
+        "sha256": "81b39673a8a07bb016cd609507eccdc47dc6fc9da818de25f4b72d1d1a4eb909",
+        "source": "run:neural_f9/predictions.parquet"
+      },
+      "reason": null,
+      "status": "FITTED",
+      "temperature": 2.297424954712543
+    }
+  },
+  "schema": "tmmri.s4_temperatures/1"
+}

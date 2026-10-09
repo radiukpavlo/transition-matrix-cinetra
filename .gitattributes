@@ -1,0 +1,8 @@
+# Keep every file byte-identical on every platform: the registered files are checked by their git blob ids
+# (tools/verify_registration.py), and the pipeline hashes its configs inside the Linux container.
+* -text
+*.png binary
+*.pdf binary
+*.parquet binary
+*.npz binary
+*.pt binary

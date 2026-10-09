@@ -1,0 +1,2003 @@
+{
+  "analysis": "S5_data_efficiency",
+  "data_centric_config_digest": "bc834e6fe165cc1c81d0e8a3398decf6a47141f5573ec945c0ddccc7d4e5fa94",
+  "data_centric_sha256": "830ce834980e5c9c5a242c7ec3b42b978b5ca8a1337c293840fbe959756dfe9c",
+  "development_only": true,
+  "fit_spec_source": "tmmri.neural.fit_spec",
+  "n_specs": 30,
+  "n_wave1_records": 540,
+  "partition": "acdc_dev",
+  "pipeline": "f9",
+  "refit_epochs": "ceil_median_of_the_selected_candidates_three_epochs",
+  "registration": "protocol-v6.0.1 item 15",
+  "selection_rule": [
+    "highest_mean_macro_f1",
+    "lowest_mean_cross_entropy",
+    "fewer_unfrozen_blocks",
+    "lower_lr_backbone"
+  ],
+  "study_config_hash": "0eeb571a66d0338cf46bce34a9aa58327f3c659b59d1771d14d68ec5ad5fc11f",
+  "units": [
+    {
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 1,
+      "refit_epochs": 12,
+      "refit_fit_id": "7ae779f9f32106ac",
+      "repeat": 0,
+      "selected_epochs": [
+        11,
+        12,
+        26
+      ],
+      "table": [
+        {
+          "epochs": "[11, 12, 26]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.578115348428775,
+          "mean_macro_f1": 0.2580952380952381,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[15, 15, 15]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5737393293259847,
+          "mean_macro_f1": 0.20726310726310726,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[11, 24, 39]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5298211904791204,
+          "mean_macro_f1": 0.19694083694083694,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[2, 7, 13]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5751006154946545,
+          "mean_macro_f1": 0.15904761904761902,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[2, 7, 8]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.577971861957029,
+          "mean_macro_f1": 0.15841269841269842,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[6, 9, 12]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5828895537449188,
+          "mean_macro_f1": 0.14412698412698413,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 2,
+      "refit_epochs": 13,
+      "refit_fit_id": "16cec7c13972c826",
+      "repeat": 0,
+      "selected_epochs": [
+        7,
+        13,
+        24
+      ],
+      "table": [
+        {
+          "epochs": "[7, 13, 24]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.0936928228386136,
+          "mean_macro_f1": 0.5483068783068783,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[6, 13, 25]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.1747522902397032,
+          "mean_macro_f1": 0.513015873015873,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[13, 19, 54]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.2026747456823361,
+          "mean_macro_f1": 0.4380952380952381,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[13, 24, 54]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.2477442623276058,
+          "mean_macro_f1": 0.393030303030303,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[4, 16, 21]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.377892910161112,
+          "mean_macro_f1": 0.30328042328042326,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[7, 20, 21]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4721778349952421,
+          "mean_macro_f1": 0.2590842490842491,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 0.0001,
+        "unfreeze": "layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 3,
+      "refit_epochs": 18,
+      "refit_fit_id": "2bde5a0c04c39425",
+      "repeat": 0,
+      "selected_epochs": [
+        12,
+        18,
+        28
+      ],
+      "table": [
+        {
+          "epochs": "[12, 18, 28]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4123577157519012,
+          "mean_macro_f1": 0.35394383394383394,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[4, 12, 17]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4307480574866522,
+          "mean_macro_f1": 0.30067155067155066,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[9, 15, 20]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5830370283081834,
+          "mean_macro_f1": 0.18156288156288156,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[4, 8, 17]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5065087703100613,
+          "mean_macro_f1": 0.17555555555555555,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[4, 15, 19]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.589651899341754,
+          "mean_macro_f1": 0.13606837606837607,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[4, 4, 15]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.606417268081474,
+          "mean_macro_f1": 0.06666666666666667,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 4,
+      "refit_epochs": 11,
+      "refit_fit_id": "8646e761b7c23033",
+      "repeat": 0,
+      "selected_epochs": [
+        10,
+        11,
+        14
+      ],
+      "table": [
+        {
+          "epochs": "[10, 11, 14]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5071566399239258,
+          "mean_macro_f1": 0.43015873015873013,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[10, 17, 25]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.472397103372186,
+          "mean_macro_f1": 0.28555555555555556,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[12, 17, 36]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4939797605361729,
+          "mean_macro_f1": 0.2609090909090909,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[6, 8, 11]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5316401210453947,
+          "mean_macro_f1": 0.2474969474969475,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[16, 19, 27]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5381661623936436,
+          "mean_macro_f1": 0.22846560846560846,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[13, 19, 20]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5272847608605973,
+          "mean_macro_f1": 0.21837421837421836,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 5,
+      "refit_epochs": 13,
+      "refit_fit_id": "0aa439bf8e505d0d",
+      "repeat": 0,
+      "selected_epochs": [
+        7,
+        13,
+        22
+      ],
+      "table": [
+        {
+          "epochs": "[7, 13, 22]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.3594273293351746,
+          "mean_macro_f1": 0.4561904761904762,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[13, 20, 37]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.3580269530157754,
+          "mean_macro_f1": 0.4411111111111112,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[11, 22, 22]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.2491232833551889,
+          "mean_macro_f1": 0.4161904761904762,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[14, 41, 48]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.3594739173767525,
+          "mean_macro_f1": 0.3456898656898657,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[7, 19, 27]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.260940922231696,
+          "mean_macro_f1": 0.33225885225885227,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[31, 36, 36]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4448395971554113,
+          "mean_macro_f1": 0.32222222222222224,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 0.0001,
+        "unfreeze": "layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 1,
+      "refit_epochs": 16,
+      "refit_fit_id": "c359ef80ad511558",
+      "repeat": 1,
+      "selected_epochs": [
+        1,
+        16,
+        23
+      ],
+      "table": [
+        {
+          "epochs": "[1, 16, 23]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.3022770752434742,
+          "mean_macro_f1": 0.3622222222222222,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[4, 28, 39]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.43502116816995,
+          "mean_macro_f1": 0.3514285714285714,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[1, 14, 16]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.443946265318387,
+          "mean_macro_f1": 0.28619047619047616,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[4, 16, 32]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.449323304415673,
+          "mean_macro_f1": 0.2778354978354978,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[1, 15, 16]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.356622062857188,
+          "mean_macro_f1": 0.24757575757575756,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[1, 8, 21]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5882422402786325,
+          "mean_macro_f1": 0.17273576097105506,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 0.0001,
+        "unfreeze": "layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 2,
+      "refit_epochs": 9,
+      "refit_fit_id": "a6383bd4099bae89",
+      "repeat": 1,
+      "selected_epochs": [
+        7,
+        9,
+        11
+      ],
+      "table": [
+        {
+          "epochs": "[7, 9, 11]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.545315433265329,
+          "mean_macro_f1": 0.20814814814814817,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[1, 1, 13]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5771514948255578,
+          "mean_macro_f1": 0.16444444444444442,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[1, 1, 13]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5903364665204869,
+          "mean_macro_f1": 0.15743589743589745,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[13, 17, 21]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5994231167941357,
+          "mean_macro_f1": 0.13686274509803922,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[1, 2, 22]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5915258934645298,
+          "mean_macro_f1": 0.1234006734006734,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[1, 1, 15]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5957206946144342,
+          "mean_macro_f1": 0.08080808080808081,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 3,
+      "refit_epochs": 15,
+      "refit_fit_id": "aec36e684c0574d0",
+      "repeat": 1,
+      "selected_epochs": [
+        14,
+        15,
+        29
+      ],
+      "table": [
+        {
+          "epochs": "[14, 15, 29]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4735382352194197,
+          "mean_macro_f1": 0.26188034188034187,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[7, 14, 19]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.496780392798296,
+          "mean_macro_f1": 0.2322222222222222,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[11, 13, 25]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5002326873475405,
+          "mean_macro_f1": 0.2293040293040293,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[6, 8, 16]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.429649645768829,
+          "mean_macro_f1": 0.21322085322085324,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[6, 8, 16]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.434227798430715,
+          "mean_macro_f1": 0.21315018315018316,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[12, 18, 29]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5907268741714484,
+          "mean_macro_f1": 0.16757575757575757,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 4,
+      "refit_epochs": 14,
+      "refit_fit_id": "fcb032471ab25629",
+      "repeat": 1,
+      "selected_epochs": [
+        13,
+        14,
+        29
+      ],
+      "table": [
+        {
+          "epochs": "[13, 14, 29]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.3020781300975437,
+          "mean_macro_f1": 0.38518518518518513,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[14, 31, 44]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.3989092652672148,
+          "mean_macro_f1": 0.30029304029304027,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[17, 17, 41]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.459864603026724,
+          "mean_macro_f1": 0.28677248677248673,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[7, 10, 14]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4098964068294848,
+          "mean_macro_f1": 0.2845502645502645,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[9, 9, 25]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4159921711979528,
+          "mean_macro_f1": 0.21444444444444444,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[10, 15, 15]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5537493780198373,
+          "mean_macro_f1": 0.18952380952380954,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 5,
+      "refit_epochs": 26,
+      "refit_fit_id": "3ddf07b50514aeb2",
+      "repeat": 1,
+      "selected_epochs": [
+        6,
+        26,
+        44
+      ],
+      "table": [
+        {
+          "epochs": "[6, 26, 44]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.399506323752884,
+          "mean_macro_f1": 0.39904761904761904,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[4, 12, 23]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4597262315464115,
+          "mean_macro_f1": 0.32325396825396824,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[6, 26, 36]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4317584118081976,
+          "mean_macro_f1": 0.3129365079365079,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[6, 10, 10]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4919085854570906,
+          "mean_macro_f1": 0.245011655011655,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[5, 27, 31]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5369882137507709,
+          "mean_macro_f1": 0.23903281903281903,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[6, 11, 12]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4966708658617147,
+          "mean_macro_f1": 0.17233766233766232,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 1,
+      "refit_epochs": 9,
+      "refit_fit_id": "f82c6c14106d2718",
+      "repeat": 2,
+      "selected_epochs": [
+        5,
+        9,
+        18
+      ],
+      "table": [
+        {
+          "epochs": "[5, 9, 18]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5016158622220115,
+          "mean_macro_f1": 0.29055555555555557,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[9, 17, 27]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5288463823550142,
+          "mean_macro_f1": 0.23994708994708994,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[6, 7, 16]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5724909247737615,
+          "mean_macro_f1": 0.2180952380952381,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[2, 4, 9]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5811702601752602,
+          "mean_macro_f1": 0.1822222222222222,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[5, 7, 8]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.6010521987053463,
+          "mean_macro_f1": 0.13989417989417988,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[6, 6, 19]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5798939852195089,
+          "mean_macro_f1": 0.10981481481481481,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 2,
+      "refit_epochs": 19,
+      "refit_fit_id": "4862e0740153c415",
+      "repeat": 2,
+      "selected_epochs": [
+        4,
+        19,
+        24
+      ],
+      "table": [
+        {
+          "epochs": "[4, 19, 24]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5323805881397325,
+          "mean_macro_f1": 0.3279202279202279,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[2, 10, 20]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4724588496990159,
+          "mean_macro_f1": 0.31269841269841264,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[9, 9, 17]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5652207336044928,
+          "mean_macro_f1": 0.26825396825396824,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[4, 18, 31]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5179702548937195,
+          "mean_macro_f1": 0.23698412698412696,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[2, 10, 16]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5159584207805665,
+          "mean_macro_f1": 0.17344877344877344,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[6, 6, 17]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5959115851785246,
+          "mean_macro_f1": 0.12349206349206349,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 3,
+      "refit_epochs": 13,
+      "refit_fit_id": "909db790c4b80836",
+      "repeat": 2,
+      "selected_epochs": [
+        8,
+        13,
+        37
+      ],
+      "table": [
+        {
+          "epochs": "[8, 13, 37]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5160259472211945,
+          "mean_macro_f1": 0.375036075036075,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[1, 4, 25]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5264648503693816,
+          "mean_macro_f1": 0.3451851851851851,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[1, 7, 20]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4882015770363914,
+          "mean_macro_f1": 0.3009523809523809,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[8, 12, 19]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5540685773110487,
+          "mean_macro_f1": 0.3007070707070707,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[4, 6, 28]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5982210852047434,
+          "mean_macro_f1": 0.12825396825396826,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[2, 5, 14]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5834528079518904,
+          "mean_macro_f1": 0.09888888888888887,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 4,
+      "refit_epochs": 16,
+      "refit_fit_id": "71475f5bc0777a9f",
+      "repeat": 2,
+      "selected_epochs": [
+        1,
+        16,
+        25
+      ],
+      "table": [
+        {
+          "epochs": "[1, 16, 25]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4005744405028242,
+          "mean_macro_f1": 0.3785858585858586,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[1, 14, 21]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4487737019679097,
+          "mean_macro_f1": 0.32476190476190475,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[11, 21, 26]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4508370870064988,
+          "mean_macro_f1": 0.26126984126984126,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[11, 24, 25]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4831534261794272,
+          "mean_macro_f1": 0.2536507936507936,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[1, 14, 17]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.439643982485519,
+          "mean_macro_f1": 0.2485185185185185,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[14, 16, 18]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5821424901104182,
+          "mean_macro_f1": 0.23686274509803926,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer4"
+      },
+      "fraction": 0.5,
+      "outer_fold": 5,
+      "refit_epochs": 16,
+      "refit_fit_id": "359bb4df0835aa68",
+      "repeat": 2,
+      "selected_epochs": [
+        4,
+        16,
+        19
+      ],
+      "table": [
+        {
+          "epochs": "[4, 16, 19]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.561615290663177,
+          "mean_macro_f1": 0.20523809523809525,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[1, 9, 11]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5669730481379822,
+          "mean_macro_f1": 0.1861294261294261,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[4, 15, 17]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.56972298838787,
+          "mean_macro_f1": 0.18329004329004328,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[1, 10, 11]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5795756642526089,
+          "mean_macro_f1": 0.1822222222222222,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[1, 5, 11]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5984411565971623,
+          "mean_macro_f1": 0.1111111111111111,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[4, 6, 13]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.6082332627085478,
+          "mean_macro_f1": 0.08333333333333333,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 1,
+      "refit_epochs": 14,
+      "refit_fit_id": "fc3bbd17128a2877",
+      "repeat": 0,
+      "selected_epochs": [
+        5,
+        14,
+        25
+      ],
+      "table": [
+        {
+          "epochs": "[5, 14, 25]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.071721058712181,
+          "mean_macro_f1": 0.5303703703703704,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[7, 15, 25]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.2585699107773354,
+          "mean_macro_f1": 0.4909042809042809,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[6, 20, 37]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.3040862434799567,
+          "mean_macro_f1": 0.48337292337292337,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[8, 31, 37]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.3179373830403531,
+          "mean_macro_f1": 0.3734535834535834,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[7, 16, 34]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5001502610108475,
+          "mean_macro_f1": 0.2503968253968254,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[22, 23, 27]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5567534536219718,
+          "mean_macro_f1": 0.21339586339586336,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 2,
+      "refit_epochs": 14,
+      "refit_fit_id": "c003e7b0e1c63ba1",
+      "repeat": 0,
+      "selected_epochs": [
+        4,
+        14,
+        17
+      ],
+      "table": [
+        {
+          "epochs": "[4, 14, 17]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.2654922413763499,
+          "mean_macro_f1": 0.47910938963570543,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[15, 20, 23]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5099482967751394,
+          "mean_macro_f1": 0.27785714285714286,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[10, 12, 18]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.566550626390842,
+          "mean_macro_f1": 0.2452621234974176,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[12, 13, 17]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5606758684278927,
+          "mean_macro_f1": 0.24248677248677245,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[16, 22, 40]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4825090255370925,
+          "mean_macro_f1": 0.2380996780996781,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[5, 8, 10]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5518812816030474,
+          "mean_macro_f1": 0.21193260930103033,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 3,
+      "refit_epochs": 12,
+      "refit_fit_id": "5295ad9e951140e3",
+      "repeat": 0,
+      "selected_epochs": [
+        5,
+        12,
+        25
+      ],
+      "table": [
+        {
+          "epochs": "[5, 12, 25]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5006948953430308,
+          "mean_macro_f1": 0.32261664261664263,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[4, 10, 15]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4332645569806328,
+          "mean_macro_f1": 0.28918229918229915,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[4, 20, 32]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4712733291730282,
+          "mean_macro_f1": 0.28164021164021164,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[4, 16, 20]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5545012427519913,
+          "mean_macro_f1": 0.2450793650793651,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[10, 13, 22]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5072622276918928,
+          "mean_macro_f1": 0.23573260073260074,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[16, 17, 26]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4824993847524528,
+          "mean_macro_f1": 0.23465423465423466,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 4,
+      "refit_epochs": 15,
+      "refit_fit_id": "c1f4cd0507ae87e3",
+      "repeat": 0,
+      "selected_epochs": [
+        13,
+        15,
+        20
+      ],
+      "table": [
+        {
+          "epochs": "[13, 15, 20]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.3323877942707525,
+          "mean_macro_f1": 0.5940548340548341,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[10, 25, 30]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.40798609811461,
+          "mean_macro_f1": 0.4332804232804232,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[7, 7, 23]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.475766489416246,
+          "mean_macro_f1": 0.41702982202982203,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[12, 12, 30]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4396786442171325,
+          "mean_macro_f1": 0.3331938431938432,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[11, 16, 29]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5423004226711645,
+          "mean_macro_f1": 0.2383930883930884,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[6, 8, 16]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5909453307323478,
+          "mean_macro_f1": 0.15646945646945645,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 5,
+      "refit_epochs": 16,
+      "refit_fit_id": "74328848f536019f",
+      "repeat": 0,
+      "selected_epochs": [
+        16,
+        16,
+        16
+      ],
+      "table": [
+        {
+          "epochs": "[16, 16, 16]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4756899264661192,
+          "mean_macro_f1": 0.4094949494949495,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[16, 16, 25]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.474687821521812,
+          "mean_macro_f1": 0.40638583638583636,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[6, 15, 18]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4117584657750626,
+          "mean_macro_f1": 0.37906204906204904,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[10, 15, 15]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4019908971375161,
+          "mean_macro_f1": 0.283973063973064,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[7, 12, 13]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.3519369057374628,
+          "mean_macro_f1": 0.2757287157287157,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[13, 21, 24]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4327406653749744,
+          "mean_macro_f1": 0.24871459694989106,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 1,
+      "refit_epochs": 14,
+      "refit_fit_id": "9563d2da7c854045",
+      "repeat": 1,
+      "selected_epochs": [
+        4,
+        14,
+        28
+      ],
+      "table": [
+        {
+          "epochs": "[4, 14, 28]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.521520994747223,
+          "mean_macro_f1": 0.32269841269841265,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[2, 7, 34]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4463765074212338,
+          "mean_macro_f1": 0.27619047619047615,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[2, 4, 49]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4154029763034863,
+          "mean_macro_f1": 0.24329402907408024,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[10, 15, 16]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5425612166865694,
+          "mean_macro_f1": 0.24073260073260075,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[2, 4, 39]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4363821636075886,
+          "mean_macro_f1": 0.18519879097884215,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[1, 4, 11]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5225602739714246,
+          "mean_macro_f1": 0.18364413364413365,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 2,
+      "refit_epochs": 24,
+      "refit_fit_id": "351b3630c7eb6ed8",
+      "repeat": 1,
+      "selected_epochs": [
+        3,
+        24,
+        28
+      ],
+      "table": [
+        {
+          "epochs": "[3, 24, 28]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.236990431347136,
+          "mean_macro_f1": 0.4398075998075998,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[3, 16, 29]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.3840037346699894,
+          "mean_macro_f1": 0.3516011042097999,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[7, 21, 26]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4656795367838733,
+          "mean_macro_f1": 0.3202723202723202,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[8, 18, 26]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4869566773234233,
+          "mean_macro_f1": 0.31671291671291674,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[5, 20, 22]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4490750133734132,
+          "mean_macro_f1": 0.3145350945350946,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[20, 27, 35]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4857348479029324,
+          "mean_macro_f1": 0.2768253968253968,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 3,
+      "refit_epochs": 12,
+      "refit_fit_id": "447020ed05041262",
+      "repeat": 1,
+      "selected_epochs": [
+        11,
+        12,
+        14
+      ],
+      "table": [
+        {
+          "epochs": "[11, 12, 14]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4447439379612226,
+          "mean_macro_f1": 0.4212047212047212,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[13, 19, 21]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4238776605919627,
+          "mean_macro_f1": 0.34698412698412695,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[6, 21, 24]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.524000599735613,
+          "mean_macro_f1": 0.30752284752284753,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[2, 20, 21]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.485292835043052,
+          "mean_macro_f1": 0.3040050609615827,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[14, 18, 20]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.484834486259513,
+          "mean_macro_f1": 0.2276863876863877,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[5, 9, 12]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5137294726148849,
+          "mean_macro_f1": 0.22532835356364767,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 4,
+      "refit_epochs": 22,
+      "refit_fit_id": "99c01759744f837e",
+      "repeat": 1,
+      "selected_epochs": [
+        5,
+        22,
+        26
+      ],
+      "table": [
+        {
+          "epochs": "[5, 22, 26]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.2062309061106267,
+          "mean_macro_f1": 0.4811640211640212,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[5, 16, 22]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.3030374517160521,
+          "mean_macro_f1": 0.43816738816738815,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[9, 16, 51]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.2746056925232214,
+          "mean_macro_f1": 0.42674806674806676,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[9, 16, 20]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4126392213540289,
+          "mean_macro_f1": 0.4177629777629777,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[10, 16, 48]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.3417493662213011,
+          "mean_macro_f1": 0.3570483546954135,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[13, 25, 33]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.465446298550658,
+          "mean_macro_f1": 0.16794612794612795,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 1e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 5,
+      "refit_epochs": 30,
+      "refit_fit_id": "f830dcddef8cd13a",
+      "repeat": 1,
+      "selected_epochs": [
+        24,
+        30,
+        34
+      ],
+      "table": [
+        {
+          "epochs": "[24, 30, 34]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.1470395221333058,
+          "mean_macro_f1": 0.5231949531949532,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[26, 30, 39]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.3007378926581028,
+          "mean_macro_f1": 0.5130891330891331,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[11, 26, 34]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.2056620895349803,
+          "mean_macro_f1": 0.45643060643060646,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[9, 14, 14]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.2847664451525596,
+          "mean_macro_f1": 0.4001887001887002,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[5, 26, 33]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.3277450141541025,
+          "mean_macro_f1": 0.3838180120533061,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[12, 12, 17]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.460128218848341,
+          "mean_macro_f1": 0.20645502645502645,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 1,
+      "refit_epochs": 14,
+      "refit_fit_id": "6c597caa6cd965f6",
+      "repeat": 2,
+      "selected_epochs": [
+        8,
+        14,
+        16
+      ],
+      "table": [
+        {
+          "epochs": "[8, 14, 16]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4027425092050974,
+          "mean_macro_f1": 0.38640211640211636,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[12, 12, 17]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5728620714622046,
+          "mean_macro_f1": 0.25797609797609794,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[14, 19, 29]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4726501670925651,
+          "mean_macro_f1": 0.25566137566137564,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[12, 17, 20]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5650814363223373,
+          "mean_macro_f1": 0.24561771561771562,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[2, 13, 15]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5897108488880616,
+          "mean_macro_f1": 0.22017316017316016,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[5, 6, 12]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.5487775684668763,
+          "mean_macro_f1": 0.16757575757575757,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 2,
+      "refit_epochs": 17,
+      "refit_fit_id": "484c35cc63125175",
+      "repeat": 2,
+      "selected_epochs": [
+        5,
+        17,
+        20
+      ],
+      "table": [
+        {
+          "epochs": "[5, 17, 20]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.211001476101153,
+          "mean_macro_f1": 0.5807016333103289,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[9, 37, 41]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.2145025138626118,
+          "mean_macro_f1": 0.569119769119769,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[7, 37, 48]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.305099862845015,
+          "mean_macro_f1": 0.47029822029822027,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[5, 11, 21]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.345530601754816,
+          "mean_macro_f1": 0.38636300897170467,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[7, 14, 21]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.532048465261079,
+          "mean_macro_f1": 0.23755170755170754,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[17, 23, 43]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5114553402068667,
+          "mean_macro_f1": 0.20077365129996708,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 0.0001,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 3,
+      "refit_epochs": 25,
+      "refit_fit_id": "d9502784fb17f25c",
+      "repeat": 2,
+      "selected_epochs": [
+        21,
+        25,
+        52
+      ],
+      "table": [
+        {
+          "epochs": "[21, 25, 52]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4441530923289017,
+          "mean_macro_f1": 0.3856751782838739,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[2, 16, 19]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4767730650459008,
+          "mean_macro_f1": 0.34953823953823954,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[4, 7, 11]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.583307744718469,
+          "mean_macro_f1": 0.30817219817219815,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[6, 7, 18]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5905432827216368,
+          "mean_macro_f1": 0.24725348725348725,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[6, 7, 23]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.5883076171993984,
+          "mean_macro_f1": 0.240571377939799,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[9, 11, 12]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.560270212819998,
+          "mean_macro_f1": 0.22489769489769487,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 4,
+      "refit_epochs": 12,
+      "refit_fit_id": "6298ac49786fe08e",
+      "repeat": 2,
+      "selected_epochs": [
+        11,
+        12,
+        19
+      ],
+      "table": [
+        {
+          "epochs": "[11, 12, 19]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.3787357373727538,
+          "mean_macro_f1": 0.36155474155474154,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[5, 13, 16]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.4386880758675318,
+          "mean_macro_f1": 0.3341702741702741,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[9, 16, 16]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.382899441139547,
+          "mean_macro_f1": 0.33218062982768864,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[14, 16, 36]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.4714036624887277,
+          "mean_macro_f1": 0.3277248677248677,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[9, 10, 35]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.477903247951649,
+          "mean_macro_f1": 0.2567318623355775,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[9, 15, 34]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.3961183049533405,
+          "mean_macro_f1": 0.24134680134680134,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "lr_backbone": 3e-05,
+        "unfreeze": "layer3+layer4"
+      },
+      "fraction": 0.75,
+      "outer_fold": 5,
+      "refit_epochs": 19,
+      "refit_fit_id": "572fa8d8e8b3a5a4",
+      "repeat": 2,
+      "selected_epochs": [
+        12,
+        19,
+        30
+      ],
+      "table": [
+        {
+          "epochs": "[12, 19, 30]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.1190631852002229,
+          "mean_macro_f1": 0.5371572871572872,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[9, 30, 38]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.245822815771873,
+          "mean_macro_f1": 0.49037037037037035,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[10, 19, 26]",
+          "lr_backbone": 1e-05,
+          "mean_cross_entropy": 1.3815986931152173,
+          "mean_macro_f1": 0.3447955747955748,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[5, 9, 12]",
+          "lr_backbone": 3e-05,
+          "mean_cross_entropy": 1.3959429603179665,
+          "mean_macro_f1": 0.3328515733778892,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        },
+        {
+          "epochs": "[15, 19, 32]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.5092911938576385,
+          "mean_macro_f1": 0.3184508084508085,
+          "n_folds": 3,
+          "unfreeze": "layer3+layer4"
+        },
+        {
+          "epochs": "[7, 14, 22]",
+          "lr_backbone": 0.0001,
+          "mean_cross_entropy": 1.4481660941308352,
+          "mean_macro_f1": 0.30796296296296294,
+          "n_folds": 3,
+          "unfreeze": "layer4"
+        }
+      ]
+    }
+  ],
+  "wave": 2
+}

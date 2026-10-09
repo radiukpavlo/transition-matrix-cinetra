@@ -1,0 +1,93 @@
+{
+  "bundle": {
+    "comparators/cart_f8/fit_rows.parquet": "2af624bdb3019996abf3d363cebe5b30077b51e153ad5cc0634b9e78ac64a871",
+    "comparators/cart_f8/fold_trees.json": "3ff1e371def2f98456e30af74061520c431ec5bb2425007f570abddf50c3801c",
+    "comparators/cart_f8/leaves.csv": "5513617e5c856f3f252d61aa53b92f80135b3fd21e90402a062635e99bfd0196",
+    "comparators/cart_f8/leaves.parquet": "974fe1a3247119c6cee5d1edcbe4099fb82b338e292c53173a869b70f7c0fc45",
+    "comparators/cart_f8/model.joblib": "7bd7c9d92cd6f0902d5d111f1b99825e955a91de0bead236b618e53e9365ffbb",
+    "comparators/cart_f8/nested_oof_ledger.parquet": "d604122def82ef2a71065d48fd74e1a51578be90d73790a235f727452b48c6a6",
+    "comparators/cart_f8/rules.json": "0c6619709ddaf6bfaa4e7c456d39b2f69a2343ed829a7c4a0383df3cb55513de",
+    "comparators/cart_f8/tree.json": "8041fbad9001b3d2d5768f25555eaa31b13852c7f91202b148eeb6097bbd6460"
+  },
+  "bundle_sha256": "0b6911083255c9b38a6eb5302f9933f42f1814ab40a3df4dd224842fdb255f63",
+  "code": {
+    "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+    "commit": "5d88a3041ca9f604b1066e85cb138b91802f1df3",
+    "dirty": false
+  },
+  "comparator_id": "F8_cart_surrogate",
+  "config": {
+    "file": "configs/cart_f8.yaml",
+    "sha256": "e1bb78c18e341e0faa735f235730ea3eb928614c98eed9292dbce1519f49f1dd"
+  },
+  "counts": {
+    "n_acdc_dev_with_oof": 98,
+    "n_excluded_critical_qc": 0,
+    "n_excluded_no_d_model": 0,
+    "n_excluded_nonfinite_feature": 0,
+    "n_fit_rows": 98
+  },
+  "dropped_features": [],
+  "evaluation_status": {
+    "acdc_test": "post_hoc",
+    "mms2_external": "prospective",
+    "mms_external": "post_hoc"
+  },
+  "features": [
+    "lv_edv_ml",
+    "lv_esv_ml",
+    "lv_ef_percent",
+    "rv_edv_ml",
+    "rv_esv_ml",
+    "rv_ef_percent",
+    "lv_myocardial_mass_ed_g",
+    "global_wall_thickness_ed_mm",
+    "global_wall_thickening_percent"
+  ],
+  "frozen_before": "any M&Ms-2 staging (protocol-v6.0.1 amendment item 7); never part of the v6 analysis bundle",
+  "inputs": {
+    "B": {
+      "path": "run:semantics/B_ACDC.parquet",
+      "sha256": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "d_model_oof": {
+      "path": "run:formal/d_model_crossfit_ACDC_dev.parquet",
+      "sha256": "70c4f247a20aa3c0f0bf38074eb7e5a642de810cf7948dbecfbcc99b4362eb62"
+    },
+    "inner_oof_fold1": {
+      "path": "run:oof/inner_oof_ACDC_dev_fold1.parquet",
+      "sha256": "2e8a37f91246467c73952f0bcfb46781aee0d87029f2ea449f7a0906684a87de"
+    },
+    "inner_oof_fold2": {
+      "path": "run:oof/inner_oof_ACDC_dev_fold2.parquet",
+      "sha256": "42f310fe8bde92020f55919938abe4fe1cebac3028297923cde865b3bde8e921"
+    },
+    "inner_oof_fold3": {
+      "path": "run:oof/inner_oof_ACDC_dev_fold3.parquet",
+      "sha256": "54ca2f68f7047260af0677113077ff9c16dd6e3a60794dd3c7c0f009ab8d1a2b"
+    },
+    "inner_oof_fold4": {
+      "path": "run:oof/inner_oof_ACDC_dev_fold4.parquet",
+      "sha256": "baf40e2d2a0a4a552c5524c1d411f783fbff0cf0e59891df25f90494bfec921a"
+    },
+    "inner_oof_fold5": {
+      "path": "run:oof/inner_oof_ACDC_dev_fold5.parquet",
+      "sha256": "756957ef21dddd641b76286d1f8cfd55f0c221be31c46800d692454f0aab08e3"
+    },
+    "oof_bhat": {
+      "path": "run:oof/bhat_oof_ACDC_dev.parquet",
+      "sha256": "b735e0820b374ebfa64849337e815669bc965590b373b1aa69c41a20d459e0a4"
+    },
+    "split_manifest": {
+      "path": "run:contracts/split_manifest.parquet",
+      "sha256": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf"
+    }
+  },
+  "mms2_staged_at_freeze": false,
+  "n_leaves": 7,
+  "n_selected_leaves": 3,
+  "role": "registered_comparator_supplementary_bundle",
+  "run_id": "v6-replication-20261003-1241",
+  "schema": "tmmri.supplementary_bundle/1",
+  "v6_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1"
+}

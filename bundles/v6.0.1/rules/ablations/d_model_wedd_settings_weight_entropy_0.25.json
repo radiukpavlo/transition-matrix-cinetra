@@ -1,0 +1,40 @@
+{
+  "class_records": {
+    "DCM": {
+      "eligible": true,
+      "fit_patients": 20,
+      "reason_code": null
+    },
+    "HCM": {
+      "eligible": true,
+      "fit_patients": 20,
+      "reason_code": null
+    },
+    "MINF": {
+      "eligible": true,
+      "fit_patients": 19,
+      "reason_code": null
+    },
+    "NOR": {
+      "eligible": true,
+      "fit_patients": 19,
+      "reason_code": null
+    },
+    "RV": {
+      "eligible": true,
+      "fit_patients": 20,
+      "reason_code": null
+    }
+  },
+  "consequent_endpoint": "d_model",
+  "failing_gates": [
+    "discovery: no granule with >= 5 anchors and confidence >= 0.9 over attribute subsets of size <= 3",
+    "discovery: no candidate rule"
+  ],
+  "gate_table": [],
+  "provenance": {
+    "ablation": "wedd_settings:weight_entropy_0.25"
+  },
+  "reason_code": "RULEBOOK_EMPTY",
+  "rulebook": "d_model"
+}

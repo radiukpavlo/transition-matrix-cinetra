@@ -1,0 +1,967 @@
+{
+  "below_threshold": {
+    "reason": "STRATUM_BELOW_MIN_CASES",
+    "status": "NE"
+  },
+  "bland_altman": {
+    "rows": "the rows of evaluate's per-target errors",
+    "source": "run:reconstructed/bhat_acdc_test.parquet",
+    "strata": {},
+    "substrate": "recorded raw B-hat of evaluate (the error substrate)",
+    "targets": {
+      "lv_edv_ml": {
+        "bias": -16.218970376452923,
+        "ci": {
+          "bias": [
+            -26.481204056004675,
+            -6.833057518557194
+          ],
+          "loa_lower": [
+            -108.07880865580462,
+            -63.84654226903357
+          ],
+          "loa_upper": [
+            36.52972608027906,
+            71.0606736987905
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -87.48217864414835,
+        "loa_upper": 55.04423789124251,
+        "n": 50,
+        "n_boot_valid": 2000,
+        "n_clusters": 50,
+        "reason": null,
+        "sd_difference": 36.35877972841604,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "lv_ef_percent": {
+        "bias": -0.7380405239881556,
+        "ci": {
+          "bias": [
+            -2.1339191823157417,
+            0.6179803556831958
+          ],
+          "loa_lower": [
+            -13.038239517069341,
+            -8.432446083384562
+          ],
+          "loa_upper": [
+            6.870123661640082,
+            11.55070181858373
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -10.87314218665231,
+        "loa_upper": 9.397061138675998,
+        "n": 50,
+        "n_boot_valid": 2000,
+        "n_clusters": 50,
+        "reason": null,
+        "sd_difference": 5.170970236053139,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "lv_esv_ml": {
+        "bias": -7.757740829707644,
+        "ci": {
+          "bias": [
+            -17.230459151402616,
+            2.0330323277058278
+          ],
+          "loa_lower": [
+            -101.14451066426744,
+            -51.99786969985555
+          ],
+          "loa_upper": [
+            39.92875069215082,
+            85.50510108848071
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -78.78264571268065,
+        "loa_upper": 63.26716405326536,
+        "n": 50,
+        "n_boot_valid": 2000,
+        "n_clusters": 50,
+        "reason": null,
+        "sd_difference": 36.23719636886378,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "lv_myocardial_mass_ed_g": {
+        "bias": -11.370762759376108,
+        "ci": {
+          "bias": [
+            -19.350565205281917,
+            -3.7423730143627556
+          ],
+          "loa_lower": [
+            -88.0267637812876,
+            -46.27755045140602
+          ],
+          "loa_upper": [
+            29.12765821890497,
+            60.427583845845334
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -68.80054401653715,
+        "loa_upper": 46.05901849778493,
+        "n": 50,
+        "n_boot_valid": 2000,
+        "n_clusters": 50,
+        "reason": null,
+        "sd_difference": 29.300908804674002,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "rv_edv_ml": {
+        "bias": -18.649988602377842,
+        "ci": {
+          "bias": [
+            -27.609107552023424,
+            -9.86626383498999
+          ],
+          "loa_lower": [
+            -108.57741988951612,
+            -58.67396866239739
+          ],
+          "loa_upper": [
+            28.741359473992112,
+            62.013027500142734
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -83.93249844168658,
+        "loa_upper": 46.632521236930884,
+        "n": 50,
+        "n_boot_valid": 2000,
+        "n_clusters": 50,
+        "reason": null,
+        "sd_difference": 33.30740297923915,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "rv_ef_percent": {
+        "bias": 1.0449021133973024,
+        "ci": {
+          "bias": [
+            -0.2595409751848637,
+            2.300628635270228
+          ],
+          "loa_lower": [
+            -10.642329183438841,
+            -5.799994257636167
+          ],
+          "loa_upper": [
+            8.150640574367886,
+            12.805816106048116
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -8.46105741500658,
+        "loa_upper": 10.550861641801186,
+        "n": 50,
+        "n_boot_valid": 2000,
+        "n_clusters": 50,
+        "reason": null,
+        "sd_difference": 4.849979351226471,
+        "status": "EVALUATED",
+        "z": 1.96
+      },
+      "rv_esv_ml": {
+        "bias": -12.461129064946055,
+        "ci": {
+          "bias": [
+            -17.187724970539765,
+            -7.310033695017174
+          ],
+          "loa_lower": [
+            -61.55471411870258,
+            -35.138639098179176
+          ],
+          "loa_upper": [
+            13.692243818102117,
+            32.460664655327676
+          ]
+        },
+        "descriptive_only": false,
+        "difference": "B-hat minus measured B",
+        "loa_lower": -48.73341494942847,
+        "loa_upper": 23.811156819536357,
+        "n": 50,
+        "n_boot_valid": 2000,
+        "n_clusters": 50,
+        "reason": null,
+        "sd_difference": 18.506268308409396,
+        "status": "EVALUATED",
+        "z": 1.96
+      }
+    }
+  },
+  "bootstrap": {
+    "interval": "percentile_95",
+    "replicates": 2000,
+    "seed": 20260928,
+    "unit": "cluster_id"
+  },
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "classes": [
+    "DCM",
+    "HCM",
+    "MINF",
+    "NOR",
+    "RV"
+  ],
+  "dataset": "ACDC",
+  "ece_bins": 10,
+  "evidence": "registered after unblinding",
+  "metrics_definition": "predictor_summary_v6 (SPECIFICATION.md 13.2; equal-mass ECE as frozen) plus ECE with equal-width bins and the multiclass Brier score (docs/MANUSCRIPT_PROTOCOL_2026-10-02.md Section F), one cluster draw per replicate",
+  "min_clusters_per_stratum": 20,
+  "models": {
+    "audited_predictor": {
+      "bootstrap": {
+        "draw": "SeedSequence(seed).spawn(replicates)[r]; clusters numbered by first row",
+        "interval": "percentile_95",
+        "min_valid_fraction": 0.95,
+        "replicates": 2000,
+        "seed": 20260928,
+        "unit": "cluster_id",
+        "valid_replicate": "finite; for balanced accuracy, macro-F1 and macro AUROC the replicate must contain every reference class of the evaluated sample (macro averages over the same classes)"
+      },
+      "brier": "multiclass sum over the classes",
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "companions": {
+        "confusion_matrix": {
+          "columns_d_model": [
+            "DCM",
+            "HCM",
+            "MINF",
+            "NOR",
+            "RV"
+          ],
+          "counts": [
+            [
+              9,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              10,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              10
+            ]
+          ],
+          "rows_reference": [
+            "DCM",
+            "HCM",
+            "MINF",
+            "NOR",
+            "RV"
+          ]
+        },
+        "per_class_recall": {
+          "DCM": {
+            "n_reference": 10,
+            "reason": null,
+            "recall": 0.9,
+            "status": "EVALUATED"
+          },
+          "HCM": {
+            "n_reference": 10,
+            "reason": null,
+            "recall": 0.7,
+            "status": "EVALUATED"
+          },
+          "MINF": {
+            "n_reference": 10,
+            "reason": null,
+            "recall": 1.0,
+            "status": "EVALUATED"
+          },
+          "NOR": {
+            "n_reference": 10,
+            "reason": null,
+            "recall": 0.8,
+            "status": "EVALUATED"
+          },
+          "RV": {
+            "n_reference": 10,
+            "reason": null,
+            "recall": 1.0,
+            "status": "EVALUATED"
+          }
+        }
+      },
+      "counts": {
+        "n_clusters": 50,
+        "n_evaluable": 50,
+        "n_no_decision": 0,
+        "n_reference_outside_predictor_classes": 0,
+        "n_reference_unknown": 0,
+        "n_rows": 50
+      },
+      "counts_partition": {
+        "n_excluded_critical_qc": 0,
+        "n_metric_rows": 50,
+        "n_partition": 50,
+        "n_recorded_predictions": 50
+      },
+      "ece_binning": "equal_mass",
+      "ece_bins": 10,
+      "ece_equal_width_binning": "equal_width",
+      "ece_equal_width_bins": 10,
+      "ece_equal_width_realized_bins": [
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 0,
+          "count": 0,
+          "lower": 0.0,
+          "mean_confidence": NaN,
+          "upper": 0.1
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 1,
+          "count": 0,
+          "lower": 0.1,
+          "mean_confidence": NaN,
+          "upper": 0.2
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 2,
+          "count": 0,
+          "lower": 0.2,
+          "mean_confidence": NaN,
+          "upper": 0.30000000000000004
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 3,
+          "count": 0,
+          "lower": 0.30000000000000004,
+          "mean_confidence": NaN,
+          "upper": 0.4
+        },
+        {
+          "abs_gap": 0.5143454702816213,
+          "accuracy": 1.0,
+          "bin_id": 4,
+          "count": 2,
+          "lower": 0.4,
+          "mean_confidence": 0.48565452971837875,
+          "upper": 0.5
+        },
+        {
+          "abs_gap": 0.040337477017649115,
+          "accuracy": 0.5714285714285714,
+          "bin_id": 5,
+          "count": 7,
+          "lower": 0.5,
+          "mean_confidence": 0.5310910944109223,
+          "upper": 0.6000000000000001
+        },
+        {
+          "abs_gap": 0.3469816130877591,
+          "accuracy": 1.0,
+          "bin_id": 6,
+          "count": 5,
+          "lower": 0.6000000000000001,
+          "mean_confidence": 0.6530183869122409,
+          "upper": 0.7000000000000001
+        },
+        {
+          "abs_gap": 0.07510155626153692,
+          "accuracy": 0.8333333333333334,
+          "bin_id": 7,
+          "count": 6,
+          "lower": 0.7000000000000001,
+          "mean_confidence": 0.7582317770717965,
+          "upper": 0.8
+        },
+        {
+          "abs_gap": 0.10284145731908856,
+          "accuracy": 0.75,
+          "bin_id": 8,
+          "count": 4,
+          "lower": 0.8,
+          "mean_confidence": 0.8528414573190886,
+          "upper": 0.9
+        },
+        {
+          "abs_gap": 0.014622136516185047,
+          "accuracy": 0.9615384615384616,
+          "bin_id": 9,
+          "count": 26,
+          "lower": 0.9,
+          "mean_confidence": 0.9761605980546466,
+          "upper": 1.0
+        }
+      ],
+      "ece_realized_bins": [
+        {
+          "abs_gap": 0.09945932130599844,
+          "accuracy": 0.4,
+          "bin_id": 0,
+          "count": 5,
+          "mean_confidence": 0.49945932130599846
+        },
+        {
+          "abs_gap": 0.4369523196751748,
+          "accuracy": 1.0,
+          "bin_id": 1,
+          "count": 5,
+          "mean_confidence": 0.5630476803248252
+        },
+        {
+          "abs_gap": 0.3280393992651326,
+          "accuracy": 1.0,
+          "bin_id": 2,
+          "count": 5,
+          "mean_confidence": 0.6719606007348674
+        },
+        {
+          "abs_gap": 0.03378173890465197,
+          "accuracy": 0.8,
+          "bin_id": 3,
+          "count": 5,
+          "mean_confidence": 0.7662182610953481
+        },
+        {
+          "abs_gap": 0.06680004752976121,
+          "accuracy": 0.8,
+          "bin_id": 4,
+          "count": 5,
+          "mean_confidence": 0.8668000475297613
+        },
+        {
+          "abs_gap": 0.14124245375216637,
+          "accuracy": 0.8,
+          "bin_id": 5,
+          "count": 5,
+          "mean_confidence": 0.9412424537521664
+        },
+        {
+          "abs_gap": 0.03154401464346501,
+          "accuracy": 1.0,
+          "bin_id": 6,
+          "count": 5,
+          "mean_confidence": 0.968455985356535
+        },
+        {
+          "abs_gap": 0.013277865941132228,
+          "accuracy": 1.0,
+          "bin_id": 7,
+          "count": 5,
+          "mean_confidence": 0.9867221340588678
+        },
+        {
+          "abs_gap": 0.004562401729555021,
+          "accuracy": 1.0,
+          "bin_id": 8,
+          "count": 5,
+          "mean_confidence": 0.995437598270445
+        },
+        {
+          "abs_gap": 0.00034994322834280833,
+          "accuracy": 1.0,
+          "bin_id": 9,
+          "count": 5,
+          "mean_confidence": 0.9996500567716572
+        }
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_lower": 0.78,
+          "ci_upper": 0.96,
+          "estimate": 0.88,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "balanced_accuracy": {
+          "ci_lower": 0.7899871794871796,
+          "ci_upper": 0.96,
+          "estimate": 0.8800000000000001,
+          "n_boot_valid": 1999,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 0.9995
+        },
+        "brier": {
+          "ci_lower": 0.11790933388301364,
+          "ci_upper": 0.32934565148235534,
+          "estimate": 0.2129486423414735,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "ece": {
+          "ci_lower": 0.0739676847311038,
+          "ci_upper": 0.20579148827443067,
+          "estimate": 0.11560095059753807,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "ece_equal_width": {
+          "ci_lower": 0.06751032036967225,
+          "ci_upper": 0.1927402084498949,
+          "estimate": 0.08576224122783938,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "log_loss": {
+          "clip": 1e-15,
+          "estimate": 0.4144267040577559,
+          "reason": null,
+          "role": "descriptive_companion",
+          "status": "EVALUATED"
+        },
+        "macro_f1": {
+          "ci_lower": 0.7776653890249444,
+          "ci_upper": 0.9567076116689185,
+          "estimate": 0.8792283739652159,
+          "n_boot_valid": 1999,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 0.9995
+        },
+        "macro_ovr_auroc": {
+          "ci_lower": 0.9548935948276844,
+          "ci_upper": 0.9977097696026792,
+          "estimate": 0.9795,
+          "n_boot_valid": 1999,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 0.9995
+        }
+      },
+      "model_id": "audited_predictor",
+      "probabilities": "recorded",
+      "probability_source": "formal/d_model_predictor.joblib (frozen bundle, hash-verified) on the recorded formal A; its argmax reproduces the recorded d_model",
+      "reason": null,
+      "status": "EVALUATED"
+    },
+    "measured_b_comparator": {
+      "bootstrap": {
+        "draw": "SeedSequence(seed).spawn(replicates)[r]; clusters numbered by first row",
+        "interval": "percentile_95",
+        "min_valid_fraction": 0.95,
+        "replicates": 2000,
+        "seed": 20260928,
+        "unit": "cluster_id",
+        "valid_replicate": "finite; for balanced accuracy, macro-F1 and macro AUROC the replicate must contain every reference class of the evaluated sample (macro averages over the same classes)"
+      },
+      "brier": "multiclass sum over the classes",
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "companions": {
+        "confusion_matrix": {
+          "columns_d_model": [
+            "DCM",
+            "HCM",
+            "MINF",
+            "NOR",
+            "RV"
+          ],
+          "counts": [
+            [
+              8,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              9,
+              0,
+              1,
+              0
+            ],
+            [
+              2,
+              0,
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              10,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              10
+            ]
+          ],
+          "rows_reference": [
+            "DCM",
+            "HCM",
+            "MINF",
+            "NOR",
+            "RV"
+          ]
+        },
+        "per_class_recall": {
+          "DCM": {
+            "n_reference": 10,
+            "reason": null,
+            "recall": 0.8,
+            "status": "EVALUATED"
+          },
+          "HCM": {
+            "n_reference": 10,
+            "reason": null,
+            "recall": 0.9,
+            "status": "EVALUATED"
+          },
+          "MINF": {
+            "n_reference": 10,
+            "reason": null,
+            "recall": 0.8,
+            "status": "EVALUATED"
+          },
+          "NOR": {
+            "n_reference": 10,
+            "reason": null,
+            "recall": 1.0,
+            "status": "EVALUATED"
+          },
+          "RV": {
+            "n_reference": 10,
+            "reason": null,
+            "recall": 1.0,
+            "status": "EVALUATED"
+          }
+        }
+      },
+      "counts": {
+        "n_clusters": 50,
+        "n_evaluable": 50,
+        "n_no_decision": 0,
+        "n_reference_outside_predictor_classes": 0,
+        "n_reference_unknown": 0,
+        "n_rows": 50
+      },
+      "counts_partition": {
+        "n_metric_rows": 50,
+        "n_partition": 50,
+        "n_with_measured_b": 50
+      },
+      "ece_binning": "equal_mass",
+      "ece_bins": 10,
+      "ece_equal_width_binning": "equal_width",
+      "ece_equal_width_bins": 10,
+      "ece_equal_width_realized_bins": [
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 0,
+          "count": 0,
+          "lower": 0.0,
+          "mean_confidence": NaN,
+          "upper": 0.1
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 1,
+          "count": 0,
+          "lower": 0.1,
+          "mean_confidence": NaN,
+          "upper": 0.2
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 2,
+          "count": 0,
+          "lower": 0.2,
+          "mean_confidence": NaN,
+          "upper": 0.30000000000000004
+        },
+        {
+          "abs_gap": NaN,
+          "accuracy": NaN,
+          "bin_id": 3,
+          "count": 0,
+          "lower": 0.30000000000000004,
+          "mean_confidence": NaN,
+          "upper": 0.4
+        },
+        {
+          "abs_gap": 0.5020533469918901,
+          "accuracy": 1.0,
+          "bin_id": 4,
+          "count": 1,
+          "lower": 0.4,
+          "mean_confidence": 0.4979466530081099,
+          "upper": 0.5
+        },
+        {
+          "abs_gap": 0.12319793926222755,
+          "accuracy": 0.6666666666666666,
+          "bin_id": 5,
+          "count": 9,
+          "lower": 0.5,
+          "mean_confidence": 0.5434687274044391,
+          "upper": 0.6000000000000001
+        },
+        {
+          "abs_gap": 0.3432774971256889,
+          "accuracy": 1.0,
+          "bin_id": 6,
+          "count": 9,
+          "lower": 0.6000000000000001,
+          "mean_confidence": 0.6567225028743111,
+          "upper": 0.7000000000000001
+        },
+        {
+          "abs_gap": 0.12135356218100912,
+          "accuracy": 0.8571428571428571,
+          "bin_id": 7,
+          "count": 7,
+          "lower": 0.7000000000000001,
+          "mean_confidence": 0.735789294961848,
+          "upper": 0.8
+        },
+        {
+          "abs_gap": 0.14098180419803608,
+          "accuracy": 1.0,
+          "bin_id": 8,
+          "count": 12,
+          "lower": 0.8,
+          "mean_confidence": 0.8590181958019639,
+          "upper": 0.9
+        },
+        {
+          "abs_gap": 0.04540522103161437,
+          "accuracy": 0.9166666666666666,
+          "bin_id": 9,
+          "count": 12,
+          "lower": 0.9,
+          "mean_confidence": 0.962071887698281,
+          "upper": 1.0
+        }
+      ],
+      "ece_realized_bins": [
+        {
+          "abs_gap": 0.08579452603669302,
+          "accuracy": 0.6,
+          "bin_id": 0,
+          "count": 5,
+          "mean_confidence": 0.514205473963307
+        },
+        {
+          "abs_gap": 0.23637243403369468,
+          "accuracy": 0.8,
+          "bin_id": 1,
+          "count": 5,
+          "mean_confidence": 0.5636275659663054
+        },
+        {
+          "abs_gap": 0.37008492158807615,
+          "accuracy": 1.0,
+          "bin_id": 2,
+          "count": 5,
+          "mean_confidence": 0.6299150784119238
+        },
+        {
+          "abs_gap": 0.303899066263854,
+          "accuracy": 1.0,
+          "bin_id": 3,
+          "count": 5,
+          "mean_confidence": 0.696100933736146
+        },
+        {
+          "abs_gap": 0.2673329526142998,
+          "accuracy": 1.0,
+          "bin_id": 4,
+          "count": 5,
+          "mean_confidence": 0.7326670473857002
+        },
+        {
+          "abs_gap": 0.010367428678537682,
+          "accuracy": 0.8,
+          "bin_id": 5,
+          "count": 5,
+          "mean_confidence": 0.8103674286785377
+        },
+        {
+          "abs_gap": 0.13204820636973724,
+          "accuracy": 1.0,
+          "bin_id": 6,
+          "count": 5,
+          "mean_confidence": 0.8679517936302628
+        },
+        {
+          "abs_gap": 0.10055739118330209,
+          "accuracy": 0.8,
+          "bin_id": 7,
+          "count": 5,
+          "mean_confidence": 0.9005573911833021
+        },
+        {
+          "abs_gap": 0.04857019722360256,
+          "accuracy": 1.0,
+          "bin_id": 8,
+          "count": 5,
+          "mean_confidence": 0.9514298027763974
+        },
+        {
+          "abs_gap": 0.006167757281334785,
+          "accuracy": 1.0,
+          "bin_id": 9,
+          "count": 5,
+          "mean_confidence": 0.9938322427186652
+        }
+      ],
+      "metrics": {
+        "accuracy": {
+          "ci_lower": 0.8,
+          "ci_upper": 0.98,
+          "estimate": 0.9,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "balanced_accuracy": {
+          "ci_lower": 0.8133160173160172,
+          "ci_upper": 0.9777777777777779,
+          "estimate": 0.9,
+          "n_boot_valid": 1999,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 0.9995
+        },
+        "brier": {
+          "ci_lower": 0.13122208710265806,
+          "ci_upper": 0.3159104171443175,
+          "estimate": 0.21509509221199774,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "ece": {
+          "ci_lower": 0.12761396970656413,
+          "ci_upper": 0.24567507412210804,
+          "estimate": 0.15611948812731322,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "ece_equal_width": {
+          "ci_lower": 0.1153956363103572,
+          "ci_upper": 0.23927323848380241,
+          "estimate": 0.15572903025012014,
+          "n_boot_valid": 2000,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 1.0
+        },
+        "log_loss": {
+          "clip": 1e-15,
+          "estimate": 0.3956246906026091,
+          "reason": null,
+          "role": "descriptive_companion",
+          "status": "EVALUATED"
+        },
+        "macro_f1": {
+          "ci_lower": 0.8045296296296296,
+          "ci_upper": 0.9765042016806723,
+          "estimate": 0.8999498746867168,
+          "n_boot_valid": 1999,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 0.9995
+        },
+        "macro_ovr_auroc": {
+          "ci_lower": 0.9665304552251922,
+          "ci_upper": 1.0,
+          "estimate": 0.9870000000000001,
+          "n_boot_valid": 1999,
+          "reason": null,
+          "status": "EVALUATED",
+          "valid_fraction": 0.9995
+        }
+      },
+      "model_id": "measured_b_comparator",
+      "probabilities": "recorded",
+      "probability_source": "formal/measured_b_comparator/final_model.joblib (fit-predictor record and bundle.json hashes verified) on the recorded measured B",
+      "reason": null,
+      "status": "EVALUATED"
+    }
+  },
+  "partition": "acdc_test",
+  "qc_rule": "critical-QC rows (QC_ABSTAIN) are excluded and counted",
+  "read_only": true,
+  "schema": "tmmri.predictor_extended/1",
+  "strata": {
+    "note": "acdc_test has no vendor or centre strata (single release)"
+  }
+}

@@ -1,0 +1,62 @@
+dataset_id: ACDC
+status: complete
+supersedes: data/raw_registry/acdc_acquisition_receipt.yaml
+verified_at_utc: '2026-09-26T21:40:38Z'
+resolution: >-
+  The archive-level SHA-256 recorded in the v1 receipt cannot be reproduced.
+  The CREATIS Girder folder endpoint builds database.zip on the fly (chunked,
+  no Content-Length, Range ignored) and stamps every member with the download
+  time, so each download has a different digest while its size stays
+  2457022167 bytes. Integrity is therefore registered per file: all 1056
+  release files (relative path, size, SHA-256) are listed in
+  acdc_release_file_manifest.csv, cross-checked against the official server
+  listing and the 600 ED/ES entries of acdc_native_checksum_manifest.csv. No
+  file content, case, split, or fingerprint changed.
+source:
+  collection_url: https://humanheart-project.creatis.insa-lyon.fr/database/#collection/637218c173e9f0047faa00fb
+  girder_api: https://humanheart-project.creatis.insa-lyon.fr/database/api/v1
+  release_folder_id: 637218e573e9f0047faa00fc
+  primary_route: per-file GET /file/{file_id}/download (Content-Length, HTTP Range resume)
+  alternative_route: GET /folder/637218e573e9f0047faa00fc/download (single zip; not resumable)
+  unsafe_route: GET /item/{item_id}/download (answers Range with a full-body 206; never resume against it)
+  anonymous_access: true
+  license: CC BY-NC-SA 4.0 (data/raw/acdc/database/LICENSE_TERMS.md)
+  mandatory_citation: data/raw/acdc/database/MANDATORY_CITATION.md
+release:
+  file_count: 1056
+  total_bytes: 2456816223
+  nifti_gz_count: 750
+  four_d_cine_count: 150
+  ed_es_frame_and_mask_count: 600
+  info_cfg_count: 150
+  training_patient_count: 100
+  testing_patient_count: 50
+  server_listing_matches_local: true
+integrity:
+  authority: data/raw_registry/acdc_release_file_manifest.csv
+  authority_sha256: 66bc3b4f38902b93f5d8d977ee616b37994289feab1be4f9a39a064b8a4113b9
+  authority_columns: [relative_path, size_bytes, sha256]
+  authority_root: data/raw/acdc
+  ed_es_manifest: data/raw_registry/acdc_native_checksum_manifest.csv
+  ed_es_manifest_rows_matching: 600
+  raw_file_manifest_sha256: 3df13fd9cba8a6a64e82a845c7f0e29738c1738ce315d1ab4f009ac1680c9bfb
+archive_observations:
+  size_bytes: 2457022167
+  member_count: 1056
+  compression: stored
+  sha256_reproducible: false
+  observed:
+    - downloaded: '2026-08-09'
+      sha256: aec82f7bebbaf8564d3dbed5d3350b7c1a7f539a191c0b9116fd3528d7dd9d30
+      source: data/raw_registry/acdc_acquisition_receipt.yaml
+    - downloaded: '2026-08-16'
+      sha256: 6637423c6a7d4b28733f87b5a27228f76a9e88e12bbc093ad29675c3b7bfd2ed
+      source: local data/raw/acdc/.incoming/database.zip (member timestamps 2026-08-16)
+  required_by_pipeline: false
+validation:
+  acquisition_command: python scripts/data/acquire_datasets.py acdc
+  verification_command: python scripts/data/acquire_datasets.py verify --dataset acdc
+  registry_command: python -m tmmri.cli validate-native-data --config configs/pipeline/native_full_validation.yaml --dataset acdc
+  status: passed
+  eligible_sample_count: 150
+  observed_mask_labels: [0, 1, 2, 3]

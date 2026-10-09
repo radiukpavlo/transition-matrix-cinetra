@@ -1,0 +1,52 @@
+rulebook,stratum_variable,stratum,n,n_clusters,descriptive_only,min_cases,accepted_coverage,covered_fidelity,covered_reference_accuracy,conflict_rate,routes,stratum_role,inference_status,inference_reason
+d_model,pathology_group,DLV,29,29,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 29}",prespecified,EVALUATED,
+d_model,pathology_group,HCM,29,29,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 29}",prespecified,EVALUATED,
+d_model,pathology_group,NOR,39,39,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 39}",prespecified,EVALUATED,
+d_model,pathology_group,RV_FAMILY,83,83,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 83}",prespecified,EVALUATED,
+dataset_label,pathology_group,DLV,29,29,False,20,0.20689655172413793,0.8333333333333334,,0.0,"{""EXACT_ACCEPT"": 6, ""NO_MATCH_ABSTAIN"": 20, ""UNAVAILABLE_FEATURE_ABSTAIN"": 3}",prespecified,EVALUATED,
+dataset_label,pathology_group,HCM,29,29,False,20,0.0,,,0.0,"{""NO_MATCH_ABSTAIN"": 28, ""UNAVAILABLE_FEATURE_ABSTAIN"": 1}",prespecified,EVALUATED,
+dataset_label,pathology_group,NOR,39,39,False,20,0.05128205128205128,1.0,0.0,0.0,"{""EXACT_ACCEPT"": 2, ""NO_MATCH_ABSTAIN"": 28, ""UNAVAILABLE_FEATURE_ABSTAIN"": 9}",prespecified,EVALUATED,
+dataset_label,pathology_group,RV_FAMILY,83,83,False,20,0.20481927710843373,0.8235294117647058,,0.0,"{""EXACT_ACCEPT"": 17, ""NO_MATCH_ABSTAIN"": 51, ""UNAVAILABLE_FEATURE_ABSTAIN"": 15}",prespecified,EVALUATED,
+measured_oracle,pathology_group,DLV,29,29,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 29}",prespecified,EVALUATED,
+measured_oracle,pathology_group,HCM,29,29,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 29}",prespecified,EVALUATED,
+measured_oracle,pathology_group,NOR,39,39,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 39}",prespecified,EVALUATED,
+measured_oracle,pathology_group,RV_FAMILY,83,83,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 83}",prespecified,EVALUATED,
+d_model,vendor,GE,28,28,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 28}",descriptive_demographic,DESCRIPTIVE,
+d_model,vendor,Philips,38,38,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 38}",descriptive_demographic,DESCRIPTIVE,
+d_model,vendor,Siemens,114,114,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 114}",descriptive_demographic,DESCRIPTIVE,
+dataset_label,vendor,GE,28,28,False,20,0.07142857142857142,0.5,,0.0,"{""EXACT_ACCEPT"": 2, ""NO_MATCH_ABSTAIN"": 18, ""UNAVAILABLE_FEATURE_ABSTAIN"": 8}",descriptive_demographic,DESCRIPTIVE,
+dataset_label,vendor,Philips,38,38,False,20,0.02631578947368421,1.0,,0.0,"{""EXACT_ACCEPT"": 1, ""NO_MATCH_ABSTAIN"": 35, ""UNAVAILABLE_FEATURE_ABSTAIN"": 2}",descriptive_demographic,DESCRIPTIVE,
+dataset_label,vendor,Siemens,114,114,False,20,0.19298245614035087,0.8636363636363636,0.0,0.0,"{""EXACT_ACCEPT"": 22, ""NO_MATCH_ABSTAIN"": 74, ""UNAVAILABLE_FEATURE_ABSTAIN"": 18}",descriptive_demographic,DESCRIPTIVE,
+measured_oracle,vendor,GE,28,28,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 28}",descriptive_demographic,DESCRIPTIVE,
+measured_oracle,vendor,Philips,38,38,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 38}",descriptive_demographic,DESCRIPTIVE,
+measured_oracle,vendor,Siemens,114,114,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 114}",descriptive_demographic,DESCRIPTIVE,
+d_model,scanner,Achieva,38,38,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 38}",descriptive_demographic,DESCRIPTIVE,
+d_model,scanner,Avanto,2,2,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 2}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+d_model,scanner,Avanto Fit,15,15,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 15}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+d_model,scanner,SIGNA EXCITE,17,17,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 17}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+d_model,scanner,Signa HDxt,11,11,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 11}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+d_model,scanner,Symphony,11,11,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 11}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+d_model,scanner,SymphonyTim,85,85,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 85}",descriptive_demographic,DESCRIPTIVE,
+d_model,scanner,TrioTim,1,1,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 1}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+dataset_label,scanner,Achieva,38,38,False,20,0.02631578947368421,1.0,,0.0,"{""EXACT_ACCEPT"": 1, ""NO_MATCH_ABSTAIN"": 35, ""UNAVAILABLE_FEATURE_ABSTAIN"": 2}",descriptive_demographic,DESCRIPTIVE,
+dataset_label,scanner,Avanto,2,2,True,20,0.0,,,0.0,"{""NO_MATCH_ABSTAIN"": 1, ""UNAVAILABLE_FEATURE_ABSTAIN"": 1}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+dataset_label,scanner,Avanto Fit,15,15,True,20,0.3333333333333333,0.8,,0.0,"{""EXACT_ACCEPT"": 5, ""NO_MATCH_ABSTAIN"": 6, ""UNAVAILABLE_FEATURE_ABSTAIN"": 4}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+dataset_label,scanner,SIGNA EXCITE,17,17,True,20,0.058823529411764705,0.0,,0.0,"{""EXACT_ACCEPT"": 1, ""NO_MATCH_ABSTAIN"": 10, ""UNAVAILABLE_FEATURE_ABSTAIN"": 6}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+dataset_label,scanner,Signa HDxt,11,11,True,20,0.09090909090909091,1.0,,0.0,"{""EXACT_ACCEPT"": 1, ""NO_MATCH_ABSTAIN"": 8, ""UNAVAILABLE_FEATURE_ABSTAIN"": 2}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+dataset_label,scanner,Symphony,11,11,True,20,0.09090909090909091,1.0,,0.0,"{""EXACT_ACCEPT"": 1, ""NO_MATCH_ABSTAIN"": 10}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+dataset_label,scanner,SymphonyTim,85,85,False,20,0.18823529411764706,0.875,0.0,0.0,"{""EXACT_ACCEPT"": 16, ""NO_MATCH_ABSTAIN"": 56, ""UNAVAILABLE_FEATURE_ABSTAIN"": 13}",descriptive_demographic,DESCRIPTIVE,
+dataset_label,scanner,TrioTim,1,1,True,20,0.0,,,0.0,"{""NO_MATCH_ABSTAIN"": 1}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+measured_oracle,scanner,Achieva,38,38,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 38}",descriptive_demographic,DESCRIPTIVE,
+measured_oracle,scanner,Avanto,2,2,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 2}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+measured_oracle,scanner,Avanto Fit,15,15,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 15}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+measured_oracle,scanner,SIGNA EXCITE,17,17,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 17}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+measured_oracle,scanner,Signa HDxt,11,11,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 11}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+measured_oracle,scanner,Symphony,11,11,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 11}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+measured_oracle,scanner,SymphonyTim,85,85,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 85}",descriptive_demographic,DESCRIPTIVE,
+measured_oracle,scanner,TrioTim,1,1,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 1}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+d_model,field_strength,1.5,173,173,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 173}",descriptive_demographic,DESCRIPTIVE,
+d_model,field_strength,3,7,7,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 7}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+dataset_label,field_strength,1.5,173,173,False,20,0.14450867052023122,0.84,0.0,0.0,"{""EXACT_ACCEPT"": 25, ""NO_MATCH_ABSTAIN"": 121, ""UNAVAILABLE_FEATURE_ABSTAIN"": 27}",descriptive_demographic,DESCRIPTIVE,
+dataset_label,field_strength,3,7,7,True,20,0.0,,,0.0,"{""NO_MATCH_ABSTAIN"": 6, ""UNAVAILABLE_FEATURE_ABSTAIN"": 1}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES
+measured_oracle,field_strength,1.5,173,173,False,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 173}",descriptive_demographic,DESCRIPTIVE,
+measured_oracle,field_strength,3,7,7,True,20,0.0,,,0.0,"{""EMPTY_RULEBOOK"": 7}",descriptive_demographic,NE,STRATUM_BELOW_MIN_CASES

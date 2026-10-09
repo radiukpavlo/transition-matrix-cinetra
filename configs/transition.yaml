@@ -1,0 +1,73 @@
+# Transition estimator T, target transforms and comparators (SPECIFICATION.md 6.0.0, Section 9). Decision D10.
+specification_version: "6.0.0"
+latent_preprocessing:                           # formal A (configs/formal.yaml)
+  zero_variance_removal: true
+  standardize: fit_partition_mean_sd
+  pca: none                                     # 57 columns, 100 patients: ridge on the standardized descriptors
+targets:
+  source: registry/semantic_registry.yaml       # transition_role candidate or candidate_secondary (25 targets)
+  primary_family: ventricular_function_size
+  min_observed_fit_rows: 10                     # [PRESPEC] else TARGET_INELIGIBLE
+  require_fit_sd_gt_zero: true
+  row_exclusion: "critical QC rows excluded from every fit; cells QC_BLOCKED, MISSING_SOURCE or NOT_APPLICABLE excluded from that target's fit"
+  imputation: none                              # per-target observation mask; targets are never imputed
+target_transforms:                              # registry target_transform per feature
+  log: {domain: "x > 0", g: "ln(x)", inverse: "exp(z)"}
+  logit_percent: {g: "logit(clip(x / 100, 0.001, 0.999))", inverse: "100 * sigmoid(z)", clip: [0.001, 0.999]}   # [PRESPEC]
+  identity: {g: "x", inverse: "x"}
+  standardize: fit_partition_mean_sd_of_transformed_values
+  clipping: {quantiles: [0.01, 0.99], space: transformed, fitted_on: fit_rows, applied_to: fitting_rows_only, evaluation_reference: unclipped}   # [PRESPEC]
+estimator:
+  primary: ridge_per_target_unpenalized_intercept
+  objective_convention: sum_loss                # T = (A'A + lambda I)^-1 A'B on centred standardized A (P6/v5 convention)
+  solver: svd
+  lambda_grid_rule: "numpy.logspace(-6.0, 4.0, 21)"   # [PRESPEC] half-decade steps; binding definition
+  lambda_grid_display: [1.0e-6, 3.16228e-6, 1.0e-5, 3.16228e-5, 1.0e-4, 3.16228e-4, 1.0e-3, 3.16228e-3, 1.0e-2, 3.16228e-2, 0.1, 0.316228, 1.0, 3.16228, 10.0, 31.6228, 100.0, 316.228, 1000.0, 3162.28, 10000.0]
+  lambda_selection: per_target_inner_cv         # single global lambda = sensitivity
+  inner_folds: 5                                # configs/splits.yaml acdc.acdc_dev.inner_folds
+  selection_metric: mae_original_units_after_inverse_transform
+  tie_break: larger_lambda
+  grid_edge_policy:
+    flag: LAMBDA_AT_GRID_EDGE
+    edges: [1.0e-6, 1.0e4]
+    action: "keep the selection, record the flag per target and fold in transitions/lambda_selection.parquet and report it; the grid is never extended post hoc"
+nested_folds:
+  outer: 5                                      # acdc_dev outer folds
+  inner: 5
+  grouping: patient
+  stratification: acdc_class
+  oof_ledger: artifacts/<run_id>/oof/
+comparators:
+  mean_baseline: fit_partition_mean_original_units   # null comparator of the primary estimand
+  pseudoinverse_p1: {role: historical_baseline, rule: "minimum-norm least squares numpy.linalg.pinv on the same standardized A and transformed, standardized targets (lambda = 0)"}
+  identity_transform_ridge: {role: sensitivity, rule: "same ridge with every target_transform replaced by identity"}
+  p6_projection_ridge: {role: continuity_comparator, representation: p6_projection_128}
+  ridge_global_lambda:                          # [PRESPEC] SPECIFICATION.md 9.3-9.4 (f); amendments 2026-09-28
+    role: sensitivity
+    rule: "one lambda for every eligible target: the grid value minimizing the mean over targets of the inner-CV MAE (original units) divided by the fit-row SD of that target; ties -> larger lambda; grid-edge selections flagged"
+  rbf_kernel_ridge:                             # [PRESPEC] SPECIFICATION.md 9.4 (g), comparator of the linearity criterion; amendments 2026-09-28
+    role: linearity_criterion_comparator
+    input: standardized_formal_A_Z              # same zero-variance filter and fit-row standardization as the ridge
+    kernel: rbf                                 # k(z, z') = exp(-||z - z'||^2 / (2 sigma^2))
+    bandwidth: median_pairwise_euclidean_distance_fit_rows   # sigma, recomputed on every fitting set (inner and final)
+    bandwidth_zero_fallback: 1.0
+    target_transforms: registry_typed           # same typed transforms, clipping and standardization as the primary ridge
+    intercept: unpenalized_fit_mean             # alpha = (K + lambda I)^-1 (y - mean(y)) on observed fit rows (sum loss)
+    lambda_selection: per_target_inner_cv       # same inner folds, lambda grid, selection metric and tie-break as the primary ridge
+linearity_criterion:                            # [INHERITED P5] SPECIFICATION.md 9.4; evaluated by run-ablations on the acdc_dev OOF ledger; amendments 2026-09-28
+  comparator: rbf_kernel_ridge
+  reference: ridge_per_target
+  metric: pooled_fit_sd_normalized_mae_over_transition_targets
+  min_relative_reduction: 0.02
+  folds_required: 4_of_5
+  no_primary_family_degradation: "no primary-family target whose paired patient-bootstrap 95 % CI of the normalized MAE difference (comparator minus reference) lies entirely above zero"
+  outcome: reported_either_way
+  executed_audit_pipeline: affine                # adopting a nonlinear transition requires a new protocol version
+decoders:
+  inverse_transform: registry_target_transform
+  domain_guard: {rule: "reconstructed value outside the registry domain by more than 5 % of the fit-partition range -> NUMERIC_DOMAIN_BLOCKED (FEATURE_DOMAIN_BLOCKED)", relative_width: 0.05}   # [PRESPEC]
+  clip_to_domain_within_guard: true
+evaluation:
+  per_target: [mae, rmse, median_ae, bias, pearson_r, spearman_rho, bland_altman_loa]
+  normalization: fit_partition_sd_original_units   # the SD of the fit partition, never of the evaluated split
+  units: original

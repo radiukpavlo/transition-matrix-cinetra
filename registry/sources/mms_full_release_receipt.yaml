@@ -1,0 +1,55 @@
+# Public edition of the registered file `registry/sources/mms_full_release_receipt.yaml` (protocol-v6.0.1, git blob `11727ee97713`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
+# Source receipt: complete M&Ms-1 open release (protocol CMR-TRANS-AUDIT 6.0.0, Decisions D1, D2, D23).
+# Identifiers, release split, sizes and SHA-256 only. Pathology, demographics, vendor and centre are never tracked:
+# v6 code reads them at run time from the mounted information CSV (src/tmmri/ingest/mms.py).
+dataset_id: MMS
+legacy_alias: MMS_100                      # frozen reader-study cohort of the governed package (protocol v2); unchanged
+status: verified_in_place_read_only
+recorded_on: "2026-09-28"
+specification_version: "6.0.0"
+release:
+  name: "M&Ms-1 open dataset (Multi-Centre, Multi-Vendor and Multi-Disease Cardiac Segmentation Challenge)"
+  citation: "Campello VM et al. Multi-Centre, Multi-Vendor and Multi-Disease Cardiac Segmentation: The M&Ms Challenge. IEEE Trans Med Imaging 2021;40(12):3543-3554"
+  official_source: "https://www.ub.edu/mnms/"   # site unavailable on 2026-09-26; Kaggle and other mirrors are not used
+licence:
+  agreement: "M&Ms Research Use Agreement"
+  personal_copy: "clause 4: a verbatim personal research copy is allowed"
+  redistribution: "clause 5: no distribution of any portion; the release is never copied into the repository or an image"
+  consequence: "tracked manifests carry identifiers, release split, sizes and hashes only"
+observed:
+  where: "<local path> (backup drive; mounted read-only at /sources/mms)"
+  integrity_source: "<local path>"
+  integrity_source_sha256: e513dead6cb66677464d7dd35ce878109aa5af6d8afe8b1e8f220f646584c49e
+  method: "folder listing (sizes) + BACKUP_MANIFEST.sha256 (hashes) + information CSV (External code, ED, ES only)"
+  rebuild_command: "python scripts/data/build_mms_full_release_manifest.py --source <release root> [--check]"
+  verification_command: "python scripts/data/acquire_datasets.py verify --dataset mms_full --source <release root>"
+  verification_result: {files_checked: 691, problems: 0, mode: size_and_sha256, on: "2026-09-28", readers: 4, seconds: 130}
+counts:
+  cases: 345
+  files: 691                               # 345 x (<ID>_sa.nii.gz, <ID>_sa_gt.nii.gz) + information CSV
+  total_bytes: 15380121327                 # equals source_snapshot_before of mms_100_acquisition_receipt.yaml
+  by_release_split: {Training/Labeled: 150, Training/Unlabeled: 25, Validation: 34, Testing: 136}
+  eligible_v6: 320                          # configs/cohorts.yaml mms.eligibility labelled_320
+  excluded: {MMS_RELEASE_UNLABELED: 25}
+  duplicate_pairs: [[C5Q2Y5, E9L4N2], [A8C9H8, Q0Q1Y4]]   # voxel-identical; all four Training/Unlabeled (MMS_DUPLICATE_CASE)
+  mms100_members: 100                       # all 200 MMS_100 source SHA-256 equal the full-release manifest
+  never_analysed_eligible: 220
+manifests:
+  cases:
+    path: registry/sources/mms_full_release_manifest.csv
+    sha256: 7f56d5a22d373638bdbb93577ddd1048eb5edfccf701c288c1f3b15da848fcb5
+    rows: 345
+    columns: [case_id, release_split, image_relpath, image_sha256, image_bytes, mask_relpath, mask_sha256, mask_bytes, eligible_v6, exclusion_reason, mms100_member, duplicate_of]
+    paths_relative_to: release root (/sources/mms)
+    eligible_v6_rule: "metadata part of the labelled_320 rule (release split, CSV ED != ES); frame-count and annotated-frame conditions are re-checked by stage-sources and validate-cohort"
+  information_csv:
+    path: registry/sources/mms_full_release_metadata_manifest.csv
+    sha256: 7ae5b8adc5ab512b38188b8aa77f060ae6a96dbede486b9beaf02661efeb72a1
+    entry: {relpath: "211230_M&Ms_Dataset_information_diagnosis_opendataset.csv", bytes: 14139, sha256: 612b76738262dcca277e2fe9afba2c1bfea869543fb6af82a68fe30097433fbd}
+    repository_copy: "data/raw/mms/211230_MnMs_Dataset_information_diagnosis_opendataset.csv (byte-identical)"
+supersedes:
+  record: registry/sources/mms_100_acquisition_blocker.yaml
+  field: prohibited_fallback
+  by: "protocol/amendments.md, 2026-09-28 (PI decision: the complete labelled M&Ms-1 release is the v6 external cohort)"
+  scope: "computational analyses of protocol 6.0.0 only; the MMS_100 records (mms_100_*.yaml, mms_100_source_normalization_manifest.csv, mms_native_checksum_manifest.*) stay unchanged and keep serving the frozen reader-study cohort"
+no_endpoint_before_M0: true               # staging and hash verification only (configs/cohorts.yaml mms.no_endpoint_before_M0)

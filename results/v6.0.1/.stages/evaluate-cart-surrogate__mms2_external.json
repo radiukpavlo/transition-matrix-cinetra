@@ -1,0 +1,62 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "ef026f9477e5c133abb4c310eff938e3766e03456904bb6413ff747df7058615",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/evaluate__mms2_external.json": "ef20db89795580fa60983924e83cbaf362aa7e65bfed46b72e101a3c6ab73171",
+      "run:comparators/cart_f8/FROZEN_F8.json": "a210c91735665677541812383ef5b491649bd9bd96648962a9f0b53dd07e9ac1",
+      "run:contracts/cohort_MMS2.parquet": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+      "run:contracts/split_manifest_MMS2.parquet": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75",
+      "run:formal/A_MMS2.parquet": "b62540c0b1c82c04554632e437607b37aa3fe64f96e03aa5dd47ccb170cb3287",
+      "run:inference/d_model_mms2_external.parquet": "38d1b38088bad8be9b47f7799d9e0d4198183e869ecfe3f2d173abba18721a7c",
+      "run:reconstructed/bhat_mms2_external.parquet": "865ee47e5c5ac08449a7c9d71ea8109d04fcfdff542eee144557dad600b3a571",
+      "run:semantics/B_MMS2.parquet": "a96f9f4dd4440fa3d82be1de7e3650d85d96349f4ab6fde4729cc27317609ad4"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:comparators/cart_f8/evaluation/leaves_mms2_external.parquet": "d210b27085eaa88591c6810cfe2f957c5f5d18645a7e31995e5206b908ddfd3a",
+      "run:comparators/cart_f8/evaluation/metrics_mms2_external.json": "f06250d4b4f82987614c374859c8dc99ad97e2620ae39142647067ac1c195ed7",
+      "run:comparators/cart_f8/evaluation/predictions_mms2_external.parquet": "4963cbddc118d7b6658311d336bb58b6ebd46f45cb529ebf0212ccdc5deb08dd"
+    },
+    "params": {
+      "config_sections": [
+        "registry.primary_rulebook_antecedent_candidates",
+        "registry.label_tables",
+        "cohorts.qc_severity",
+        "reason_codes"
+      ],
+      "lane_configs": [
+        "configs/cart_f8.yaml"
+      ],
+      "split": "mms2_external",
+      "status": "prospective"
+    },
+    "stage": "evaluate-cart-surrogate:mms2_external",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "2483ea464f17f9a9ae92354fbc10673f23c54351237486ed2bd67b4a3b5b6d92",
+  "run_log": {
+    "host": "42d3a13bd2ab",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 0.171,
+    "started_utc": "2026-10-03T14:40:33+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

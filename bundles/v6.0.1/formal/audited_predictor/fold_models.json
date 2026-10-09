@@ -1,0 +1,82 @@
+{
+  "final_predictor": "formal/d_model_predictor.joblib (frozen bundle)",
+  "fit_rule": "outer-fold training rows of acdc_dev (finite formal A, no critical QC); the held-out fold is never read",
+  "folds": {
+    "1": {
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "file": "fold_models/fold1.joblib",
+      "missing_classes": [],
+      "n_fit_rows": 78,
+      "n_heldout_predictions": 20,
+      "sha256": "e19562a0fe7128daab8ee4cc2b952a2f08e259c4ba697208b2a949d1cf97fd24"
+    },
+    "2": {
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "file": "fold_models/fold2.joblib",
+      "missing_classes": [],
+      "n_fit_rows": 78,
+      "n_heldout_predictions": 20,
+      "sha256": "f20107b1ae66111cb67c7931e6fd6c234828b0dbdb397586681e901dbee1a1d1"
+    },
+    "3": {
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "file": "fold_models/fold3.joblib",
+      "missing_classes": [],
+      "n_fit_rows": 78,
+      "n_heldout_predictions": 20,
+      "sha256": "f222086da483ca76393f8f18108b600a2c57f5f8f81256fdd94c1dfe58d11890"
+    },
+    "4": {
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "file": "fold_models/fold4.joblib",
+      "missing_classes": [],
+      "n_fit_rows": 78,
+      "n_heldout_predictions": 20,
+      "sha256": "9d5f286af92461ca0d5ba579f66868d98f25ea21860c0196e4ddd4b7e6ebc5d9"
+    },
+    "5": {
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "file": "fold_models/fold5.joblib",
+      "missing_classes": [],
+      "n_fit_rows": 80,
+      "n_heldout_predictions": 18,
+      "sha256": "5c5266c0392136293cf2171f5e7765245f583ae6496de8db4486a57effbd85d1"
+    }
+  },
+  "model_id": "audited_predictor",
+  "partition": "acdc_dev",
+  "predictions": "predictions.parquet: one out-of-fold row per analysable acdc_dev case (finite A, no critical QC); contract C4",
+  "predictor": "d_model_multinomial_lr_formal_a",
+  "probabilities": "softmax of the stored coefficients; a class absent from a fold's fit rows has probability 0 and a null logit",
+  "schema": "tmmri.fold_predictors/1"
+}

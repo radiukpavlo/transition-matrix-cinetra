@@ -1,0 +1,44 @@
+# Registered comparator F8: CART surrogate of the audited predictor d_model (protocol-v6.0.1 amendment item 7;
+# docs/MANUSCRIPT_PROTOCOL_2026-10-02.md C.7, docs/MANUSCRIPT_PROTOCOL_V2_2026-10-02.md D). Code: src/tmmri/comparators/cart_f8.py.
+# Fitted once on acdc_dev after the v6 freeze and frozen as a supplementary bundle before any M&Ms-2 staging; prospective on
+# mms2_external, post hoc on acdc_test and mms_external. It never changes the v6 bundle, its rulebooks or any endpoint.
+specification_version: "6.0.1"
+comparator_id: F8_cart_surrogate
+role: registered_comparator_supplementary_bundle
+output_dir: comparators/cart_f8                 # artifacts/<run_id>/comparators/cart_f8/ (FROZEN_F8.json, evaluation/)
+estimator:                                      # sklearn.tree.DecisionTreeClassifier, every other argument at its default
+  kind: sklearn.tree.DecisionTreeClassifier
+  max_depth: 3
+  min_samples_leaf: 5
+  class_weight: balanced
+  random_state: 20260928
+  criterion: gini                               # the sklearn default, stated
+fit:
+  partition: acdc_dev
+  features: registry primary_rulebook_antecedent_candidates   # the v6 rule antecedents, registry order
+  feature_source: oof/bhat_oof_ACDC_dev.parquet               # nested out-of-fold B-hat (fit-transition --nested-oof)
+  consequent: formal/d_model_crossfit_ACDC_dev.parquet        # out-of-fold (cross-fitted) d_model of fit-predictor
+  row_exclusion: critical_qc_or_nonfinite_feature_or_no_d_model
+  drop_features_without_finite_fit_values: true
+  requires: frozen v6 analysis bundle (.stages/FROZEN.json, hash-verified)
+selective:                                      # leaves kept by the v6 gate, estimated by nesting within the v6 outer folds
+  min_oof_fidelity: 0.90
+  min_matches: 5                                # pooled held-out matches (rule_policy.yaml validation_gate.min_pooled_oof_matched_patients)
+  wilson_lower_min: 0.60                        # rule_policy.yaml validation_gate.agreement_wilson_lower_min
+  wilson_level: 0.95
+  nesting:
+    folds: acdc_dev outer folds (contracts/split_manifest.parquet outer_fold)
+    fold_tree_substrate: oof/inner_oof_ACDC_dev_fold<f>.parquet   # inner nested OOF B-hat of outer-train(f), as the v6 gate (gate-rules)
+    heldout_substrate: oof/bhat_oof_ACDC_dev.parquet              # outer OOF B-hat of the held-out fold
+    consequent: d_model_crossfit                                  # the recorded out-of-fold d_model of every row
+    match_rule: "a held-out row routed to final leaf L counts as a match of L when the fold tree (refitted without its fold) gives it L's label (reproduced in that fold, as the v6 gate counts matches only where a rule is reproduced); it agrees when L's label equals its out-of-fold d_model; pooled over the five folds"
+evaluation:
+  substrate: reconstructed/bhat_<split>.parquet   # raw reconstruction of the frozen transition (evaluate), as the OOF fit substrate
+  qc_rule: critical QC or non-finite formal A -> QC_ABSTAIN (rule_pipeline.qc_route_frame); a needed non-finite feature -> FEATURE_UNAVAILABLE_ABSTAIN
+  reference: acdc_class on ACDC; the same-definition crosswalk class on M&Ms (stages.reference_labels)
+  interval: wilson_95                           # proportions with numerator and denominator (protocol 2.1 J)
+  partitions:                                   # each evaluated once (once-only stage evaluate-cart-surrogate:<split>)
+    acdc_test: {dataset: ACDC, status: post_hoc}
+    mms_external: {dataset: MMS, status: post_hoc}
+    mms2_external: {dataset: MMS2, status: prospective}   # requires the protocol-v6.0.1 M&Ms-2 lock (lane L1)
+rule_text: physical units of the registry (thresholds of the fitted tree, B-hat units)

@@ -1,0 +1,547 @@
+{
+  "run_id": "v6-replication-20261003-1241",
+  "stages": {
+    "audit-shift": {
+      "action": "RAN",
+      "payload_sha256": "fe20d33013b665c15adf223c6909052ce955934336ed212942a1c04135a2fea4",
+      "status": "BUILT"
+    },
+    "audit-shift:MMS2": {
+      "action": "RAN",
+      "payload_sha256": "dceaf52a0c7b38b38dd714d888badc9bd4b673f0a7d37bf6ad635a90757db34e",
+      "status": "BUILT"
+    },
+    "build-comparison-tables": {
+      "action": "RAN",
+      "payload_sha256": "469502f7511b455a878c44a7fb5e880e5ceb2406250ecc7a70375b2d6fbc272d",
+      "status": "BUILT"
+    },
+    "build-manuscript-figures": {
+      "action": "RAN",
+      "payload_sha256": "0cde6480b54f35a1df47bab6ec1fa1ccb8f91ea2eecb86d542923be60d57ac4a",
+      "status": "BUILT"
+    },
+    "build-manuscript-tables": {
+      "action": "RAN",
+      "payload_sha256": "4817e916499fcabd45e0ef7c721480c6931a5dc26970f9665f745b6487d43e42",
+      "status": "BUILT"
+    },
+    "build-semantics:ACDC": {
+      "action": "RAN",
+      "payload_sha256": "4da605c77732b62baa1dc24d7d8499723b9d382b4e49a10505121af55d465af0",
+      "status": "BUILT"
+    },
+    "build-semantics:MMS": {
+      "action": "RAN",
+      "payload_sha256": "b22a29f603f9a552bf250915c2a7a41b06ce6da05c00a82aaf6e2f13ba3e0ee8",
+      "status": "BUILT"
+    },
+    "build-semantics:MMS2": {
+      "action": "RAN",
+      "payload_sha256": "1a15d4f94cf6e2af7ba2c5a231d4584a29ea56e863aafc911478ca3fdcf757fe",
+      "status": "BUILT"
+    },
+    "build-tensor-cache:acdc_dev": {
+      "action": "RAN",
+      "payload_sha256": "51242df4c6d65b1d02142ecc96f85840f1b16e8f7d50e844dc310c7fe2eaa936",
+      "status": "BUILT"
+    },
+    "build-tensor-cache:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "9ce5d53af2329b7a1328dd8a2258d05d9d1c0182a6d5af69e20bed9759d517a7",
+      "status": "BUILT"
+    },
+    "build-tensor-cache:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "84dcdad6883e467a4949893d932bba5b1ad59c9960c4725d3f1f5e360e68bb52",
+      "status": "BUILT"
+    },
+    "build-tensor-cache:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "265ce27295a903f22d56474274b506beebb0a313171cc35a9c0d99178f093c79",
+      "status": "BUILT"
+    },
+    "check-semantic-eligibility": {
+      "action": "RAN",
+      "payload_sha256": "fe87172c975841c7a51c4f5fe418b1f9cb0ef6d7b50d453c620fff2a8360f2ae",
+      "status": "BUILT"
+    },
+    "discretize": {
+      "action": "RAN",
+      "payload_sha256": "14f9c358b22c67572af3cad21a223b161257954cc8cfde5f39d5f2578700a3c0",
+      "status": "BUILT"
+    },
+    "evaluate-alt-bundles:d20:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "917cb610195cfc690f0bbd417e3c381f8f9b21c0ce4fb3332064f40ef1466f4b",
+      "status": "EVALUATED"
+    },
+    "evaluate-alt-bundles:d20:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "e9730eecc585d3b0da74904781bba772cfd213e42aec58bd13cdcdb10ef0d2cd",
+      "status": "EVALUATED"
+    },
+    "evaluate-alt-bundles:d20:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "0904b22d45a57f6ee72218e68b0a0ecff389f22ffcc3bd9446ea99402cb68820",
+      "status": "EVALUATED"
+    },
+    "evaluate-alt-bundles:f9:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "df149e75f1fb5a7018fbe4ae817d6034cfd5a78fbf2b491df6ea1c2d1b9e728e",
+      "status": "EVALUATED"
+    },
+    "evaluate-alt-bundles:f9:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "3ea311129946b9adb6faa7bfc4eaea5c72eca1ac2074e7d8e150e4e77d330510",
+      "status": "EVALUATED"
+    },
+    "evaluate-alt-bundles:f9:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "2437353e4470eceb9cda0844b9181804c371f8470108c054cacaf87e8ed92309",
+      "status": "EVALUATED"
+    },
+    "evaluate-alt-bundles:f9b:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "79a16bf251879e5c4a56db15bee29672b2f6c8f5b5f67d32509739c4e8e18aae",
+      "status": "EVALUATED"
+    },
+    "evaluate-alt-bundles:f9b:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "c60e1ad464dd88b49372deea77c94063794ad78f07e4a14a4ce7bec852432323",
+      "status": "EVALUATED"
+    },
+    "evaluate-alt-bundles:f9b:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "d448b907bd13876c7a0dd900716a5a8adf04e84928baf9c5a127a22488cd4bb0",
+      "status": "EVALUATED"
+    },
+    "evaluate-cart-surrogate:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "8591c9f83ee95cbe063e83e19153bd5857d364949d5bf175598d45ba6f01d9ba",
+      "status": "EVALUATED"
+    },
+    "evaluate-cart-surrogate:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "2483ea464f17f9a9ae92354fbc10673f23c54351237486ed2bd67b4a3b5b6d92",
+      "status": "EVALUATED"
+    },
+    "evaluate-cart-surrogate:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "118cf6146b6059c00baaa3e120d94aba40f8be310df14ac3a4b29db3abf76e01",
+      "status": "EVALUATED"
+    },
+    "evaluate-h4:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "594cd9d79a27d9203f3f976aba1e5b936c5720b11fa1b998a8705213d6bebb5f",
+      "status": "EVALUATED"
+    },
+    "evaluate-h4:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "1a184e577651281335447fb1be82588d611c6f93245e74a81eb58b090308e129",
+      "status": "EVALUATED"
+    },
+    "evaluate-h4:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "dcae11fbe211942f8419fe32bf493fcbff67cd6b50e21c87951b5ebf906656b5",
+      "status": "EVALUATED"
+    },
+    "evaluate-trust:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "926fdf54c80b6d1364979295cb8ec1408e446520014ad2f81a1934d31f24c59e",
+      "status": "EVALUATED"
+    },
+    "evaluate-trust:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "31a1136fa1c9353617afac3a3967c0c0efe0e799d7936cd94b54b6c12e68737d",
+      "status": "EVALUATED"
+    },
+    "evaluate-trust:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "1214154ee53c2beb85dcab5534602a7aece5346a679921d74950e2e4b31ebbc6",
+      "status": "EVALUATED"
+    },
+    "evaluate:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "0ea0d2c996e0319f56f100a7fbf3f2fdfecec883747f923c2df45ad643d2b436",
+      "status": "EVALUATED"
+    },
+    "evaluate:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "96834dfc498e622544be98fcc02283803c050fda2e6ce36b4bb0e9d670b3c41b",
+      "status": "EVALUATED"
+    },
+    "evaluate:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "6b2547530bba65770cf8500b00b4d1a278bfc335f20722bce852924a31e8f69c",
+      "status": "EVALUATED"
+    },
+    "extract-deep-features:acdc_dev": {
+      "action": "RAN",
+      "payload_sha256": "611601e8fcfd033f1cd530f2a18a35d52e3ba23f76bc18605053df7d408ac726",
+      "status": "BUILT"
+    },
+    "extract-deep-features:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "775118e1586a863ad93c7fb1738f889981211888ee0168d2c0f60646e93635db",
+      "status": "BUILT"
+    },
+    "extract-deep-features:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "298a96b65b3aa7fa00020f7dafe35984163dc173bcc261530622dd93a862d9be",
+      "status": "BUILT"
+    },
+    "extract-deep-features:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "deda53ccc40e71ccf92c4434477d8b1fa09f82fd9b609581c040ecc0b6da0810",
+      "status": "BUILT"
+    },
+    "extract-formal:ACDC": {
+      "action": "RAN",
+      "payload_sha256": "4e4ed9d76fe30cd8f25ff046e3d46f86537d277dcc66cb28fac08968eda65924",
+      "status": "BUILT"
+    },
+    "extract-formal:MMS": {
+      "action": "RAN",
+      "payload_sha256": "eea942c67ac00119828c3b4e409e8622e1ec56c054674708234582fd94d4fa54",
+      "status": "BUILT"
+    },
+    "extract-formal:MMS2": {
+      "action": "RAN",
+      "payload_sha256": "5e1804e18575b5f2af8b93760fa90370989f6361c263c81ebbcaaeffa1d6bbdf",
+      "status": "BUILT"
+    },
+    "fit-cart-surrogate": {
+      "action": "RAN",
+      "payload_sha256": "d0a6c7f4ccc0417f2aae4bd63901a655ead1c8982ca752fdb94eb1a844ef5ad0",
+      "status": "BUILT"
+    },
+    "fit-deep-encoder": {
+      "action": "RAN",
+      "payload_sha256": "aa151fb89244b448dd55df36b938958255d5ca197cf6b2b629e624cd2caff83e",
+      "status": "BUILT"
+    },
+    "fit-predictor": {
+      "action": "RAN",
+      "payload_sha256": "263f24b0ff698fe9253784c7649206f436289b9f62e1205ecf791d10af9aeebb",
+      "status": "BUILT"
+    },
+    "fit-probes": {
+      "action": "RAN",
+      "payload_sha256": "83f8d2f574b402b6aa18cfb6b00061914b3c67c2f74b6d4d9391254b0bf5d3a8",
+      "status": "BUILT"
+    },
+    "fit-refit-arm": {
+      "action": "RAN",
+      "payload_sha256": "1943eea3feb2f7cece89668d934a4ebece79eacb6cbbcf5a2c6b1b72e2aa1cd5",
+      "status": "BUILT"
+    },
+    "fit-transition": {
+      "action": "RAN",
+      "payload_sha256": "261429e86b4b55d48e3b45df502ab88bf7b0c0db932dd66912ab220c5110a830",
+      "status": "BUILT"
+    },
+    "fit-trust": {
+      "action": "RAN",
+      "payload_sha256": "7e4f353c2f2ed6b133255709ef79f0d28cc776ffaa43edcbbd22d56eab822f80",
+      "status": "BUILT"
+    },
+    "freeze-analysis-bundle": {
+      "action": "RAN",
+      "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+      "status": "BUILT"
+    },
+    "freeze-f9": {
+      "action": "RAN",
+      "payload_sha256": "f6b3753fa1213db49f61e832adadf0f5a01f533e4ace5b88469c4d6b668d98dd",
+      "status": "BUILT"
+    },
+    "gate-rules": {
+      "action": "RAN",
+      "payload_sha256": "a4238117271f50857863c45a6f9397e52c4ea16795980e8011c7fc8f168ec719",
+      "status": "BUILT"
+    },
+    "import-f9-fits:train_wave1_specs": {
+      "action": "RAN",
+      "payload_sha256": "ba00b0641c7106c1d0fc28012cba804efec91f7b92a09db92b494c1d07754fac",
+      "status": "BUILT"
+    },
+    "import-f9-fits:train_wave2_specs": {
+      "action": "RAN",
+      "payload_sha256": "1a0c888df58f8bb488113a907c86bc083fdcd25f83a338935e2c65773901366d",
+      "status": "BUILT"
+    },
+    "import-f9-fits:wave1": {
+      "action": "RAN",
+      "payload_sha256": "030256b34214e422090180119974bce066b2a7a1dd777603fa21b81a4dea3980",
+      "status": "BUILT"
+    },
+    "import-f9-fits:wave2": {
+      "action": "RAN",
+      "payload_sha256": "614e9865dd2bb68cc68bbc8a0fd308875f6a0ee885db1b2a4642c73384032a30",
+      "status": "BUILT"
+    },
+    "induce-rules": {
+      "action": "RAN",
+      "payload_sha256": "95d62556c227696d833cc5d56c148e09da96f4736070c03f3dc75ac947e5987d",
+      "status": "BUILT"
+    },
+    "infer-f9:acdc_dev": {
+      "action": "RAN",
+      "payload_sha256": "228e371d22411bcbfa36b6bb613c1851eedac33f2ae9804d3f8d60a0cdc38abd",
+      "status": "BUILT"
+    },
+    "infer-f9:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "1e9b9ffca297dd35d8495e2ec325bed9c086aa6ff450a843d4ce816b5ec87ffe",
+      "status": "BUILT"
+    },
+    "infer-f9:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "8db620b803ff4b9f9e40793ec2160867490a0d199431e638c8eb0b757c0a597a",
+      "status": "BUILT"
+    },
+    "infer-f9:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "4d25d60ec0fa111924c9b6c6096c9db9f704e0595e6086e07cac2ae57bc54e3e",
+      "status": "BUILT"
+    },
+    "plan-f9": {
+      "action": "RAN",
+      "payload_sha256": "5c1b8ee02ee4e1f02569038a551d82f3ef5f7fe040768a3d55a8bb62188012a0",
+      "status": "BUILT"
+    },
+    "run-ablations": {
+      "action": "RAN",
+      "payload_sha256": "70f676e27debea5fcd85c20b61c6f4a65dcf63eb85854b9d5d1b993f9537bb9e",
+      "status": "BUILT"
+    },
+    "run-data-efficiency:descriptor": {
+      "action": "RAN",
+      "payload_sha256": "73243899f22fce27e0cc5280bc8f950842a0637e6d249750fb9cfad247194054",
+      "status": "BUILT"
+    },
+    "run-data-efficiency:f9-aggregate": {
+      "action": "RAN",
+      "payload_sha256": "02f6475f898e97d9fe9704e5ec111397002dd0001a9f9d2f99380f4b56f431e4",
+      "status": "BUILT"
+    },
+    "run-data-efficiency:f9-infer": {
+      "action": "RAN",
+      "payload_sha256": "8b3eb379c3f69b235922282347337bd450644e07a744a30e5ad5f8b2e1bd33a1",
+      "status": "BUILT"
+    },
+    "run-data-efficiency:f9-wave1": {
+      "action": "RAN",
+      "payload_sha256": "3210fd849cc5e1cff9fba2f07a0588de0180653dd4964f13fb52b5c1354049ad",
+      "status": "BUILT"
+    },
+    "run-data-efficiency:f9-wave2": {
+      "action": "RAN",
+      "payload_sha256": "57cc03900b9f21edecca7ca859696c9db4fa1000207f8af2a0d09a41ac2fde50",
+      "status": "BUILT"
+    },
+    "run-equivariance": {
+      "action": "RAN",
+      "payload_sha256": "f84a005e9f93dfc5be6999a011762c3ee11d14d9e824b4706d544de410cd144d",
+      "status": "BUILT"
+    },
+    "run-exploratory:B1": {
+      "action": "RAN",
+      "payload_sha256": "41279a738c8afa972cd58cec6664f320ce2da2cd88e16ecb76bcfa18b212d2eb",
+      "status": "BUILT"
+    },
+    "run-exploratory:B2": {
+      "action": "RAN",
+      "payload_sha256": "180eaa209fdcdebdc8750746bc0b43c3b4056b99523ae19205e3d6b4dbe548c7",
+      "status": "BUILT"
+    },
+    "run-exploratory:B3": {
+      "action": "RAN",
+      "payload_sha256": "affc8294d05b839e8a6346e6e4ea8873e6ea9dc270986d8e87c1da02f4ed7a5a",
+      "status": "BUILT"
+    },
+    "run-exploratory:B4": {
+      "action": "RAN",
+      "payload_sha256": "455b46dc049bb948d23cfaf6102db63eb7de33c8386dced37d1896fd78c7c55d",
+      "status": "BUILT"
+    },
+    "run-exploratory:B5": {
+      "action": "RAN",
+      "payload_sha256": "eb0d6adc3bece642edec70a151e8c754e805c18f61226758533df57e8fd0c8d9",
+      "status": "BUILT"
+    },
+    "run-exploratory:B6": {
+      "action": "RAN",
+      "payload_sha256": "c93107b472c8fdad89d27ff677cc7873643950747c73020949fc3bc4d4bcdb01",
+      "status": "BUILT"
+    },
+    "run-exploratory:B7": {
+      "action": "RAN",
+      "payload_sha256": "c5433df64de87cece2dda3fcbbadf0a506013687b80367eb56bbcb1ddc1bd0d6",
+      "status": "BUILT"
+    },
+    "run-exploratory:B8": {
+      "action": "RAN",
+      "payload_sha256": "021a359c6b4e406944d478be150b85aecb0dc9e05a5a771df17592e27c7cca27",
+      "status": "BUILT"
+    },
+    "run-exploratory:B9": {
+      "action": "RAN",
+      "payload_sha256": "7baaabc8d7e301cded016c1cf25f91428e5cb9c814ca087d447ef61d267d86e6",
+      "status": "BUILT"
+    },
+    "run-simulated-shift:A": {
+      "action": "RAN",
+      "payload_sha256": "26b130316ce3499c59e1e60ad7a36db84600e3d28965acfe73dd1eb9852119e3",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:A:d20": {
+      "action": "RAN",
+      "payload_sha256": "febba6c76d531e6502e8635e3b5c58f94f3c20d2297e333f8320cce9b0ac3dad",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:A:f9": {
+      "action": "RAN",
+      "payload_sha256": "34e8aff0f0ef14b4768077fe1a7ff2036b511e5d91b27a8f71aa5c12d0006a88",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:A:tensors": {
+      "action": "RAN",
+      "payload_sha256": "096b7c6a2fb8b850878d646df8f4ae84349ee7f34252bbded59275237bb098d1",
+      "status": "BUILT"
+    },
+    "run-simulated-shift:B": {
+      "action": "RAN",
+      "payload_sha256": "3050bdae6455fd8923e720e52eb5ba531eca2c16f90a98cfc18ab5ee0f8ba3bc",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:B:d20": {
+      "action": "RAN",
+      "payload_sha256": "c300a03fdd8894c663f64ff4d88f2a01b8687fc33ef2b43b8a017a68ab18a71d",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:B:f9": {
+      "action": "RAN",
+      "payload_sha256": "98d4bcf118a76e9db6cb39e7f50a67df9b0e0c6f36575a86334a6beb49b6707c",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:B:tensors": {
+      "action": "RAN",
+      "payload_sha256": "f8392e1566a1c6a6bcd012dc9b231312f9b8871cfe029a1f69b1e311a7245fd1",
+      "status": "BUILT"
+    },
+    "run-simulated-shift:C": {
+      "action": "RAN",
+      "payload_sha256": "43d3cee37c92f64fecb20c52a54741aa18812eb16b445a0c4cdec627a9123541",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:C:d20": {
+      "action": "RAN",
+      "payload_sha256": "cb921aca71a4c4a1bfb8ea56f752be6d3935cce05bd6586bfc4fe41b32939c41",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:C:f9": {
+      "action": "RAN",
+      "payload_sha256": "bef4c8212645ef1c72aaee1d4a1c2d892753b948a4ee0fb589541575abc4485e",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:C:tensors": {
+      "action": "RAN",
+      "payload_sha256": "d750802b5235bb0c80fb37f0e6d6868f3abd1c9bb74e80efe3d1ea16b94166c7",
+      "status": "BUILT"
+    },
+    "run-simulated-shift:D": {
+      "action": "RAN",
+      "payload_sha256": "e64619cf1dd1d3f950a215d9338f5be37d461b22d6b1939f80b3cab6d96983d5",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:D:d20": {
+      "action": "RAN",
+      "payload_sha256": "1072b2a5fdfae35fd366ce10d01598b6fe1482a7f0d3e9fdd0bf5b1a129fe69e",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:D:f9": {
+      "action": "RAN",
+      "payload_sha256": "155724bedd1adfec6f5a6f4e08fdd7dfde361181a66a0934cd9a2987c1cbe5e4",
+      "status": "EVALUATED"
+    },
+    "run-simulated-shift:D:tensors": {
+      "action": "RAN",
+      "payload_sha256": "871ddfb5cc09ed6508230a44c528fb6e765ef378a7eb68d29ae91846f8df85dc",
+      "status": "BUILT"
+    },
+    "run-simulated-shift:geometry": {
+      "action": "SKIPPED",
+      "payload_sha256": "8a633d402b11db2a45310a16d6457bf5d9af159a075ab06f3f74332a63c9658d",
+      "status": "BUILT"
+    },
+    "select-f9": {
+      "action": "RAN",
+      "payload_sha256": "9ab3831061a01078f46df52d7c266254893c36334937935541874aac72000bf6",
+      "status": "BUILT"
+    },
+    "stage-sources:ACDC": {
+      "action": "SKIPPED",
+      "attempted": 150,
+      "failures": 0,
+      "status": "BUILT"
+    },
+    "stage-sources:MMS": {
+      "action": "SKIPPED",
+      "attempted": 320,
+      "failures": 0,
+      "status": "BUILT"
+    },
+    "summarize-predictor": {
+      "action": "RAN",
+      "payload_sha256": "6760133f37bebb9e2c3039abf313c9dd19fc7560e442a4e2abc88a4fb86519a4",
+      "status": "EVALUATED"
+    },
+    "summarize-predictor-extended:acdc_dev_oof": {
+      "action": "RAN",
+      "payload_sha256": "abbd273ce27fa736900d82d1dc1b858edb424ca716d00f5b1a74280dd97dbfdc",
+      "status": "EVALUATED"
+    },
+    "summarize-predictor-extended:acdc_test": {
+      "action": "RAN",
+      "payload_sha256": "4df35f16b5d1917b5e7527e3fde1590ddca76d54f9799fc1e82aca6ee94dba52",
+      "status": "EVALUATED"
+    },
+    "summarize-predictor-extended:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "96d06d5ce5be8b6a7b25b9d1cbe1d5cc60f483259fa9d228a01b07c0201086e6",
+      "status": "EVALUATED"
+    },
+    "summarize-predictor-extended:mms_external": {
+      "action": "RAN",
+      "payload_sha256": "19e7c6b317ff73ab288c5aacdbe09c9fec323056051c2fdc3d5806e3b4a9e92d",
+      "status": "EVALUATED"
+    },
+    "summarize-predictor:mms2_external": {
+      "action": "RAN",
+      "payload_sha256": "e330d2297942a20eb815bdf5d6e51e83dbbdf40e690a3a1dd942d137032152ff",
+      "status": "EVALUATED"
+    },
+    "upload-cache": {
+      "action": "RAN",
+      "payload_sha256": "47748c0091386cea0db8c58e22766cc0b26f7e5c36b0bdac3cd7402d12dddfb6",
+      "status": "BUILT"
+    },
+    "validate-cohort": {
+      "action": "RAN",
+      "payload_sha256": "25d845eb71f355e58cedbd02999f002a7997340b3062cffe95bfcd552d14e856",
+      "status": "BUILT"
+    },
+    "validate-cohort:MMS2": {
+      "action": "RAN",
+      "payload_sha256": "0b5e7efb9082a95663b38e61c302df4ae4d75d812b69078f912c7ab82d901f66",
+      "status": "BUILT"
+    },
+    "write-release-manifest": {
+      "action": "RAN",
+      "manifest_sha256": "9260dd64b8cf1738e8c7b6cc7304053f930c27ae874903aa25e5158ea78afb4d",
+      "status": "BUILT"
+    }
+  }
+}

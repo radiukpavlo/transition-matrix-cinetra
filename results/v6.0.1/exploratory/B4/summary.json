@@ -1,0 +1,26 @@
+{
+  "analysis": "B4",
+  "by_max_bins": {
+    "2": {
+      "mean_recurrence": 0.5835555555555555,
+      "n_features_with_cuts": 9,
+      "spearman_mean_recurrence_vs_eta_squared": -0.5166666666666667
+    },
+    "3": {
+      "mean_recurrence": 0.5336666666666666,
+      "n_features_with_cuts": 9,
+      "spearman_mean_recurrence_vs_eta_squared": -0.8499999999999999
+    },
+    "4": {
+      "mean_recurrence": 0.48214814814814816,
+      "n_features_with_cuts": 9,
+      "spearman_mean_recurrence_vs_eta_squared": -0.6666666666666667
+    }
+  },
+  "n_fit_rows": 98,
+  "profile": "wedd_gaussian_mm_v1",
+  "recurrence_min_of_gate": 0.6,
+  "replicates": 500,
+  "rulebook": "d_model",
+  "seed": 20260928
+}

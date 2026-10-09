@@ -1,0 +1,22 @@
+# Optional equivariance and ETM diagnostics branch (SPECIFICATION.md 6.0.0, Section 10). Decision D19 [P3].
+specification_version: "6.0.0"
+status: optional_runs_after_all_mandatory_endpoints
+feeds_primary_rulebook: false
+case_selection:
+  partition: acdc_dev
+  n_cases: 12
+  seed: 20260611
+  rule: "numpy.random.default_rng(20260611).choice(sorted acdc_dev patient_ids, size=12, replace=False)"   # replaces the v5 head() selection
+mms_policy: after_protocol_freeze_only          # no M&Ms equivariance before M0
+transformations:                                # applied jointly to the ED/ES image and mask
+  translation_x: {steps_px: [-1, 1], image_interpolation: linear, mask_interpolation: nearest}
+  translation_y: {steps_px: [-1, 1], image_interpolation: linear, mask_interpolation: nearest}
+  rotation: {steps_deg: [-2.0, 2.0], center: slice_center, image_interpolation: linear, mask_interpolation: nearest}
+  intensity_scale: {factors: [0.95, 1.05], mask: unchanged}
+  boundary: zero_padding
+generators:
+  formal: central_finite_differences_of_formal_descriptors_v3
+  semantic: central_finite_differences_of_measured_B_on_transformed_masks
+  fit: least_squares_on_selected_cases
+metrics: [generator_residuals, finite_action_defect]
+reporting: "per transformation and target; diagnostic only, never a gate for the primary pipeline"

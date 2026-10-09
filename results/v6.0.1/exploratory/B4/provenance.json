@@ -1,0 +1,81 @@
+{
+  "analysis": "B4",
+  "code_commit": "d04f0908e66766335609c938f06d51c53421a45a",
+  "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+  "config": {
+    "analysis_settings": {
+      "max_bins": [
+        2,
+        3,
+        4
+      ],
+      "replicates": 500,
+      "rulebook": "d_model",
+      "separation": [
+        "eta_squared",
+        "kruskal_epsilon_squared"
+      ],
+      "title": "cut stability against max_bins and class separation"
+    },
+    "file": "configs/exploratory.yaml",
+    "sha256": "881e47ec4ed9fb569861d2a6cf400ad31cbb7644054527951bab25cffe8d1d38"
+  },
+  "confirmatory": false,
+  "declared": "protocol-v6.0.1 amendment item 8: exploratory register B1-B8, declared post hoc (explains results, never confirms them)",
+  "included": {
+    "acdc_dev": "ACDC"
+  },
+  "inference": "effect sizes and descriptive intervals only",
+  "inputs": {
+    "B_ACDC": {
+      "path": "run:semantics/B_ACDC.parquet",
+      "sha256": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "cohort_ACDC": {
+      "path": "run:contracts/cohort_ACDC.parquet",
+      "sha256": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98"
+    },
+    "d_model": {
+      "path": "run:formal/d_model_ACDC_dev.parquet",
+      "sha256": "31ee6b1ad4db6f119db49ccc50a63833df164dcf6d803cb996c836489818babd"
+    },
+    "frozen_bundle": {
+      "path": "run:.stages/FROZEN.json",
+      "sha256": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e"
+    },
+    "oof_bhat": {
+      "path": "run:oof/bhat_oof_ACDC_dev.parquet",
+      "sha256": "b735e0820b374ebfa64849337e815669bc965590b373b1aa69c41a20d459e0a4"
+    },
+    "split_manifest": {
+      "path": "run:contracts/split_manifest.parquet",
+      "sha256": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf"
+    }
+  },
+  "label": "EXPLORATORY_POST_HOC",
+  "not_executed": {},
+  "outputs": [
+    "run:exploratory/B4/recurrence.parquet",
+    "run:exploratory/B4/recurrence.csv",
+    "run:exploratory/B4/feature_summary.parquet",
+    "run:exploratory/B4/feature_summary.csv",
+    "run:exploratory/B4/summary.json",
+    "run:exploratory/B4/provenance.json"
+  ],
+  "reads": "recorded run artifacts only; no evaluation re-run",
+  "result": {
+    "included": [
+      "acdc_dev"
+    ],
+    "max_bins": [
+      2,
+      3,
+      4
+    ]
+  },
+  "role": "exploratory_post_hoc",
+  "run_id": "v6-replication-20261003-1241",
+  "schema": "tmmri.exploratory_provenance/1",
+  "title": "cut stability against max_bins and class separation",
+  "v6_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1"
+}

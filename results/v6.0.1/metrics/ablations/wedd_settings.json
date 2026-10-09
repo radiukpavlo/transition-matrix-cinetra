@@ -1,0 +1,425 @@
+{
+  "design": "one_factor_at_a_time_around_primary",
+  "family": "F4_discretizers",
+  "primary_profile": "wedd_gaussian_mm_v1",
+  "replaces_primary": false,
+  "role": "secondary_ablation",
+  "rulebook": "d_model",
+  "selection_forbidden": "no post-test best-configuration claim",
+  "variants": {
+    "bandwidth_multiplier_0.5": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [],
+      "eligible_rules": 0,
+      "induced_rules": 0,
+      "mean_cut_recurrence": 0.5153333333333333,
+      "overrides": {
+        "bandwidth_multiplier": 0.5
+      },
+      "source": "refitted"
+    },
+    "bandwidth_multiplier_2": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [
+        "lv_esv_ml",
+        "lv_myocardial_mass_ed_g"
+      ],
+      "eligible_rules": 0,
+      "induced_rules": 2,
+      "mean_cut_recurrence": 0.5143333333333333,
+      "overrides": {
+        "bandwidth_multiplier": 2.0
+      },
+      "source": "refitted"
+    },
+    "max_bins_2": {
+      "acdc_test_routes": {
+        "abstention": 0.74,
+        "abstention_by_reason": {
+          "MATCH_CONFLICTING_CONSEQUENTS": {
+            "n": 2,
+            "rate": 0.04
+          },
+          "MATCH_NONE": {
+            "n": 35,
+            "rate": 0.7
+          }
+        },
+        "accepted_coverage": 0.26,
+        "activation": 0.3,
+        "audit_tax": {
+          "accepted_coverage": 0.26,
+          "base_reference_accuracy": 1.0,
+          "difference_rule_minus_base": 0.0,
+          "n_same_subset": 13,
+          "rule_reference_accuracy": 1.0
+        },
+        "conflict_encounter_rate": 0.04,
+        "conflict_rate": 0.04,
+        "covered_fidelity": 1.0,
+        "covered_reference_accuracy": 1.0,
+        "faithful_coverage": 0.26,
+        "n_accepted": 13,
+        "n_accepted_reference_known": 13,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": true,
+        "routes": {
+          "CONFLICT_ABSTAIN": 2,
+          "EXACT_ACCEPT": 13,
+          "NO_MATCH_ABSTAIN": 35
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [
+        "lv_esv_ml",
+        "rv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g",
+        "global_wall_thickness_ed_mm"
+      ],
+      "eligible_rules": 4,
+      "induced_rules": 9,
+      "mean_cut_recurrence": 0.5835555555555556,
+      "overrides": {
+        "max_bins": 2
+      },
+      "source": "refitted"
+    },
+    "max_bins_4": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [],
+      "eligible_rules": 0,
+      "induced_rules": 0,
+      "mean_cut_recurrence": 0.48214814814814816,
+      "overrides": {
+        "max_bins": 4
+      },
+      "source": "refitted"
+    },
+    "max_depth_3_max_bins_4": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [],
+      "eligible_rules": 0,
+      "induced_rules": 0,
+      "mean_cut_recurrence": 0.466962962962963,
+      "overrides": {
+        "max_bins": 4,
+        "max_depth": 3
+      },
+      "source": "refitted"
+    },
+    "weight_entropy_0.00": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [],
+      "eligible_rules": 0,
+      "induced_rules": 0,
+      "mean_cut_recurrence": 0.33499999999999996,
+      "overrides": {
+        "weight_density": 1.0,
+        "weight_entropy": 0.0
+      },
+      "source": "refitted"
+    },
+    "weight_entropy_0.25": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [],
+      "eligible_rules": 0,
+      "induced_rules": 0,
+      "mean_cut_recurrence": 0.418,
+      "overrides": {
+        "weight_density": 0.75,
+        "weight_entropy": 0.25
+      },
+      "source": "refitted"
+    },
+    "weight_entropy_0.50": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [
+        "lv_esv_ml"
+      ],
+      "eligible_rules": 0,
+      "induced_rules": 0,
+      "mean_cut_recurrence": 0.5137777777777777,
+      "overrides": {
+        "weight_density": 0.5,
+        "weight_entropy": 0.5
+      },
+      "source": "refitted"
+    },
+    "weight_entropy_0.75": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [
+        "lv_myocardial_mass_ed_g"
+      ],
+      "eligible_rules": 0,
+      "induced_rules": 1,
+      "mean_cut_recurrence": 0.4858888888888889,
+      "overrides": {
+        "weight_density": 0.25,
+        "weight_entropy": 0.75
+      },
+      "source": "refitted"
+    },
+    "weight_entropy_1.00": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [
+        "lv_esv_ml",
+        "lv_myocardial_mass_ed_g"
+      ],
+      "eligible_rules": 0,
+      "induced_rules": 2,
+      "mean_cut_recurrence": 0.5255555555555556,
+      "overrides": {
+        "weight_density": 0.0,
+        "weight_entropy": 1.0
+      },
+      "source": "refitted"
+    }
+  }
+}

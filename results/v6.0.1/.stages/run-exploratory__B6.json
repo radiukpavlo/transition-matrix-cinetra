@@ -1,0 +1,77 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "5d88a3041ca9f604b1066e85cb138b91802f1df3",
+      "dirty": false
+    },
+    "config_hash": "2db79c942fb7dc056064153ea53004dd1174b869e8eba13ca8af80057947c3e5",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:formal/d_model_ACDC_dev.parquet": "31ee6b1ad4db6f119db49ccc50a63833df164dcf6d803cb996c836489818babd",
+      "run:rules/d_model/rulebook_or_empty.json": "2be729456ed5cc4a24bf1a9857aeba88815974e9d8f622218fd728efd194e199",
+      "run:rules/semantic_eligibility.json": "791f4fc37cf7d783d898a4d9fb29e0aee8090f68ae4c9087b90a7116e5544cca",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:thresholds/d_model_wedd_gaussian_mm_v1.json": "016731f90c5c6a392f2080872fd1cc8656c8794b6318390bf281e3d9929f00e9",
+      "run:transitions/transition_model.json": "6c2f25349cfd7987a32337ca506415c8d946ab36e9f81a38d7b19790c866ba55"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:exploratory/B6/cuts.csv": "e76e38b0c65b5eb975fbdc8c5241dd7e0dc85ef6cf9dbe4d2763397698e1af29",
+      "run:exploratory/B6/cuts.parquet": "ba619cff446c9e7117679f53bc3602100af413f9057903746c914f9e16e247b8",
+      "run:exploratory/B6/eligible_features.csv": "523ebe9f8c6177b77cfc01b48869ca5f5346e8fc06030442cfc1e8dfbf6f4c6c",
+      "run:exploratory/B6/eligible_features.parquet": "b17364fc3c8bfd731f438e1663bbc7583c0853c4a15321a73ad762f6a00182b0",
+      "run:exploratory/B6/lambdas.csv": "23c02f07c4ef01b25c73378743336e1787965bf7f5659dfbc3d7e7027c3a7816",
+      "run:exploratory/B6/lambdas.parquet": "b4562b285efbd4fb1518243645a07f04bf58fd1c38a6e61838e036d2fd5010cc",
+      "run:exploratory/B6/provenance.json": "7c01745c290a8d7a64d84733671b8b582550d6b32b4578046c8be0a3b8c9e43d",
+      "run:exploratory/B6/rules.csv": "9124b09296ece7ea2ca8a644075c31cc13f73ddbc31239a221cae10559896271",
+      "run:exploratory/B6/rules.parquet": "0a7a31fd8905fa1bde55796725739484ca484e9c4853a28d1da4b0607988b408",
+      "run:exploratory/B6/summary.json": "8ea2cc0994449717b31d541f3a7f2d3859947cd9ae3588c47c0cd3d8ca8d8ac1"
+    },
+    "params": {
+      "analysis": "B6",
+      "config_sections": [
+        "splits.acdc.acdc_dev",
+        "transition",
+        "formal.audited_predictor",
+        "wedd",
+        "rule_policy",
+        "bootstrap.threshold_bootstrap",
+        "registry",
+        "cohorts.qc_severity"
+      ],
+      "included": [
+        "acdc_dev"
+      ],
+      "label": "EXPLORATORY_POST_HOC",
+      "lane_configs": [
+        "configs/exploratory.yaml"
+      ]
+    },
+    "stage": "run-exploratory:B6",
+    "status": "BUILT"
+  },
+  "payload_sha256": "c93107b472c8fdad89d27ff677cc7873643950747c73020949fc3bc4d4bcdb01",
+  "run_log": {
+    "host": "dafc4b450763",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 273.517,
+    "started_utc": "2026-10-03T09:50:28+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

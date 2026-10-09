@@ -1,0 +1,104 @@
+# Exploratory register B1-B9 (B9 added 3 October 2026 for owner issue O1; protocol-v6.0.1 amendment item 8; docs/MANUSCRIPT_PROTOCOL_2026-10-02.md E rows 5-12,
+# docs/MANUSCRIPT_PROTOCOL_V2_2026-10-02.md D and J). Code: src/tmmri/experiments/exploratory/. CLI: run-exploratory --analysis B<k>.
+# Declared post hoc: every output and provenance record is labelled EXPLORATORY_POST_HOC; the analyses can explain results,
+# never confirm them. Effect sizes with descriptive intervals only; no confirmatory p-values and no post-hoc power. Each analysis
+# reads recorded run artifacts only (hash-checked against their stage records), never re-runs an evaluation and never feeds a
+# bundle, a rule, a threshold or a selection.
+specification_version: "6.0.1"
+label: EXPLORATORY_POST_HOC
+output_root: exploratory                        # artifacts/<run_id>/exploratory/<B#>/ (provenance.json beside every output)
+bootstrap: {replicates: 2000, seed: 20260928, level: 0.95, unit: cluster_id}   # descriptive percentile intervals (protocol 2.1 J)
+min_cases_per_stratum: 20                       # below: point estimates with NE intervals (STRATUM_BELOW_MIN_CASES)
+external_partitions:                            # each used only when its evaluate:<split> stage is recorded and its lock allows it
+  mms_external: {dataset: MMS, vendor_column: vendor}
+  mms2_external: {dataset: MMS2, vendor_column: vendor}   # M&Ms-2 lock of protocol-v6.0.1 (lane L1)
+volume_targets: [lv_edv_ml, lv_esv_ml, rv_edv_ml, rv_esv_ml, lv_myocardial_mass_ed_g]
+error_definition: "B-hat (raw reconstruction, reconstructed/bhat_<split>.parquet) minus measured B (OBSERVED cells only), divided by the acdc_dev fit-row SD of the target; critical-QC rows excluded"
+analyses:
+  B1:
+    title: shift attribution
+    reference_partition: acdc_dev
+    standardization: frozen transition standardizer (transitions/transition_model.json), as audit-shift
+    per_descriptor: [auroc_comparison_vs_reference, abs_auroc_minus_half, ks_distance]
+    strata: [pooled, vendor]
+    group_drop:                                 # the label-free domain classifier of audit-shift (configs/bootstrap.yaml shift_audit) without each group
+      classifier: bootstrap.shift_audit
+      groups:                                   # regular expressions on the formal descriptor names
+        background_l0: "_l0_"
+        lv_blood_pool_l1: "_l1_"
+        myocardium_l2: "_l2_"
+        rv_blood_pool_l3: "_l3_"
+        ed_phase: "(^fd_ed_)|(_ed$)"
+        es_phase: "(^fd_es_)|(_es$)"
+        label_fractions: "fraction"
+  B2:
+    title: external volume-error decomposition
+    covariates: [inplane_spacing_mm, slice_thickness_mm, num_slices, matrix_pixels, fov_mm]
+    covariate_sources: "spacing and slice thickness from measured B; slice count and matrix from the staging manifest geometry (image_shape, num_slices); fov_mm = max(nx * dx, ny * dy)"
+    model: ordinary least squares of the SD-normalized error on z-scored covariates, per target and partition (descriptive association; never a predictor)
+    bias_vs_spread: per vendor and target, bias = mean normalized error, spread = SD of the normalized error
+  B3:
+    title: vendor-A profile
+    partition: mms_external
+    vendor: A
+    geometry: [inplane_spacing_mm, slice_thickness_mm, slice_increment_mm, num_slices, matrix_pixels, fov_mm]
+    acdc_partitions: [acdc_dev, acdc_test]
+  B4:
+    title: cut stability against max_bins and class separation
+    rulebook: d_model
+    max_bins: [2, 3, 4]                         # configs/wedd.yaml sensitivity_grid.max_bins
+    replicates: 500                             # cluster bootstrap of the threshold stability gate (configs/bootstrap.yaml threshold_bootstrap)
+    separation: [eta_squared, kruskal_epsilon_squared]   # of each antecedent's OOF B-hat by d_model class (fit rows)
+  B5:
+    title: gate power simulation (synthetic; design property of the v6 gate)
+    agreements: [0.80, 0.85, 0.90, 0.95]
+    supports: [5, 10, 15, 20]                   # patients in the planted antecedent region among n_patients
+    null_agreements: [0.50, 0.60]               # planted rules that should fail; their pass rate is the false-pass rate
+    n_datasets: 2000                            # per cell
+    seed: 20260928
+    n_patients: 98                              # acdc_dev size
+    n_folds: 5
+    modes: [pipeline, counts]                   # pipeline: v6 WEDD cuts, VPRS discovery and the cross-fitted gate on each synthetic dataset; counts: the gate arithmetic on the planted counts (idealized discretization)
+    classes: [DCM, HCM, MINF, NOR, RV]
+    consequent: NOR
+    planted_feature: lv_edv_ml                  # registry antecedent names reused as synthetic column names
+    distractor_feature: rv_edv_ml
+    background_consequent_rate: 0.10
+    gates:
+      v6: {min_matched: 5, wilson_lower_min: 0.60}
+      wilson_lower_0.50: {min_matched: 5, wilson_lower_min: 0.50}
+      wilson_lower_0.70: {min_matched: 5, wilson_lower_min: 0.70}
+      point_fidelity_0.90: {min_matched: 5, min_agreement: 0.90}
+      f8_selective: {min_matched: 5, min_agreement: 0.90, wilson_lower_min: 0.60}
+    fan_out: "gate_power_cell is a pure per-cell function (Modal CPU fan-out possible); the local path is the reference"
+  B6:
+    title: fold variance under alternative fold salts (acdc_dev only)
+    n_salts: 20
+    outer_salt_template: "acdc-fold-v6-b6-{k:02d}|"
+    inner_salt_template: "acdc-inner-fold-v6-b6-{k:02d}|"
+    rulebook: d_model
+    stability_replicates: 500                   # as configs/bootstrap.yaml threshold_bootstrap
+    refits: "per salt: transition (lambda by CV over the alternative outer folds), nested OOF B-hat, WEDD cuts, stability gate, eligibility, VPRS discovery and the cross-fitted gate with the nested inner OOF substrate (d_model refitted without each fold)"
+  B7:
+    title: segmentation sensitivity on acdc_test
+    partition: acdc_test
+    perturbations: [erode_lv, dilate_lv, erode_myo, dilate_myo, erode_rv, dilate_rv, drop_basal_slice]
+    morphology: "in-plane, per slice and phase, 4-connected 1-pixel step; dilation overwrites the neighbouring pixels of other labels; an eroded pixel takes the most frequent other label among its 4 neighbours (ties: the smallest label)"
+    basal_slice: "of the two outermost slices with any label at ED, the one with the larger ED LV area (ties: the lower index); its labels are removed at ED and ES"
+    rho_bootstrap_replicates: 2000
+  B8:
+    title: annotation convention (M&Ms-1 against M&Ms-2, descriptive, confounded by centre)
+    partitions: [mms_external, mms2_external]
+    targets: [lv_edv_ml, lv_esv_ml, lv_ef_percent, rv_edv_ml, rv_esv_ml, rv_ef_percent, lv_myocardial_mass_ed_g]
+  B9:                                           # added 3 October 2026 (owner issue O1); src/tmmri/experiments/exploratory/orientation.py
+    title: orientation audit of the image-branch input frame (label-free; staged masks for the LV and RV centroids only)
+    partitions: {acdc_dev: ACDC, acdc_test: ACDC, mms_external: MMS, mms2_external: MMS2}   # mms2_external only through the M&Ms-2 lock and its passed validate-cohort --dataset mms2 record
+    vendor_columns: {MMS: vendor, MMS2: vendor}   # contracts/cohort_<DS>.parquet column read alone (never a class label); ACDC has none
+    labels: {lv: 1, rv: 3}                      # project labels after the configs/cohorts.yaml label_map (1 LV cavity, 3 RV cavity)
+    orientation: "tmmri.neural.preprocess.canonical_orientation of the staged ED image header (configs/neural_input.yaml geometry), applied to the ED mask with oriented_slices, exactly as the D20 and F9 inputs"
+    slice: "mid-ventricular ED slice: the middle (index (n - 1) // 2, stored slice order) of the ED slices with both LV-cavity and RV-cavity voxels"
+    angle: "LV -> RV centroid offset in mm in the canonical frame; x = column offset, y = minus the row offset (y up); atan2(y, x) in degrees in (-180, 180]"
+    rv_left: column offset < 0
+    rv_above: row offset < 0
+    quantiles: [0.10, 0.50, 0.90]
+    strata: "dataset x partition x (vendor or all) x (orientation code or all); n, median and q10-q90 angle, fraction RV-left, fraction RV-above"

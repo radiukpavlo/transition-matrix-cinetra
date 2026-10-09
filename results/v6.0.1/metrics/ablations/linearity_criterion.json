@@ -1,0 +1,134 @@
+{
+  "comparator": "rbf_kernel_ridge",
+  "degraded_primary_family_targets": [],
+  "executed_audit_pipeline": "affine",
+  "folds_meeting": 4,
+  "folds_required": 4,
+  "metric": "pooled_fit_sd_normalized_mae_over_transition_targets",
+  "min_relative_reduction": 0.02,
+  "nonlinear_declared_better": true,
+  "outcome": "reported_either_way",
+  "partition": "acdc_dev_oof",
+  "per_fold": {
+    "1": {
+      "comparator_pooled_nmae": 0.4433048731098942,
+      "meets_min_relative_reduction": true,
+      "reference_pooled_nmae": 0.47332833285772674,
+      "relative_reduction": 0.06343051464205718
+    },
+    "2": {
+      "comparator_pooled_nmae": 0.3998963742620706,
+      "meets_min_relative_reduction": true,
+      "reference_pooled_nmae": 0.4498424419899367,
+      "relative_reduction": 0.11103013647828153
+    },
+    "3": {
+      "comparator_pooled_nmae": 0.47694120366531273,
+      "meets_min_relative_reduction": true,
+      "reference_pooled_nmae": 0.5232989991819388,
+      "relative_reduction": 0.08858758680810808
+    },
+    "4": {
+      "comparator_pooled_nmae": 0.48509015223314866,
+      "meets_min_relative_reduction": true,
+      "reference_pooled_nmae": 0.5077737295216292,
+      "relative_reduction": 0.04467260901789982
+    },
+    "5": {
+      "comparator_pooled_nmae": 0.45094359013780827,
+      "meets_min_relative_reduction": false,
+      "reference_pooled_nmae": 0.4410763224085364,
+      "relative_reduction": -0.022370885100770677
+    }
+  },
+  "primary_family_nmae_difference": [
+    {
+      "ci_lower": -0.10156249924687938,
+      "ci_upper": 0.02281911031528881,
+      "difference": -0.03930493756068819,
+      "n": 98,
+      "n_boot_valid": 2000,
+      "n_clusters": 98,
+      "nmae_comparator": 0.3900298510724723,
+      "nmae_reference": 0.4293347886331605,
+      "status": "EVALUATED",
+      "target": "lv_edv_ml"
+    },
+    {
+      "ci_lower": -0.1912750531203582,
+      "ci_upper": -0.036785259784011266,
+      "difference": -0.1054861860961597,
+      "n": 98,
+      "n_boot_valid": 2000,
+      "n_clusters": 98,
+      "nmae_comparator": 0.22981875826375753,
+      "nmae_reference": 0.33530494435991726,
+      "status": "EVALUATED",
+      "target": "lv_esv_ml"
+    },
+    {
+      "ci_lower": -0.04784151846372376,
+      "ci_upper": 0.012610485860004773,
+      "difference": -0.018198794954725827,
+      "n": 98,
+      "n_boot_valid": 2000,
+      "n_clusters": 98,
+      "nmae_comparator": 0.1683832905301556,
+      "nmae_reference": 0.18658208548488142,
+      "status": "EVALUATED",
+      "target": "lv_ef_percent"
+    },
+    {
+      "ci_lower": -0.1443297131378024,
+      "ci_upper": -0.035947382148095064,
+      "difference": -0.08956137491619433,
+      "n": 98,
+      "n_boot_valid": 2000,
+      "n_clusters": 98,
+      "nmae_comparator": 0.46305183709587006,
+      "nmae_reference": 0.5526132120120644,
+      "status": "EVALUATED",
+      "target": "rv_edv_ml"
+    },
+    {
+      "ci_lower": -0.08056451913172719,
+      "ci_upper": 0.002208966906834907,
+      "difference": -0.03617467047223737,
+      "n": 98,
+      "n_boot_valid": 2000,
+      "n_clusters": 98,
+      "nmae_comparator": 0.2881763519180407,
+      "nmae_reference": 0.3243510223902781,
+      "status": "EVALUATED",
+      "target": "rv_esv_ml"
+    },
+    {
+      "ci_lower": -0.05300057684819213,
+      "ci_upper": 0.05592720180261262,
+      "difference": -0.0008795353230325949,
+      "n": 98,
+      "n_boot_valid": 2000,
+      "n_clusters": 98,
+      "nmae_comparator": 0.28976152097506375,
+      "nmae_reference": 0.29064105629809633,
+      "status": "EVALUATED",
+      "target": "rv_ef_percent"
+    },
+    {
+      "ci_lower": -0.13194842799427187,
+      "ci_upper": -0.005215257637559632,
+      "difference": -0.06555114686552907,
+      "n": 98,
+      "n_boot_valid": 2000,
+      "n_clusters": 98,
+      "nmae_comparator": 0.42575363545132994,
+      "nmae_reference": 0.49130478231685903,
+      "status": "EVALUATED",
+      "target": "lv_myocardial_mass_ed_g"
+    }
+  ],
+  "reference": "ridge_per_target",
+  "replaces_primary": false,
+  "role": "secondary_ablation",
+  "selection_forbidden": "no post-test best-configuration claim"
+}

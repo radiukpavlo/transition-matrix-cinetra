@@ -1,0 +1,65 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d19c5a041ce1f8eb0f40bd6cfdb025b205e55c36",
+      "dirty": false
+    },
+    "config_hash": "1613345720842d04a7a32300ec6ff2c6608fc2fafbe0d967c51d298231f4cfd4",
+    "inputs": {
+      "data:manifests/staging_ACDC.json": "6a1f70128dee7420f79b65c02719917887a00a101eac6b38adb5672a57f59160",
+      "data:manifests/staging_MMS.json": "800f5f8be78d7fc13e1a00c65c75f9f22cd6501bfe26a68b36855564d01c50df",
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:contracts/cohort_MMS.parquet": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:exploratory/B9/per_case.parquet": "00b26dff4b08448a51053577f5b4c13b5ce5e862dc82fe98b90fcd7912b77e04",
+      "run:exploratory/B9/provenance.json": "4d704bb55f710248bf2442f1fe49f404561f3c223d37163f77bac8ea48972414",
+      "run:exploratory/B9/strata.csv": "9f0df14f4f305464e2b09bb310b7225da6b71378641ba7395e1bbd1c37fee9f5",
+      "run:exploratory/B9/strata.parquet": "72624dfd8ff05523a65bae977d6761252f39daef0b066cc8603d4ea514271f1c",
+      "run:exploratory/B9/summary.json": "5ac87ce4e65bc8e22ee21797149b071735e0ad03c34b25b1a46d273669efabe8"
+    },
+    "params": {
+      "analysis": "B9",
+      "config_sections": [
+        "cohorts.acdc.label_map",
+        "cohorts.mms.label_map",
+        "cohorts.mms2.label_map"
+      ],
+      "included": [
+        "acdc_dev",
+        "acdc_test",
+        "mms_external"
+      ],
+      "label": "EXPLORATORY_POST_HOC",
+      "lane_configs": [
+        "configs/exploratory.yaml",
+        "configs/neural_input.yaml"
+      ]
+    },
+    "stage": "run-exploratory:B9",
+    "status": "BUILT"
+  },
+  "payload_sha256": "7baaabc8d7e301cded016c1cf25f91428e5cb9c814ca087d447ef61d267d86e6",
+  "run_log": {
+    "host": "d5b193893684",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 8.785,
+    "started_utc": "2026-10-03T11:41:32+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

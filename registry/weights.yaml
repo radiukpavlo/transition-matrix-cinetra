@@ -1,0 +1,26 @@
+# Pinned torchvision ImageNet weight files (protocol-v6.0.1; owner-approved download from download.pytorch.org only).
+# Written by `python -m tmmri.cli verify-torch-weights` (src/tmmri/neural/weights.py); a recorded sha256 is never
+# rewritten, and every encoder verifies its file against it before use.
+schema: tmmri.weights_registry/1
+amendment: protocol-v6.0.1
+source_host: download.pytorch.org
+cache: '$TORCH_HOME/hub/checkpoints (container: /cache/torch, volume tmmri_cache)'
+weights:
+  resnet18_imagenet1k_v1:
+    torchvision_weights: ResNet18_Weights.IMAGENET1K_V1
+    architecture: resnet18
+    file: resnet18-f37072fd.pth
+    url: https://download.pytorch.org/models/resnet18-f37072fd.pth
+    used_by: F9 trained CNN backbone (docs/NEURAL_ENCODER_EXPERIMENT_PROTOCOL.md 4.1; configs/f9_cnn.yaml)
+    sha256_prefix: f37072fd
+    sha256: f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec
+    bytes: 46830571
+  resnet50_imagenet1k_v2:
+    torchvision_weights: ResNet50_Weights.IMAGENET1K_V2
+    architecture: resnet50
+    file: resnet50-11ad3fa6.pth
+    url: https://download.pytorch.org/models/resnet50-11ad3fa6.pth
+    used_by: D20 frozen deep encoder (SPECIFICATION.md 8.4; configs/deep_encoder.yaml)
+    sha256_prefix: 11ad3fa6
+    sha256: 11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca
+    bytes: 102540417

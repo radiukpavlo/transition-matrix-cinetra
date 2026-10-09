@@ -1,0 +1,368 @@
+{
+  "descriptor_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "estimation_only": true,
+  "evidence": "prospective",
+  "freeze_order": {
+    "before_extraction": true,
+    "bundles": {
+      "D20": {
+        "before_extraction": true,
+        "freezes": [
+          {
+            "before_extraction": true,
+            "finished_utc_upper_bound": "2026-10-03T11:37:37.804000+00:00",
+            "recorded": true,
+            "stage": "fit-deep-encoder",
+            "started_utc": "2026-10-03T11:37:31+00:00"
+          }
+        ]
+      },
+      "F9": {
+        "before_extraction": true,
+        "freezes": [
+          {
+            "before_extraction": true,
+            "finished_utc_upper_bound": "2026-10-03T13:22:04.801000+00:00",
+            "recorded": true,
+            "stage": "freeze-f9",
+            "started_utc": "2026-10-03T13:22:03+00:00"
+          }
+        ]
+      },
+      "F9b": {
+        "before_extraction": true,
+        "freezes": [
+          {
+            "before_extraction": true,
+            "finished_utc_upper_bound": "2026-10-03T13:24:00.858000+00:00",
+            "recorded": true,
+            "stage": "fit-probes",
+            "started_utc": "2026-10-03T13:23:49+00:00"
+          },
+          {
+            "before_extraction": true,
+            "finished_utc_upper_bound": "2026-10-03T13:22:04.801000+00:00",
+            "recorded": true,
+            "stage": "freeze-f9",
+            "started_utc": "2026-10-03T13:22:03+00:00"
+          }
+        ]
+      },
+      "S1-S4": {
+        "before_extraction": true,
+        "freezes": [
+          {
+            "before_extraction": true,
+            "finished_utc_upper_bound": "2026-10-03T13:25:38.247000+00:00",
+            "recorded": true,
+            "stage": "fit-trust",
+            "started_utc": "2026-10-03T13:25:35+00:00"
+          }
+        ]
+      }
+    },
+    "evidence": "prospective",
+    "extraction": {
+      "exists": true,
+      "first_extraction_started_utc": "2026-10-03T14:34:21+00:00",
+      "records": {
+        "source_area_receipt": {
+          "action": "RAN",
+          "extraction_started_utc": "2026-10-03T14:34:21+00:00",
+          "file": "MMS2_EXTRACTION_RECEIPT.json",
+          "first_extraction_started_utc": null
+        }
+      }
+    },
+    "label": "prospective",
+    "reason": null,
+    "rule": "SPECIFICATION.md 14.6 (D33): freeze records dated before the M&Ms-2 extraction record; a later freeze has no registered mms2_external result and is labelled post hoc"
+  },
+  "label": "prospective",
+  "partition": "mms2_external",
+  "predictors": {
+    "audited_predictor": {
+      "aurc": {
+        "ci_lower": 0.09081024098564,
+        "ci_upper": 0.2850093930071852,
+        "estimate": 0.16840102486826727,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "n_evaluable": 68,
+      "provenance": {
+        "logits": "decision_function",
+        "n_rows": 180,
+        "source": "derived: run:formal/d_model_predictor.joblib on formal/A_MMS2.parquet, checked against run:inference/d_model_mms2_external.parquet"
+      },
+      "tau50": {
+        "development": {
+          "coverage_target": 0.5,
+          "development_coverage": 0.5,
+          "k": 49,
+          "n": 98,
+          "n_accepted_development": 49,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.8790924461495404,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.8636363636363636,
+          "accuracy_accepted_wilson_95": [
+            0.6666501283342828,
+            0.9525099628594474
+          ],
+          "accuracy_full_coverage": 0.7058823529411765,
+          "accuracy_full_coverage_wilson_95": [
+            0.5889372027651877,
+            0.8008098939618421
+          ],
+          "coverage": 0.3235294117647059,
+          "coverage_wilson_95": [
+            0.22437604095329994,
+            0.44155501899496036
+          ],
+          "n": 68,
+          "n_accepted": 22,
+          "n_correct_accepted": 19,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.8790924461495404
+        }
+      },
+      "tau80": {
+        "development": {
+          "coverage_target": 0.8,
+          "development_coverage": 0.8061224489795918,
+          "k": 79,
+          "n": 98,
+          "n_accepted_development": 79,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.621272147892028,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.7547169811320755,
+          "accuracy_accepted_wilson_95": [
+            0.6243344231264808,
+            0.8506709789194319
+          ],
+          "accuracy_full_coverage": 0.7058823529411765,
+          "accuracy_full_coverage_wilson_95": [
+            0.5889372027651877,
+            0.8008098939618421
+          ],
+          "coverage": 0.7794117647058824,
+          "coverage_wilson_95": [
+            0.6674326122885067,
+            0.861509876126748
+          ],
+          "n": 68,
+          "n_accepted": 53,
+          "n_correct_accepted": 40,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.621272147892028
+        }
+      }
+    },
+    "d20_predictor": {
+      "aurc": {
+        "ci_lower": 0.9135534307751945,
+        "ci_upper": 0.999350147363998,
+        "estimate": 0.96930057266792,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "n_evaluable": 68,
+      "provenance": {
+        "logits": "log_probabilities",
+        "n_rows": 180,
+        "source": "derived: run:deep_encoder/formal/d_model_predictor.joblib on run:deep_encoder/features/A_D20_mms2_external.parquet"
+      },
+      "tau50": {
+        "development": {
+          "coverage_target": 0.5,
+          "development_coverage": 0.5,
+          "k": 49,
+          "n": 98,
+          "n_accepted_development": 49,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.693919619973515,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.02702702702702703,
+          "accuracy_accepted_wilson_95": [
+            0.004786974451940429,
+            0.13824069863730518
+          ],
+          "accuracy_full_coverage": 0.058823529411764705,
+          "accuracy_full_coverage_wilson_95": [
+            0.023110765539635758,
+            0.1417168843310147
+          ],
+          "coverage": 0.5441176470588235,
+          "coverage_wilson_95": [
+            0.42656606428685023,
+            0.6569511707260847
+          ],
+          "n": 68,
+          "n_accepted": 37,
+          "n_correct_accepted": 1,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.693919619973515
+        }
+      },
+      "tau80": {
+        "development": {
+          "coverage_target": 0.8,
+          "development_coverage": 0.8061224489795918,
+          "k": 79,
+          "n": 98,
+          "n_accepted_development": 79,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.4643066620694726,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.034482758620689655,
+          "accuracy_accepted_wilson_95": [
+            0.009507928331165413,
+            0.11729145464312694
+          ],
+          "accuracy_full_coverage": 0.058823529411764705,
+          "accuracy_full_coverage_wilson_95": [
+            0.023110765539635758,
+            0.1417168843310147
+          ],
+          "coverage": 0.8529411764705882,
+          "coverage_wilson_95": [
+            0.7500260574669123,
+            0.9181118226365673
+          ],
+          "n": 68,
+          "n_accepted": 58,
+          "n_correct_accepted": 2,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.4643066620694726
+        }
+      }
+    },
+    "f9": {
+      "aurc": {
+        "ci_lower": 0.07334470548590123,
+        "ci_upper": 0.31129809879430315,
+        "estimate": 0.17406224573467668,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "n_evaluable": 68,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 180,
+        "sha256": "b57c0ef3f0a4f36a59925ec7ee4d77d83a0ea00d65196f56e38422a5e287f48d",
+        "source": "run:neural_f9/predictions.parquet"
+      },
+      "tau50": {
+        "development": {
+          "coverage_target": 0.5,
+          "development_coverage": 0.5,
+          "k": 49,
+          "n": 98,
+          "n_accepted_development": 49,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.7527816285432463,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.8275862068965517,
+          "accuracy_accepted_wilson_95": [
+            0.6545156010980476,
+            0.9240214274710877
+          ],
+          "accuracy_full_coverage": 0.7205882352941176,
+          "accuracy_full_coverage_wilson_95": [
+            0.604365654302676,
+            0.8132205207619988
+          ],
+          "coverage": 0.4264705882352941,
+          "coverage_wilson_95": [
+            0.3159724314773308,
+            0.5448321768344444
+          ],
+          "n": 68,
+          "n_accepted": 29,
+          "n_correct_accepted": 24,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.7527816285432463
+        }
+      },
+      "tau80": {
+        "development": {
+          "coverage_target": 0.8,
+          "development_coverage": 0.8061224489795918,
+          "k": 79,
+          "n": 98,
+          "n_accepted_development": 79,
+          "reason": null,
+          "status": "FITTED",
+          "tau": 0.5626505132710059,
+          "ties_at_tau": 1
+        },
+        "realised": {
+          "accuracy_accepted": 0.7924528301886793,
+          "accuracy_accepted_wilson_95": [
+            0.6654225529835207,
+            0.8799540197358604
+          ],
+          "accuracy_full_coverage": 0.7205882352941176,
+          "accuracy_full_coverage_wilson_95": [
+            0.604365654302676,
+            0.8132205207619988
+          ],
+          "coverage": 0.7794117647058824,
+          "coverage_wilson_95": [
+            0.6674326122885067,
+            0.861509876126748
+          ],
+          "n": 68,
+          "n_accepted": 53,
+          "n_correct_accepted": 42,
+          "reason": null,
+          "status": "EVALUATED",
+          "tau": 0.5626505132710059
+        }
+      }
+    }
+  },
+  "rule_routes": {
+    "accepted_coverage": 0.0,
+    "covered_fidelity": null,
+    "n_accepted": 0,
+    "n_attempted": 180,
+    "rulebook": "d_model",
+    "source": "run:metrics/routes_d_model_mms2_external.json"
+  },
+  "schema": "tmmri.s1_selective/1",
+  "trust_bundle": {
+    "bundle_sha256": "266b2889b6ce393b2ceb70a1438f17f97e0c6ee03617a24714506e5b2ab9908d",
+    "n_files": 7,
+    "record": "trust/trust_bundle.json",
+    "record_sha256": "6a002bb5cb183ce398a2f102f1599622813ae441b51860d58188d2b2c113c36d"
+  }
+}

@@ -1,0 +1,1359 @@
+{
+ "registered_commit": "d04f0908e66766335609c938f06d51c53421a45a",
+ "tags": {
+  "protocol-v6.0.0": {
+   "tag_object": "660b5d0ec0c99540b6ba4d187bb9ffcdf1fde392",
+   "commit": "0b2da05101f4231f7dcc4b8cf40f93c3e89ab303",
+   "root_tree": "4dc713a871067edb1e2e373bdb1a9b1ef117ea4a",
+   "tagger_epoch": 1790711166,
+   "tagger_tz": "+0300"
+  },
+  "protocol-v6.0.1": {
+   "tag_object": "df92fd2534b262def5c99ae1485e8ca172e9dca8",
+   "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+   "root_tree": "34544e171727cc9c8eb63e6a9aded71bc6ffda8c",
+   "tagger_epoch": 1791037887,
+   "tagger_tz": "+0300"
+  }
+ },
+ "files": [
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "SPECIFICATION.md",
+   "blob": "622b76817fd27a6384d8e9d4d2274d61d08c9e82",
+   "published": "no"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/README.md",
+   "blob": "f63f97e464a73ea8930542ad2601eaf576aa32e6",
+   "published": "no"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/bootstrap.yaml",
+   "blob": "07a8f1da2385b0fe90fe2d815e564402680b042a",
+   "published": "verbatim (same blob)"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/cohorts.yaml",
+   "blob": "c7d6968b1931b6740ac64e08f855e74e085271b5",
+   "published": "no"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/deep_encoder.yaml",
+   "blob": "958d9f074dbd68d2223899238ebdab81489e5bbd",
+   "published": "no"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/equivariance.yaml",
+   "blob": "55d01b057a756f6ab93748ed02d2fa909d36ac96",
+   "published": "verbatim (same blob)"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/formal.yaml",
+   "blob": "c52a0f563f1beb1334f0567c44b51c1e3a8c5f24",
+   "published": "verbatim (same blob)"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/rule_policy.yaml",
+   "blob": "ddcae1bdc17ef1c2be9eadad7abcc4d0a0dd8aeb",
+   "published": "verbatim (same blob)"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/runtime.env",
+   "blob": "f876acb8fb39079957cedcae4a7bc9e56ac33050",
+   "published": "verbatim (same blob)"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/splits.yaml",
+   "blob": "2fad2fd838ceceea79da25ddf8fa05ae2cfd18f9",
+   "published": "no"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/study_v6.yaml",
+   "blob": "2d7ce9a333a0d5086e1ff6c5f986a8f8c0cff229",
+   "published": "no"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/transition.yaml",
+   "blob": "2bb15126b71cf4460fe06111a3821f2281b74df4",
+   "published": "verbatim (same blob)"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "configs/wedd.yaml",
+   "blob": "b89ec63db708bb462af2c305af9530ee76c02591",
+   "published": "verbatim (same blob)"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "protocol/amendments.md",
+   "blob": "55832daf4d9f01a243881a0031922f33c7fe2d19",
+   "published": "no"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "registry/estimator_partition_registry.csv",
+   "blob": "fa5e26a16326e726632911790b36941ce38fa158",
+   "published": "no"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "registry/pattern_templates.yaml",
+   "blob": "329dfa634b8b717ec8ebda8f99954ba7a166d343",
+   "published": "verbatim (same blob)"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "registry/reason_codes.yaml",
+   "blob": "94b9c4a3fd2f72a7ecd9c4891c02b8fdca3f7ce3",
+   "published": "verbatim (same blob)"
+  },
+  {
+   "tag": "protocol-v6.0.0",
+   "path": "registry/semantic_registry.yaml",
+   "blob": "f592d71dad550a978f663fc415947994291a41bf",
+   "published": "verbatim (same blob)"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": ".dockerignore",
+   "blob": "d1104af8b48625771331f64dfe5d8afd49d8beed",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": ".env.example",
+   "blob": "6df9adb4cfeec3b55869519a88964d753f2b5b5b",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": ".python-version",
+   "blob": "f36fa5fd8017a085e301126c8c3fc30f1a2550b9",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "Dockerfile",
+   "blob": "f3391fb07eefd9d1a7ae13980fc9b57977ded4ae",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "LICENSE",
+   "blob": "73b3f45bc8459c6cf45faae8109ac4841ebe05c8",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "SPECIFICATION.md",
+   "blob": "bc26520059284a4a62f20dad11d17747bd80abbd",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "artifacts/README.md",
+   "blob": "7236d3785b326cc95ae72c304558922116b10246",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "compose.yaml",
+   "blob": "a929908824b4430ab9c8f63032c283b29626569c",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/README.md",
+   "blob": "ee7031684f4dc0f66675c4ea8ca85a7239144a0a",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/bootstrap.yaml",
+   "blob": "07a8f1da2385b0fe90fe2d815e564402680b042a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/cart_f8.yaml",
+   "blob": "d3687dd78546a8f49df57a91402f19ebd51c54a7",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/cohorts.yaml",
+   "blob": "8a2920739495acd9067aafee6fcc04fee4a84435",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/data_centric.yaml",
+   "blob": "6ca98422c90880d26e5b15a7e45bc1815f4246be",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/deep_encoder.yaml",
+   "blob": "c4b9a47c7e6d80a509eb92cc418274026de7b9ec",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/equivariance.yaml",
+   "blob": "55d01b057a756f6ab93748ed02d2fa909d36ac96",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/exploratory.yaml",
+   "blob": "d277a7974504ca65fee115e56efa4a7e8caa6c7e",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/f9_cnn.yaml",
+   "blob": "c575500d8062946e1eb6ac344631d381dac9fc16",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/formal.yaml",
+   "blob": "c52a0f563f1beb1334f0567c44b51c1e3a8c5f24",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/neural_input.yaml",
+   "blob": "24b94b0995cd92d405501ce8565dcc2beecddc5d",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/probes.yaml",
+   "blob": "5c9fd15e167fc30b38e4c4bfe2a497e180b624ea",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/rule_policy.yaml",
+   "blob": "ddcae1bdc17ef1c2be9eadad7abcc4d0a0dd8aeb",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/runtime.env",
+   "blob": "f876acb8fb39079957cedcae4a7bc9e56ac33050",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/source_bindings/acdc.json",
+   "blob": "9ac35aceb4252d90aa88d7a0cf8fddd2c8b2f53e",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/source_bindings/mms.json",
+   "blob": "f87aa67c4370663d691ead68e98d9011c2710116",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/source_bindings/mms2.json",
+   "blob": "bd53d8672a66dab9c5541bd47d3e7432ac43bd4e",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/splits.yaml",
+   "blob": "61c830c88014a530bd9540475a6fa9dc53a4b254",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/study_v6.yaml",
+   "blob": "6eca666768adfb8fddf2f3c61a899d23a1c88d8b",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/transition.yaml",
+   "blob": "2bb15126b71cf4460fe06111a3821f2281b74df4",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/trust.yaml",
+   "blob": "59853d05e27af7bc8b5145bdc6cc18523f225f81",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "configs/wedd.yaml",
+   "blob": "b89ec63db708bb462af2c305af9530ee76c02591",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "data/README.md",
+   "blob": "e6b1ad56cf18579bdbf07e15ffff337def281002",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "protocol/amendments.md",
+   "blob": "21159e502e7585863e4b53ffbefa7c9d5f0627bc",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "protocol/neural_encoder_v6.0.1.design.json",
+   "blob": "2dc485bbc67afc39a61c3d5c3730d5d067a300b8",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "pyproject.toml",
+   "blob": "75edaa61f928343405c5ac03aeef0a41311a324a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/estimator_partition_registry.csv",
+   "blob": "8a35397a246d7b5734387de5b5c821a215ce3b70",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/pattern_templates.yaml",
+   "blob": "329dfa634b8b717ec8ebda8f99954ba7a166d343",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/reason_codes.yaml",
+   "blob": "94b9c4a3fd2f72a7ecd9c4891c02b8fdca3f7ce3",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/semantic_registry.yaml",
+   "blob": "f592d71dad550a978f663fc415947994291a41bf",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/sources/acdc_acquisition_receipt.yaml",
+   "blob": "05274e0170b64b7550bf63267ee2daa188b9ae02",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/sources/acdc_acquisition_receipt_v2.yaml",
+   "blob": "1da96a255148f405756720aaa1fcfb9527ba07a5",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/sources/acdc_native.yaml",
+   "blob": "0e460af9585ab024d6a0b0b1accf96bf87073343",
+   "published": "hash-only"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/sources/acdc_release_file_manifest.csv",
+   "blob": "d942a050231fac417ea23797ec0cd9c409e0cb34",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/sources/mms2.yaml",
+   "blob": "70e7b7196c0fd37592d831519212d686eb8eddf3",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/sources/mms2_split_manifest.csv",
+   "blob": "26bc1742c7bba270581f3b867dc3353d0935ae7d",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/sources/mms_full_release_manifest.csv",
+   "blob": "23e16ae60436fe029e87c86f7311982afa8c6322",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/sources/mms_full_release_metadata_manifest.csv",
+   "blob": "5368d54a9bcfce324abb39215e7d0cabe8a8ed43",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/sources/mms_full_release_receipt.yaml",
+   "blob": "11727ee97713f2a4b8ae9e22568e6b0ced3e3de4",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "registry/weights.yaml",
+   "blob": "656fa75c4894d0d19c5f8abcd5260ed52e5e00fe",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "scripts/cloud/README.md",
+   "blob": "8fd2878ac4cd37d75bb901503c577d8ef0fff6cb",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "scripts/cloud/modal_train.py",
+   "blob": "64b57ad022a71f5acbe7b7247f2ba2f2602beb62",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "scripts/data/acquire_datasets.py",
+   "blob": "a7b4d584f95a7d19510d33075feef61bc98e2e57",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "scripts/data/build_mms_full_release_manifest.py",
+   "blob": "53f3a512f00f753e38b4f80d1882fa0d3eeebb68",
+   "published": "edition"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "scripts/maintenance/check_repository_layout.py",
+   "blob": "a7dd39d94e441b39743b5fc394132a8c72e83e8d",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "scripts/qc/f9_cross_hardware.py",
+   "blob": "9eeff437f29f4a48865bac76b22a15fc449d0402",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "scripts/verify_environment.py",
+   "blob": "812f9f80664a832c96d98d8ad01af35a404e9d05",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/__init__.py",
+   "blob": "7a98b4805fc66fd50d6e492e9c74a3a58c4f149f",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/classification.py",
+   "blob": "cc1e0bb75c7fc6beeb05bb0561f545286529e684",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/cli.py",
+   "blob": "ca15315f5eb52cd4a5a4df6578b55d5e8d6424ac",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/clinical/__init__.py",
+   "blob": "02bbb71cf9d11200eec6c0c0a1138a64bd7bc4a2",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/clinical/figures.py",
+   "blob": "2251b8ff9d6be6b2ccbabbc310b1f19627be3773",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/comparators/__init__.py",
+   "blob": "7a351c4bfbb7faff5a6d2eb85132299854ec02d5",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/comparators/cart_f8.py",
+   "blob": "ef44fcf3be63789b6b63b44b70f1ff329e431dc0",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/config.py",
+   "blob": "22bfeda29e249e10867c0557cf0f038f991ae032",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/confirmatory_h4.py",
+   "blob": "d5f09e72051718cbbb41e722bb940e7ef45f4ddf",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/deep_encoder.py",
+   "blob": "19da2e3b641d61258258f4309dd04428c48e89df",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/equivariance.py",
+   "blob": "b799b9e92b9e8f8892562b29c58000879bdf7d01",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/__init__.py",
+   "blob": "b43828387321ad6a05c12ed947d76195bde5d97d",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/alt_bundles.py",
+   "blob": "4de09e0e86c172ed911a9193b22a74e4b8cba9b1",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/comparison_tables.py",
+   "blob": "7fe34195dc998a51d5315bad83360ef630f81510",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/data_centric.py",
+   "blob": "2e3ad6c094291358ac135a14694c3d908256fe4f",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/data_efficiency.py",
+   "blob": "cb75d765c3aa284033c8c1a3f227249838aa7c80",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/__init__.py",
+   "blob": "50884e1c2ebdfebd8af0caedd970c6f7b659aba3",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/annotation.py",
+   "blob": "46e95e14dc1471bd6bc70635a4e634e3ad07ce61",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/common.py",
+   "blob": "cdd3b0fbe01839cabd1f9c89ae8e2202ebb43d80",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/cut_stability.py",
+   "blob": "9203df1d22cf9aea406162bcb1158acd18783826",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/errors.py",
+   "blob": "36acf3ce9a976db979c53d1dcb82bca23497efe4",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/fold_salts.py",
+   "blob": "88e9f5bdb05c034dc50f89e874f974b3ecb58faf",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/gate_power.py",
+   "blob": "6e20e53adf4be61d2a7d8d686086cc1dcba99c76",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/orientation.py",
+   "blob": "6cd18c84c5d53aecfabd996e2a390d7b95661743",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/segmentation.py",
+   "blob": "10976ab8dbed7dfa08b19770226ac9691e12a846",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/shift.py",
+   "blob": "0e311f201bf14410a9a73c4641ad2c79a99b9f07",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/exploratory/vendor_profile.py",
+   "blob": "fd0d987229aa9272594a18de2e2e521fed2c28fc",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/l57_cli.py",
+   "blob": "16e96a63d5a87e463e38461f1c6ce80fab072e34",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/l57_stages.py",
+   "blob": "30238e100bcb4f2850f4548cd72273413fb4a24e",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/probes.py",
+   "blob": "f4870a4538a2e7374716c1625c24ae868f26e46d",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/simulated_shift.py",
+   "blob": "93b167a8dc812976c5fb1aac7083b8fb6efdff57",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/transition_grid.py",
+   "blob": "0a704a57143dd365aaec646d17c9a200c576227f",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/trust/__init__.py",
+   "blob": "65a8e86f16dec7fc54fb0a8b75a5196cf31c9b6e",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/trust/calibration.py",
+   "blob": "133ad3ee36c782f3b6902c03c2d9337493fc6a82",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/trust/harmonize.py",
+   "blob": "a549afed959d26d512a11cb101904dcbe77e55f4",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/trust/ood.py",
+   "blob": "eb437912745c8892928563f6ac8d3b5a7a4f440a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/experiments/trust/selective.py",
+   "blob": "d522bb96c7baef962cb5b7b80025da9cf7edae8a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/for_rules_import.py",
+   "blob": "3d65dd2c42008bd288fbda9fd33bfbe20a60c448",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/formal_features.py",
+   "blob": "b992a01e7a41f84dceba3c4607c651797c0f8b7a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/inference.py",
+   "blob": "05222805da3770c03a68f1b0a1d2abdfad0f833b",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/ingest/__init__.py",
+   "blob": "e34683c1e0b3036a3ed1861d69675525bfb80bf0",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/ingest/acdc.py",
+   "blob": "df91535db0116f88a7e8dd0274ddb5ea68072caa",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/ingest/geometry.py",
+   "blob": "a548504584fc74a9f4cfddac002d9bf6b5b7cc62",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/ingest/inventory.py",
+   "blob": "a38f4be43070f7c7c873ef7298ba575c860395bc",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/ingest/labels.py",
+   "blob": "d9e2abe4d99f6f99a16f2a8cb0841fc964465638",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/ingest/mms.py",
+   "blob": "b530f2555ef0ceac2fd137338ec9d7cb043e7c23",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/ingest/mms2.py",
+   "blob": "c123722be59a0719bbb5fc9b8c15c29f1ce398df",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/ingest/native_data.py",
+   "blob": "44b79dfe6019558a8217f9f316ca73628e02a615",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/ingest/sources.py",
+   "blob": "6692dd808a6f8524245875ff25b38d1ca15e74d8",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/ingest/staging.py",
+   "blob": "40a0bb3c962fdb955932c27c469b26ce5441aafb",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/io.py",
+   "blob": "0cf9081773645e26e6b22463b20804bb463d4e4c",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/manuscript_figures.py",
+   "blob": "a2d69f0c858a5b605d1052dac4b399b77ea1bc62",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/manuscript_tables.py",
+   "blob": "5cbf539929f32d3545788662ed8387056add7e48",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/metrics.py",
+   "blob": "8fe274d2a7c36976e268da6f55328deac646372c",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/mms2_stages.py",
+   "blob": "ba12e3d74c6e11d8d56b599e96009e9848f1bbba",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/__init__.py",
+   "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/cloud.py",
+   "blob": "4c970b05f792bc08db12a94b31a80efa1c6d113c",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/data.py",
+   "blob": "dd06c3873ea453722b3c43dde3901016517d8430",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/dihedral.py",
+   "blob": "d608c3e06eab01f699b1da73333331e7ea2d2d58",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/f9_cli.py",
+   "blob": "428addc3cd08b4be3420503047c36b3f1c810e5c",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/f9_config.py",
+   "blob": "a6ea6f847703f84371ca2e9c903ad41fa02b1a2c",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/f9_stages.py",
+   "blob": "8ee06aac326045bebe2fb90df4db2eab91668fd6",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/fit_spec.py",
+   "blob": "834c3d33c45de3f499b5ad1ff562987c8df0cd91",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/image_stages.py",
+   "blob": "da8682c9bea39da2d8d2f25c67d39d31c13b176e",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/inference.py",
+   "blob": "d34a3e468bda2bdbac404fb2502381588f2a7eec",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/model.py",
+   "blob": "9e7027f847583efc6ea5f8539a462d9b96d19a4b",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/numerics.py",
+   "blob": "299b0b5d90b17793ec93cbb5ff30e0d5b6abd417",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/prediction_table.py",
+   "blob": "d00115d150803051a9e3d9467fb99a6a9fa98f46",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/preprocess.py",
+   "blob": "f0f94f868801914029c7659bbab5e7d7505d0072",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/qualify.py",
+   "blob": "35cceb55614e1e68175b2f42b72e2a87d8b8d337",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/selection.py",
+   "blob": "fba46e59e8026c9924eabe0a396de896bc44a635",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/synthetic_cache.py",
+   "blob": "9b2189bb49db2493f15c64854ec1b93e10e96b64",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/torch_numerics.py",
+   "blob": "17c19b6251f89686ab52c44ca0968e989d45971a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/train.py",
+   "blob": "55d0200e9094f71c59e0682922836c8b6ef5cdc5",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/neural/weights.py",
+   "blob": "3f2a9026dcbcaf902bac5f224c924c9d22b2820d",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/paths.py",
+   "blob": "5de28e681a8afdacc1099f3b879a8011eaf8c494",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/pipeline.py",
+   "blob": "46a0ae0a3ab23c01602deb1c02fc170fe9629aeb",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/predicates.py",
+   "blob": "f5d616bdc53ec5a3535a4f3c2f8902f2e22a1439",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/predictor_reporting.py",
+   "blob": "594db5e4a3ddc658cd402cc25f9ee1db96ff8921",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/preflight.py",
+   "blob": "4ef6c18dd52f3ee3c6852220d0a2b8aac7df1bfa",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/provenance.py",
+   "blob": "38eb8bca75e7a04370271a78512860a06662ee1f",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/release.py",
+   "blob": "b193dc50ecf9f149bee6985b0557699cb0acf21b",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/rough_sets.py",
+   "blob": "f8f71fa258ac7e47f77fac0d8b0e8da941269cf0",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/rule_audit.py",
+   "blob": "08ce9632b35864917d4d51431e7648a4a5a72759",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/rule_pipeline.py",
+   "blob": "83e949aa2fab07c926276f95b3d3db76b00acc3b",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/rules.py",
+   "blob": "b0b89cdca1da4b44698f2d8ee4da128fef01d0eb",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/runs.py",
+   "blob": "ab37f57cf743b00c80017ed5a4a86bfb49f97324",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/secondary_stages.py",
+   "blob": "08a9255f4c7361a65e504e2a2dee1667f7e03669",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/semantics/__init__.py",
+   "blob": "26a572911b17ba83ce6569ad8afc5f983b91f5fa",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/semantics/contract.py",
+   "blob": "379392329bb67586d3aa5bf022fa894dbe02a3c1",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/semantics/features.py",
+   "blob": "4d333c37b34292707f47155b2ab9bba3ccec9bef",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/semantics/manual_review.py",
+   "blob": "b4363e272c11df0b5ce37bb1fcaf691864c80ec3",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/semantics/measurements.py",
+   "blob": "ab0cc02b79bffedbed859be19d4eebb44330a4d0",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/semantics/qc.py",
+   "blob": "a6715d31188d08fa61893e679c1e9f1e2a7eec49",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/semantics/visual_qc.py",
+   "blob": "970c7a6aa3e50555c59cbcd95711af6fc2e8a91a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/splits.py",
+   "blob": "122cf76f2f19d86241c72cf41cd215e72720db83",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/stages.py",
+   "blob": "ec10215563ec1f1cbfc356c9c8b723a39c45126d",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/target_transforms.py",
+   "blob": "7203f5451f8e5fb0aef88cb9e7d1750df0033c89",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/transition.py",
+   "blob": "84941305548da72a155a52b13bdfc47423f5cf1a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/transition_fit.py",
+   "blob": "f51edd54958abd7d60b097540e7bbe7a3a75bb01",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "src/tmmri/wedd.py",
+   "blob": "54379fd8a5e118b6c6a4c5563b738f43bd32d7c3",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/conftest.py",
+   "blob": "c1673fe049fa4c8548739a8ddc187eb2d0ef0048",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/fixtures_mms2.py",
+   "blob": "921621b7226a91c62c076319d2b0ea34a7b60908",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/fixtures_v6.py",
+   "blob": "d77df5bc3da3a1a63e5a417c4c733a3e201ae9e9",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_acdc_geometry.py",
+   "blob": "3c5c586b865d494edcb5f08e9de817dfd6abd98f",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_cart_f8.py",
+   "blob": "73ec25a4172ea5e7935d94538fafcbbc98c71e0d",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_confirmatory_h4.py",
+   "blob": "5ce61832305597a25ca6c49d59a0e14457530af0",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_core_contracts.py",
+   "blob": "7cfdddc7cacc4c25f27052724c233c8b9d186173",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_data_centric_stages.py",
+   "blob": "3707f76b42a8fc946e8bb3d8ecdf29cbcd4bbb3c",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_data_efficiency.py",
+   "blob": "5c2603d43252d33445cb109563e03c06c6cd065b",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_deep_encoder.py",
+   "blob": "e6449288e91b2e2f23d9bd031de555d87cf4e3ee",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_dihedral.py",
+   "blob": "36443255ead1c1070926750d64aaa10901f05e4b",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_dss_components.py",
+   "blob": "fe0abf06568364c9966aaa7f337fc18124e0bfc8",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_exploratory.py",
+   "blob": "793b402baa43fd4c472d7a2665394f715581d90c",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_f9_model.py",
+   "blob": "f1cb1ccaa75b623cc84ff8e1d3f61a843bccd5f0",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_f9_selection.py",
+   "blob": "8e12321ec467ca427f646dd624211ff0ed424ff5",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_f9_stages.py",
+   "blob": "e121af5c65f2c0823e1aa38cf68379053a49e548",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_f9_train.py",
+   "blob": "071738aa04cbbbccce3aedd1b2ee4e7d14ee2499",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_l57_stages.py",
+   "blob": "bc16fe1cf0c8b19758d6c0ed2c121d29cce56933",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_l57_trust.py",
+   "blob": "95ad36e2b9107966e54e557da1afb127e5e7edad",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_mms2_ingest.py",
+   "blob": "b73d5162944e2a7e2a32de22c9bb1694551a8f1b",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_mms2_pipeline.py",
+   "blob": "3f6b35309b4432b9489e073f8782cdfa45676fae",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_neural_infer_f9.py",
+   "blob": "16d6ec10f5f49f21ace3f8ab335409c5e4b51e58",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_neural_preprocess.py",
+   "blob": "e0c056cf4ac8403623e93fe2b9038a57b843421a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_neural_weights.py",
+   "blob": "a10ba7268ffa17e15902f4628d7f2b95b4b0609f",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_preflight.py",
+   "blob": "8b3853f42a006e2379da5dd9a470323eb3a674ab",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_registry_check.py",
+   "blob": "6a0ab2a49a6a4152c0331337d303715305785e7a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_release_archive.py",
+   "blob": "759332a8a4c0d3735ad4cdefc362316431649170",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_simulated_shift.py",
+   "blob": "9b1d92c6dd50d7ac2e465b7d3a09b2939978ffb3",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_transition_experiments.py",
+   "blob": "fba2c9f272e412f2858f00e09bb6f7734f80c981",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v601_integration.py",
+   "blob": "47d248548cd619e18105b1b6579154b82454e930",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v601_neural_chain.py",
+   "blob": "b3fe1579fb80a1de4b64011cb65b79d20d686979",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v601_reporting.py",
+   "blob": "f11f4fa532adfabd9def143dff8c007bf13a5600",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_acceptance.py",
+   "blob": "438162a7b3146d6105c1093e12778c0cba8ec77e",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_cli.py",
+   "blob": "60c1a080af6c8955b3de43bb016436723b3204a0",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_contract.py",
+   "blob": "ce47efe0ba96837d952432f646af3f3ab70cb6a5",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_descriptive_strata.py",
+   "blob": "788e4ec5d1d85783c9e8e2eef74307f0d2ee8515",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_duplicates.py",
+   "blob": "926f7c3e591bda5e35df99c2203d61dc441d4553",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_inference.py",
+   "blob": "f0426d21a223c25b800e939d4be39f4473402dea",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_ingest.py",
+   "blob": "38c2e7dcd069d9d427f72e52ab8103f2442d980a",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_integration.py",
+   "blob": "65b176d17f3cbd176203c29b4d3b08dbee240137",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_metrics.py",
+   "blob": "5171bd4dc9470a8083dfae377197b5669250a384",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_reporting.py",
+   "blob": "1e9f06c1632385b20b553187c224d6b236f45e71",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_runs.py",
+   "blob": "3c165f3293bbebd8f4856588d78b23f16041149b",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_semantics.py",
+   "blob": "0e9efa636bc1483dad212922343deac7c8b82475",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_staging.py",
+   "blob": "e166b1f5303effe108e1dba6d0e94a8bef7394bf",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_synthetic_control.py",
+   "blob": "4dd065d35b839e748bf27c17256d539a88fa3522",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_transition.py",
+   "blob": "d4ec1268c4c3b395ee0013a40a751d59c6e29b28",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "tests/test_v6_wedd_roughsets.py",
+   "blob": "137440738c5a27cbab0c3078aee488c53402c7ba",
+   "published": "verbatim"
+  },
+  {
+   "tag": "protocol-v6.0.1",
+   "path": "uv.lock",
+   "blob": "6271276cea91c1439630fd75161064dce9bb5ba1",
+   "published": "verbatim"
+  }
+ ]
+}

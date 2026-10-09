@@ -1,0 +1,64 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+      "dirty": false
+    },
+    "config_hash": "ec3cc305d54b92a493c70ed32dadf27e10239a1a67e48aed24ec22710bef0794",
+    "inputs": {
+      "data:manifests/staging_ACDC.json": "6a1f70128dee7420f79b65c02719917887a00a101eac6b38adb5672a57f59160",
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:formal/d_model_predictor.joblib": "553193fd260f2394128e8ea1742ea364e74e75e5a01c3ebfe98ae8d175e55bc6",
+      "run:qc/outlier_reference.json": "3a35ea7875fe344ef1e8595ecfea3f78073f0be07468d093e2434f69b046024c",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:simulated_shift/vendor_geometry.json": "75504ebd5f1f30e334263452b49e5e0af0ecdd3a48aa52580e96e625f670c3cb",
+      "run:transitions/transition_model.json": "6c2f25349cfd7987a32337ca506415c8d946ab36e9f81a38d7b19790c866ba55"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:simulated_shift/D/neural_cache/acdc_test/manifest.csv": "7803b376206eede524f794b23d7986025e52483745ce0e3002a11b797774e983",
+      "run:simulated_shift/D/tensor_inputs.json": "a7bfa2949d9804bf248cfc1846a67c5be3d45524a0dbe4d434a6a673a50cc0f3"
+    },
+    "params": {
+      "config_sections": [
+        "cohorts",
+        "data_centric.common",
+        "data_centric.simulated_shift"
+      ],
+      "hook": "tmmri.neural.preprocess:case_tensors",
+      "step": "tensors",
+      "target_spacing_mm": [
+        0.7954999804496765,
+        0.7954999804496765,
+        10.000000047187768
+      ],
+      "vendor": "D"
+    },
+    "stage": "run-simulated-shift:D:tensors",
+    "status": "BUILT"
+  },
+  "payload_sha256": "871ddfb5cc09ed6508230a44c528fb6e765ef378a7eb68d29ae91846f8df85dc",
+  "run_log": {
+    "host": "9928e6e4d918",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 22.859,
+    "started_utc": "2026-10-03T13:38:48+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

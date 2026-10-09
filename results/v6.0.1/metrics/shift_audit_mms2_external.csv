@@ -1,0 +1,5 @@
+comparison,group,n_reference,n_comparison,n_folds,metric,min_cases,fold_unit,n_reference_clusters,n_comparison_clusters,resampling_unit,auroc,n_boot,n_boot_valid,seed,ci_lower,ci_upper,status,reason,descriptive_only
+pooled,all,98,180,5,out_of_fold_auroc,20,cluster_id,98,180,cluster_id,0.9720521541950113,2000,2000,20260928,0.9503954081632653,0.9886068594104308,EVALUATED,,False
+vendor,GE,98,28,5,out_of_fold_auroc,20,cluster_id,98,28,cluster_id,0.9708454810495627,2000,2000,20260928,0.9424198250728864,0.9916180758017493,EVALUATED,,False
+vendor,Philips,98,38,5,out_of_fold_auroc,20,cluster_id,98,38,cluster_id,0.9903329752953813,2000,2000,20260928,0.9707236842105263,1.0,EVALUATED,,False
+vendor,Siemens,98,114,5,out_of_fold_auroc,20,cluster_id,98,114,cluster_id,0.9921231650554959,2000,2000,20260928,0.983530254206946,0.9979435195130684,EVALUATED,,False

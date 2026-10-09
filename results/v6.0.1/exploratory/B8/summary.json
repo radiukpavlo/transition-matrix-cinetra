@@ -1,0 +1,19 @@
+{
+  "analysis": "B8",
+  "difference_status": "NOT_EXECUTED",
+  "included": {
+    "mms2_external": "MMS2",
+    "mms_external": "MMS"
+  },
+  "not_executed": {},
+  "note": "descriptive; annotation convention, vendor and centre are confounded",
+  "targets": [
+    "lv_edv_ml",
+    "lv_esv_ml",
+    "lv_ef_percent",
+    "rv_edv_ml",
+    "rv_esv_ml",
+    "rv_ef_percent",
+    "lv_myocardial_mass_ed_g"
+  ]
+}

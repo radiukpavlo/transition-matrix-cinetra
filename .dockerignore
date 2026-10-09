@@ -1,0 +1,6 @@
+# Whitelist: the image needs only the dependency definition.
+# Code is bind-mounted and data lives in volumes or read-only source binds, so nothing else may enter the build context.
+*
+!pyproject.toml
+!uv.lock
+!.python-version

@@ -1,0 +1,60 @@
+# Variable-precision rough-set rule policy, gates and inference routes (SPECIFICATION.md 6.0.0, Sections 11.1-11.7). Decisions D12, D13, D14.
+specification_version: "6.0.0"
+rulebooks:                                      # Decision D13; directories artifacts/<run_id>/rules/<name>/
+  primary: {name: d_model, consequent: d_model, substrate: nested_oof_reconstructed_B, antecedents: primary_rulebook_antecedent_candidates, thresholds: own_wedd_supervised_by_consequent}
+  companion: {name: dataset_label, consequent: Y_acdc_class, substrate: nested_oof_reconstructed_B, antecedents: primary_rulebook_antecedent_candidates, thresholds: own_wedd_supervised_by_consequent, caveat: "dataset label, not diagnosis"}
+  oracle: {name: measured_oracle, consequent: d_model, substrate: measured_B, antecedents: primary_rulebook_antecedent_candidates, thresholds: own_wedd_on_measured_B}
+antecedent_exclusion_rule: registry/semantic_registry.yaml#primary_rulebook_antecedent_exclusion_rule
+feature_budget: none                            # every eligible candidate (at most 9)
+eligibility_gates:                              # development only [PRESPEC]
+  reference_availability: {min_observed_fraction_acdc_dev: 0.80}
+  variability: {min_distinct_values: 3, fit_sd_gt_zero: true}
+  reconstruction: {min_relative_mae_improvement_over_mean: 0.05, folds_required: 4_of_5, applies_to: [d_model, dataset_label]}
+  post_discretization_stability: {min_cut_recurrence: 0.60}
+  consequent_support: {min_fit_patients_per_class: 5}
+  no_tautology: true                            # metadata, labels and QC columns are never antecedents
+discovery:
+  universe: acdc_dev_patients
+  tiers:
+    primary: {name: VARIABLE_PRECISION, beta: 0.10, min_confidence: 0.90}   # [INHERITED, P5]
+    flagged_subset: {name: STRICT, confidence: 1.0}
+  min_antecedent_n_patients: 5                  # [PRESPEC] scaled to ACDC size
+  max_length: 3                                 # [PRESPEC]
+  enumeration: exhaustive_over_candidate_subsets_of_size_1_to_max_length   # independent of column order (fixes the v5 first-six defect)
+  missing_states: never_literals
+  reduction: greedy_backward_deletion
+  reduction_tie_break: [larger_support, registry_order]
+  deduplicate: true
+  remove_redundant_supersets_same_consequent: true
+  rule_cap: none                                # the v5 cap of 200 is removed
+  ranking: [confidence_desc, antecedent_n_desc, length_asc, registry_order, rule_id]   # deterministic
+  sensitivities: {beta: [0.05, 0.10, 0.20], strict_only: true, max_length: [2, 3]}   # [PRESPEC] SPECIFICATION.md 13.3 (F5); run-ablations only; amendments 2026-09-28
+validation_gate:                                # cross-fitted over the five acdc_dev outer folds [PRESPEC]
+  method: cross_fitted_outer_folds
+  folds: 5
+  per_fold_refit: "transition, predictor, WEDD thresholds and discovery refitted on the four training folds only"
+  heldout_consequent: "d_model of the predictor refitted without the held-out fold (dataset label for the companion)"
+  rule_identity: "same feature set, same bin index per feature with the same bin count, same consequent"
+  bin_count_mismatch: not_reproduced_in_that_fold
+  min_pooled_oof_matched_patients: 5
+  agreement_wilson_lower_min: 0.60
+  applied_once: true
+  gate_sensitivities: [0.50, 0.60, 0.70]
+soft_match:                                     # [PRESPEC]
+  similarity: "matched available antecedents / L_r; unavailable antecedents stay in the denominator"
+  min_antecedents: 3
+  min_similarity: 0.66                          # admits 2 of 3
+  max_mismatch_or_unavailable: 1
+  max_candidates: 5
+  ranking: [similarity, discovery_support, rule_id]
+  emits_label: false
+  criticality_weights: none
+routes: [EXACT_ACCEPT, CONFLICT_ABSTAIN, SOFT_CANDIDATES_ONLY, UNAVAILABLE_FEATURE_ABSTAIN, NO_MATCH_ABSTAIN, QC_ABSTAIN, EMPTY_RULEBOOK]
+route_precedence: [QC_ABSTAIN, EMPTY_RULEBOOK, EXACT_ACCEPT, CONFLICT_ABSTAIN, SOFT_CANDIDATES_ONLY, UNAVAILABLE_FEATURE_ABSTAIN, NO_MATCH_ABSTAIN]
+conflict_resolution: none
+base_decision_as_tiebreaker: forbidden
+reference_at_inference: forbidden               # measured B and Y are loaded only by the evaluator
+reason_codes_file: registry/reason_codes.yaml
+pattern_templates_file: registry/pattern_templates.yaml
+rule_record_required_fields: [rule_id, rulebook, tier, consequent_endpoint, antecedents, consequent, fit_antecedent_n_patients, fit_joint_n_patients, fit_confidence, crossfit_matched_n_patients, crossfit_agreement, crossfit_wilson_lower, crossfit_folds_reproduced, length, bootstrap_recurrence, eligibility, caveat, provenance]
+empty_rulebook_record: artifacts/<run_id>/rules/<rulebook>/EMPTY.json

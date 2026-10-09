@@ -1,0 +1,69 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "623331111bddf4e682f90de1e49a2ba0ddcd88f30f65c3fff2b97a07fa562ef3",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:formal/A_ACDC_p6_128.parquet": "3540a0b1f9494cdf0cd987569180435e013b20d15fe9e6dcd10794842d4f110f",
+      "run:inference/d_model_acdc_test.parquet": "6c837fa91d5fd1d3ac74953f940f9e1cfa86988f907516244cd4a92e3f0c6c6b",
+      "run:reconstructed/bhat_acdc_test.parquet": "18241b7f25d7d8623857582ae074834f83521323317371d6a8238aba9e757cbd",
+      "run:rules/d_model/gate.parquet": "4372cce52bb01f309d92ff4cc7b00173d44d32ea7e017be1579c347c2fe63101",
+      "run:rules/dataset_label/gate.parquet": "9bff56a56dbad6f281dc17c036557f7d991a540b5eac02862434648dbfd0e665",
+      "run:rules/measured_oracle/gate.parquet": "79031bd90d32b030f91c501f333625b7892fc2728dafc8d40fb48068a6c8b2a7"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:metrics/ablations/ablation_index.json": "8614a30e3d287947f3812f5fc2f1f0663515fc070bcdc10eff28fb0ed9ebce57",
+      "run:metrics/ablations/discretizers.json": "6a1a82c1a06cb2dfe28debde0323d18a93504abc9342d1b20635db1161ffc523",
+      "run:metrics/ablations/downstream_refit_bootstrap.parquet": "2664d7378eb52a06893c2350f98974c27ce36aa82a8d1fea685689d85d71aa40",
+      "run:metrics/ablations/gate_thresholds.json": "f23e053bf81b6cd0643eeed1ef3930bbb73e667b085fde9bccbc843bc01a84e7",
+      "run:metrics/ablations/linearity_criterion.json": "5f6f93cc22c6edea498ae8edab1461363167f4a8093162a59a64d69139b7aea8",
+      "run:metrics/ablations/multiplicity_F2.parquet": "c9d70cf28400be2cb922363931ec001edd39bad7a3c4a37d52ee46715ef420ac",
+      "run:metrics/ablations/multiplicity_F4.parquet": "d284f14b2fe14d36293ab453b03520567958a2a78e6457547f94f28301b54950",
+      "run:metrics/ablations/multiplicity_F5.parquet": "54f72bfb03ac3cb80e89b868816fa0d3174f55cd2b54342684c812fd1f5ee455",
+      "run:metrics/ablations/rule_policy.json": "496fe1fe62ce82ed3aabbe09657b1223418a9bcdcf7f388cd16e0855869c38d7",
+      "run:metrics/ablations/transition_variants.json": "124ac3a7fdf4864b9960fe46f8071c891a1a56e4bf271b4ce62d1b2653eef9cc",
+      "run:metrics/ablations/transition_variants_per_target.parquet": "b1e428090e427d93436efda14583232a9542c4fa182043682faa5af5be8f9874",
+      "run:metrics/ablations/wedd_settings.json": "c7e59037f5fc53876be5c77f12377c6f7cbfe95e56e645633b51d57d341a6ac0"
+    },
+    "params": {
+      "config_sections": [
+        "transition",
+        "formal",
+        "wedd",
+        "rule_policy",
+        "bootstrap",
+        "registry",
+        "reason_codes",
+        "cohorts"
+      ],
+      "profile": "wedd_gaussian_mm_v1"
+    },
+    "stage": "run-ablations",
+    "status": "BUILT"
+  },
+  "payload_sha256": "70f676e27debea5fcd85c20b61c6f4a65dcf63eb85854b9d5d1b993f9537bb9e",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 90.174,
+    "started_utc": "2026-10-03T09:46:15+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

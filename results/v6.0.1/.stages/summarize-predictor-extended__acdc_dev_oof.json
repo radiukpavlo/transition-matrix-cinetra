@@ -1,0 +1,65 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "d2ec271e1307835d2141a3cddb087424a048cf69918f1121421dafb751cccae0",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/fit-predictor.json": "a1e97599b621417bbb8c68947a4153f2fc898217cb3741549d75cc7469c19a91",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/audited_predictor/predictions.parquet": "bc4b8458660d8c7459725c301660d7e428c88cec5dc5fae6ab9a2245f84c8295",
+      "run:formal/d_model_crossfit_ACDC_dev.parquet": "70c4f247a20aa3c0f0bf38074eb7e5a642de810cf7948dbecfbcc99b4362eb62",
+      "run:formal/measured_b_comparator/bundle.json": "fd780db39c7353d55b046417feb5e2c1512acbee53440f57f9e6a1d86030733c",
+      "run:formal/measured_b_comparator/predictions.parquet": "3929a68377e3ec8306c330e8c830544401b25f5ef91729bd90c571eea5f13e20",
+      "run:oof/bhat_oof_ACDC_dev.parquet": "b735e0820b374ebfa64849337e815669bc965590b373b1aa69c41a20d459e0a4",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:metrics/predictor_extended/acdc_dev_oof.json": "118b8ccc1d64d295431e249c12e9507deac3468d2b93f5e5298bd3d1b39e3bec",
+      "run:metrics/predictor_extended/bland_altman_acdc_dev_oof.parquet": "67b6a3d21f5a46368e55ebcf49f1e2d6606d8853d91f06f1e1e6b0e6bed53a5e"
+    },
+    "params": {
+      "comparator_recorded": true,
+      "config_sections": [
+        "formal.audited_predictor",
+        "formal.comparator_predictor",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.calibration",
+        "bootstrap.subgroup_reporting_thresholds",
+        "cohorts.qc_severity",
+        "registry.label_tables",
+        "registry.primary_families",
+        "transition.targets"
+      ],
+      "fold_predictors_recorded": true,
+      "partition": "acdc_dev_oof"
+    },
+    "stage": "summarize-predictor-extended:acdc_dev_oof",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "abbd273ce27fa736900d82d1dc1b858edb424ca716d00f5b1a74280dd97dbfdc",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 4.639,
+    "started_utc": "2026-10-03T09:45:30+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

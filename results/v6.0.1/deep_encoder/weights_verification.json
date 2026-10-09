@@ -1,0 +1,23 @@
+{
+  "deep_encoder_config": "unchanged",
+  "registry": "/workspace/registry/weights.yaml",
+  "torch_home": "/cache/torch",
+  "weights": {
+    "resnet18_imagenet1k_v1": {
+      "action": "present",
+      "bytes": 46830571,
+      "file": "/cache/torch/hub/checkpoints/resnet18-f37072fd.pth",
+      "prefix_ok": true,
+      "registry": "matches",
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec"
+    },
+    "resnet50_imagenet1k_v2": {
+      "action": "present",
+      "bytes": 102540417,
+      "file": "/cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth",
+      "prefix_ok": true,
+      "registry": "matches",
+      "sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+    }
+  }
+}

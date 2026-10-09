@@ -1,0 +1,50 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "3d2fc20a9019e34297d08e4cc0bc1dfd750f6d0bdce845e16fd0adf04aaadf8a",
+    "inputs": {
+      "data:manifests/staging_MMS.json": "800f5f8be78d7fc13e1a00c65c75f9f22cd6501bfe26a68b36855564d01c50df",
+      "run:contracts/cohort_MMS.parquet": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:formal/A_MMS.parquet": "e5ee5bf7f2356864eba7e159a56496e81071998df9c456b86d0cc334f18e9930",
+      "run:formal/A_MMS_extractor.json": "d8d3d4e772d848aa5beea8d0b0e1145b3390335c87022c9c94f02046f4433539",
+      "run:formal/A_MMS_failures.parquet": "7fb0bb3e4dc3e8557cbb62db65d7fa4f2df867294fda8612b24482a679e29d10",
+      "run:formal/A_MMS_p6_128.parquet": "a5b195a1bc3d1ddc7300fd055cc1a71366849d98955d08acd5b0947fbb46eb40"
+    },
+    "params": {
+      "config_sections": [
+        "formal",
+        "cohorts.acdc.label_map",
+        "cohorts.mms.label_map"
+      ]
+    },
+    "stage": "extract-formal:MMS",
+    "status": "BUILT"
+  },
+  "payload_sha256": "eea942c67ac00119828c3b4e409e8622e1ec56c054674708234582fd94d4fa54",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 23.539,
+    "started_utc": "2026-10-03T09:43:25+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

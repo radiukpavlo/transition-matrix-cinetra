@@ -1,0 +1,43 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d19c5a041ce1f8eb0f40bd6cfdb025b205e55c36",
+      "dirty": false
+    },
+    "config_hash": "123697cca8b238a4de430f4dfee2d99b1d71800efa0863c7b4e1eab931fccc8a",
+    "inputs": {
+      "repo:configs/f9_cnn.yaml": "f50cf46cca8dc83489ba745f90058b46718f2469df8e62a229aa4a899c9cb16b",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:neural_cache/acdc_dev/manifest.csv": "fd8a867792ea682640aef71ec15e6c764fdc3d00a477ad4d740e4b81d8092fa1"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 1,
+    "outputs": {
+      "run:neural_f9/plan/selection_folds.parquet": "f9049b1f5d6937c70847e37285edc40cd86ec85089fa4cea22faf0dd3d46e235",
+      "run:neural_f9/plan/wave1_specs.json": "bfcae8c43249c8a481b97d6dbba2eabc241f855fb1008739bc1383104bc0e9e6"
+    },
+    "params": {},
+    "stage": "plan-f9",
+    "status": "BUILT"
+  },
+  "payload_sha256": "5c1b8ee02ee4e1f02569038a551d82f3ef5f7fe040768a3d55a8bb62188012a0",
+  "run_log": {
+    "host": "6e358cc7005d",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 0.204,
+    "started_utc": "2026-10-03T11:20:21+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

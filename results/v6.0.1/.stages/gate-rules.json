@@ -1,0 +1,67 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "917bb212a956e430b26f0de7c48b368e23fcf823679e2d7db6f37060f751eae7",
+    "inputs": {
+      "run:contracts/inner_folds.parquet": "7dc447fdce15486c6ac905d9f5840eb39d9524570ba01b35f06bc3b63b00e8ee",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:oof/bhat_oof_ACDC_dev.parquet": "b735e0820b374ebfa64849337e815669bc965590b373b1aa69c41a20d459e0a4",
+      "run:rules/d_model/rulebook_induced.json": "4d56455ebf4ed83e2bd5b6e4be9d95ba777fbdf31c5adf7846d1155bebe33ec4",
+      "run:rules/dataset_label/rulebook_induced.json": "7ef4ae5c98d9c45be587bbf05ee90a20e2aeaed460d26bf86933b3e86dfc222e",
+      "run:rules/measured_oracle/rulebook_induced.json": "6054c5895f3548da235c0b123e6d41ef5736ee6a543495ca320ef2c2786ac14e",
+      "run:rules/semantic_eligibility.json": "791f4fc37cf7d783d898a4d9fb29e0aee8090f68ae4c9087b90a7116e5544cca"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:oof/inner_oof_ACDC_dev_fold1.parquet": "2e8a37f91246467c73952f0bcfb46781aee0d87029f2ea449f7a0906684a87de",
+      "run:oof/inner_oof_ACDC_dev_fold2.parquet": "42f310fe8bde92020f55919938abe4fe1cebac3028297923cde865b3bde8e921",
+      "run:oof/inner_oof_ACDC_dev_fold3.parquet": "54ca2f68f7047260af0677113077ff9c16dd6e3a60794dd3c7c0f009ab8d1a2b",
+      "run:oof/inner_oof_ACDC_dev_fold4.parquet": "baf40e2d2a0a4a552c5524c1d411f783fbff0cf0e59891df25f90494bfec921a",
+      "run:oof/inner_oof_ACDC_dev_fold5.parquet": "756957ef21dddd641b76286d1f8cfd55f0c221be31c46800d692454f0aab08e3",
+      "run:rules/d_model/gate.parquet": "4372cce52bb01f309d92ff4cc7b00173d44d32ea7e017be1579c347c2fe63101",
+      "run:rules/d_model/rulebook_or_empty.json": "2be729456ed5cc4a24bf1a9857aeba88815974e9d8f622218fd728efd194e199",
+      "run:rules/dataset_label/gate.parquet": "9bff56a56dbad6f281dc17c036557f7d991a540b5eac02862434648dbfd0e665",
+      "run:rules/dataset_label/rulebook_or_empty.json": "441bfaaf9b05089dc680b8f7e52cd2b7257dbde453189d8394c150b4c79974fb",
+      "run:rules/measured_oracle/gate.parquet": "79031bd90d32b030f91c501f333625b7892fc2728dafc8d40fb48068a6c8b2a7",
+      "run:rules/measured_oracle/rulebook_or_empty.json": "9a8429960a637145d29f001a396b838b8aa62149a7d6d01225e15b9c5499efb7"
+    },
+    "params": {
+      "config_sections": [
+        "rule_policy",
+        "registry",
+        "wedd",
+        "formal.audited_predictor",
+        "transition",
+        "cohorts.qc_severity"
+      ],
+      "profile": "wedd_gaussian_mm_v1",
+      "substrate": "nested_inner_oof"
+    },
+    "stage": "gate-rules",
+    "status": "BUILT"
+  },
+  "payload_sha256": "a4238117271f50857863c45a6f9397e52c4ea16795980e8011c7fc8f168ec719",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 9.456,
+    "started_utc": "2026-10-03T09:42:43+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

@@ -1,0 +1,56 @@
+{
+  "bundle": {
+    "trust/oof_predictions.parquet": "e51c26ded0e7f00b7d0e5ecf30fb63581ac2eede5fa0fdf5c9b70b61a615162c",
+    "trust/s1_thresholds.json": "0b0b693150bbe8e38576a8ddecad160147c0fe019098fabadff693de09c2aa79",
+    "trust/s2_oof_scores.parquet": "2f7e2e067b83c5b7f3f26d902cd7bab407ef06e9dbb4bea8fb5b0f2eb6c87fbe",
+    "trust/s2_references/d20.json": "adb28e699fc6aa15ec77df70dc8b2255b19fe4b09d323b8b209742b73ddbb04e",
+    "trust/s2_references/descriptors.json": "5df29f9e75e45015cf0f1c8c012305e4d90fe98486e27c8d2ea094e1ffed075f",
+    "trust/s2_references/f9b.json": "1896a09e70fdb1f9ba21405714695c53d1f5387699ea8bfe012bea01b3c27872",
+    "trust/s4_temperatures.json": "80b61f5052b8df4565501ff2a6b4b610dab4aedf432ba0ff232f268a4c244b42"
+  },
+  "bundle_sha256": "266b2889b6ce393b2ceb70a1438f17f97e0c6ee03617a24714506e5b2ab9908d",
+  "fit_partition": "acdc_dev out-of-fold outputs only",
+  "predictors": {
+    "audited_predictor": "FITTED",
+    "d20_predictor": "FITTED",
+    "f9": "FITTED"
+  },
+  "representations": {
+    "d20": "FITTED",
+    "descriptors": "FITTED",
+    "f9b": "FITTED"
+  },
+  "s2_summary": {
+    "d20": {
+      "dimension": 50,
+      "flag_threshold": 6.3527462451202314,
+      "n_oof_scores": 98,
+      "oof_flag_rate": 0.05102040816326531,
+      "pca_components": 50,
+      "reference": "run:trust/s2_references/d20.json",
+      "shrinkage_final": 0.21059725334046567,
+      "status": "FITTED"
+    },
+    "descriptors": {
+      "dimension": 57,
+      "flag_threshold": 7.436817356067829,
+      "n_oof_scores": 98,
+      "oof_flag_rate": 0.05102040816326531,
+      "pca_components": null,
+      "reference": "run:trust/s2_references/descriptors.json",
+      "shrinkage_final": 0.05778629025263624,
+      "status": "FITTED"
+    },
+    "f9b": {
+      "dimension": 64,
+      "flag_threshold": 6.84753518459964,
+      "n_oof_scores": 98,
+      "oof_flag_rate": 0.05102040816326531,
+      "pca_components": null,
+      "reference": "run:trust/s2_references/f9b.json",
+      "shrinkage_final": 0.03039883693498135,
+      "status": "FITTED"
+    }
+  },
+  "schema": "tmmri.trust_bundle/1"
+}

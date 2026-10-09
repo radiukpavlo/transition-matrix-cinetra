@@ -1,0 +1,532 @@
+{
+  "analysis": "S5_data_efficiency",
+  "data_centric_config_digest": "bc834e6fe165cc1c81d0e8a3398decf6a47141f5573ec945c0ddccc7d4e5fa94",
+  "data_centric_sha256": "830ce834980e5c9c5a242c7ec3b42b978b5ca8a1337c293840fbe959756dfe9c",
+  "development_only": true,
+  "expected": {
+    "total": 570,
+    "wave1_selection": 540,
+    "wave2_refit": 30
+  },
+  "fit_spec_source": "tmmri.neural.fit_spec",
+  "n_specs": 540,
+  "n_units": 30,
+  "n_units_supported": 30,
+  "partition": "acdc_dev",
+  "pipeline": "f9",
+  "registration": "protocol-v6.0.1 item 15",
+  "study_config_hash": "0eeb571a66d0338cf46bce34a9aa58327f3c659b59d1771d14d68ec5ad5fc11f",
+  "units": [
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 1,
+      "reason": null,
+      "repeat": 0,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 2,
+      "reason": null,
+      "repeat": 0,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 3,
+      "reason": null,
+      "repeat": 0,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 4,
+      "reason": null,
+      "repeat": 0,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 5,
+      "reason": null,
+      "repeat": 0,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 1,
+      "reason": null,
+      "repeat": 1,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 2,
+      "reason": null,
+      "repeat": 1,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 3,
+      "reason": null,
+      "repeat": 1,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 4,
+      "reason": null,
+      "repeat": 1,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 5,
+      "reason": null,
+      "repeat": 1,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 1,
+      "reason": null,
+      "repeat": 2,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 2,
+      "reason": null,
+      "repeat": 2,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 3,
+      "reason": null,
+      "repeat": 2,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 4,
+      "reason": null,
+      "repeat": 2,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 8,
+        "HCM": 8,
+        "MINF": 8,
+        "NOR": 8,
+        "RV": 8
+      },
+      "fraction": 0.5,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 5,
+      "reason": null,
+      "repeat": 2,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 1,
+      "reason": null,
+      "repeat": 0,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 2,
+      "reason": null,
+      "repeat": 0,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 3,
+      "reason": null,
+      "repeat": 0,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 4,
+      "reason": null,
+      "repeat": 0,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 12,
+        "NOR": 12,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 5,
+      "reason": null,
+      "repeat": 0,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 1,
+      "reason": null,
+      "repeat": 1,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 2,
+      "reason": null,
+      "repeat": 1,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 3,
+      "reason": null,
+      "repeat": 1,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 4,
+      "reason": null,
+      "repeat": 1,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 12,
+        "NOR": 12,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 5,
+      "reason": null,
+      "repeat": 1,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 1,
+      "reason": null,
+      "repeat": 2,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 2,
+      "reason": null,
+      "repeat": 2,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 3,
+      "reason": null,
+      "repeat": 2,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 11,
+        "NOR": 11,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 4,
+      "reason": null,
+      "repeat": 2,
+      "short_classes": [],
+      "status": "EVALUATED"
+    },
+    {
+      "class_counts": {
+        "DCM": 12,
+        "HCM": 12,
+        "MINF": 12,
+        "NOR": 12,
+        "RV": 12
+      },
+      "fraction": 0.75,
+      "min_per_class": 3,
+      "ok": true,
+      "outer_fold": 5,
+      "reason": null,
+      "repeat": 2,
+      "short_classes": [],
+      "status": "EVALUATED"
+    }
+  ],
+  "wave": 1
+}

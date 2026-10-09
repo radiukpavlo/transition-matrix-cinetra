@@ -1,0 +1,62 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "c1026250a00b4b87b24b31394e2ce1688d0ee4396b678e96b1a7307a116fc185",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:contracts/cohort_MMS2.parquet": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:contracts/split_manifest_MMS2.parquet": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:formal/A_MMS2.parquet": "b62540c0b1c82c04554632e437607b37aa3fe64f96e03aa5dd47ccb170cb3287",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:semantics/B_MMS2.parquet": "a96f9f4dd4440fa3d82be1de7e3650d85d96349f4ab6fde4729cc27317609ad4"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:metrics/shift_audit_mms2_external.json": "ab1cf08276c5e9edf8a68b8411d81325df8718782050ba24a637be77dd7ecf02",
+      "run:metrics/shift_audit_mms2_external.parquet": "0dd4a030cfa82b8deb660a9757ae81eb80b3c7c7ec2d5bc9beece23a82818c6e",
+      "run:metrics/shift_audit_oof_scores_mms2_external.parquet": "ab47cb89a52bfd251a0b1905ab541c5e9a714f5174470c43f09b4e291f9f07be"
+    },
+    "params": {
+      "comparisons": [
+        "pooled",
+        "vendor"
+      ],
+      "config_sections": [
+        "bootstrap.shift_audit",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.subgroup_reporting_thresholds",
+        "cohorts.qc_severity",
+        "reason_codes",
+        "cohorts.mms2"
+      ]
+    },
+    "stage": "audit-shift:MMS2",
+    "status": "BUILT"
+  },
+  "payload_sha256": "dceaf52a0c7b38b38dd714d888badc9bd4b673f0a7d37bf6ad635a90757db34e",
+  "run_log": {
+    "host": "3e82646e8cb1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 2.813,
+    "started_utc": "2026-10-03T14:39:34+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

@@ -1,0 +1,103 @@
+{
+  "fit_partition": "acdc_dev (out-of-fold)",
+  "predictors": {
+    "audited_predictor": {
+      "confidence": "max_softmax",
+      "n_oof_rows": 98,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 98,
+        "sha256": "bc4b8458660d8c7459725c301660d7e428c88cec5dc5fae6ab9a2245f84c8295",
+        "source": "run:formal/audited_predictor/predictions.parquet"
+      },
+      "tau50": {
+        "coverage_target": 0.5,
+        "development_coverage": 0.5,
+        "k": 49,
+        "n": 98,
+        "n_accepted_development": 49,
+        "reason": null,
+        "status": "FITTED",
+        "tau": 0.8790924461495404,
+        "ties_at_tau": 1
+      },
+      "tau80": {
+        "coverage_target": 0.8,
+        "development_coverage": 0.8061224489795918,
+        "k": 79,
+        "n": 98,
+        "n_accepted_development": 79,
+        "reason": null,
+        "status": "FITTED",
+        "tau": 0.621272147892028,
+        "ties_at_tau": 1
+      }
+    },
+    "d20_predictor": {
+      "confidence": "max_softmax",
+      "n_oof_rows": 98,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 98,
+        "sha256": "63fe2499c4505249bef4a5673235f41b96d1184cd8e4128a0e782ef4de8dd38f",
+        "source": "run:deep_encoder/predictions.parquet"
+      },
+      "tau50": {
+        "coverage_target": 0.5,
+        "development_coverage": 0.5,
+        "k": 49,
+        "n": 98,
+        "n_accepted_development": 49,
+        "reason": null,
+        "status": "FITTED",
+        "tau": 0.693919619973515,
+        "ties_at_tau": 1
+      },
+      "tau80": {
+        "coverage_target": 0.8,
+        "development_coverage": 0.8061224489795918,
+        "k": 79,
+        "n": 98,
+        "n_accepted_development": 79,
+        "reason": null,
+        "status": "FITTED",
+        "tau": 0.4643066620694726,
+        "ties_at_tau": 1
+      }
+    },
+    "f9": {
+      "confidence": "max_softmax",
+      "n_oof_rows": 98,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 98,
+        "sha256": "81b39673a8a07bb016cd609507eccdc47dc6fc9da818de25f4b72d1d1a4eb909",
+        "source": "run:neural_f9/predictions.parquet"
+      },
+      "tau50": {
+        "coverage_target": 0.5,
+        "development_coverage": 0.5,
+        "k": 49,
+        "n": 98,
+        "n_accepted_development": 49,
+        "reason": null,
+        "status": "FITTED",
+        "tau": 0.7527816285432463,
+        "ties_at_tau": 1
+      },
+      "tau80": {
+        "coverage_target": 0.8,
+        "development_coverage": 0.8061224489795918,
+        "k": 79,
+        "n": 98,
+        "n_accepted_development": 79,
+        "reason": null,
+        "status": "FITTED",
+        "tau": 0.5626505132710059,
+        "ties_at_tau": 1
+      }
+    }
+  },
+  "rule": "tau_c = the k-th largest acdc_dev out-of-fold confidence, k = ceil(c * n); accept when confidence >= tau_c",
+  "schema": "tmmri.s1_thresholds/1"
+}

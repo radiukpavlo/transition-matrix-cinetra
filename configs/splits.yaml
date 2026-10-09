@@ -1,0 +1,83 @@
+# Partition construction and leakage controls (SPECIFICATION.md 6.0.0, Sections 12.1-12.3). Decisions D15, D16, D17.
+specification_version: "6.0.0"
+acdc:
+  source_split: official                       # training -> acdc_dev (98 = 100 minus patient055 and patient076); testing -> acdc_test (50)
+  acdc_dev:
+    eligible: "official training patients minus the declared duplicate-image exclusions (configs/cohorts.yaml duplicate_image_pairs; amendments 2026-09-28)"
+    outer_folds:
+      n_folds: 5
+      hash_salt: "acdc-fold-v6|"
+      key: patient_id                           # release folder name, e.g. patient001
+      strata: acdc_class                        # Info.cfg Group
+      rule: "within each class sort the eligible patients by SHA256(salt + patient_id) hex digest ascending (ties by patient_id); 0-based rank r; fold = (r mod 5) + 1"
+      expected:                                 # computed by the rule on the 98 eligible patients (validate-cohort, 2026-09-28)
+        patients_per_fold: {1: 20, 2: 20, 3: 20, 4: 20, 5: 18}
+        patients_per_class_per_fold: {DCM: [4, 4, 4, 4, 4], HCM: [4, 4, 4, 4, 4], MINF: [4, 4, 4, 4, 3], NOR: [4, 4, 4, 4, 3], RV: [4, 4, 4, 4, 4]}   # folds 1-5
+      freeze_before_model_search: true
+      manifest: artifacts/<run_id>/contracts/split_manifest.parquet
+    inner_folds:
+      n_folds: 5
+      hash_salt: "acdc-inner-fold-v6|"
+      scope: "within the outer training set of outer fold f (78 patients for folds 1-4, 80 for fold 5)"
+      rule: "within each class sort by SHA256(salt + str(f) + '|' + patient_id) ascending; 0-based rank r; inner fold = (r mod 5) + 1"
+    final_bundle:
+      refit_on: acdc_dev_all_98
+      lambda_selection_folds: outer_folds       # per-target lambda re-selected by 5-fold CV over the outer folds
+  acdc_test:
+    rule: official_testing_patients
+    permitted: evaluation_only                  # never used for fitting, selection, thresholds or QC references
+mms:
+  mms_external:
+    rule: "labelled_320 eligibility (configs/cohorts.yaml)"
+    evaluated: once_with_frozen_acdc_bundle     # no refit, no threshold or QC-reference change (Decision D16)
+    strata: [vendor, centre, release_split, pathology, mms100_member]
+  mms_external_never_analysed:
+    rule: "mms_external minus the 100 case_ids of registry/sources/mms_100_source_normalization_manifest.csv"
+    expected: {total: 220, by_vendor: {A: 71, B: 103, C: 21, D: 25}, by_release_split: {Training/Labeled: 118, Validation: 16, Testing: 86}}
+    role: confirmatory_sensitivity_of_H_primary_2
+  previously_unblinded:
+    mms100_member: "analysed under v5 (v5_native_image_dss_100); reported as a separate stratum"
+    acdc_test: "the official ACDC testing patients were evaluated under v5 with pre-fix ACDC geometry and a different pipeline"
+refit_arm:                                     # Decision D17: required secondary; never pooled with the primary arm
+  mms_refit_train: {rule: "release_split == Training/Labeled", expected: {total: 150, by_vendor: {A: 75, B: 75}}}
+  mms_refit_eval: {rule: "release_split in {Validation, Testing} minus K3R0Y7 (DUPLICATE_IMAGE_OF_REFIT_TRAIN_CASE; configs/cohorts.yaml duplicate_image_pairs)", expected: {total: 169, by_vendor: {A: 20, B: 50, C: 49, D: 50}}}
+  eval_strata: {seen_vendors: [A, B], unseen_vendors: [C, D]}
+  inner_folds:
+    n_folds: 5
+    hash_salt: "mms-refit-fold-v6|"
+    strata: vendor
+    rule: "within each vendor sort by SHA256(salt + case_id) ascending; 0-based rank r; fold = (r mod 5) + 1"
+  predictor_classes: "ACDC classes whose HARMONIZABLE_SAME_DEFINITION crosswalk has at least 5 mms_refit_train cases; IHD and off-ontology cases are excluded from predictor fitting and kept for transition fitting"
+  ordering: "runs only after the primary external evaluation (H-primary-2 and the 220-case sensitivity) is recorded; refit-arm objects are never loaded by the primary bundle"
+  overlap_note: "mms_refit_train and mms_refit_eval are subsets of mms_external; the arms are separate analyses of the same cases"
+leakage_tests:
+  patient_disjointness: required               # acdc_dev and acdc_test disjoint; folds disjoint; ACDC and M&Ms disjoint by content hash
+  fold_hash_rule_deterministic: required
+  reference_substitution_integration_test: required   # sentinel B and Y on acdc_test and mms_external leave predictions and routes unchanged
+  frozen_bundle_before_external_evaluation: required  # artifacts/<run_id>/.stages/FROZEN.json and tag protocol-v6.0.0
+  qc_references_from_acdc_dev_only: required
+  refit_arm_isolation: required
+duplicate_control:
+  exact_file_hash: true                        # SHA-256 of every source file
+  decoded_voxel_hash: true                     # ED/ES image and mask arrays after decoding
+  scope: within_and_across_cohorts
+  known_duplicates: [[C5Q2Y5, E9L4N2], [A8C9H8, Q0Q1Y4]]   # M&Ms Training/Unlabeled; excluded (MMS_DUPLICATE_CASE)
+  duplicate_image_pairs: configs/cohorts.yaml#duplicate_image_pairs   # labelled cases with identical decoded images but different masks (amendments 2026-09-28)
+  bootstrap_unit: cluster_id                   # every patient/case bootstrap, CI and cluster-level test resamples clusters (configs/bootstrap.yaml)
+  expected_clusters: {acdc_dev: 98, acdc_test: 50, mms_external: 318, mms_external_never_analysed: 220, mms100_member: 99, mms_refit_train: 150, mms_refit_eval: 168}   # computed by validate-cohort on the staged sources (2026-09-28)
+# protocol-v6.0.1 amendment (M&Ms-2). Read only by the M&Ms-2 stages; excluded from the digest of the whole splits
+# section (tmmri.config AMENDMENT_SCOPED_KEYS), so the v6.0.0 records and the frozen bundle stay valid.
+mms2:
+  subjects: "001-360 (zero-padded release subject codes)"
+  hash_salt: "mms2-split-v6.0.1|"
+  rule: "sort the 360 subject ids by SHA256(salt + subject_id) hex digest ascending (ties by subject_id); rank 1-360; ranks 1-180 form mms2_external, ranks 181-360 mms2_sealed"
+  manifest: registry/sources/mms2_split_manifest.csv        # columns subject_id, rank, sha256, partition; SHA-256 in registry/sources/mms2.yaml
+  mms2_external:
+    expected: {total: 180}
+    role: prospective_external_test             # unseen until the once-only evaluation of the unchanged v6.0.0 bundle (H-primary-3)
+    evaluated: once_with_frozen_acdc_bundle
+    exclusions: "decoded-voxel duplicates against ACDC, M&Ms-1 and within M&Ms-2 (configs/cohorts.yaml mms2.duplicates)"
+    cluster_rule: "every case is its own bootstrap cluster (cluster_id = sample_id); duplicate matches are excluded, not clustered"
+  mms2_sealed:
+    expected: {total: 180}
+    role: reserved_for_v7                        # never extracted, decompressed to disk, staged or analysed under v6

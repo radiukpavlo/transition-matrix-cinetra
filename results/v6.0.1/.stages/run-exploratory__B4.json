@@ -1,0 +1,65 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "5b8b77a86abf01c876dbc71f5562e23d246a2918a9cb8a1e48660fd56f7bffab",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/d_model_ACDC_dev.parquet": "31ee6b1ad4db6f119db49ccc50a63833df164dcf6d803cb996c836489818babd",
+      "run:oof/bhat_oof_ACDC_dev.parquet": "b735e0820b374ebfa64849337e815669bc965590b373b1aa69c41a20d459e0a4",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:exploratory/B4/feature_summary.csv": "649ec0a24a2ef42d609c12e8cc42adabf2031d785879b75a57275149f3b6d0e9",
+      "run:exploratory/B4/feature_summary.parquet": "fb5e2f055c64c17ab338a1d485ca0b0f1f2c91adbc1f1d924a932b1dc3586a42",
+      "run:exploratory/B4/provenance.json": "095ccb3ba51a425b3690c75bcc218cef7abf28e2c2e8fef06d5a454d76727bea",
+      "run:exploratory/B4/recurrence.csv": "ac3582b6d2280813e22f436b29fded8b5b148519205d9825b4f466f24e735af6",
+      "run:exploratory/B4/recurrence.parquet": "87e6f75944db18c177d27fb86ab5b03f415c78903da217b9280c93b7a7f5e293",
+      "run:exploratory/B4/summary.json": "eb33012ee9609533900a13cb0d2fcecd5a431e3dbc8d9a87c71218ba2deb3d3a"
+    },
+    "params": {
+      "analysis": "B4",
+      "config_sections": [
+        "wedd",
+        "bootstrap.threshold_bootstrap",
+        "rule_policy.rulebooks",
+        "cohorts.qc_severity"
+      ],
+      "included": [
+        "acdc_dev"
+      ],
+      "label": "EXPLORATORY_POST_HOC",
+      "lane_configs": [
+        "configs/exploratory.yaml"
+      ]
+    },
+    "stage": "run-exploratory:B4",
+    "status": "BUILT"
+  },
+  "payload_sha256": "455b46dc049bb948d23cfaf6102db63eb7de33c8386dced37d1896fd78c7c55d",
+  "run_log": {
+    "host": "74d5cbd35370",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 4.086,
+    "started_utc": "2026-10-03T14:50:17+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

@@ -1,0 +1,54 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "99c158dc18527b070ace318b2c3e4a3b77d5492a505ca7aa4022abebd6cba9a8",
+    "inputs": {
+      "run:granules/d_model_wedd_gaussian_mm_v1_states_ACDC_dev.parquet": "a4becaf08330110b40a91a5fa554952721fa5c48475a3e3c73df07c02929f280",
+      "run:granules/dataset_label_wedd_gaussian_mm_v1_states_ACDC_dev.parquet": "a4becaf08330110b40a91a5fa554952721fa5c48475a3e3c73df07c02929f280",
+      "run:granules/measured_oracle_wedd_gaussian_mm_v1_states_ACDC_dev.parquet": "5de4321ee4c46eac82b448fa661da2e35b9ad997698b90a4644b3cd23e3fa412",
+      "run:rules/semantic_eligibility.json": "791f4fc37cf7d783d898a4d9fb29e0aee8090f68ae4c9087b90a7116e5544cca"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:rules/d_model/rulebook_induced.json": "4d56455ebf4ed83e2bd5b6e4be9d95ba777fbdf31c5adf7846d1155bebe33ec4",
+      "run:rules/dataset_label/rulebook_induced.json": "7ef4ae5c98d9c45be587bbf05ee90a20e2aeaed460d26bf86933b3e86dfc222e",
+      "run:rules/measured_oracle/rulebook_induced.json": "6054c5895f3548da235c0b123e6d41ef5736ee6a543495ca320ef2c2786ac14e"
+    },
+    "params": {
+      "config_sections": [
+        "rule_policy",
+        "registry",
+        "wedd.primary_profile",
+        "cohorts.qc_severity"
+      ],
+      "profile": "wedd_gaussian_mm_v1",
+      "tier": "variable_precision"
+    },
+    "stage": "induce-rules",
+    "status": "BUILT"
+  },
+  "payload_sha256": "95d62556c227696d833cc5d56c148e09da96f4736070c03f3dc75ac947e5987d",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 0.162,
+    "started_utc": "2026-10-03T09:42:43+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

@@ -1,0 +1,50 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "3d2fc20a9019e34297d08e4cc0bc1dfd750f6d0bdce845e16fd0adf04aaadf8a",
+    "inputs": {
+      "data:manifests/staging_ACDC.json": "6a1f70128dee7420f79b65c02719917887a00a101eac6b38adb5672a57f59160",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:formal/A_ACDC_extractor.json": "2673579fd80e5efa82387318a2d2d2cbfd70bfbfa1183f07ef279095e952ce66",
+      "run:formal/A_ACDC_failures.parquet": "7fb0bb3e4dc3e8557cbb62db65d7fa4f2df867294fda8612b24482a679e29d10",
+      "run:formal/A_ACDC_p6_128.parquet": "3540a0b1f9494cdf0cd987569180435e013b20d15fe9e6dcd10794842d4f110f"
+    },
+    "params": {
+      "config_sections": [
+        "formal",
+        "cohorts.acdc.label_map",
+        "cohorts.mms.label_map"
+      ]
+    },
+    "stage": "extract-formal:ACDC",
+    "status": "BUILT"
+  },
+  "payload_sha256": "4e4ed9d76fe30cd8f25ff046e3d46f86537d277dcc66cb28fac08968eda65924",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 3.497,
+    "started_utc": "2026-10-03T09:42:23+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

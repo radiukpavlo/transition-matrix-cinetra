@@ -1,0 +1,225 @@
+{
+  "family": "F5_rule_policy",
+  "replaces_primary": false,
+  "role": "secondary_ablation",
+  "rulebook": "d_model",
+  "selection_forbidden": "no post-test best-configuration claim",
+  "variants": {
+    "beta_0.05": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "beta": 0.05,
+      "eligible_rules": 0,
+      "induced_rules": 4,
+      "max_length": 3
+    },
+    "beta_0.10": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "beta": 0.1,
+      "eligible_rules": 0,
+      "induced_rules": 6,
+      "max_length": 3
+    },
+    "beta_0.20": {
+      "acdc_test_routes": {
+        "abstention": 0.92,
+        "abstention_by_reason": {
+          "FEATURE_UNSTABLE": {
+            "n": 6,
+            "rate": 0.12
+          },
+          "MATCH_NONE": {
+            "n": 40,
+            "rate": 0.8
+          }
+        },
+        "accepted_coverage": 0.08,
+        "activation": 0.08,
+        "audit_tax": {
+          "accepted_coverage": 0.08,
+          "base_reference_accuracy": 1.0,
+          "difference_rule_minus_base": 0.0,
+          "n_same_subset": 4,
+          "rule_reference_accuracy": 1.0
+        },
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": 1.0,
+        "covered_reference_accuracy": 1.0,
+        "faithful_coverage": 0.08,
+        "n_accepted": 4,
+        "n_accepted_reference_known": 4,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": true,
+        "routes": {
+          "EXACT_ACCEPT": 4,
+          "NO_MATCH_ABSTAIN": 40,
+          "UNAVAILABLE_FEATURE_ABSTAIN": 6
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "beta": 0.2,
+      "eligible_rules": 1,
+      "induced_rules": 10,
+      "max_length": 3
+    },
+    "max_length_2": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "beta": 0.1,
+      "eligible_rules": 0,
+      "induced_rules": 6,
+      "max_length": 2
+    },
+    "max_length_3": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "beta": 0.1,
+      "eligible_rules": 0,
+      "induced_rules": 6,
+      "max_length": 3
+    },
+    "strict_only": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "beta": 0.0,
+      "eligible_rules": 0,
+      "induced_rules": 4,
+      "max_length": 3
+    }
+  }
+}

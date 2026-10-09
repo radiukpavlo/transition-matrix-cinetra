@@ -1,0 +1,71 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "123697cca8b238a4de430f4dfee2d99b1d71800efa0863c7b4e1eab931fccc8a",
+    "inputs": {
+      "run:data_efficiency/f9/train_wave2_specs.json": "fb414f0ebcf4893bac78f347e5886705a507d99c3b8153f77e44befaf9bbc6cd"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 1,
+    "outputs": {
+      "run:neural_f9/checkpoints/0aa439bf8e505d0d/record.json": "6cac8f2c5b8bc2c26461e70a134cfe7dc46ea0697b73b275f5357a59c85abac0",
+      "run:neural_f9/checkpoints/16cec7c13972c826/record.json": "58d6730d0d6ce9b0d846af20858c6c405cf1bc628272bf8dea1562e2a77b3ba7",
+      "run:neural_f9/checkpoints/2bde5a0c04c39425/record.json": "0a4b506e2b38a81df795277bd33d5bab45e3b4090328cb7be33a38d80bd89f0c",
+      "run:neural_f9/checkpoints/351b3630c7eb6ed8/record.json": "b4aca6c3d9f0c4518ec9c0872fd9177e57c45d58af064374a60dab0a6593efb2",
+      "run:neural_f9/checkpoints/359bb4df0835aa68/record.json": "bd2068493947d6cf254244ea6763aafdd2277377f4bee320c731bc9cbb5ceab1",
+      "run:neural_f9/checkpoints/3ddf07b50514aeb2/record.json": "79e01761d7ad6980103c56b69d96084bdca1ce6b3a8e17e81632f7bb20387a5e",
+      "run:neural_f9/checkpoints/447020ed05041262/record.json": "a8ecba8f4590390e64c4a4c9f35e2799d393c372adfb87b339ffd11c025cbfce",
+      "run:neural_f9/checkpoints/484c35cc63125175/record.json": "2b0ad0d16d3e12e0fe1571f054bf45c05f0fca5699b65e4518c5992d331b5c9c",
+      "run:neural_f9/checkpoints/4862e0740153c415/record.json": "90c40a67d6a13bf652053f1afff7b4fbc94a8b69d700ffde29658f812ca1f799",
+      "run:neural_f9/checkpoints/5295ad9e951140e3/record.json": "ea3d84db0d742b78e1bd4045f2b9ec19c453f9ec81780774ede24feb6c3ab507",
+      "run:neural_f9/checkpoints/572fa8d8e8b3a5a4/record.json": "79296160507a3ecf7167dffef593938242b30b04bf6176bca5e91d346864b943",
+      "run:neural_f9/checkpoints/6298ac49786fe08e/record.json": "abdaaa5ac67bdb9f1dafdb1531a3169424beb0f3e3be303c05455c60f2b86cbf",
+      "run:neural_f9/checkpoints/6c597caa6cd965f6/record.json": "8d9a0c22ea23192f16e078c6ce7855e29af99c470cc8f4c512b47c43a3471967",
+      "run:neural_f9/checkpoints/71475f5bc0777a9f/record.json": "c58e9fe58454ec4024653ace08df88344768a850904193aac3c0fa5d843e59ac",
+      "run:neural_f9/checkpoints/74328848f536019f/record.json": "cb4682390f3bf6bb1d63aff1a3584fd77c38a6a308a639e3cdc8aa66ac84a2d9",
+      "run:neural_f9/checkpoints/7ae779f9f32106ac/record.json": "0085b1c0bdcc59c8de139894b195b36fd81257977b28de2e6da5a3bd6a09d1e9",
+      "run:neural_f9/checkpoints/8646e761b7c23033/record.json": "76189ec80fa70f79fdda28581a3a2a57d7b93b3b9ef306d6162c295b1c75a358",
+      "run:neural_f9/checkpoints/909db790c4b80836/record.json": "95ea696f56ab4e57d84e3d950193396c079b6892dca67f56d3866e81432a3dfd",
+      "run:neural_f9/checkpoints/9563d2da7c854045/record.json": "11c8b0285d1b1e0332b77a58f8979814e438eb10d322903498624988503bd8c2",
+      "run:neural_f9/checkpoints/99c01759744f837e/record.json": "3714a81e2cf5797f0c073a6610cb63e0613b2776ce5a0b2b02b03a7753424b34",
+      "run:neural_f9/checkpoints/a6383bd4099bae89/record.json": "c675a6a8e560d8e1b0c6be71d9f8c95ce8923e43ce4b20f9d3bbbee14c4f7de1",
+      "run:neural_f9/checkpoints/aec36e684c0574d0/record.json": "28571a0146566abd83bf9a1ad90fda0cd42b4b73711347e296365d2465923c16",
+      "run:neural_f9/checkpoints/c003e7b0e1c63ba1/record.json": "7eeed9b1f064acedfd72dc19506f50bfd4396fe63145beccc5bd4442a7a6f23d",
+      "run:neural_f9/checkpoints/c1f4cd0507ae87e3/record.json": "0cbb80edc28a9d87d5b7b5c6d966a95526218a3daf9e7f315cb669140e19ba30",
+      "run:neural_f9/checkpoints/c359ef80ad511558/record.json": "4ffcd39388969976043264f977cd39377075ccaceba4d6a7bd912b2a71e17779",
+      "run:neural_f9/checkpoints/d9502784fb17f25c/record.json": "0bf498b562a2204be2adab4ae1a8a1c66b2af88c07a7639aad1144dbcb1ba79c",
+      "run:neural_f9/checkpoints/f82c6c14106d2718/record.json": "54d074b28b94b7d62b3edeb4908ec23c04119cb2b3eb7b4151ecd81a99d75d1c",
+      "run:neural_f9/checkpoints/f830dcddef8cd13a/record.json": "8c80dacf58a3db8c72add67cbd169a47e654969bbe654cf1718e1c66a7de60bc",
+      "run:neural_f9/checkpoints/fc3bbd17128a2877/record.json": "9ba803a6aec4a39d35ce3267586d7cb637f9d268381acbd192edb2b3bde327d2",
+      "run:neural_f9/checkpoints/fcb032471ab25629/record.json": "a58a9dd47f8a538835d45ed7512a1665c84dc0b4487abfadf77e81c1885c8acc"
+    },
+    "params": {
+      "source": "/workspace/outputs/cloud/runs_s5w2/v6-replication-20261003-1241"
+    },
+    "stage": "import-f9-fits:train_wave2_specs",
+    "status": "BUILT"
+  },
+  "payload_sha256": "1a0c888df58f8bb488113a907c86bc083fdcd25f83a338935e2c65773901366d",
+  "run_log": {
+    "host": "ed755821f7f5",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 25.513,
+    "started_utc": "2026-10-03T16:49:22+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

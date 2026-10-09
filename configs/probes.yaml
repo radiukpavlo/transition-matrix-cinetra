@@ -1,0 +1,75 @@
+# F9b concept probe, evaluation of the alternative bundles (D20, F9, F9b) and the comparison table (Table 4, Figure 5).
+# Protocol-v6.0.1 amendment items 11-13 (docs/MANUSCRIPT_PROTOCOL_V2_2026-10-02.md D.11-D.13 and J). Lane L57.
+# Estimation only: paired cluster-bootstrap CIs, no significance language, no hypothesis test. Never a rule input.
+# Read by src/tmmri/experiments/l57_stages.py (fit-probes, evaluate-alt-bundles, build-comparison-tables).
+specification_version: "6.0.1"
+status: registered_with_protocol_v6.0.1
+partitions:                                     # evidence label of every result (C: "registered after unblinding")
+  acdc_dev: {dataset: ACDC, held_out: false, evidence: development_out_of_fold, label: "development (out-of-fold)"}
+  acdc_test: {dataset: ACDC, held_out: true, evidence: registered_after_unblinding, label: "registered after unblinding"}
+  mms_external: {dataset: MMS, held_out: true, evidence: registered_after_unblinding, label: "registered after unblinding"}
+  mms2_external: {dataset: MMS2, held_out: true, evidence: prospective, label: "prospective", requires_tag: protocol-v6.0.1}
+classes: configs/formal.yaml#audited_predictor.classes   # registry class order of the C4 prob_<CLASS> / logit_<CLASS> columns
+f9b:                                            # D.11: per outer fold k, the v6 typed ridge T on encoder k's 64-d activations
+  representation: f9b_activations_64
+  source_model_id: f9
+  seeds: [20261011, 20261012, 20261013]         # C6; the first is primary and defines Table 4; the 3-seed range and SD are reported
+  activation_prefix: "a_"
+  dimension: 64
+  transition: same_as_configs/transition.yaml   # typed transforms, per-target inner-CV lambda on the v6 grid, v6 inner folds
+  fold_inner_folds: contracts/inner_folds.parquet   # the v6 inner folds of each outer fold (as fit-transition)
+  final_lambda_cv: v6_outer_folds               # final T on the final encoder's activations of all 98; lambda by CV over the outer folds
+  pool_latent_across_encoders: false            # never: encoder k's T only ever sees encoder k's coordinates
+  activations_computed: locally                 # infer-f9 (L4a); Modal activations are never analysed
+inputs:                                         # run-root relative; {dataset}, {partition}, {seed}, {fold} are substituted
+  descriptors:
+    a: formal/A_{dataset}.parquet
+    bhat_oof_dev: oof/bhat_oof_ACDC_dev.parquet
+    bhat: reconstructed/bhat_{partition}.parquet          # recorded by evaluate --split <partition>
+    transition: transitions/transition_model.json
+    predictor: formal/d_model_predictor.joblib
+    decisions: inference/d_model_{partition}.parquet      # recorded by evaluate --split <partition>
+    crossfit_dev: formal/d_model_crossfit_ACDC_dev.parquet
+    predictions: formal/audited_predictor/predictions.parquet   # C4, optional; else derived from the frozen predictor (fold refits on acdc_dev, checked against crossfit_dev)
+  d20:                                          # fit-deep-encoder / extract-deep-features (L4a; tmmri.deep_encoder.bundle_paths)
+    features: deep_encoder/features/A_D20_{partition}.parquet   # sample_id, cluster_id, partition + a_0000 ... a_2047
+    feature_prefix: "a_"
+    bhat_oof_dev: deep_encoder/oof/bhat_oof_ACDC_dev.parquet
+    transition: deep_encoder/transitions/transition_model.json
+    predictor: deep_encoder/formal/d_model_predictor.joblib     # FormalPredictor (final D20 predictor; S3 harmonization of the predictor)
+    predictions: deep_encoder/predictions.parquet         # C4, model_id d20_predictor (acdc_dev out-of-fold)
+    freeze_record: deep_encoder/FROZEN_D20.json           # schema tmmri.d20_bundle/1: 'files' relative to deep_encoder/
+  f9:                                           # infer-f9 (L4a) and freeze-f9 (L4b); a template may name {seed} (one table per seed)
+    predictions: neural_f9/predictions.parquet            # C4, model_id f9, three seeds
+    activations: neural_f9/activations.parquet            # C4 activations a_000 ... a_063
+    freeze_record: neural_f9/f9_bundle.json               # freeze-f9 (L4b; schema tmmri.f9_bundle/1): 'fits' with checkpoint and checkpoint_sha256
+  f9b:                                          # written by fit-probes
+    dir: probes/f9b
+    freeze_record: probes/f9b/bundle.json
+freeze_record_format: "JSON object whose 'bundle' (or 'files') maps run-root relative paths to SHA-256 (tmmri.d20_bundle/1: 'files' relative to the record's folder), or whose 'fits' list checkpoint and checkpoint_sha256 (tmmri.f9_bundle/1); every listed file is re-hashed before a held-out evaluation"
+require_freeze_record_for_held_out: true        # D.13: D20, F9 and F9b bundle hashes recorded before any held-out evaluation
+bundles:                                        # evaluate-alt-bundles --bundle; once-only per (bundle, partition)
+  d20: {representations: [d20], predictors: [d20_predictor]}
+  f9: {predictors: [f9]}
+  f9b: {representations: [f9b]}
+pairing:                                        # representation -> its own predictor (Table 4 row; S2 misclassification target)
+  descriptors: audited_predictor
+  d20: d20_predictor
+  f9b: f9
+reference: {representation: descriptors, predictor: audited_predictor}   # paired differences: alternative minus descriptor pipeline
+estimands:
+  representation: [rho, rho_j]                  # frozen v6 estimand code (tmmri.metrics.primary_rho), primary family, dev-fit mean and SD
+  predictor: [accuracy, balanced_accuracy, macro_f1, macro_ovr_auroc, ece, brier, log_loss]
+  calibration: {ece_bins: 10, primary_binning: equal_mass, companion_binning: equal_width}   # equal-mass as configs/bootstrap.yaml calibration
+  bootstrap: configs/bootstrap.yaml#fixed_model_bootstrap   # 2,000 replicates, seed 20260928, cluster_id, percentile 95 % CI
+  qc_rule: "critical-QC rows are excluded from the predictor metrics of every predictor (as summarize-predictor)"
+crosswalk:                                      # M&Ms class metrics: same-definition subsets only (M&Ms-1 272; M&Ms-2 NOR + HCM)
+  same_definition: HARMONIZABLE_SAME_DEFINITION
+  non_equivalent_report: decision_distribution  # per crosswalk_compatibility group; never pooled into the class metrics
+table4:
+  rows: [descriptors, d20, f9b]
+  partitions: [acdc_dev, acdc_test, mms_external, mms2_external]
+  rho_targets: {rho_LVEF: lv_ef_percent, rho_LVEDV: lv_edv_ml}
+  metrics: [accuracy, macro_f1, macro_ovr_auroc, ece]
+  min_clusters: 20                              # cells below 20 clusters: NE (J)
+  outputs: manuscript_tables/comparison/

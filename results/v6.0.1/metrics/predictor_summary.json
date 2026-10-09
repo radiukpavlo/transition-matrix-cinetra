@@ -1,0 +1,20 @@
+{
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "fitting": "none (recorded decisions; frozen predictors applied to recorded formal A)",
+  "not_included": {},
+  "partitions": {
+    "acdc_dev_oof": "metrics/predictor_acdc_dev_oof.json",
+    "acdc_test": "metrics/predictor_acdc_test.json",
+    "mms_external": "metrics/predictor_mms_external.json",
+    "mms_refit_eval": "metrics/refit_arm/predictor_mms_refit_eval.json"
+  },
+  "read_only": true,
+  "schema": "tmmri.predictor_summary_index/1",
+  "semantic_comparator": {
+    "name": "measured_b_logistic_semantic_comparator",
+    "note": "configs/formal.yaml comparator_predictor is not fitted by any stage of this run and is never fitted here",
+    "reason": "COMPARATOR_NOT_FITTED_IN_RUN",
+    "role": "semantic_comparator_not_audited",
+    "status": "NE"
+  }
+}

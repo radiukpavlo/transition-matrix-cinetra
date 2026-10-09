@@ -1,0 +1,26 @@
+{
+  "title": "CINETRA: A Multi-Vendor Audit of Semantic Concept Transfer in Cardiac MRI (code, protocol and frozen results)",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "other-open",
+  "language": "eng",
+  "creators": [
+    {"name": "Radiuk, Pavlo", "affiliation": "Department of Computer Science, Khmelnytskyi National University, Ukraine", "orcid": "0000-0003-3609-112X"},
+    {"name": "Barmak, Oleksander", "affiliation": "Department of Computer Science, Khmelnytskyi National University, Ukraine", "orcid": "0000-0003-0739-9678"},
+    {"name": "Klymenko, Liliana", "affiliation": "Department of Family Medicine and Outpatient Care, Shupyk National Healthcare University of Ukraine", "orcid": "0000-0001-6749-113X"},
+    {"name": "Krak, Iurii", "affiliation": "Taras Shevchenko National University of Kyiv; V.M. Glushkov Institute of Cybernetics, Ukraine", "orcid": "0000-0002-8043-0785"}
+  ],
+  "description": "<p>CINETRA (cine semantic transition) audits what a frozen cardiac MRI classifier encodes, in the quantities a reader measures: ventricular volumes, ejection fractions and myocardial mass. A typed linear transition maps the classifier's 57 mask descriptors to measured concepts; variable-precision rough-set rules on the concepts must pass a cross-fitted gate before they may label a case; and every case receives one reason-coded route, a label or a computational abstention. The audit was registered as a signed protocol (CMR-TRANS-AUDIT 6.0.0 and its 6.0.1 amendment), frozen, and evaluated once on three public cohorts (ACDC, M&amp;Ms-1 and M&amp;Ms-2), one of them held out and unread until the registration.</p><p>This archive is the study's public record: the code that produced the results (byte-identical to the registered commit), the protocol and a verifiable proof of its registration, the aggregate results of the frozen run, the objects fitted on the ACDC development set, the figures, and tools to verify the registration and the datasets and to compare a re-run with the frozen results. It contains no image, mask or case-level data of the datasets, which must be obtained from their organizers. The accompanying article is in preparation. Research software, not for clinical use.</p><p><b>Licences.</b> This record has several licences, by origin:</p><ul><li>Code (src/, tests/, tools/, scripts/ and build files): MIT.</li><li>Results, documentation, protocol text, dataset manifests, and Figures 3&ndash;7 and S1&ndash;S3: CC BY 4.0.</li><li>Material derived from the ACDC dataset (Figures 1 and 2 with their scan crops, bundles/ and the F9 weights): CC BY-NC-SA 4.0, as the ACDC terms require.</li></ul><p>The licence of every file is listed in EXPORT_MANIFEST.json at the root of the archive.</p>",
+  "keywords": [
+    "explainable artificial intelligence",
+    "cardiac magnetic resonance imaging",
+    "transition matrix",
+    "rough sets",
+    "concept-based explanation",
+    "distribution shift",
+    "selective prediction",
+    "registered protocol",
+    "reproducibility"
+  ],
+  "notes": "Under the authors' direction, the large language model Claude Opus 5.5 (Anthropic) drafted the study protocol and the manuscript text, wrote the code of the analysis pipeline and of all figures, and prepared this release. No image was generated or edited by a generative AI tool, and no reported number was computed by one. The authors reviewed all code, text and figures and take full responsibility for them. Cloud GPU training was supported by computing credits from Modal Labs, and the use of Claude by API credits from Anthropic's AI for Science program."
+}

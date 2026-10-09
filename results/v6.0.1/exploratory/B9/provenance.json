@@ -1,0 +1,96 @@
+{
+  "analysis": "B9",
+  "code_commit": "d19c5a041ce1f8eb0f40bd6cfdb025b205e55c36",
+  "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+  "config": {
+    "analysis_settings": {
+      "angle": "LV -> RV centroid offset in mm in the canonical frame; x = column offset, y = minus the row offset (y up); atan2(y, x) in degrees in (-180, 180]",
+      "labels": {
+        "lv": 1,
+        "rv": 3
+      },
+      "orientation": "tmmri.neural.preprocess.canonical_orientation of the staged ED image header (configs/neural_input.yaml geometry), applied to the ED mask with oriented_slices, exactly as the D20 and F9 inputs",
+      "partitions": {
+        "acdc_dev": "ACDC",
+        "acdc_test": "ACDC",
+        "mms2_external": "MMS2",
+        "mms_external": "MMS"
+      },
+      "quantiles": [
+        0.1,
+        0.5,
+        0.9
+      ],
+      "rv_above": "row offset < 0",
+      "rv_left": "column offset < 0",
+      "slice": "mid-ventricular ED slice: the middle (index (n - 1) // 2, stored slice order) of the ED slices with both LV-cavity and RV-cavity voxels",
+      "strata": "dataset x partition x (vendor or all) x (orientation code or all); n, median and q10-q90 angle, fraction RV-left, fraction RV-above",
+      "title": "orientation audit of the image-branch input frame (label-free; staged masks for the LV and RV centroids only)",
+      "vendor_columns": {
+        "MMS": "vendor",
+        "MMS2": "vendor"
+      }
+    },
+    "file": "configs/exploratory.yaml",
+    "sha256": "881e47ec4ed9fb569861d2a6cf400ad31cbb7644054527951bab25cffe8d1d38"
+  },
+  "confirmatory": false,
+  "declared": "protocol-v6.0.1 exploratory register, B9 added on 3 October 2026 for owner issue O1 (image-branch orientation), declared post hoc (explains results, never confirms them)",
+  "included": {
+    "acdc_dev": "ACDC",
+    "acdc_test": "ACDC",
+    "mms_external": "MMS"
+  },
+  "inference": "effect sizes and descriptive intervals only",
+  "inputs": {
+    "cohort_MMS": {
+      "path": "run:contracts/cohort_MMS.parquet",
+      "sha256": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e"
+    },
+    "frozen_bundle": {
+      "path": "run:.stages/FROZEN.json",
+      "sha256": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e"
+    },
+    "split_manifest": {
+      "path": "run:contracts/split_manifest.parquet",
+      "sha256": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf"
+    },
+    "staging_manifest_ACDC": {
+      "path": "data:manifests/staging_ACDC.json",
+      "sha256": "6a1f70128dee7420f79b65c02719917887a00a101eac6b38adb5672a57f59160"
+    },
+    "staging_manifest_MMS": {
+      "path": "data:manifests/staging_MMS.json",
+      "sha256": "800f5f8be78d7fc13e1a00c65c75f9f22cd6501bfe26a68b36855564d01c50df"
+    }
+  },
+  "label": "EXPLORATORY_POST_HOC",
+  "not_executed": {
+    "mms2_external": "validate-cohort:MMS2 not recorded"
+  },
+  "outputs": [
+    "run:exploratory/B9/per_case.parquet",
+    "run:exploratory/B9/strata.parquet",
+    "run:exploratory/B9/strata.csv",
+    "run:exploratory/B9/summary.json",
+    "run:exploratory/B9/provenance.json"
+  ],
+  "reads": "recorded run artifacts only; no evaluation re-run",
+  "result": {
+    "included": [
+      "acdc_dev",
+      "acdc_test",
+      "mms_external"
+    ],
+    "n_cases": 468,
+    "n_measured": 468,
+    "not_executed": {
+      "mms2_external": "validate-cohort:MMS2 not recorded"
+    }
+  },
+  "role": "exploratory_post_hoc",
+  "run_id": "v6-replication-20261003-1241",
+  "schema": "tmmri.exploratory_provenance/1",
+  "title": "orientation audit of the image-branch input frame (label-free; staged masks for the LV and RV centroids only)",
+  "v6_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1"
+}

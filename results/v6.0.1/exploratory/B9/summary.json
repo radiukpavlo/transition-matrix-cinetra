@@ -1,0 +1,79 @@
+{
+  "analysis": "B9",
+  "definitions": {
+    "angle": "LV -> RV centroid offset in mm in the canonical frame; x = column offset, y = minus the row offset (y up); atan2(y, x) in degrees in (-180, 180]",
+    "orientation": "tmmri.neural.preprocess.canonical_orientation of the staged ED image header (configs/neural_input.yaml geometry), applied to the ED mask with oriented_slices, exactly as the D20 and F9 inputs",
+    "rv_above": "row offset < 0",
+    "rv_left": "column offset < 0",
+    "slice": "mid-ventricular ED slice: the middle (index (n - 1) // 2, stored slice order) of the ED slices with both LV-cavity and RV-cavity voxels"
+  },
+  "included": {
+    "acdc_dev": "ACDC",
+    "acdc_test": "ACDC",
+    "mms_external": "MMS"
+  },
+  "not_executed": {
+    "mms2_external": "validate-cohort:MMS2 not recorded"
+  },
+  "note": "descriptive and label-free: reference masks are read only for the LV and RV centroids; no class label is read",
+  "partitions": {
+    "acdc_dev": {
+      "dataset": "ACDC",
+      "n_cases": 98,
+      "orientation_codes": {
+        "rows=+1,cols=+0": 98
+      },
+      "pooled": {
+        "angle_median_deg": -144.74567205861996,
+        "angle_q10_deg": -171.20901832953663,
+        "angle_q90_deg": 143.8266772770388,
+        "fraction_rv_above": 0.22448979591836735,
+        "fraction_rv_left": 1.0,
+        "n": 98
+      },
+      "status": {
+        "MEASURED": 98
+      }
+    },
+    "acdc_test": {
+      "dataset": "ACDC",
+      "n_cases": 50,
+      "orientation_codes": {
+        "rows=+1,cols=+0": 50
+      },
+      "pooled": {
+        "angle_median_deg": -138.08330057175493,
+        "angle_q10_deg": -168.87009686793232,
+        "angle_q90_deg": 143.586934966211,
+        "fraction_rv_above": 0.28,
+        "fraction_rv_left": 1.0,
+        "n": 50
+      },
+      "status": {
+        "MEASURED": 50
+      }
+    },
+    "mms_external": {
+      "dataset": "MMS",
+      "n_cases": 320,
+      "orientation_codes": {
+        "rows=+0,cols=-1": 80,
+        "rows=+1,cols=+0": 193,
+        "rows=+1,cols=-0": 1,
+        "rows=-1,cols=+0": 45,
+        "rows=-1,cols=-0": 1
+      },
+      "pooled": {
+        "angle_median_deg": 125.97084770674724,
+        "angle_q10_deg": -161.40867776029114,
+        "angle_q90_deg": 160.20436511903176,
+        "fraction_rv_above": 0.590625,
+        "fraction_rv_left": 1.0,
+        "n": 320
+      },
+      "status": {
+        "MEASURED": 320
+      }
+    }
+  }
+}

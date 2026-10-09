@@ -1,0 +1,21 @@
+tree 4dc713a871067edb1e2e373bdb1a9b1ef117ea4a
+parent b915d2741532847c0e4bab22534d3348c492b4ac
+author Pavlo Radiuk <radiukpavlo@gmail.com> 1790677252 +0300
+committer Pavlo Radiuk <radiukpavlo@gmail.com> 1790677252 +0300
+
+protocol: record the owner's confirmation of every remaining decision
+
+- Owner confirmation (2026-09-29) of all remaining Appendix A rows
+  (Q2, Q3, Q6-Q8, Q10, Q11, Q13-Q17, Q19-Q24, Q26) and of DEC-E1 to
+  DEC-E5; no decision is pending before the M0 tag.
+- Q28 adopted: descriptive mms_external strata by sex and age band
+  (<40, 40-64, >=65 years) from the release CSV, with counts, point
+  estimates and cluster-bootstrap intervals, no p-values, excluded from
+  F3, never used for fitting or selection
+  (configs/bootstrap.yaml descriptive_strata, age_band_edges_years;
+  ingest/mms.py reads Age and Sex; stages.descriptive_strata).
+- Spec, ADR-0001, ADR-0002, the environment spec section 14 and the
+  amendments log updated; 441 tests pass on the host and in the
+  container; the real validate-cohort --strict passes.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

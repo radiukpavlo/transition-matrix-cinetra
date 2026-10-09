@@ -1,0 +1,72 @@
+# Cardiac MRI pattern templates (SPECIFICATION.md 6.0.0, Section 11.8).
+# Descriptive research templates written by the research team from the registry vocabulary; no clinician
+# authorship. Conditions use symbolic states only (WEDD bin positions such as lowest_bin, highest_bin); no numeric
+# clinical cut-off is written here, and a WEDD bin is a data-driven engineering state, not a clinical threshold.
+# A template is "matched" when an eligible rule's antecedent set structurally implies the template (exact
+# inclusion of the listed conditions); no numeric alignment score is used. A template is never a diagnosis.
+
+version: "6.0.0"
+specification_version: "6.0.0"
+authorship: "research team; not physician-authored; descriptive only"
+state_tokens: [lowest_bin, highest_bin, not_lowest_bin, not_highest_bin]
+
+templates:
+  - id: PT_DILATED_LV_REDUCED_EF
+    conditions: {lv_edv_ml: highest_bin, lv_ef_percent: lowest_bin}
+    rulebooks: [d_model, dataset_label, measured_oracle]
+    support_status: supported
+    note: "Large LV cavity with low global LV function; descriptive of a dilated hypocontractile pattern, not of DCM"
+  - id: PT_THICK_WALL_PRESERVED_EF
+    conditions: {global_wall_thickness_ed_mm: highest_bin, lv_ef_percent: not_lowest_bin}
+    rulebooks: [d_model, dataset_label, measured_oracle]
+    support_status: supported
+    note: "Global mean wall thickness only; asymmetric or segmental hypertrophy is not representable (AHA-16 reserved)"
+  - id: PT_INCREASED_LV_MASS
+    conditions: {lv_myocardial_mass_ed_g: highest_bin}
+    rulebooks: [d_model, dataset_label, measured_oracle]
+    support_status: supported
+    note: "Absolute mass, not BSA-indexed (indexed values are excluded, Section 6)"
+  - id: PT_DILATED_RV_REDUCED_RVEF
+    conditions: {rv_edv_ml: highest_bin, rv_ef_percent: lowest_bin}
+    rulebooks: [d_model, dataset_label, measured_oracle]
+    support_status: supported
+    note: "Large RV cavity with low RV function; not a diagnosis of arrhythmogenic cardiomyopathy"
+  - id: PT_REDUCED_THICKENING
+    conditions: {global_wall_thickening_percent: lowest_bin}
+    rulebooks: [d_model, dataset_label, measured_oracle]
+    support_status: supported
+    note: "Global thickening only; regional wall-motion abnormality cannot be localized"
+  - id: PT_REDUCED_LVEF_REDUCED_THICKENING
+    conditions: {lv_ef_percent: lowest_bin, global_wall_thickening_percent: lowest_bin}
+    rulebooks: [d_model, dataset_label, measured_oracle]
+    support_status: supported
+    note: "Compatible with, but not evidence of, previous infarction; no scar imaging is available"
+  - id: PT_NORMAL_SIZE_FUNCTION
+    conditions: {lv_edv_ml: not_highest_bin, lv_ef_percent: not_lowest_bin, rv_edv_ml: not_highest_bin}
+    rulebooks: [d_model, dataset_label, measured_oracle]
+    support_status: supported
+    note: "Neither ventricle in its largest bin and LV function not in its lowest bin; not a statement of normality"
+  - id: PT_LV_NONCOMPACTION
+    conditions: {}
+    support_status: unsupported
+    note: "Trabecular versus compacted myocardium is not segmented in either release"
+  - id: PT_VALVULAR_DISEASE
+    conditions: {}
+    support_status: unsupported
+    note: "No flow, valve or regurgitation measurement; LV-RV stroke-volume discrepancy is QC only"
+  - id: PT_MYOCARDIAL_INFLAMMATION
+    conditions: {}
+    support_status: unsupported
+    note: "No T1, T2 or late-gadolinium-enhancement imaging"
+  - id: PT_MYOCARDIAL_SCAR
+    conditions: {}
+    support_status: unsupported
+    note: "No late-gadolinium-enhancement imaging; wall thinning or reduced thickening does not establish scar"
+  - id: PT_REGIONAL_WALL_MOTION
+    conditions: {}
+    support_status: unsupported
+    note: "AHA-16 segmental columns are reserved unsupported (no validated orientation)"
+  - id: PT_RESTRICTIVE_PHYSIOLOGY
+    conditions: {}
+    support_status: unsupported
+    note: "Only ED and ES frames are analysed; no diastolic-function or atrial measurement"

@@ -1,0 +1,1179 @@
+{
+  "below_threshold": {
+    "reason": "STRATUM_BELOW_MIN_CASES",
+    "status": "NE"
+  },
+  "descriptive_strata": [
+    "vendor",
+    "scanner",
+    "field_strength"
+  ],
+  "min_cases_per_stratum": 20,
+  "strata": {
+    "field_strength": {
+      "1.5": {
+        "ci_lower": 0.24504788132614355,
+        "ci_upper": 0.39768785526376993,
+        "descriptive_only": false,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 173,
+        "n_clusters": 173,
+        "n_estimable": 7,
+        "n_units": 173,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.32594283774981675,
+        "rho_j": {
+          "lv_edv_ml": 0.08988684607882702,
+          "lv_ef_percent": 0.6707070441813834,
+          "lv_esv_ml": 0.36808224994693783,
+          "lv_myocardial_mass_ed_g": 0.30579557213924635,
+          "rv_edv_ml": 0.0982360509616308,
+          "rv_ef_percent": 0.5563755847998137,
+          "rv_esv_ml": 0.1925165161408785
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            -0.07672879783309214,
+            0.2272149580282388
+          ],
+          "lv_ef_percent": [
+            0.6308355128913362,
+            0.7087821745637063
+          ],
+          "lv_esv_ml": [
+            0.16621201296537855,
+            0.5241352700641781
+          ],
+          "lv_myocardial_mass_ed_g": [
+            0.19643906926404786,
+            0.40887905248530504
+          ],
+          "rv_edv_ml": [
+            -0.053972941185236656,
+            0.22486429946817885
+          ],
+          "rv_ef_percent": [
+            0.4889134408978423,
+            0.6142100829682778
+          ],
+          "rv_esv_ml": [
+            0.054647433559835784,
+            0.3131191775764701
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "3": {
+        "ci_lower": null,
+        "ci_upper": null,
+        "descriptive_only": true,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 7,
+        "n_clusters": 7,
+        "n_estimable": 7,
+        "n_units": 7,
+        "normalization": "fit_partition_sd",
+        "reason": "STRATUM_BELOW_MIN_CASES",
+        "resampling_unit": "cluster_id",
+        "rho": -0.08336539304479613,
+        "rho_j": {
+          "lv_edv_ml": -0.52904851480912,
+          "lv_ef_percent": 0.5543751975365003,
+          "lv_esv_ml": -0.0055297124329591885,
+          "lv_myocardial_mass_ed_g": -0.7009705906558488,
+          "rv_edv_ml": -0.38286777483977796,
+          "rv_ef_percent": 0.27523774780373367,
+          "rv_esv_ml": 0.20524589608389898
+        },
+        "rho_j_ci": null,
+        "seed": 20260928,
+        "status": "NE",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      }
+    },
+    "pathology_group": {
+      "DLV": {
+        "ci_lower": 0.1467941781963317,
+        "ci_upper": 0.4884951212016541,
+        "descriptive_only": false,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 29,
+        "n_clusters": 29,
+        "n_estimable": 7,
+        "n_units": 29,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.32772542088999995,
+        "rho_j": {
+          "lv_edv_ml": 0.3764754367096167,
+          "lv_ef_percent": 0.7403051151074389,
+          "lv_esv_ml": 0.06008952352312602,
+          "lv_myocardial_mass_ed_g": 0.2194699243824546,
+          "rv_edv_ml": 0.14790638217688612,
+          "rv_ef_percent": 0.5934338155535315,
+          "rv_esv_ml": 0.156397748776946
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            0.10327946360302463,
+            0.6134755923795036
+          ],
+          "lv_ef_percent": [
+            0.6437340621934532,
+            0.8157649104662809
+          ],
+          "lv_esv_ml": [
+            -0.5016914185199249,
+            0.6180773069312991
+          ],
+          "lv_myocardial_mass_ed_g": [
+            0.029296377764216872,
+            0.40196009594042287
+          ],
+          "rv_edv_ml": [
+            -0.11716118529228578,
+            0.3527101433339006
+          ],
+          "rv_ef_percent": [
+            0.3826123778816605,
+            0.7287909062554452
+          ],
+          "rv_esv_ml": [
+            -0.13556589746970743,
+            0.3737715328313716
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "stratum_role": "prespecified",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "HCM": {
+        "ci_lower": -0.17885848673632773,
+        "ci_upper": 0.3802333157520529,
+        "descriptive_only": false,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 29,
+        "n_clusters": 29,
+        "n_estimable": 7,
+        "n_units": 29,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.13793998852882638,
+        "rho_j": {
+          "lv_edv_ml": -0.4967338360058242,
+          "lv_ef_percent": 0.791571536871164,
+          "lv_esv_ml": 0.41791656815056777,
+          "lv_myocardial_mass_ed_g": -0.2171246760680805,
+          "rv_edv_ml": -0.23820373869012834,
+          "rv_ef_percent": 0.6817476604732606,
+          "rv_esv_ml": 0.026406404970825248
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            -1.1495041859447175,
+            -0.016651999994601038
+          ],
+          "lv_ef_percent": [
+            0.7214041660277176,
+            0.8488411908727664
+          ],
+          "lv_esv_ml": [
+            0.1341284526754827,
+            0.6176379040659928
+          ],
+          "lv_myocardial_mass_ed_g": [
+            -0.8274343511864384,
+            0.18994850531234972
+          ],
+          "rv_edv_ml": [
+            -0.6336503250963249,
+            0.10910646682161956
+          ],
+          "rv_ef_percent": [
+            0.5724001908021256,
+            0.7640671563566536
+          ],
+          "rv_esv_ml": [
+            -0.4796220392480462,
+            0.36924737298133226
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "stratum_role": "prespecified",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "NOR": {
+        "ci_lower": 0.14033226861033027,
+        "ci_upper": 0.46596543890141084,
+        "descriptive_only": false,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 39,
+        "n_clusters": 39,
+        "n_estimable": 7,
+        "n_units": 39,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.3232462057224213,
+        "rho_j": {
+          "lv_edv_ml": -0.2621695441575238,
+          "lv_ef_percent": 0.6710123150695422,
+          "lv_esv_ml": 0.6360310677845081,
+          "lv_myocardial_mass_ed_g": 0.5006981292400271,
+          "rv_edv_ml": -0.11357811267763962,
+          "rv_ef_percent": 0.5337390873326632,
+          "rv_esv_ml": 0.2969904974653722
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            -0.7642993183845344,
+            0.10157567477799642
+          ],
+          "lv_ef_percent": [
+            0.613177263972357,
+            0.7233812897175921
+          ],
+          "lv_esv_ml": [
+            0.4983140521773918,
+            0.7416735831274268
+          ],
+          "lv_myocardial_mass_ed_g": [
+            0.29956466650954705,
+            0.6470824395228797
+          ],
+          "rv_edv_ml": [
+            -0.5580519549545618,
+            0.22400755423425683
+          ],
+          "rv_ef_percent": [
+            0.4116247884501266,
+            0.6469089241646488
+          ],
+          "rv_esv_ml": [
+            0.0071205156539937454,
+            0.5049970068109263
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "stratum_role": "prespecified",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "RV_FAMILY": {
+        "ci_lower": 0.22051859194556506,
+        "ci_upper": 0.4106307125626119,
+        "descriptive_only": false,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 83,
+        "n_clusters": 83,
+        "n_estimable": 7,
+        "n_units": 83,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.3248174803500258,
+        "rho_j": {
+          "lv_edv_ml": 0.11895985117871033,
+          "lv_ef_percent": 0.577285635526472,
+          "lv_esv_ml": 0.360522790999365,
+          "lv_myocardial_mass_ed_g": 0.3209725656508938,
+          "rv_edv_ml": 0.1997457180689245,
+          "rv_ef_percent": 0.49143255483948645,
+          "rv_esv_ml": 0.2048032461863284
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            -0.09211845211548145,
+            0.28935320819966864
+          ],
+          "lv_ef_percent": [
+            0.4950947930436318,
+            0.6434831620081458
+          ],
+          "lv_esv_ml": [
+            0.1588773413919341,
+            0.5072500648511237
+          ],
+          "lv_myocardial_mass_ed_g": [
+            0.1448804244020372,
+            0.4684589310987634
+          ],
+          "rv_edv_ml": [
+            0.021365751727136048,
+            0.36254322518280646
+          ],
+          "rv_ef_percent": [
+            0.3867868825323689,
+            0.5782685662716938
+          ],
+          "rv_esv_ml": [
+            0.024920301347135847,
+            0.37814442911924334
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "stratum_role": "prespecified",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      }
+    },
+    "scanner": {
+      "Achieva": {
+        "ci_lower": -0.09120103078364798,
+        "ci_upper": 0.29718495771842,
+        "descriptive_only": false,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 38,
+        "n_clusters": 38,
+        "n_estimable": 7,
+        "n_units": 38,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.12347078381028032,
+        "rho_j": {
+          "lv_edv_ml": -0.6026711216518619,
+          "lv_ef_percent": 0.6913545006488879,
+          "lv_esv_ml": 0.4049653720063997,
+          "lv_myocardial_mass_ed_g": 0.12015527590257824,
+          "rv_edv_ml": -0.3731161678156061,
+          "rv_ef_percent": 0.5848292914986137,
+          "rv_esv_ml": 0.03877833608295056
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            -1.1015343924090506,
+            -0.20457733131680209
+          ],
+          "lv_ef_percent": [
+            0.6183019851903626,
+            0.7540116442119027
+          ],
+          "lv_esv_ml": [
+            0.16046375851870437,
+            0.5902583804095893
+          ],
+          "lv_myocardial_mass_ed_g": [
+            -0.2737136730941132,
+            0.4109002143700676
+          ],
+          "rv_edv_ml": [
+            -0.7534764476150081,
+            -0.09288394723968217
+          ],
+          "rv_ef_percent": [
+            0.4809302248384156,
+            0.674282854800848
+          ],
+          "rv_esv_ml": [
+            -0.32605400352171654,
+            0.32295710422965307
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "Avanto": {
+        "ci_lower": null,
+        "ci_upper": null,
+        "descriptive_only": true,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 2,
+        "n_clusters": 2,
+        "n_estimable": 7,
+        "n_units": 2,
+        "normalization": "fit_partition_sd",
+        "reason": "STRATUM_BELOW_MIN_CASES",
+        "resampling_unit": "cluster_id",
+        "rho": 0.28375274276397994,
+        "rho_j": {
+          "lv_edv_ml": 0.46838096943646157,
+          "lv_ef_percent": 0.6137461659480006,
+          "lv_esv_ml": 0.3700543706884073,
+          "lv_myocardial_mass_ed_g": 0.1628705322080407,
+          "rv_edv_ml": 0.5096076676366194,
+          "rv_ef_percent": 0.30615997994646915,
+          "rv_esv_ml": -0.4445504865161387
+        },
+        "rho_j_ci": null,
+        "seed": 20260928,
+        "status": "NE",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "Avanto Fit": {
+        "ci_lower": null,
+        "ci_upper": null,
+        "descriptive_only": true,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 15,
+        "n_clusters": 15,
+        "n_estimable": 7,
+        "n_units": 15,
+        "normalization": "fit_partition_sd",
+        "reason": "STRATUM_BELOW_MIN_CASES",
+        "resampling_unit": "cluster_id",
+        "rho": 0.4225567474207544,
+        "rho_j": {
+          "lv_edv_ml": 0.17914021628486587,
+          "lv_ef_percent": 0.5970765565290269,
+          "lv_esv_ml": 0.6540773734842944,
+          "lv_myocardial_mass_ed_g": 0.4264164992553343,
+          "rv_edv_ml": 0.21800830533082083,
+          "rv_ef_percent": 0.5719620986731239,
+          "rv_esv_ml": 0.3112161823878141
+        },
+        "rho_j_ci": null,
+        "seed": 20260928,
+        "status": "NE",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "SIGNA EXCITE": {
+        "ci_lower": null,
+        "ci_upper": null,
+        "descriptive_only": true,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 17,
+        "n_clusters": 17,
+        "n_estimable": 7,
+        "n_units": 17,
+        "normalization": "fit_partition_sd",
+        "reason": "STRATUM_BELOW_MIN_CASES",
+        "resampling_unit": "cluster_id",
+        "rho": 0.17496480523789457,
+        "rho_j": {
+          "lv_edv_ml": -0.35873720832318723,
+          "lv_ef_percent": 0.6817507191460708,
+          "lv_esv_ml": 0.3907664775431403,
+          "lv_myocardial_mass_ed_g": 0.33353724149667163,
+          "rv_edv_ml": -0.18938093452433735,
+          "rv_ef_percent": 0.30402655844636794,
+          "rv_esv_ml": 0.06279078288053608
+        },
+        "rho_j_ci": null,
+        "seed": 20260928,
+        "status": "NE",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "Signa HDxt": {
+        "ci_lower": null,
+        "ci_upper": null,
+        "descriptive_only": true,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 11,
+        "n_clusters": 11,
+        "n_estimable": 7,
+        "n_units": 11,
+        "normalization": "fit_partition_sd",
+        "reason": "STRATUM_BELOW_MIN_CASES",
+        "resampling_unit": "cluster_id",
+        "rho": 0.015114945670110926,
+        "rho_j": {
+          "lv_edv_ml": -0.47719671510791817,
+          "lv_ef_percent": 0.4820733981610783,
+          "lv_esv_ml": 0.07449749206196943,
+          "lv_myocardial_mass_ed_g": 0.043560178549398976,
+          "rv_edv_ml": -0.28330437121829743,
+          "rv_ef_percent": 0.2214042830618418,
+          "rv_esv_ml": 0.04477035418270359
+        },
+        "rho_j_ci": null,
+        "seed": 20260928,
+        "status": "NE",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "Symphony": {
+        "ci_lower": null,
+        "ci_upper": null,
+        "descriptive_only": true,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 11,
+        "n_clusters": 11,
+        "n_estimable": 7,
+        "n_units": 11,
+        "normalization": "fit_partition_sd",
+        "reason": "STRATUM_BELOW_MIN_CASES",
+        "resampling_unit": "cluster_id",
+        "rho": 0.39969555273079693,
+        "rho_j": {
+          "lv_edv_ml": 0.3981578945301094,
+          "lv_ef_percent": 0.7550452174992428,
+          "lv_esv_ml": 0.6201912777483485,
+          "lv_myocardial_mass_ed_g": 0.2878312491788023,
+          "rv_edv_ml": 0.384374983166053,
+          "rv_ef_percent": 0.5493650236527969,
+          "rv_esv_ml": -0.19709677665977465
+        },
+        "rho_j_ci": null,
+        "seed": 20260928,
+        "status": "NE",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "SymphonyTim": {
+        "ci_lower": 0.3099933166546331,
+        "ci_upper": 0.5179088082638845,
+        "descriptive_only": false,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 85,
+        "n_clusters": 85,
+        "n_estimable": 7,
+        "n_units": 85,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.4195434226524389,
+        "rho_j": {
+          "lv_edv_ml": 0.33966311137468364,
+          "lv_ef_percent": 0.66946864201191,
+          "lv_esv_ml": 0.2832032105369524,
+          "lv_myocardial_mass_ed_g": 0.37044484047017323,
+          "rv_edv_ml": 0.2932610287677966,
+          "rv_ef_percent": 0.6050405319409099,
+          "rv_esv_ml": 0.375722593464646
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            0.18159354096763558,
+            0.4854053803364756
+          ],
+          "lv_ef_percent": [
+            0.6110440032220981,
+            0.7231527420319127
+          ],
+          "lv_esv_ml": [
+            -0.019532101855685605,
+            0.5878183633673257
+          ],
+          "lv_myocardial_mass_ed_g": [
+            0.24965545838067055,
+            0.4836155242008942
+          ],
+          "rv_edv_ml": [
+            0.12333368419196394,
+            0.434647044134051
+          ],
+          "rv_ef_percent": [
+            0.50332406442212,
+            0.6901284404725995
+          ],
+          "rv_esv_ml": [
+            0.22477300858679028,
+            0.49697670919298836
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "TrioTim": {
+        "ci_lower": null,
+        "ci_upper": null,
+        "descriptive_only": true,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 1,
+        "n_clusters": 1,
+        "n_estimable": 7,
+        "n_units": 1,
+        "normalization": "fit_partition_sd",
+        "reason": "STRATUM_BELOW_MIN_CASES",
+        "resampling_unit": "cluster_id",
+        "rho": -0.786316638075945,
+        "rho_j": {
+          "lv_edv_ml": -1.6048644019491562,
+          "lv_ef_percent": 0.8678043446800169,
+          "lv_esv_ml": -0.20722357913674627,
+          "lv_myocardial_mass_ed_g": -3.351915650490386,
+          "rv_edv_ml": -0.9782229281657415,
+          "rv_ef_percent": 0.9821869141141196,
+          "rv_esv_ml": -1.2119811655837207
+        },
+        "rho_j_ci": null,
+        "seed": 20260928,
+        "status": "NE",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      }
+    },
+    "vendor": {
+      "GE": {
+        "ci_lower": -0.09580393452516776,
+        "ci_upper": 0.2830702345803306,
+        "descriptive_only": false,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 28,
+        "n_clusters": 28,
+        "n_estimable": 7,
+        "n_units": 28,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.11729993813588503,
+        "rho_j": {
+          "lv_edv_ml": -0.4073619498324501,
+          "lv_ef_percent": 0.6205620009596429,
+          "lv_esv_ml": 0.27813408348793256,
+          "lv_myocardial_mass_ed_g": 0.2328209175110778,
+          "rv_edv_ml": -0.22926081741687176,
+          "rv_ef_percent": 0.27086486309193347,
+          "rv_esv_ml": 0.055340469149930405
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            -0.8837726030106728,
+            -0.06173351396978801
+          ],
+          "lv_ef_percent": [
+            0.5114859216674623,
+            0.7037198231483053
+          ],
+          "lv_esv_ml": [
+            0.014177969053941614,
+            0.5125635392936451
+          ],
+          "lv_myocardial_mass_ed_g": [
+            -0.1707733056099012,
+            0.5252624750689245
+          ],
+          "rv_edv_ml": [
+            -0.6916458156050552,
+            0.05985001664654693
+          ],
+          "rv_ef_percent": [
+            0.050679132991324004,
+            0.41406222671679266
+          ],
+          "rv_esv_ml": [
+            -0.31807895954523135,
+            0.3410870412300826
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "Philips": {
+        "ci_lower": -0.09120103078364798,
+        "ci_upper": 0.29718495771842,
+        "descriptive_only": false,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 38,
+        "n_clusters": 38,
+        "n_estimable": 7,
+        "n_units": 38,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.12347078381028032,
+        "rho_j": {
+          "lv_edv_ml": -0.6026711216518619,
+          "lv_ef_percent": 0.6913545006488879,
+          "lv_esv_ml": 0.4049653720063997,
+          "lv_myocardial_mass_ed_g": 0.12015527590257824,
+          "rv_edv_ml": -0.3731161678156061,
+          "rv_ef_percent": 0.5848292914986137,
+          "rv_esv_ml": 0.03877833608295056
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            -1.1015343924090506,
+            -0.20457733131680209
+          ],
+          "lv_ef_percent": [
+            0.6183019851903626,
+            0.7540116442119027
+          ],
+          "lv_esv_ml": [
+            0.16046375851870437,
+            0.5902583804095893
+          ],
+          "lv_myocardial_mass_ed_g": [
+            -0.2737136730941132,
+            0.4109002143700676
+          ],
+          "rv_edv_ml": [
+            -0.7534764476150081,
+            -0.09288394723968217
+          ],
+          "rv_ef_percent": [
+            0.4809302248384156,
+            0.674282854800848
+          ],
+          "rv_esv_ml": [
+            -0.32605400352171654,
+            0.32295710422965307
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      },
+      "Siemens": {
+        "ci_lower": 0.3183414080004642,
+        "ci_upper": 0.4872817559554963,
+        "descriptive_only": false,
+        "estimable_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "family": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "interval": "percentile_95",
+        "min_cases_per_stratum": 20,
+        "min_estimable": 5,
+        "n_boot": 2000,
+        "n_boot_valid": 2000,
+        "n_cases": 114,
+        "n_clusters": 114,
+        "n_estimable": 7,
+        "n_units": 114,
+        "normalization": "fit_partition_sd",
+        "reason": null,
+        "resampling_unit": "cluster_id",
+        "rho": 0.4082312687483543,
+        "rho_j": {
+          "lv_edv_ml": 0.32739782311829935,
+          "lv_ef_percent": 0.669581001680403,
+          "lv_esv_ml": 0.3567558102194276,
+          "lv_myocardial_mass_ed_g": 0.3489666929825799,
+          "rv_edv_ml": 0.2967818183055241,
+          "rv_ef_percent": 0.5900632749693429,
+          "rv_esv_ml": 0.26807245996290385
+        },
+        "rho_j_ci": {
+          "lv_edv_ml": [
+            0.17940143949959894,
+            0.45520251146160656
+          ],
+          "lv_ef_percent": [
+            0.6112659855552122,
+            0.7188460603100623
+          ],
+          "lv_esv_ml": [
+            0.08915453093275358,
+            0.5899652024846312
+          ],
+          "lv_myocardial_mass_ed_g": [
+            0.24528314843153007,
+            0.44927921520345954
+          ],
+          "rv_edv_ml": [
+            0.13533013162597535,
+            0.4272983795898534
+          ],
+          "rv_ef_percent": [
+            0.5063412463630539,
+            0.6623005351183257
+          ],
+          "rv_esv_ml": [
+            0.09731926980302678,
+            0.40788376179203134
+          ]
+        },
+        "seed": 20260928,
+        "status": "EVALUATED",
+        "stratum_role": "descriptive_demographic",
+        "valid_fraction": 1.0,
+        "weighting": "patient"
+      }
+    }
+  }
+}

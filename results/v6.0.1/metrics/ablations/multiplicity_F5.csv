@@ -1,0 +1,10 @@
+family,partition,comparison,stratum_variable,stratum,target,variant,n,effect,effect_normalized,statistic,p_value,test,status,reason,q_value,rejected,bh_q
+F5_rule_policy,acdc_test,accepted_coverage_vs_primary,all,all,,rule_policy:beta_0.05,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F5_rule_policy,acdc_test,accepted_coverage_vs_primary,all,all,,rule_policy:beta_0.10,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F5_rule_policy,acdc_test,accepted_coverage_vs_primary,all,all,,rule_policy:beta_0.20,50,0.08,,4.0,0.125,exact_mcnemar,EVALUATED,variant_only=4;primary_only=0,0.5625,False,0.05
+F5_rule_policy,acdc_test,accepted_coverage_vs_primary,all,all,,rule_policy:strict_only,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F5_rule_policy,acdc_test,accepted_coverage_vs_primary,all,all,,rule_policy:max_length_2,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F5_rule_policy,acdc_test,accepted_coverage_vs_primary,all,all,,rule_policy:max_length_3,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F5_rule_policy,acdc_test,accepted_coverage_vs_primary,all,all,,gate_lower_bound:0.50,50,0.16,,8.0,0.0078125,exact_mcnemar,EVALUATED,variant_only=8;primary_only=0,0.0703125,False,0.05
+F5_rule_policy,acdc_test,accepted_coverage_vs_primary,all,all,,gate_lower_bound:0.60,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F5_rule_policy,acdc_test,accepted_coverage_vs_primary,all,all,,gate_lower_bound:0.70,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05

@@ -1,0 +1,44 @@
+{
+  "analysis": "B5",
+  "data": "synthetic only (no cohort data)",
+  "gates": {
+    "f8_selective": {
+      "min_agreement": 0.9,
+      "min_matched": 5,
+      "wilson_lower_min": 0.6
+    },
+    "point_fidelity_0.90": {
+      "min_agreement": 0.9,
+      "min_matched": 5
+    },
+    "v6": {
+      "min_matched": 5,
+      "wilson_lower_min": 0.6
+    },
+    "wilson_lower_0.50": {
+      "min_matched": 5,
+      "wilson_lower_min": 0.5
+    },
+    "wilson_lower_0.70": {
+      "min_matched": 5,
+      "wilson_lower_min": 0.7
+    }
+  },
+  "modes": [
+    "pipeline",
+    "counts"
+  ],
+  "n_cells": 48,
+  "n_datasets_per_cell": 2000,
+  "not_simulated": "eligibility gates (cut stability bootstrap, reconstruction gate): the planted feature is taken as eligible",
+  "outputs": {
+    "P(true rule passes)": "rows kind == planted, columns pass_<gate>",
+    "false-pass rate": "rows kind == null, columns pass_<gate>"
+  },
+  "profile": "wedd_gaussian_mm_v1",
+  "seed": 20260928,
+  "v6_gate": {
+    "agreement_wilson_lower_min": 0.6,
+    "min_pooled_oof_matched_patients": 5
+  }
+}

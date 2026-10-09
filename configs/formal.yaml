@@ -1,0 +1,49 @@
+# Formal representation A and the audited predictor (SPECIFICATION.md 6.0.0, Section 8). Decisions D5, D7, D9.
+specification_version: "6.0.0"
+primary:
+  name: formal_descriptors_v3
+  extractor_id: native_deterministic_baseline_v2   # src/tmmri/formal_features.py, unprojected
+  dimension: 57
+  mask_conditioned: true                        # expert masks condition A (Decision D7); no automatic segmentation
+  inputs: [ed_image, es_image, ed_mask, es_mask]   # staged ED/ES frames, project label convention
+  intensity_normalization: "per phase image: lo, hi = 1st and 99th percentiles of finite voxels; x' = clip((x - lo) / (hi - lo), 0, 1); hi <= lo -> scale 1"
+  per_phase_per_label_statistics: [mean, sd_population, median, p25, p75, label_voxel_fraction]   # labels 0-3, phases ED and ES: 48 values
+  label_fraction_terms: "for labels 1-3: ED fraction, ES fraction, ED minus ES (9 values)"
+  column_order: "ED labels 0-3 x 6 statistics, ES labels 0-3 x 6 statistics, then labels 1-3 x (ED, ES, difference)"
+  known_linear_dependencies: "the 9 label-fraction terms are exact linear combinations of voxel fractions already in the 48 statistics, and per-phase label fractions sum to 1; centred A has rank at most 46; kept for P6 continuity; ridge and the L2 predictor handle the collinearity"
+  physical_units: none                          # unitless; depends on field of view and matrix size; no resampling
+  empty_label_fill: "unreachable for analysed rows: a missing structure is a critical QC failure"
+  standardization: {fit_on: fit_partition, method: mean_sd, zero_variance_removal: true}   # fit partition = outer training folds, then acdc_dev
+  row_alignment: exact_sample_id_match_asserted
+  finiteness: asserted                          # non-finite -> INPUT_NONFINITE, QC_ABSTAIN
+comparators:
+  p6_projection_128:
+    role: continuity_comparator
+    source: formal_descriptors_v3
+    projection: "Gaussian N(0, 1/57) matrix of shape 57 x 128 from numpy.random.default_rng(20260611).normal"   # [PRESPEC]
+    seed: 20260611
+    output_dimension: 128
+    raw_retained: "columns 0-31 replaced by the first 32 raw descriptors"
+    standardization: {fit_on: fit_partition, method: mean_sd, zero_variance_removal: true}
+semantic_proxy: forbidden                       # v4 metadata/QC-hash A; circular; never used in v6
+audited_predictor:                              # Decision D5
+  name: d_model_multinomial_lr_formal_a
+  model: multinomial_logistic_regression
+  input: standardized formal_descriptors_v3
+  classes: [DCM, HCM, MINF, NOR, RV]
+  penalty: l2
+  C: 1.0                                        # [PRESPEC] fixed; no hyperparameter search
+  class_weight: balanced
+  solver: lbfgs
+  max_iter: 10000
+  tol: 1.0e-8
+  random_state: 20260611
+  fit_on: acdc_dev                              # all 98 for the frozen bundle; outer-training folds for cross-fitting
+  decision: argmax_probability_ties_by_class_order
+  calibration: none                             # probabilities reported with ECE (configs/bootstrap.yaml); no recalibration
+comparator_predictor:
+  name: measured_b_logistic_semantic_comparator
+  input: "measured B transition candidates, fit-partition median imputation and standardization"
+  model: multinomial_logistic_regression
+  settings: same_as_audited_predictor
+  role: semantic_comparator_not_audited

@@ -1,0 +1,39 @@
+# Optional deep-encoder branch (SPECIFICATION.md 6.0.0, Section 8). Decision D20. Not required for the primary claim.
+specification_version: "6.0.0"
+status: implemented                             # src/tmmri/deep_encoder.py; extract-deep-features, fit-deep-encoder (protocol-v6.0.1 D item 9)
+feeds_primary_claim: false
+feeds_primary_rulebook: false
+role: [alternative_formal_A, alternative_audited_predictor]
+encoder:
+  architecture: resnet50
+  weights: torchvision_IMAGENET1K_V2
+  weights_sha256: "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"   # resnet50-11ad3fa6.pth; registry/weights.yaml (verify-torch-weights)
+  frozen: true
+  output: penultimate_global_average_pool_2048
+input:
+  image_only: true                              # no mask conditioning in this branch
+  phases: [ED, ES]
+  slices: all_short_axis_slices
+  per_slice_normalization: "1st/99th percentile clip to [0, 1]"
+  resize: [224, 224]
+  interpolation: bilinear
+  channels: grey_replicated_to_3
+  imagenet_normalization: true
+pooling: mean_over_all_slices_of_both_phases_per_patient   # 2048-d per patient
+# protocol-v6.0.1 amendment key (owner issues O1 and O3, 3 October 2026; SPECIFICATION.md 6.0.1 Section 8.4). Amendment
+# scoped (src/tmmri/config.py AMENDMENT_SCOPED_KEYS): excluded from the whole-file `deep_encoder` digest, so the v6.0.0
+# section digest is unchanged; extract-deep-features and fit-deep-encoder name `deep_encoder.tta` explicitly.
+# d4_mean_8: the patient vector is the mean over all ED and ES slices and the 8 in-plane D4 transforms (4 rotations x
+# optional transpose) of the resized 224 x 224 input (src/tmmri/neural/dihedral.py). Orientation before it:
+# tmmri.neural.preprocess.canonical_orientation (in plane, lossless); resize: torchvision bilinear, antialias=True.
+tta: d4_mean_8
+downstream: {standardization: fit_partition_mean_sd, predictor: same_as_configs/formal.yaml#audited_predictor, transition: same_as_configs/transition.yaml}
+runtime:
+  container_target: env-gpu
+  compose_profile: gpu
+  torch: "2.14.0+cu126"
+  torchvision: "0.29.0+cu126"
+  deterministic_algorithms: true
+  cudnn_benchmark: false
+  precision: fp32
+  batch_size: 32

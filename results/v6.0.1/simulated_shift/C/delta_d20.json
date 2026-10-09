@@ -1,0 +1,206 @@
+{
+  "accuracy": {
+    "accuracy_alternative": 0.4,
+    "accuracy_reference": 0.36,
+    "ci_lower": -0.06,
+    "ci_upper": 0.13999999999999996,
+    "counts": {
+      "n_evaluable_paired": 50,
+      "n_no_decision_alternative": 0,
+      "n_no_decision_reference": 0,
+      "n_reference_unknown": 0,
+      "n_rows": 50
+    },
+    "delta_accuracy": 0.040000000000000036,
+    "interval": "percentile_95",
+    "n_boot": 2000,
+    "n_boot_valid": 2000,
+    "n_changed_decisions": 10,
+    "n_clusters": 50,
+    "paired": "same cluster draw for both conditions",
+    "reason": null,
+    "seed": 20260928,
+    "status": "EVALUATED",
+    "unit": "cluster_id",
+    "valid_fraction": 1.0
+  },
+  "analysis": "S6_simulated_acquisition_shift",
+  "analysis_label": "registered after unblinding",
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "comparison": "perturbed (the frozen representation on the resampled images) minus unperturbed (its recorded outputs on acdc_test)",
+  "d20_bundle_sha256": "617382a030eb6415de4f379e5e1dd33be49e77bd960a85140eccbb5045f5d089",
+  "data_centric_config_digest": "bc834e6fe165cc1c81d0e8a3398decf6a47141f5573ec945c0ddccc7d4e5fa94",
+  "data_centric_sha256": "830ce834980e5c9c5a242c7ec3b42b978b5ca8a1337c293840fbe959756dfe9c",
+  "environment": {
+    "cuda_runtime": "12.6",
+    "cudnn": 91002,
+    "device": "cuda",
+    "driver_version": "582.66",
+    "gpu": {
+      "capability": "6.1",
+      "index": 0,
+      "name": "NVIDIA GeForce GTX 1080",
+      "total_memory_bytes": 8589672448,
+      "uuid": "80762a49-15f1-a88d-c61a-e608e7949201"
+    },
+    "numerics": {
+      "allow_tf32": {
+        "cuda.matmul.allow_tf32": false,
+        "cudnn.allow_tf32": false
+      },
+      "cublas_workspace_config": ":4096:8",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_algorithms": true,
+      "eager_mode": true,
+      "float32_matmul_precision": "highest",
+      "fp32_precision": {
+        "backends": "ieee",
+        "backends.cuda.matmul": "ieee",
+        "backends.cudnn": "ieee",
+        "backends.cudnn.conv": "ieee",
+        "backends.cudnn.rnn": "ieee"
+      },
+      "precision": "fp32_ieee",
+      "tf32_enabled": false
+    },
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "torch": "2.14.0+cu126",
+    "torchvision": "0.29.0+cu126"
+  },
+  "filter": {
+    "encoder_id": "final",
+    "model_id": "d20_predictor",
+    "seed": -1
+  },
+  "n_cases": 50,
+  "n_feature_failures": 0,
+  "outputs": [
+    "run:simulated_shift/C/deep_encoder/features/A_D20_acdc_test.parquet",
+    "run:simulated_shift/C/deep_encoder/features/A_D20_acdc_test_failures.parquet",
+    "run:simulated_shift/C/deep_encoder/features/A_D20_acdc_test_extractor.json",
+    "run:simulated_shift/C/deep_encoder/bhat_acdc_test_unperturbed.parquet",
+    "run:simulated_shift/C/deep_encoder/bhat_acdc_test.parquet",
+    "run:simulated_shift/C/deep_encoder/predictions_acdc_test_unperturbed.parquet",
+    "run:simulated_shift/C/deep_encoder/predictions_acdc_test.parquet"
+  ],
+  "partition": "acdc_test",
+  "representation": "d20",
+  "rho": {
+    "ci_lower": -0.07976996018736157,
+    "ci_upper": -0.01601604261131518,
+    "delta_rho": -0.044338196248623576,
+    "delta_rho_j": {
+      "lv_edv_ml": {
+        "ci_lower": -0.16091080348009157,
+        "ci_upper": 0.002362768380058656,
+        "estimate": -0.07068309301691178,
+        "n_boot_valid": 2000
+      },
+      "lv_ef_percent": {
+        "ci_lower": -0.10421645995570923,
+        "ci_upper": 0.026645699452821518,
+        "estimate": -0.035921693569810675,
+        "n_boot_valid": 2000
+      },
+      "lv_esv_ml": {
+        "ci_lower": -0.08698276762249449,
+        "ci_upper": 0.03790938619551271,
+        "estimate": -0.019903024627449528,
+        "n_boot_valid": 2000
+      },
+      "lv_myocardial_mass_ed_g": {
+        "ci_lower": -0.258574458397059,
+        "ci_upper": -0.053907262606718485,
+        "estimate": -0.147089706910689,
+        "n_boot_valid": 2000
+      },
+      "rv_edv_ml": {
+        "ci_lower": -0.05293668360422572,
+        "ci_upper": 0.04023840774592953,
+        "estimate": -0.0031270122781676957,
+        "n_boot_valid": 2000
+      },
+      "rv_ef_percent": {
+        "ci_lower": -0.08123605118540998,
+        "ci_upper": 0.04104045946675878,
+        "estimate": -0.006753282507483416,
+        "n_boot_valid": 2000
+      },
+      "rv_esv_ml": {
+        "ci_lower": -0.07384876005484056,
+        "ci_upper": 0.006127612355992481,
+        "estimate": -0.026889560829852943,
+        "n_boot_valid": 2000
+      }
+    },
+    "estimable_targets": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "family": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "interval": "percentile_95",
+    "min_estimable": 5,
+    "n_boot": 2000,
+    "n_boot_valid": 2000,
+    "n_clusters": 50,
+    "n_rows": 50,
+    "n_rows_paired_per_target": {
+      "lv_edv_ml": 50,
+      "lv_ef_percent": 50,
+      "lv_esv_ml": 50,
+      "lv_myocardial_mass_ed_g": 50,
+      "rv_edv_ml": 50,
+      "rv_ef_percent": 50,
+      "rv_esv_ml": 50
+    },
+    "n_units": 50,
+    "paired": "same cluster draw for both conditions",
+    "reason": null,
+    "rho_alternative": -0.006737722746765111,
+    "rho_j_alternative": {
+      "lv_edv_ml": 0.003650737316774455,
+      "lv_ef_percent": -0.006875880106778087,
+      "lv_esv_ml": 0.10948581331450635,
+      "lv_myocardial_mass_ed_g": -0.09883181513775119,
+      "rv_edv_ml": 0.02807643629728085,
+      "rv_ef_percent": -0.1509161538438637,
+      "rv_esv_ml": 0.06824680293247554
+    },
+    "rho_j_reference": {
+      "lv_edv_ml": 0.07433383033368623,
+      "lv_ef_percent": 0.029045813463032588,
+      "lv_esv_ml": 0.12938883794195588,
+      "lv_myocardial_mass_ed_g": 0.04825789177293782,
+      "rv_edv_ml": 0.031203448575448545,
+      "rv_ef_percent": -0.14416287133638028,
+      "rv_esv_ml": 0.09513636376232848
+    },
+    "rho_reference": 0.03760047350185847,
+    "seed": 20260928,
+    "status": "EVALUATED",
+    "valid_fraction": 1.0
+  },
+  "study_config_hash": "0eeb571a66d0338cf46bce34a9aa58327f3c659b59d1771d14d68ec5ad5fc11f",
+  "target_spacing_mm": [
+    1.4843999147415161,
+    1.4843997359275818,
+    9.999999991007218
+  ],
+  "tta": "d4_mean_8",
+  "vendor": "C"
+}

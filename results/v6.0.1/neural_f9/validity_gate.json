@@ -1,0 +1,381 @@
+{
+  "checks": [
+    {
+      "check": "oof_macro_f1",
+      "coverage_complete": true,
+      "detail": {
+        "chance_level": 0.2,
+        "classes": [
+          "DCM",
+          "HCM",
+          "MINF",
+          "NOR",
+          "RV"
+        ],
+        "macro_f1": 0.5421231127113479,
+        "missing": [],
+        "n_dev_patients": 98,
+        "n_missing": 0,
+        "n_not_development": 0,
+        "n_repeated": 0,
+        "n_rows": 98,
+        "n_without_reference": 0,
+        "not_development": [],
+        "repeated": []
+      },
+      "observed": 0.5421231127113479,
+      "passed": true,
+      "threshold": 0.3
+    },
+    {
+      "check": "refit_training_loss_decreased",
+      "failed_fits": [],
+      "fits": {
+        "0890dcfa438e38be": {
+          "epoch_1": 1.623161369562149,
+          "final_epoch": 0.5053230136632919,
+          "n_epochs": 14,
+          "passed": true,
+          "reason": null
+        },
+        "56b30c5870494b83": {
+          "epoch_1": 1.6352273868771203,
+          "final_epoch": 1.084139258035823,
+          "n_epochs": 12,
+          "passed": true,
+          "reason": null
+        },
+        "5f22fff31750f4c9": {
+          "epoch_1": 1.6378962637977417,
+          "final_epoch": 0.2681773774097704,
+          "n_epochs": 21,
+          "passed": true,
+          "reason": null
+        },
+        "6744864dc26bb3c9": {
+          "epoch_1": 1.633356789569373,
+          "final_epoch": 0.5438363221563699,
+          "n_epochs": 21,
+          "passed": true,
+          "reason": null
+        },
+        "7581584233dc31c4": {
+          "epoch_1": 1.619810131284437,
+          "final_epoch": 0.5175538852468049,
+          "n_epochs": 18,
+          "passed": true,
+          "reason": null
+        },
+        "e79ace442df8fba1": {
+          "epoch_1": 1.6221308646711303,
+          "final_epoch": 0.33381486848205616,
+          "n_epochs": 29,
+          "passed": true,
+          "reason": null
+        }
+      },
+      "passed": true,
+      "rule": "final_epoch_below_epoch_1"
+    },
+    {
+      "check": "nonzero_parameter_change",
+      "failed_fits": [],
+      "fits": {
+        "0890dcfa438e38be": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.004508610814809799,
+            "backbone.layer4.1.conv2.weight": 0.004192713648080826
+          }
+        },
+        "110e3540fd4f03c4": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0017055802745744586,
+            "backbone.layer4.1.conv2.weight": 0.0014484971761703491
+          }
+        },
+        "20eaaf2c5a9785c2": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.002992263063788414,
+            "backbone.layer4.1.conv2.weight": 0.0030295755714178085
+          }
+        },
+        "2b7d847e24906c1f": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.003315919078886509,
+            "backbone.layer4.1.conv2.weight": 0.004307740367949009
+          }
+        },
+        "2f381f62eaaed9aa": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0022716745734214783,
+            "backbone.layer4.1.conv2.weight": 0.0024003740400075912
+          }
+        },
+        "3d29ac34b875457c": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0034133465960621834,
+            "backbone.layer4.1.conv2.weight": 0.0036208275705575943
+          }
+        },
+        "3d393ab53c823059": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0016928985714912415,
+            "backbone.layer4.1.conv2.weight": 0.0019177719950675964
+          }
+        },
+        "56b30c5870494b83": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0038304002955555916,
+            "backbone.layer4.1.conv2.weight": 0.003915971145033836
+          }
+        },
+        "5f22fff31750f4c9": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.005090989638119936,
+            "backbone.layer4.1.conv2.weight": 0.004340356681495905
+          }
+        },
+        "6744864dc26bb3c9": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.004963260609656572,
+            "backbone.layer4.1.conv2.weight": 0.00452071987092495
+          }
+        },
+        "692fa3221e977464": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.004199739545583725,
+            "backbone.layer4.1.conv2.weight": 0.004560401663184166
+          }
+        },
+        "6de28e184019dd4f": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.002364030107855797,
+            "backbone.layer4.1.conv2.weight": 0.0026435041800141335
+          }
+        },
+        "7581584233dc31c4": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0024978844448924065,
+            "backbone.layer4.1.conv2.weight": 0.002272269455716014
+          }
+        },
+        "87502d0174e945f2": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0021292706951498985,
+            "backbone.layer4.1.conv2.weight": 0.0020415522158145905
+          }
+        },
+        "962d6bc5703a6a40": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0026138443499803543,
+            "backbone.layer4.1.conv2.weight": 0.002049364149570465
+          }
+        },
+        "a3c9d4d080984422": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.004141609184443951,
+            "backbone.layer4.1.conv2.weight": 0.003776494413614273
+          }
+        },
+        "a6b7d76bc860f94b": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0033146273344755173,
+            "backbone.layer4.1.conv2.weight": 0.0036778170615434647
+          }
+        },
+        "c6262126f2143024": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0047868527472019196,
+            "backbone.layer4.1.conv2.weight": 0.0041166916489601135
+          }
+        },
+        "c8f124a6337427c1": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.002120472490787506,
+            "backbone.layer4.1.conv2.weight": 0.001795604475773871
+          }
+        },
+        "d18ef57729179aa1": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0030396878719329834,
+            "backbone.layer4.1.conv2.weight": 0.0030989274382591248
+          }
+        },
+        "d98951b706c5e413": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0034739049151539803,
+            "backbone.layer4.1.conv2.weight": 0.0028492622077465057
+          }
+        },
+        "e4b53e3c4ccf53b4": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0027094362303614616,
+            "backbone.layer4.1.conv2.weight": 0.0024434803053736687
+          }
+        },
+        "e79ace442df8fba1": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0027235718443989754,
+            "backbone.layer4.1.conv2.weight": 0.0025171730667352676
+          }
+        },
+        "f1431e919800fc5f": {
+          "bn_running_statistics_unchanged": true,
+          "frozen_weights_unchanged": true,
+          "passed": true,
+          "reason": null,
+          "unfrozen_conv_max_abs_change": {
+            "backbone.layer3.1.conv2.weight": 0.0032197367399930954,
+            "backbone.layer4.1.conv2.weight": 0.0028422214090824127
+          }
+        }
+      },
+      "passed": true,
+      "rule": "nonzero_in_every_unfrozen_block"
+    }
+  ],
+  "failed_checks": [],
+  "gate": {
+    "min_oof_macro_f1": 0.3,
+    "on_failure": {
+      "reason": "PRE_EVALUATION_BUG_CHECK",
+      "report": "neural_f9/validity_gate.json",
+      "rule": "NEURAL-TM-1.0 pre-evaluation bug rule: fix the code, invalidate the affected development artifacts and rerun them under recorded code changes; a failure never changes a hyperparameter, a seed or a value of this gate"
+    },
+    "oof_predictions": "neural_f9/predictions_acdc_dev.parquet",
+    "parameter_change": "nonzero_in_every_unfrozen_block",
+    "seed": "primary",
+    "training_loss": "final_epoch_below_epoch_1"
+  },
+  "oof_predictions": {
+    "path": "run:neural_f9/predictions_acdc_dev.parquet",
+    "sha256": "81b39673a8a07bb016cd609507eccdc47dc6fc9da818de25f4b72d1d1a4eb909",
+    "stage": "infer-f9:acdc_dev"
+  },
+  "passed": true,
+  "refits": [
+    "0890dcfa438e38be",
+    "56b30c5870494b83",
+    "5f22fff31750f4c9",
+    "6744864dc26bb3c9",
+    "7581584233dc31c4",
+    "e79ace442df8fba1"
+  ],
+  "role": "pre-evaluation bug check; never a tuning loop",
+  "run_id": "v6-replication-20261003-1241",
+  "schema": "tmmri.f9_validity_gate/1",
+  "seed": 20261011,
+  "selected_fits": [
+    "110e3540fd4f03c4",
+    "20eaaf2c5a9785c2",
+    "2b7d847e24906c1f",
+    "2f381f62eaaed9aa",
+    "3d29ac34b875457c",
+    "3d393ab53c823059",
+    "692fa3221e977464",
+    "6de28e184019dd4f",
+    "87502d0174e945f2",
+    "962d6bc5703a6a40",
+    "a3c9d4d080984422",
+    "a6b7d76bc860f94b",
+    "c6262126f2143024",
+    "c8f124a6337427c1",
+    "d18ef57729179aa1",
+    "d98951b706c5e413",
+    "e4b53e3c4ccf53b4",
+    "f1431e919800fc5f"
+  ],
+  "training_config_sha256": "c7cfd681a671554d8ca05719b6461dbaa0676a47d3557335c3586c2374040d4a"
+}

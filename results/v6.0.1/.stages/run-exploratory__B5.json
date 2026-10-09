@@ -1,0 +1,58 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "9fc8732a21420a741b4a2e588bdc00847c94ef60fbcd0c131807870a86928e93",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:exploratory/B5/cells.csv": "8888c58c4050f2522f8cf66065a860ea70183d189266574fb8dafd71f61c5759",
+      "run:exploratory/B5/cells.parquet": "6f31751adb0aac5460692ca440b6db4ecc3a88023149a09077b7579c80dc73cf",
+      "run:exploratory/B5/provenance.json": "0ed3ff9a942353e6307b3d2c8f958cd699941ca90310db0ebf1dbe0261d9c399",
+      "run:exploratory/B5/summary.json": "eecf9310e0914e3dc6237f400a6cc7ad5779f723e51b9ec9d721dd4a99753cc2"
+    },
+    "params": {
+      "analysis": "B5",
+      "config_sections": [
+        "rule_policy",
+        "wedd",
+        "registry.primary_rulebook_antecedent_candidates",
+        "registry.features"
+      ],
+      "included": [
+        "synthetic"
+      ],
+      "label": "EXPLORATORY_POST_HOC",
+      "lane_configs": [
+        "configs/exploratory.yaml"
+      ]
+    },
+    "stage": "run-exploratory:B5",
+    "status": "BUILT"
+  },
+  "payload_sha256": "eb0d6adc3bece642edec70a151e8c754e805c18f61226758533df57e8fd0c8d9",
+  "run_log": {
+    "host": "835f3f02adc9",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 399.136,
+    "started_utc": "2026-10-03T14:55:00+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

@@ -1,0 +1,2704 @@
+{
+  "fold_fit_rows": {
+    "1": 78,
+    "2": 78,
+    "3": 78,
+    "4": 78,
+    "5": 80
+  },
+  "fold_trees": {
+    "1": {
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "features": [
+        "lv_edv_ml",
+        "lv_esv_ml",
+        "lv_ef_percent",
+        "rv_edv_ml",
+        "rv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g",
+        "global_wall_thickness_ed_mm",
+        "global_wall_thickening_percent"
+      ],
+      "leaves": [
+        3,
+        4,
+        6,
+        7,
+        10,
+        11,
+        13,
+        14
+      ],
+      "nodes": [
+        {
+          "class_value": [
+            0.1999999999999997,
+            0.19999999999999973,
+            0.19999999999999973,
+            0.19999999999999987,
+            0.1999999999999997
+          ],
+          "depth": 0,
+          "feature": "lv_esv_ml",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 1,
+          "n_fit": 78,
+          "node": 0,
+          "right": 8,
+          "threshold": 80.3350715637207,
+          "weighted_n_fit": 78.00000000000009
+        },
+        {
+          "class_value": [
+            0.0,
+            0.2979942693409741,
+            0.06017191977077363,
+            0.3209169054441262,
+            0.32091690544412593
+          ],
+          "depth": 1,
+          "feature": "rv_esv_ml",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 2,
+          "n_fit": 49,
+          "node": 1,
+          "right": 5,
+          "threshold": 83.00968170166016,
+          "weighted_n_fit": 48.61071428571429
+        },
+        {
+          "class_value": [
+            0.0,
+            0.4506499759268173,
+            0.09099662975445351,
+            0.458353394318729,
+            0.0
+          ],
+          "depth": 2,
+          "feature": "global_wall_thickness_ed_mm",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 3,
+          "n_fit": 33,
+          "node": 2,
+          "right": 4,
+          "threshold": 8.77793025970459,
+          "weighted_n_fit": 32.144047619047626
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.06976744186046509,
+            0.930232558139535,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "NOR",
+          "left": -1,
+          "n_fit": 16,
+          "node": 3,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 13.975000000000005
+        },
+        {
+          "class_value": [
+            0.0,
+            0.7972742759795569,
+            0.10732538330494037,
+            0.09540034071550256,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "HCM",
+          "left": -1,
+          "n_fit": 17,
+          "node": 4,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 18.169047619047618
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.0,
+            0.05263157894736844,
+            0.9473684210526315
+          ],
+          "depth": 2,
+          "feature": "rv_esv_ml",
+          "is_leaf": false,
+          "label": "RV",
+          "left": 6,
+          "n_fit": 16,
+          "node": 5,
+          "right": 7,
+          "threshold": 107.23812103271484,
+          "weighted_n_fit": 16.46666666666666
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.0,
+            0.17241379310344826,
+            0.8275862068965516
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "RV",
+          "left": -1,
+          "n_fit": 5,
+          "node": 6,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 5.026666666666667
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "RV",
+          "left": -1,
+          "n_fit": 11,
+          "node": 7,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 11.439999999999998
+        },
+        {
+          "class_value": [
+            0.5308056872037914,
+            0.03791469194312797,
+            0.4312796208530805,
+            0.0,
+            0.0
+          ],
+          "depth": 1,
+          "feature": "lv_edv_ml",
+          "is_leaf": false,
+          "label": "DCM",
+          "left": 9,
+          "n_fit": 29,
+          "node": 8,
+          "right": 12,
+          "threshold": 183.54373931884766,
+          "weighted_n_fit": 29.38928571428571
+        },
+        {
+          "class_value": [
+            0.0,
+            0.1126760563380282,
+            0.8873239436619719,
+            0.0,
+            0.0
+          ],
+          "depth": 2,
+          "feature": "global_wall_thickening_percent",
+          "is_leaf": false,
+          "label": "MINF",
+          "left": 10,
+          "n_fit": 10,
+          "node": 9,
+          "right": 11,
+          "threshold": 36.56343650817871,
+          "weighted_n_fit": 9.889285714285712
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "MINF",
+          "left": -1,
+          "n_fit": 5,
+          "node": 10,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 4.875
+        },
+        {
+          "class_value": [
+            0.0,
+            0.22222222222222224,
+            0.7777777777777778,
+            0.0,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "MINF",
+          "left": -1,
+          "n_fit": 5,
+          "node": 11,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 5.014285714285714
+        },
+        {
+          "class_value": [
+            0.8000000000000002,
+            0.0,
+            0.2000000000000001,
+            0.0,
+            0.0
+          ],
+          "depth": 2,
+          "feature": "rv_esv_ml",
+          "is_leaf": false,
+          "label": "DCM",
+          "left": 13,
+          "n_fit": 19,
+          "node": 12,
+          "right": 14,
+          "threshold": 62.205230712890625,
+          "weighted_n_fit": 19.49999999999999
+        },
+        {
+          "class_value": [
+            0.5161290322580645,
+            0.0,
+            0.48387096774193544,
+            0.0,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "DCM",
+          "left": -1,
+          "n_fit": 6,
+          "node": 13,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 6.045
+        },
+        {
+          "class_value": [
+            0.9275362318840579,
+            0.0,
+            0.07246376811594203,
+            0.0,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "DCM",
+          "left": -1,
+          "n_fit": 13,
+          "node": 14,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 13.454999999999998
+        }
+      ],
+      "params": {
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced",
+        "criterion": "gini",
+        "max_depth": 3,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 5,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 20260928,
+        "splitter": "best"
+      },
+      "rules": [
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 80.3350715637207
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": "<=",
+              "threshold": 83.00968170166016
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": "<=",
+              "threshold": 8.77793025970459
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": 8.77793025970459,
+              "low": null,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 80.3350715637207,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 83.00968170166016,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "NOR",
+          "leaf": 3,
+          "text": "IF lv_esv_ml <= 80.3351 mL AND rv_esv_ml <= 83.0097 mL AND global_wall_thickness_ed_mm <= 8.77793 mm THEN d_model = NOR"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 80.3350715637207
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": "<=",
+              "threshold": 83.00968170166016
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": ">",
+              "threshold": 8.77793025970459
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 8.77793025970459,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 80.3350715637207,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 83.00968170166016,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "HCM",
+          "leaf": 4,
+          "text": "IF lv_esv_ml <= 80.3351 mL AND rv_esv_ml <= 83.0097 mL AND global_wall_thickness_ed_mm > 8.77793 mm THEN d_model = HCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 80.3350715637207
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": ">",
+              "threshold": 83.00968170166016
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": "<=",
+              "threshold": 107.23812103271484
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 80.3350715637207,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 107.23812103271484,
+              "low": 83.00968170166016,
+              "unit": "mL"
+            }
+          },
+          "label": "RV",
+          "leaf": 6,
+          "text": "IF lv_esv_ml <= 80.3351 mL AND 83.0097 mL < rv_esv_ml <= 107.238 mL THEN d_model = RV"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 80.3350715637207
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": ">",
+              "threshold": 83.00968170166016
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": ">",
+              "threshold": 107.23812103271484
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 80.3350715637207,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 107.23812103271484,
+              "unit": "mL"
+            }
+          },
+          "label": "RV",
+          "leaf": 7,
+          "text": "IF lv_esv_ml <= 80.3351 mL AND rv_esv_ml > 107.238 mL THEN d_model = RV"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 80.3350715637207
+            },
+            {
+              "feature": "lv_edv_ml",
+              "op": "<=",
+              "threshold": 183.54373931884766
+            },
+            {
+              "feature": "global_wall_thickening_percent",
+              "op": "<=",
+              "threshold": 36.56343650817871
+            }
+          ],
+          "intervals": {
+            "global_wall_thickening_percent": {
+              "closed": "(low, high]",
+              "high": 36.56343650817871,
+              "low": null,
+              "unit": "percent"
+            },
+            "lv_edv_ml": {
+              "closed": "(low, high]",
+              "high": 183.54373931884766,
+              "low": null,
+              "unit": "mL"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 80.3350715637207,
+              "unit": "mL"
+            }
+          },
+          "label": "MINF",
+          "leaf": 10,
+          "text": "IF lv_edv_ml <= 183.544 mL AND lv_esv_ml > 80.3351 mL AND global_wall_thickening_percent <= 36.5634 percent THEN d_model = MINF"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 80.3350715637207
+            },
+            {
+              "feature": "lv_edv_ml",
+              "op": "<=",
+              "threshold": 183.54373931884766
+            },
+            {
+              "feature": "global_wall_thickening_percent",
+              "op": ">",
+              "threshold": 36.56343650817871
+            }
+          ],
+          "intervals": {
+            "global_wall_thickening_percent": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 36.56343650817871,
+              "unit": "percent"
+            },
+            "lv_edv_ml": {
+              "closed": "(low, high]",
+              "high": 183.54373931884766,
+              "low": null,
+              "unit": "mL"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 80.3350715637207,
+              "unit": "mL"
+            }
+          },
+          "label": "MINF",
+          "leaf": 11,
+          "text": "IF lv_edv_ml <= 183.544 mL AND lv_esv_ml > 80.3351 mL AND global_wall_thickening_percent > 36.5634 percent THEN d_model = MINF"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 80.3350715637207
+            },
+            {
+              "feature": "lv_edv_ml",
+              "op": ">",
+              "threshold": 183.54373931884766
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": "<=",
+              "threshold": 62.205230712890625
+            }
+          ],
+          "intervals": {
+            "lv_edv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 183.54373931884766,
+              "unit": "mL"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 80.3350715637207,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 62.205230712890625,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "DCM",
+          "leaf": 13,
+          "text": "IF lv_edv_ml > 183.544 mL AND lv_esv_ml > 80.3351 mL AND rv_esv_ml <= 62.2052 mL THEN d_model = DCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 80.3350715637207
+            },
+            {
+              "feature": "lv_edv_ml",
+              "op": ">",
+              "threshold": 183.54373931884766
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": ">",
+              "threshold": 62.205230712890625
+            }
+          ],
+          "intervals": {
+            "lv_edv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 183.54373931884766,
+              "unit": "mL"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 80.3350715637207,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 62.205230712890625,
+              "unit": "mL"
+            }
+          },
+          "label": "DCM",
+          "leaf": 14,
+          "text": "IF lv_edv_ml > 183.544 mL AND lv_esv_ml > 80.3351 mL AND rv_esv_ml > 62.2052 mL THEN d_model = DCM"
+        }
+      ],
+      "schema": "tmmri.cart_f8_tree/1",
+      "sklearn_version": "1.9.1"
+    },
+    "2": {
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "features": [
+        "lv_edv_ml",
+        "lv_esv_ml",
+        "lv_ef_percent",
+        "rv_edv_ml",
+        "rv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g",
+        "global_wall_thickness_ed_mm",
+        "global_wall_thickening_percent"
+      ],
+      "leaves": [
+        3,
+        4,
+        6,
+        7,
+        9,
+        11,
+        12
+      ],
+      "nodes": [
+        {
+          "class_value": [
+            0.19999999999999993,
+            0.19999999999999996,
+            0.19999999999999993,
+            0.2000000000000001,
+            0.19999999999999996
+          ],
+          "depth": 0,
+          "feature": "lv_esv_ml",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 1,
+          "n_fit": 78,
+          "node": 0,
+          "right": 8,
+          "threshold": 83.10433959960938,
+          "weighted_n_fit": 78.0
+        },
+        {
+          "class_value": [
+            0.0,
+            0.3125620162730699,
+            0.0444532645366144,
+            0.3333994840246081,
+            0.30958523516570735
+          ],
+          "depth": 1,
+          "feature": "global_wall_thickness_ed_mm",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 2,
+          "n_fit": 48,
+          "node": 1,
+          "right": 5,
+          "threshold": 9.29645299911499,
+          "weighted_n_fit": 46.790714285714294
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.06645569620253164,
+            0.470727848101266,
+            0.4628164556962024
+          ],
+          "depth": 2,
+          "feature": "rv_esv_ml",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 3,
+          "n_fit": 32,
+          "node": 2,
+          "right": 4,
+          "threshold": 88.75283813476562,
+          "weighted_n_fit": 31.29904761904762
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.13043478260869562,
+            0.8695652173913044,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "NOR",
+          "left": -1,
+          "n_fit": 18,
+          "node": 3,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 15.94666666666667
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.0,
+            0.05645161290322582,
+            0.9435483870967741
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "RV",
+          "left": -1,
+          "n_fit": 14,
+          "node": 4,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 15.35238095238095
+        },
+        {
+          "class_value": [
+            0.0,
+            0.9440559440559441,
+            0.0,
+            0.05594405594405596,
+            0.0
+          ],
+          "depth": 2,
+          "feature": "rv_esv_ml",
+          "is_leaf": false,
+          "label": "HCM",
+          "left": 6,
+          "n_fit": 16,
+          "node": 5,
+          "right": 7,
+          "threshold": 49.72538185119629,
+          "weighted_n_fit": 15.491666666666664
+        },
+        {
+          "class_value": [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "HCM",
+          "left": -1,
+          "n_fit": 11,
+          "node": 6,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 10.724999999999998
+        },
+        {
+          "class_value": [
+            0.0,
+            0.8181818181818181,
+            0.0,
+            0.18181818181818182,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "HCM",
+          "left": -1,
+          "n_fit": 5,
+          "node": 7,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 4.766666666666667
+        },
+        {
+          "class_value": [
+            0.4998512347515621,
+            0.031240702171972643,
+            0.43320440345135386,
+            0.0,
+            0.03570365962511159
+          ],
+          "depth": 1,
+          "feature": "rv_esv_ml",
+          "is_leaf": false,
+          "label": "DCM",
+          "left": 9,
+          "n_fit": 30,
+          "node": 8,
+          "right": 10,
+          "threshold": 56.98326873779297,
+          "weighted_n_fit": 31.2092857142857
+        },
+        {
+          "class_value": [
+            0.0,
+            0.11811023622047243,
+            0.8818897637795275,
+            0.0,
+            0.0
+          ],
+          "depth": 2,
+          "feature": null,
+          "is_leaf": true,
+          "label": "MINF",
+          "left": -1,
+          "n_fit": 8,
+          "node": 9,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 8.255
+        },
+        {
+          "class_value": [
+            0.6796116504854369,
+            0.0,
+            0.2718446601941749,
+            0.0,
+            0.048543689320388377
+          ],
+          "depth": 2,
+          "feature": "lv_esv_ml",
+          "is_leaf": false,
+          "label": "DCM",
+          "left": 11,
+          "n_fit": 22,
+          "node": 10,
+          "right": 12,
+          "threshold": 125.90580749511719,
+          "weighted_n_fit": 22.954285714285703
+        },
+        {
+          "class_value": [
+            0.2828282828282828,
+            0.0,
+            0.5656565656565656,
+            0.0,
+            0.15151515151515152
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "MINF",
+          "left": -1,
+          "n_fit": 7,
+          "node": 11,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 7.354285714285714
+        },
+        {
+          "class_value": [
+            0.8666666666666667,
+            0.0,
+            0.1333333333333334,
+            0.0,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "DCM",
+          "left": -1,
+          "n_fit": 15,
+          "node": 12,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 15.599999999999994
+        }
+      ],
+      "params": {
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced",
+        "criterion": "gini",
+        "max_depth": 3,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 5,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 20260928,
+        "splitter": "best"
+      },
+      "rules": [
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 83.10433959960938
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": "<=",
+              "threshold": 9.29645299911499
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": "<=",
+              "threshold": 88.75283813476562
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": 9.29645299911499,
+              "low": null,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 83.10433959960938,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 88.75283813476562,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "NOR",
+          "leaf": 3,
+          "text": "IF lv_esv_ml <= 83.1043 mL AND rv_esv_ml <= 88.7528 mL AND global_wall_thickness_ed_mm <= 9.29645 mm THEN d_model = NOR"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 83.10433959960938
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": "<=",
+              "threshold": 9.29645299911499
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": ">",
+              "threshold": 88.75283813476562
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": 9.29645299911499,
+              "low": null,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 83.10433959960938,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 88.75283813476562,
+              "unit": "mL"
+            }
+          },
+          "label": "RV",
+          "leaf": 4,
+          "text": "IF lv_esv_ml <= 83.1043 mL AND rv_esv_ml > 88.7528 mL AND global_wall_thickness_ed_mm <= 9.29645 mm THEN d_model = RV"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 83.10433959960938
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": ">",
+              "threshold": 9.29645299911499
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": "<=",
+              "threshold": 49.72538185119629
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 9.29645299911499,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 83.10433959960938,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 49.72538185119629,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "HCM",
+          "leaf": 6,
+          "text": "IF lv_esv_ml <= 83.1043 mL AND rv_esv_ml <= 49.7254 mL AND global_wall_thickness_ed_mm > 9.29645 mm THEN d_model = HCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 83.10433959960938
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": ">",
+              "threshold": 9.29645299911499
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": ">",
+              "threshold": 49.72538185119629
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 9.29645299911499,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 83.10433959960938,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 49.72538185119629,
+              "unit": "mL"
+            }
+          },
+          "label": "HCM",
+          "leaf": 7,
+          "text": "IF lv_esv_ml <= 83.1043 mL AND rv_esv_ml > 49.7254 mL AND global_wall_thickness_ed_mm > 9.29645 mm THEN d_model = HCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 83.10433959960938
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": "<=",
+              "threshold": 56.98326873779297
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 83.10433959960938,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 56.98326873779297,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "MINF",
+          "leaf": 9,
+          "text": "IF lv_esv_ml > 83.1043 mL AND rv_esv_ml <= 56.9833 mL THEN d_model = MINF"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 83.10433959960938
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": ">",
+              "threshold": 56.98326873779297
+            },
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 125.90580749511719
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 125.90580749511719,
+              "low": 83.10433959960938,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 56.98326873779297,
+              "unit": "mL"
+            }
+          },
+          "label": "MINF",
+          "leaf": 11,
+          "text": "IF 83.1043 mL < lv_esv_ml <= 125.906 mL AND rv_esv_ml > 56.9833 mL THEN d_model = MINF"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 83.10433959960938
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": ">",
+              "threshold": 56.98326873779297
+            },
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 125.90580749511719
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 125.90580749511719,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 56.98326873779297,
+              "unit": "mL"
+            }
+          },
+          "label": "DCM",
+          "leaf": 12,
+          "text": "IF lv_esv_ml > 125.906 mL AND rv_esv_ml > 56.9833 mL THEN d_model = DCM"
+        }
+      ],
+      "schema": "tmmri.cart_f8_tree/1",
+      "sklearn_version": "1.9.1"
+    },
+    "3": {
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "features": [
+        "lv_edv_ml",
+        "lv_esv_ml",
+        "lv_ef_percent",
+        "rv_edv_ml",
+        "rv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g",
+        "global_wall_thickness_ed_mm",
+        "global_wall_thickening_percent"
+      ],
+      "leaves": [
+        3,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "nodes": [
+        {
+          "class_value": [
+            0.19999999999999984,
+            0.19999999999999984,
+            0.19999999999999982,
+            0.19999999999999987,
+            0.19999999999999984
+          ],
+          "depth": 0,
+          "feature": "lv_esv_ml",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 1,
+          "n_fit": 78,
+          "node": 0,
+          "right": 6,
+          "threshold": 83.66164779663086,
+          "weighted_n_fit": 78.00000000000004
+        },
+        {
+          "class_value": [
+            0.0,
+            0.30612244897959173,
+            0.0816326530612245,
+            0.30612244897959184,
+            0.30612244897959173
+          ],
+          "depth": 1,
+          "feature": "rv_edv_ml",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 2,
+          "n_fit": 51,
+          "node": 1,
+          "right": 5,
+          "threshold": 175.6346893310547,
+          "weighted_n_fit": 50.96
+        },
+        {
+          "class_value": [
+            0.0,
+            0.41501976284584974,
+            0.1106719367588933,
+            0.4150197628458498,
+            0.05928853754940712
+          ],
+          "depth": 2,
+          "feature": "global_wall_thickness_ed_mm",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 3,
+          "n_fit": 39,
+          "node": 2,
+          "right": 4,
+          "threshold": 9.052577495574951,
+          "weighted_n_fit": 37.58857142857143
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.15501165501165504,
+            0.7342657342657343,
+            0.11072261072261073
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "NOR",
+          "left": -1,
+          "n_fit": 23,
+          "node": 3,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 20.12751879699248
+        },
+        {
+          "class_value": [
+            0.0,
+            0.8934169278996864,
+            0.05956112852664578,
+            0.04702194357366772,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "HCM",
+          "left": -1,
+          "n_fit": 16,
+          "node": 4,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 17.461052631578944
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "depth": 2,
+          "feature": null,
+          "is_leaf": true,
+          "label": "RV",
+          "left": -1,
+          "n_fit": 12,
+          "node": 5,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 13.371428571428568
+        },
+        {
+          "class_value": [
+            0.5769230769230766,
+            0.0,
+            0.4230769230769229,
+            0.0,
+            0.0
+          ],
+          "depth": 1,
+          "feature": "rv_ef_percent",
+          "is_leaf": false,
+          "label": "DCM",
+          "left": 7,
+          "n_fit": 27,
+          "node": 6,
+          "right": 8,
+          "threshold": 41.29708480834961,
+          "weighted_n_fit": 27.040000000000006
+        },
+        {
+          "class_value": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "depth": 2,
+          "feature": null,
+          "is_leaf": true,
+          "label": "DCM",
+          "left": -1,
+          "n_fit": 10,
+          "node": 7,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 9.749999999999998
+        },
+        {
+          "class_value": [
+            0.3383458646616541,
+            0.0,
+            0.6616541353383457,
+            0.0,
+            0.0
+          ],
+          "depth": 2,
+          "feature": "lv_myocardial_mass_ed_g",
+          "is_leaf": false,
+          "label": "MINF",
+          "left": 9,
+          "n_fit": 17,
+          "node": 8,
+          "right": 10,
+          "threshold": 142.57357025146484,
+          "weighted_n_fit": 17.29
+        },
+        {
+          "class_value": [
+            0.10489510489510491,
+            0.0,
+            0.8951048951048953,
+            0.0,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "MINF",
+          "left": -1,
+          "n_fit": 9,
+          "node": 9,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 9.294999999999998
+        },
+        {
+          "class_value": [
+            0.6097560975609756,
+            0.0,
+            0.3902439024390244,
+            0.0,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "DCM",
+          "left": -1,
+          "n_fit": 8,
+          "node": 10,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 7.995
+        }
+      ],
+      "params": {
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced",
+        "criterion": "gini",
+        "max_depth": 3,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 5,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 20260928,
+        "splitter": "best"
+      },
+      "rules": [
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 83.66164779663086
+            },
+            {
+              "feature": "rv_edv_ml",
+              "op": "<=",
+              "threshold": 175.6346893310547
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": "<=",
+              "threshold": 9.052577495574951
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": 9.052577495574951,
+              "low": null,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 83.66164779663086,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_edv_ml": {
+              "closed": "(low, high]",
+              "high": 175.6346893310547,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "NOR",
+          "leaf": 3,
+          "text": "IF lv_esv_ml <= 83.6616 mL AND rv_edv_ml <= 175.635 mL AND global_wall_thickness_ed_mm <= 9.05258 mm THEN d_model = NOR"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 83.66164779663086
+            },
+            {
+              "feature": "rv_edv_ml",
+              "op": "<=",
+              "threshold": 175.6346893310547
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": ">",
+              "threshold": 9.052577495574951
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 9.052577495574951,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 83.66164779663086,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_edv_ml": {
+              "closed": "(low, high]",
+              "high": 175.6346893310547,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "HCM",
+          "leaf": 4,
+          "text": "IF lv_esv_ml <= 83.6616 mL AND rv_edv_ml <= 175.635 mL AND global_wall_thickness_ed_mm > 9.05258 mm THEN d_model = HCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 83.66164779663086
+            },
+            {
+              "feature": "rv_edv_ml",
+              "op": ">",
+              "threshold": 175.6346893310547
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 83.66164779663086,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_edv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 175.6346893310547,
+              "unit": "mL"
+            }
+          },
+          "label": "RV",
+          "leaf": 5,
+          "text": "IF lv_esv_ml <= 83.6616 mL AND rv_edv_ml > 175.635 mL THEN d_model = RV"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 83.66164779663086
+            },
+            {
+              "feature": "rv_ef_percent",
+              "op": "<=",
+              "threshold": 41.29708480834961
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 83.66164779663086,
+              "unit": "mL"
+            },
+            "rv_ef_percent": {
+              "closed": "(low, high]",
+              "high": 41.29708480834961,
+              "low": null,
+              "unit": "percent"
+            }
+          },
+          "label": "DCM",
+          "leaf": 7,
+          "text": "IF lv_esv_ml > 83.6616 mL AND rv_ef_percent <= 41.2971 percent THEN d_model = DCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 83.66164779663086
+            },
+            {
+              "feature": "rv_ef_percent",
+              "op": ">",
+              "threshold": 41.29708480834961
+            },
+            {
+              "feature": "lv_myocardial_mass_ed_g",
+              "op": "<=",
+              "threshold": 142.57357025146484
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 83.66164779663086,
+              "unit": "mL"
+            },
+            "lv_myocardial_mass_ed_g": {
+              "closed": "(low, high]",
+              "high": 142.57357025146484,
+              "low": null,
+              "unit": "g"
+            },
+            "rv_ef_percent": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 41.29708480834961,
+              "unit": "percent"
+            }
+          },
+          "label": "MINF",
+          "leaf": 9,
+          "text": "IF lv_esv_ml > 83.6616 mL AND rv_ef_percent > 41.2971 percent AND lv_myocardial_mass_ed_g <= 142.574 g THEN d_model = MINF"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 83.66164779663086
+            },
+            {
+              "feature": "rv_ef_percent",
+              "op": ">",
+              "threshold": 41.29708480834961
+            },
+            {
+              "feature": "lv_myocardial_mass_ed_g",
+              "op": ">",
+              "threshold": 142.57357025146484
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 83.66164779663086,
+              "unit": "mL"
+            },
+            "lv_myocardial_mass_ed_g": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 142.57357025146484,
+              "unit": "g"
+            },
+            "rv_ef_percent": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 41.29708480834961,
+              "unit": "percent"
+            }
+          },
+          "label": "DCM",
+          "leaf": 10,
+          "text": "IF lv_esv_ml > 83.6616 mL AND rv_ef_percent > 41.2971 percent AND lv_myocardial_mass_ed_g > 142.574 g THEN d_model = DCM"
+        }
+      ],
+      "schema": "tmmri.cart_f8_tree/1",
+      "sklearn_version": "1.9.1"
+    },
+    "4": {
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "features": [
+        "lv_edv_ml",
+        "lv_esv_ml",
+        "lv_ef_percent",
+        "rv_edv_ml",
+        "rv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g",
+        "global_wall_thickness_ed_mm",
+        "global_wall_thickening_percent"
+      ],
+      "leaves": [
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "nodes": [
+        {
+          "class_value": [
+            0.19999999999999984,
+            0.19999999999999993,
+            0.19999999999999984,
+            0.19999999999999987,
+            0.19999999999999984
+          ],
+          "depth": 0,
+          "feature": "lv_esv_ml",
+          "is_leaf": false,
+          "label": "HCM",
+          "left": 1,
+          "n_fit": 78,
+          "node": 0,
+          "right": 6,
+          "threshold": 121.50133514404297,
+          "weighted_n_fit": 78.00000000000004
+        },
+        {
+          "class_value": [
+            0.0,
+            0.26787512588116824,
+            0.21047331319234638,
+            0.2537764350453172,
+            0.26787512588116813
+          ],
+          "depth": 1,
+          "feature": "rv_esv_ml",
+          "is_leaf": false,
+          "label": "HCM",
+          "left": 2,
+          "n_fit": 60,
+          "node": 1,
+          "right": 5,
+          "threshold": 102.46206665039062,
+          "weighted_n_fit": 58.236090225563906
+        },
+        {
+          "class_value": [
+            0.0,
+            0.3477124183006536,
+            0.27320261437908483,
+            0.3294117647058823,
+            0.049673202614379075
+          ],
+          "depth": 2,
+          "feature": "global_wall_thickness_ed_mm",
+          "is_leaf": false,
+          "label": "HCM",
+          "left": 3,
+          "n_fit": 48,
+          "node": 2,
+          "right": 4,
+          "threshold": 9.345364570617676,
+          "weighted_n_fit": 44.86466165413535
+        },
+        {
+          "class_value": [
+            0.0,
+            0.03248656570591109,
+            0.3944797264289203,
+            0.4941377625793845,
+            0.07889594528578409
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "NOR",
+          "left": -1,
+          "n_fit": 30,
+          "node": 3,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 28.246970367094203
+        },
+        {
+          "class_value": [
+            0.0,
+            0.8835374714552627,
+            0.06705418310151547,
+            0.049408345443221924,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "HCM",
+          "left": -1,
+          "n_fit": 18,
+          "node": 4,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 16.617691287041133
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "depth": 2,
+          "feature": null,
+          "is_leaf": true,
+          "label": "RV",
+          "left": -1,
+          "n_fit": 12,
+          "node": 5,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 13.371428571428568
+        },
+        {
+          "class_value": [
+            0.7893175074183976,
+            0.0,
+            0.16913946587537096,
+            0.04154302670623146,
+            0.0
+          ],
+          "depth": 1,
+          "feature": "rv_ef_percent",
+          "is_leaf": false,
+          "label": "DCM",
+          "left": 7,
+          "n_fit": 18,
+          "node": 6,
+          "right": 8,
+          "threshold": 49.40981674194336,
+          "weighted_n_fit": 19.763909774436087
+        },
+        {
+          "class_value": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "depth": 2,
+          "feature": null,
+          "is_leaf": true,
+          "label": "DCM",
+          "left": -1,
+          "n_fit": 13,
+          "node": 7,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 14.485714285714282
+        },
+        {
+          "class_value": [
+            0.2111111111111111,
+            0.0,
+            0.6333333333333333,
+            0.15555555555555556,
+            0.0
+          ],
+          "depth": 2,
+          "feature": null,
+          "is_leaf": true,
+          "label": "MINF",
+          "left": -1,
+          "n_fit": 5,
+          "node": 8,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 5.2781954887218046
+        }
+      ],
+      "params": {
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced",
+        "criterion": "gini",
+        "max_depth": 3,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 5,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 20260928,
+        "splitter": "best"
+      },
+      "rules": [
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 121.50133514404297
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": "<=",
+              "threshold": 102.46206665039062
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": "<=",
+              "threshold": 9.345364570617676
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": 9.345364570617676,
+              "low": null,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 121.50133514404297,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 102.46206665039062,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "NOR",
+          "leaf": 3,
+          "text": "IF lv_esv_ml <= 121.501 mL AND rv_esv_ml <= 102.462 mL AND global_wall_thickness_ed_mm <= 9.34536 mm THEN d_model = NOR"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 121.50133514404297
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": "<=",
+              "threshold": 102.46206665039062
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": ">",
+              "threshold": 9.345364570617676
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 9.345364570617676,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 121.50133514404297,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 102.46206665039062,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "HCM",
+          "leaf": 4,
+          "text": "IF lv_esv_ml <= 121.501 mL AND rv_esv_ml <= 102.462 mL AND global_wall_thickness_ed_mm > 9.34536 mm THEN d_model = HCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 121.50133514404297
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": ">",
+              "threshold": 102.46206665039062
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 121.50133514404297,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 102.46206665039062,
+              "unit": "mL"
+            }
+          },
+          "label": "RV",
+          "leaf": 5,
+          "text": "IF lv_esv_ml <= 121.501 mL AND rv_esv_ml > 102.462 mL THEN d_model = RV"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 121.50133514404297
+            },
+            {
+              "feature": "rv_ef_percent",
+              "op": "<=",
+              "threshold": 49.40981674194336
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 121.50133514404297,
+              "unit": "mL"
+            },
+            "rv_ef_percent": {
+              "closed": "(low, high]",
+              "high": 49.40981674194336,
+              "low": null,
+              "unit": "percent"
+            }
+          },
+          "label": "DCM",
+          "leaf": 7,
+          "text": "IF lv_esv_ml > 121.501 mL AND rv_ef_percent <= 49.4098 percent THEN d_model = DCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 121.50133514404297
+            },
+            {
+              "feature": "rv_ef_percent",
+              "op": ">",
+              "threshold": 49.40981674194336
+            }
+          ],
+          "intervals": {
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 121.50133514404297,
+              "unit": "mL"
+            },
+            "rv_ef_percent": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 49.40981674194336,
+              "unit": "percent"
+            }
+          },
+          "label": "MINF",
+          "leaf": 8,
+          "text": "IF lv_esv_ml > 121.501 mL AND rv_ef_percent > 49.4098 percent THEN d_model = MINF"
+        }
+      ],
+      "schema": "tmmri.cart_f8_tree/1",
+      "sklearn_version": "1.9.1"
+    },
+    "5": {
+      "classes": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "features": [
+        "lv_edv_ml",
+        "lv_esv_ml",
+        "lv_ef_percent",
+        "rv_edv_ml",
+        "rv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g",
+        "global_wall_thickness_ed_mm",
+        "global_wall_thickening_percent"
+      ],
+      "leaves": [
+        3,
+        4,
+        6,
+        7,
+        9,
+        11,
+        12
+      ],
+      "nodes": [
+        {
+          "class_value": [
+            0.20000000000000026,
+            0.20000000000000023,
+            0.20000000000000026,
+            0.2000000000000003,
+            0.20000000000000023
+          ],
+          "depth": 0,
+          "feature": "lv_esv_ml",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 1,
+          "n_fit": 80,
+          "node": 0,
+          "right": 8,
+          "threshold": 68.24340057373047,
+          "weighted_n_fit": 79.9999999999999
+        },
+        {
+          "class_value": [
+            0.0,
+            0.30998509687034276,
+            0.02235469448584203,
+            0.35767511177347255,
+            0.30998509687034276
+          ],
+          "depth": 1,
+          "feature": "global_wall_thickness_ed_mm",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 2,
+          "n_fit": 45,
+          "node": 1,
+          "right": 5,
+          "threshold": 9.235169410705566,
+          "weighted_n_fit": 44.73333333333333
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.03335804299481097,
+            0.5040770941438103,
+            0.4625648628613787
+          ],
+          "depth": 2,
+          "feature": "rv_esv_ml",
+          "is_leaf": false,
+          "label": "NOR",
+          "left": 3,
+          "n_fit": 31,
+          "node": 2,
+          "right": 4,
+          "threshold": 75.90902709960938,
+          "weighted_n_fit": 29.97777777777778
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.0697674418604651,
+            0.9302325581395349,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "NOR",
+          "left": -1,
+          "n_fit": 16,
+          "node": 3,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 14.333333333333337
+        },
+        {
+          "class_value": [
+            0.0,
+            0.0,
+            0.0,
+            0.11363636363636363,
+            0.8863636363636364
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "RV",
+          "left": -1,
+          "n_fit": 15,
+          "node": 4,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 15.644444444444444
+        },
+        {
+          "class_value": [
+            0.0,
+            0.9397590361445782,
+            0.0,
+            0.060240963855421686,
+            0.0
+          ],
+          "depth": 2,
+          "feature": "lv_myocardial_mass_ed_g",
+          "is_leaf": false,
+          "label": "HCM",
+          "left": 6,
+          "n_fit": 14,
+          "node": 5,
+          "right": 7,
+          "threshold": 140.66790771484375,
+          "weighted_n_fit": 14.755555555555555
+        },
+        {
+          "class_value": [
+            0.0,
+            0.8275862068965518,
+            0.0,
+            0.1724137931034483,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "HCM",
+          "left": -1,
+          "n_fit": 5,
+          "node": 6,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 5.155555555555555
+        },
+        {
+          "class_value": [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "HCM",
+          "left": -1,
+          "n_fit": 9,
+          "node": 7,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 9.6
+        },
+        {
+          "class_value": [
+            0.45368620037807184,
+            0.06049149338374291,
+            0.42533081285444235,
+            0.0,
+            0.06049149338374291
+          ],
+          "depth": 1,
+          "feature": "global_wall_thickening_percent",
+          "is_leaf": false,
+          "label": "DCM",
+          "left": 9,
+          "n_fit": 35,
+          "node": 8,
+          "right": 10,
+          "threshold": 11.775081634521484,
+          "weighted_n_fit": 35.266666666666666
+        },
+        {
+          "class_value": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "depth": 2,
+          "feature": null,
+          "is_leaf": true,
+          "label": "DCM",
+          "left": -1,
+          "n_fit": 8,
+          "node": 9,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 8.0
+        },
+        {
+          "class_value": [
+            0.293398533007335,
+            0.07823960880195599,
+            0.5501222493887531,
+            0.0,
+            0.07823960880195599
+          ],
+          "depth": 2,
+          "feature": "lv_myocardial_mass_ed_g",
+          "is_leaf": false,
+          "label": "MINF",
+          "left": 11,
+          "n_fit": 27,
+          "node": 10,
+          "right": 12,
+          "threshold": 145.9941635131836,
+          "weighted_n_fit": 27.266666666666666
+        },
+        {
+          "class_value": [
+            0.11673151750972763,
+            0.0,
+            0.7587548638132295,
+            0.0,
+            0.1245136186770428
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "MINF",
+          "left": -1,
+          "n_fit": 17,
+          "node": 11,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 17.133333333333333
+        },
+        {
+          "class_value": [
+            0.5921052631578948,
+            0.2105263157894737,
+            0.19736842105263158,
+            0.0,
+            0.0
+          ],
+          "depth": 3,
+          "feature": null,
+          "is_leaf": true,
+          "label": "DCM",
+          "left": -1,
+          "n_fit": 10,
+          "node": 12,
+          "right": -1,
+          "threshold": null,
+          "weighted_n_fit": 10.133333333333333
+        }
+      ],
+      "params": {
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced",
+        "criterion": "gini",
+        "max_depth": 3,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 5,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 20260928,
+        "splitter": "best"
+      },
+      "rules": [
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 68.24340057373047
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": "<=",
+              "threshold": 9.235169410705566
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": "<=",
+              "threshold": 75.90902709960938
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": 9.235169410705566,
+              "low": null,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 68.24340057373047,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 75.90902709960938,
+              "low": null,
+              "unit": "mL"
+            }
+          },
+          "label": "NOR",
+          "leaf": 3,
+          "text": "IF lv_esv_ml <= 68.2434 mL AND rv_esv_ml <= 75.909 mL AND global_wall_thickness_ed_mm <= 9.23517 mm THEN d_model = NOR"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 68.24340057373047
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": "<=",
+              "threshold": 9.235169410705566
+            },
+            {
+              "feature": "rv_esv_ml",
+              "op": ">",
+              "threshold": 75.90902709960938
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": 9.235169410705566,
+              "low": null,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 68.24340057373047,
+              "low": null,
+              "unit": "mL"
+            },
+            "rv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 75.90902709960938,
+              "unit": "mL"
+            }
+          },
+          "label": "RV",
+          "leaf": 4,
+          "text": "IF lv_esv_ml <= 68.2434 mL AND rv_esv_ml > 75.909 mL AND global_wall_thickness_ed_mm <= 9.23517 mm THEN d_model = RV"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 68.24340057373047
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": ">",
+              "threshold": 9.235169410705566
+            },
+            {
+              "feature": "lv_myocardial_mass_ed_g",
+              "op": "<=",
+              "threshold": 140.66790771484375
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 9.235169410705566,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 68.24340057373047,
+              "low": null,
+              "unit": "mL"
+            },
+            "lv_myocardial_mass_ed_g": {
+              "closed": "(low, high]",
+              "high": 140.66790771484375,
+              "low": null,
+              "unit": "g"
+            }
+          },
+          "label": "HCM",
+          "leaf": 6,
+          "text": "IF lv_esv_ml <= 68.2434 mL AND lv_myocardial_mass_ed_g <= 140.668 g AND global_wall_thickness_ed_mm > 9.23517 mm THEN d_model = HCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": "<=",
+              "threshold": 68.24340057373047
+            },
+            {
+              "feature": "global_wall_thickness_ed_mm",
+              "op": ">",
+              "threshold": 9.235169410705566
+            },
+            {
+              "feature": "lv_myocardial_mass_ed_g",
+              "op": ">",
+              "threshold": 140.66790771484375
+            }
+          ],
+          "intervals": {
+            "global_wall_thickness_ed_mm": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 9.235169410705566,
+              "unit": "mm"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": 68.24340057373047,
+              "low": null,
+              "unit": "mL"
+            },
+            "lv_myocardial_mass_ed_g": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 140.66790771484375,
+              "unit": "g"
+            }
+          },
+          "label": "HCM",
+          "leaf": 7,
+          "text": "IF lv_esv_ml <= 68.2434 mL AND lv_myocardial_mass_ed_g > 140.668 g AND global_wall_thickness_ed_mm > 9.23517 mm THEN d_model = HCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 68.24340057373047
+            },
+            {
+              "feature": "global_wall_thickening_percent",
+              "op": "<=",
+              "threshold": 11.775081634521484
+            }
+          ],
+          "intervals": {
+            "global_wall_thickening_percent": {
+              "closed": "(low, high]",
+              "high": 11.775081634521484,
+              "low": null,
+              "unit": "percent"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 68.24340057373047,
+              "unit": "mL"
+            }
+          },
+          "label": "DCM",
+          "leaf": 9,
+          "text": "IF lv_esv_ml > 68.2434 mL AND global_wall_thickening_percent <= 11.7751 percent THEN d_model = DCM"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 68.24340057373047
+            },
+            {
+              "feature": "global_wall_thickening_percent",
+              "op": ">",
+              "threshold": 11.775081634521484
+            },
+            {
+              "feature": "lv_myocardial_mass_ed_g",
+              "op": "<=",
+              "threshold": 145.9941635131836
+            }
+          ],
+          "intervals": {
+            "global_wall_thickening_percent": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 11.775081634521484,
+              "unit": "percent"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 68.24340057373047,
+              "unit": "mL"
+            },
+            "lv_myocardial_mass_ed_g": {
+              "closed": "(low, high]",
+              "high": 145.9941635131836,
+              "low": null,
+              "unit": "g"
+            }
+          },
+          "label": "MINF",
+          "leaf": 11,
+          "text": "IF lv_esv_ml > 68.2434 mL AND lv_myocardial_mass_ed_g <= 145.994 g AND global_wall_thickening_percent > 11.7751 percent THEN d_model = MINF"
+        },
+        {
+          "conditions": [
+            {
+              "feature": "lv_esv_ml",
+              "op": ">",
+              "threshold": 68.24340057373047
+            },
+            {
+              "feature": "global_wall_thickening_percent",
+              "op": ">",
+              "threshold": 11.775081634521484
+            },
+            {
+              "feature": "lv_myocardial_mass_ed_g",
+              "op": ">",
+              "threshold": 145.9941635131836
+            }
+          ],
+          "intervals": {
+            "global_wall_thickening_percent": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 11.775081634521484,
+              "unit": "percent"
+            },
+            "lv_esv_ml": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 68.24340057373047,
+              "unit": "mL"
+            },
+            "lv_myocardial_mass_ed_g": {
+              "closed": "(low, high]",
+              "high": null,
+              "low": 145.9941635131836,
+              "unit": "g"
+            }
+          },
+          "label": "DCM",
+          "leaf": 12,
+          "text": "IF lv_esv_ml > 68.2434 mL AND lv_myocardial_mass_ed_g > 145.994 g AND global_wall_thickening_percent > 11.7751 percent THEN d_model = DCM"
+        }
+      ],
+      "schema": "tmmri.cart_f8_tree/1",
+      "sklearn_version": "1.9.1"
+    }
+  },
+  "schema": "tmmri.cart_f8_fold_trees/1"
+}

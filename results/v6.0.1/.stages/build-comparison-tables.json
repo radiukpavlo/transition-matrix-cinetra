@@ -1,0 +1,71 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "0ca851e298e703481400219b05ebbd910319297710efc91e4ada7c09a6210a72",
+    "inputs": {
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:probes/evaluations/d20/acdc_test.json": "5245d9b658c9eb32975e866fb77dbd04255cb8e3befcf2ea9e46fb16fd9c2945",
+      "run:probes/evaluations/d20/mms2_external.json": "eb9c9d31b7b33ffb41e14df72238ad036fb2ff893a9d44a404ec6e5eff5cce5b",
+      "run:probes/evaluations/d20/mms_external.json": "09f354e629f3ca66d5549f8f2710d701b2017e412e8b11377096e8fcd763bf1e",
+      "run:probes/evaluations/f9/acdc_test.json": "eac3e64e47b3d018c0b5447632599d50cf3dd4328ff8b98bea06c768ab2362e0",
+      "run:probes/evaluations/f9/mms2_external.json": "8d72ac3e8fbef0af6b564ebf1a3f097ad1d4c9d61f5397c893c7e7dc622e6d80",
+      "run:probes/evaluations/f9/mms_external.json": "128ea853da075ae1e6973d3f41e1040397582d42141f3bed065dcba06761ace8",
+      "run:probes/evaluations/f9b/acdc_test.json": "69b3a725770e94db596984a25a18b6ffc5c1402865defca17cb3939a1baef40f",
+      "run:probes/evaluations/f9b/mms2_external.json": "7b517be800ac6c80c0df368ab9e7a7604bbfa92cd52988d5e8f1ea27f6cd3a7b",
+      "run:probes/evaluations/f9b/mms_external.json": "c7436f12237df91429366a30c223980c4d72b1484ec6bee782949aa79922b7fd"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:manuscript_tables/comparison/figure05_representation_panel.parquet": "9d8a1d9b403a20f6b2f7fb52fbb72b633280df691b87fe3ddda3ec7b28566964",
+      "run:manuscript_tables/comparison/provenance.json": "70d941efd7c9a975dc077245a83210862d48bc700997e0de68b19284fe2da490",
+      "run:manuscript_tables/comparison/table04_representation_comparison.csv": "b8316868f1e71a2104f74e70bc44715094d32f00316d6ee1af4c989d496f0163",
+      "run:manuscript_tables/comparison/table04_representation_comparison.tex": "e2617be726cf874421cb5a7d245fba178850fc8f200cd5f42fa88ac64cc79e62"
+    },
+    "params": {
+      "config_sections": [
+        "bootstrap.subgroup_reporting_thresholds",
+        "probes.bundles",
+        "probes.pairing",
+        "probes.partitions",
+        "probes.table4"
+      ],
+      "sources_present": [
+        "run:probes/evaluations/d20/acdc_test.json",
+        "run:probes/evaluations/d20/mms_external.json",
+        "run:probes/evaluations/d20/mms2_external.json",
+        "run:probes/evaluations/f9/acdc_test.json",
+        "run:probes/evaluations/f9/mms_external.json",
+        "run:probes/evaluations/f9/mms2_external.json",
+        "run:probes/evaluations/f9b/acdc_test.json",
+        "run:probes/evaluations/f9b/mms_external.json",
+        "run:probes/evaluations/f9b/mms2_external.json"
+      ]
+    },
+    "stage": "build-comparison-tables",
+    "status": "BUILT"
+  },
+  "payload_sha256": "469502f7511b455a878c44a7fb5e880e5ceb2406250ecc7a70375b2d6fbc272d",
+  "run_log": {
+    "host": "dc44bad63c24",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 0.201,
+    "started_utc": "2026-10-03T16:59:20+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

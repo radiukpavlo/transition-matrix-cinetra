@@ -1,0 +1,205 @@
+{
+  "analysis": "B2",
+  "covariates": [
+    "inplane_spacing_mm",
+    "slice_thickness_mm",
+    "num_slices",
+    "matrix_pixels",
+    "fov_mm"
+  ],
+  "error_definition": "B-hat (raw reconstruction, reconstructed/bhat_<split>.parquet) minus measured B (OBSERVED cells only), divided by the acdc_dev fit-row SD of the target; critical-QC rows excluded",
+  "included": {
+    "mms2_external": "MMS2",
+    "mms_external": "MMS"
+  },
+  "model": "ordinary least squares of the SD-normalized error on z-scored covariates, per target and partition (descriptive association; never a predictor)",
+  "not_executed": {},
+  "partitions": {
+    "mms2_external": {
+      "covariates_available": [
+        "inplane_spacing_mm",
+        "slice_thickness_mm",
+        "num_slices",
+        "matrix_pixels",
+        "fov_mm"
+      ],
+      "n_excluded_critical_qc": 0,
+      "n_rows": 180,
+      "targets": {
+        "lv_edv_ml": {
+          "condition_number": 6.408810448651454,
+          "covariates": [
+            "inplane_spacing_mm",
+            "slice_thickness_mm",
+            "num_slices",
+            "matrix_pixels",
+            "fov_mm"
+          ],
+          "dropped_covariates": [],
+          "n": 180,
+          "n_clusters": 180,
+          "r_squared": 0.4618007007571002,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "lv_esv_ml": {
+          "condition_number": 6.408810448651454,
+          "covariates": [
+            "inplane_spacing_mm",
+            "slice_thickness_mm",
+            "num_slices",
+            "matrix_pixels",
+            "fov_mm"
+          ],
+          "dropped_covariates": [],
+          "n": 180,
+          "n_clusters": 180,
+          "r_squared": 0.0934429309516871,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "lv_myocardial_mass_ed_g": {
+          "condition_number": 6.408810448651454,
+          "covariates": [
+            "inplane_spacing_mm",
+            "slice_thickness_mm",
+            "num_slices",
+            "matrix_pixels",
+            "fov_mm"
+          ],
+          "dropped_covariates": [],
+          "n": 180,
+          "n_clusters": 180,
+          "r_squared": 0.5637853807856708,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "rv_edv_ml": {
+          "condition_number": 6.408810448651454,
+          "covariates": [
+            "inplane_spacing_mm",
+            "slice_thickness_mm",
+            "num_slices",
+            "matrix_pixels",
+            "fov_mm"
+          ],
+          "dropped_covariates": [],
+          "n": 180,
+          "n_clusters": 180,
+          "r_squared": 0.6150601173903366,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "rv_esv_ml": {
+          "condition_number": 6.408810448651454,
+          "covariates": [
+            "inplane_spacing_mm",
+            "slice_thickness_mm",
+            "num_slices",
+            "matrix_pixels",
+            "fov_mm"
+          ],
+          "dropped_covariates": [],
+          "n": 180,
+          "n_clusters": 180,
+          "r_squared": 0.4483654900768824,
+          "reason": null,
+          "status": "EVALUATED"
+        }
+      }
+    },
+    "mms_external": {
+      "covariates_available": [
+        "inplane_spacing_mm",
+        "slice_thickness_mm",
+        "num_slices",
+        "matrix_pixels",
+        "fov_mm"
+      ],
+      "n_excluded_critical_qc": 1,
+      "n_rows": 319,
+      "targets": {
+        "lv_edv_ml": {
+          "condition_number": 10.148507236571401,
+          "covariates": [
+            "inplane_spacing_mm",
+            "slice_thickness_mm",
+            "num_slices",
+            "matrix_pixels",
+            "fov_mm"
+          ],
+          "dropped_covariates": [],
+          "n": 319,
+          "n_clusters": 317,
+          "r_squared": 0.3282046675096032,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "lv_esv_ml": {
+          "condition_number": 10.148507236571401,
+          "covariates": [
+            "inplane_spacing_mm",
+            "slice_thickness_mm",
+            "num_slices",
+            "matrix_pixels",
+            "fov_mm"
+          ],
+          "dropped_covariates": [],
+          "n": 319,
+          "n_clusters": 317,
+          "r_squared": 0.08426090593308777,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "lv_myocardial_mass_ed_g": {
+          "condition_number": 10.148507236571401,
+          "covariates": [
+            "inplane_spacing_mm",
+            "slice_thickness_mm",
+            "num_slices",
+            "matrix_pixels",
+            "fov_mm"
+          ],
+          "dropped_covariates": [],
+          "n": 319,
+          "n_clusters": 317,
+          "r_squared": 0.45817777931169,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "rv_edv_ml": {
+          "condition_number": 10.148507236571401,
+          "covariates": [
+            "inplane_spacing_mm",
+            "slice_thickness_mm",
+            "num_slices",
+            "matrix_pixels",
+            "fov_mm"
+          ],
+          "dropped_covariates": [],
+          "n": 319,
+          "n_clusters": 317,
+          "r_squared": 0.5481219715170593,
+          "reason": null,
+          "status": "EVALUATED"
+        },
+        "rv_esv_ml": {
+          "condition_number": 10.148507236571401,
+          "covariates": [
+            "inplane_spacing_mm",
+            "slice_thickness_mm",
+            "num_slices",
+            "matrix_pixels",
+            "fov_mm"
+          ],
+          "dropped_covariates": [],
+          "n": 319,
+          "n_clusters": 317,
+          "r_squared": 0.510451839617492,
+          "reason": null,
+          "status": "EVALUATED"
+        }
+      }
+    }
+  }
+}

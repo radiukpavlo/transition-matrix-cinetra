@@ -1,0 +1,134 @@
+{
+  "partition": "acdc_dev",
+  "profile": "wedd_gaussian_mm_v1",
+  "role": "development_only",
+  "rulebooks": {
+    "d_model": {
+      "consequent_classes": {
+        "DCM": {
+          "eligible": true,
+          "fit_patients": 20,
+          "reason_code": null
+        },
+        "HCM": {
+          "eligible": true,
+          "fit_patients": 20,
+          "reason_code": null
+        },
+        "MINF": {
+          "eligible": true,
+          "fit_patients": 19,
+          "reason_code": null
+        },
+        "NOR": {
+          "eligible": true,
+          "fit_patients": 19,
+          "reason_code": null
+        },
+        "RV": {
+          "eligible": true,
+          "fit_patients": 20,
+          "reason_code": null
+        }
+      },
+      "eligible_features": [
+        "lv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g"
+      ],
+      "ineligible": {
+        "global_wall_thickening_percent": "INELIGIBLE_UNSTABLE_CUT",
+        "global_wall_thickness_ed_mm": "INELIGIBLE_UNSTABLE_CUT",
+        "lv_edv_ml": "INELIGIBLE_UNSTABLE_CUT",
+        "lv_ef_percent": "INELIGIBLE_UNSTABLE_CUT",
+        "rv_edv_ml": "INELIGIBLE_UNSTABLE_CUT",
+        "rv_esv_ml": "INELIGIBLE_UNSTABLE_CUT"
+      }
+    },
+    "dataset_label": {
+      "consequent_classes": {
+        "DCM": {
+          "eligible": true,
+          "fit_patients": 20,
+          "reason_code": null
+        },
+        "HCM": {
+          "eligible": true,
+          "fit_patients": 20,
+          "reason_code": null
+        },
+        "MINF": {
+          "eligible": true,
+          "fit_patients": 19,
+          "reason_code": null
+        },
+        "NOR": {
+          "eligible": true,
+          "fit_patients": 19,
+          "reason_code": null
+        },
+        "RV": {
+          "eligible": true,
+          "fit_patients": 20,
+          "reason_code": null
+        }
+      },
+      "eligible_features": [
+        "lv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g"
+      ],
+      "ineligible": {
+        "global_wall_thickening_percent": "INELIGIBLE_UNSTABLE_CUT",
+        "global_wall_thickness_ed_mm": "INELIGIBLE_UNSTABLE_CUT",
+        "lv_edv_ml": "INELIGIBLE_UNSTABLE_CUT",
+        "lv_ef_percent": "INELIGIBLE_UNSTABLE_CUT",
+        "rv_edv_ml": "INELIGIBLE_UNSTABLE_CUT",
+        "rv_esv_ml": "INELIGIBLE_UNSTABLE_CUT"
+      }
+    },
+    "measured_oracle": {
+      "consequent_classes": {
+        "DCM": {
+          "eligible": true,
+          "fit_patients": 20,
+          "reason_code": null
+        },
+        "HCM": {
+          "eligible": true,
+          "fit_patients": 20,
+          "reason_code": null
+        },
+        "MINF": {
+          "eligible": true,
+          "fit_patients": 19,
+          "reason_code": null
+        },
+        "NOR": {
+          "eligible": true,
+          "fit_patients": 19,
+          "reason_code": null
+        },
+        "RV": {
+          "eligible": true,
+          "fit_patients": 20,
+          "reason_code": null
+        }
+      },
+      "eligible_features": [
+        "lv_ef_percent"
+      ],
+      "ineligible": {
+        "global_wall_thickening_percent": "INELIGIBLE_UNSTABLE_CUT",
+        "global_wall_thickness_ed_mm": "INELIGIBLE_UNSTABLE_CUT",
+        "lv_edv_ml": "INELIGIBLE_UNSTABLE_CUT",
+        "lv_esv_ml": "INELIGIBLE_UNSTABLE_CUT",
+        "lv_myocardial_mass_ed_g": "INELIGIBLE_UNSTABLE_CUT",
+        "rv_edv_ml": "INELIGIBLE_UNSTABLE_CUT",
+        "rv_ef_percent": "INELIGIBLE_UNSTABLE_CUT",
+        "rv_esv_ml": "INELIGIBLE_UNSTABLE_CUT"
+      }
+    }
+  },
+  "schema": "tmmri.semantic_eligibility/1"
+}

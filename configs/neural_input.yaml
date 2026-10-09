@@ -1,0 +1,56 @@
+# Image input path of the protocol-v6.0.1 neural branches (docs/NEURAL_ENCODER_EXPERIMENT_PROTOCOL.md 4.1;
+# docs/MANUSCRIPT_PROTOCOL_V2_2026-10-02.md D item 10). Implemented by src/tmmri/neural/preprocess.py
+# (`build-tensor-cache`, tensor-cache contract C3) and read by the F9 trainer and local inference (`infer-f9`).
+# The `input` block mirrors protocol/neural_encoder_v6.0.1.design.json "input" exactly (checked by
+# tests/test_neural_preprocess.py); every other block fixes an implementation detail the design leaves open.
+specification_version: "6.0.1"
+amendment: protocol-v6.0.1
+design_id: NEURAL-TM-1.0
+input:
+  all_slices: true
+  percentile_clip_per_phase: [1, 99]
+  in_plane_spacing_mm: 1.5
+  size_pixels: [224, 224]
+  crop_pad: physical_center_no_mask
+  through_plane_interpolation: false
+  channels: grayscale_replicated_to_3
+  channel_mean: [0.485, 0.456, 0.406]
+  channel_sd: [0.229, 0.224, 0.225]
+  slice_geometry: [centered_z_mm_divided_by_100, corrected_increment_mm_divided_by_10]
+cache:
+  transform_id: neural_input_v1                 # transform_version = "<transform_id>:<first 12 hex of SHA-256 of input+cache+geometry+input_qc>"
+  layout: "neural_cache/<partition>/<sample_id with ':' replaced by '__'>.npz + manifest.csv + failures.csv + cache_record.json"
+  arrays: {ed: "[n_ed, 224, 224] float32 in [0, 1]", es: "[n_es, 224, 224] float32 in [0, 1]", ed_geom: "[n_ed, 2] float32", es_geom: "[n_es, 2] float32"}
+  npz_writer: deterministic_zip_stored_fixed_timestamp   # identical inputs give identical bytes and npz_sha256
+  stored_dtype: float32
+  intensity: "per phase: lo, hi = numpy.percentile of the finite voxels of all slices of the phase at [1, 99] (linear); x' = clip((x - lo) / (hi - lo), 0, 1)"
+  resampling: "separable bilinear on the physical 1.5 mm grid centred on the slice field-of-view centre; source FOV [-0.5, n - 0.5] pixels; outside the FOV zero (pad); crop or pad in the same step"
+  crop_fraction: "1 - min(L_row, 336) * min(L_col, 336) / (L_row * L_col), L = source pixels x source spacing (mm)"
+  inplane_spacing_mm_column: "source in-plane spacing in mm (geometric mean of the row and column spacing; both also stored); the cache spacing is target_spacing_mm = 1.5"
+  imagenet_normalization: applied_at_load_time_never_stored   # grey -> 3 channels and channel mean/SD in the loader
+  slice_order: stored_order_preserved            # k = 0 .. n-1 of the staged frame, never re-sorted
+  labels:
+    allowed_partitions: [acdc_dev]               # label access: acdc_dev class labels only (fitting partition; CPE-1)
+    source: "contracts/cohort_ACDC.parquet acdc_class (Info.cfg Group)"
+    other_partitions: empty                      # evaluation references are joined at evaluation time only
+geometry:
+  source: tmmri.ingest.geometry.geometry_from_image on the staged image header (never the mask header)
+  slice_increment: corrected                     # ACDC unit-scaled affine -> header pixdim (slice-increment fix 8ed5a40)
+  reorientation: "in-plane only, lossless (transpose/flip): columns = signed in-plane voxel axis with the largest component toward patient left (RAS -x); rows = the other in-plane axis signed toward posterior (RAS -y), ties toward inferior (RAS -z)"
+  centred_slice_position: "(k - (n - 1) / 2) * corrected_increment_mm"
+  orthogonality_tolerance: 1.0e-3                # |cos| between the in-plane voxel axes
+  slice_axis_min_abs_cos: 0.99                   # slice axis against the in-plane normal (sheared stacks are rejected)
+  ed_es_tolerance_mm: 1.0e-4
+input_qc:                                        # branch-specific input QC (NEURAL-TM-1.0 3): image and geometry only, never a mask
+  geometry_invalid: INPUT_GEOMETRY_INVALID      # non-positive or non-finite spacing, unavailable increment, non-orthogonal or sheared axes, affine scale disagreeing with pixdim, ED/ES geometry differing
+  nonfinite_voxel: INPUT_NONFINITE              # any non-finite voxel in the ED or ES image
+  empty_or_not_3d: INPUT_DECODE_FAILURE
+  constant_phase: INPUT_CONSTANT_INTENSITY      # hi <= lo within a phase; branch-specific code, not yet in registry/reason_codes.yaml
+  action: reject_case_listed_in_failures_csv
+inference:                                       # infer-f9 (local; all reported numbers come from local inference)
+  patients_per_batch: 1
+  device_default: cuda_if_available
+  encoders:
+    acdc_dev: [fold1, fold2, fold3, fold4, fold5, final]   # fold k on all dev patients (is_oof only for fold k), final on all
+    default: [final]                             # acdc_test, mms_external, mms2_external
+  probability: softmax_float64_of_float32_logits

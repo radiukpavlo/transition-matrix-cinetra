@@ -1,0 +1,83 @@
+# CMR-TRANS-AUDIT execution environment (docs/EXECUTION_ENVIRONMENT_SPEC.md 1.0.0, Appendix A).
+# Resolved into uv.lock by `docker compose run --rm lock`; installed into /opt/venv by the Dockerfile
+# (target `env`: runtime + dev + clinical; target `env-gpu`: additionally the gpu group).
+# The host .venv (`pip install -e .[dev]`) is a development convenience, not the execution environment.
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transition-matrix-mri"
+version = "0.2.0"
+description = "Research-only transition-matrix audit of cardiac MRI semantics (CMR-TRANS-AUDIT, SPECIFICATION.md 6.0.0)"
+requires-python = ">=3.12,<3.14"   # container: CPython 3.12.14 (.python-version); host .venv: CPython 3.13
+# No readme field: the image's build context contains only the lock inputs (.dockerignore).
+dependencies = [
+    # numerics and tables; lower bounds = the v5-tested series (docs/history/experiment_machine_v5/constraints_v5_native.txt)
+    "numpy>=2.4",
+    "scipy>=1.17",             # Float64 linear algebra, statistics
+    "pandas>=3.0",
+    "pyarrow>=24",             # Parquet tables
+    "scikit-learn>=1.9",       # audited logistic predictor, folds, metrics
+    # cardiac MRI input/output and geometry
+    "nibabel>=5.4",            # NIfTI read and write (ACDC, M&Ms)
+    "scikit-image>=0.26",      # contour measurements (wall thickness, shape descriptors)
+    # registry, configs and reports
+    "PyYAML>=6.0.1",
+    "tabulate>=0.9",           # pandas.DataFrame.to_markdown in stage reports
+    # execution control recorded in manifests: per-case workers, one BLAS thread each (Decision D3)
+    "joblib>=1.4",
+    "threadpoolctl>=3.5",
+    "psutil>=6.0",
+    # figures (headless: MPLBACKEND=Agg)
+    "matplotlib>=3.9",
+]
+
+[project.optional-dependencies]
+# Host convenience only (`pip install -e .[dev]`); the container uses the dependency groups below.
+dev = ["pytest>=8.3", "pytest-xdist>=3.6", "ruff>=0.6"]
+
+[project.scripts]
+tmmri = "tmmri.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8.3", "pytest-xdist>=3.6", "ruff>=0.6"]
+# Document builders of the governed clinical-validation package (scripts/clinical_validation/*.py)
+clinical = ["python-docx>=1.1", "reportlab>=4.2", "lxml>=5.2"]
+# Optional deep-encoder branch (Decision D20; target env-gpu only): last Pascal-capable release,
+# resolved from the explicit cu126 index below
+gpu = ["torch==2.14.0", "torchvision==0.29.0"]
+
+[tool.uv]
+required-version = ">=0.12.18,<0.13"
+python-preference = "only-managed"
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+default-groups = ["dev"]
+# Lock-only ceilings: keep the container on the v5-tested release series that the host .venv also runs
+# (docs/history/experiment_machine_v5/constraints_v5_native.txt); lift them only by a dated amendment before M0.
+constraint-dependencies = [
+    "numpy<2.5",
+    "scipy<1.18",
+    "pandas<3.1",
+    "pyarrow<25",
+    "scikit-learn<1.10",
+    "scikit-image<0.27",
+    "nibabel<5.5",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu126" }]
+torchvision = [{ index = "pytorch-cu126" }]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

@@ -1,0 +1,45 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "5d88a3041ca9f604b1066e85cb138b91802f1df3",
+      "dirty": false
+    },
+    "config_hash": "463226b63bd9491eb9868572bfd84719c5f4e228849ab8e962eaf00dccf06f0d",
+    "inputs": {
+      "data:manifests/staging_MMS.json": "800f5f8be78d7fc13e1a00c65c75f9f22cd6501bfe26a68b36855564d01c50df",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:neural_cache/mms_external": "395f9de32e1ffe661ac77bb5d34454efde752fbaff4d074a83e2104fab2d197c"
+    },
+    "params": {
+      "config_sections": [],
+      "neural_input": true,
+      "partition": "mms_external"
+    },
+    "stage": "build-tensor-cache:mms_external",
+    "status": "BUILT"
+  },
+  "payload_sha256": "265ce27295a903f22d56474274b506beebb0a313171cc35a9c0d99178f093c79",
+  "run_log": {
+    "host": "f32ab43ae737",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 12.569,
+    "started_utc": "2026-10-03T09:56:12+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

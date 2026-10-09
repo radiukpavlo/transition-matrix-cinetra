@@ -1,0 +1,8 @@
+leaf,label,rule,n_fit,fit_agree,fit_fidelity,n_heldout_routed,oof_matched,oof_agree,oof_fidelity,wilson_lower,wilson_upper,folds_reproduced,selected,selection
+3,NOR,IF lv_esv_ml <= 94.8005 mL AND rv_esv_ml <= 87.5613 mL AND global_wall_thickness_ed_mm <= 9.35996 mm THEN d_model = NOR,29,21,0.7241379310344828,29,22,17,0.7727272727272727,0.5656004682477829,0.8987696001475147,5,False,INELIGIBLE_FIDELITY;INELIGIBLE_WILSON_LOWER
+4,RV,IF lv_esv_ml <= 94.8005 mL AND rv_esv_ml > 87.5613 mL AND global_wall_thickness_ed_mm <= 9.35996 mm THEN d_model = RV,18,17,0.9444444444444444,18,15,14,0.9333333333333333,0.7018347012621998,0.9881331045067315,5,True,SELECTED
+6,HCM,IF lv_esv_ml <= 94.8005 mL AND global_wall_thickness_ed_mm > 9.35996 mm AND global_wall_thickening_percent <= 49.2009 percent THEN d_model = HCM,6,4,0.6666666666666666,6,4,2,0.5,0.15003898915214947,0.8499610108478506,3,False,INELIGIBLE_SUPPORT;INELIGIBLE_FIDELITY;INELIGIBLE_WILSON_LOWER
+7,HCM,IF lv_esv_ml <= 94.8005 mL AND global_wall_thickness_ed_mm > 9.35996 mm AND global_wall_thickening_percent > 49.2009 percent THEN d_model = HCM,15,15,1.0,15,15,15,1.0,0.7961166989641515,1.0,5,True,SELECTED
+9,MINF,IF lv_edv_ml <= 178.483 mL AND lv_esv_ml > 94.8005 mL THEN d_model = MINF,5,5,1.0,5,2,2,1.0,0.34238022750665303,1.0,2,False,INELIGIBLE_SUPPORT;INELIGIBLE_WILSON_LOWER
+11,DCM,IF lv_edv_ml > 178.483 mL AND lv_esv_ml > 94.8005 mL AND rv_ef_percent <= 41.3909 percent THEN d_model = DCM,13,13,1.0,13,11,11,1.0,0.7411670330319684,1.0,5,True,SELECTED
+12,DCM,IF lv_edv_ml > 178.483 mL AND lv_esv_ml > 94.8005 mL AND rv_ef_percent > 41.3909 percent THEN d_model = DCM,12,6,0.5,12,7,2,0.2857142857142857,0.08221892400405678,0.6410655481673808,4,False,INELIGIBLE_FIDELITY;INELIGIBLE_WILSON_LOWER

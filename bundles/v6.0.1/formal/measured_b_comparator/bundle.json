@@ -1,0 +1,41 @@
+{
+  "classes": [
+    "DCM",
+    "HCM",
+    "MINF",
+    "NOR",
+    "RV"
+  ],
+  "evaluation": "summarize-predictor-extended:<partition> (once-only records of the frozen run; hashes verified first)",
+  "family": "ventricular_function_size",
+  "features": [
+    "lv_edv_ml",
+    "lv_esv_ml",
+    "lv_ef_percent",
+    "rv_edv_ml",
+    "rv_esv_ml",
+    "rv_ef_percent",
+    "lv_myocardial_mass_ed_g"
+  ],
+  "files": {
+    "final_model.joblib": "3dc3114912dfae2988dbfdb6780fd35aa883992e5e20a71224171f97a3901e6d",
+    "fold_models/fold1.joblib": "54ab14c027e9dca1487602d6d24742d78d59727995a2befd025a602ee5f25bb3",
+    "fold_models/fold2.joblib": "3289aa1ebc8a50d74f768e01a7686ac05e0b6b4e79e945c3695f2d59b64b6dd6",
+    "fold_models/fold3.joblib": "fd59e167b88196c47343bad2664f22dac1b87f8670247c3afc861a9f71766ece",
+    "fold_models/fold4.joblib": "5031f9e189636364fc042217a0272e1588d32f2aa6fecd70a62a3b4321166ddd",
+    "fold_models/fold5.joblib": "633b20c31450a75f2587287cc3a76f9c166c19fdd35601a3ac7eb7cff5516db2",
+    "predictions.parquet": "3929a68377e3ec8306c330e8c830544401b25f5ef91729bd90c571eea5f13e20"
+  },
+  "fit_rule": "acdc_dev rows with measured B and no critical QC; cross-fitting refits imputation, scaler and model on the training folds only",
+  "fitted_on": "acdc_dev",
+  "freeze": "written by fit-predictor (a fitting stage: refused after .stages/FROZEN.json); never part of the analysis-bundle hash",
+  "imputation": "fit-partition median (training folds for cross-fitting)",
+  "missing_classes": [],
+  "model_id": "measured_b_comparator",
+  "n_fit_rows": 98,
+  "name": "measured_b_logistic_semantic_comparator",
+  "role": "semantic_comparator_not_audited",
+  "schema": "tmmri.supplementary_bundle/1",
+  "settings": "same_as_audited_predictor",
+  "standardization": "fit-partition mean and SD (ddof 0)"
+}

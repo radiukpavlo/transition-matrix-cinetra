@@ -1,0 +1,58 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "170e7b7d0a9376e117a532d696351de6506beca437eb4bbfc3a9c958ef4b5de8",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/evaluate__mms2_external.json": "ef20db89795580fa60983924e83cbaf362aa7e65bfed46b72e101a3c6ab73171",
+      "run:contracts/cohort_MMS2.parquet": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+      "run:contracts/split_manifest_MMS2.parquet": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75",
+      "run:formal/A_MMS2.parquet": "b62540c0b1c82c04554632e437607b37aa3fe64f96e03aa5dd47ccb170cb3287",
+      "run:formal/d_model_predictor.joblib": "553193fd260f2394128e8ea1742ea364e74e75e5a01c3ebfe98ae8d175e55bc6",
+      "run:inference/d_model_mms2_external.parquet": "38d1b38088bad8be9b47f7799d9e0d4198183e869ecfe3f2d173abba18721a7c",
+      "run:semantics/B_MMS2.parquet": "a96f9f4dd4440fa3d82be1de7e3650d85d96349f4ab6fde4729cc27317609ad4"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:metrics/predictor_mms2_external.json": "73338d82e7c2734988e885f89ba5cb49e42b71407e9566f4f60b23a28dbdf997"
+    },
+    "params": {
+      "config_sections": [
+        "formal.audited_predictor",
+        "formal.comparator_predictor",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.calibration",
+        "cohorts.qc_severity",
+        "registry.label_tables",
+        "cohorts.mms2"
+      ],
+      "partition": "mms2_external"
+    },
+    "stage": "summarize-predictor:mms2_external",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "e330d2297942a20eb815bdf5d6e51e83dbbdf40e690a3a1dd942d137032152ff",
+  "run_log": {
+    "host": "e2603f548acd",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 3.674,
+    "started_utc": "2026-10-03T14:39:48+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

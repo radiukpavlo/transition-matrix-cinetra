@@ -1,0 +1,75 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+      "dirty": false
+    },
+    "config_hash": "6a9cf6813617eae35c3acdb1134277a02032eca4af7e66967f135226b6ea6425",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/evaluate__mms_external.json": "3b40f0ddad22d32636928e25d3d5e70397a469b5c06d88b0a6750504e221c272",
+      "run:contracts/cohort_MMS.parquet": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:deep_encoder/FROZEN_D20.json": "abb4cf7062966ea6620814c29b3d2a12e595b692c2ee3ae422ffc2fcdb22ba80",
+      "run:deep_encoder/features/A_D20_mms_external.parquet": "a067899025815f428c9f6dfdefde5fbc52aa55f3fe470a211c2224e15ee4240f",
+      "run:deep_encoder/formal/d_model_predictor.joblib": "45b4aeaaca9710f9b3c5cbdb1d1216459807dc87545d142b17cf17d16c184de6",
+      "run:deep_encoder/predictions.parquet": "63fe2499c4505249bef4a5673235f41b96d1184cd8e4128a0e782ef4de8dd38f",
+      "run:deep_encoder/transitions/transition_model.json": "300b2a561799b6e96ed5c1c6a8b85a7794e27bc2ab2c183a28a7e5493e3aba79",
+      "run:formal/A_MMS.parquet": "e5ee5bf7f2356864eba7e159a56496e81071998df9c456b86d0cc334f18e9930",
+      "run:formal/audited_predictor/predictions.parquet": "bc4b8458660d8c7459725c301660d7e428c88cec5dc5fae6ab9a2245f84c8295",
+      "run:reconstructed/bhat_mms_external.parquet": "651cf14606df69d5705206b2602315b2f746df0bf68ff0c21c9b0a01785d5c22",
+      "run:semantics/B_MMS.parquet": "9d721414227b06d18f45fc579decca4b114dcea774847d1b736075f8ddfbbe3b",
+      "run:transitions/transition_model.json": "6c2f25349cfd7987a32337ca506415c8d946ab36e9f81a38d7b19790c866ba55"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:probes/evaluations/d20/mms_external.json": "09f354e629f3ca66d5549f8f2710d701b2017e412e8b11377096e8fcd763bf1e"
+    },
+    "params": {
+      "bundle": "d20",
+      "config_sections": [
+        "transition",
+        "registry",
+        "cohorts.qc_severity",
+        "formal.audited_predictor",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.primary_test",
+        "bootstrap.calibration",
+        "probes.bundles",
+        "probes.crosswalk",
+        "probes.estimands",
+        "probes.f9b",
+        "probes.inputs",
+        "probes.pairing",
+        "probes.partitions",
+        "probes.reference",
+        "probes.require_freeze_record_for_held_out"
+      ],
+      "evidence": "registered_after_unblinding",
+      "split": "mms_external"
+    },
+    "stage": "evaluate-alt-bundles:d20:mms_external",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "0904b22d45a57f6ee72218e68b0a0ecff389f22ffcc3bd9446ea99402cb68820",
+  "run_log": {
+    "host": "70625ddfb01a",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 13.615,
+    "started_utc": "2026-10-03T13:34:13+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

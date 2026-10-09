@@ -1,0 +1,74 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+      "dirty": false
+    },
+    "config_hash": "a266a721766e5007352faaed2b4192fb542a40326f6add558982af3021041f89",
+    "inputs": {
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:deep_encoder/features/A_D20_acdc_dev.parquet": "8b81c6aa2d98e440a5874324008929069baec775d15bb27f96fa4cf12f275017",
+      "run:deep_encoder/formal/d_model_predictor.joblib": "45b4aeaaca9710f9b3c5cbdb1d1216459807dc87545d142b17cf17d16c184de6",
+      "run:deep_encoder/predictions.parquet": "63fe2499c4505249bef4a5673235f41b96d1184cd8e4128a0e782ef4de8dd38f",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:formal/audited_predictor/predictions.parquet": "bc4b8458660d8c7459725c301660d7e428c88cec5dc5fae6ab9a2245f84c8295",
+      "run:neural_f9/activations.parquet": "b92223eb56de95ec6b988ee186fe766ae4490c1a4a355b32ef51fc758e50c841",
+      "run:neural_f9/predictions.parquet": "81b39673a8a07bb016cd609507eccdc47dc6fc9da818de25f4b72d1d1a4eb909",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:trust/oof_predictions.parquet": "e51c26ded0e7f00b7d0e5ecf30fb63581ac2eede5fa0fdf5c9b70b61a615162c",
+      "run:trust/s1_thresholds.json": "0b0b693150bbe8e38576a8ddecad160147c0fe019098fabadff693de09c2aa79",
+      "run:trust/s2_oof_scores.parquet": "2f7e2e067b83c5b7f3f26d902cd7bab407ef06e9dbb4bea8fb5b0f2eb6c87fbe",
+      "run:trust/s2_references/d20.json": "adb28e699fc6aa15ec77df70dc8b2255b19fe4b09d323b8b209742b73ddbb04e",
+      "run:trust/s2_references/descriptors.json": "5df29f9e75e45015cf0f1c8c012305e4d90fe98486e27c8d2ea094e1ffed075f",
+      "run:trust/s2_references/f9b.json": "1896a09e70fdb1f9ba21405714695c53d1f5387699ea8bfe012bea01b3c27872",
+      "run:trust/s4_temperatures.json": "80b61f5052b8df4565501ff2a6b4b610dab4aedf432ba0ff232f268a4c244b42",
+      "run:trust/trust_bundle.json": "6a002bb5cb183ce398a2f102f1599622813ae441b51860d58188d2b2c113c36d"
+    },
+    "params": {
+      "allow_missing": false,
+      "config_sections": [
+        "transition",
+        "registry",
+        "cohorts.qc_severity",
+        "formal.audited_predictor",
+        "splits.acdc.acdc_dev.outer_folds",
+        "probes.f9b",
+        "probes.inputs",
+        "probes.pairing",
+        "trust.predictors",
+        "trust.representations",
+        "trust.s1_selective_prediction",
+        "trust.s2_ood",
+        "trust.s4_calibration"
+      ],
+      "not_executed": []
+    },
+    "stage": "fit-trust",
+    "status": "BUILT"
+  },
+  "payload_sha256": "7e4f353c2f2ed6b133255709ef79f0d28cc776ffaa43edcbbd22d56eab822f80",
+  "run_log": {
+    "host": "c4570ea92410",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 2.246,
+    "started_utc": "2026-10-03T13:25:35+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

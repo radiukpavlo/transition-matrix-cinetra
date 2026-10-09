@@ -1,0 +1,93 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "62859b2fd30047dc6838370e773a8145f7d8d7721c62bc678a58b7272a46d9e7",
+    "inputs": {
+      "run:contracts/cohort_MMS.parquet": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/A_MMS.parquet": "e5ee5bf7f2356864eba7e159a56496e81071998df9c456b86d0cc334f18e9930",
+      "run:metrics/primary_rho_mms_external.json": "69cc59fe86a3ca4c1e529ae5b742d6f1a7d8b5b19355a14fcee6c01a351291f1",
+      "run:metrics/primary_rho_mms_external_never_analysed.json": "0ef5d6d4dff6ae732a480526c840a321827456c32136437b16cbf860b69c0eac",
+      "run:reconstructed/bhat_mms_external.parquet": "651cf14606df69d5705206b2602315b2f746df0bf68ff0c21c9b0a01785d5c22",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:semantics/B_MMS.parquet": "9d721414227b06d18f45fc579decca4b114dcea774847d1b736075f8ddfbbe3b"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:formal/refit_arm/d_model_mms_refit.parquet": "d5c3054155365bddcf363de0a15a53242cef6e896d68fc6897ec7316247cf51e",
+      "run:formal/refit_arm/d_model_predictor.joblib": "a6757d94e98ca9106ddc545fbd2226e93f2d072e0bf076b26282e0bd918400bf",
+      "run:inference/refit_arm/routes_d_model_mms_refit_eval.parquet": "0d16493921bf949285b8d32bd132de732e0b193aa9a40b8b76a8e97e49187459",
+      "run:inference/refit_arm/routes_dataset_label_mms_refit_eval.parquet": "0d16493921bf949285b8d32bd132de732e0b193aa9a40b8b76a8e97e49187459",
+      "run:inference/refit_arm/routes_measured_oracle_mms_refit_eval.parquet": "0d16493921bf949285b8d32bd132de732e0b193aa9a40b8b76a8e97e49187459",
+      "run:metrics/refit_arm/per_target_mms_refit_eval.parquet": "be26ccf15f17104059fff348da09ca9a1dd54a56d614deb4e60108a6e75813aa",
+      "run:metrics/refit_arm/primary_rho_mms_refit_eval.json": "f8bb200eb667e1e8062562bc3838d7758a9f86886a5ad3e01f645035680710e7",
+      "run:metrics/refit_arm/refit_arm_summary.json": "53888afa40060f1c841b44a87497a37d282a0000ba64bf88040bf85151ea958a",
+      "run:metrics/refit_arm/routes_d_model_mms_refit_eval.json": "1117191e63b70300381b9b46f7523c35f3651083ad8a8f9578253718c65105f9",
+      "run:metrics/refit_arm/routes_dataset_label_mms_refit_eval.json": "08a7e61272e579f191b8e4258268a0f726e0ef89b0854675c19fd2ed80166c5e",
+      "run:metrics/refit_arm/routes_measured_oracle_mms_refit_eval.json": "b54d06129505bae6a4c5c84ee3bb39d503ff43b5367ef88cc3ae01af8e7657f0",
+      "run:oof/refit_arm/bhat_oof_mms_refit_train.parquet": "9ca4dea31194bd3091076664bc1d05a9055e5073711b63d39dead717e7e6de99",
+      "run:qc/refit_arm/outlier_reference.json": "e65825f0a8363c826dfa9e8e1d899278ec76584ab22600e5295b3e46a0be19c3",
+      "run:reconstructed/refit_arm/bhat_mms_refit_eval.parquet": "61d593e34795bb677480ad17fc4648a5ccc7144ed09272d4d88ef38a14b65f8f",
+      "run:rules/refit_arm/d_model/eligibility.parquet": "d40781a39afe38bf3becb279930749fc0c0ac9d79c2ac3e19bc9ed16e0413e23",
+      "run:rules/refit_arm/d_model/gate.parquet": "79031bd90d32b030f91c501f333625b7892fc2728dafc8d40fb48068a6c8b2a7",
+      "run:rules/refit_arm/d_model/rulebook_or_empty.json": "8d1b95340339cb297c35c1b0a32493e13825eb95e0a5de396c4eca521265ba8c",
+      "run:rules/refit_arm/dataset_label/eligibility.parquet": "8e8c1e5d2da2fe5d33f85a1939fad15753c2075774a59b5c57635798685fd8e5",
+      "run:rules/refit_arm/dataset_label/gate.parquet": "79031bd90d32b030f91c501f333625b7892fc2728dafc8d40fb48068a6c8b2a7",
+      "run:rules/refit_arm/dataset_label/rulebook_or_empty.json": "6ab02ad1770c1a34308782460c6b99d122b9b053dd690338f42cbd411f212f51",
+      "run:rules/refit_arm/downstream_refit_bootstrap.parquet": "c8839e5ba9bdde97704f2e9c307534cb2739a2b5c9a7d1bc0590a3539e7f1ae2",
+      "run:rules/refit_arm/measured_oracle/eligibility.parquet": "21e03278d52729b7107f613c37881c0cb16fab20bf810e1622ed3b9cde77d120",
+      "run:rules/refit_arm/measured_oracle/gate.parquet": "79031bd90d32b030f91c501f333625b7892fc2728dafc8d40fb48068a6c8b2a7",
+      "run:rules/refit_arm/measured_oracle/rulebook_or_empty.json": "82b91619279a0584b42491d4e2f22f823d1594edded1184b04d2b1527b6249ae",
+      "run:semantics/refit_arm/B_MMS_refit.parquet": "f81c9c19d5593389c0efa987319f8a5bd9cdeebf4ed685201e00de07f69db42d",
+      "run:thresholds/refit_arm/d_model_wedd_gaussian_mm_v1.json": "463688bfe10e922b0be746c7502024dc7d9c8324954a27e448a7bee375ef16fd",
+      "run:thresholds/refit_arm/d_model_wedd_gaussian_mm_v1_stability.parquet": "96cae9947befa9c5d16b89011007bd643e299410c56a466f10f9ed865dc46ac7",
+      "run:thresholds/refit_arm/dataset_label_wedd_gaussian_mm_v1.json": "474add558ffc4461448b594ee8bbe5c2da88628225a7771dea08c1613534eb8e",
+      "run:thresholds/refit_arm/dataset_label_wedd_gaussian_mm_v1_stability.parquet": "b1603dc46c71e82dbb14880d6484c79a3988b20aac1ecc14c99414ff2094c4a2",
+      "run:thresholds/refit_arm/measured_oracle_wedd_gaussian_mm_v1.json": "12e904a00b0dfe7eeab3240ddf69806954df6c00429e6d0ca32569d0193f0070",
+      "run:thresholds/refit_arm/measured_oracle_wedd_gaussian_mm_v1_stability.parquet": "c63fb739d78a234dcdc36895c3507095dec290da8fece627134a3ca2d924d7fd",
+      "run:transitions/refit_arm/lambda_selection.parquet": "5d6109efded42f2852b753ba46bb861ab2f15ac88a5055eb4329d35cc987a34f",
+      "run:transitions/refit_arm/transition_model.json": "b976f2c80212b0df8e50f5c5dfeb825be8199b63d9ede5c18a98d545a3f78d77"
+    },
+    "params": {
+      "arm": "refit_arm",
+      "config_sections": [
+        "splits.refit_arm",
+        "cohorts",
+        "transition",
+        "formal.audited_predictor",
+        "wedd",
+        "rule_policy",
+        "bootstrap",
+        "registry",
+        "reason_codes"
+      ],
+      "profile": "wedd_gaussian_mm_v1"
+    },
+    "stage": "fit-refit-arm",
+    "status": "BUILT"
+  },
+  "payload_sha256": "1943eea3feb2f7cece89668d934a4ebece79eacb6cbbcf5a2c6b1b72e2aa1cd5",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 79.126,
+    "started_utc": "2026-10-03T09:44:09+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

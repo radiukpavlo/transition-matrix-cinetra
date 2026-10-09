@@ -1,0 +1,69 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+      "dirty": false
+    },
+    "config_hash": "45517824d58daf059bbe09e05f24d2961bc76d57c7e895c99f773a2e0e2ec99f",
+    "inputs": {
+      "/cache/torch/hub/checkpoints/resnet50-11ad3fa6.pth": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+      "data:manifests/staging_ACDC.json": "6a1f70128dee7420f79b65c02719917887a00a101eac6b38adb5672a57f59160",
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/extract-deep-features__acdc_test.json": "bb4e9859dcdb09eaf6f72a79d117d2fcc0a2093448370be88adbc93d21a51b7d",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:deep_encoder/FROZEN_D20.json": "abb4cf7062966ea6620814c29b3d2a12e595b692c2ee3ae422ffc2fcdb22ba80",
+      "run:deep_encoder/features/A_D20_acdc_test.parquet": "643af4c38ba1b7a9c5b8af06908f6ea3f6989e7caaf67c408dfecfd8dbc46915",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:simulated_shift/C/B_acdc_test.parquet": "44ffba1ead1c7b5d4be05de1d3061680633f807aaa49fbd15de421404b0a0bf0",
+      "run:simulated_shift/vendor_geometry.json": "75504ebd5f1f30e334263452b49e5e0af0ecdd3a48aa52580e96e625f670c3cb"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:simulated_shift/C/deep_encoder/bhat_acdc_test.parquet": "07828bd00039f7bd33c23dbda63c171155fc00fbf992207ed7b52027523a87d6",
+      "run:simulated_shift/C/deep_encoder/bhat_acdc_test_unperturbed.parquet": "e7977e55ab4529d940c0eee2aefcc7548ce51af9e6cc8363ba056c9b658f5b51",
+      "run:simulated_shift/C/deep_encoder/features/A_D20_acdc_test.parquet": "28ebb335f12ac38b9447bcf9b2d13a13c352f50f9b5084e366171a18352ed806",
+      "run:simulated_shift/C/deep_encoder/features/A_D20_acdc_test_extractor.json": "f2d8e56d5ce641b6d56b2a5a1d08af75875947bfa014f28b6c4c216f1b1ac675",
+      "run:simulated_shift/C/deep_encoder/features/A_D20_acdc_test_failures.parquet": "d8469b1a15489b0a8b917048957ce1271c100db90d142bb918eb9b9055c2928b",
+      "run:simulated_shift/C/deep_encoder/predictions_acdc_test.parquet": "b42b8c04b4e541de3a02ee6382936006780d51f8ec4cb0c2bc0ffb4edbc44899",
+      "run:simulated_shift/C/deep_encoder/predictions_acdc_test_unperturbed.parquet": "4536a4c4491b00281d030db55c2c24a0bcedf6b77f6a788782715454cd8eb3ba",
+      "run:simulated_shift/C/delta_d20.json": "9e819754624b1d4a3cc4dca52973063cb2094e7def6cb0b82bc704315ac4760d"
+    },
+    "params": {
+      "config_sections": [
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.primary_test",
+        "cohorts",
+        "data_centric.common",
+        "data_centric.simulated_shift",
+        "registry",
+        "transition.targets"
+      ],
+      "step": "d20",
+      "vendor": "C"
+    },
+    "stage": "run-simulated-shift:C:d20",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "cb921aca71a4c4a1bfb8ea56f752be6d3935cce05bd6586bfc4fe41b32939c41",
+  "run_log": {
+    "host": "470a8dbf84cd",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 31.629,
+    "started_utc": "2026-10-03T13:41:03+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

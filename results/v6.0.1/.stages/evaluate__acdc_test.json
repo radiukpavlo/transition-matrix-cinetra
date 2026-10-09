@@ -1,0 +1,74 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "d0bb2dffb313dfdfef62dc6bfce73be90ebee9738fa6623b93b65480491dc31c",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:inference/d_model_acdc_test.parquet": "6c837fa91d5fd1d3ac74953f940f9e1cfa86988f907516244cd4a92e3f0c6c6b",
+      "run:inference/routes_d_model_acdc_test.parquet": "8a1db11513ab88085f6138f39fdf080799cb28541c9f806f8524a4a141ce6e46",
+      "run:inference/routes_dataset_label_acdc_test.parquet": "87403364ddc43b7fdd34913c48d600afebd1668022729c2534f2c337d56f0654",
+      "run:inference/routes_measured_oracle_acdc_test.parquet": "8a1db11513ab88085f6138f39fdf080799cb28541c9f806f8524a4a141ce6e46",
+      "run:metrics/decoder_acdc_test.json": "2c52c28cc2542c4d1aaa0af6de28016ddc25ecc91b73d1199cdee3f8bd89e631",
+      "run:metrics/multiplicity_F1.parquet": "4787f09ebe6d03bf9eec4e3dc10b89cc8f62f30ab9323525b1e4e53a17386a18",
+      "run:metrics/per_target_acdc_test.parquet": "4f3d8ab01868459df4c412cdabaab492f126fe1912b1b5bff1974608f55f8885",
+      "run:metrics/primary_rho_acdc_test.json": "b6af7c765d61b2bdb094f2e83dbd68beab0718e638628a214a1395be92beb63c",
+      "run:metrics/routes_d_model_acdc_test.json": "06d3b5c1207439376ffb2918b3a1522f9c0cb90efcab7b3f4c3c5b82d12a8582",
+      "run:metrics/routes_dataset_label_acdc_test.json": "5b89d75ce9b0a43a56076022c5870e20a8034e638e889c97bd1a6691bf01ea35",
+      "run:metrics/routes_measured_oracle_acdc_test.json": "bb7b42a80f8dd33035c3672a5599049906759f73ee7cc316a293d3fb040b3244",
+      "run:reconstructed/bhat_acdc_test.parquet": "18241b7f25d7d8623857582ae074834f83521323317371d6a8238aba9e757cbd",
+      "run:reconstructed/bhat_acdc_test_decoded.parquet": "164b1812514ab8eb5db3e29c08b8414a58a30911f8922a7744cea2954a2e1860",
+      "run:reconstructed/stability_d_model_acdc_test.parquet": "671e391650ecf0d9435980f2d68bb736bf180557bd00a347d228a3e8f169f170",
+      "run:reconstructed/stability_dataset_label_acdc_test.parquet": "671e391650ecf0d9435980f2d68bb736bf180557bd00a347d228a3e8f169f170"
+    },
+    "params": {
+      "config_sections": [
+        "rule_policy",
+        "reason_codes",
+        "cohorts",
+        "registry",
+        "wedd.primary_profile",
+        "wedd.per_object_stability",
+        "transition",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.primary_test",
+        "bootstrap.multiplicity",
+        "bootstrap.subgroup_reporting_thresholds",
+        "splits.acdc.acdc_dev.outer_folds",
+        "splits.refit_arm.eval_strata"
+      ],
+      "split": "acdc_test"
+    },
+    "stage": "evaluate:acdc_test",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "0ea0d2c996e0319f56f100a7fbf3f2fdfecec883747f923c2df45ad643d2b436",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 1.605,
+    "started_utc": "2026-10-03T09:42:53+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

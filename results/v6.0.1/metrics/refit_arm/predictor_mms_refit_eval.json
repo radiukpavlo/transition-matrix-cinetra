@@ -1,0 +1,246 @@
+{
+  "arm": "refit_arm",
+  "bootstrap": {
+    "draw": "SeedSequence(seed).spawn(replicates)[r]; clusters numbered by first row",
+    "interval": "percentile_95",
+    "min_valid_fraction": 0.95,
+    "replicates": 2000,
+    "seed": 20260928,
+    "unit": "cluster_id",
+    "valid_replicate": "finite; for balanced accuracy, macro-F1 and macro AUROC the replicate must contain every reference class of the evaluated sample (macro averages over the same classes)"
+  },
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "classes": [
+    "DCM",
+    "HCM",
+    "NOR",
+    "RV"
+  ],
+  "companions": {
+    "confusion_matrix": {
+      "columns_d_model": [
+        "DCM",
+        "HCM",
+        "NOR",
+        "RV"
+      ],
+      "counts": [
+        [
+          36,
+          5,
+          2,
+          0
+        ],
+        [
+          4,
+          27,
+          1,
+          0
+        ],
+        [
+          19,
+          6,
+          16,
+          0
+        ],
+        [
+          3,
+          0,
+          3,
+          1
+        ]
+      ],
+      "rows_reference": [
+        "DCM",
+        "HCM",
+        "NOR",
+        "RV"
+      ]
+    },
+    "per_class_recall": {
+      "DCM": {
+        "n_reference": 43,
+        "reason": null,
+        "recall": 0.8372093023255814,
+        "status": "EVALUATED"
+      },
+      "HCM": {
+        "n_reference": 32,
+        "reason": null,
+        "recall": 0.84375,
+        "status": "EVALUATED"
+      },
+      "NOR": {
+        "n_reference": 41,
+        "reason": null,
+        "recall": 0.3902439024390244,
+        "status": "EVALUATED"
+      },
+      "RV": {
+        "n_reference": 7,
+        "reason": null,
+        "recall": 0.14285714285714285,
+        "status": "EVALUATED"
+      }
+    }
+  },
+  "counts": {
+    "n_clusters": 123,
+    "n_evaluable": 123,
+    "n_excluded_critical_qc": 0,
+    "n_no_decision": 0,
+    "n_partition": 169,
+    "n_recorded_predictions": 169,
+    "n_reference_outside_predictor_classes": 0,
+    "n_reference_unknown": 46,
+    "n_rows": 169
+  },
+  "ece_binning": "equal_mass",
+  "ece_bins": 10,
+  "ece_realized_bins": [
+    {
+      "abs_gap": 0.09133098733806555,
+      "accuracy": 0.38461538461538464,
+      "bin_id": 0,
+      "count": 13,
+      "mean_confidence": 0.4759463719534502
+    },
+    {
+      "abs_gap": 0.13612395965748314,
+      "accuracy": 0.46153846153846156,
+      "bin_id": 1,
+      "count": 13,
+      "mean_confidence": 0.5976624211959447
+    },
+    {
+      "abs_gap": 0.3819715977827489,
+      "accuracy": 0.3076923076923077,
+      "bin_id": 2,
+      "count": 13,
+      "mean_confidence": 0.6896639054750566
+    },
+    {
+      "abs_gap": 0.03351242091471418,
+      "accuracy": 0.75,
+      "bin_id": 3,
+      "count": 12,
+      "mean_confidence": 0.7835124209147142
+    },
+    {
+      "abs_gap": 0.1030218068433616,
+      "accuracy": 0.75,
+      "bin_id": 4,
+      "count": 12,
+      "mean_confidence": 0.8530218068433616
+    },
+    {
+      "abs_gap": 0.23258364013261745,
+      "accuracy": 0.6666666666666666,
+      "bin_id": 5,
+      "count": 12,
+      "mean_confidence": 0.8992503067992841
+    },
+    {
+      "abs_gap": 0.2721389480829197,
+      "accuracy": 0.6666666666666666,
+      "bin_id": 6,
+      "count": 12,
+      "mean_confidence": 0.9388056147495863
+    },
+    {
+      "abs_gap": 0.13440428496489754,
+      "accuracy": 0.8333333333333334,
+      "bin_id": 7,
+      "count": 12,
+      "mean_confidence": 0.9677376182982309
+    },
+    {
+      "abs_gap": 0.07026268867130303,
+      "accuracy": 0.9166666666666666,
+      "bin_id": 8,
+      "count": 12,
+      "mean_confidence": 0.9869293553379697
+    },
+    {
+      "abs_gap": 0.1655504944802667,
+      "accuracy": 0.8333333333333334,
+      "bin_id": 9,
+      "count": 12,
+      "mean_confidence": 0.9988838278136001
+    }
+  ],
+  "metrics": {
+    "accuracy": {
+      "ci_lower": 0.5609756097560976,
+      "ci_upper": 0.7317073170731707,
+      "estimate": 0.6504065040650406,
+      "n_boot_valid": 2000,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 1.0
+    },
+    "balanced_accuracy": {
+      "ci_lower": 0.47573337999105486,
+      "ci_upper": 0.6532493161468008,
+      "estimate": 0.5535150869054372,
+      "n_boot_valid": 1999,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 0.9995
+    },
+    "ece": {
+      "ci_lower": 0.11401928972074697,
+      "ci_upper": 0.25189816929595,
+      "estimate": 0.1630913535869824,
+      "n_boot_valid": 2000,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 1.0
+    },
+    "log_loss": {
+      "clip": 1e-15,
+      "estimate": 1.0774075545664272,
+      "reason": null,
+      "role": "descriptive_companion",
+      "status": "EVALUATED"
+    },
+    "macro_f1": {
+      "ci_lower": 0.4391491122871877,
+      "ci_upper": 0.6729877843922962,
+      "estimate": 0.5537698412698413,
+      "n_boot_valid": 1999,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 0.9995
+    },
+    "macro_ovr_auroc": {
+      "ci_lower": 0.7892410268731788,
+      "ci_upper": 0.9108363788222131,
+      "estimate": 0.8530789158720652,
+      "n_boot_valid": 1999,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 0.9995
+    }
+  },
+  "metrics_definition": "SPECIFICATION.md 13.2 Audited predictor; configs/bootstrap.yaml classification_metrics, calibration, fixed_model_bootstrap",
+  "partition": "mms_refit_eval",
+  "pooled_with_primary": false,
+  "predictions": "formal/refit_arm/d_model_mms_refit.parquet (d_model_refit)",
+  "predictor": "refit_arm_predictor",
+  "probabilities": "recorded",
+  "probability_source": "formal/refit_arm/d_model_predictor.joblib (fit-refit-arm record, hash-verified) applied to the recorded formal/A_MMS.parquet; its argmax reproduces the recorded d_model_refit",
+  "qc_rule": "critical QC of semantics/refit_arm/B_MMS_refit.parquet",
+  "reason": null,
+  "reference": "crosswalk_same_definition_only",
+  "role": "required_secondary_ceiling",
+  "schema": "tmmri.predictor_summary/1",
+  "semantic_comparator": {
+    "name": "measured_b_logistic_semantic_comparator",
+    "note": "configs/formal.yaml comparator_predictor is not fitted by any stage of this run and is never fitted here",
+    "reason": "COMPARATOR_NOT_FITTED_IN_RUN",
+    "role": "semantic_comparator_not_audited",
+    "status": "NE"
+  },
+  "status": "EVALUATED"
+}

@@ -1,0 +1,29 @@
+{
+ "release_assets": [
+  {
+   "asset": "f9_final_seed20261011.pt",
+   "seed": 20261011,
+   "sha256": "6ec3515d3b78fbf4dddbaa0e3d2bb4318142eec334fec01f959d2213b852fb4e",
+   "bytes": 45937055,
+   "run_path": "neural_f9/checkpoints/7581584233dc31c4/model.pt",
+   "licence": "CC BY-NC-SA 4.0 (fitted on the ACDC development set)"
+  },
+  {
+   "asset": "f9_final_seed20261012.pt",
+   "seed": 20261012,
+   "sha256": "7c66941e3897bfc23436bfc6c9ecb3ca40193196c8c71992b891edb33e66fb11",
+   "bytes": 45937055,
+   "run_path": "neural_f9/checkpoints/932af384115f1700/model.pt",
+   "licence": "CC BY-NC-SA 4.0 (fitted on the ACDC development set)"
+  },
+  {
+   "asset": "f9_final_seed20261013.pt",
+   "seed": 20261013,
+   "sha256": "6fcbbc614d2f32a3c7fe2fa217767e8de3fcc6c77346a32b8455acd0709eef3b",
+   "bytes": 45937055,
+   "run_path": "neural_f9/checkpoints/02297ae72cfff7b4/model.pt",
+   "licence": "CC BY-NC-SA 4.0 (fitted on the ACDC development set)"
+  }
+ ],
+ "note": "Attached to the GitHub release; not in git history."
+}

@@ -1,0 +1,59 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "1db474923ce82cf219501817904b96807d4f3a3f2a8c4bb3ef898f98267de23e",
+    "inputs": {
+      "data:manifests/staging_ACDC.json": "6a1f70128dee7420f79b65c02719917887a00a101eac6b38adb5672a57f59160",
+      "data:manifests/staging_MMS.json": "800f5f8be78d7fc13e1a00c65c75f9f22cd6501bfe26a68b36855564d01c50df",
+      "data:manifests/staging_MMS2.json": "9fadb5b3de7ada08cf064671553194791827e991389597ac33e3ce488cdb14df",
+      "data:raw/mms2/MMS2_EXTRACTION_MANIFEST.csv": "6b9475e5b0186d18fb4203a31e19e6e76f9fd14a07aa44fc27c2da23ee452300",
+      "repo:registry/sources/mms2.yaml": "baf8b4b937ed2c344b9444ff2ba6fe18fc0f6641852ecbddc582a723830b5eca",
+      "repo:registry/sources/mms2_split_manifest.csv": "44713c634b399f89efb251d4f7846d200c61947682c07dfb0217b70e5530eca4"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:contracts/cohort_MMS2.parquet": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+      "run:contracts/cohort_validation_MMS2.json": "fe2b24afb1fd1c9fc74781d93d4e10e852e33e68dc6b1a32f62664cd4b05d2c0",
+      "run:contracts/mms2_duplicates.json": "8e695586458ff6dc039a6d3d44fec9302f0fff5c4774e0228f1270f4b21af21d",
+      "run:contracts/split_manifest_MMS2.parquet": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75"
+    },
+    "params": {
+      "config_sections": [
+        "cohorts.mms2",
+        "splits.mms2",
+        "cohorts.duplicate_image_pairs",
+        "registry.label_tables"
+      ],
+      "source_binding_sha256": "3e660c991f3ce6d3536b934055fb6b6141fa67bb0c7b65e90d2123ad7a5607ea",
+      "source_manifest_sha256": "6b9475e5b0186d18fb4203a31e19e6e76f9fd14a07aa44fc27c2da23ee452300",
+      "strict": true,
+      "synthetic_count_waiver": false
+    },
+    "stage": "validate-cohort:MMS2",
+    "status": "BUILT"
+  },
+  "payload_sha256": "0b5e7efb9082a95663b38e61c302df4ae4d75d812b69078f912c7ab82d901f66",
+  "run_log": {
+    "host": "ba1e3031916a",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 0.249,
+    "started_utc": "2026-10-03T14:37:51+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

@@ -1,0 +1,8 @@
+tree 34544e171727cc9c8eb63e6a9aded71bc6ffda8c
+parent e6bfde04938078083f03e8a13f1e8f91d88d7669
+author Pavlo Radiuk <radiukpavlo@gmail.com> 1791035052 +0300
+committer Pavlo Radiuk <radiukpavlo@gmail.com> 1791035052 +0300
+
+docs: record the F9 freeze evidence and the S5 cost-guard note for the v6.0.1 entry
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

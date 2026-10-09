@@ -1,0 +1,142 @@
+{
+  "class_records": {
+    "DCM": {
+      "eligible": true,
+      "fit_patients": 20,
+      "reason_code": null
+    },
+    "HCM": {
+      "eligible": true,
+      "fit_patients": 20,
+      "reason_code": null
+    },
+    "MINF": {
+      "eligible": true,
+      "fit_patients": 19,
+      "reason_code": null
+    },
+    "NOR": {
+      "eligible": true,
+      "fit_patients": 19,
+      "reason_code": null
+    },
+    "RV": {
+      "eligible": true,
+      "fit_patients": 20,
+      "reason_code": null
+    }
+  },
+  "consequent_endpoint": "d_model",
+  "failing_gates": [
+    "validation_gate: no rule met the pooled cross-fitted support and Wilson lower-bound conditions"
+  ],
+  "gate_table": [
+    {
+      "agreement": 0.875,
+      "consequent": "DCM",
+      "eligibility": "INELIGIBLE_CROSSFIT_AGREEMENT",
+      "eligible": false,
+      "eligible_at_0.50": true,
+      "eligible_at_0.60": false,
+      "eligible_at_0.70": false,
+      "folds_reproduced": 4,
+      "length": 2,
+      "oof_agree": 7,
+      "oof_matched": 8,
+      "reproduced_in_folds": "2;3;4;5",
+      "rule_id": "R_cf5ef6878625f5f6",
+      "wilson_lb": 0.5291118177871464,
+      "wilson_ub": 0.9775825085499433
+    },
+    {
+      "agreement": NaN,
+      "consequent": "DCM",
+      "eligibility": "INELIGIBLE_CROSSFIT_SUPPORT",
+      "eligible": false,
+      "eligible_at_0.50": false,
+      "eligible_at_0.60": false,
+      "eligible_at_0.70": false,
+      "folds_reproduced": 0,
+      "length": 2,
+      "oof_agree": 0,
+      "oof_matched": 0,
+      "reproduced_in_folds": "",
+      "rule_id": "R_8e93b4c34036921a",
+      "wilson_lb": NaN,
+      "wilson_ub": NaN
+    },
+    {
+      "agreement": 0.8571428571428571,
+      "consequent": "RV",
+      "eligibility": "INELIGIBLE_CROSSFIT_AGREEMENT",
+      "eligible": false,
+      "eligible_at_0.50": false,
+      "eligible_at_0.60": false,
+      "eligible_at_0.70": false,
+      "folds_reproduced": 4,
+      "length": 2,
+      "oof_agree": 6,
+      "oof_matched": 7,
+      "reproduced_in_folds": "2;3;4;5",
+      "rule_id": "R_56b7159f0d2f25af",
+      "wilson_lb": 0.4868721707256811,
+      "wilson_ub": 0.9743203756552565
+    },
+    {
+      "agreement": 0.875,
+      "consequent": "HCM",
+      "eligibility": "INELIGIBLE_CROSSFIT_AGREEMENT",
+      "eligible": false,
+      "eligible_at_0.50": true,
+      "eligible_at_0.60": false,
+      "eligible_at_0.70": false,
+      "folds_reproduced": 2,
+      "length": 2,
+      "oof_agree": 7,
+      "oof_matched": 8,
+      "reproduced_in_folds": "2;3",
+      "rule_id": "R_a81d541ff3339287",
+      "wilson_lb": 0.5291118177871464,
+      "wilson_ub": 0.9775825085499433
+    },
+    {
+      "agreement": 0.5,
+      "consequent": "RV",
+      "eligibility": "INELIGIBLE_CROSSFIT_SUPPORT",
+      "eligible": false,
+      "eligible_at_0.50": false,
+      "eligible_at_0.60": false,
+      "eligible_at_0.70": false,
+      "folds_reproduced": 1,
+      "length": 1,
+      "oof_agree": 1,
+      "oof_matched": 2,
+      "reproduced_in_folds": "5",
+      "rule_id": "R_9f66dc569c7f6329",
+      "wilson_lb": 0.09453120573423074,
+      "wilson_ub": 0.9054687942657693
+    },
+    {
+      "agreement": 1.0,
+      "consequent": "MINF",
+      "eligibility": "INELIGIBLE_CROSSFIT_SUPPORT",
+      "eligible": false,
+      "eligible_at_0.50": false,
+      "eligible_at_0.60": false,
+      "eligible_at_0.70": false,
+      "folds_reproduced": 1,
+      "length": 2,
+      "oof_agree": 2,
+      "oof_matched": 2,
+      "reproduced_in_folds": "2",
+      "rule_id": "R_51471d9e1ebbae7d",
+      "wilson_lb": 0.34238022750665303,
+      "wilson_ub": 1.0
+    }
+  ],
+  "provenance": {
+    "ablation": "rule_policy:max_length_2"
+  },
+  "reason_code": "RULEBOOK_EMPTY",
+  "rulebook": "d_model"
+}

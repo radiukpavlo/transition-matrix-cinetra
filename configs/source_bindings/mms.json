@@ -1,0 +1,72 @@
+{
+  "cohort": "mms",
+  "dataset_id": "MMS",
+  "specification_version": "6.0.0",
+  "status": "bound_on_mount",
+  "documented_on": "2026-09-28",
+  "observed_on_mount": "2026-09-28",
+  "observation_scope": "folder structure, file counts and sizes, CSV field names and release-level metadata counts, NIfTI header geometry and mask encoding; no image-derived endpoint (B, A, reconstruction, rule or metric) was computed for any M&Ms case before M0",
+  "mount": {"container": "/sources/mms", "host_default": "<local path>", "mode": "read_only"},
+  "release_files_expected": {
+    "info_csv": "211230_M&Ms_Dataset_information_diagnosis_opendataset.csv",
+    "case_files": ["<split>/<ID>/<ID>_sa.nii.gz", "<split>/<ID>/<ID>_sa_gt.nii.gz"],
+    "splits": ["Training/Labeled", "Training/Unlabeled", "Validation", "Testing"]
+  },
+  "release_files_observed": {
+    "cases": 345,
+    "files": 691,
+    "bytes_total": 15380121327,
+    "integrity_manifest": "BACKUP_MANIFEST.sha256 (SHA-256 of all 691 files; no two files byte-identical)",
+    "tracked_manifest": "registry/sources/mms_full_release_manifest.csv",
+    "per_split": {
+      "Training/Labeled": {"cases": 150, "vendors": {"A": 75, "B": 75}, "gz_bytes": "3.755 GB"},
+      "Training/Unlabeled": {"cases": 25, "vendors": {"C": 25}, "gz_bytes": "0.759 GB"},
+      "Validation": {"cases": 34, "vendors": {"A": 4, "B": 10, "C": 10, "D": 10}, "gz_bytes": "1.898 GB"},
+      "Testing": {"cases": 136, "vendors": {"A": 16, "B": 40, "C": 40, "D": 40}, "gz_bytes": "8.969 GB"}
+    },
+    "labelled_320": {"cases": 320, "gz_bytes": "14.621 GB", "decompressed_bytes": "67.173 GB"},
+    "listing_matches_expected": true
+  },
+  "observed_structure": {
+    "info_csv": {
+      "bytes": 14139,
+      "sha256": "612b76738262dcca277e2fe9afba2c1bfea869543fb6af82a68fe30097433fbd",
+      "repository_copy": "data/raw/mms/211230_MnMs_Dataset_information_diagnosis_opendataset.csv (byte-identical)",
+      "columns": ["", "External code", "VendorName", "Vendor", "Centre", "ED", "ES", "Age", "Pathology", "Sex", "Height", "Weight"],
+      "rows": 345,
+      "duplicate_ids": 0,
+      "row_folder_mismatches": 0,
+      "completeness": {"ED": "100 %", "ES": "100 %", "Age": "100 %", "Sex": "100 %", "Weight": "99.4 %", "Height": "39.1 % (A 89.5 %, B 0 %, C 0 %, D 100 %)"}
+    },
+    "vendor_centre": {"A": {"VendorName": "Siemens", "Centre": [1]}, "B": {"VendorName": "Philips", "Centre": [2, 3]}, "C": {"VendorName": "GE", "Centre": [4]}, "D": {"VendorName": "Canon", "Centre": [5]}},
+    "split_by_centre": {"Training/Labeled": {"1": 75, "2": 50, "3": 25}, "Training/Unlabeled": {"4": 25}, "Validation": {"1": 4, "2": 5, "3": 5, "4": 10, "5": 10}, "Testing": {"1": 16, "2": 19, "3": 21, "4": 40, "5": 40}},
+    "pathology_values": ["NOR", "DCM", "HCM", "ARV", "IHD", "HHD", "LVNC", "AHS", "Other"],
+    "headers": "all images 4D float32; sform_code 1, qform_code 0; affine voxel-scaled in all 345 (column norms equal zooms, max difference 7.2e-7); mask shape, affine and zooms equal the image's in 345 of 345",
+    "mask_encoding": "213 float32 integer-valued; 132 uint8 with scl_slope 3/255 (reads as 1.00000002); np.rint before label comparison",
+    "geometry_by_vendor": {
+      "A": {"matrix": "196-256 x 192-288", "slices": "5-16", "frames": "25", "inplane_mm": "0.977-1.625", "slice_mm": "8.0-10.0"},
+      "B": {"matrix": "256-384 square", "slices": "8-20", "frames": "18-30", "inplane_mm": "1.152-1.484", "slice_mm": "5-10"},
+      "C": {"matrix": "256-512 square", "slices": "8-16", "frames": "20-30", "inplane_mm": "0.684-1.797", "slice_mm": "5-10"},
+      "D": {"matrix": "220-548 x 192-512", "slices": "10-15", "frames": "20-36", "inplane_mm": "0.795-1.823", "slice_mm": "10"}
+    },
+    "unlabeled_25": "masks carry labels 1-3 on exactly two frames, but the CSV gives ED = 0 and ES = 0 for all 25 (placeholders); duplicate pairs C5Q2Y5 = E9L4N2 and A8C9H8 = Q0Q1Y4",
+    "labelled_320_checks": "ED/ES within the frame count 320/320; annotated mask frames equal CSV {ED, ES} 320/320; labels 1, 2, 3 present at ED and ES 320/320; no duplicate mask signatures",
+    "structural_flags_not_failures": ["D3O9U9: 5 slices at 8 mm; RV on 2 slices at ES", "B6I0T4: RV on 2 slices at ES"]
+  },
+  "bindings": {
+    "case_id_key": {"expected": "External code", "bound": "CSV External code = case folder name", "note": "patient_id = case_id (one examination per case)"},
+    "release_split_key": {"expected": "Training/Labeled | Training/Unlabeled | Validation | Testing", "bound": "case folder parent path", "note": "stratum release_split; Training/Unlabeled excluded (MMS_RELEASE_UNLABELED)"},
+    "vendor_key": {"expected": "A | B | C | D", "bound": "CSV Vendor; VendorName -> scanner_vendor", "note": "stratum vendor"},
+    "centre_key": {"expected": "1-5", "bound": "CSV Centre -> center_id", "note": "stratum centre"},
+    "ed_frame_key": {"expected": "0-based frame index", "bound": "CSV ED", "note": "ed_frame_index = ED; frame selected from the 4D cine and mask"},
+    "es_frame_key": {"expected": "0-based frame index", "bound": "CSV ES", "note": "es_frame_index = ES"},
+    "pathology_key": {"expected": "NOR | DCM | HCM | ARV | IHD | HHD | LVNC | AHS | Other", "bound": "CSV Pathology", "note": "crosswalk registry/semantic_registry.yaml label_tables.mms_to_acdc; evaluation-only"},
+    "height_key": {"expected": "cm", "bound": "CSV Height", "note": "missing for every vendor B and C case; BSA not harmonizable"},
+    "weight_key": {"expected": "kg", "bound": "CSV Weight", "note": "99.4 % present"},
+    "label_map": {"expected": "1 LV, 2 MYO, 3 RV", "bound": "{0: 0, 1: 1, 2: 2, 3: 3}", "note": "identity after np.rint"},
+    "geometry": {"expected": "voxel-scaled affine", "bound": "mask header zooms and affine column norms", "note": "not affected by the ACDC unit-affine defect"},
+    "mms100_member_key": {"expected": "100 case_ids", "bound": "registry/sources/mms_100_source_normalization_manifest.csv case_id", "note": "Testing 50, Training/Labeled 32, Validation 18; all 200 source SHA-256 match BACKUP_MANIFEST"}
+  },
+  "licence": "M&Ms Research Use Agreement: verbatim personal research copy (clause 4); no distribution of any portion (clause 5); cite Campello et al., IEEE Trans Med Imaging 2021;40(12):3543-3554",
+  "official_source": "https://www.ub.edu/mnms/ (site unavailable on 2026-09-26; Kaggle mirrors are not used)"
+}

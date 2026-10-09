@@ -1,0 +1,282 @@
+{
+  "accuracy": {
+    "accuracy_alternative": 0.9,
+    "accuracy_reference": 0.88,
+    "ci_lower": 0.0,
+    "ci_upper": 0.06000000000000005,
+    "counts": {
+      "n_evaluable_paired": 50,
+      "n_no_decision_alternative": 0,
+      "n_no_decision_reference": 0,
+      "n_reference_unknown": 0,
+      "n_rows": 50
+    },
+    "delta_accuracy": 0.020000000000000018,
+    "interval": "percentile_95",
+    "n_boot": 2000,
+    "n_boot_valid": 2000,
+    "n_changed_decisions": 1,
+    "n_clusters": 50,
+    "paired": "same cluster draw for both conditions",
+    "reason": null,
+    "seed": 20260928,
+    "status": "EVALUATED",
+    "unit": "cluster_id",
+    "valid_fraction": 1.0
+  },
+  "analysis": "S6_simulated_acquisition_shift",
+  "analysis_label": "registered after unblinding",
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "comparison": "perturbed (A and B recomputed on the resampled images and masks) minus unperturbed (recorded evaluate:acdc_test)",
+  "data_centric_config_digest": "bc834e6fe165cc1c81d0e8a3398decf6a47141f5573ec945c0ddccc7d4e5fa94",
+  "data_centric_sha256": "830ce834980e5c9c5a242c7ec3b42b978b5ca8a1337c293840fbe959756dfe9c",
+  "measurement_shift_B": {
+    "global_wall_thickening_percent": {
+      "mean_abs_difference_over_fit_sd": 0.0692734345393839,
+      "mean_difference": -0.4104053800498039,
+      "n": 50
+    },
+    "global_wall_thickness_ed_mm": {
+      "mean_abs_difference_over_fit_sd": 0.026570237931783827,
+      "mean_difference": -0.007562253582719514,
+      "n": 50
+    },
+    "global_wall_thickness_es_mm": {
+      "mean_abs_difference_over_fit_sd": 0.0252848389772011,
+      "mean_difference": -0.0330023016945702,
+      "n": 50
+    },
+    "lv_area_mean_ed_mm2": {
+      "mean_abs_difference_over_fit_sd": 0.018023783291710747,
+      "mean_difference": 1.4265481208933124,
+      "n": 50
+    },
+    "lv_area_mean_es_mm2": {
+      "mean_abs_difference_over_fit_sd": 0.017460219776438374,
+      "mean_difference": 7.438793685390811,
+      "n": 50
+    },
+    "lv_compactness_mean_ed": {
+      "mean_abs_difference_over_fit_sd": 1.5950105878429115,
+      "mean_difference": -0.021776212729289694,
+      "n": 50
+    },
+    "lv_compactness_mean_es": {
+      "mean_abs_difference_over_fit_sd": 1.2115032944851,
+      "mean_difference": -0.019425423864712344,
+      "n": 50
+    },
+    "lv_eccentricity_mean_ed": {
+      "mean_abs_difference_over_fit_sd": 0.10022009100743715,
+      "mean_difference": 0.0031526618824873455,
+      "n": 50
+    },
+    "lv_eccentricity_mean_es": {
+      "mean_abs_difference_over_fit_sd": 0.1810855398339185,
+      "mean_difference": 0.00343530914077974,
+      "n": 50
+    },
+    "lv_edv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.02432609464179974,
+      "mean_difference": 1.1438181767472684,
+      "n": 50
+    },
+    "lv_ef_percent": {
+      "mean_abs_difference_over_fit_sd": 0.03208981912681966,
+      "mean_difference": -0.15760963200762945,
+      "n": 50
+    },
+    "lv_esv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.016343381697918567,
+      "mean_difference": 0.6461003914534931,
+      "n": 50
+    },
+    "lv_myo_volume_es_ml": {
+      "mean_abs_difference_over_fit_sd": 0.021248343138704544,
+      "mean_difference": 0.21078978030170006,
+      "n": 50
+    },
+    "lv_myocardial_mass_ed_g": {
+      "mean_abs_difference_over_fit_sd": 0.02976581341849571,
+      "mean_difference": 0.491775553499554,
+      "n": 50
+    },
+    "lv_sv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.04871158333077979,
+      "mean_difference": 0.49771778529377586,
+      "n": 50
+    },
+    "rv_area_mean_ed_mm2": {
+      "mean_abs_difference_over_fit_sd": 0.026545258631581095,
+      "mean_difference": -1.3406255696672178,
+      "n": 50
+    },
+    "rv_area_mean_es_mm2": {
+      "mean_abs_difference_over_fit_sd": 0.022537730071847138,
+      "mean_difference": 0.259215101336066,
+      "n": 50
+    },
+    "rv_compactness_mean_ed": {
+      "mean_abs_difference_over_fit_sd": 0.17905031048583914,
+      "mean_difference": -0.012707285225198938,
+      "n": 50
+    },
+    "rv_compactness_mean_es": {
+      "mean_abs_difference_over_fit_sd": 0.12216028480116697,
+      "mean_difference": -0.012300099347687759,
+      "n": 50
+    },
+    "rv_eccentricity_mean_ed": {
+      "mean_abs_difference_over_fit_sd": 0.05528339195223821,
+      "mean_difference": 0.0002482368152790015,
+      "n": 50
+    },
+    "rv_eccentricity_mean_es": {
+      "mean_abs_difference_over_fit_sd": 0.06429771331028335,
+      "mean_difference": 0.00012563189266155296,
+      "n": 50
+    },
+    "rv_edv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.045242193481464896,
+      "mean_difference": 1.1606757291747212,
+      "n": 50
+    },
+    "rv_ef_percent": {
+      "mean_abs_difference_over_fit_sd": 0.029923903097422672,
+      "mean_difference": 0.1176414042450213,
+      "n": 50
+    },
+    "rv_esv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.020926371021355483,
+      "mean_difference": 0.07225369773509413,
+      "n": 50
+    },
+    "rv_sv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.06623964109070984,
+      "mean_difference": 1.0884220314396267,
+      "n": 50
+    }
+  },
+  "n_cases": 50,
+  "n_formal_failures": 0,
+  "partition": "acdc_test",
+  "recorded_rho_acdc_test": 0.5525082970070413,
+  "registration": "protocol-v6.0.1 item 15",
+  "representation": "descriptors",
+  "rho": {
+    "ci_lower": -0.014550140098398872,
+    "ci_upper": 0.0015626407697853055,
+    "delta_rho": -0.005331876103286448,
+    "delta_rho_j": {
+      "lv_edv_ml": {
+        "ci_lower": -0.03794130899967484,
+        "ci_upper": 0.01360685903322609,
+        "estimate": -0.006445160891354607,
+        "n_boot_valid": 2000
+      },
+      "lv_ef_percent": {
+        "ci_lower": -0.011324454360620016,
+        "ci_upper": 0.00830370608837549,
+        "estimate": -0.0014065620112263533,
+        "n_boot_valid": 2000
+      },
+      "lv_esv_ml": {
+        "ci_lower": -0.012236453366362825,
+        "ci_upper": 0.01107065292484368,
+        "estimate": -7.657562009311114e-05,
+        "n_boot_valid": 2000
+      },
+      "lv_myocardial_mass_ed_g": {
+        "ci_lower": -0.045579954829623945,
+        "ci_upper": 0.009720283329002745,
+        "estimate": -0.01387903862346751,
+        "n_boot_valid": 2000
+      },
+      "rv_edv_ml": {
+        "ci_lower": -0.030629317193104102,
+        "ci_upper": 0.013245730696640479,
+        "estimate": -0.007113522496850266,
+        "n_boot_valid": 2000
+      },
+      "rv_ef_percent": {
+        "ci_lower": -0.011376639827372994,
+        "ci_upper": 0.04886846293837572,
+        "estimate": 0.017586015350991246,
+        "n_boot_valid": 2000
+      },
+      "rv_esv_ml": {
+        "ci_lower": -0.051523378638668293,
+        "ci_upper": -0.005514278281620726,
+        "estimate": -0.02598828843100487,
+        "n_boot_valid": 2000
+      }
+    },
+    "estimable_targets": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "family": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "interval": "percentile_95",
+    "min_estimable": 5,
+    "n_boot": 2000,
+    "n_boot_valid": 2000,
+    "n_clusters": 50,
+    "n_rows": 50,
+    "n_rows_paired_per_target": {
+      "lv_edv_ml": 50,
+      "lv_ef_percent": 50,
+      "lv_esv_ml": 50,
+      "lv_myocardial_mass_ed_g": 50,
+      "rv_edv_ml": 50,
+      "rv_ef_percent": 50,
+      "rv_esv_ml": 50
+    },
+    "n_units": 50,
+    "paired": "same cluster draw for both conditions",
+    "reason": null,
+    "rho_alternative": 0.5471764209037548,
+    "rho_j_alternative": {
+      "lv_edv_ml": 0.46460437505901453,
+      "lv_ef_percent": 0.7926993833851491,
+      "lv_esv_ml": 0.645169120047167,
+      "lv_myocardial_mass_ed_g": 0.3732991336925374,
+      "rv_edv_ml": 0.4438272799268991,
+      "rv_ef_percent": 0.585929335057781,
+      "rv_esv_ml": 0.524706319157736
+    },
+    "rho_j_reference": {
+      "lv_edv_ml": 0.47104953595036914,
+      "lv_ef_percent": 0.7941059453963755,
+      "lv_esv_ml": 0.6452456956672601,
+      "lv_myocardial_mass_ed_g": 0.38717817231600493,
+      "rv_edv_ml": 0.45094080242374934,
+      "rv_ef_percent": 0.5683433197067898,
+      "rv_esv_ml": 0.5506946075887409
+    },
+    "rho_reference": 0.5525082970070413,
+    "seed": 20260928,
+    "status": "EVALUATED",
+    "valid_fraction": 1.0
+  },
+  "study_config_hash": "0eeb571a66d0338cf46bce34a9aa58327f3c659b59d1771d14d68ec5ad5fc11f",
+  "target_spacing_mm": [
+    1.4843999147415161,
+    1.4843997359275818,
+    9.999999991007218
+  ],
+  "vendor": "C",
+  "vendor_name": "GE"
+}

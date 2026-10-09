@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, results or protocol, please cite it as below, and cite the article once it is published."
+title: "CINETRA: A Multi-Vendor Audit of Semantic Concept Transfer in Cardiac MRI (code, protocol and frozen results)"
+type: software
+version: v1.0.0
+repository-code: "https://github.com/radiukpavlo/transition-matrix-cinetra"
+license: [MIT, CC-BY-4.0, CC-BY-NC-SA-4.0]
+abstract: >-
+  CINETRA audits a frozen multinomial logistic regression on 57 mask descriptors of cine cardiac MRI: a typed
+  transition maps the descriptors to measured ventricular concepts, variable-precision rough-set rules must pass a
+  cross-fitted gate, and every case receives a reason-coded label or computational abstention. This repository holds
+  the registered protocol CMR-TRANS-AUDIT 6.0.1, the code that produced the results (byte-identical to the
+  registered commit), the aggregate results of the frozen run, the bundles fitted on the ACDC development set, and
+  the tools to verify the registration and reproduce the study.
+keywords:
+  - explainable artificial intelligence
+  - cardiac magnetic resonance imaging
+  - transition matrix
+  - rough sets
+  - concept-based explanation
+  - distribution shift
+  - selective prediction
+  - registered protocol
+authors:
+  - family-names: Radiuk
+    given-names: Pavlo
+    orcid: "https://orcid.org/0000-0003-3609-112X"
+    affiliation: "Department of Computer Science, Khmelnytskyi National University, Ukraine"
+  - family-names: Barmak
+    given-names: Oleksander
+    orcid: "https://orcid.org/0000-0003-0739-9678"
+    affiliation: "Department of Computer Science, Khmelnytskyi National University, Ukraine"
+  - family-names: Klymenko
+    given-names: Liliana
+    orcid: "https://orcid.org/0000-0001-6749-113X"
+    affiliation: "Department of Family Medicine and Outpatient Care, Shupyk National Healthcare University of Ukraine"
+  - family-names: Krak
+    given-names: Iurii
+    orcid: "https://orcid.org/0000-0002-8043-0785"
+    affiliation: "Taras Shevchenko National University of Kyiv; V.M. Glushkov Institute of Cybernetics, Ukraine"

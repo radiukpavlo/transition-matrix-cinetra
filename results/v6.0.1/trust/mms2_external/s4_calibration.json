@@ -1,0 +1,411 @@
+{
+  "descriptor_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "estimation_only": true,
+  "evidence": "prospective",
+  "freeze_order": {
+    "before_extraction": true,
+    "bundles": {
+      "D20": {
+        "before_extraction": true,
+        "freezes": [
+          {
+            "before_extraction": true,
+            "finished_utc_upper_bound": "2026-10-03T11:37:37.804000+00:00",
+            "recorded": true,
+            "stage": "fit-deep-encoder",
+            "started_utc": "2026-10-03T11:37:31+00:00"
+          }
+        ]
+      },
+      "F9": {
+        "before_extraction": true,
+        "freezes": [
+          {
+            "before_extraction": true,
+            "finished_utc_upper_bound": "2026-10-03T13:22:04.801000+00:00",
+            "recorded": true,
+            "stage": "freeze-f9",
+            "started_utc": "2026-10-03T13:22:03+00:00"
+          }
+        ]
+      },
+      "F9b": {
+        "before_extraction": true,
+        "freezes": [
+          {
+            "before_extraction": true,
+            "finished_utc_upper_bound": "2026-10-03T13:24:00.858000+00:00",
+            "recorded": true,
+            "stage": "fit-probes",
+            "started_utc": "2026-10-03T13:23:49+00:00"
+          },
+          {
+            "before_extraction": true,
+            "finished_utc_upper_bound": "2026-10-03T13:22:04.801000+00:00",
+            "recorded": true,
+            "stage": "freeze-f9",
+            "started_utc": "2026-10-03T13:22:03+00:00"
+          }
+        ]
+      },
+      "S1-S4": {
+        "before_extraction": true,
+        "freezes": [
+          {
+            "before_extraction": true,
+            "finished_utc_upper_bound": "2026-10-03T13:25:38.247000+00:00",
+            "recorded": true,
+            "stage": "fit-trust",
+            "started_utc": "2026-10-03T13:25:35+00:00"
+          }
+        ]
+      }
+    },
+    "evidence": "prospective",
+    "extraction": {
+      "exists": true,
+      "first_extraction_started_utc": "2026-10-03T14:34:21+00:00",
+      "records": {
+        "source_area_receipt": {
+          "action": "RAN",
+          "extraction_started_utc": "2026-10-03T14:34:21+00:00",
+          "file": "MMS2_EXTRACTION_RECEIPT.json",
+          "first_extraction_started_utc": null
+        }
+      }
+    },
+    "label": "prospective",
+    "reason": null,
+    "rule": "SPECIFICATION.md 14.6 (D33): freeze records dated before the M&Ms-2 extraction record; a later freeze has no registered mms2_external result and is labelled post hoc"
+  },
+  "label": "prospective",
+  "partition": "mms2_external",
+  "predictors": {
+    "audited_predictor": {
+      "before_after": {
+        "bootstrap": {
+          "paired": "same cluster draw for both",
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "cluster_id"
+        },
+        "direction": "comparator_minus_reference",
+        "metrics": {
+          "accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.7058823529411765,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.7058823529411765,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "balanced_accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.6728558797524316,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.6728558797524316,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "brier": {
+            "ci_lower": -0.0011624730010717152,
+            "ci_upper": 0.03438244797138707,
+            "comparator": 0.45536037906567733,
+            "difference": 0.016139332195803435,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.4392210468698739,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece": {
+            "ci_lower": -0.041479405468855354,
+            "ci_upper": 0.06029229802865718,
+            "comparator": 0.18571809425825864,
+            "difference": 0.008758513318022076,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.17695958094023656,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "log_loss": {
+            "ci_lower": 0.010658085119782137,
+            "ci_upper": 0.14462813631408464,
+            "comparator": 0.908098419516605,
+            "difference": 0.07093678576515139,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.8371616337514536,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_f1": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.7000528541226215,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.7000528541226215,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_ovr_auroc": {
+            "ci_lower": -0.003906675702920661,
+            "ci_upper": 0.0038928178223160133,
+            "comparator": 0.8377541998231653,
+            "difference": 1.1102230246251565e-16,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.8377541998231652,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          }
+        },
+        "n_clusters": 68,
+        "n_paired": 68,
+        "reason": null,
+        "status": "EVALUATED"
+      },
+      "ece_equal_width": {
+        "after": 0.1396663506678087,
+        "before": 0.09063127614996713
+      },
+      "logits": "decision_function",
+      "n_evaluable": 68,
+      "provenance": {
+        "logits": "decision_function",
+        "n_rows": 180,
+        "source": "derived: run:formal/d_model_predictor.joblib on formal/A_MMS2.parquet, checked against run:inference/d_model_mms2_external.parquet"
+      },
+      "temperature": 0.8049314153593212
+    },
+    "d20_predictor": {
+      "before_after": {
+        "bootstrap": {
+          "paired": "same cluster draw for both",
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "cluster_id"
+        },
+        "direction": "comparator_minus_reference",
+        "metrics": {
+          "accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.058823529411764705,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.058823529411764705,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "balanced_accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.060123784261715295,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.060123784261715295,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "brier": {
+            "ci_lower": -0.5224538584136138,
+            "ci_upper": -0.390275268513315,
+            "comparator": 0.9965939390374646,
+            "difference": -0.4574995422090308,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 1.4540934812464954,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece": {
+            "ci_lower": -0.3340691102569133,
+            "ci_upper": -0.25422317945335765,
+            "comparator": 0.3482398722441785,
+            "difference": -0.30848299109194777,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.6567228633361263,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "log_loss": {
+            "ci_lower": -3.0657295659112003,
+            "ci_upper": -2.0626772399675444,
+            "comparator": 2.1572397379136703,
+            "difference": -2.5453162907823668,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 4.702556028696037,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_f1": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.11213517665130568,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.11213517665130568,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_ovr_auroc": {
+            "ci_lower": -0.0051185804263565605,
+            "ci_upper": 0.03975389411948823,
+            "comparator": 0.5517241379310345,
+            "difference": 0.01591511936339529,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.5358090185676392,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          }
+        },
+        "n_clusters": 68,
+        "n_paired": 68,
+        "reason": null,
+        "status": "EVALUATED"
+      },
+      "ece_equal_width": {
+        "after": 0.3482398722441785,
+        "before": 0.6567228633361261
+      },
+      "logits": "log_probabilities",
+      "n_evaluable": 68,
+      "provenance": {
+        "logits": "log_probabilities",
+        "n_rows": 180,
+        "source": "derived: run:deep_encoder/formal/d_model_predictor.joblib on run:deep_encoder/features/A_D20_mms2_external.parquet"
+      },
+      "temperature": 3.52868821858615
+    },
+    "f9": {
+      "before_after": {
+        "bootstrap": {
+          "paired": "same cluster draw for both",
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "cluster_id"
+        },
+        "direction": "comparator_minus_reference",
+        "metrics": {
+          "accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.7205882352941176,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.7205882352941176,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "balanced_accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.7210433244916004,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.7210433244916004,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "brier": {
+            "ci_lower": 0.02212726184558443,
+            "ci_upper": 0.1363070398399339,
+            "comparator": 0.48504766380246395,
+            "difference": 0.08226529782656222,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.4027823659759017,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece": {
+            "ci_lower": -0.006850665565224051,
+            "ci_upper": 0.20526990462857522,
+            "comparator": 0.2582898923644872,
+            "difference": 0.14070937916124873,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.11758051320323845,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "log_loss": {
+            "ci_lower": 0.031367160022534556,
+            "ci_upper": 0.2710389270901837,
+            "comparator": 0.9206475007175794,
+            "difference": 0.16165872407934911,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.7589887766382303,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_f1": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.7638888888888888,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.7638888888888888,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_ovr_auroc": {
+            "ci_lower": -0.02179796479947692,
+            "ci_upper": 0.0060847355769229824,
+            "comparator": 0.8412908930150309,
+            "difference": -0.0075154730327144925,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.8488063660477454,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          }
+        },
+        "n_clusters": 68,
+        "n_paired": 68,
+        "reason": null,
+        "status": "EVALUATED"
+      },
+      "ece_equal_width": {
+        "after": 0.2618412210060997,
+        "before": 0.1095953576539576
+      },
+      "logits": "recorded_logits",
+      "n_evaluable": 68,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 180,
+        "sha256": "b57c0ef3f0a4f36a59925ec7ee4d77d83a0ea00d65196f56e38422a5e287f48d",
+        "source": "run:neural_f9/predictions.parquet"
+      },
+      "temperature": 2.297424954712543
+    }
+  },
+  "schema": "tmmri.s4_calibration/1",
+  "trust_bundle": {
+    "bundle_sha256": "266b2889b6ce393b2ceb70a1438f17f97e0c6ee03617a24714506e5b2ab9908d",
+    "n_files": 7,
+    "record": "trust/trust_bundle.json",
+    "record_sha256": "6a002bb5cb183ce398a2f102f1599622813ae441b51860d58188d2b2c113c36d"
+  }
+}

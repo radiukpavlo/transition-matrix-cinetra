@@ -1,0 +1,74 @@
+{
+  "class_records": {
+    "DCM": {
+      "eligible": true,
+      "fit_patients": 20,
+      "reason_code": null
+    },
+    "HCM": {
+      "eligible": true,
+      "fit_patients": 20,
+      "reason_code": null
+    },
+    "MINF": {
+      "eligible": true,
+      "fit_patients": 19,
+      "reason_code": null
+    },
+    "NOR": {
+      "eligible": true,
+      "fit_patients": 19,
+      "reason_code": null
+    },
+    "RV": {
+      "eligible": true,
+      "fit_patients": 20,
+      "reason_code": null
+    }
+  },
+  "consequent_endpoint": "d_model",
+  "failing_gates": [
+    "validation_gate: no rule met the pooled cross-fitted support and Wilson lower-bound conditions"
+  ],
+  "gate_table": [
+    {
+      "agreement": 1.0,
+      "consequent": "DCM",
+      "eligibility": "INELIGIBLE_CROSSFIT_SUPPORT",
+      "eligible": false,
+      "eligible_at_0.50": false,
+      "eligible_at_0.60": false,
+      "eligible_at_0.70": false,
+      "folds_reproduced": 1,
+      "length": 2,
+      "oof_agree": 1,
+      "oof_matched": 1,
+      "reproduced_in_folds": "2",
+      "rule_id": "R_8e93b4c34036921a",
+      "wilson_lb": 0.20654931437723745,
+      "wilson_ub": 1.0
+    },
+    {
+      "agreement": 0.5,
+      "consequent": "RV",
+      "eligibility": "INELIGIBLE_CROSSFIT_SUPPORT",
+      "eligible": false,
+      "eligible_at_0.50": false,
+      "eligible_at_0.60": false,
+      "eligible_at_0.70": false,
+      "folds_reproduced": 1,
+      "length": 1,
+      "oof_agree": 1,
+      "oof_matched": 2,
+      "reproduced_in_folds": "5",
+      "rule_id": "R_9f66dc569c7f6329",
+      "wilson_lb": 0.09453120573423074,
+      "wilson_ub": 0.9054687942657693
+    }
+  ],
+  "provenance": {
+    "ablation": "discretizer:wedd_uniform_mm_v1"
+  },
+  "reason_code": "RULEBOOK_EMPTY",
+  "rulebook": "d_model"
+}

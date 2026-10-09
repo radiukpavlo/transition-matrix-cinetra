@@ -1,0 +1,336 @@
+{
+  "descriptor_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "estimation_only": true,
+  "evidence": "registered_after_unblinding",
+  "freeze_order": null,
+  "label": "registered after unblinding",
+  "partition": "mms_external",
+  "predictors": {
+    "audited_predictor": {
+      "before_after": {
+        "bootstrap": {
+          "paired": "same cluster draw for both",
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "cluster_id"
+        },
+        "direction": "comparator_minus_reference",
+        "metrics": {
+          "accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.5257352941176471,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.5257352941176471,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "balanced_accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.5029482800761552,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.5029482800761552,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "brier": {
+            "ci_lower": 0.017446986472663465,
+            "ci_upper": 0.03343189333858059,
+            "comparator": 0.768683091699375,
+            "difference": 0.025343977048844057,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.7433391146505309,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece": {
+            "ci_lower": 0.022295947895075833,
+            "ci_upper": 0.04831705116326969,
+            "comparator": 0.2918118593177781,
+            "difference": 0.044513057831441716,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.24729880148633637,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "log_loss": {
+            "ci_lower": 0.3635471468951257,
+            "ci_upper": 0.5426005113262423,
+            "comparator": 2.8404700535891245,
+            "difference": 0.4497455802355632,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 2.3907244733535613,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_f1": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.5011070853462157,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.5011070853462157,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_ovr_auroc": {
+            "ci_lower": -0.001674375094864305,
+            "ci_upper": 0.00110184662992163,
+            "comparator": 0.7824129088694143,
+            "difference": -0.0002919238597686169,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.7827048327291829,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          }
+        },
+        "n_clusters": 271,
+        "n_paired": 272,
+        "reason": null,
+        "status": "EVALUATED"
+      },
+      "ece_equal_width": {
+        "after": 0.29181185931777814,
+        "before": 0.2472988014863363
+      },
+      "logits": "decision_function",
+      "n_evaluable": 272,
+      "provenance": {
+        "logits": "decision_function",
+        "n_rows": 320,
+        "source": "derived: run:formal/d_model_predictor.joblib on formal/A_MMS.parquet, checked against run:inference/d_model_mms_external.parquet"
+      },
+      "temperature": 0.8049314153593212
+    },
+    "d20_predictor": {
+      "before_after": {
+        "bootstrap": {
+          "paired": "same cluster draw for both",
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "cluster_id"
+        },
+        "direction": "comparator_minus_reference",
+        "metrics": {
+          "accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.16176470588235295,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.16176470588235295,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "balanced_accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.17251450421940928,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.17251450421940928,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "brier": {
+            "ci_lower": -0.42846511744098337,
+            "ci_upper": -0.3446520158793412,
+            "comparator": 0.9146531723780607,
+            "difference": -0.387426424510239,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 1.3020795968882997,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece": {
+            "ci_lower": -0.33764598768839404,
+            "ci_upper": -0.306076893234185,
+            "comparator": 0.2594332611476182,
+            "difference": -0.32449199251867433,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.5839252536662926,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "log_loss": {
+            "ci_lower": -2.3291499096748027,
+            "ci_upper": -1.8249555772969768,
+            "comparator": 1.9403133826865375,
+            "difference": -2.074699515972929,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 4.015012898659466,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_f1": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.12860819994948852,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.12860819994948852,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_ovr_auroc": {
+            "ci_lower": 0.007095553103833716,
+            "ci_upper": 0.031021493099805727,
+            "comparator": 0.5314048770162599,
+            "difference": 0.01871671421766341,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.5126881627985965,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          }
+        },
+        "n_clusters": 271,
+        "n_paired": 272,
+        "reason": null,
+        "status": "EVALUATED"
+      },
+      "ece_equal_width": {
+        "after": 0.25977824105567426,
+        "before": 0.5839252536662926
+      },
+      "logits": "log_probabilities",
+      "n_evaluable": 272,
+      "provenance": {
+        "logits": "log_probabilities",
+        "n_rows": 320,
+        "source": "derived: run:deep_encoder/formal/d_model_predictor.joblib on run:deep_encoder/features/A_D20_mms_external.parquet"
+      },
+      "temperature": 3.52868821858615
+    },
+    "f9": {
+      "before_after": {
+        "bootstrap": {
+          "paired": "same cluster draw for both",
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "cluster_id"
+        },
+        "direction": "comparator_minus_reference",
+        "metrics": {
+          "accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.5588235294117647,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.5588235294117647,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "balanced_accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.5611354456107852,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.5611354456107852,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "brier": {
+            "ci_lower": -0.05089131493939112,
+            "ci_upper": 0.014643628658567243,
+            "comparator": 0.6366026751206819,
+            "difference": -0.01772793288149721,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.6543306080021791,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece": {
+            "ci_lower": -0.13501172747444254,
+            "ci_upper": 0.03258952143364168,
+            "comparator": 0.08724819707280505,
+            "difference": -0.06681729072264271,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.15406548779544776,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "log_loss": {
+            "ci_lower": -0.5433383654568036,
+            "ci_upper": -0.24773104456294992,
+            "comparator": 1.3651105301191089,
+            "difference": -0.38826928090887436,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 1.7533798110279832,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_f1": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.526272647918789,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.526272647918789,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_ovr_auroc": {
+            "ci_lower": -0.012389024161598374,
+            "ci_upper": 0.0015356054896547946,
+            "comparator": 0.7742069593290914,
+            "difference": -0.005478030174453141,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.7796849895035446,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          }
+        },
+        "n_clusters": 271,
+        "n_paired": 272,
+        "reason": null,
+        "status": "EVALUATED"
+      },
+      "ece_equal_width": {
+        "after": 0.08027337264199846,
+        "before": 0.15406548779544782
+      },
+      "logits": "recorded_logits",
+      "n_evaluable": 272,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 320,
+        "sha256": "64429595bd7ce6e54d04be37481950bab1650612da89cbc65dfcbd95d86d928f",
+        "source": "run:neural_f9/predictions.parquet"
+      },
+      "temperature": 2.297424954712543
+    }
+  },
+  "schema": "tmmri.s4_calibration/1",
+  "trust_bundle": {
+    "bundle_sha256": "266b2889b6ce393b2ceb70a1438f17f97e0c6ee03617a24714506e5b2ab9908d",
+    "n_files": 7,
+    "record": "trust/trust_bundle.json",
+    "record_sha256": "6a002bb5cb183ce398a2f102f1599622813ae441b51860d58188d2b2c113c36d"
+  }
+}

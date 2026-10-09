@@ -1,0 +1,111 @@
+# CMR-TRANS-AUDIT execution project for Docker Desktop (docs/EXECUTION_ENVIRONMENT_SPEC.md 1.0.0; ADR-0003).
+# Host paths come from .env (copy .env.example). Sources are bound read-only and never copied into the repository.
+# Separate Compose project from CXR-TRANS-AUDIT (`cxr-audit`): its own images, volumes and CPU cap.
+name: tmmri
+
+x-runtime: &runtime
+  env_file:
+    - configs/runtime.env
+  working_dir: /workspace
+  init: true
+
+x-workspace: &workspace
+  <<: *runtime
+  shm_size: "2gb"
+  cpus: ${TMMRI_CPUS:-14}
+  volumes:
+    - type: bind
+      source: .
+      target: /workspace
+    - type: volume
+      source: data
+      target: /workspace/data
+    # Nested read-only bind inside the data volume: legacy and governed flows find their raw files here.
+    - type: bind
+      source: ./data/raw
+      target: /workspace/data/raw
+      read_only: true
+      bind:
+        create_host_path: false
+    # Nested read-only file binds of the two tracked READMEs that the volumes would otherwise hide:
+    # Git inside the container then reports the same entries as on Windows.
+    - type: bind
+      source: ./data/README.md
+      target: /workspace/data/README.md
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: volume
+      source: artifacts
+      target: /workspace/artifacts
+    - type: bind
+      source: ./artifacts/README.md
+      target: /workspace/artifacts/README.md
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: volume
+      source: cache
+      target: /cache
+    - type: bind
+      source: ${TMMRI_ACDC_SOURCE:?set TMMRI_ACDC_SOURCE in .env (copy .env.example)}
+      target: /sources/acdc
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ${TMMRI_MMS_SOURCE:?set TMMRI_MMS_SOURCE in .env (copy .env.example)}
+      target: /sources/mms
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ${TMMRI_ARCHIVE:?set TMMRI_ARCHIVE in .env (copy .env.example)}
+      target: /archive
+      bind:
+        create_host_path: false
+
+services:
+  lock:
+    <<: *runtime
+    build:
+      context: .
+      target: base
+    image: tmmri-base:local
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace
+      - type: volume
+        source: cache
+        target: /cache
+    command: ["uv", "lock"]
+
+  tmmri:
+    <<: *workspace
+    build:
+      context: .
+      target: env
+    image: tmmri-env:local
+    command: ["python", "scripts/verify_environment.py", "--out", "artifacts/environment/verify.json"]
+
+  tmmri-gpu:
+    <<: *workspace
+    profiles: ["gpu"]
+    build:
+      context: .
+      target: env-gpu
+    image: tmmri-env-gpu:local
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    command: ["python", "scripts/verify_environment.py", "--out", "artifacts/environment/verify_gpu.json", "--gpu"]
+
+volumes:
+  data:
+  artifacts:
+  cache:

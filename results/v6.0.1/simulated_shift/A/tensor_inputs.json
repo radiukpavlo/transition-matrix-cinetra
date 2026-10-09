@@ -1,0 +1,17 @@
+{
+  "analysis": "S6_simulated_acquisition_shift",
+  "analysis_label": "registered after unblinding",
+  "cache": "run:simulated_shift/A/neural_cache/acdc_test",
+  "data_centric_config_digest": "bc834e6fe165cc1c81d0e8a3398decf6a47141f5573ec945c0ddccc7d4e5fa94",
+  "data_centric_sha256": "830ce834980e5c9c5a242c7ec3b42b978b5ca8a1337c293840fbe959756dfe9c",
+  "hook": "tmmri.neural.preprocess:case_tensors",
+  "labels": "not stored (evaluation partition)",
+  "n_cases": 50,
+  "study_config_hash": "0eeb571a66d0338cf46bce34a9aa58327f3c659b59d1771d14d68ec5ad5fc11f",
+  "target_spacing_mm": [
+    1.3333333730697632,
+    1.3333333730697632,
+    9.59999991062163
+  ],
+  "vendor": "A"
+}

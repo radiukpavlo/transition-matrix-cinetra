@@ -1,0 +1,825 @@
+{
+  "descriptor_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "estimation_only": true,
+  "evidence": "registered_after_unblinding",
+  "freeze_order": null,
+  "label": "registered after unblinding",
+  "min_clusters": 20,
+  "partition": "mms_external",
+  "representations": {
+    "d20": {
+      "by_vendor": {
+        "A": {
+          "descriptive_only": false,
+          "flag_rate": 0.22105263157894736,
+          "n": 95,
+          "n_clusters": 95,
+          "n_flagged": 21,
+          "wilson_95": [
+            0.1493735294724527,
+            0.31441423092325327
+          ]
+        },
+        "B": {
+          "descriptive_only": false,
+          "flag_rate": 0.264,
+          "n": 125,
+          "n_clusters": 125,
+          "n_flagged": 33,
+          "wilson_95": [
+            0.19459847344951559,
+            0.3474743923808146
+          ]
+        },
+        "C": {
+          "descriptive_only": false,
+          "flag_rate": 0.16,
+          "n": 50,
+          "n_clusters": 49,
+          "n_flagged": 8,
+          "wilson_95": [
+            0.08337420678033404,
+            0.2851421606303499
+          ]
+        },
+        "D": {
+          "descriptive_only": false,
+          "flag_rate": 0.1,
+          "n": 50,
+          "n_clusters": 50,
+          "n_flagged": 5,
+          "wilson_95": [
+            0.04347576493189041,
+            0.21360231437479654
+          ]
+        }
+      },
+      "flag_rate": 0.209375,
+      "flag_rate_wilson_95": [
+        0.1683757040817465,
+        0.2572691757389523
+      ],
+      "flag_threshold": 6.3527462451202314,
+      "flagged_vs_unflagged": {
+        "flagged": {
+          "accuracy": {
+            "descriptive_only": false,
+            "estimate": 0.1694915254237288,
+            "n": 59,
+            "n_correct": 10,
+            "wilson_95": [
+              0.09475839349181052,
+              0.2846322073648801
+            ]
+          },
+          "n": 67,
+          "n_clusters": 67,
+          "rho": {
+            "ci_lower": -0.2816621110355519,
+            "ci_upper": -0.023668176695840048,
+            "descriptive_only": false,
+            "estimable_targets": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "family": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "interval": "percentile_95",
+            "min_cases_per_stratum": 20,
+            "min_estimable": 5,
+            "n_boot": 2000,
+            "n_boot_valid": 2000,
+            "n_cases": 67,
+            "n_clusters": 67,
+            "n_clusters_partition_rows": 67,
+            "n_estimable": 7,
+            "n_units": 67,
+            "normalization": "fit_partition_sd",
+            "reason": null,
+            "resampling_unit": "cluster_id",
+            "rho": -0.14283455674911733,
+            "rho_j": {
+              "lv_edv_ml": -0.4213063650799622,
+              "lv_ef_percent": -0.307594882671566,
+              "lv_esv_ml": -0.047841395382479446,
+              "lv_myocardial_mass_ed_g": 0.11581455189288992,
+              "rv_edv_ml": -0.05684150424787959,
+              "rv_ef_percent": -0.4816138893684021,
+              "rv_esv_ml": 0.1995415876135782
+            },
+            "rho_j_ci": {
+              "lv_edv_ml": [
+                -0.7719987125545448,
+                -0.14905639033326534
+              ],
+              "lv_ef_percent": [
+                -0.6149379250737019,
+                -0.030009035742360007
+              ],
+              "lv_esv_ml": [
+                -0.34066076101639337,
+                0.22160158371599434
+              ],
+              "lv_myocardial_mass_ed_g": [
+                -0.12341530246477883,
+                0.30926737355420136
+              ],
+              "rv_edv_ml": [
+                -0.30249322836148135,
+                0.13487937408139195
+              ],
+              "rv_ef_percent": [
+                -0.6419489537100158,
+                -0.3449197762830954
+              ],
+              "rv_esv_ml": [
+                0.028843924924709854,
+                0.3491251023570244
+              ]
+            },
+            "seed": 20260928,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0,
+            "weighting": "patient"
+          }
+        },
+        "unflagged": {
+          "accuracy": {
+            "descriptive_only": false,
+            "estimate": 0.1596244131455399,
+            "n": 213,
+            "n_correct": 34,
+            "wilson_95": [
+              0.11653409589998884,
+              0.21477459023138293
+            ]
+          },
+          "n": 253,
+          "n_clusters": 251,
+          "rho": {
+            "ci_lower": -0.10748067425510191,
+            "ci_upper": 0.0037086675739989683,
+            "descriptive_only": false,
+            "estimable_targets": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "family": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "interval": "percentile_95",
+            "min_cases_per_stratum": 20,
+            "min_estimable": 5,
+            "n_boot": 2000,
+            "n_boot_valid": 2000,
+            "n_cases": 253,
+            "n_clusters": 251,
+            "n_clusters_partition_rows": 251,
+            "n_estimable": 7,
+            "n_units": 253,
+            "normalization": "fit_partition_sd",
+            "reason": null,
+            "resampling_unit": "cluster_id",
+            "rho": -0.0479603187824712,
+            "rho_j": {
+              "lv_edv_ml": -0.20187420733968442,
+              "lv_ef_percent": -0.0749411614439559,
+              "lv_esv_ml": 0.08431634547385558,
+              "lv_myocardial_mass_ed_g": 0.04412789420815344,
+              "rv_edv_ml": -0.04382231281094606,
+              "rv_ef_percent": -0.30682158748262167,
+              "rv_esv_ml": 0.16329279791790063
+            },
+            "rho_j_ci": {
+              "lv_edv_ml": [
+                -0.35036497352084955,
+                -0.07875754936106268
+              ],
+              "lv_ef_percent": [
+                -0.18536587711434555,
+                0.028169293144898497
+              ],
+              "lv_esv_ml": [
+                -0.026495873586576395,
+                0.18562774850642874
+              ],
+              "lv_myocardial_mass_ed_g": [
+                -0.05536257402233998,
+                0.13791959472341817
+              ],
+              "rv_edv_ml": [
+                -0.14322218160650724,
+                0.05318214433068707
+              ],
+              "rv_ef_percent": [
+                -0.3634480217943702,
+                -0.25520658697999704
+              ],
+              "rv_esv_ml": [
+                0.08401938988123146,
+                0.23849696727878547
+              ]
+            },
+            "seed": 20260928,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0,
+            "weighting": "patient"
+          }
+        }
+      },
+      "misclassification_auroc": {
+        "ci_lower": 0.3731907504595861,
+        "ci_upper": 0.55419487386062,
+        "estimate": 0.4658094098883573,
+        "n": 272,
+        "n_boot_valid": 2000,
+        "n_misclassified": 228,
+        "predictor": "d20_predictor",
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "n_flagged": 67,
+      "n_scored": 320,
+      "spearman_reconstruction_error": {
+        "ci_lower": -0.06039467932226661,
+        "ci_upper": 0.15867036554096456,
+        "error": "mean over primary-family targets of |Bhat - B| / acdc_dev fit SD",
+        "estimate": 0.04752677463220865,
+        "n": 320,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      }
+    },
+    "descriptors": {
+      "by_vendor": {
+        "A": {
+          "descriptive_only": false,
+          "flag_rate": 0.18947368421052632,
+          "n": 95,
+          "n_clusters": 95,
+          "n_flagged": 18,
+          "wilson_95": [
+            0.12334852229116193,
+            0.27973596569651077
+          ]
+        },
+        "B": {
+          "descriptive_only": false,
+          "flag_rate": 0.248,
+          "n": 125,
+          "n_clusters": 125,
+          "n_flagged": 31,
+          "wilson_95": [
+            0.18056747174955892,
+            0.3304594866794377
+          ]
+        },
+        "C": {
+          "descriptive_only": false,
+          "flag_rate": 0.06,
+          "n": 50,
+          "n_clusters": 49,
+          "n_flagged": 3,
+          "wilson_95": [
+            0.02061497034897397,
+            0.16217091688838173
+          ]
+        },
+        "D": {
+          "descriptive_only": false,
+          "flag_rate": 0.1,
+          "n": 50,
+          "n_clusters": 50,
+          "n_flagged": 5,
+          "wilson_95": [
+            0.04347576493189041,
+            0.21360231437479654
+          ]
+        }
+      },
+      "flag_rate": 0.178125,
+      "flag_rate_wilson_95": [
+        0.14009631069253792,
+        0.22378995405511776
+      ],
+      "flag_threshold": 7.436817356067829,
+      "flagged_vs_unflagged": {
+        "flagged": {
+          "accuracy": {
+            "descriptive_only": false,
+            "estimate": 0.6545454545454545,
+            "n": 55,
+            "n_correct": 36,
+            "wilson_95": [
+              0.5225390350756162,
+              0.7663729045791027
+            ]
+          },
+          "n": 57,
+          "n_clusters": 57,
+          "rho": {
+            "ci_lower": -0.6822864360648794,
+            "ci_upper": 0.4154243396637979,
+            "descriptive_only": false,
+            "estimable_targets": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "family": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "interval": "percentile_95",
+            "min_cases_per_stratum": 20,
+            "min_estimable": 5,
+            "n_boot": 2000,
+            "n_boot_valid": 2000,
+            "n_cases": 57,
+            "n_clusters": 57,
+            "n_clusters_partition_rows": 57,
+            "n_estimable": 7,
+            "n_units": 57,
+            "normalization": "fit_partition_sd",
+            "reason": null,
+            "resampling_unit": "cluster_id",
+            "rho": -0.0002145644705904916,
+            "rho_j": {
+              "lv_edv_ml": -0.4676131355071058,
+              "lv_ef_percent": 0.5672523638000921,
+              "lv_esv_ml": -0.979727258201309,
+              "lv_myocardial_mass_ed_g": -0.03164071271198754,
+              "rv_edv_ml": -0.0885786490169127,
+              "rv_ef_percent": 0.585934854100174,
+              "rv_esv_ml": 0.4128705862429155
+            },
+            "rho_j_ci": {
+              "lv_edv_ml": [
+                -1.4582367583799243,
+                0.15754431427924495
+              ],
+              "lv_ef_percent": [
+                0.47735738276094525,
+                0.644805761407857
+              ],
+              "lv_esv_ml": [
+                -4.280259047134911,
+                0.7010729407998523
+              ],
+              "lv_myocardial_mass_ed_g": [
+                -0.46445565379963333,
+                0.2565142627720481
+              ],
+              "rv_edv_ml": [
+                -0.4758477171535946,
+                0.2039477238835116
+              ],
+              "rv_ef_percent": [
+                0.5002885321190866,
+                0.663978892013015
+              ],
+              "rv_esv_ml": [
+                0.12216487555657721,
+                0.6256457339555358
+              ]
+            },
+            "seed": 20260928,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0,
+            "weighting": "patient"
+          }
+        },
+        "unflagged": {
+          "accuracy": {
+            "descriptive_only": false,
+            "estimate": 0.4930875576036866,
+            "n": 217,
+            "n_correct": 107,
+            "wilson_95": [
+              0.42726960930466074,
+              0.5591459848685522
+            ]
+          },
+          "n": 263,
+          "n_clusters": 262,
+          "rho": {
+            "ci_lower": 0.18229539899926586,
+            "ci_upper": 0.3033456263873645,
+            "descriptive_only": false,
+            "estimable_targets": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "family": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "interval": "percentile_95",
+            "min_cases_per_stratum": 20,
+            "min_estimable": 5,
+            "n_boot": 2000,
+            "n_boot_valid": 2000,
+            "n_cases": 263,
+            "n_clusters": 262,
+            "n_clusters_partition_rows": 262,
+            "n_estimable": 7,
+            "n_units": 263,
+            "normalization": "fit_partition_sd",
+            "reason": null,
+            "resampling_unit": "cluster_id",
+            "rho": 0.24387682738080016,
+            "rho_j": {
+              "lv_edv_ml": -0.16870017065657983,
+              "lv_ef_percent": 0.6421987048049678,
+              "lv_esv_ml": 0.4733244145829931,
+              "lv_myocardial_mass_ed_g": 0.17211804515813856,
+              "rv_edv_ml": -0.10655509762585469,
+              "rv_ef_percent": 0.4713059261763747,
+              "rv_esv_ml": 0.22344596922556137
+            },
+            "rho_j_ci": {
+              "lv_edv_ml": [
+                -0.31604551701414973,
+                -0.044146685674570176
+              ],
+              "lv_ef_percent": [
+                0.6103080585011856,
+                0.6719475026219746
+              ],
+              "lv_esv_ml": [
+                0.38767202505290566,
+                0.5484782173145222
+              ],
+              "lv_myocardial_mass_ed_g": [
+                0.055364726584059706,
+                0.2780022760780058
+              ],
+              "rv_edv_ml": [
+                -0.22412089123811757,
+                0.00640326427816339
+              ],
+              "rv_ef_percent": [
+                0.4240305427094807,
+                0.5185924457194584
+              ],
+              "rv_esv_ml": [
+                0.1261757244223157,
+                0.32082530534762255
+              ]
+            },
+            "seed": 20260928,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0,
+            "weighting": "patient"
+          }
+        }
+      },
+      "misclassification_auroc": {
+        "ci_lower": 0.38246106758342757,
+        "ci_upper": 0.5174332477224267,
+        "estimate": 0.451509730579498,
+        "n": 272,
+        "n_boot_valid": 2000,
+        "n_misclassified": 129,
+        "predictor": "audited_predictor",
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "n_flagged": 57,
+      "n_scored": 320,
+      "spearman_reconstruction_error": {
+        "ci_lower": -0.09134474172339334,
+        "ci_upper": 0.12077961046493703,
+        "error": "mean over primary-family targets of |Bhat - B| / acdc_dev fit SD",
+        "estimate": 0.015537749392083909,
+        "n": 320,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      }
+    },
+    "f9b": {
+      "by_vendor": {
+        "A": {
+          "descriptive_only": false,
+          "flag_rate": 0.3157894736842105,
+          "n": 95,
+          "n_clusters": 95,
+          "n_flagged": 30,
+          "wilson_95": [
+            0.23103226162043158,
+            0.41486531599937426
+          ]
+        },
+        "B": {
+          "descriptive_only": false,
+          "flag_rate": 0.128,
+          "n": 125,
+          "n_clusters": 125,
+          "n_flagged": 16,
+          "wilson_95": [
+            0.08034702880619571,
+            0.1978356241127992
+          ]
+        },
+        "C": {
+          "descriptive_only": false,
+          "flag_rate": 0.1,
+          "n": 50,
+          "n_clusters": 49,
+          "n_flagged": 5,
+          "wilson_95": [
+            0.04347576493189041,
+            0.21360231437479654
+          ]
+        },
+        "D": {
+          "descriptive_only": false,
+          "flag_rate": 0.12,
+          "n": 50,
+          "n_clusters": 50,
+          "n_flagged": 6,
+          "wilson_95": [
+            0.05617600150932274,
+            0.23804817383202992
+          ]
+        }
+      },
+      "flag_rate": 0.178125,
+      "flag_rate_wilson_95": [
+        0.14009631069253792,
+        0.22378995405511776
+      ],
+      "flag_threshold": 6.84753518459964,
+      "flagged_vs_unflagged": {
+        "flagged": {
+          "accuracy": {
+            "descriptive_only": false,
+            "estimate": 0.5769230769230769,
+            "n": 52,
+            "n_correct": 30,
+            "wilson_95": [
+              0.4419432537390302,
+              0.7013194791649908
+            ]
+          },
+          "n": 57,
+          "n_clusters": 57,
+          "rho": {
+            "ci_lower": -0.0027683191087689595,
+            "ci_upper": 0.19889566218887472,
+            "descriptive_only": false,
+            "estimable_targets": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "family": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "interval": "percentile_95",
+            "min_cases_per_stratum": 20,
+            "min_estimable": 5,
+            "n_boot": 2000,
+            "n_boot_valid": 2000,
+            "n_cases": 57,
+            "n_clusters": 57,
+            "n_clusters_partition_rows": 57,
+            "n_estimable": 7,
+            "n_units": 57,
+            "normalization": "fit_partition_sd",
+            "reason": null,
+            "resampling_unit": "cluster_id",
+            "rho": 0.10488220247013429,
+            "rho_j": {
+              "lv_edv_ml": 0.24271241784009967,
+              "lv_ef_percent": 0.10963524386953694,
+              "lv_esv_ml": 0.43275290391448384,
+              "lv_myocardial_mass_ed_g": 0.05408101752816208,
+              "rv_edv_ml": 0.12676969223403356,
+              "rv_ef_percent": -0.38854538662285876,
+              "rv_esv_ml": 0.15676952852748283
+            },
+            "rho_j_ci": {
+              "lv_edv_ml": [
+                0.03141917591946799,
+                0.41408952664248033
+              ],
+              "lv_ef_percent": [
+                -0.056842608501871096,
+                0.2586003358257821
+              ],
+              "lv_esv_ml": [
+                0.2358656412949602,
+                0.5813672390736117
+              ],
+              "lv_myocardial_mass_ed_g": [
+                -0.16077707516087036,
+                0.22284150980245424
+              ],
+              "rv_edv_ml": [
+                -0.06375742963581765,
+                0.2766643869206765
+              ],
+              "rv_ef_percent": [
+                -0.6887386971771154,
+                -0.1309917184767254
+              ],
+              "rv_esv_ml": [
+                -0.053968719021563284,
+                0.34761493389466175
+              ]
+            },
+            "seed": 20260928,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0,
+            "weighting": "patient"
+          }
+        },
+        "unflagged": {
+          "accuracy": {
+            "descriptive_only": false,
+            "estimate": 0.5545454545454546,
+            "n": 220,
+            "n_correct": 122,
+            "wilson_95": [
+              0.48849258258675454,
+              0.6187261611010488
+            ]
+          },
+          "n": 263,
+          "n_clusters": 261,
+          "rho": {
+            "ci_lower": 0.13850821042600894,
+            "ci_upper": 0.22246309900443909,
+            "descriptive_only": false,
+            "estimable_targets": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "family": [
+              "lv_edv_ml",
+              "lv_esv_ml",
+              "lv_ef_percent",
+              "rv_edv_ml",
+              "rv_esv_ml",
+              "rv_ef_percent",
+              "lv_myocardial_mass_ed_g"
+            ],
+            "interval": "percentile_95",
+            "min_cases_per_stratum": 20,
+            "min_estimable": 5,
+            "n_boot": 2000,
+            "n_boot_valid": 2000,
+            "n_cases": 263,
+            "n_clusters": 261,
+            "n_clusters_partition_rows": 261,
+            "n_estimable": 7,
+            "n_units": 263,
+            "normalization": "fit_partition_sd",
+            "reason": null,
+            "resampling_unit": "cluster_id",
+            "rho": 0.1814929471978926,
+            "rho_j": {
+              "lv_edv_ml": 0.17997318141270557,
+              "lv_ef_percent": 0.3470403045719508,
+              "lv_esv_ml": 0.49754746246047565,
+              "lv_myocardial_mass_ed_g": 0.21355824834996018,
+              "rv_edv_ml": -0.005296907687198704,
+              "rv_ef_percent": -0.12550092550647962,
+              "rv_esv_ml": 0.16312926678383455
+            },
+            "rho_j_ci": {
+              "lv_edv_ml": [
+                0.08393624027019828,
+                0.2612706524452702
+              ],
+              "lv_ef_percent": [
+                0.28199703484294675,
+                0.4080881180427321
+              ],
+              "lv_esv_ml": [
+                0.43661906807914186,
+                0.5563602211006151
+              ],
+              "lv_myocardial_mass_ed_g": [
+                0.13827066406003458,
+                0.283854416118229
+              ],
+              "rv_edv_ml": [
+                -0.09078146689244092,
+                0.07509645992495714
+              ],
+              "rv_ef_percent": [
+                -0.21897066220413341,
+                -0.031149047379969694
+              ],
+              "rv_esv_ml": [
+                0.08481959505251299,
+                0.2414428424561858
+              ]
+            },
+            "seed": 20260928,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0,
+            "weighting": "patient"
+          }
+        }
+      },
+      "misclassification_auroc": {
+        "ci_lower": 0.4178260231568077,
+        "ci_upper": 0.5591140170802492,
+        "estimate": 0.4875,
+        "n": 272,
+        "n_boot_valid": 2000,
+        "n_misclassified": 120,
+        "predictor": "f9",
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      },
+      "n_flagged": 57,
+      "n_scored": 320,
+      "spearman_reconstruction_error": {
+        "ci_lower": 0.08534900733563726,
+        "ci_upper": 0.2940006556720105,
+        "error": "mean over primary-family targets of |Bhat - B| / acdc_dev fit SD",
+        "estimate": 0.1904473118433152,
+        "n": 320,
+        "n_boot_valid": 2000,
+        "reason": null,
+        "status": "EVALUATED",
+        "valid_fraction": 1.0
+      }
+    }
+  },
+  "schema": "tmmri.s2_ood/1",
+  "trust_bundle": {
+    "bundle_sha256": "266b2889b6ce393b2ceb70a1438f17f97e0c6ee03617a24714506e5b2ab9908d",
+    "n_files": 7,
+    "record": "trust/trust_bundle.json",
+    "record_sha256": "6a002bb5cb183ce398a2f102f1599622813ae441b51860d58188d2b2c113c36d"
+  }
+}

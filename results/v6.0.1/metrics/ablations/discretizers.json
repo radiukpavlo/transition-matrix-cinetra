@@ -1,0 +1,123 @@
+{
+  "family": "F4_discretizers",
+  "profiles": {
+    "three_quantile_v1": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g"
+      ],
+      "eligible_rules": 0,
+      "induced_rules": 2,
+      "mean_cut_recurrence": 0.6927777777777777,
+      "source": "refitted"
+    },
+    "wedd_gaussian_mm_v1": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [
+        "lv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g"
+      ],
+      "eligible_rules": 0,
+      "mean_cut_recurrence": 0.5336666666666667,
+      "source": "primary artifacts"
+    },
+    "wedd_uniform_mm_v1": {
+      "acdc_test_routes": {
+        "abstention": 1.0,
+        "abstention_by_reason": {
+          "RULEBOOK_EMPTY": {
+            "n": 50,
+            "rate": 1.0
+          }
+        },
+        "accepted_coverage": 0.0,
+        "activation": 0.0,
+        "audit_tax": null,
+        "conflict_encounter_rate": 0.0,
+        "conflict_rate": 0.0,
+        "covered_fidelity": null,
+        "covered_reference_accuracy": null,
+        "faithful_coverage": 0.0,
+        "n_accepted": 0,
+        "n_accepted_reference_known": 0,
+        "n_attempted": 50,
+        "n_clusters": 50,
+        "n_processed": 50,
+        "n_qc_abstain": 0,
+        "route_has_empirical_support": false,
+        "routes": {
+          "EMPTY_RULEBOOK": 50
+        },
+        "soft_candidates_rate": 0.0
+      },
+      "eligible_features": [
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g"
+      ],
+      "eligible_rules": 0,
+      "induced_rules": 2,
+      "mean_cut_recurrence": 0.495,
+      "source": "refitted"
+    }
+  },
+  "replaces_primary": false,
+  "role": "secondary_ablation",
+  "rulebook": "d_model",
+  "selection_forbidden": "no post-test best-configuration claim"
+}

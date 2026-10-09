@@ -1,0 +1,242 @@
+{
+  "activations_sha256": "b92223eb56de95ec6b988ee186fe766ae4490c1a4a355b32ef51fc758e50c841",
+  "cache_manifest_rows": 98,
+  "code": {
+    "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+    "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+    "dirty": false
+  },
+  "encoders": [
+    {
+      "checkpoint": "7581584233dc31c4",
+      "encoder_id": "final",
+      "fit_id": "7581584233dc31c4",
+      "model_pt_sha256": "6ec3515d3b78fbf4dddbaa0e3d2bb4318142eec334fec01f959d2213b852fb4e",
+      "n_fitting_patients": 98,
+      "record_sha256": "d2aca248766ba3c88980104ebedc8445295d3c6f99a016f8bfd363a84c717e0d",
+      "seed": 20261011
+    },
+    {
+      "checkpoint": "5f22fff31750f4c9",
+      "encoder_id": "fold1",
+      "fit_id": "5f22fff31750f4c9",
+      "model_pt_sha256": "7703fee862e1b14626befc7205fe091b870f594827698ba5ba558879e51a2ab7",
+      "n_fitting_patients": 78,
+      "record_sha256": "035f123679aae3c2e0757c117a17ce59c25f3cdd1db3ee15e1f23e6851dfd2d0",
+      "seed": 20261011
+    },
+    {
+      "checkpoint": "6744864dc26bb3c9",
+      "encoder_id": "fold2",
+      "fit_id": "6744864dc26bb3c9",
+      "model_pt_sha256": "21af4b97b7d1782dac6887f9dcdc7c10c06b55544f3548acfdd0ff4a093138a2",
+      "n_fitting_patients": 78,
+      "record_sha256": "9b722ebcad3559042759cab830b7c95ed2b7f6ec5fc0973aaf6f32aaf503962a",
+      "seed": 20261011
+    },
+    {
+      "checkpoint": "56b30c5870494b83",
+      "encoder_id": "fold3",
+      "fit_id": "56b30c5870494b83",
+      "model_pt_sha256": "261c89de67d2f2108547630c6e7364a7d80ff496ad5b357934ed91b180e0f8e1",
+      "n_fitting_patients": 78,
+      "record_sha256": "c24647064fb6f87531e5e0ff39d01027fefa0bb815bfe12d0510331b5b1f190b",
+      "seed": 20261011
+    },
+    {
+      "checkpoint": "e79ace442df8fba1",
+      "encoder_id": "fold4",
+      "fit_id": "e79ace442df8fba1",
+      "model_pt_sha256": "7971f1a7b7a62d2d2f1c5aafe27961198efd46d719da2d2f5eb4c3ad20b2557f",
+      "n_fitting_patients": 78,
+      "record_sha256": "b7370d91442f7c7b909aa6882a78b3db51f89c238b276ba93cbea57847502068",
+      "seed": 20261011
+    },
+    {
+      "checkpoint": "0890dcfa438e38be",
+      "encoder_id": "fold5",
+      "fit_id": "0890dcfa438e38be",
+      "model_pt_sha256": "9273f9f359c9182cbcd05cfee50e682953b684010526b0fa6905b8de9c26cbdf",
+      "n_fitting_patients": 80,
+      "record_sha256": "41e054ed94ef2de976dc7a943d1e7b63b666bb4982044b9f4b6df1acf00383a8",
+      "seed": 20261011
+    },
+    {
+      "checkpoint": "932af384115f1700",
+      "encoder_id": "final",
+      "fit_id": "932af384115f1700",
+      "model_pt_sha256": "7c66941e3897bfc23436bfc6c9ecb3ca40193196c8c71992b891edb33e66fb11",
+      "n_fitting_patients": 98,
+      "record_sha256": "42cf67dfd7290e17fbf416665745de5edd98a7bed2240c57c801520b8c8b6981",
+      "seed": 20261012
+    },
+    {
+      "checkpoint": "1375ec8f066cc4f8",
+      "encoder_id": "fold1",
+      "fit_id": "1375ec8f066cc4f8",
+      "model_pt_sha256": "19d43eabb8ba5ae5f36aeac0d549667fb553ec5a6c1641d9b02aa7b2db6c084e",
+      "n_fitting_patients": 78,
+      "record_sha256": "20769655638222037c9d49bb952a0a8e1499528ed16b2a6a5aa14caed7461d92",
+      "seed": 20261012
+    },
+    {
+      "checkpoint": "465357b7b743109a",
+      "encoder_id": "fold2",
+      "fit_id": "465357b7b743109a",
+      "model_pt_sha256": "a408e083f0a4e5afcb7665841d23615c6b6779801db1ada95b335e105eb17abb",
+      "n_fitting_patients": 78,
+      "record_sha256": "d8575489acb07f75a4084a264a048949efc53f3deecbb4ef3bbf5d0a4e91a317",
+      "seed": 20261012
+    },
+    {
+      "checkpoint": "6b7b72646aac15f4",
+      "encoder_id": "fold3",
+      "fit_id": "6b7b72646aac15f4",
+      "model_pt_sha256": "4be29427d33a1a951b42dda0d1e4690d6f0c2245587d3a7ee28fd698f7d47268",
+      "n_fitting_patients": 78,
+      "record_sha256": "e7b2573f05d48dcadcabd57ea8c6e8c440ac75af2b94f3133de9ed976be802b4",
+      "seed": 20261012
+    },
+    {
+      "checkpoint": "a21a05754e66e65b",
+      "encoder_id": "fold4",
+      "fit_id": "a21a05754e66e65b",
+      "model_pt_sha256": "28330272d7291fcb17ccca1db7f4ee2a00c8fe0cfd944bc94fd61a0ccc9460a8",
+      "n_fitting_patients": 78,
+      "record_sha256": "9fde6978cb09bf367384c2f27f79d6fc680ebfebc19a1fe2220a083ffd960129",
+      "seed": 20261012
+    },
+    {
+      "checkpoint": "ee6d6d4e812eaef0",
+      "encoder_id": "fold5",
+      "fit_id": "ee6d6d4e812eaef0",
+      "model_pt_sha256": "5468ffb20e8096d5990cfb965732975e97e265651cded1baaf1bce411029c1ea",
+      "n_fitting_patients": 80,
+      "record_sha256": "e1819396aea2b1e0dc4f211afab9645a3524d610161a0d5c4566380207c9e931",
+      "seed": 20261012
+    },
+    {
+      "checkpoint": "02297ae72cfff7b4",
+      "encoder_id": "final",
+      "fit_id": "02297ae72cfff7b4",
+      "model_pt_sha256": "6fcbbc614d2f32a3c7fe2fa217767e8de3fcc6c77346a32b8455acd0709eef3b",
+      "n_fitting_patients": 98,
+      "record_sha256": "5f24bcd7c634a16d22b74478a9aa9a5d049ec30fd4ae0cfdabda80464fadac7b",
+      "seed": 20261013
+    },
+    {
+      "checkpoint": "f62714ddea32fbd2",
+      "encoder_id": "fold1",
+      "fit_id": "f62714ddea32fbd2",
+      "model_pt_sha256": "0668b18abb5ec59fd59b7a18790592a866f0cf75f6bcad282094cfd485e2502d",
+      "n_fitting_patients": 78,
+      "record_sha256": "43f3c3707017e5803725eeb0aa3a0b210d8592bf780561fa9966cb749b7f5d21",
+      "seed": 20261013
+    },
+    {
+      "checkpoint": "ad364beff9aeb26d",
+      "encoder_id": "fold2",
+      "fit_id": "ad364beff9aeb26d",
+      "model_pt_sha256": "b75bce7f6e8cf998e7ba2e5f55f63999ff2ae50b5505c3f5fbc99f46416b39c7",
+      "n_fitting_patients": 78,
+      "record_sha256": "52f7fa601daa657a7da9c3218229a76ecafa0430ddb8f8567f841d0507885b96",
+      "seed": 20261013
+    },
+    {
+      "checkpoint": "1d097b18db3bf0c8",
+      "encoder_id": "fold3",
+      "fit_id": "1d097b18db3bf0c8",
+      "model_pt_sha256": "ef7f70eb52d12b08f18d0fcd9bd8e8d1d0b8f0e151db8f30a5071f19439083fc",
+      "n_fitting_patients": 78,
+      "record_sha256": "b42102e50159eae504b38562f36d5e75164d61de705ae33627f110f54c84f1ea",
+      "seed": 20261013
+    },
+    {
+      "checkpoint": "4713c3bf4b246ec9",
+      "encoder_id": "fold4",
+      "fit_id": "4713c3bf4b246ec9",
+      "model_pt_sha256": "488513058faa0bdf9394b2b227f8793ffbe50f6d72e6fa087f36ededd49eb659",
+      "n_fitting_patients": 78,
+      "record_sha256": "07ab02702fb2a314b32175b0172e9f2e144415a7177cf81cc40e035cb0e16057",
+      "seed": 20261013
+    },
+    {
+      "checkpoint": "727b0be94bfc8e6f",
+      "encoder_id": "fold5",
+      "fit_id": "727b0be94bfc8e6f",
+      "model_pt_sha256": "759cb86db2064b8b99e55543b002ac3f7c90c54547a989b1351e2d86d573ea33",
+      "n_fitting_patients": 80,
+      "record_sha256": "33e763734daea56eadd63f4f2cad8eddf15de09b0191a2cb215bb66704e2803e",
+      "seed": 20261013
+    }
+  ],
+  "environment": {
+    "cuda_runtime": "12.6",
+    "cudnn": 91002,
+    "device": "cuda",
+    "driver_version": "582.66",
+    "gpu": {
+      "capability": "6.1",
+      "index": 0,
+      "name": "NVIDIA GeForce GTX 1080",
+      "total_memory_bytes": 8589672448,
+      "uuid": "80762a49-15f1-a88d-c61a-e608e7949201"
+    },
+    "numerics": {
+      "allow_tf32": {
+        "cuda.matmul.allow_tf32": false,
+        "cudnn.allow_tf32": false
+      },
+      "cublas_workspace_config": ":4096:8",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_algorithms": true,
+      "eager_mode": true,
+      "float32_matmul_precision": "highest",
+      "fp32_precision": {
+        "backends": "ieee",
+        "backends.cuda.matmul": "ieee",
+        "backends.cudnn": "ieee",
+        "backends.cudnn.conv": "ieee",
+        "backends.cudnn.rnn": "ieee"
+      },
+      "precision": "fp32_ieee",
+      "tf32_enabled": false
+    },
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "torch": "2.14.0+cu126",
+    "torchvision": "0.29.0+cu126"
+  },
+  "f9_bundle": null,
+  "freeze_order": null,
+  "n_cases": 98,
+  "numerics_at_start": {
+    "allow_tf32": {
+      "cuda.matmul.allow_tf32": false,
+      "cudnn.allow_tf32": false
+    },
+    "cublas_workspace_config": ":4096:8",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic_algorithms": true,
+    "eager_mode": true,
+    "float32_matmul_precision": "highest",
+    "fp32_precision": {
+      "backends": "ieee",
+      "backends.cuda.matmul": "ieee",
+      "backends.cudnn": "ieee",
+      "backends.cudnn.conv": "ieee",
+      "backends.cudnn.rnn": "ieee"
+    },
+    "precision": "fp32_ieee",
+    "tf32_enabled": false
+  },
+  "partition": "acdc_dev",
+  "predictions_sha256": "81b39673a8a07bb016cd609507eccdc47dc6fc9da818de25f4b72d1d1a4eb909",
+  "schema": "tmmri.f9_inference/1",
+  "transform_versions": [
+    "neural_input_v1:0c44432e6176"
+  ],
+  "tta": "d4_mean_8"
+}

@@ -1,0 +1,81 @@
+# Primary test, uncertainty and multiplicity (SPECIFICATION.md 6.0.0, Sections 3.3 and 13). Decision D18.
+specification_version: "6.0.0"
+primary_test:
+  estimand: family_mean_relative_mae_reduction_ridge_vs_mean
+  definition: "rho_j = 1 - MAE_ridge,j / MAE_mean,j with each MAE divided by the fit-partition SD s_j; rho = mean over estimable j of the family"
+  families: {ventricular_function_size: [lv_edv_ml, lv_esv_ml, lv_ef_percent, rv_edv_ml, rv_esv_ml, rv_ef_percent, lv_myocardial_mass_ed_g]}
+  units: original_after_inverse_transform
+  normalization: fit_partition_sd
+  weighting: patient                            # each case weighs once in the point estimate; the bootstrap resamples clusters
+  min_estimable_targets: 5                      # [PRESPEC] of 7; otherwise report per-target results and withdraw the aggregate
+  smallest_effect_of_interest: 0.10
+  success: "95 % percentile lower bound of rho > 0.10"
+  also_report: [plain_superiority_lower_bound_gt_0, point_estimate]
+  hierarchy:                                    # fixed-sequence (hierarchical) testing; no alpha split
+    - {id: H-primary-1, partition: acdc_test, bundle: frozen_acdc_bundle}
+    - {id: H-primary-2, partition: mms_external, bundle: frozen_acdc_bundle, tested_only_if: H-primary-1 passed}
+  sensitivity:
+    - {id: H-primary-2-never-analysed, partition: mms_external_never_analysed, repeats: H-primary-2, gatekeeping: none}
+  refit_arm: {partition: mms_refit_eval, role: required_secondary_ceiling, confirmatory: false, pooled_with_primary: false}   # Decision D17
+fixed_model_bootstrap:
+  replicates: 2000
+  seed: 20260928
+  unit: cluster_id                              # amendments 2026-09-28: a declared duplicate-image pair is one cluster (drawn with all its cases); every other ACDC patient or M&Ms case is its own cluster
+  interval: percentile_95
+  paired: same_cluster_draw_for_ridge_and_mean
+  min_valid_fraction: 0.95
+threshold_bootstrap: {replicates: 500, unit: cluster_id, seed: 20260928}   # WEDD stability gate (configs/wedd.yaml)
+downstream_refit_bootstrap: {replicates: 200, unit: cluster_id, seed: 20260928, formal_representation: deterministic}
+cluster_level_tests: "per-target Wilcoxon tests (F1-F3) use the per-cluster mean of the paired differences; the F4/F5 McNemar tests run on acdc_test, whose 50 cases are 50 singleton clusters"   # amendments 2026-09-28
+proportions: wilson_95_including_zero_events
+multiplicity:
+  method: benjamini_hochberg
+  q: 0.05
+  families:
+    - F1_reconstruction_ridge_vs_mean_acdc_test
+    - F2_ridge_vs_comparators_pseudoinverse_identity_transform_p6_projection
+    - F3_external_transport_mms_external
+    - F4_discretizers
+    - F5_rule_policy
+  merged_ranking: forbidden
+  tests:                                        # [PRESPEC] secondary tests entering the within-family BH step; effect sizes and intervals are reported first (amendments 2026-09-28)
+    per_target:                                 # F1, F2, F3
+      statistic: wilcoxon_signed_rank
+      alternative: two_sided
+      zero_method: wilcox
+      pairs: "per case, |error of the comparator| - |error of the primary transition| on rows with a finite reference and both predictions"
+    per_variant:                                # F4, F5
+      statistic: exact_mcnemar
+      pairs: "per case, the EXACT_ACCEPT indicator of the variant versus the primary configuration of the d_model rulebook on acdc_test"
+  family_members:
+    F1_reconstruction_ridge_vs_mean_acdc_test: {partition: acdc_test, primary: ridge_per_target, comparators: [mean]}
+    F2_ridge_vs_comparators_pseudoinverse_identity_transform_p6_projection: {partition: acdc_test, primary: ridge_typed_formal57, comparators: [pseudoinverse_p1, ridge_identity_transform, ridge_typed_p6_128]}
+    F3_external_transport_mms_external: {partition: mms_external, primary: ridge_per_target, comparators: [mean], strata: subgroup_reporting_thresholds.external_strata}
+    F4_discretizers: {partition: acdc_test, rulebook: d_model, variants: [wedd.yaml profiles, wedd.yaml sensitivity_grid]}
+    F5_rule_policy: {partition: acdc_test, rulebook: d_model, variants: [rule_policy.yaml discovery.sensitivities, rule_policy.yaml validation_gate.gate_sensitivities]}
+calibration:
+  ece_bins: 10
+  ece_binning: equal_mass
+  report_realized_bins: true
+classification_metrics: [accuracy, balanced_accuracy, macro_f1, macro_ovr_auroc, ece]   # d_model on acdc_test and crosswalk-evaluable mms_external
+subgroup_reporting_thresholds:
+  min_cases_per_stratum: 20                     # [PRESPEC] vendor, centre, release split, pathology, mms100_member
+  below_threshold: descriptive_counts_and_point_estimates_only
+  below_threshold_status: {status: NE, reason: STRATUM_BELOW_MIN_CASES}   # intervals and tests of such a stratum; its counts and point estimates are kept, never dropped (amendments 2026-09-28)
+  external_strata: [vendor, centre, release_split, pathology, mms100_member, never_analysed, refit_vendor_group]   # refit_vendor_group: configs/splits.yaml refit_arm.eval_strata (seen A, B; unseen C, D)
+  descriptive_strata: [sex, age_band]           # [PRESPEC] Appendix A Q28 (owner confirmation 2026-09-29): mms_external only; counts, point estimates and intervals; no p-values, no F3 tests, never fitting or selection
+  age_band_edges_years: [40, 65]                # [PRESPEC] bands <40, 40-64, >=65 years from the release CSV Age (ACDC Info.cfg has no age or sex)
+shift_audit:                                    # [PRESPEC] SPECIFICATION.md 12.3; label-free two-sample diagnostic, run only after M0 (amendments 2026-09-28)
+  reference_partition: acdc_dev
+  comparison_partition: mms_external
+  comparisons: [pooled, vendor]
+  input: frozen_bundle_standardized_formal_A    # Z with the acdc_dev mean and SD of the frozen transition
+  row_exclusion: critical_qc_or_nonfinite_formal_A
+  classifier: {model: logistic_regression, penalty: l2, C: 1.0, class_weight: balanced, solver: lbfgs, max_iter: 10000, tol: 1.0e-8}
+  cross_fitting:
+    n_folds: 5
+    hash_salt: "shift-audit-v6|"
+    rule: "within each domain sort by SHA256(salt + sample_id) hex digest ascending; 0-based rank r; fold = (r mod 5) + 1"
+  metric: out_of_fold_auroc                     # 0.5 = the classifier cannot tell the cohorts apart on formal A
+  interval: percentile_bootstrap_resampling_clusters_within_domain   # replicates and seed of fixed_model_bootstrap; cluster_id as in fixed_model_bootstrap
+  role: diagnostic_never_a_selection_criterion  # never part of the analysis bundle

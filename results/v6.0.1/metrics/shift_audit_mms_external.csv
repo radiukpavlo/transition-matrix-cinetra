@@ -1,0 +1,6 @@
+comparison,group,n_reference,n_comparison,n_folds,metric,min_cases,fold_unit,n_reference_clusters,n_comparison_clusters,resampling_unit,auroc,n_boot,n_boot_valid,seed,ci_lower,ci_upper,status,reason,descriptive_only
+pooled,all,98,319,5,out_of_fold_auroc,20,cluster_id,98,317,cluster_id,0.9601113172541744,2000,2000,20260928,0.9370215462262491,0.9792394292594798,EVALUATED,,False
+vendor,A,98,94,5,out_of_fold_auroc,20,cluster_id,98,94,cluster_id,0.9752496743378203,2000,2000,20260928,0.9414785062961355,0.9978289188015632,EVALUATED,,False
+vendor,B,98,125,5,out_of_fold_auroc,20,cluster_id,98,125,cluster_id,0.9988571428571429,2000,2000,20260928,0.9959163265306122,1.0,EVALUATED,,False
+vendor,C,98,50,5,out_of_fold_auroc,20,cluster_id,98,49,cluster_id,0.9818367346938776,2000,2000,20260928,0.9622383953581433,0.996600374843815,EVALUATED,,False
+vendor,D,98,50,5,out_of_fold_auroc,20,cluster_id,98,50,cluster_id,0.9977551020408163,2000,2000,20260928,0.9928571428571429,1.0,EVALUATED,,False

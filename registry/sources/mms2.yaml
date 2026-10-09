@@ -1,0 +1,51 @@
+# Public edition of the registered file `registry/sources/mms2.yaml` (protocol-v6.0.1, git blob `70e7b7196c0f`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
+# Source receipt: M&Ms-2 release archive (protocol-v6.0.1 amendment; configs/cohorts.yaml mms2, configs/splits.yaml mms2).
+# Archive size and SHA-256 and the split membership only. When this receipt was written, no member had been listed,
+# extracted or read. Later on 2026-10-02, with the owner's approval, the header line of the release CSV and the member
+# names of the archive listing were read before the tag (column and file names only; see header_and_member_names_read).
+# Pathology, demographics, vendor and scanner are never tracked; extract-mms2 reads the release CSV into memory after
+# the protocol-v6.0.1 tag and writes only its mms2_external rows to the read-only source area (src/tmmri/ingest/mms2.py).
+dataset_id: MMS2
+status: held_unopened_read_only
+recorded_on: "2026-10-02"
+specification_version: "6.0.1"
+amendment: protocol-v6.0.1
+release:
+  name: "M&Ms-2 challenge release (Multi-Disease, Multi-View and Multi-Center Right Ventricular Segmentation in Cardiac MRI)"
+  subjects: 360
+  official_source: "https://www.ub.edu/mnms-2/"
+licence:
+  agreement: "M&Ms-2 Research Use Agreement"
+  personal_copy: "a personal research copy is allowed"
+  redistribution: "no distribution of any portion; the release is never copied into the repository or an image"
+  consequence: "tracked files carry the archive hash and subject-id split membership only"
+archive:
+  name: MnM2.rar
+  bytes: 9824397247
+  sha256: 934076fe388f0747c80b7f0fdf5ebc57cd480ab737be8228639480e61515362b
+  reference_copy: "<local path>"     # read-only; extraction reads only this hash-verified copy
+  extractor: "C:/Windows/System32/tar.exe (bsdtar/libarchive; reads RAR)"
+  cloud_copy: "CSE-1 (protocol/amendments.md, 2 October 2026): off-site storage keeps an unopened storage-only copy; it is never read by the pipeline"
+split_manifest:
+  path: registry/sources/mms2_split_manifest.csv
+  sha256: f427d9723b4055024ba92e47bc652388d615c54bbf4968de9088255dfa1a072d   # of the file with LF line endings (CRLF normalized to LF before hashing)
+  rows: 360
+  columns: [subject_id, rank, sha256, partition]
+  rule: "rank the subject ids 001-360 by SHA256('mms2-split-v6.0.1|' + subject_id) hex digest ascending (ties by subject_id); ranks 1-180 mms2_external, 181-360 mms2_sealed"
+  rebuild: "python -c \"from tmmri.ingest import mms2; mms2.write_split_manifest()\" (src/tmmri/ingest/mms2.py; load_split_manifest refuses a file that does not reproduce the rule)"
+  partitions: {mms2_external: 180, mms2_sealed: 180}
+extraction:
+  command: "python -m tmmri.cli extract-mms2 (host; after the signed tag protocol-v6.0.1 and with HEAD descending from it)"
+  order: "the lock first (exit 3 before the tag; no archive byte is read before it); then archive size and SHA-256; listing; release CSV into memory (contract check, sealed rows dropped); tar -xf -C <dest> -T <720-entry list>; extracted set equals the list and sizes equal the listing"
+  entries: 720                             # 180 mms2_external subjects x <ID>_SA_ED, _SA_ED_gt, _SA_ES, _SA_ES_gt
+  destination: "configs/source_bindings/mms2.json mount.host_default (./data/raw/mms2; read-only in the container)"
+  outputs: [MMS2_EXTRACTION_MANIFEST.csv, MMS2_EXTRACTION_RECEIPT.json, MMS2_INFO_EXTERNAL.csv]
+  sealed: "mms2_sealed entries are never named in the list file and never written; they stay reserved for v7"
+no_endpoint_before_tag: true
+header_and_member_names_read:             # owner decision A (2026-10-02): column names and file names only, no subject row
+  date: "2026-10-02"
+  approved_by: owner
+  log: "<local path>"
+  info_csv_header: "SUBJECT_CODE,DISEASE,VENDOR,SCANNER,FIELD"   # comma-separated, CRLF; no SEX and no AGE column
+  listing_entries: 3964
+  member_layout: "MnM2/dataset/<ID>/<ID>_SA_{ED,ES}[_gt].nii.gz plus SA_CINE and long-axis files; MnM2/dataset_information.csv; MnM2/readme.txt"              # nothing is extracted or computed on M&Ms-2 before protocol-v6.0.1

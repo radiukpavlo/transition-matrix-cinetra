@@ -1,0 +1,720 @@
+# CMR-TRANS-AUDIT semantic registry, version 6.0.0 (SPECIFICATION.md 6.0.0, Section 6; Decisions D6, D7, D8, D10, D11, D21).
+# Machine-readable contract for the reference table B of both cohorts (ACDC, complete labelled M&Ms-1 release).
+# The source table is schema B_v2.0 (157 columns, produced by src/tmmri/semantics/features.py). Every one of the 157
+# columns is classified here exactly once: as a typed feature, a metadata/context column, or a QC column.
+# Typed materialization (schema B_v6.0): every feature keeps its B_v2.0 column for the value and gains two companion
+# columns, <name>__state and <name>__evidence. Values are null unless <name>__state == OBSERVED. No numeric sentinel
+# is permitted (no 0, -1 or 999 for missing). Metadata and QC columns are not typed and are never targets.
+# Domains are written [low, high]; null means unbounded on that side. Units follow SI with mL for volumes.
+
+registry_version: "6.0.0"
+specification_version: "6.0.0"
+frozen_by: "git tag protocol-v6.0.0 (pending at milestone M0)"
+source_schema: B_v2.0
+typed_schema_version: B_v6.0
+typed_companions: ["__state", "__evidence"]
+
+evidence_tiers:
+  E1_EXPERT_MASK_GEOMETRY: "Deterministic computation from the released expert segmentation (ED and ES label maps) combined with the header geometry of the same file"
+  E1H_HEADER_GEOMETRY: "NIfTI header geometry: in-plane pixdim and slice increment (affine column norm, or header pixdim when the frame affine is unit-scaled; commit 8ed5a40)"
+  E2_RELEASE_METADATA: "Field published with the release: ACDC Info.cfg (ED, ES, Group, Height, Weight, NbFrame) or the M&Ms information CSV (External code, VendorName, Vendor, Centre, ED, ES, Age, Pathology, Sex, Height, Weight)"
+  E3_DERIVED_COMPOSITE: "Arithmetic composite of E1/E1H/E2 values (Mosteller BSA, BMI, BSA-indexed values)"
+  QC_DERIVED: "Automated quality-control computation on E1/E1H/E2 values; computational triage, not expert adjudication"
+  E0_PROJECT_PROVENANCE: "Project-generated identifier, split assignment, algorithm tag or path; not evidence about the patient"
+  UNSUPPORTED: "Prerequisites absent in the release; the column is reserved and never populated"
+
+states: [OBSERVED, NOT_APPLICABLE, UNSUPPORTED, QC_BLOCKED, MISSING_SOURCE, CONFLICTING]
+state_definitions:
+  OBSERVED: "Value computed from the declared evidence; the only state with a non-null value"
+  NOT_APPLICABLE: "The quantity is undefined for this case by construction (for example EF when EDV < 1 mL)"
+  UNSUPPORTED: "The cohort cannot supply the evidence tier (reserved columns; BSA where the release has no height)"
+  QC_BLOCKED: "A critical or high QC reason masks this cell (configs/cohorts.yaml qc_severity)"
+  MISSING_SOURCE: "A required release field or file is absent for this case (for example Height for M&Ms vendors B and C)"
+  CONFLICTING: "Two release sources disagree (for example CSV ED/ES frames and the annotated mask frames)"
+
+reconstructed_states: [ESTIMATED, INPUT_QC_BLOCKED, TARGET_INELIGIBLE, NUMERIC_DOMAIN_BLOCKED, UNSTABLE_ESTIMATE]
+
+target_transforms:
+  log: {applies_to: "strictly positive volumes, mass and areas", g: "ln(x)", domain_required: "x > 0", inverse: "exp(z)", standardize: "fit-partition mean and SD of ln(x)"}
+  logit_percent: {applies_to: "ejection fractions in percent (0-100)", g: "logit(clip(x/100, 0.001, 0.999))", inverse: "100 * sigmoid(z)", standardize: "fit-partition mean and SD of g(x)"}   # clip [PRESPEC]
+  identity: {applies_to: "lengths, percent changes that may be negative, dimensionless shape ratios", g: "x", inverse: "x", standardize: "fit-partition mean and SD"}
+  none: {applies_to: "excluded, reserved and non-target columns", g: null}
+  identity_sensitivity: {role: sensitivity, rule: "every candidate target with g = identity (Decision D10 identity-transform ridge)"}
+
+discretization_profiles:
+  wedd_gaussian_mm_v1: "Primary; exact definition in configs/wedd.yaml (SPECIFICATION.md Section 11.3.1); rule-antecedent candidates only"
+  three_quantile_v1: {role: sensitivity, note: "fit-partition tertiles; P6/v5 continuity"}
+  wedd_uniform_mm_v1: {inherits: wedd_gaussian_mm_v1, kernel: uniform_counting, role: sensitivity}
+  not_discretized: "Reconstruction-only target, context, QC or reserved column"
+
+standard_refs:
+  S1: "Schulz-Menger J et al. Standardized image interpretation and post-processing in cardiovascular magnetic resonance: 2020 update. J Cardiovasc Magn Reson 2020;22:19"
+  S2: "Cerqueira MD et al. Standardized myocardial segmentation and nomenclature for tomographic imaging of the heart (AHA). Circulation 2002;105:539-542"
+  S3: "Mosteller RD. Simplified calculation of body-surface area. N Engl J Med 1987;317:1098"
+
+# Decision D6. Exact B_v2.0 column names.
+primary_target_set: [lv_edv_ml, lv_esv_ml, lv_ef_percent, rv_edv_ml, rv_esv_ml, rv_ef_percent, lv_myocardial_mass_ed_g]
+primary_families:
+  ventricular_function_size: [lv_edv_ml, lv_esv_ml, lv_ef_percent, rv_edv_ml, rv_esv_ml, rv_ef_percent, lv_myocardial_mass_ed_g]
+key_secondary_targets: [global_wall_thickness_ed_mm, global_wall_thickening_percent]
+primary_rulebook_antecedent_candidates: [lv_edv_ml, lv_esv_ml, lv_ef_percent, rv_edv_ml, rv_esv_ml, rv_ef_percent, lv_myocardial_mass_ed_g, global_wall_thickness_ed_mm, global_wall_thickening_percent]
+primary_rulebook_antecedent_rationale: >-
+  The candidates are exactly the primary family plus the key secondary targets: every feature with rule_role
+  candidate. Relative to the ten v5 rule features, lv_rv_sv_discrepancy_ml is removed because it is a QC consistency
+  measure (qc_columns), not a semantic antecedent. No feature is added: stroke volumes, ES myocardial volume, ES wall
+  thickness and in-plane shape summaries remain reconstruction-only targets, which keeps the exhaustive search over
+  at most three antecedents tractable and interpretable for 98 development patients.
+primary_rulebook_antecedent_exclusion_rule: "never lv_ef_percent together with both lv_edv_ml and lv_esv_ml, and never rv_ef_percent together with both rv_edv_ml and rv_esv_ml, in one rule (EF is a deterministic function of the two volumes)"
+
+counts:
+  features: 83
+  metadata_context_columns: 42
+  qc_columns: 32
+  total_b_v2_columns: 157
+  total_typed_B_columns: 323        # 42 + 32 + 3 * 83
+  features_by_family: {ventricular_volume_function: 8, myocardium: 3, wall_thickness: 3, inplane_shape: 12, body_size_composite: 7, geometric_approximation_not_valid: 2, reserved_unsupported: 48}
+  transition_candidates: 25         # 9 candidate + 16 candidate_secondary
+  rule_antecedent_candidates: 9
+
+metadata_columns:
+  schema_version: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, required: true, note: "B_v2.0 in the source table, B_v6.0 in the typed table"}
+  sample_id: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, required: true, note: "row key; A, B, Y and every artifact align on sample_id"}
+  case_id: {dtype: string, evidence_tier: E2_RELEASE_METADATA, required: true, note: "ACDC patientNNN; M&Ms External code"}
+  patient_id: {dtype: string, evidence_tier: E2_RELEASE_METADATA, required: true, note: "unit of analysis; equals case_id in both releases (one examination per patient)"}
+  study_id: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, nullable: true}
+  dataset_source: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, enum: [ACDC, MMS], note: "legacy alias MMS_100 only in governed and legacy flows"}
+  subset_name: {dtype: string, evidence_tier: E2_RELEASE_METADATA, enum: [training, testing, Training/Labeled, Validation, Testing], note: "release split; the stratum column release_split"}
+  split: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, enum: [acdc_dev, acdc_test, mms_external], note: "v6 partition (configs/splits.yaml); folds, never-analysed and refit-arm membership live in the split manifest"}
+  disease_label: {dtype: string, evidence_tier: E2_RELEASE_METADATA, nullable: true, note: "ACDC Group or M&Ms Pathology; evaluation reference and consequent of the dataset-label rulebook only; never a feature, target or antecedent (label_tables)"}
+  ed_frame_index: {dtype: int64, evidence_tier: E2_RELEASE_METADATA, required: true, note: "0-based frame index in the 4D cine for both cohorts; ACDC Info.cfg ED is 1-based (frameNN file names) and is stored as ED - 1; M&Ms CSV ED is already 0-based"}
+  es_frame_index: {dtype: int64, evidence_tier: E2_RELEASE_METADATA, required: true, note: "same convention as ed_frame_index"}
+  ed_es_source: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, enum: [metadata], note: "ED/ES from release metadata; never inferred from images"}
+  heart_rate_bpm: {dtype: float64, evidence_tier: UNSUPPORTED, nullable: true, note: "absent from both releases; always null"}
+  temporal_resolution_ms: {dtype: float64, evidence_tier: UNSUPPORTED, nullable: true, note: "absent from both releases; always null"}
+  scanner_vendor: {dtype: string, evidence_tier: E2_RELEASE_METADATA, nullable: true, enum: [Siemens, Philips, GE, Canon], note: "M&Ms VendorName (vendor letters A-D in the split manifest); null for ACDC (single-centre release without vendor field); stratifier only"}
+  scanner_model: {dtype: string, evidence_tier: UNSUPPORTED, nullable: true, note: "absent from both releases"}
+  center_id: {dtype: int64, evidence_tier: E2_RELEASE_METADATA, nullable: true, note: "M&Ms Centre 1-5; null for ACDC; stratifier only"}
+  field_strength_t: {dtype: float64, evidence_tier: UNSUPPORTED, nullable: true, note: "absent from both releases"}
+  height_cm: {dtype: float64, unit: cm, evidence_tier: E2_RELEASE_METADATA, nullable: true, harmonization: {mms: UNSUPPORTED}, note: "ACDC Info.cfg Height 150/150; M&Ms CSV Height 39.1 % of 345 rows (A 89.5 %, B 0 %, C 0 %, D 100 %); context only"}
+  weight_kg: {dtype: float64, unit: kg, evidence_tier: E2_RELEASE_METADATA, nullable: true, harmonization: {mms: HARMONIZABLE_NOT_EXACT}, note: "ACDC Info.cfg Weight; M&Ms CSV Weight 99.4 %; context only"}
+  bsa_formula: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, nullable: true, enum: [Mosteller]}
+  papillary_inclusion_status: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, enum: [unknown], note: "neither release documents papillary-muscle handling in the blood pool"}
+  spacing_x_mm: {dtype: float64, unit: mm, evidence_tier: E1H_HEADER_GEOMETRY, required: true}
+  spacing_y_mm: {dtype: float64, unit: mm, evidence_tier: E1H_HEADER_GEOMETRY, required: true}
+  slice_thickness_mm: {dtype: float64, unit: mm, evidence_tier: E1H_HEADER_GEOMETRY, nullable: true, note: "header pixdim[3]"}
+  slice_gap_mm: {dtype: float64, unit: mm, evidence_tier: UNSUPPORTED, nullable: true, note: "not recorded in either release"}
+  slice_increment_mm: {dtype: float64, unit: mm, evidence_tier: E1H_HEADER_GEOMETRY, required: true, note: "dz used for every volume; affine column norm, or header pixdim when the affine is unit-scaled (all 150 ACDC frame files)"}
+  slice_increment_variability_mm: {dtype: float64, unit: mm, evidence_tier: E1H_HEADER_GEOMETRY, nullable: true}
+  z_spacing_method: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, enum: [nifti_affine_projection, nifti_header_pixdim_unscaled_affine, slice_thickness_only_fallback, unavailable]}
+  z_spacing_estimated_flag: {dtype: bool, evidence_tier: E0_PROJECT_PROVENANCE}
+  affine_matrix: {dtype: string, evidence_tier: E1H_HEADER_GEOMETRY, note: "JSON 4 x 4"}
+  raw_image_path: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, note: "v6: path relative to the source mount (/sources/<dataset>); never an absolute host path"}
+  raw_mask_path: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, note: "relative to the source mount"}
+  raw_ed_image_path: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, note: "relative to the source mount; M&Ms points to the 4D file"}
+  raw_es_image_path: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE}
+  raw_ed_mask_path: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE}
+  raw_es_mask_path: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE}
+  myocardial_density_g_per_ml: {dtype: float64, unit: g/mL, evidence_tier: E0_PROJECT_PROVENANCE, note: "algorithm constant 1.050 g/mL [S1]; a constant is not a measurement and never a target"}
+  wall_thickness_method: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, enum: [radial_ray_lv_center_area_weighted]}
+  perimeter_algorithm: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, enum: [marching_squares_subpixel]}
+  perimeter_spacing_applied_flag: {dtype: bool, evidence_tier: E0_PROJECT_PROVENANCE}
+  lv_long_axis_source: {dtype: string, evidence_tier: E0_PROJECT_PROVENANCE, enum: [short_axis_stack_approximation]}
+
+# Severity levels and masks are defined in configs/cohorts.yaml qc_severity (Decision D21).
+qc_columns:
+  bsa_available_flag: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [bsa_unavailable], note: "false when height or weight is missing"}
+  bsa_mosteller_bmi_gt_40_caution_flag: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [bmi_gt_40_mosteller_caution]}
+  lv_rv_sv_discrepancy_ml: {dtype: float64, unit: mL, domain: [0.0, null], evidence_tier: QC_DERIVED, qc_reasons: [lv_rv_sv_discrepancy_gt_15_ml], note: "|lv_sv_ml - rv_sv_ml|; internal consistency check, not a semantic antecedent (removed from the v5 rule features); 15 mL is an engineering review trigger, not a clinical cut-off"}
+  lv_rv_sv_discrepancy_review_flag: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [lv_rv_sv_discrepancy_gt_15_ml]}
+  wall_thickness_invalid_slice_count_ed: {dtype: int64, unit: count, evidence_tier: QC_DERIVED}
+  wall_thickness_invalid_slice_count_es: {dtype: int64, unit: count, evidence_tier: QC_DERIVED}
+  wall_thickness_reliable_flag: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [wall_thickness_invalid_global, wall_thickness_invalid_es]}
+  myocardium_eccentricity_valid_flag: {dtype: bool, evidence_tier: QC_DERIVED, note: "false by construction (annular myocardium)"}
+  myocardium_eccentricity_invalid_reason: {dtype: string, evidence_tier: QC_DERIVED}
+  perimeter_valid_flag: {dtype: bool, evidence_tier: QC_DERIVED, note: "false when no contour yields a perimeter; compactness is then NOT_APPLICABLE"}
+  lv_sphericity_valid_flag: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [sphericity_short_axis_approximation], note: "false by construction"}
+  lv_sphericity_invalid_reason: {dtype: string, evidence_tier: QC_DERIVED}
+  qc_spacing_valid: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [spacing_nonpositive]}
+  qc_z_spacing_valid: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [z_spacing_unavailable_for_volume]}
+  qc_mask_labels_valid: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [unexpected_label_value, invalid_label_mapping]}
+  qc_overlap_resolution_valid: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [high_mask_overlap_before_resolution]}
+  qc_temporal_metadata_review_flag: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [qc_temporal_metadata_review_flag]}
+  qc_ed_es_masks_identical_flag: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [ed_es_masks_identical]}
+  qc_extreme_robust_outlier_flag: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [extreme_robust_outlier], note: "robust z against references fitted on acdc_dev only (configs/cohorts.yaml qc_outlier_reference)"}
+  qc_extreme_outlier_features: {dtype: string, evidence_tier: QC_DERIVED, nullable: true, note: "comma-separated feature names"}
+  qc_failure_reason: {dtype: string, evidence_tier: QC_DERIVED, nullable: true, note: "semicolon-separated registered reason tokens; an unregistered token is a contract error (fail closed)"}
+  qc_lv_ed_present: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [missing_lv_ed_present]}
+  qc_lv_es_present: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [missing_lv_es_present]}
+  qc_rv_ed_present: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [missing_rv_ed_present]}
+  qc_rv_es_present: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [missing_rv_es_present]}
+  qc_myo_ed_present: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [missing_myo_ed_present]}
+  qc_myo_es_present: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [missing_myo_es_present]}
+  qc_lv_ef_valid: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [lv_ef_outside_0_100]}
+  qc_rv_ef_valid: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [rv_ef_outside_0_100]}
+  qc_manual_review_required: {dtype: bool, evidence_tier: QC_DERIVED, note: "true if any reason of severity moderate or higher is present"}
+  aha_mapping_feasible_flag: {dtype: bool, evidence_tier: QC_DERIVED, qc_reasons: [aha_mapping_not_feasible], note: "false by construction"}
+  aha_mapping_invalid_reason: {dtype: string, evidence_tier: QC_DERIVED}
+
+_defaults:
+  block_a: &block_a
+    family: ventricular_volume_function
+    mental_model_tier: chamber_size_and_global_function
+    dtype: float64
+    unit: mL
+    domain: [0.0, null]
+    evidence_sources: {acdc: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY], mms: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY]}
+    algorithm_id: mask_voxel_volume_v2
+    source_requirement: "ED and ES expert label maps with the structure present; valid in-plane spacing and slice increment"
+    target_transform: log
+    discretization: not_discretized
+    transition_role: candidate_secondary
+    rule_role: reconstruction_only
+    primary_family: null
+    key_secondary: false
+    scale_dependence: physical_volume
+    harmonization: {mms: HARMONIZABLE_SAME_ALGORITHM}
+    dependencies: [expert_mask_ed, expert_mask_es, header_geometry, label_map]
+    standard_ref: [S1]
+    notes: "Absolute volume depends on dx * dy * dz; expected to degrade under cross-vendor field-of-view and spacing shift because A is unitless (prespecified hypothesis, Decision D6)"
+  block_b: &block_b
+    family: myocardium
+    mental_model_tier: myocardial_size
+    dtype: float64
+    unit: mL
+    domain: [0.0, null]
+    evidence_sources: {acdc: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY], mms: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY]}
+    algorithm_id: mask_voxel_volume_v2
+    source_requirement: "Myocardium label present at the phase; valid in-plane spacing and slice increment"
+    target_transform: log
+    discretization: not_discretized
+    transition_role: candidate_secondary
+    rule_role: reconstruction_only
+    primary_family: null
+    key_secondary: false
+    scale_dependence: physical_volume
+    harmonization: {mms: HARMONIZABLE_SAME_ALGORITHM}
+    dependencies: [expert_mask_ed, expert_mask_es, header_geometry, label_map]
+    standard_ref: [S1]
+    notes: "Absolute size; same transport hypothesis as block A"
+  block_c: &block_c
+    family: wall_thickness
+    mental_model_tier: wall_thickness_and_thickening
+    dtype: float64
+    unit: mm
+    domain: [0.0, null]
+    evidence_sources: {acdc: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY], mms: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY]}
+    algorithm_id: radial_ray_wall_thickness_v2
+    source_requirement: "LV blood pool and myocardium present on at least one slice with a valid radial measurement; valid in-plane spacing"
+    target_transform: identity
+    discretization: not_discretized
+    transition_role: candidate_secondary
+    rule_role: reconstruction_only
+    primary_family: null
+    key_secondary: false
+    scale_dependence: inplane_length
+    harmonization: {mms: HARMONIZABLE_SAME_ALGORITHM}
+    dependencies: [expert_mask_ed, expert_mask_es, header_geometry, label_map]
+    standard_ref: [S1]
+    notes: "72 rays from the LV-cavity centroid per slice, step max(min(dx, dy)/2, 0.25 mm); slice values weighted by myocardial area; in-plane only; a global mean, not a segmental maximum"
+  block_d: &block_d
+    family: inplane_shape
+    mental_model_tier: chamber_shape
+    dtype: float64
+    unit: mm2
+    domain: [0.0, null]
+    evidence_sources: {acdc: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY], mms: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY]}
+    algorithm_id: slice_shape_summary_v2
+    source_requirement: "Structure present on at least one slice at the phase; valid in-plane spacing"
+    target_transform: log
+    discretization: not_discretized
+    transition_role: candidate_secondary
+    rule_role: reconstruction_only
+    primary_family: null
+    key_secondary: false
+    scale_dependence: inplane_area
+    harmonization: {mms: HARMONIZABLE_SAME_ALGORITHM}
+    dependencies: [expert_mask_ed, expert_mask_es, header_geometry, label_map]
+    standard_ref: []
+    notes: "Mean over slices containing the structure; not a clinical measurement"
+  block_e: &block_e
+    family: body_size_composite
+    mental_model_tier: body_size_normalization
+    dtype: float64
+    unit: mL/m2
+    domain: [0.0, null]
+    evidence_sources: {acdc: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY, E2_RELEASE_METADATA, E3_DERIVED_COMPOSITE], mms: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY, E2_RELEASE_METADATA, E3_DERIVED_COMPOSITE]}
+    algorithm_id: bsa_indexed_v2
+    source_requirement: "Height and weight from release metadata (BSA Mosteller) and the indexed E1 quantity"
+    target_transform: none
+    discretization: not_discretized
+    transition_role: excluded
+    rule_role: excluded
+    primary_family: null
+    key_secondary: false
+    scale_dependence: physical_volume
+    harmonization: {mms: UNSUPPORTED}
+    exclusion_reason: "Height is missing for every M&Ms vendor B (Philips) and C (GE) case (CSV Height present for 39.1 % of the 345 release rows: A 89.5 %, B 0 %, C 0 %, D 100 %; 135 of the 320 labelled cases), so BSA and every BSA-derived value are MISSING_SOURCE for most of the external cohort and not harmonizable. The exclusion is declared here; it is not a consequence of the v5 'index' column-name filter, which is removed"
+    dependencies: [height_cm, weight_kg]
+    standard_ref: [S3]
+    notes: "Computed and reported descriptively where OBSERVED; never a target or antecedent"
+  block_f: &block_f
+    family: geometric_approximation_not_valid
+    mental_model_tier: none
+    dtype: float64
+    unit: mm
+    domain: [0.0, null]
+    evidence_sources: {acdc: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY], mms: [E1_EXPERT_MASK_GEOMETRY, E1H_HEADER_GEOMETRY]}
+    algorithm_id: short_axis_stack_approximation_v2
+    source_requirement: "LV blood pool at ED; slice increment"
+    target_transform: none
+    discretization: not_discretized
+    transition_role: excluded
+    rule_role: excluded
+    primary_family: null
+    key_secondary: false
+    scale_dependence: physical_length
+    harmonization: {mms: HARMONIZABLE_SAME_ALGORITHM}
+    exclusion_reason: "Short-axis stack approximation (count of LV-containing slices times the slice increment); not a clinically valid long-axis length"
+    dependencies: [expert_mask_ed, header_geometry]
+    standard_ref: []
+    notes: "Kept for audit continuity only"
+  block_aha_mm: &block_aha_mm
+    family: reserved_unsupported
+    mental_model_tier: none
+    dtype: float64
+    unit: mm
+    domain: null_only
+    evidence_sources: {acdc: UNSUPPORTED, mms: UNSUPPORTED}
+    algorithm_id: unsupported_v1
+    source_requirement: "Absent by design: AHA segment assignment needs validated orientation (RV insertion points, base-to-apex order), which neither release header supplies"
+    target_transform: none
+    discretization: not_discretized
+    transition_role: excluded
+    rule_role: excluded
+    primary_family: null
+    key_secondary: false
+    scale_dependence: inplane_length
+    harmonization: {mms: UNSUPPORTED}
+    dependencies: []
+    standard_ref: [S2]
+    notes: "Reserved; adapters must not populate this column; state UNSUPPORTED; never a target"
+  block_aha_pct: &block_aha_pct
+    <<: *block_aha_mm
+    unit: percent
+    scale_dependence: scale_free
+
+features:
+
+  # ---------------- Block A: ventricular volumes and global function (8) ----------------
+  - <<: *block_a
+    name: lv_edv_ml
+    meaning: "LV blood-pool volume at ED: count(label LV at ED) * dx * dy * dz / 1000"
+    discretization: wedd_gaussian_mm_v1
+    transition_role: candidate
+    rule_role: candidate
+    primary_family: ventricular_function_size
+  - <<: *block_a
+    name: lv_esv_ml
+    meaning: "LV blood-pool volume at ES"
+    discretization: wedd_gaussian_mm_v1
+    transition_role: candidate
+    rule_role: candidate
+    primary_family: ventricular_function_size
+  - <<: *block_a
+    name: lv_sv_ml
+    meaning: "LV stroke volume: lv_edv_ml - lv_esv_ml"
+    algorithm_id: derived_difference_v2
+    dependencies: [lv_edv_ml, lv_esv_ml]
+    notes: "Strictly positive on every fitting row because EDV <= ESV is a critical QC failure"
+  - <<: *block_a
+    name: lv_ef_percent
+    meaning: "LV ejection fraction: 100 * (lv_edv_ml - lv_esv_ml) / lv_edv_ml; NOT_APPLICABLE if lv_edv_ml < 1 mL"
+    unit: percent
+    domain: [0.0, 100.0]
+    algorithm_id: derived_ejection_fraction_v2
+    target_transform: logit_percent
+    discretization: wedd_gaussian_mm_v1
+    transition_role: candidate
+    rule_role: candidate
+    primary_family: ventricular_function_size
+    scale_dependence: scale_free
+    dependencies: [lv_edv_ml, lv_esv_ml]
+    notes: "Ratio of volumes; the dz factor cancels"
+  - <<: *block_a
+    name: rv_edv_ml
+    meaning: "RV blood-pool volume at ED"
+    discretization: wedd_gaussian_mm_v1
+    transition_role: candidate
+    rule_role: candidate
+    primary_family: ventricular_function_size
+  - <<: *block_a
+    name: rv_esv_ml
+    meaning: "RV blood-pool volume at ES"
+    discretization: wedd_gaussian_mm_v1
+    transition_role: candidate
+    rule_role: candidate
+    primary_family: ventricular_function_size
+  - <<: *block_a
+    name: rv_sv_ml
+    meaning: "RV stroke volume: rv_edv_ml - rv_esv_ml"
+    algorithm_id: derived_difference_v2
+    dependencies: [rv_edv_ml, rv_esv_ml]
+    notes: "Strictly positive on every fitting row because EDV <= ESV is a critical QC failure"
+  - <<: *block_a
+    name: rv_ef_percent
+    meaning: "RV ejection fraction: 100 * (rv_edv_ml - rv_esv_ml) / rv_edv_ml; NOT_APPLICABLE if rv_edv_ml < 1 mL"
+    unit: percent
+    domain: [0.0, 100.0]
+    algorithm_id: derived_ejection_fraction_v2
+    target_transform: logit_percent
+    discretization: wedd_gaussian_mm_v1
+    transition_role: candidate
+    rule_role: candidate
+    primary_family: ventricular_function_size
+    scale_dependence: scale_free
+    dependencies: [rv_edv_ml, rv_esv_ml]
+    notes: "Ratio of volumes; the dz factor cancels"
+
+  # ---------------- Block B: myocardium (3) ----------------
+  - <<: *block_b
+    name: lv_myo_volume_ed_ml
+    meaning: "LV myocardial volume at ED"
+    target_transform: none
+    transition_role: excluded
+    rule_role: excluded
+    exclusion_reason: "Algebraic duplicate: lv_myocardial_mass_ed_g = 1.050 * lv_myo_volume_ed_ml, so after the log transform and standardization both targets are identical; the mass column carries the construct"
+  - <<: *block_b
+    name: lv_myo_volume_es_ml
+    meaning: "LV myocardial volume at ES"
+  - <<: *block_b
+    name: lv_myocardial_mass_ed_g
+    meaning: "LV myocardial mass at ED: lv_myo_volume_ed_ml * 1.050 g/mL"
+    unit: g
+    algorithm_id: myocardial_mass_density_1050_v2
+    discretization: wedd_gaussian_mm_v1
+    transition_role: candidate
+    rule_role: candidate
+    primary_family: ventricular_function_size
+    dependencies: [lv_myo_volume_ed_ml, myocardial_density_g_per_ml]
+
+  # ---------------- Block C: wall thickness and thickening (3) ----------------
+  - <<: *block_c
+    name: global_wall_thickness_ed_mm
+    meaning: "Global LV wall thickness at ED (area-weighted mean of per-slice radial means)"
+    discretization: wedd_gaussian_mm_v1
+    transition_role: candidate
+    rule_role: candidate
+    key_secondary: true
+  - <<: *block_c
+    name: global_wall_thickness_es_mm
+    meaning: "Global LV wall thickness at ES"
+  - <<: *block_c
+    name: global_wall_thickening_percent
+    meaning: "Global wall thickening: 100 * (ES thickness - ED thickness) / ED thickness; NOT_APPLICABLE if ED thickness < 0.5 mm"
+    unit: percent
+    domain: [-100.0, null]
+    algorithm_id: derived_thickening_v2
+    discretization: wedd_gaussian_mm_v1
+    transition_role: candidate
+    rule_role: candidate
+    key_secondary: true
+    scale_dependence: scale_free
+    dependencies: [global_wall_thickness_ed_mm, global_wall_thickness_es_mm]
+    notes: "May be negative (thinning); identity transform"
+
+  # ---------------- Block D: in-plane shape summaries (12) ----------------
+  - <<: *block_d
+    name: lv_area_mean_ed_mm2
+    meaning: "Mean LV blood-pool cross-sectional area over slices containing it, ED"
+  - <<: *block_d
+    name: lv_area_mean_es_mm2
+    meaning: "Mean LV blood-pool cross-sectional area, ES"
+  - <<: *block_d
+    name: rv_area_mean_ed_mm2
+    meaning: "Mean RV blood-pool cross-sectional area, ED"
+  - <<: *block_d
+    name: rv_area_mean_es_mm2
+    meaning: "Mean RV blood-pool cross-sectional area, ES"
+  - <<: *block_d
+    name: lv_compactness_mean_ed
+    meaning: "Mean isoperimetric compactness 4*pi*A/P^2 of the LV blood pool, ED (marching-squares perimeter in mm)"
+    unit: "1"
+    target_transform: identity
+    scale_dependence: scale_free
+    notes: "At most 1 for a smooth convex contour; pixelated small contours can exceed 1 slightly and are not clipped"
+  - <<: *block_d
+    name: lv_compactness_mean_es
+    meaning: "Mean compactness of the LV blood pool, ES"
+    unit: "1"
+    target_transform: identity
+    scale_dependence: scale_free
+  - <<: *block_d
+    name: rv_compactness_mean_ed
+    meaning: "Mean compactness of the RV blood pool, ED"
+    unit: "1"
+    target_transform: identity
+    scale_dependence: scale_free
+  - <<: *block_d
+    name: rv_compactness_mean_es
+    meaning: "Mean compactness of the RV blood pool, ES"
+    unit: "1"
+    target_transform: identity
+    scale_dependence: scale_free
+  - <<: *block_d
+    name: lv_eccentricity_mean_ed
+    meaning: "Mean in-plane eccentricity sqrt(1 - l_min/l_max) of the filled LV blood pool (physical-coordinate covariance), ED"
+    unit: "1"
+    domain: [0.0, 1.0]
+    target_transform: identity
+    scale_dependence: scale_free
+  - <<: *block_d
+    name: lv_eccentricity_mean_es
+    meaning: "Mean eccentricity of the LV blood pool, ES"
+    unit: "1"
+    domain: [0.0, 1.0]
+    target_transform: identity
+    scale_dependence: scale_free
+  - <<: *block_d
+    name: rv_eccentricity_mean_ed
+    meaning: "Mean eccentricity of the RV blood pool, ED"
+    unit: "1"
+    domain: [0.0, 1.0]
+    target_transform: identity
+    scale_dependence: scale_free
+  - <<: *block_d
+    name: rv_eccentricity_mean_es
+    meaning: "Mean eccentricity of the RV blood pool, ES"
+    unit: "1"
+    domain: [0.0, 1.0]
+    target_transform: identity
+    scale_dependence: scale_free
+
+  # ---------------- Block E: body-size composites and BSA-indexed values (7; all excluded) ----------------
+  - <<: *block_e
+    name: bmi_kg_m2
+    meaning: "Body-mass index weight / height^2"
+    unit: kg/m2
+    algorithm_id: bmi_v2
+    evidence_sources: {acdc: [E2_RELEASE_METADATA, E3_DERIVED_COMPOSITE], mms: [E2_RELEASE_METADATA, E3_DERIVED_COMPOSITE]}
+    scale_dependence: not_image_derived
+    standard_ref: []
+  - <<: *block_e
+    name: bsa_m2
+    meaning: "Body-surface area, Mosteller: sqrt(height_cm * weight_kg / 3600)"
+    unit: m2
+    algorithm_id: bsa_mosteller_v2
+    evidence_sources: {acdc: [E2_RELEASE_METADATA, E3_DERIVED_COMPOSITE], mms: [E2_RELEASE_METADATA, E3_DERIVED_COMPOSITE]}
+    scale_dependence: not_image_derived
+  - <<: *block_e
+    name: lv_edv_indexed_ml_m2
+    meaning: "lv_edv_ml / bsa_m2"
+    dependencies: [lv_edv_ml, bsa_m2]
+  - <<: *block_e
+    name: lv_esv_indexed_ml_m2
+    meaning: "lv_esv_ml / bsa_m2"
+    dependencies: [lv_esv_ml, bsa_m2]
+  - <<: *block_e
+    name: rv_edv_indexed_ml_m2
+    meaning: "rv_edv_ml / bsa_m2"
+    dependencies: [rv_edv_ml, bsa_m2]
+  - <<: *block_e
+    name: rv_esv_indexed_ml_m2
+    meaning: "rv_esv_ml / bsa_m2"
+    dependencies: [rv_esv_ml, bsa_m2]
+  - <<: *block_e
+    name: lv_myocardial_mass_indexed_ed_g_m2
+    meaning: "lv_myocardial_mass_ed_g / bsa_m2"
+    unit: g/m2
+    dependencies: [lv_myocardial_mass_ed_g, bsa_m2]
+
+  # ---------------- Block F: geometric approximations, not clinically valid (2; excluded) ----------------
+  - <<: *block_f
+    name: lv_long_axis_length_mm
+    meaning: "Approximate LV long axis: number of LV-containing ED slices * slice increment"
+  - <<: *block_f
+    name: lv_sphericity_index_3d
+    meaning: "lv_edv_ml / (pi/6 * L^3 / 1000) with the approximate long axis L"
+    unit: "1"
+    algorithm_id: sphericity_from_approximate_long_axis_v2
+    scale_dependence: scale_free
+    exclusion_reason: "Derived from the short-axis stack approximation of the long axis; not clinically valid (lv_sphericity_valid_flag is false by construction)"
+    dependencies: [lv_edv_ml, lv_long_axis_length_mm]
+
+  # ---------------- Block G: reserved unsupported AHA-16 segmental values (48) ----------------
+  - <<: *block_aha_mm
+    name: aha16_seg01_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 1 (basal anterior) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg01_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 1 (basal anterior) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg01_wall_thickening_percent
+    meaning: "Reserved; AHA segment 1 (basal anterior) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg02_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 2 (basal anteroseptal) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg02_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 2 (basal anteroseptal) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg02_wall_thickening_percent
+    meaning: "Reserved; AHA segment 2 (basal anteroseptal) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg03_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 3 (basal inferoseptal) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg03_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 3 (basal inferoseptal) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg03_wall_thickening_percent
+    meaning: "Reserved; AHA segment 3 (basal inferoseptal) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg04_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 4 (basal inferior) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg04_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 4 (basal inferior) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg04_wall_thickening_percent
+    meaning: "Reserved; AHA segment 4 (basal inferior) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg05_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 5 (basal inferolateral) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg05_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 5 (basal inferolateral) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg05_wall_thickening_percent
+    meaning: "Reserved; AHA segment 5 (basal inferolateral) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg06_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 6 (basal anterolateral) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg06_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 6 (basal anterolateral) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg06_wall_thickening_percent
+    meaning: "Reserved; AHA segment 6 (basal anterolateral) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg07_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 7 (mid anterior) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg07_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 7 (mid anterior) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg07_wall_thickening_percent
+    meaning: "Reserved; AHA segment 7 (mid anterior) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg08_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 8 (mid anteroseptal) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg08_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 8 (mid anteroseptal) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg08_wall_thickening_percent
+    meaning: "Reserved; AHA segment 8 (mid anteroseptal) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg09_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 9 (mid inferoseptal) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg09_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 9 (mid inferoseptal) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg09_wall_thickening_percent
+    meaning: "Reserved; AHA segment 9 (mid inferoseptal) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg10_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 10 (mid inferior) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg10_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 10 (mid inferior) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg10_wall_thickening_percent
+    meaning: "Reserved; AHA segment 10 (mid inferior) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg11_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 11 (mid inferolateral) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg11_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 11 (mid inferolateral) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg11_wall_thickening_percent
+    meaning: "Reserved; AHA segment 11 (mid inferolateral) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg12_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 12 (mid anterolateral) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg12_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 12 (mid anterolateral) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg12_wall_thickening_percent
+    meaning: "Reserved; AHA segment 12 (mid anterolateral) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg13_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 13 (apical anterior) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg13_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 13 (apical anterior) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg13_wall_thickening_percent
+    meaning: "Reserved; AHA segment 13 (apical anterior) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg14_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 14 (apical septal) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg14_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 14 (apical septal) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg14_wall_thickening_percent
+    meaning: "Reserved; AHA segment 14 (apical septal) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg15_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 15 (apical inferior) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg15_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 15 (apical inferior) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg15_wall_thickening_percent
+    meaning: "Reserved; AHA segment 15 (apical inferior) wall thickening"
+  - <<: *block_aha_mm
+    name: aha16_seg16_wall_thickness_ed_mm
+    meaning: "Reserved; AHA segment 16 (apical lateral) wall thickness at ED"
+  - <<: *block_aha_mm
+    name: aha16_seg16_wall_thickness_es_mm
+    meaning: "Reserved; AHA segment 16 (apical lateral) wall thickness at ES"
+  - <<: *block_aha_pct
+    name: aha16_seg16_wall_thickening_percent
+    meaning: "Reserved; AHA segment 16 (apical lateral) wall thickening"
+
+label_tables:
+  Y_acdc:
+    endpoint: Y_acdc_class
+    source: "ACDC Info.cfg Group"
+    classes:
+      DCM: "dilated cardiomyopathy"
+      HCM: "hypertrophic cardiomyopathy"
+      MINF: "previous myocardial infarction"
+      NOR: "normal subjects"
+      RV: "abnormal right ventricle"
+    counts: {acdc_dev: {DCM: 20, HCM: 20, MINF: 19, NOR: 19, RV: 20}, acdc_test: {DCM: 10, HCM: 10, MINF: 10, NOR: 10, RV: 10}}   # acdc_dev without patient055 (MINF) and patient076 (NOR): declared duplicate images (amendments 2026-09-28)
+    role: "consequent vocabulary of every rulebook (Decision D8); dataset label, not diagnosis"
+  d_model:
+    endpoint: d_model
+    definition: "argmax class of the frozen multinomial logistic regression on standardized formal A (configs/formal.yaml audited_predictor; Decision D5); ties broken by the fixed class order DCM, HCM, MINF, NOR, RV"
+    role: "audited decision and consequent of the primary rulebook; model decision, not diagnosis"
+  mms_to_acdc:
+    endpoint: Y_mms_crosswalk
+    source: "M&Ms information CSV Pathology"
+    decision: D8
+    crosswalk:
+      NOR: {acdc: NOR, compatibility: HARMONIZABLE_SAME_DEFINITION}
+      DCM: {acdc: DCM, compatibility: HARMONIZABLE_SAME_DEFINITION}
+      HCM: {acdc: HCM, compatibility: HARMONIZABLE_SAME_DEFINITION}
+      ARV: {acdc: RV, compatibility: HARMONIZABLE_SAME_DEFINITION, note: "binding D8; ACDC RV is the broader abnormal-RV category"}
+      IHD: {acdc: MINF, compatibility: HARMONIZABLE_NOT_EXACT, reason_code: REFERENCE_NOT_EXACT_IHD_MINF, note: "reported separately; never pooled into crosswalk-evaluable accuracy"}
+      HHD: {acdc: null, compatibility: OFF_ONTOLOGY, reason_code: REFERENCE_OFF_ONTOLOGY}
+      LVNC: {acdc: null, compatibility: OFF_ONTOLOGY, reason_code: REFERENCE_OFF_ONTOLOGY}
+      AHS: {acdc: null, compatibility: OFF_ONTOLOGY, reason_code: REFERENCE_OFF_ONTOLOGY}
+      Other: {acdc: null, compatibility: OFF_ONTOLOGY, reason_code: REFERENCE_OFF_ONTOLOGY}
+    counts_mms_external: {crosswalk_evaluable: 273, ihd_not_exact: 4, off_ontology: 43, total: 320}
+    off_ontology_reporting: "route distribution only; no external accuracy"

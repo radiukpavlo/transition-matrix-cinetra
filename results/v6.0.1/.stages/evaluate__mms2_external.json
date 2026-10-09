@@ -1,0 +1,81 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "49fb5198c50cd44c46b600c57bdb15bc2748b2e1835c4fbf1dfc202dd72fdab6",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:contracts/cohort_MMS2.parquet": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+      "run:contracts/split_manifest_MMS2.parquet": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75",
+      "run:formal/A_MMS2.parquet": "b62540c0b1c82c04554632e437607b37aa3fe64f96e03aa5dd47ccb170cb3287",
+      "run:semantics/B_MMS2.parquet": "a96f9f4dd4440fa3d82be1de7e3650d85d96349f4ab6fde4729cc27317609ad4"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:inference/d_model_mms2_external.parquet": "38d1b38088bad8be9b47f7799d9e0d4198183e869ecfe3f2d173abba18721a7c",
+      "run:inference/routes_d_model_mms2_external.parquet": "6f80146526b3ab397850f85875665c2e58e5fc3a4594439ed51e70cfc0986401",
+      "run:inference/routes_dataset_label_mms2_external.parquet": "eb3890dc5101762a43d37fba8f10991ebbff18d8990661b89bd945905e837ef4",
+      "run:inference/routes_measured_oracle_mms2_external.parquet": "6f80146526b3ab397850f85875665c2e58e5fc3a4594439ed51e70cfc0986401",
+      "run:metrics/decoder_mms2_external.json": "ffb06555ef73f4638f5287c537652e78ed472977ec44f154b46b0218c3fbc8d5",
+      "run:metrics/h_primary_3.json": "60d9373aa75e29002ccd72fda8bd6c1b02e45209edfcf80ef887c2dcaffd4f54",
+      "run:metrics/multiplicity_MMS2.parquet": "062ee8f16ebc46cc4c5a4c653d36b2614a8d101cd520f26d3c708411dab7b503",
+      "run:metrics/per_target_mms2_external.parquet": "18ddd41fb042dce0e6051dd7796029a8f2036dc83e17a595e2067eaf25a31db6",
+      "run:metrics/primary_rho_mms2_external.json": "ef61bdf9d31a09d24687d12b2eff1d779609e3b8fb2a793d93befab51a5f7ee5",
+      "run:metrics/routes_d_model_mms2_external.json": "2db71ed8599f5d63ee46474c9474262b102bc05b20b176ce61ff7e7d143d5b64",
+      "run:metrics/routes_dataset_label_mms2_external.json": "f5e52b2659d3403cde9c87f83625a75027b802428d377b8974ee7adc58e2cd0b",
+      "run:metrics/routes_measured_oracle_mms2_external.json": "edc81078bc449f991043f6e78ad23316e2cff7f1c3eda2179bd0c72ae6edb21b",
+      "run:metrics/strata_errors_mms2_external.parquet": "147eebfdf27aee176989144ea7a8e24be01671f59ba649bc8a536008ad27af5d",
+      "run:metrics/strata_rho_mms2_external.json": "3259a1f0013afb06763fcdba2a99da8b12e8ecee4e69d1e3ad8154689c346823",
+      "run:metrics/strata_routes_mms2_external.parquet": "ca53515401d1659a3965ea215db966ff5a343ac3a6ac68b6f8f9f06d91ef2d5f",
+      "run:reconstructed/bhat_mms2_external.parquet": "865ee47e5c5ac08449a7c9d71ea8109d04fcfdff542eee144557dad600b3a571",
+      "run:reconstructed/bhat_mms2_external_decoded.parquet": "adc4f1d57a5ea885e7c73307c47d41fcb7b460f68246b894f939bccaf10c7b5e",
+      "run:reconstructed/stability_d_model_mms2_external.parquet": "21555cceba08b53066c68e6911f0186bd73896059331b54f07460d2b99c55157",
+      "run:reconstructed/stability_dataset_label_mms2_external.parquet": "21555cceba08b53066c68e6911f0186bd73896059331b54f07460d2b99c55157"
+    },
+    "params": {
+      "config_sections": [
+        "rule_policy",
+        "reason_codes",
+        "cohorts",
+        "registry",
+        "wedd.primary_profile",
+        "wedd.per_object_stability",
+        "transition",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.primary_test",
+        "bootstrap.multiplicity",
+        "bootstrap.subgroup_reporting_thresholds",
+        "splits.acdc.acdc_dev.outer_folds",
+        "splits.refit_arm.eval_strata",
+        "cohorts.mms2",
+        "splits.mms2"
+      ],
+      "split": "mms2_external"
+    },
+    "stage": "evaluate:mms2_external",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "96834dfc498e622544be98fcc02283803c050fda2e6ce36b4bb0e9d670b3c41b",
+  "run_log": {
+    "host": "4457c9565b4d",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 8.487,
+    "started_utc": "2026-10-03T14:38:56+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

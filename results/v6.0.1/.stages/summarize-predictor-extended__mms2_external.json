@@ -1,0 +1,69 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "d2ec271e1307835d2141a3cddb087424a048cf69918f1121421dafb751cccae0",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/evaluate__mms2_external.json": "ef20db89795580fa60983924e83cbaf362aa7e65bfed46b72e101a3c6ab73171",
+      "run:.stages/fit-predictor.json": "a1e97599b621417bbb8c68947a4153f2fc898217cb3741549d75cc7469c19a91",
+      "run:contracts/cohort_MMS2.parquet": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/A_MMS2.parquet": "b62540c0b1c82c04554632e437607b37aa3fe64f96e03aa5dd47ccb170cb3287",
+      "run:formal/d_model_predictor.joblib": "553193fd260f2394128e8ea1742ea364e74e75e5a01c3ebfe98ae8d175e55bc6",
+      "run:formal/measured_b_comparator/bundle.json": "fd780db39c7353d55b046417feb5e2c1512acbee53440f57f9e6a1d86030733c",
+      "run:formal/measured_b_comparator/final_model.joblib": "3dc3114912dfae2988dbfdb6780fd35aa883992e5e20a71224171f97a3901e6d",
+      "run:inference/d_model_mms2_external.parquet": "38d1b38088bad8be9b47f7799d9e0d4198183e869ecfe3f2d173abba18721a7c",
+      "run:reconstructed/bhat_mms2_external.parquet": "865ee47e5c5ac08449a7c9d71ea8109d04fcfdff542eee144557dad600b3a571",
+      "run:semantics/B_MMS2.parquet": "a96f9f4dd4440fa3d82be1de7e3650d85d96349f4ab6fde4729cc27317609ad4"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:inference/audited_predictor/mms2_external/predictions.parquet": "3c16abebd4a602a49187e9ef3f8fd47c045430ed01b946c46aff6891a3ba3a43",
+      "run:inference/measured_b_comparator/mms2_external/predictions.parquet": "d7651d71486369d0f32d5f9cb8548457677773d1fbcfe972de4d8a205ce46568",
+      "run:metrics/predictor_extended/bland_altman_mms2_external.parquet": "4ff5e33cd19b379bd44647b11859a304d1c45a7c8f0216dc8184d52f7015f996",
+      "run:metrics/predictor_extended/mms2_external.json": "d090166f31c7cbd23d81704841f9b5b8980e2aae6a3997cc2b3ee3d8bebba78d"
+    },
+    "params": {
+      "comparator_recorded": true,
+      "config_sections": [
+        "formal.audited_predictor",
+        "formal.comparator_predictor",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.calibration",
+        "bootstrap.subgroup_reporting_thresholds",
+        "cohorts.qc_severity",
+        "registry.label_tables",
+        "registry.primary_families",
+        "transition.targets"
+      ],
+      "fold_predictors_recorded": true,
+      "partition": "mms2_external"
+    },
+    "stage": "summarize-predictor-extended:mms2_external",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "96d06d5ce5be8b6a7b25b9d1cbe1d5cc60f483259fa9d228a01b07c0201086e6",
+  "run_log": {
+    "host": "1c1eb2e78820",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 15.201,
+    "started_utc": "2026-10-03T14:40:05+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

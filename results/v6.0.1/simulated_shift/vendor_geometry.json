@@ -1,0 +1,64 @@
+{
+  "analysis": "S6_simulated_acquisition_shift",
+  "data_centric_config_digest": "bc834e6fe165cc1c81d0e8a3398decf6a47141f5573ec945c0ddccc7d4e5fa94",
+  "data_centric_sha256": "830ce834980e5c9c5a242c7ec3b42b978b5ca8a1337c293840fbe959756dfe9c",
+  "metadata_only": true,
+  "role": "intervention target geometry",
+  "source": {
+    "fields": [
+      "spacing_x_mm",
+      "spacing_y_mm",
+      "slice_increment_mm"
+    ],
+    "reader": "tmmri.ingest.geometry.geometry_from_image on the NIfTI header only (staged ed_image.nii, else the release image); no voxels, no labels",
+    "source_partition": "mms_external",
+    "statistic": "median"
+  },
+  "study_config_hash": "0eeb571a66d0338cf46bce34a9aa58327f3c659b59d1771d14d68ec5ad5fc11f",
+  "vendors": {
+    "A": {
+      "median": {
+        "slice_increment_mm": 9.59999991062163,
+        "spacing_x_mm": 1.3333333730697632,
+        "spacing_y_mm": 1.3333333730697632
+      },
+      "n_cases": 95,
+      "reason": null,
+      "status": "EVALUATED",
+      "vendor_name": "Siemens"
+    },
+    "B": {
+      "median": {
+        "slice_increment_mm": 10.000000019232484,
+        "spacing_x_mm": 1.2152777910232544,
+        "spacing_y_mm": 1.2152777910232544
+      },
+      "n_cases": 125,
+      "reason": null,
+      "status": "EVALUATED",
+      "vendor_name": "Philips"
+    },
+    "C": {
+      "median": {
+        "slice_increment_mm": 9.999999991007218,
+        "spacing_x_mm": 1.4843999147415161,
+        "spacing_y_mm": 1.4843997359275818
+      },
+      "n_cases": 50,
+      "reason": null,
+      "status": "EVALUATED",
+      "vendor_name": "GE"
+    },
+    "D": {
+      "median": {
+        "slice_increment_mm": 10.000000047187768,
+        "spacing_x_mm": 0.7954999804496765,
+        "spacing_y_mm": 0.7954999804496765
+      },
+      "n_cases": 50,
+      "reason": null,
+      "status": "EVALUATED",
+      "vendor_name": "Canon"
+    }
+  }
+}

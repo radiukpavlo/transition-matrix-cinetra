@@ -1,0 +1,60 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "50bfe8a72c895958fa225e49782a4fcd9e94934f0e6224c24662be994ac10df3",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:contracts/cohort_MMS.parquet": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:formal/A_MMS.parquet": "e5ee5bf7f2356864eba7e159a56496e81071998df9c456b86d0cc334f18e9930",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:semantics/B_MMS.parquet": "9d721414227b06d18f45fc579decca4b114dcea774847d1b736075f8ddfbbe3b"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:metrics/shift_audit_mms_external.json": "a89d7cf57fb20a82db548984e9f97a2062faa03707f2bd1767daac867c6179c1",
+      "run:metrics/shift_audit_mms_external.parquet": "85a58bfebb38dcf3d804d43c4026d19ef9271b66dba5cd9325b2677b83b89af5",
+      "run:metrics/shift_audit_oof_scores.parquet": "fe3f10e6827ed2a29122857d099d8bbe04fa5f411147d9242b157828ef872a15"
+    },
+    "params": {
+      "comparisons": [
+        "pooled",
+        "vendor"
+      ],
+      "config_sections": [
+        "bootstrap.shift_audit",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.subgroup_reporting_thresholds",
+        "cohorts.qc_severity",
+        "reason_codes"
+      ]
+    },
+    "stage": "audit-shift",
+    "status": "BUILT"
+  },
+  "payload_sha256": "fe20d33013b665c15adf223c6909052ce955934336ed212942a1c04135a2fea4",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 4.098,
+    "started_utc": "2026-10-03T09:44:04+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

@@ -1,0 +1,235 @@
+# Reason codes for computational abstention and route accounting (SPECIFICATION.md 6.0.0, Sections 11.7 and 12.4).
+# Decisions D14 and D21. A reason-coded abstention states that no eligible rule evidence verifies the case; it is
+# not evidence of clinically safe deferral (P5 Section 3.5). Codes are project definitions: P5 names "reason-coded
+# abstention" without enumerating codes, and P6 lists four abstention outputs. Evaluation-only and external codes
+# never change a route; they annotate the reference or the flow diagram.
+
+version: "6.0.0"
+specification_version: "6.0.0"
+
+routes:
+  - EXACT_ACCEPT
+  - CONFLICT_ABSTAIN
+  - SOFT_CANDIDATES_ONLY
+  - UNAVAILABLE_FEATURE_ABSTAIN
+  - NO_MATCH_ABSTAIN
+  - QC_ABSTAIN
+  - EMPTY_RULEBOOK
+route_precedence: [QC_ABSTAIN, EMPTY_RULEBOOK, EXACT_ACCEPT, CONFLICT_ABSTAIN, SOFT_CANDIDATES_ONLY, UNAVAILABLE_FEATURE_ABSTAIN, NO_MATCH_ABSTAIN]
+label_emitting_routes: [EXACT_ACCEPT]   # SOFT_CANDIDATES_ONLY returns candidates, never a label
+partition_invariant: "For each rulebook, over attempted inputs the seven routes sum to one. Inputs removed before inference (EXCLUDED_UPSTREAM, MMS_RELEASE_UNLABELED, MMS_DUPLICATE_CASE, DUPLICATE_IMAGE_OF_TEST_CASE, DUPLICATE_IMAGE_WITHIN_PARTITION, DUPLICATE_IMAGE_OF_REFIT_TRAIN_CASE) are counted in the flow diagram only. Evaluation-only codes never alter a route or its denominator."
+
+codes:
+  # ---------------- input (route QC_ABSTAIN) ----------------
+  - code: INPUT_DECODE_FAILURE
+    scope: input
+    route: QC_ABSTAIN
+    meaning: "Image or mask NIfTI unreadable, or header inconsistent with the voxel array"
+    counted_in: [abstention_rate, qc_report]
+  - code: INPUT_NONFINITE
+    scope: input
+    route: QC_ABSTAIN
+    meaning: "Non-finite voxel values in the ED or ES image, or a non-finite formal descriptor"
+    counted_in: [abstention_rate, qc_report]
+  - code: INPUT_GEOMETRY_INVALID
+    scope: input
+    route: QC_ABSTAIN
+    meaning: "In-plane spacing non-positive or non-finite, or slice increment unavailable for volumes"
+    qc_reasons: [spacing_nonpositive, z_spacing_unavailable_for_volume]
+    counted_in: [abstention_rate, qc_report]
+  - code: INPUT_MISSING_ED_ES_FRAME
+    scope: input
+    route: QC_ABSTAIN
+    meaning: "ED or ES frame index missing, outside the frame count, ED equal to ES, or the mask not annotated on that frame"
+    qc_reasons: [missing_ed_or_es_mask, ed_es_frame_out_of_range, ed_equals_es]
+    counted_in: [abstention_rate, qc_report]
+  # ---------------- qc: one code per critical reason (route QC_ABSTAIN) ----------------
+  - code: QC_MISSING_LV_BLOOD_POOL
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "LV blood-pool label absent at ED or ES (critical; fixes the v5 default-to-moderate defect)"
+    qc_reasons: [missing_lv_ed_present, missing_lv_es_present]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_MISSING_RV_BLOOD_POOL
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "RV blood-pool label absent at ED or ES (critical)"
+    qc_reasons: [missing_rv_ed_present, missing_rv_es_present]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_MISSING_LV_MYOCARDIUM
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "LV myocardium label absent at ED or ES (critical)"
+    qc_reasons: [missing_myo_ed_present, missing_myo_es_present]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_UNEXPECTED_LABEL_VALUE
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "Mask contains a label outside {0, 1, 2, 3} after rounding and dataset label mapping"
+    qc_reasons: [unexpected_label_value]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_INVALID_LABEL_MAPPING
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "Dataset label map could not be applied (unknown dataset or non-integer labels)"
+    qc_reasons: [invalid_label_mapping]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_LABEL_SMOOTHED
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "Integer label map shows interpolation or smoothing artefacts"
+    qc_reasons: [integer_label_gaussian_smoothed]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_MASK_OVERLAP
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "High structure overlap before resolution"
+    qc_reasons: [high_mask_overlap_before_resolution]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_LV_EDV_LE_ESV
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "LV EDV not greater than LV ESV (includes identical ED and ES masks)"
+    qc_reasons: [lv_edv_le_lvesv]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_RV_EDV_LE_ESV
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "RV EDV not greater than RV ESV"
+    qc_reasons: [rv_edv_le_rvesv]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_LV_EF_OUT_OF_RANGE
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "LV EF outside 0-100 %"
+    qc_reasons: [lv_ef_outside_0_100]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_RV_EF_OUT_OF_RANGE
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "RV EF outside 0-100 %"
+    qc_reasons: [rv_ef_outside_0_100]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_MASS_NONPOSITIVE
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "LV myocardial mass not positive"
+    qc_reasons: [myocardial_mass_nonpositive]
+    counted_in: [abstention_rate, qc_report]
+  - code: QC_UNREGISTERED_REASON
+    scope: qc
+    route: QC_ABSTAIN
+    meaning: "A QC reason token not registered in configs/cohorts.yaml; fail closed (never defaults to moderate)"
+    counted_in: [abstention_rate, qc_report, contract_errors]
+  # ---------------- eligibility (route UNAVAILABLE_FEATURE_ABSTAIN) ----------------
+  - code: FEATURE_TARGET_INELIGIBLE
+    scope: eligibility
+    route: UNAVAILABLE_FEATURE_ABSTAIN
+    meaning: "A required antecedent failed the development eligibility gates (configs/rule_policy.yaml eligibility_gates)"
+    counted_in: [abstention_rate, feature_report]
+  - code: FEATURE_QC_MASKED
+    scope: eligibility
+    route: UNAVAILABLE_FEATURE_ABSTAIN
+    meaning: "A required antecedent is QC_BLOCKED for this case by a high-severity reason (feature-level masking)"
+    counted_in: [abstention_rate, feature_report, qc_report]
+  - code: FEATURE_DOMAIN_BLOCKED
+    scope: eligibility
+    route: UNAVAILABLE_FEATURE_ABSTAIN
+    meaning: "Reconstructed value outside the registry domain by more than the numeric guard (configs/transition.yaml decoders)"
+    counted_in: [abstention_rate, feature_report]
+  - code: FEATURE_UNSTABLE
+    scope: eligibility
+    route: UNAVAILABLE_FEATURE_ABSTAIN
+    meaning: "Per-object stability failed (fewer than 4 of 5 outer-fold mappers agree with the final symbol)"
+    counted_in: [abstention_rate, feature_report]
+  - code: FEATURE_MISSING_SOURCE
+    scope: eligibility
+    route: UNAVAILABLE_FEATURE_ABSTAIN
+    meaning: "Measured-oracle rulebook only: the measured antecedent is MISSING_SOURCE or NOT_APPLICABLE"
+    counted_in: [abstention_rate, feature_report]
+  # ---------------- match ----------------
+  - code: MATCH_MISSING_REQUIRED_SYMBOL
+    scope: match
+    route: UNAVAILABLE_FEATURE_ABSTAIN
+    meaning: "No exact rule fired and at least one rule could not be evaluated because an antecedent symbol is unavailable; no soft candidate"
+    counted_in: [abstention_rate, unavailable_feature_rate]
+  - code: MATCH_CONFLICTING_CONSEQUENTS
+    scope: match
+    route: CONFLICT_ABSTAIN
+    meaning: "Exact rules with different consequents fired; no label is emitted and no tie-breaker is applied"
+    counted_in: [conflict_rate, abstention_rate]
+  - code: MATCH_SOFT_ONLY
+    scope: match
+    route: SOFT_CANDIDATES_ONLY
+    meaning: "Only soft candidates exist (configs/rule_policy.yaml soft_match); candidates are evidence, never a label"
+    counted_in: [soft_match_rate, abstention_rate]
+  - code: MATCH_NONE
+    scope: match
+    route: NO_MATCH_ABSTAIN
+    meaning: "Every rule was evaluable and none fired exactly or softly"
+    counted_in: [abstention_rate]
+  # ---------------- rulebook ----------------
+  - code: RULEBOOK_EMPTY
+    scope: rulebook
+    route: EMPTY_RULEBOOK
+    meaning: "No rule survived discovery and the cross-fitted validation gate; rules/<rulebook>/EMPTY.json records every failing gate"
+    counted_in: [abstention_rate, global_report]
+  - code: CLASS_INELIGIBLE
+    scope: rulebook
+    route: null
+    meaning: "A consequent class failed the support gate; rules for that class were not induced (rulebook-level record)"
+    counted_in: [global_report]
+  # ---------------- evaluation-only (never a route) ----------------
+  - code: REFERENCE_OFF_ONTOLOGY
+    scope: evaluation
+    route: null
+    meaning: "External reference outside the ACDC vocabulary (M&Ms HHD, LVNC, AHS, Other); route distribution reported, no accuracy"
+    counted_in: [external_reference_report]
+  - code: REFERENCE_NOT_EXACT_IHD_MINF
+    scope: evaluation
+    route: null
+    meaning: "M&Ms IHD mapped to ACDC MINF (HARMONIZABLE_NOT_EXACT); reported separately, never pooled"
+    counted_in: [external_reference_report]
+  - code: REFERENCE_SEMANTIC_UNVERIFIABLE
+    scope: evaluation
+    route: null
+    meaning: "The measured reference for an antecedent is not OBSERVED; the semantic audit of that literal is unverifiable (never alters a route)"
+    counted_in: [semantic_audit_report]
+  # ---------------- external and flow (before inference) ----------------
+  - code: MMS_RELEASE_UNLABELED
+    scope: external
+    route: null
+    meaning: "M&Ms Training/Unlabeled case (25, vendor C, centre 4): CSV ED = ES = 0 placeholders; excluded upstream"
+    counted_in: [flow_diagram]
+  - code: MMS_DUPLICATE_CASE
+    scope: external
+    route: null
+    meaning: "Voxel-identical duplicate pair (C5Q2Y5 = E9L4N2, A8C9H8 = Q0Q1Y4; all within Training/Unlabeled); excluded upstream"
+    counted_in: [flow_diagram, duplicate_control_report]
+  # Declared duplicate images of labelled cases (identical decoded ED/ES images, different masks and source hashes;
+  # configs/cohorts.yaml duplicate_image_pairs; PI decision, protocol/amendments.md 2026-09-28)
+  - code: DUPLICATE_IMAGE_OF_TEST_CASE
+    scope: flow
+    route: null
+    meaning: "Development patient whose decoded ED and ES images are identical to an acdc_test patient's (patient055 = patient118); excluded from acdc_dev (fitting, selection, gating, folds); the test patient stays in acdc_test"
+    counted_in: [flow_diagram, duplicate_control_report]
+  - code: DUPLICATE_IMAGE_WITHIN_PARTITION
+    scope: flow
+    route: null
+    meaning: "Second member of a duplicate-image pair inside one partition (patient074 = patient076, acdc_dev); the higher identifier is excluded and the lower kept"
+    counted_in: [flow_diagram, duplicate_control_report]
+  - code: DUPLICATE_IMAGE_OF_REFIT_TRAIN_CASE
+    scope: flow
+    route: null
+    meaning: "mms_refit_eval case whose decoded ED and ES images are identical to an mms_refit_train case's (K3R0Y7 = A7G0P5); excluded from mms_refit_eval only; both stay in mms_external as one bootstrap cluster"
+    counted_in: [flow_diagram, duplicate_control_report]
+  - code: SOURCE_HASH_MISMATCH
+    scope: flow
+    route: null
+    meaning: "Staged source file SHA-256 differs from the tracked manifest; staging refuses and the run is BLOCKED_DATA_ACCESS"
+    counted_in: [flow_diagram, staging_report]
+  - code: EXCLUDED_UPSTREAM
+    scope: flow
+    route: null
+    meaning: "Removed by the split or cohort manifest before inference"
+    counted_in: [flow_diagram]

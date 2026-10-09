@@ -1,0 +1,73 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "6a9cf6813617eae35c3acdb1134277a02032eca4af7e66967f135226b6ea6425",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/evaluate__mms2_external.json": "ef20db89795580fa60983924e83cbaf362aa7e65bfed46b72e101a3c6ab73171",
+      "run:contracts/cohort_MMS2.parquet": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:contracts/split_manifest_MMS2.parquet": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75",
+      "run:formal/A_MMS2.parquet": "b62540c0b1c82c04554632e437607b37aa3fe64f96e03aa5dd47ccb170cb3287",
+      "run:formal/audited_predictor/predictions.parquet": "bc4b8458660d8c7459725c301660d7e428c88cec5dc5fae6ab9a2245f84c8295",
+      "run:neural_f9/f9_bundle.json": "004ebcca36f9a3550a29c66a35f861f6030201f2cd01d93303ac93c74b9f86d4",
+      "run:neural_f9/predictions.parquet": "b57c0ef3f0a4f36a59925ec7ee4d77d83a0ea00d65196f56e38422a5e287f48d",
+      "run:reconstructed/bhat_mms2_external.parquet": "865ee47e5c5ac08449a7c9d71ea8109d04fcfdff542eee144557dad600b3a571",
+      "run:semantics/B_MMS2.parquet": "a96f9f4dd4440fa3d82be1de7e3650d85d96349f4ab6fde4729cc27317609ad4",
+      "run:transitions/transition_model.json": "6c2f25349cfd7987a32337ca506415c8d946ab36e9f81a38d7b19790c866ba55"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:probes/evaluations/f9/mms2_external.json": "8d72ac3e8fbef0af6b564ebf1a3f097ad1d4c9d61f5397c893c7e7dc622e6d80"
+    },
+    "params": {
+      "bundle": "f9",
+      "config_sections": [
+        "transition",
+        "registry",
+        "cohorts.qc_severity",
+        "formal.audited_predictor",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.primary_test",
+        "bootstrap.calibration",
+        "probes.bundles",
+        "probes.crosswalk",
+        "probes.estimands",
+        "probes.f9b",
+        "probes.inputs",
+        "probes.pairing",
+        "probes.partitions",
+        "probes.reference",
+        "probes.require_freeze_record_for_held_out"
+      ],
+      "evidence": "prospective",
+      "split": "mms2_external"
+    },
+    "stage": "evaluate-alt-bundles:f9:mms2_external",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "3ea311129946b9adb6faa7bfc4eaea5c72eca1ac2074e7d8e150e4e77d330510",
+  "run_log": {
+    "host": "23803fed6c03",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 15.239,
+    "started_utc": "2026-10-03T14:46:17+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

@@ -1,0 +1,14 @@
+partition,group,pathology,n,proportion
+mms_external,A,ARV,12,0.1276595744680851
+mms_external,A,DCM,36,0.3829787234042553
+mms_external,A,HCM,25,0.26595744680851063
+mms_external,A,NOR,21,0.22340425531914893
+mms_external,other_vendors,AHS,1,0.0044444444444444444
+mms_external,other_vendors,ARV,3,0.013333333333333334
+mms_external,other_vendors,DCM,60,0.26666666666666666
+mms_external,other_vendors,HCM,57,0.25333333333333335
+mms_external,other_vendors,HHD,15,0.06666666666666667
+mms_external,other_vendors,IHD,4,0.017777777777777778
+mms_external,other_vendors,LVNC,2,0.008888888888888889
+mms_external,other_vendors,NOR,58,0.2577777777777778
+mms_external,other_vendors,Other,25,0.1111111111111111

@@ -1,0 +1,336 @@
+{
+  "descriptor_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "estimation_only": true,
+  "evidence": "registered_after_unblinding",
+  "freeze_order": null,
+  "label": "registered after unblinding",
+  "partition": "acdc_test",
+  "predictors": {
+    "audited_predictor": {
+      "before_after": {
+        "bootstrap": {
+          "paired": "same cluster draw for both",
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "cluster_id"
+        },
+        "direction": "comparator_minus_reference",
+        "metrics": {
+          "accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.88,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.88,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "balanced_accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.8800000000000001,
+            "difference": 0.0,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "reference": 0.8800000000000001,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          },
+          "brier": {
+            "ci_lower": -0.018806648861306136,
+            "ci_upper": 0.004533897556857877,
+            "comparator": 0.20534118345017066,
+            "difference": -0.0076074588913028485,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.2129486423414735,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece": {
+            "ci_lower": -0.06652770907735327,
+            "ci_upper": 0.023830441424883046,
+            "comparator": 0.08660492787373072,
+            "difference": -0.028996022723807344,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.11560095059753807,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "log_loss": {
+            "ci_lower": -0.03406800343330195,
+            "ci_upper": 0.062239476278088256,
+            "comparator": 0.4203416559821531,
+            "difference": 0.005914951924397227,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.4144267040577559,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_f1": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.8792283739652159,
+            "difference": 0.0,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "reference": 0.8792283739652159,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          },
+          "macro_ovr_auroc": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.9795,
+            "difference": 0.0,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "reference": 0.9795,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          }
+        },
+        "n_clusters": 50,
+        "n_paired": 50,
+        "reason": null,
+        "status": "EVALUATED"
+      },
+      "ece_equal_width": {
+        "after": 0.0829126153812933,
+        "before": 0.08576224122783938
+      },
+      "logits": "decision_function",
+      "n_evaluable": 50,
+      "provenance": {
+        "logits": "decision_function",
+        "n_rows": 50,
+        "source": "derived: run:formal/d_model_predictor.joblib on formal/A_ACDC.parquet, checked against run:inference/d_model_acdc_test.parquet"
+      },
+      "temperature": 0.8049314153593212
+    },
+    "d20_predictor": {
+      "before_after": {
+        "bootstrap": {
+          "paired": "same cluster draw for both",
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "cluster_id"
+        },
+        "direction": "comparator_minus_reference",
+        "metrics": {
+          "accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.36,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.36,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "balanced_accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.36,
+            "difference": 0.0,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "reference": 0.36,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          },
+          "brier": {
+            "ci_lower": -0.2413467333594092,
+            "ci_upper": -0.011193972509916614,
+            "comparator": 0.7156317100568814,
+            "difference": -0.12972899703238938,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.8453607070892708,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece": {
+            "ci_lower": -0.281568552778869,
+            "ci_upper": -0.017813363117732118,
+            "comparator": 0.1388417585315101,
+            "difference": -0.21820334653090112,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.3570451050624112,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "log_loss": {
+            "ci_lower": -0.9436306503660071,
+            "ci_upper": -0.13702273390451056,
+            "comparator": 1.3994074342991334,
+            "difference": -0.5533336318404114,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 1.9527410661395448,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_f1": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.35318015318015317,
+            "difference": 0.0,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "reference": 0.35318015318015317,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          },
+          "macro_ovr_auroc": {
+            "ci_lower": -0.008224916532618585,
+            "ci_upper": 0.036329082973896074,
+            "comparator": 0.7325,
+            "difference": 0.013000000000000012,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "reference": 0.7195,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          }
+        },
+        "n_clusters": 50,
+        "n_paired": 50,
+        "reason": null,
+        "status": "EVALUATED"
+      },
+      "ece_equal_width": {
+        "after": 0.10510215135258091,
+        "before": 0.3570451050624113
+      },
+      "logits": "log_probabilities",
+      "n_evaluable": 50,
+      "provenance": {
+        "logits": "log_probabilities",
+        "n_rows": 50,
+        "source": "derived: run:deep_encoder/formal/d_model_predictor.joblib on run:deep_encoder/features/A_D20_acdc_test.parquet"
+      },
+      "temperature": 3.52868821858615
+    },
+    "f9": {
+      "before_after": {
+        "bootstrap": {
+          "paired": "same cluster draw for both",
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "cluster_id"
+        },
+        "direction": "comparator_minus_reference",
+        "metrics": {
+          "accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.58,
+            "difference": 0.0,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.58,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "balanced_accuracy": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.58,
+            "difference": 0.0,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "reference": 0.58,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          },
+          "brier": {
+            "ci_lower": -0.11230888562161248,
+            "ci_upper": 0.03258816665486252,
+            "comparator": 0.48790085122503074,
+            "difference": -0.040400425358922354,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.5283012765839531,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "ece": {
+            "ci_lower": -0.14613781228496478,
+            "ci_upper": 0.09232294902173609,
+            "comparator": 0.12397948123666255,
+            "difference": -0.07415650995896408,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.19813599119562664,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "log_loss": {
+            "ci_lower": -0.2394020302294564,
+            "ci_upper": 0.12423478934428475,
+            "comparator": 0.9109044447663972,
+            "difference": -0.047239859081224855,
+            "n_boot_valid": 2000,
+            "reason": null,
+            "reference": 0.9581443038476221,
+            "status": "EVALUATED",
+            "valid_fraction": 1.0
+          },
+          "macro_f1": {
+            "ci_lower": 0.0,
+            "ci_upper": 0.0,
+            "comparator": 0.515527950310559,
+            "difference": 0.0,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "reference": 0.515527950310559,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          },
+          "macro_ovr_auroc": {
+            "ci_lower": -0.01171239123195642,
+            "ci_upper": 0.014670079852396743,
+            "comparator": 0.9185000000000001,
+            "difference": 0.002000000000000224,
+            "n_boot_valid": 1999,
+            "reason": null,
+            "reference": 0.9164999999999999,
+            "status": "EVALUATED",
+            "valid_fraction": 0.9995
+          }
+        },
+        "n_clusters": 50,
+        "n_paired": 50,
+        "reason": null,
+        "status": "EVALUATED"
+      },
+      "ece_equal_width": {
+        "after": 0.10067395807598829,
+        "before": 0.19134052081007324
+      },
+      "logits": "recorded_logits",
+      "n_evaluable": 50,
+      "provenance": {
+        "logits": "recorded_logits",
+        "n_rows": 50,
+        "sha256": "dba8334fc32a095fbc8acb05d0169b496972cc7b4bd5148e5b98e656f1da975f",
+        "source": "run:neural_f9/predictions.parquet"
+      },
+      "temperature": 2.297424954712543
+    }
+  },
+  "schema": "tmmri.s4_calibration/1",
+  "trust_bundle": {
+    "bundle_sha256": "266b2889b6ce393b2ceb70a1438f17f97e0c6ee03617a24714506e5b2ab9908d",
+    "n_files": 7,
+    "record": "trust/trust_bundle.json",
+    "record_sha256": "6a002bb5cb183ce398a2f102f1599622813ae441b51860d58188d2b2c113c36d"
+  }
+}

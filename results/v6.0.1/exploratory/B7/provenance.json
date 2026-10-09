@@ -1,0 +1,144 @@
+{
+  "analysis": "B7",
+  "code_commit": "d04f0908e66766335609c938f06d51c53421a45a",
+  "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+  "config": {
+    "analysis_settings": {
+      "basal_slice": "of the two outermost slices with any label at ED, the one with the larger ED LV area (ties: the lower index); its labels are removed at ED and ES",
+      "morphology": "in-plane, per slice and phase, 4-connected 1-pixel step; dilation overwrites the neighbouring pixels of other labels; an eroded pixel takes the most frequent other label among its 4 neighbours (ties: the smallest label)",
+      "partition": "acdc_test",
+      "perturbations": [
+        "erode_lv",
+        "dilate_lv",
+        "erode_myo",
+        "dilate_myo",
+        "erode_rv",
+        "dilate_rv",
+        "drop_basal_slice"
+      ],
+      "rho_bootstrap_replicates": 2000,
+      "title": "segmentation sensitivity on acdc_test"
+    },
+    "file": "configs/exploratory.yaml",
+    "sha256": "881e47ec4ed9fb569861d2a6cf400ad31cbb7644054527951bab25cffe8d1d38"
+  },
+  "confirmatory": false,
+  "declared": "protocol-v6.0.1 amendment item 8: exploratory register B1-B8, declared post hoc (explains results, never confirms them)",
+  "included": {
+    "acdc_test": "ACDC"
+  },
+  "inference": "effect sizes and descriptive intervals only",
+  "inputs": {
+    "A_ACDC": {
+      "path": "run:formal/A_ACDC.parquet",
+      "sha256": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216"
+    },
+    "B_ACDC": {
+      "path": "run:semantics/B_ACDC.parquet",
+      "sha256": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "cohort_ACDC": {
+      "path": "run:contracts/cohort_ACDC.parquet",
+      "sha256": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98"
+    },
+    "evaluate_record": {
+      "path": "run:.stages/evaluate__acdc_test.json",
+      "sha256": "afa7951963c65623710c97adfc30fa3defd6584ec2984d947b8f54b25749450e"
+    },
+    "frozen_bundle": {
+      "path": "run:.stages/FROZEN.json",
+      "sha256": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e"
+    },
+    "outlier_reference": {
+      "path": "run:qc/outlier_reference.json",
+      "sha256": "3a35ea7875fe344ef1e8595ecfea3f78073f0be07468d093e2434f69b046024c"
+    },
+    "predictor": {
+      "path": "run:formal/d_model_predictor.joblib",
+      "sha256": "553193fd260f2394128e8ea1742ea364e74e75e5a01c3ebfe98ae8d175e55bc6"
+    },
+    "rulebook_or_empty_d_model": {
+      "path": "run:rules/d_model/rulebook_or_empty.json",
+      "sha256": "2be729456ed5cc4a24bf1a9857aeba88815974e9d8f622218fd728efd194e199"
+    },
+    "rulebook_or_empty_dataset_label": {
+      "path": "run:rules/dataset_label/rulebook_or_empty.json",
+      "sha256": "441bfaaf9b05089dc680b8f7e52cd2b7257dbde453189d8394c150b4c79974fb"
+    },
+    "rulebook_or_empty_measured_oracle": {
+      "path": "run:rules/measured_oracle/rulebook_or_empty.json",
+      "sha256": "9a8429960a637145d29f001a396b838b8aa62149a7d6d01225e15b9c5499efb7"
+    },
+    "split_manifest": {
+      "path": "run:contracts/split_manifest.parquet",
+      "sha256": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf"
+    },
+    "staging_manifest_ACDC": {
+      "path": "data:manifests/staging_ACDC.json",
+      "sha256": "6a1f70128dee7420f79b65c02719917887a00a101eac6b38adb5672a57f59160"
+    },
+    "thresholds_d_model": {
+      "path": "run:thresholds/d_model_wedd_gaussian_mm_v1.json",
+      "sha256": "016731f90c5c6a392f2080872fd1cc8656c8794b6318390bf281e3d9929f00e9"
+    },
+    "thresholds_dataset_label": {
+      "path": "run:thresholds/dataset_label_wedd_gaussian_mm_v1.json",
+      "sha256": "016731f90c5c6a392f2080872fd1cc8656c8794b6318390bf281e3d9929f00e9"
+    },
+    "thresholds_measured_oracle": {
+      "path": "run:thresholds/measured_oracle_wedd_gaussian_mm_v1.json",
+      "sha256": "69eed10a2409c8c9e77097a81d4aa3217a73a38df092f1f38a5b2505780f3550"
+    },
+    "transition_fold1": {
+      "path": "run:transitions/fold_models/transition_fold1.json",
+      "sha256": "bd291c8e0af9b37ef6885a14d07d55eea6abcf2286c340187e30e3ae108ede3c"
+    },
+    "transition_fold2": {
+      "path": "run:transitions/fold_models/transition_fold2.json",
+      "sha256": "b8dfbbea2b76fb29c1edcd470fd9a95635181284daa7042116a5400d08681772"
+    },
+    "transition_fold3": {
+      "path": "run:transitions/fold_models/transition_fold3.json",
+      "sha256": "b9c5880b852610b5fe5928bd65b544585e17e367ae047042cafa290f8c55e553"
+    },
+    "transition_fold4": {
+      "path": "run:transitions/fold_models/transition_fold4.json",
+      "sha256": "e697a456024d14da5fc517716242bbce06b2512f19c5ad967273016cd9512e06"
+    },
+    "transition_fold5": {
+      "path": "run:transitions/fold_models/transition_fold5.json",
+      "sha256": "e8a5b8d4881ea3e017cfc4e5035a77f1028e90d2705d07334ddd9450149d5541"
+    },
+    "transition_model": {
+      "path": "run:transitions/transition_model.json",
+      "sha256": "6c2f25349cfd7987a32337ca506415c8d946ab36e9f81a38d7b19790c866ba55"
+    }
+  },
+  "label": "EXPLORATORY_POST_HOC",
+  "not_executed": {},
+  "outputs": [
+    "run:exploratory/B7/per_case.parquet",
+    "run:exploratory/B7/per_target.parquet",
+    "run:exploratory/B7/per_target.csv",
+    "run:exploratory/B7/summary.json",
+    "run:exploratory/B7/provenance.json"
+  ],
+  "reads": "recorded run artifacts only; no evaluation re-run",
+  "result": {
+    "cases": 50,
+    "perturbations": [
+      "erode_lv",
+      "dilate_lv",
+      "erode_myo",
+      "dilate_myo",
+      "erode_rv",
+      "dilate_rv",
+      "drop_basal_slice"
+    ]
+  },
+  "role": "exploratory_post_hoc",
+  "run_id": "v6-replication-20261003-1241",
+  "schema": "tmmri.exploratory_provenance/1",
+  "title": "segmentation sensitivity on acdc_test",
+  "v6_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1"
+}

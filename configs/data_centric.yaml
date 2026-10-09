@@ -1,0 +1,113 @@
+# Data-centric strengthening analyses S5 (data efficiency) and S6 (simulated acquisition shift); manuscript protocol 2.1
+# (docs/MANUSCRIPT_PROTOCOL_V2_2026-10-02.md, Sections D item 15 and E). Registered with S1-S4 in the protocol-v6.0.1
+# amendment; a registered analysis that cannot run is reported as not executed, with its reason.
+# Code: src/tmmri/experiments/data_efficiency.py (S5), src/tmmri/experiments/simulated_shift.py (S6),
+# src/tmmri/experiments/data_centric.py (configuration, stage records, paired cluster bootstrap).
+specification_version: "6.0.1"
+status: registered_pending_protocol_v6_0_1_signature
+common:
+  bootstrap:                                    # = configs/bootstrap.yaml fixed_model_bootstrap (Section E common rules)
+    replicates: 2000
+    seed: 20260928
+    unit: cluster_id
+    interval: percentile_95
+    paired: same_cluster_draw_for_both_conditions
+    min_valid_fraction: 0.95
+  stage_records: "content-addressed .stages/<stage>.json with the once-only guard of a frozen run (tmmri.stages.once_only_guard)"
+data_efficiency:                                # S5; development only, so no new held-out exposure
+  partition: acdc_dev
+  forbidden_partitions: [acdc_test, mms_external, mms_external_never_analysed, mms_refit_train, mms_refit_eval, mms2_external, mms2_sealed]
+  fractions: [0.5, 0.75, 1.0]                   # of each v6 outer fitting set (acdc_dev minus outer fold k)
+  repeats: {below_one: 3, at_one: 1}            # repeat indices 0..n-1; f = 1.0 is the full outer fitting set
+  subsample:
+    salt: "lc-v6.0.1|"
+    hash_input: "SHA256('lc-v6.0.1|' + repr(float(f)) + '|' + str(r) + '|' + patient_id)"   # f as Python float repr (0.5, 0.75, 1.0); r 0-based (0, 1, 2)
+    key: patient_id                             # owner decision D: the canonical patient key of the v6 hash rules (configs/splits.yaml acdc_dev key; e.g. patient001)
+    strata: acdc_class
+    order: sha256_hex_ascending_ties_by_key
+    per_class_count: round_half_up              # m_c = floor(f * n_c + 0.5) of the class's members in the outer fitting set
+    shared_by: [descriptor, f9]                 # both pipelines fit on identical subsamples
+  class_support:
+    classes: [DCM, HCM, MINF, NOR, RV]          # = configs/formal.yaml audited_predictor.classes (registry class order)
+    min_per_class: {descriptor: 1, f9: 3}       # f9: every class in each of the 3 class-stratified selection folds
+    status: NE
+    reason: NE_INSUFFICIENT_CLASS_SUPPORT
+  descriptor:                                   # local CPU; the v6 transition and audited-predictor code exactly
+    transition: "fit_transition_v6 on the subsample's fit rows; per-target lambda by inner CV over the v6 inner folds (contracts/inner_folds.parquet) restricted to the subsample"
+    predictor: "fit_formal_predictor (configs/formal.yaml audited_predictor) on the subsample's fit rows (finite A, not critical QC)"
+    outcomes: [oof_rho, oof_rho_j, oof_macro_f1, per_fold_macro_f1]
+    rho_reference: "acdc_dev fit-partition mean and SD of B (as run-ablations acdc_dev_oof)"
+    pooled_point: "out-of-fold predictions of the five held-out outer folds pooled per (fraction, repeat)"
+  f9:                                           # Modal (CPE-1); the trainer is tmmri.neural (C5 train_fit)
+    purpose: s5
+    seed: 20261011                              # F9 primary seed
+    fractions: [0.5, 0.75]                      # f = 1.0 is the F9 primary-seed outer-fold fits (purpose f9)
+    outer_folds: [1, 2, 3, 4, 5]
+    selection_folds: 3
+    candidates:                                 # NEURAL-TM-1.0 4.2; = configs/f9_cnn.yaml
+      - {unfreeze: layer4, lr_backbone: 1.0e-5}
+      - {unfreeze: layer4, lr_backbone: 3.0e-5}
+      - {unfreeze: layer4, lr_backbone: 1.0e-4}
+      - {unfreeze: layer3+layer4, lr_backbone: 1.0e-5}
+      - {unfreeze: layer3+layer4, lr_backbone: 3.0e-5}
+      - {unfreeze: layer3+layer4, lr_backbone: 1.0e-4}
+    expected_fits: {wave1_selection: 540, wave2_refit: 30, total: 570}   # 2 fractions x 3 repeats x 5 folds x (6 x 3 + 1)
+    selection_rule: [highest_mean_macro_f1, lowest_mean_cross_entropy, fewer_unfrozen_blocks, lower_lr_backbone]
+    refit_epochs: ceil_median_of_the_selected_candidates_three_epochs
+    fit_id: "first 16 hex of SHA-256 of the canonical JSON (tmmri.runs.canonical_json) of all other C5 fields; tmmri.neural.fit_spec when importable"
+    records: "neural_f9/checkpoints/{fit_id}/record.json"            # C8 layout; FitRecord JSON
+    record_fields:                              # dotted paths into a FitRecord JSON (tmmri.neural.train.FitRecord)
+      fit_id: fit_id
+      macro_f1: val_metrics.macro_f1
+      cross_entropy: val_metrics.cross_entropy
+      epoch: selected_epoch
+    oof_outputs: "data_efficiency/f9/oof/{fit_id}/"                   # C4 predictions.parquet and activations.parquet of each wave-2 refit (held-out fold is_oof true; fitting patients is_oof false)
+    full_fraction_outputs: "neural_f9/"                              # C4 outer-fold outputs of the F9 primary seed (f = 1.0): infer-f9 --split acdc_dev (combined predictions.parquet / activations.parquet; dev rows, fold<k>, seed filtered)
+    spec_files: "data_efficiency/f9/train_wave{wave}_specs.json"      # F9 spec files (purpose s5) for train-f9 --backend local, import-f9-fits --specs and scripts/cloud/modal_train.py
+    local_inference: "run-data-efficiency --step f9-infer"            # wave-2 refits on the acdc_dev cache (tmmri.neural.inference.run_f9_inference) -> oof_outputs
+    probe: "F9b-style: fit_transition_v6 on the encoder's 64-d activations of its fitting patients (v6 inner folds restricted to them); decode the held-out fold"
+simulated_shift:                                # S6; an interventional mechanism test on acdc_test
+  partition: acdc_test
+  analysis_label: registered after unblinding
+  requires: [frozen_analysis_bundle, "evaluate:acdc_test recorded"]
+  once_only: per_vendor_condition               # stage run-simulated-shift:<vendor> (and :<vendor>:deep) in a frozen run
+  vendors: {A: Siemens, B: Philips, C: GE, D: Canon}   # M&Ms-1 vendor codes (contracts/cohort_MMS.parquet vendor)
+  geometry:
+    source_partition: mms_external
+    statistic: median
+    fields: [spacing_x_mm, spacing_y_mm, slice_increment_mm]
+    reader: "tmmri.ingest.geometry.geometry_from_image on the NIfTI header only (staged ed_image.nii, else the release image); no voxels, no labels"
+  resampling:
+    image_interpolation: linear
+    mask_interpolation: nearest
+    axes: [x, y, z]                             # in-plane spacing and slice increment of the vendor median
+    alignment: physical_centre_preserved        # x_in = c_in + (i - c_out) * s_out / s_in with c = (n - 1) / 2
+    output_shape: round_half_up_of_n_in_s_in_over_s_out
+    boundary: nearest_edge
+    geometry_method: unchanged                  # the z_spacing_method of the staged case (QC tokens unchanged by design)
+  recompute: [B_typed_v6, formal_A_57, tensor_inputs_C3]
+  tensor_inputs:
+    hook: "tmmri.neural.preprocess:case_tensors"   # fn(case, cfg) -> C3 arrays and fields; NOT_EXECUTED when unavailable
+    config: configs/neural_input.yaml
+    out: "simulated_shift/{vendor}/neural_cache/acdc_test/"
+  endpoints: [delta_rho, delta_rho_j, delta_accuracy]
+  representations:
+    descriptors:                                # computed in run-simulated-shift --vendor V (frozen transition and audited predictor)
+      reconstruction: {unperturbed: reconstructed/bhat_acdc_test.parquet, perturbed: "simulated_shift/{vendor}/bhat_acdc_test.parquet"}
+      predictions: {unperturbed: inference/d_model_acdc_test.parquet, perturbed: "simulated_shift/{vendor}/d_model_acdc_test.parquet"}
+    d20:                                        # run-simulated-shift --vendor V --step d20 (tmmri-gpu): the extract-deep-features extractor on the resampled volumes
+      freeze_record: deep_encoder/FROZEN_D20.json   # frozen final D20 T and predictor (fit-deep-encoder), re-hashed, applied to both conditions
+      features: {unperturbed: deep_encoder/features/A_D20_acdc_test.parquet, perturbed: "simulated_shift/{vendor}/deep_encoder/features/A_D20_acdc_test.parquet"}   # unperturbed: extract-deep-features --split acdc_test
+      reconstruction: {unperturbed: "simulated_shift/{vendor}/deep_encoder/bhat_acdc_test_unperturbed.parquet", perturbed: "simulated_shift/{vendor}/deep_encoder/bhat_acdc_test.parquet"}
+      predictions: {unperturbed: "simulated_shift/{vendor}/deep_encoder/predictions_acdc_test_unperturbed.parquet", perturbed: "simulated_shift/{vendor}/deep_encoder/predictions_acdc_test.parquet"}
+      filter: {model_id: d20_predictor, encoder_id: final, seed: -1}
+    f9:                                         # run-simulated-shift --vendor V --step f9 (tmmri-gpu): the frozen final F9 encoder (infer-f9 code) on the --step tensors cache
+      freeze_record: neural_f9/f9_bundle.json   # freeze-f9; the final checkpoint of the filter seed must match it
+      probe_freeze_record: probes/f9b/bundle.json   # fit-probes; re-hashed
+      probe_transition: "probes/f9b/seed{seed}/transition_final.json"   # the frozen F9b final T of the filter seed, applied to both conditions
+      cache: "simulated_shift/{vendor}/neural_cache/acdc_test"
+      predictions: {unperturbed: neural_f9/predictions_acdc_test.parquet, perturbed: "simulated_shift/{vendor}/neural_f9/predictions.parquet"}   # unperturbed: infer-f9 --split acdc_test
+      activations: {unperturbed: neural_f9/activations_acdc_test.parquet, perturbed: "simulated_shift/{vendor}/neural_f9/activations.parquet"}
+      reconstruction: {unperturbed: "simulated_shift/{vendor}/probes/f9b/bhat_acdc_test_unperturbed.parquet", perturbed: "simulated_shift/{vendor}/probes/f9b/bhat_acdc_test.parquet"}
+      filter: {model_id: f9, encoder_id: final, seed: 20261011}
+  missing_inputs: {status: NOT_EXECUTED, reason: INPUTS_NOT_RECORDED}

@@ -1,0 +1,107 @@
+# Public edition of the registered file `configs/study_v6.yaml` (protocol-v6.0.1, git blob `6eca666768ad`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
+# CMR-TRANS-AUDIT study configuration, frozen with SPECIFICATION.md 6.0.0 (2026-09-28), Sections 0, 4, 12, 14 and 15.
+# Every value marked [PRESPEC] in the specification lives in configs/ or registry/. Changing any value after the
+# protocol-v6.0.0 tag requires a dated entry in protocol/amendments.md and a new tag protocol-v6.0.x. Decision D25.
+study_id: cmr-trans-audit
+protocol_name: CMR-TRANS-AUDIT
+specification_version: "6.0.0"
+registry_version: "6.0.0"
+config_version: "6.0.0"
+package: tmmri                                # console script tmmri = tmmri.cli:main
+freeze:
+  record: git_tag
+  tag: protocol-v6.0.0
+  signed_annotated: true
+  status: pending_at_M0                       # owner action (Decision D25)
+  external_preregistration: none
+  amendments_log: protocol/amendments.md
+  later_changes: "dated amendments row plus tag protocol-v6.0.x"
+  amendment_tags: [protocol-v6.0.1]           # amendment tags in order (protocol/amendments.md); the newest is the protocol of a run frozen with this code (FROZEN.json protocol_version_tag); the M&Ms-1 lock keeps tag above
+cohorts: [acdc, mms]                        # Decision D1; definitions in configs/cohorts.yaml
+dataset_ids: {acdc: ACDC, mms: MMS, legacy_alias: {MMS_100: governed_and_legacy_flows_only}}
+partitions: [acdc_dev, acdc_test, mms_external, mms_external_never_analysed, mms_refit_train, mms_refit_eval]
+partition_sizes: {acdc_dev: 98, acdc_test: 50, mms_external: 320, mms_external_never_analysed: 220, mms_refit_train: 150, mms_refit_eval: 169}   # amendments 2026-09-28 (declared duplicate images)
+partition_roles:
+  acdc_dev: development                       # 5 outer folds (configs/splits.yaml); Decision D15
+  acdc_test: internal_test_H_primary_1        # never used for fitting or selection
+  mms_external: external_test_H_primary_2     # evaluated once with the frozen ACDC bundle; Decision D16
+  mms_external_never_analysed: confirmatory_sensitivity_stratum   # 220 cases never analysed under v5
+  mms_refit_train: refit_arm_training         # Decision D17; required secondary, never pooled with primary
+  mms_refit_eval: refit_arm_evaluation
+unit_of_analysis: {acdc: patient, mms: case}
+cluster_unit: cluster_id                       # bootstrap unit: a declared duplicate-image pair is one cluster, every other case its own (configs/cohorts.yaml duplicate_image_pairs)
+seeds:
+  primary_model: 20260611                     # audited predictor, P6 projection comparator
+  folds: hash_rule_no_seed                    # configs/splits.yaml
+  bootstrap: 20260928                         # configs/bootstrap.yaml
+  synthetic_controls: 20260613                # tests/conftest.py SEED_SYNTHETIC
+  equivariance_selection: 20260611            # configs/equivariance.yaml
+determinism:
+  pythonhashseed: 0                           # set in the container environment, not in-process (configs/runtime.env)
+  blas_threads_per_worker: 1                  # OMP/OPENBLAS/MKL/NUMEXPR_NUM_THREADS=1
+  results_invariant_to_n_jobs: true           # per-case results gathered in sample_id order before any reduction
+  parallel_backend: joblib_loky
+  record_thread_counts_and_blas_backend: true
+  timestamps_excluded_from_content_hashes: true
+  csv_line_terminator: lf
+runtime:                                      # Decision D22; ADR-0003
+  os: linux_container
+  base_image: ubuntu_24_04_digest_pinned
+  uv: "0.12.18"
+  python: "3.12.14"
+  lockfile: uv.lock
+  container: dockerfile_pinned_by_digest
+  compose_project: tmmri
+  default_target: env                         # CPU; primary pipeline
+  optional_target: env-gpu                    # compose profile gpu; Decision D20 only
+  execution_host: windows11_pro_workstation_16_logical_cpus_32gb_ram_gtx1080_8gb
+  realization_on_execution_host: linux_container_docker_desktop_wsl2_backend
+  environment_spec: docs/EXECUTION_ENVIRONMENT_SPEC.md
+  execution_plan: docs/EXPERIMENT_EXECUTION_PLAN.md
+  runtime_env_file: configs/runtime.env
+  line_endings: lf                            # .gitattributes; frozen-file hashes
+  n_jobs: 12                                  # [PRESPEC] TMMRI_N_JOBS; results independent of the value
+  primary_precision: float64
+  gpu: unused_by_primary_pipeline             # Decision D3
+  mounts:
+    repository: /workspace
+    data_volume: /workspace/data              # docker volume tmmri_data
+    artifact_volume: /workspace/artifacts     # docker volume tmmri_artifacts
+    cache_volume: /cache                      # docker volume tmmri_cache
+    acdc_source: /sources/acdc                # read-only bind of TMMRI_ACDC_SOURCE
+    mms_source: /sources/mms                  # read-only bind of TMMRI_MMS_SOURCE
+    archive: /archive
+  staging: {root: /workspace/data/staged, manifests: /workspace/data/manifests, rule: verify_and_stage_once_by_source_sha256}   # Decision D23
+artifact_root: artifacts/<run_id>
+artifact_subfolders: [contracts, qc, semantics, formal, transitions, oof, reconstructed, thresholds, granules, rules, inference, equivariance, metrics, figures, manuscript_tables, .stages]
+run_id_policy:
+  pattern: "v6-<purpose>-YYYYMMDD-HHMM"
+  stage_records: "artifacts/<run_id>/.stages/<stage>.json keyed by input hashes, code version and config hash; a stage is skipped when all three match"
+  promotion: content_addressed_staging_then_atomic_promotion
+blocked_status_values: [BLOCKED_DATA_ACCESS, BLOCKED_COMPUTE]
+status_vocabulary: [SPECIFIED, SCHEMA_READY, UNIT_TESTED_SYNTHETIC, BLOCKED_DATA_ACCESS, BLOCKED_COMPUTE, BUILT, INELIGIBLE, EVALUATED, RELEASED]
+external_evaluation_guard:
+  requires: [frozen_analysis_bundle, protocol_tag_protocol-v6.0.0]
+  override: "--allow-unfrozen-synthetic (synthetic data only)"
+  no_endpoint_on_mms_before_M0: true         # staging and hash verification only
+venue: big_data_and_cognitive_computing_mdpi  # Decision D4: owner decision 2026-09-29 (MDPI, ISSN 2504-2289; class option bdcc); protocol/amendments.md
+venue_special_issue:                           # Decision D4: owner decision 2026-09-29; SPECIFICATION.md 18.1-18.3
+  title: "Data-Centric and Trustworthy AI for Biomedical Signal and Image Analysis"
+  url: https://www.mdpi.com/journal/BDCC/special_issues/83V9MMIOJC
+  section: artificial_intelligence_and_multi_agent_systems
+  submission_deadline: 2027-01-31               # publisher's deadline, checked 2026-09-29; re-check before submission
+reader_study_firewall:                        # Decision D24
+  governed_package: clinical_validation/      # protocol v2, hash-locked; unchanged by v6
+  reader_cohort: MMS_100                      # frozen reader-study cohort (150 rows: ACDC 50 + MMS_100 100)
+  v6_reads_restricted_material: never
+  v6_reads_reader_responses: never
+  v6_results_are_reader_study_results: false
+  never_read: ["clinical_validation/restricted/**", "<local path>", "git_lost_found_*"]
+protocol_supersedes:
+  - "implementation specifications AGENTS_v1-AGENTS_v5 (kept in docs/history/implementation_specs/)"
+  - "v5 native experiment design v5_native_image_dss_100"
+  - "MMS_100 selection rule for computational analyses, including prohibited_fallback in registry/sources/mms_100_acquisition_blocker.yaml (protocol/amendments.md, 2026-09-28)"
+  - "configs/pipeline/*.yaml as the analysis configuration (kept in configs/legacy/ for legacy flows)"
+  - "every tracked v4/v5 output (relocated to legacy/v5/; pre-fix ACDC geometry; never a v6 input)"
+config_files: [configs/study_v6.yaml, configs/cohorts.yaml, configs/splits.yaml, configs/formal.yaml, configs/transition.yaml, configs/wedd.yaml, configs/rule_policy.yaml, configs/equivariance.yaml, configs/deep_encoder.yaml, configs/bootstrap.yaml, configs/runtime.env, configs/source_bindings/acdc.json, configs/source_bindings/mms.json]
+registry_files: [registry/semantic_registry.yaml, registry/reason_codes.yaml, registry/pattern_templates.yaml, registry/estimator_partition_registry.csv]

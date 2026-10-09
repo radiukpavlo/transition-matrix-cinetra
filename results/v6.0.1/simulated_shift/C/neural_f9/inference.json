@@ -1,0 +1,89 @@
+{
+  "cache_manifest_rows": 50,
+  "code": {
+    "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+    "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+    "dirty": false
+  },
+  "encoders": [
+    {
+      "checkpoint": "7581584233dc31c4",
+      "encoder_id": "final",
+      "fit_id": "7581584233dc31c4",
+      "model_pt_sha256": "6ec3515d3b78fbf4dddbaa0e3d2bb4318142eec334fec01f959d2213b852fb4e",
+      "n_fitting_patients": 98,
+      "record_sha256": "d2aca248766ba3c88980104ebedc8445295d3c6f99a016f8bfd363a84c717e0d",
+      "seed": 20261011
+    }
+  ],
+  "environment": {
+    "cuda_runtime": "12.6",
+    "cudnn": 91002,
+    "device": "cuda",
+    "driver_version": "582.66",
+    "gpu": {
+      "capability": "6.1",
+      "index": 0,
+      "name": "NVIDIA GeForce GTX 1080",
+      "total_memory_bytes": 8589672448,
+      "uuid": "80762a49-15f1-a88d-c61a-e608e7949201"
+    },
+    "numerics": {
+      "allow_tf32": {
+        "cuda.matmul.allow_tf32": false,
+        "cudnn.allow_tf32": false
+      },
+      "cublas_workspace_config": ":4096:8",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_algorithms": true,
+      "eager_mode": true,
+      "float32_matmul_precision": "highest",
+      "fp32_precision": {
+        "backends": "ieee",
+        "backends.cuda.matmul": "ieee",
+        "backends.cudnn": "ieee",
+        "backends.cudnn.conv": "ieee",
+        "backends.cudnn.rnn": "ieee"
+      },
+      "precision": "fp32_ieee",
+      "tf32_enabled": false
+    },
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "torch": "2.14.0+cu126",
+    "torchvision": "0.29.0+cu126"
+  },
+  "n_cases": 50,
+  "numerics_at_start": {
+    "allow_tf32": {
+      "cuda.matmul.allow_tf32": false,
+      "cudnn.allow_tf32": false
+    },
+    "cublas_workspace_config": ":4096:8",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic_algorithms": true,
+    "eager_mode": true,
+    "float32_matmul_precision": "highest",
+    "fp32_precision": {
+      "backends": "ieee",
+      "backends.cuda.matmul": "ieee",
+      "backends.cudnn": "ieee",
+      "backends.cudnn.conv": "ieee",
+      "backends.cudnn.rnn": "ieee"
+    },
+    "precision": "fp32_ieee",
+    "tf32_enabled": false
+  },
+  "partition": "acdc_test",
+  "schema": "tmmri.f9_inference/1",
+  "simulated_shift": {
+    "cache": "run:simulated_shift/C/neural_cache/acdc_test",
+    "vendor": "C"
+  },
+  "transform_versions": [
+    "neural_input_v1:0c44432e6176"
+  ],
+  "tta": "d4_mean_8"
+}

@@ -1,0 +1,206 @@
+{
+  "rule": "reconstructed value outside the registry domain by more than 5 % of the fit-partition range -> NUMERIC_DOMAIN_BLOCKED (FEATURE_DOMAIN_BLOCKED)",
+  "split": "mms2_external",
+  "targets": {
+    "global_wall_thickening_percent": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "global_wall_thickness_ed_mm": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "global_wall_thickness_es_mm": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_area_mean_ed_mm2": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_area_mean_es_mm2": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_compactness_mean_ed": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_compactness_mean_es": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_eccentricity_mean_ed": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_eccentricity_mean_es": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_edv_ml": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_ef_percent": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_esv_ml": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_myo_volume_es_ml": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_myocardial_mass_ed_g": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "lv_sv_ml": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "rv_area_mean_ed_mm2": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "rv_area_mean_es_mm2": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "rv_compactness_mean_ed": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "rv_compactness_mean_es": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "rv_eccentricity_mean_ed": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "rv_eccentricity_mean_es": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "rv_edv_ml": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "rv_ef_percent": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "rv_esv_ml": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    },
+    "rv_sv_ml": {
+      "blocked_sample_ids": [],
+      "clipped_within_guard": 0,
+      "estimated": 180,
+      "input_qc_blocked": 0,
+      "numeric_domain_blocked": 0,
+      "target_ineligible": 0
+    }
+  }
+}

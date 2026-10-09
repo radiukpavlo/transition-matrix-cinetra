@@ -1,0 +1,364 @@
+{
+  "comparator_id": "F8_cart_surrogate",
+  "dropped_features": [],
+  "features": [
+    "lv_edv_ml",
+    "lv_esv_ml",
+    "lv_ef_percent",
+    "rv_edv_ml",
+    "rv_esv_ml",
+    "rv_ef_percent",
+    "lv_myocardial_mass_ed_g",
+    "global_wall_thickness_ed_mm",
+    "global_wall_thickening_percent"
+  ],
+  "rules": [
+    {
+      "conditions": [
+        {
+          "feature": "lv_esv_ml",
+          "op": "<=",
+          "threshold": 94.80045318603516
+        },
+        {
+          "feature": "global_wall_thickness_ed_mm",
+          "op": "<=",
+          "threshold": 9.359956741333008
+        },
+        {
+          "feature": "rv_esv_ml",
+          "op": "<=",
+          "threshold": 87.56133270263672
+        }
+      ],
+      "intervals": {
+        "global_wall_thickness_ed_mm": {
+          "closed": "(low, high]",
+          "high": 9.359956741333008,
+          "low": null,
+          "unit": "mm"
+        },
+        "lv_esv_ml": {
+          "closed": "(low, high]",
+          "high": 94.80045318603516,
+          "low": null,
+          "unit": "mL"
+        },
+        "rv_esv_ml": {
+          "closed": "(low, high]",
+          "high": 87.56133270263672,
+          "low": null,
+          "unit": "mL"
+        }
+      },
+      "label": "NOR",
+      "leaf": 3,
+      "n_fit": 29,
+      "oof_agree": 17,
+      "oof_fidelity": 0.7727272727272727,
+      "oof_matched": 22,
+      "selected": false,
+      "selection": "INELIGIBLE_FIDELITY;INELIGIBLE_WILSON_LOWER",
+      "text": "IF lv_esv_ml <= 94.8005 mL AND rv_esv_ml <= 87.5613 mL AND global_wall_thickness_ed_mm <= 9.35996 mm THEN d_model = NOR",
+      "wilson_lower": 0.5656004682477829
+    },
+    {
+      "conditions": [
+        {
+          "feature": "lv_esv_ml",
+          "op": "<=",
+          "threshold": 94.80045318603516
+        },
+        {
+          "feature": "global_wall_thickness_ed_mm",
+          "op": "<=",
+          "threshold": 9.359956741333008
+        },
+        {
+          "feature": "rv_esv_ml",
+          "op": ">",
+          "threshold": 87.56133270263672
+        }
+      ],
+      "intervals": {
+        "global_wall_thickness_ed_mm": {
+          "closed": "(low, high]",
+          "high": 9.359956741333008,
+          "low": null,
+          "unit": "mm"
+        },
+        "lv_esv_ml": {
+          "closed": "(low, high]",
+          "high": 94.80045318603516,
+          "low": null,
+          "unit": "mL"
+        },
+        "rv_esv_ml": {
+          "closed": "(low, high]",
+          "high": null,
+          "low": 87.56133270263672,
+          "unit": "mL"
+        }
+      },
+      "label": "RV",
+      "leaf": 4,
+      "n_fit": 18,
+      "oof_agree": 14,
+      "oof_fidelity": 0.9333333333333333,
+      "oof_matched": 15,
+      "selected": true,
+      "selection": "SELECTED",
+      "text": "IF lv_esv_ml <= 94.8005 mL AND rv_esv_ml > 87.5613 mL AND global_wall_thickness_ed_mm <= 9.35996 mm THEN d_model = RV",
+      "wilson_lower": 0.7018347012621998
+    },
+    {
+      "conditions": [
+        {
+          "feature": "lv_esv_ml",
+          "op": "<=",
+          "threshold": 94.80045318603516
+        },
+        {
+          "feature": "global_wall_thickness_ed_mm",
+          "op": ">",
+          "threshold": 9.359956741333008
+        },
+        {
+          "feature": "global_wall_thickening_percent",
+          "op": "<=",
+          "threshold": 49.20092582702637
+        }
+      ],
+      "intervals": {
+        "global_wall_thickening_percent": {
+          "closed": "(low, high]",
+          "high": 49.20092582702637,
+          "low": null,
+          "unit": "percent"
+        },
+        "global_wall_thickness_ed_mm": {
+          "closed": "(low, high]",
+          "high": null,
+          "low": 9.359956741333008,
+          "unit": "mm"
+        },
+        "lv_esv_ml": {
+          "closed": "(low, high]",
+          "high": 94.80045318603516,
+          "low": null,
+          "unit": "mL"
+        }
+      },
+      "label": "HCM",
+      "leaf": 6,
+      "n_fit": 6,
+      "oof_agree": 2,
+      "oof_fidelity": 0.5,
+      "oof_matched": 4,
+      "selected": false,
+      "selection": "INELIGIBLE_SUPPORT;INELIGIBLE_FIDELITY;INELIGIBLE_WILSON_LOWER",
+      "text": "IF lv_esv_ml <= 94.8005 mL AND global_wall_thickness_ed_mm > 9.35996 mm AND global_wall_thickening_percent <= 49.2009 percent THEN d_model = HCM",
+      "wilson_lower": 0.15003898915214947
+    },
+    {
+      "conditions": [
+        {
+          "feature": "lv_esv_ml",
+          "op": "<=",
+          "threshold": 94.80045318603516
+        },
+        {
+          "feature": "global_wall_thickness_ed_mm",
+          "op": ">",
+          "threshold": 9.359956741333008
+        },
+        {
+          "feature": "global_wall_thickening_percent",
+          "op": ">",
+          "threshold": 49.20092582702637
+        }
+      ],
+      "intervals": {
+        "global_wall_thickening_percent": {
+          "closed": "(low, high]",
+          "high": null,
+          "low": 49.20092582702637,
+          "unit": "percent"
+        },
+        "global_wall_thickness_ed_mm": {
+          "closed": "(low, high]",
+          "high": null,
+          "low": 9.359956741333008,
+          "unit": "mm"
+        },
+        "lv_esv_ml": {
+          "closed": "(low, high]",
+          "high": 94.80045318603516,
+          "low": null,
+          "unit": "mL"
+        }
+      },
+      "label": "HCM",
+      "leaf": 7,
+      "n_fit": 15,
+      "oof_agree": 15,
+      "oof_fidelity": 1.0,
+      "oof_matched": 15,
+      "selected": true,
+      "selection": "SELECTED",
+      "text": "IF lv_esv_ml <= 94.8005 mL AND global_wall_thickness_ed_mm > 9.35996 mm AND global_wall_thickening_percent > 49.2009 percent THEN d_model = HCM",
+      "wilson_lower": 0.7961166989641515
+    },
+    {
+      "conditions": [
+        {
+          "feature": "lv_esv_ml",
+          "op": ">",
+          "threshold": 94.80045318603516
+        },
+        {
+          "feature": "lv_edv_ml",
+          "op": "<=",
+          "threshold": 178.48330688476562
+        }
+      ],
+      "intervals": {
+        "lv_edv_ml": {
+          "closed": "(low, high]",
+          "high": 178.48330688476562,
+          "low": null,
+          "unit": "mL"
+        },
+        "lv_esv_ml": {
+          "closed": "(low, high]",
+          "high": null,
+          "low": 94.80045318603516,
+          "unit": "mL"
+        }
+      },
+      "label": "MINF",
+      "leaf": 9,
+      "n_fit": 5,
+      "oof_agree": 2,
+      "oof_fidelity": 1.0,
+      "oof_matched": 2,
+      "selected": false,
+      "selection": "INELIGIBLE_SUPPORT;INELIGIBLE_WILSON_LOWER",
+      "text": "IF lv_edv_ml <= 178.483 mL AND lv_esv_ml > 94.8005 mL THEN d_model = MINF",
+      "wilson_lower": 0.34238022750665303
+    },
+    {
+      "conditions": [
+        {
+          "feature": "lv_esv_ml",
+          "op": ">",
+          "threshold": 94.80045318603516
+        },
+        {
+          "feature": "lv_edv_ml",
+          "op": ">",
+          "threshold": 178.48330688476562
+        },
+        {
+          "feature": "rv_ef_percent",
+          "op": "<=",
+          "threshold": 41.390926361083984
+        }
+      ],
+      "intervals": {
+        "lv_edv_ml": {
+          "closed": "(low, high]",
+          "high": null,
+          "low": 178.48330688476562,
+          "unit": "mL"
+        },
+        "lv_esv_ml": {
+          "closed": "(low, high]",
+          "high": null,
+          "low": 94.80045318603516,
+          "unit": "mL"
+        },
+        "rv_ef_percent": {
+          "closed": "(low, high]",
+          "high": 41.390926361083984,
+          "low": null,
+          "unit": "percent"
+        }
+      },
+      "label": "DCM",
+      "leaf": 11,
+      "n_fit": 13,
+      "oof_agree": 11,
+      "oof_fidelity": 1.0,
+      "oof_matched": 11,
+      "selected": true,
+      "selection": "SELECTED",
+      "text": "IF lv_edv_ml > 178.483 mL AND lv_esv_ml > 94.8005 mL AND rv_ef_percent <= 41.3909 percent THEN d_model = DCM",
+      "wilson_lower": 0.7411670330319684
+    },
+    {
+      "conditions": [
+        {
+          "feature": "lv_esv_ml",
+          "op": ">",
+          "threshold": 94.80045318603516
+        },
+        {
+          "feature": "lv_edv_ml",
+          "op": ">",
+          "threshold": 178.48330688476562
+        },
+        {
+          "feature": "rv_ef_percent",
+          "op": ">",
+          "threshold": 41.390926361083984
+        }
+      ],
+      "intervals": {
+        "lv_edv_ml": {
+          "closed": "(low, high]",
+          "high": null,
+          "low": 178.48330688476562,
+          "unit": "mL"
+        },
+        "lv_esv_ml": {
+          "closed": "(low, high]",
+          "high": null,
+          "low": 94.80045318603516,
+          "unit": "mL"
+        },
+        "rv_ef_percent": {
+          "closed": "(low, high]",
+          "high": null,
+          "low": 41.390926361083984,
+          "unit": "percent"
+        }
+      },
+      "label": "DCM",
+      "leaf": 12,
+      "n_fit": 12,
+      "oof_agree": 2,
+      "oof_fidelity": 0.2857142857142857,
+      "oof_matched": 7,
+      "selected": false,
+      "selection": "INELIGIBLE_FIDELITY;INELIGIBLE_WILSON_LOWER",
+      "text": "IF lv_edv_ml > 178.483 mL AND lv_esv_ml > 94.8005 mL AND rv_ef_percent > 41.3909 percent THEN d_model = DCM",
+      "wilson_lower": 0.08221892400405678
+    }
+  ],
+  "schema": "tmmri.cart_f8_rules/1",
+  "selective_gate": {
+    "min_matches": 5,
+    "min_oof_fidelity": 0.9,
+    "nesting": {
+      "consequent": "d_model_crossfit",
+      "fold_tree_substrate": "oof/inner_oof_ACDC_dev_fold<f>.parquet",
+      "folds": "acdc_dev outer folds (contracts/split_manifest.parquet outer_fold)",
+      "heldout_substrate": "oof/bhat_oof_ACDC_dev.parquet",
+      "match_rule": "a held-out row routed to final leaf L counts as a match of L when the fold tree (refitted without its fold) gives it L's label (reproduced in that fold, as the v6 gate counts matches only where a rule is reproduced); it agrees when L's label equals its out-of-fold d_model; pooled over the five folds"
+    },
+    "wilson_level": 0.95,
+    "wilson_lower_min": 0.6
+  },
+  "units": "physical units of the registry (B-hat units)"
+}

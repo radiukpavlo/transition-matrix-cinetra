@@ -1,0 +1,70 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+      "dirty": false
+    },
+    "config_hash": "45517824d58daf059bbe09e05f24d2961bc76d57c7e895c99f773a2e0e2ec99f",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/infer-f9__acdc_test.json": "74ee86d236a49e2df5b4df17c8923868677860507db7a0e4b3ed8b2f7fd4dec8",
+      "run:.stages/run-simulated-shift__D__tensors.json": "e68fef798799a600e39be85923e90649b02d0d7de3ce6ea5c4289c8977b885ae",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:neural_f9/activations_acdc_test.parquet": "f9a390a3097c75deac51ec65eb6e35c90bdc618a763f7e148c388c39086ca193",
+      "run:neural_f9/checkpoints/7581584233dc31c4": "11fcf1523b10ff05e7829d5db5a351430f2cce5b3820b6b577d201ad7c7045d7",
+      "run:neural_f9/f9_bundle.json": "004ebcca36f9a3550a29c66a35f861f6030201f2cd01d93303ac93c74b9f86d4",
+      "run:neural_f9/predictions_acdc_test.parquet": "9700a210a97489175be6813dbe514bf379741e5fe532dad92e8212ff970fea24",
+      "run:probes/f9b/bundle.json": "ea6c16e9476427cea6f8c3a8e594a4588ca6acbd37b53e58980ffd902b8e6fbe",
+      "run:probes/f9b/seed20261011/transition_final.json": "5e08c0fefe4072ebbc9c3da21716856c27067a86207a21a5b9a47b8c3d97ec6f",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:simulated_shift/D/B_acdc_test.parquet": "2e3cf6d6686f4663934c3424cf936e315597fa0bbdbdde1e3a8545e8563f9a9f",
+      "run:simulated_shift/D/neural_cache/acdc_test/manifest.csv": "7803b376206eede524f794b23d7986025e52483745ce0e3002a11b797774e983"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:simulated_shift/D/delta_f9.json": "369fd1696df27dc3f4a210bbbdd951089880c5522c9761e80294dd7694fe9c0d",
+      "run:simulated_shift/D/neural_f9/activations.parquet": "7567462879bdea73ecd02ef87ed4c396ab94eeee587d2e9e4f78e8f7a59fa03d",
+      "run:simulated_shift/D/neural_f9/inference.json": "87d6eaebc402367cc35dfa091c25c9a2c4a1a6845a70bda3a9ed1ca62a887815",
+      "run:simulated_shift/D/neural_f9/predictions.parquet": "e4615cf9d44343b8af6568b3ad42b2e79e479a99cb6cbb0ee0fea1e9d950d47d",
+      "run:simulated_shift/D/probes/f9b/bhat_acdc_test.parquet": "6ed003d6f74631ff29c5a5f87e74039eef792ed0ea3c0d8e77715d067ae868fd",
+      "run:simulated_shift/D/probes/f9b/bhat_acdc_test_unperturbed.parquet": "48573155131b53c6c2de57efeeca876fce3e1322981a5f190ea7cb86c06a246d"
+    },
+    "params": {
+      "config_sections": [
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.primary_test",
+        "cohorts",
+        "data_centric.common",
+        "data_centric.simulated_shift",
+        "registry",
+        "transition.targets"
+      ],
+      "step": "f9",
+      "vendor": "D"
+    },
+    "stage": "run-simulated-shift:D:f9",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "155724bedd1adfec6f5a6f4e08fdd7dfde361181a66a0934cd9a2987c1cbe5e4",
+  "run_log": {
+    "host": "99c6fd1e15cc",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 9.816,
+    "started_utc": "2026-10-03T13:43:33+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

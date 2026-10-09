@@ -1,0 +1,46 @@
+{
+  "cohort": "acdc",
+  "dataset_id": "ACDC",
+  "specification_version": "6.0.0",
+  "status": "bound_on_mount",
+  "documented_on": "2026-09-28",
+  "observed_on_mount": "2026-09-28",
+  "observation_scope": "file layout, file counts, Info.cfg field names, NIfTI header geometry and label conventions; no v6 endpoint was computed for this record",
+  "mount": {"container": "/sources/acdc", "host_default": "./data/raw/acdc/database", "mode": "read_only"},
+  "release_files_expected": {
+    "top_level": ["LICENSE_TERMS.md", "MANDATORY_CITATION.md", "STATE-OF-THE-ART-nnUNet-method.md", "script_acdc_visu.ipynb", "training/MANDATORY_CITATION.md", "testing/MANDATORY_CITATION.md"],
+    "per_patient": ["Info.cfg", "MANDATORY_CITATION.md", "patientNNN_4d.nii.gz", "patientNNN_frameEE.nii.gz", "patientNNN_frameEE_gt.nii.gz", "patientNNN_frameSS.nii.gz", "patientNNN_frameSS_gt.nii.gz"]
+  },
+  "release_files_observed": {
+    "files": 1056,
+    "manifest": "registry/sources/acdc_release_file_manifest.csv",
+    "manifest_columns": ["relative_path", "size_bytes", "sha256"],
+    "patients": {"training": 100, "testing": 50},
+    "files_per_patient": 7,
+    "listing_matches_expected": true
+  },
+  "observed_structure": {
+    "info_cfg": "key: value lines ED, ES, Group, Height, NbFrame, Weight (patient001: ED 1, ES 12, Group DCM, Height 184.0, NbFrame 30, Weight 95.0)",
+    "classes_per_split": {"training": {"DCM": 20, "HCM": 20, "MINF": 20, "NOR": 20, "RV": 20}, "testing": {"DCM": 10, "HCM": 10, "MINF": 10, "NOR": 10, "RV": 10}},
+    "height_weight_present": {"height_cm": "150 of 150 (137-192)", "weight_kg": "150 of 150 (35-172)"},
+    "frame_file_affines": "unit-scaled (column norms 1, 1, 1; sform_code 2) in all 150 ED frame files",
+    "header_pixdim_z_mm": {"10.0": 127, "5.0": 21, "6.5": 1, "7.0": 1},
+    "four_d_files": "mixed: 36 voxel-scaled, 114 unit-scaled affines; not read by the primary pipeline",
+    "inplane_spacing_mm": {"min": 0.703125, "max": 1.953120},
+    "slice_thickness_mm": {"min": 5.0, "max": 10.0},
+    "mask_labels": [0, 1, 2, 3]
+  },
+  "bindings": {
+    "patient_id_key": {"expected": "patientNNN", "bound": "patient folder name", "note": "patient001-patient100 training, patient101-patient150 testing; patient_id = case_id"},
+    "split_key": {"expected": "training | testing", "bound": "top-level folder", "note": "training -> acdc_dev, testing -> acdc_test"},
+    "ed_frame_key": {"expected": "Info.cfg ED", "bound": "Info.cfg ED (1-based)", "note": "image patientNNN_frame{ED:02d}.nii.gz, mask ..._gt.nii.gz; ed_frame_index = ED - 1"},
+    "es_frame_key": {"expected": "Info.cfg ES", "bound": "Info.cfg ES (1-based)", "note": "es_frame_index = ES - 1"},
+    "class_key": {"expected": "DCM | HCM | MINF | NOR | RV", "bound": "Info.cfg Group", "note": "evaluation reference and dataset-label consequent only"},
+    "height_key": {"expected": "cm", "bound": "Info.cfg Height", "note": "metadata height_cm"},
+    "weight_key": {"expected": "kg", "bound": "Info.cfg Weight", "note": "metadata weight_kg"},
+    "label_map": {"expected": "0 background, 1 RV cavity, 2 myocardium, 3 LV cavity", "bound": "{0: 0, 1: 3, 2: 2, 3: 1}", "note": "1<->3 swap to the project convention 1 LV, 2 MYO, 3 RV (src/tmmri/ingest/labels.py)"},
+    "inplane_spacing": {"expected": "header pixdim[1], pixdim[2]", "bound": "header zooms of the ED frame image", "note": "geometry from the ED frame image"},
+    "slice_increment": {"expected": "affine column norm", "bound": "header pixdim[3] because the frame affines are unit-scaled", "note": "z_spacing_method nifti_header_pixdim_unscaled_affine (commit 8ed5a40); every v5 ACDC volume and mass used dz = 1 mm and is pre-fix"}
+  },
+  "licence": "research use; mandatory citation (MANDATORY_CITATION.md)"
+}

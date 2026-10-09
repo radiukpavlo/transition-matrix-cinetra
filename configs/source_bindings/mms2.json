@@ -1,0 +1,48 @@
+{
+  "cohort": "mms2",
+  "dataset_id": "MMS2",
+  "specification_version": "6.0.1",
+  "amendment": "protocol-v6.0.1",
+  "status": "declared_before_extraction",
+  "documented_on": "2026-10-02",
+  "observed_on_mount": null,
+  "observation_scope": "column names and file names only: on 2026-10-02, with the owner's approval, the header line of MnM2/dataset_information.csv and the member names of the archive listing were read before the tag (logged in <local path>); no subject row, image, mask or label was read. Everything else is checked by extract-mms2 after the tag: the CSV contract fails closed (HUMAN_GATE, exit 8) on a column, subject code or DISEASE value outside the declaration; vendor, scanner and field strength are data-driven",
+  "observed_before_tag": {"date": "2026-10-02", "approved_by": "owner", "info_csv_header": "SUBJECT_CODE,DISEASE,VENDOR,SCANNER,FIELD", "info_csv_line_endings": "CRLF", "listing_entries": 3964, "members": ["MnM2/dataset/<ID>/<ID>_SA_ED.nii.gz", "MnM2/dataset/<ID>/<ID>_SA_ED_gt.nii.gz", "MnM2/dataset/<ID>/<ID>_SA_ES.nii.gz", "MnM2/dataset/<ID>/<ID>_SA_ES_gt.nii.gz", "MnM2/dataset/<ID>/<ID>_SA_CINE.nii.gz and long-axis files (never extracted)", "MnM2/dataset_information.csv", "MnM2/readme.txt"]},
+  "mount": {"container": "/workspace/data/raw/mms2", "host_default": "./data/raw/mms2", "mode": "read_only"},
+  "mount_note": "extract-mms2 writes the source area on the host (Windows tar.exe); inside the container ./data/raw is a nested read-only bind, so the area is read-only there; extracted files also carry the read-only attribute",
+  "archive": {
+    "name": "MnM2.rar",
+    "reference_copy": "<local path>",
+    "bytes": 9824397247,
+    "sha256": "934076fe388f0747c80b7f0fdf5ebc57cd480ab737be8228639480e61515362b",
+    "extractor": "C:/Windows/System32/tar.exe",
+    "extractor_note": "bsdtar (libarchive) reads RAR; GNU tar cannot; tar -xO fails on RAR directory entries, so files are extracted with -xf -C <dest> -T <list>; only the release CSV is read with -xO (one file member) into memory; there is no file fallback: a failed or empty read fails closed (HUMAN_GATE, exit 8) and nothing is written",
+    "cloud_copy": "CSE-1: off-site storage keeps an unopened storage-only copy; extraction always reads the hash-verified D: copy"
+  },
+  "release_files_expected": {
+    "info_csv": "MnM2/dataset_information.csv (selected by its unique file name)",
+    "case_files": ["<ID>_SA_ED.nii.gz", "<ID>_SA_ED_gt.nii.gz", "<ID>_SA_ES.nii.gz", "<ID>_SA_ES_gt.nii.gz"],
+    "ignored": ["<ID>_SA_CINE.nii.gz", "<ID>_LA_CINE.nii.gz", "<ID>_LA_ED.nii.gz", "<ID>_LA_ED_gt.nii.gz", "<ID>_LA_ES.nii.gz", "<ID>_LA_ES_gt.nii.gz"],
+    "subjects": "001-360",
+    "member_rule": "each expected file name occurs exactly once among the archive file entries, else HUMAN_GATE; the observed folder template MnM2/dataset/<ID>/ and the 3,964 listing entries are compared and recorded in the receipt, never blocking"
+  },
+  "extraction": {
+    "list_entries": 720,
+    "partition": "mms2_external (registry/sources/mms2_split_manifest.csv)",
+    "file_manifest": "MMS2_EXTRACTION_MANIFEST.csv",
+    "receipt": "MMS2_EXTRACTION_RECEIPT.json",
+    "info_csv_external_only": "MMS2_INFO_EXTERNAL.csv",
+    "byte_check": "every extracted file size equals the archive listing; the extracted file set equals the list"
+  },
+  "bindings": {
+    "case_id_key": {"expected": "zero-padded subject code 001-360 (split hash and file names)", "bound": "file-name prefix <ID>; CSV SUBJECT_CODE (integer or zero-padded)", "note": "downstream case_id = patient_id = MMS2_<ID>, sample_id MMS2:MMS2_<ID> (owner decision C)"},
+    "phase_key": {"expected": "ED, ES", "bound": "file names <ID>_SA_ED / <ID>_SA_ES", "note": "no frame index"},
+    "pathology_key": {"expected": "NOR | LV | HCM | ARR | FALL | CIA | TRI | DRV or a declared synonym (configs/cohorts.yaml mms2.info_csv); the release spells DRV as RV (distinct values read before the tag, decision D-2)", "bound": "CSV DISEASE (column observed before the tag)", "note": "crosswalk configs/cohorts.yaml mms2.crosswalk; evaluation-only; any other value fails closed (HUMAN_GATE)"},
+    "vendor_key": {"expected": "any string (data-driven)", "bound": "CSV VENDOR (column observed before the tag); normalized to Siemens, GE or Philips when it names exactly one", "note": "descriptive stratum vendor; never fails closed"},
+    "scanner_field_keys": {"expected": "any string (data-driven)", "bound": "CSV SCANNER and FIELD, verbatim", "note": "descriptive strata scanner and field_strength; never fail closed"},
+    "label_map": {"expected": "1 LV, 2 MYO, 3 RV", "bound": "{0: 0, 1: 1, 2: 2, 3: 3}", "note": "identity after np.rint"},
+    "geometry": {"expected": "voxel-scaled or unit-scaled affine", "bound": "mask header pixdim and affine column norms", "note": "anything else INPUT_GEOMETRY_INCONSISTENT"}
+  },
+  "licence": "M&Ms-2 Research Use Agreement: personal research copy only; no distribution of any portion; citation of the M&Ms-2 challenge required",
+  "official_source": "https://www.ub.edu/mnms-2/"
+}

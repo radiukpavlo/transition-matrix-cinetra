@@ -1,0 +1,46 @@
+{
+  "downstream_refit_bootstrap": {
+    "failed_replicates": [],
+    "replicates": 200,
+    "seed": 20260928
+  },
+  "multiplicity": {
+    "families": {
+      "F2": "F2_ridge_vs_comparators_pseudoinverse_identity_transform_p6_projection",
+      "F4": "F4_discretizers",
+      "F5": "F5_rule_policy"
+    },
+    "method": "benjamini_hochberg",
+    "q": 0.05,
+    "tests": {
+      "per_target": {
+        "alternative": "two_sided",
+        "pairs": "per case, |error of the comparator| - |error of the primary transition| on rows with a finite reference and both predictions",
+        "statistic": "wilcoxon_signed_rank",
+        "zero_method": "wilcox"
+      },
+      "per_variant": {
+        "pairs": "per case, the EXACT_ACCEPT indicator of the variant versus the primary configuration of the d_model rulebook on acdc_test",
+        "statistic": "exact_mcnemar"
+      }
+    }
+  },
+  "not_run": [],
+  "outputs": [
+    "transition_variants.json",
+    "transition_variants_per_target.parquet",
+    "discretizers.json",
+    "rule_policy.json",
+    "gate_thresholds.json",
+    "downstream_refit_bootstrap.parquet",
+    "wedd_settings.json",
+    "linearity_criterion.json",
+    "multiplicity_F2.parquet",
+    "multiplicity_F4.parquet",
+    "multiplicity_F5.parquet"
+  ],
+  "partition": "acdc_dev (fitting) and acdc_test (evaluation of frozen-protocol variants)",
+  "replaces_primary": false,
+  "role": "secondary_ablation",
+  "selection_forbidden": "no post-test best-configuration claim"
+}

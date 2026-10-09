@@ -1,0 +1,13 @@
+family,partition,comparison,stratum_variable,stratum,target,variant,n,effect,effect_normalized,statistic,p_value,test,status,reason,q_value,rejected,bh_q
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,discretizer:wedd_uniform_mm_v1,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,discretizer:three_quantile_v1,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,wedd_settings:weight_entropy_0.00,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,wedd_settings:weight_entropy_0.25,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,wedd_settings:weight_entropy_0.50,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,wedd_settings:weight_entropy_0.75,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,wedd_settings:weight_entropy_1.00,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,wedd_settings:bandwidth_multiplier_0.5,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,wedd_settings:bandwidth_multiplier_2,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,wedd_settings:max_bins_2,50,0.26,,13.0,0.000244140625,exact_mcnemar,EVALUATED,variant_only=13;primary_only=0,0.0029296875,True,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,wedd_settings:max_bins_4,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05
+F4_discretizers,acdc_test,accepted_coverage_vs_primary,all,all,,wedd_settings:max_depth_3_max_bins_4,50,0.0,,0.0,1.0,exact_mcnemar,EVALUATED,variant_only=0;primary_only=0,1.0,False,0.05

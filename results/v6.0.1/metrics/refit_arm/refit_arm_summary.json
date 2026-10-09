@@ -1,0 +1,49 @@
+{
+  "arm": "refit_arm",
+  "class_counts_same_definition": {
+    "DCM": 53,
+    "HCM": 49,
+    "NOR": 38,
+    "RV": 8
+  },
+  "downstream_refit_bootstrap": {
+    "failed_replicates": [],
+    "replicates": 200,
+    "seed": 20260928
+  },
+  "n_eval": 169,
+  "n_train_critical_or_nonfinite": 1,
+  "n_train_fit_rows": 149,
+  "n_train_partition": 150,
+  "pooled_with_primary": false,
+  "predictor_classes": [
+    "DCM",
+    "HCM",
+    "NOR",
+    "RV"
+  ],
+  "predictor_min_class_cases": 5,
+  "role": "required_secondary_ceiling",
+  "rulebooks": {
+    "d_model": {
+      "eligible_features": [
+        "global_wall_thickness_ed_mm"
+      ],
+      "eligible_rules": 0,
+      "induced_rules": 0
+    },
+    "dataset_label": {
+      "eligible_features": [
+        "global_wall_thickening_percent"
+      ],
+      "eligible_rules": 0,
+      "induced_rules": 0
+    },
+    "measured_oracle": {
+      "eligible_features": [],
+      "eligible_rules": 0,
+      "induced_rules": 0
+    }
+  },
+  "schema": "tmmri.refit_arm_summary/1"
+}

@@ -1,0 +1,68 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "5d88a3041ca9f604b1066e85cb138b91802f1df3",
+      "dirty": false
+    },
+    "config_hash": "c2e072104ea4ac62610d5b9a45ec3969ebf3206f0f0455bc0192191dee41d389",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:formal/d_model_crossfit_ACDC_dev.parquet": "70c4f247a20aa3c0f0bf38074eb7e5a642de810cf7948dbecfbcc99b4362eb62",
+      "run:oof/bhat_oof_ACDC_dev.parquet": "b735e0820b374ebfa64849337e815669bc965590b373b1aa69c41a20d459e0a4",
+      "run:oof/inner_oof_ACDC_dev_fold1.parquet": "2e8a37f91246467c73952f0bcfb46781aee0d87029f2ea449f7a0906684a87de",
+      "run:oof/inner_oof_ACDC_dev_fold2.parquet": "42f310fe8bde92020f55919938abe4fe1cebac3028297923cde865b3bde8e921",
+      "run:oof/inner_oof_ACDC_dev_fold3.parquet": "54ca2f68f7047260af0677113077ff9c16dd6e3a60794dd3c7c0f009ab8d1a2b",
+      "run:oof/inner_oof_ACDC_dev_fold4.parquet": "baf40e2d2a0a4a552c5524c1d411f783fbff0cf0e59891df25f90494bfec921a",
+      "run:oof/inner_oof_ACDC_dev_fold5.parquet": "756957ef21dddd641b76286d1f8cfd55f0c221be31c46800d692454f0aab08e3",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:comparators/cart_f8/FROZEN_F8.json": "a210c91735665677541812383ef5b491649bd9bd96648962a9f0b53dd07e9ac1",
+      "run:comparators/cart_f8/fit_rows.parquet": "2af624bdb3019996abf3d363cebe5b30077b51e153ad5cc0634b9e78ac64a871",
+      "run:comparators/cart_f8/fold_trees.json": "3ff1e371def2f98456e30af74061520c431ec5bb2425007f570abddf50c3801c",
+      "run:comparators/cart_f8/leaves.csv": "5513617e5c856f3f252d61aa53b92f80135b3fd21e90402a062635e99bfd0196",
+      "run:comparators/cart_f8/leaves.parquet": "974fe1a3247119c6cee5d1edcbe4099fb82b338e292c53173a869b70f7c0fc45",
+      "run:comparators/cart_f8/model.joblib": "7bd7c9d92cd6f0902d5d111f1b99825e955a91de0bead236b618e53e9365ffbb",
+      "run:comparators/cart_f8/nested_oof_ledger.parquet": "d604122def82ef2a71065d48fd74e1a51578be90d73790a235f727452b48c6a6",
+      "run:comparators/cart_f8/rules.json": "0c6619709ddaf6bfaa4e7c456d39b2f69a2343ed829a7c4a0383df3cb55513de",
+      "run:comparators/cart_f8/tree.json": "8041fbad9001b3d2d5768f25555eaa31b13852c7f91202b148eeb6097bbd6460"
+    },
+    "params": {
+      "comparator": "F8",
+      "config_sections": [
+        "registry.primary_rulebook_antecedent_candidates",
+        "registry.features",
+        "cohorts.qc_severity",
+        "splits.acdc.acdc_dev.outer_folds"
+      ],
+      "lane_configs": [
+        "configs/cart_f8.yaml"
+      ]
+    },
+    "stage": "fit-cart-surrogate",
+    "status": "BUILT"
+  },
+  "payload_sha256": "d0a6c7f4ccc0417f2aae4bd63901a655ead1c8982ca752fdb94eb1a844ef5ad0",
+  "run_log": {
+    "host": "422e885cd23a",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 0.316,
+    "started_utc": "2026-10-03T09:50:15+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

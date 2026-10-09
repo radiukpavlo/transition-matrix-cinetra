@@ -1,0 +1,60 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "80c6ec0ed3aa78baa5907480681a4c0e093bd40c2a2ab075b184aad62fe01189",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/evaluate__mms2_external.json": "ef20db89795580fa60983924e83cbaf362aa7e65bfed46b72e101a3c6ab73171",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:contracts/split_manifest_MMS2.parquet": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75",
+      "run:formal/A_MMS2.parquet": "b62540c0b1c82c04554632e437607b37aa3fe64f96e03aa5dd47ccb170cb3287",
+      "run:reconstructed/bhat_mms2_external.parquet": "865ee47e5c5ac08449a7c9d71ea8109d04fcfdff542eee144557dad600b3a571",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:semantics/B_MMS2.parquet": "a96f9f4dd4440fa3d82be1de7e3650d85d96349f4ab6fde4729cc27317609ad4",
+      "run:transitions/transition_model.json": "6c2f25349cfd7987a32337ca506415c8d946ab36e9f81a38d7b19790c866ba55"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:metrics/confirmatory_h4/h4_mms2_external.json": "2236d5efa8f0bd993fd44d30f403fdb7ce51c5bd3d2f6d22e218995407def1e1"
+    },
+    "params": {
+      "config_sections": [
+        "cohorts.mms2.endpoints",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.primary_test",
+        "registry.primary_families",
+        "transition.targets",
+        "cohorts.qc_severity"
+      ],
+      "confirmatory": true,
+      "split": "mms2_external",
+      "trust_s3_sha256": "b8e84acbc5fd1123e4f393d2caf328844acce209a04eca45074b61b1872c5f58"
+    },
+    "stage": "evaluate-h4:mms2_external",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "1a184e577651281335447fb1be82588d611c6f93245e74a81eb58b090308e129",
+  "run_log": {
+    "host": "97f4f649108e",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 4.911,
+    "started_utc": "2026-10-03T14:39:17+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

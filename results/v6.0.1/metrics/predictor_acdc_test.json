@@ -1,0 +1,263 @@
+{
+  "bootstrap": {
+    "draw": "SeedSequence(seed).spawn(replicates)[r]; clusters numbered by first row",
+    "interval": "percentile_95",
+    "min_valid_fraction": 0.95,
+    "replicates": 2000,
+    "seed": 20260928,
+    "unit": "cluster_id",
+    "valid_replicate": "finite; for balanced accuracy, macro-F1 and macro AUROC the replicate must contain every reference class of the evaluated sample (macro averages over the same classes)"
+  },
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "classes": [
+    "DCM",
+    "HCM",
+    "MINF",
+    "NOR",
+    "RV"
+  ],
+  "companions": {
+    "confusion_matrix": {
+      "columns_d_model": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ],
+      "counts": [
+        [
+          9,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          10
+        ]
+      ],
+      "rows_reference": [
+        "DCM",
+        "HCM",
+        "MINF",
+        "NOR",
+        "RV"
+      ]
+    },
+    "per_class_recall": {
+      "DCM": {
+        "n_reference": 10,
+        "reason": null,
+        "recall": 0.9,
+        "status": "EVALUATED"
+      },
+      "HCM": {
+        "n_reference": 10,
+        "reason": null,
+        "recall": 0.7,
+        "status": "EVALUATED"
+      },
+      "MINF": {
+        "n_reference": 10,
+        "reason": null,
+        "recall": 1.0,
+        "status": "EVALUATED"
+      },
+      "NOR": {
+        "n_reference": 10,
+        "reason": null,
+        "recall": 0.8,
+        "status": "EVALUATED"
+      },
+      "RV": {
+        "n_reference": 10,
+        "reason": null,
+        "recall": 1.0,
+        "status": "EVALUATED"
+      }
+    }
+  },
+  "counts": {
+    "n_clusters": 50,
+    "n_evaluable": 50,
+    "n_excluded_critical_qc": 0,
+    "n_no_decision": 0,
+    "n_partition": 50,
+    "n_recorded_predictions": 50,
+    "n_reference_outside_predictor_classes": 0,
+    "n_reference_unknown": 0,
+    "n_rows": 50
+  },
+  "ece_binning": "equal_mass",
+  "ece_bins": 10,
+  "ece_realized_bins": [
+    {
+      "abs_gap": 0.09945932130599844,
+      "accuracy": 0.4,
+      "bin_id": 0,
+      "count": 5,
+      "mean_confidence": 0.49945932130599846
+    },
+    {
+      "abs_gap": 0.4369523196751748,
+      "accuracy": 1.0,
+      "bin_id": 1,
+      "count": 5,
+      "mean_confidence": 0.5630476803248252
+    },
+    {
+      "abs_gap": 0.3280393992651326,
+      "accuracy": 1.0,
+      "bin_id": 2,
+      "count": 5,
+      "mean_confidence": 0.6719606007348674
+    },
+    {
+      "abs_gap": 0.03378173890465197,
+      "accuracy": 0.8,
+      "bin_id": 3,
+      "count": 5,
+      "mean_confidence": 0.7662182610953481
+    },
+    {
+      "abs_gap": 0.06680004752976121,
+      "accuracy": 0.8,
+      "bin_id": 4,
+      "count": 5,
+      "mean_confidence": 0.8668000475297613
+    },
+    {
+      "abs_gap": 0.14124245375216637,
+      "accuracy": 0.8,
+      "bin_id": 5,
+      "count": 5,
+      "mean_confidence": 0.9412424537521664
+    },
+    {
+      "abs_gap": 0.03154401464346501,
+      "accuracy": 1.0,
+      "bin_id": 6,
+      "count": 5,
+      "mean_confidence": 0.968455985356535
+    },
+    {
+      "abs_gap": 0.013277865941132228,
+      "accuracy": 1.0,
+      "bin_id": 7,
+      "count": 5,
+      "mean_confidence": 0.9867221340588678
+    },
+    {
+      "abs_gap": 0.004562401729555021,
+      "accuracy": 1.0,
+      "bin_id": 8,
+      "count": 5,
+      "mean_confidence": 0.995437598270445
+    },
+    {
+      "abs_gap": 0.00034994322834280833,
+      "accuracy": 1.0,
+      "bin_id": 9,
+      "count": 5,
+      "mean_confidence": 0.9996500567716572
+    }
+  ],
+  "metrics": {
+    "accuracy": {
+      "ci_lower": 0.78,
+      "ci_upper": 0.96,
+      "estimate": 0.88,
+      "n_boot_valid": 2000,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 1.0
+    },
+    "balanced_accuracy": {
+      "ci_lower": 0.7899871794871796,
+      "ci_upper": 0.96,
+      "estimate": 0.8800000000000001,
+      "n_boot_valid": 1999,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 0.9995
+    },
+    "ece": {
+      "ci_lower": 0.0739676847311038,
+      "ci_upper": 0.20579148827443067,
+      "estimate": 0.11560095059753807,
+      "n_boot_valid": 2000,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 1.0
+    },
+    "log_loss": {
+      "clip": 1e-15,
+      "estimate": 0.4144267040577559,
+      "reason": null,
+      "role": "descriptive_companion",
+      "status": "EVALUATED"
+    },
+    "macro_f1": {
+      "ci_lower": 0.7776653890249444,
+      "ci_upper": 0.9567076116689185,
+      "estimate": 0.8792283739652159,
+      "n_boot_valid": 1999,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 0.9995
+    },
+    "macro_ovr_auroc": {
+      "ci_lower": 0.9548935948276844,
+      "ci_upper": 0.9977097696026792,
+      "estimate": 0.9795,
+      "n_boot_valid": 1999,
+      "reason": null,
+      "status": "EVALUATED",
+      "valid_fraction": 0.9995
+    }
+  },
+  "metrics_definition": "SPECIFICATION.md 13.2 Audited predictor; configs/bootstrap.yaml classification_metrics, calibration, fixed_model_bootstrap",
+  "partition": "acdc_test",
+  "predictions": "inference/d_model_acdc_test.parquet (d_model)",
+  "predictor": "d_model_multinomial_lr_formal_a",
+  "probabilities": "recorded",
+  "probability_source": "formal/d_model_predictor.joblib (frozen bundle, hash-verified) applied to the recorded formal/A_<DATASET>.parquet; its argmax reproduces the recorded d_model on every row",
+  "qc_rule": "critical-QC rows (QC_ABSTAIN) are excluded and counted",
+  "reason": null,
+  "reference": "acdc_class",
+  "schema": "tmmri.predictor_summary/1",
+  "semantic_comparator": {
+    "name": "measured_b_logistic_semantic_comparator",
+    "note": "configs/formal.yaml comparator_predictor is not fitted by any stage of this run and is never fitted here",
+    "reason": "COMPARATOR_NOT_FITTED_IN_RUN",
+    "role": "semantic_comparator_not_audited",
+    "status": "NE"
+  },
+  "status": "EVALUATED"
+}

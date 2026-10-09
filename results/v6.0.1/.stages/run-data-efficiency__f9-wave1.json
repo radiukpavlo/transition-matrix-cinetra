@@ -1,0 +1,53 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+      "dirty": false
+    },
+    "config_hash": "5761e6f34abce1e2a0737aa592df0aef503a0ddae7d3bd4f7fde52fd459e9ae0",
+    "inputs": {
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:neural_cache/acdc_dev/manifest.csv": "fd8a867792ea682640aef71ec15e6c764fdc3d00a477ad4d740e4b81d8092fa1"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:data_efficiency/f9/plan_wave1.json": "097d04a892238516ce918a35d300eddea5d2bd9c92bac73446e573e9b6ec5d01",
+      "run:data_efficiency/f9/specs_wave1.jsonl": "add6753f6a2ea2b8cb125258dfbea556ecbeed2b14454aa95f088b3030811be1",
+      "run:data_efficiency/f9/specs_wave1.parquet": "0de16ba1124ccb2555577f3ea272a506e173dfe4cdde80c42f6d6aceb8c50055",
+      "run:data_efficiency/f9/subsamples.parquet": "83b8102ee2d0aeb6e72f5604ad224b80d7700c734e67e65933c6096cd5e5f225",
+      "run:data_efficiency/f9/train_wave1_specs.json": "ef107f79e9b8965dc2dbff8115de658dd25cd66b00363af528b4393397c09861"
+    },
+    "params": {
+      "config_sections": [
+        "data_centric.common",
+        "data_centric.data_efficiency",
+        "splits.acdc.acdc_dev"
+      ],
+      "step": "f9-wave1"
+    },
+    "stage": "run-data-efficiency:f9-wave1",
+    "status": "BUILT"
+  },
+  "payload_sha256": "3210fd849cc5e1cff9fba2f07a0588de0180653dd4964f13fb52b5c1354049ad",
+  "run_log": {
+    "host": "96fc87081a31",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 1.571,
+    "started_utc": "2026-10-03T13:24:52+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

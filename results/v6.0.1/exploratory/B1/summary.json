@@ -1,0 +1,141 @@
+{
+  "analysis": "B1",
+  "included": {
+    "mms2_external": "MMS2",
+    "mms_external": "MMS"
+  },
+  "label_free": true,
+  "not_executed": {},
+  "partitions": {
+    "mms2_external": {
+      "n_comparison": 180,
+      "n_reference": 98,
+      "strata": {
+        "pooled:all": {
+          "largest_group_drop": [
+            "lv_blood_pool_l1"
+          ],
+          "n": 180,
+          "top_descriptors_by_abs_auroc": [
+            "fd_l2_fraction_ed_minus_es",
+            "fd_ed_l0_median",
+            "fd_es_l0_median",
+            "fd_es_l0_p25",
+            "fd_ed_l0_p25"
+          ]
+        },
+        "vendor:GE": {
+          "largest_group_drop": [
+            "label_fractions"
+          ],
+          "n": 28,
+          "top_descriptors_by_abs_auroc": [
+            "fd_es_l2_label_voxel_fraction",
+            "fd_l2_fraction_es",
+            "fd_ed_l2_label_voxel_fraction",
+            "fd_l2_fraction_ed",
+            "fd_es_l0_label_voxel_fraction"
+          ]
+        },
+        "vendor:Philips": {
+          "largest_group_drop": [
+            "background_l0"
+          ],
+          "n": 38,
+          "top_descriptors_by_abs_auroc": [
+            "fd_ed_l0_p25",
+            "fd_es_l0_p25",
+            "fd_es_l2_label_voxel_fraction",
+            "fd_l2_fraction_es",
+            "fd_es_l0_label_voxel_fraction"
+          ]
+        },
+        "vendor:Siemens": {
+          "largest_group_drop": [
+            "rv_blood_pool_l3"
+          ],
+          "n": 114,
+          "top_descriptors_by_abs_auroc": [
+            "fd_ed_l2_p25",
+            "fd_es_l2_p25",
+            "fd_ed_l2_median",
+            "fd_es_l2_median",
+            "fd_es_l2_mean"
+          ]
+        }
+      }
+    },
+    "mms_external": {
+      "n_comparison": 319,
+      "n_reference": 98,
+      "strata": {
+        "pooled:all": {
+          "largest_group_drop": [
+            "label_fractions"
+          ],
+          "n": 319,
+          "top_descriptors_by_abs_auroc": [
+            "fd_es_l0_median",
+            "fd_ed_l0_median",
+            "fd_es_l0_p25",
+            "fd_ed_l0_p25",
+            "fd_es_l2_label_voxel_fraction"
+          ]
+        },
+        "vendor:A": {
+          "largest_group_drop": [
+            "es_phase"
+          ],
+          "n": 94,
+          "top_descriptors_by_abs_auroc": [
+            "fd_l2_fraction_ed_minus_es",
+            "fd_ed_l2_p25",
+            "fd_ed_l2_median",
+            "fd_es_l2_median",
+            "fd_es_l2_p75"
+          ]
+        },
+        "vendor:B": {
+          "largest_group_drop": [
+            "background_l0"
+          ],
+          "n": 125,
+          "top_descriptors_by_abs_auroc": [
+            "fd_ed_l0_p25",
+            "fd_es_l0_p25",
+            "fd_ed_l0_median",
+            "fd_es_l0_median",
+            "fd_es_l0_label_voxel_fraction"
+          ]
+        },
+        "vendor:C": {
+          "largest_group_drop": [
+            "label_fractions"
+          ],
+          "n": 50,
+          "top_descriptors_by_abs_auroc": [
+            "fd_es_l0_label_voxel_fraction",
+            "fd_ed_l0_label_voxel_fraction",
+            "fd_es_l2_label_voxel_fraction",
+            "fd_l2_fraction_es",
+            "fd_ed_l2_label_voxel_fraction"
+          ]
+        },
+        "vendor:D": {
+          "largest_group_drop": [
+            "rv_blood_pool_l3"
+          ],
+          "n": 50,
+          "top_descriptors_by_abs_auroc": [
+            "fd_es_l0_p25",
+            "fd_ed_l0_p25",
+            "fd_es_l2_label_voxel_fraction",
+            "fd_l2_fraction_es",
+            "fd_ed_l0_label_voxel_fraction"
+          ]
+        }
+      }
+    }
+  },
+  "standardization": "frozen transition standardizer (kept descriptors)"
+}

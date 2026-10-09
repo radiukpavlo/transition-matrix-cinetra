@@ -1,0 +1,60 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "04b07f36e4a264374818a2bde15cd555407bc26b9e0c352a2cf8c2bc13b8e99e",
+      "commit": "4d3b99909e18badd92cfcd79c16ec2d659bf1b8c",
+      "dirty": false
+    },
+    "config_hash": "c1f0de34ae6423994774725ea518d9cee4c971f710d464323c4e96b4b0bdc031",
+    "inputs": {
+      "run:formal/d_model_ACDC_dev.parquet": "31ee6b1ad4db6f119db49ccc50a63833df164dcf6d803cb996c836489818babd",
+      "run:oof/bhat_oof_ACDC_dev.parquet": "b735e0820b374ebfa64849337e815669bc965590b373b1aa69c41a20d459e0a4",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:granules/d_model_wedd_gaussian_mm_v1_states_ACDC_dev.parquet": "a4becaf08330110b40a91a5fa554952721fa5c48475a3e3c73df07c02929f280",
+      "run:granules/dataset_label_wedd_gaussian_mm_v1_states_ACDC_dev.parquet": "a4becaf08330110b40a91a5fa554952721fa5c48475a3e3c73df07c02929f280",
+      "run:granules/measured_oracle_wedd_gaussian_mm_v1_states_ACDC_dev.parquet": "5de4321ee4c46eac82b448fa661da2e35b9ad997698b90a4644b3cd23e3fa412",
+      "run:thresholds/d_model_wedd_gaussian_mm_v1.json": "016731f90c5c6a392f2080872fd1cc8656c8794b6318390bf281e3d9929f00e9",
+      "run:thresholds/d_model_wedd_gaussian_mm_v1_stability.parquet": "484579ab8e14b96321ff93bff9012891dc806d85288c8f0992aeb88aa3a0c705",
+      "run:thresholds/dataset_label_wedd_gaussian_mm_v1.json": "016731f90c5c6a392f2080872fd1cc8656c8794b6318390bf281e3d9929f00e9",
+      "run:thresholds/dataset_label_wedd_gaussian_mm_v1_stability.parquet": "484579ab8e14b96321ff93bff9012891dc806d85288c8f0992aeb88aa3a0c705",
+      "run:thresholds/measured_oracle_wedd_gaussian_mm_v1.json": "69eed10a2409c8c9e77097a81d4aa3217a73a38df092f1f38a5b2505780f3550",
+      "run:thresholds/measured_oracle_wedd_gaussian_mm_v1_stability.parquet": "6c82d8df8d711e3e86f9ee6267df1d4b12fd5a74344815ff632cd30d08cbcd80",
+      "run:thresholds/wedd_candidates.parquet": "29dc72e61554b034246da51fedcdb2445ff7ef631e9d86da5b249032486b0011"
+    },
+    "params": {
+      "config_sections": [
+        "wedd",
+        "bootstrap.threshold_bootstrap",
+        "rule_policy.rulebooks",
+        "registry",
+        "cohorts.qc_severity"
+      ],
+      "profile": "wedd_gaussian_mm_v1"
+    },
+    "stage": "discretize",
+    "status": "BUILT"
+  },
+  "payload_sha256": "14f9c358b22c67572af3cad21a223b161257954cc8cfde5f39d5f2578700a3c0",
+  "run_log": {
+    "host": "48f70b472a10",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 3.604,
+    "started_utc": "2026-10-03T09:42:39+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

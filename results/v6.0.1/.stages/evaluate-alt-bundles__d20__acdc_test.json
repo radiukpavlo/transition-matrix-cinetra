@@ -1,0 +1,75 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+      "dirty": false
+    },
+    "config_hash": "6a9cf6813617eae35c3acdb1134277a02032eca4af7e66967f135226b6ea6425",
+    "inputs": {
+      "run:.stages/FROZEN.json": "7be0b81107475bd7f2850b03814d5ed83ab4cb6864ef0ac0cdb79554a0abbd7e",
+      "run:.stages/evaluate__acdc_test.json": "afa7951963c65623710c97adfc30fa3defd6584ec2984d947b8f54b25749450e",
+      "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:deep_encoder/FROZEN_D20.json": "abb4cf7062966ea6620814c29b3d2a12e595b692c2ee3ae422ffc2fcdb22ba80",
+      "run:deep_encoder/features/A_D20_acdc_test.parquet": "643af4c38ba1b7a9c5b8af06908f6ea3f6989e7caaf67c408dfecfd8dbc46915",
+      "run:deep_encoder/formal/d_model_predictor.joblib": "45b4aeaaca9710f9b3c5cbdb1d1216459807dc87545d142b17cf17d16c184de6",
+      "run:deep_encoder/predictions.parquet": "63fe2499c4505249bef4a5673235f41b96d1184cd8e4128a0e782ef4de8dd38f",
+      "run:deep_encoder/transitions/transition_model.json": "300b2a561799b6e96ed5c1c6a8b85a7794e27bc2ab2c183a28a7e5493e3aba79",
+      "run:formal/A_ACDC.parquet": "c97ad6fa160e7b57608423bb7f9aa041149efe1833ec0ff057b25e57c17c8216",
+      "run:formal/audited_predictor/predictions.parquet": "bc4b8458660d8c7459725c301660d7e428c88cec5dc5fae6ab9a2245f84c8295",
+      "run:reconstructed/bhat_acdc_test.parquet": "18241b7f25d7d8623857582ae074834f83521323317371d6a8238aba9e757cbd",
+      "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203",
+      "run:transitions/transition_model.json": "6c2f25349cfd7987a32337ca506415c8d946ab36e9f81a38d7b19790c866ba55"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:probes/evaluations/d20/acdc_test.json": "5245d9b658c9eb32975e866fb77dbd04255cb8e3befcf2ea9e46fb16fd9c2945"
+    },
+    "params": {
+      "bundle": "d20",
+      "config_sections": [
+        "transition",
+        "registry",
+        "cohorts.qc_severity",
+        "formal.audited_predictor",
+        "bootstrap.fixed_model_bootstrap",
+        "bootstrap.primary_test",
+        "bootstrap.calibration",
+        "probes.bundles",
+        "probes.crosswalk",
+        "probes.estimands",
+        "probes.f9b",
+        "probes.inputs",
+        "probes.pairing",
+        "probes.partitions",
+        "probes.reference",
+        "probes.require_freeze_record_for_held_out"
+      ],
+      "evidence": "registered_after_unblinding",
+      "split": "acdc_test"
+    },
+    "stage": "evaluate-alt-bundles:d20:acdc_test",
+    "status": "EVALUATED"
+  },
+  "payload_sha256": "917cb610195cfc690f0bbd417e3c381f8f9b21c0ce4fb3332064f40ef1466f4b",
+  "run_log": {
+    "host": "43325002a621",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 13.065,
+    "started_utc": "2026-10-03T13:28:13+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

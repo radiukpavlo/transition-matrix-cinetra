@@ -1,0 +1,282 @@
+{
+  "accuracy": {
+    "accuracy_alternative": 0.9,
+    "accuracy_reference": 0.88,
+    "ci_lower": 0.0,
+    "ci_upper": 0.06000000000000005,
+    "counts": {
+      "n_evaluable_paired": 50,
+      "n_no_decision_alternative": 0,
+      "n_no_decision_reference": 0,
+      "n_reference_unknown": 0,
+      "n_rows": 50
+    },
+    "delta_accuracy": 0.020000000000000018,
+    "interval": "percentile_95",
+    "n_boot": 2000,
+    "n_boot_valid": 2000,
+    "n_changed_decisions": 1,
+    "n_clusters": 50,
+    "paired": "same cluster draw for both conditions",
+    "reason": null,
+    "seed": 20260928,
+    "status": "EVALUATED",
+    "unit": "cluster_id",
+    "valid_fraction": 1.0
+  },
+  "analysis": "S6_simulated_acquisition_shift",
+  "analysis_label": "registered after unblinding",
+  "bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "comparison": "perturbed (A and B recomputed on the resampled images and masks) minus unperturbed (recorded evaluate:acdc_test)",
+  "data_centric_config_digest": "bc834e6fe165cc1c81d0e8a3398decf6a47141f5573ec945c0ddccc7d4e5fa94",
+  "data_centric_sha256": "830ce834980e5c9c5a242c7ec3b42b978b5ca8a1337c293840fbe959756dfe9c",
+  "measurement_shift_B": {
+    "global_wall_thickening_percent": {
+      "mean_abs_difference_over_fit_sd": 0.050163474774996615,
+      "mean_difference": 0.3175296246504357,
+      "n": 50
+    },
+    "global_wall_thickness_ed_mm": {
+      "mean_abs_difference_over_fit_sd": 0.01932237609478569,
+      "mean_difference": -0.000872739889380476,
+      "n": 50
+    },
+    "global_wall_thickness_es_mm": {
+      "mean_abs_difference_over_fit_sd": 0.017601111820011076,
+      "mean_difference": 0.022828405931644476,
+      "n": 50
+    },
+    "lv_area_mean_ed_mm2": {
+      "mean_abs_difference_over_fit_sd": 0.019877831105877042,
+      "mean_difference": -2.396456285696022,
+      "n": 50
+    },
+    "lv_area_mean_es_mm2": {
+      "mean_abs_difference_over_fit_sd": 0.015502813585019256,
+      "mean_difference": -8.74942968430991,
+      "n": 50
+    },
+    "lv_compactness_mean_ed": {
+      "mean_abs_difference_over_fit_sd": 4.891583271663032,
+      "mean_difference": -0.06683184932431611,
+      "n": 50
+    },
+    "lv_compactness_mean_es": {
+      "mean_abs_difference_over_fit_sd": 4.0912614307669095,
+      "mean_difference": -0.06883319690383462,
+      "n": 50
+    },
+    "lv_eccentricity_mean_ed": {
+      "mean_abs_difference_over_fit_sd": 0.08802668901313113,
+      "mean_difference": -0.0012422081430841104,
+      "n": 50
+    },
+    "lv_eccentricity_mean_es": {
+      "mean_abs_difference_over_fit_sd": 0.10725357423833219,
+      "mean_difference": 0.0029602374074616366,
+      "n": 50
+    },
+    "lv_edv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.024887128990919827,
+      "mean_difference": -1.234614775012143,
+      "n": 50
+    },
+    "lv_ef_percent": {
+      "mean_abs_difference_over_fit_sd": 0.02942376149508005,
+      "mean_difference": 0.1497116123718486,
+      "n": 50
+    },
+    "lv_esv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.014196553327603332,
+      "mean_difference": -0.7326684607629252,
+      "n": 50
+    },
+    "lv_myo_volume_es_ml": {
+      "mean_abs_difference_over_fit_sd": 0.018948182765016187,
+      "mean_difference": -0.3626466193597146,
+      "n": 50
+    },
+    "lv_myocardial_mass_ed_g": {
+      "mean_abs_difference_over_fit_sd": 0.022842861268927726,
+      "mean_difference": -0.7346108780869196,
+      "n": 50
+    },
+    "lv_sv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.041643734980050605,
+      "mean_difference": -0.5019463142492175,
+      "n": 50
+    },
+    "rv_area_mean_ed_mm2": {
+      "mean_abs_difference_over_fit_sd": 0.023238246880614346,
+      "mean_difference": 1.147179516331421,
+      "n": 50
+    },
+    "rv_area_mean_es_mm2": {
+      "mean_abs_difference_over_fit_sd": 0.01954064457855443,
+      "mean_difference": -0.1678937988007897,
+      "n": 50
+    },
+    "rv_compactness_mean_ed": {
+      "mean_abs_difference_over_fit_sd": 0.5554747242086989,
+      "mean_difference": -0.04188108641085789,
+      "n": 50
+    },
+    "rv_compactness_mean_es": {
+      "mean_abs_difference_over_fit_sd": 0.37144573584300683,
+      "mean_difference": -0.04018231133607149,
+      "n": 50
+    },
+    "rv_eccentricity_mean_ed": {
+      "mean_abs_difference_over_fit_sd": 0.044139189596053625,
+      "mean_difference": -0.0008712946915533237,
+      "n": 50
+    },
+    "rv_eccentricity_mean_es": {
+      "mean_abs_difference_over_fit_sd": 0.06524487385507932,
+      "mean_difference": -0.002840790740422263,
+      "n": 50
+    },
+    "rv_edv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.0414530158471356,
+      "mean_difference": -1.1726164543019135,
+      "n": 50
+    },
+    "rv_ef_percent": {
+      "mean_abs_difference_over_fit_sd": 0.026261596716606432,
+      "mean_difference": -0.1852352607257976,
+      "n": 50
+    },
+    "rv_esv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.01829139193298527,
+      "mean_difference": -0.06371083737026417,
+      "n": 50
+    },
+    "rv_sv_ml": {
+      "mean_abs_difference_over_fit_sd": 0.06053354333443061,
+      "mean_difference": -1.1089056169316496,
+      "n": 50
+    }
+  },
+  "n_cases": 50,
+  "n_formal_failures": 0,
+  "partition": "acdc_test",
+  "recorded_rho_acdc_test": 0.5525082970070413,
+  "registration": "protocol-v6.0.1 item 15",
+  "representation": "descriptors",
+  "rho": {
+    "ci_lower": -0.003622828061086518,
+    "ci_upper": 0.012394508883781824,
+    "delta_rho": 0.0041283751942357005,
+    "delta_rho_j": {
+      "lv_edv_ml": {
+        "ci_lower": 0.007577409428520241,
+        "ci_upper": 0.04166843782742824,
+        "estimate": 0.02136528509443303,
+        "n_boot_valid": 2000
+      },
+      "lv_ef_percent": {
+        "ci_lower": -0.002925069408652771,
+        "ci_upper": 0.020558322550883138,
+        "estimate": 0.00788937310926352,
+        "n_boot_valid": 2000
+      },
+      "lv_esv_ml": {
+        "ci_lower": -0.0043069524050873415,
+        "ci_upper": 0.013328490014345844,
+        "estimate": 0.003367714510433717,
+        "n_boot_valid": 2000
+      },
+      "lv_myocardial_mass_ed_g": {
+        "ci_lower": 0.011305980173439029,
+        "ci_upper": 0.054875459675181516,
+        "estimate": 0.029719519009783646,
+        "n_boot_valid": 2000
+      },
+      "rv_edv_ml": {
+        "ci_lower": -0.047585981385892824,
+        "ci_upper": 0.013108276609561117,
+        "estimate": -0.01577969881188568,
+        "n_boot_valid": 2000
+      },
+      "rv_ef_percent": {
+        "ci_lower": -0.009779347859300846,
+        "ci_upper": 0.025242332021331294,
+        "estimate": 0.0042889153849599015,
+        "n_boot_valid": 2000
+      },
+      "rv_esv_ml": {
+        "ci_lower": -0.055226194946928577,
+        "ci_upper": 0.006330525433911125,
+        "estimate": -0.021952481937338897,
+        "n_boot_valid": 2000
+      }
+    },
+    "estimable_targets": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "family": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "interval": "percentile_95",
+    "min_estimable": 5,
+    "n_boot": 2000,
+    "n_boot_valid": 2000,
+    "n_clusters": 50,
+    "n_rows": 50,
+    "n_rows_paired_per_target": {
+      "lv_edv_ml": 50,
+      "lv_ef_percent": 50,
+      "lv_esv_ml": 50,
+      "lv_myocardial_mass_ed_g": 50,
+      "rv_edv_ml": 50,
+      "rv_ef_percent": 50,
+      "rv_esv_ml": 50
+    },
+    "n_units": 50,
+    "paired": "same cluster draw for both conditions",
+    "reason": null,
+    "rho_alternative": 0.556636672201277,
+    "rho_j_alternative": {
+      "lv_edv_ml": 0.49241482104480216,
+      "lv_ef_percent": 0.801995318505639,
+      "lv_esv_ml": 0.6486134101776938,
+      "lv_myocardial_mass_ed_g": 0.4168976913257886,
+      "rv_edv_ml": 0.43516110361186366,
+      "rv_ef_percent": 0.5726322350917497,
+      "rv_esv_ml": 0.528742125651402
+    },
+    "rho_j_reference": {
+      "lv_edv_ml": 0.47104953595036914,
+      "lv_ef_percent": 0.7941059453963755,
+      "lv_esv_ml": 0.6452456956672601,
+      "lv_myocardial_mass_ed_g": 0.38717817231600493,
+      "rv_edv_ml": 0.45094080242374934,
+      "rv_ef_percent": 0.5683433197067898,
+      "rv_esv_ml": 0.5506946075887409
+    },
+    "rho_reference": 0.5525082970070413,
+    "seed": 20260928,
+    "status": "EVALUATED",
+    "valid_fraction": 1.0
+  },
+  "study_config_hash": "0eeb571a66d0338cf46bce34a9aa58327f3c659b59d1771d14d68ec5ad5fc11f",
+  "target_spacing_mm": [
+    1.2152777910232544,
+    1.2152777910232544,
+    10.000000019232484
+  ],
+  "vendor": "B",
+  "vendor_name": "Philips"
+}

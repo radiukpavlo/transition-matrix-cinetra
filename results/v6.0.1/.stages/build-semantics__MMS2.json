@@ -1,0 +1,53 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "d04f0908e66766335609c938f06d51c53421a45a",
+      "dirty": false
+    },
+    "config_hash": "0f14b8faa2d833b4252c387f8c4711fbf4ffc0e6ea2f632f5beea928c3ff1254",
+    "inputs": {
+      "data:manifests/staging_MMS2.json": "9fadb5b3de7ada08cf064671553194791827e991389597ac33e3ce488cdb14df",
+      "run:contracts/cohort_MMS2.parquet": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+      "run:contracts/split_manifest_MMS2.parquet": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75",
+      "run:qc/outlier_reference.json": "3a35ea7875fe344ef1e8595ecfea3f78073f0be07468d093e2434f69b046024c"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:qc/manual_review_MMS2.parquet": "6cbbfd5edd617d267fe027c7645fbbf75255ecba9a914b5e525cf2e6247b1c11",
+      "run:qc/panels_MMS2.json": "9727ba99bb087f1d70a5953283b7915207c72868163da126ef37964391a41981",
+      "run:semantics/B_MMS2.parquet": "a96f9f4dd4440fa3d82be1de7e3650d85d96349f4ab6fde4729cc27317609ad4"
+    },
+    "params": {
+      "config_sections": [
+        "cohorts",
+        "registry",
+        "reason_codes",
+        "transition.targets.primary_family",
+        "cohorts.mms2"
+      ]
+    },
+    "stage": "build-semantics:MMS2",
+    "status": "BUILT"
+  },
+  "payload_sha256": "1a15d4f94cf6e2af7ba2c5a231d4584a29ea56e863aafc911478ca3fdcf757fe",
+  "run_log": {
+    "host": "7ea1c0869a00",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 18.32,
+    "started_utc": "2026-10-03T14:38:03+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

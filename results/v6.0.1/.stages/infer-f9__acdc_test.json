@@ -1,0 +1,57 @@
+{
+  "payload": {
+    "code": {
+      "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+      "commit": "e6bfde04938078083f03e8a13f1e8f91d88d7669",
+      "dirty": false
+    },
+    "config_hash": "463226b63bd9491eb9868572bfd84719c5f4e228849ab8e962eaf00dccf06f0d",
+    "inputs": {
+      "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+      "run:neural_cache/acdc_test": "0b31a6ff470d3bfa4db12e98d29611765f9108c08b715a1f90c6ceea8a37b02f",
+      "run:neural_f9/checkpoints/02297ae72cfff7b4": "e4164d7f7cb491ba11eabc2a7a8b6f405f609ac9d99a2459d464d246d8cea9de",
+      "run:neural_f9/checkpoints/7581584233dc31c4": "11fcf1523b10ff05e7829d5db5a351430f2cce5b3820b6b577d201ad7c7045d7",
+      "run:neural_f9/checkpoints/932af384115f1700": "f0bfb9477d95e307428a200d06f342e6b09b25b007af12055ed28d9d8156d3c8",
+      "run:neural_f9/f9_bundle.json": "004ebcca36f9a3550a29c66a35f861f6030201f2cd01d93303ac93c74b9f86d4"
+    },
+    "library_versions": {
+      "PyYAML": "6.0.3",
+      "joblib": "1.6.0",
+      "nibabel": "5.4.2",
+      "numpy": "2.4.6",
+      "pandas": "3.0.6",
+      "pyarrow": "24.0.0",
+      "python": "3.12.14",
+      "scikit-image": "0.26.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1"
+    },
+    "n_jobs": 12,
+    "outputs": {
+      "run:neural_f9/activations_acdc_test.parquet": "f9a390a3097c75deac51ec65eb6e35c90bdc618a763f7e148c388c39086ca193",
+      "run:neural_f9/inference_acdc_test.json": "a96b6d6aebb6da9ea41109c0dfcdb508a717ce8208a9cb5fa7581d85973999b7",
+      "run:neural_f9/predictions_acdc_test.parquet": "9700a210a97489175be6813dbe514bf379741e5fe532dad92e8212ff970fea24"
+    },
+    "params": {
+      "config_sections": [],
+      "encoders": [
+        "20261011:final:7581584233dc31c4",
+        "20261012:final:932af384115f1700",
+        "20261013:final:02297ae72cfff7b4"
+      ],
+      "neural_input": true,
+      "partition": "acdc_test",
+      "tta": "d4_mean_8"
+    },
+    "stage": "infer-f9:acdc_test",
+    "status": "BUILT"
+  },
+  "payload_sha256": "1e9b9ffca297dd35d8495e2ec325bed9c086aa6ff450a843d4ce816b5ec87ffe",
+  "run_log": {
+    "host": "4d94933cc196",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "seconds": 35.91,
+    "started_utc": "2026-10-03T13:27:24+00:00"
+  },
+  "schema": "tmmri.stage_record/1"
+}

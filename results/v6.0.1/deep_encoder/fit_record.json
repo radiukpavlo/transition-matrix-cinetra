@@ -1,0 +1,60 @@
+{
+  "code": {
+    "code_sha256": "4043995a9cdb0fecdc7fc7150151fed484302d206408126bd5ffd46d1afea143",
+    "commit": "d19c5a041ce1f8eb0f40bd6cfdb025b205e55c36",
+    "dirty": false
+  },
+  "config_sections": {
+    "cohorts.qc_severity": "624685f9ae1f973f9b906445ecc3030c8f82b2c194da472c9fdcc2dace3b9343",
+    "deep_encoder": "1632dc382e935db648d56bae98c6de813df7c0e6d956fbcd73c447de172c1747",
+    "deep_encoder.tta": "3abbf7eae025ff316fd83896ec678087d31232db12e600eec27cc94c3c2c4af0",
+    "formal.audited_predictor": "e3a52e40a239e0cef9a9ab5cd56f21b9b9e97733d6a21841d475fe8c650eab67",
+    "registry": "23e3d586696bdefd7fa08ec75843b3658981ed5f9f04a8aa51c0b3250c5ea48a",
+    "transition": "b768fa116da4d9b51b83ace2dfa70a2bce4014debd19dd03f4017bb65b8e51c4"
+  },
+  "inputs": {
+    "run:contracts/cohort_ACDC.parquet": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+    "run:contracts/inner_folds.parquet": "7dc447fdce15486c6ac905d9f5840eb39d9524570ba01b35f06bc3b63b00e8ee",
+    "run:contracts/split_manifest.parquet": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+    "run:deep_encoder/features/A_D20_acdc_dev.parquet": "8b81c6aa2d98e440a5874324008929069baec775d15bb27f96fa4cf12f275017",
+    "run:semantics/B_ACDC.parquet": "054a02519195e423e48fe313c93e46082dd1dcb127d181a453dd15f3181fa203"
+  },
+  "representation": "d20_resnet50_imagenet1k_v2_mean2048",
+  "run_id": "v6-replication-20261003-1241",
+  "summary": {
+    "excluded_targets": {},
+    "fitted_targets": [
+      "lv_edv_ml",
+      "lv_esv_ml",
+      "lv_sv_ml",
+      "lv_ef_percent",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_sv_ml",
+      "rv_ef_percent",
+      "lv_myo_volume_es_ml",
+      "lv_myocardial_mass_ed_g",
+      "global_wall_thickness_ed_mm",
+      "global_wall_thickness_es_mm",
+      "global_wall_thickening_percent",
+      "lv_area_mean_ed_mm2",
+      "lv_area_mean_es_mm2",
+      "rv_area_mean_ed_mm2",
+      "rv_area_mean_es_mm2",
+      "lv_compactness_mean_ed",
+      "lv_compactness_mean_es",
+      "rv_compactness_mean_ed",
+      "rv_compactness_mean_es",
+      "lv_eccentricity_mean_ed",
+      "lv_eccentricity_mean_es",
+      "rv_eccentricity_mean_ed",
+      "rv_eccentricity_mean_es"
+    ],
+    "missing_classes": [],
+    "predictor_fit_rows": 98,
+    "predictor_rows": 98,
+    "transition_rows": 98
+  },
+  "tta": "d4_mean_8",
+  "weights_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca"
+}

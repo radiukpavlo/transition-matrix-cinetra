@@ -1,0 +1,120 @@
+{
+  "comparator_id": "F8_cart_surrogate",
+  "dataset": "MMS",
+  "f8_bundle_sha256": "0b6911083255c9b38a6eb5302f9933f42f1814ab40a3df4dd224842fdb255f63",
+  "freeze_order": null,
+  "interval": "wilson_95",
+  "n_cases": 320,
+  "n_clusters": 318,
+  "prospective": false,
+  "reference": "crosswalk_same_definition_only",
+  "rules": "comparators/cart_f8/rules.json",
+  "schema": "tmmri.cart_f8_evaluation/1",
+  "selected_leaves": [
+    {
+      "leaf": 4,
+      "rule": "IF lv_esv_ml <= 94.8005 mL AND rv_esv_ml > 87.5613 mL AND global_wall_thickness_ed_mm <= 9.35996 mm THEN d_model = RV"
+    },
+    {
+      "leaf": 7,
+      "rule": "IF lv_esv_ml <= 94.8005 mL AND global_wall_thickness_ed_mm > 9.35996 mm AND global_wall_thickening_percent > 49.2009 percent THEN d_model = HCM"
+    },
+    {
+      "leaf": 11,
+      "rule": "IF lv_edv_ml > 178.483 mL AND lv_esv_ml > 94.8005 mL AND rv_ef_percent <= 41.3909 percent THEN d_model = DCM"
+    }
+  ],
+  "split": "mms_external",
+  "status": "post_hoc",
+  "substrate": "reconstructed/bhat_mms_external.parquet (raw reconstruction of the frozen transition; evaluate:mms_external)",
+  "v6_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+  "versions": {
+    "full_coverage": {
+      "accuracy_vs_reference": {
+        "estimate": 0.46691176470588236,
+        "k": 127,
+        "n": 272,
+        "reason": null,
+        "status": "EVALUATED",
+        "wilson_lower": 0.40849516833836036,
+        "wilson_upper": 0.5262499563540791
+      },
+      "coverage": {
+        "estimate": 0.996875,
+        "k": 319,
+        "n": 320,
+        "reason": null,
+        "status": "EVALUATED",
+        "wilson_lower": 0.9825138320532035,
+        "wilson_upper": 0.9994481476081826
+      },
+      "d_model_accuracy_same_rows": {
+        "estimate": 0.5257352941176471,
+        "k": 143,
+        "n": 272,
+        "reason": null,
+        "status": "EVALUATED",
+        "wilson_lower": 0.4664490830077584,
+        "wilson_upper": 0.5843047088981221
+      },
+      "fidelity_to_d_model": {
+        "estimate": 0.6833855799373041,
+        "k": 218,
+        "n": 319,
+        "reason": null,
+        "status": "EVALUATED",
+        "wilson_lower": 0.6304164506237414,
+        "wilson_upper": 0.7319905352305188
+      },
+      "n_attempted": 320,
+      "routes": {
+        "PREDICTED": 319,
+        "QC_ABSTAIN": 1
+      }
+    },
+    "selective": {
+      "accuracy_vs_reference": {
+        "estimate": 0.5384615384615384,
+        "k": 28,
+        "n": 52,
+        "reason": null,
+        "status": "EVALUATED",
+        "wilson_lower": 0.4050361132695787,
+        "wilson_upper": 0.6665952531824317
+      },
+      "coverage": {
+        "estimate": 0.165625,
+        "k": 53,
+        "n": 320,
+        "reason": null,
+        "status": "EVALUATED",
+        "wilson_lower": 0.1289096692103094,
+        "wilson_upper": 0.210273149508129
+      },
+      "d_model_accuracy_same_rows": {
+        "estimate": 0.5576923076923077,
+        "k": 29,
+        "n": 52,
+        "reason": null,
+        "status": "EVALUATED",
+        "wilson_lower": 0.42339761787202884,
+        "wilson_upper": 0.6840494318059871
+      },
+      "fidelity_to_d_model": {
+        "estimate": 0.5660377358490566,
+        "k": 30,
+        "n": 53,
+        "reason": null,
+        "status": "EVALUATED",
+        "wilson_lower": 0.4326535142760728,
+        "wilson_upper": 0.6904960344024968
+      },
+      "n_attempted": 320,
+      "routes": {
+        "LEAF_NOT_SELECTED_ABSTAIN": 266,
+        "PREDICTED": 53,
+        "QC_ABSTAIN": 1
+      }
+    }
+  }
+}
