@@ -1,0 +1,13 @@
+partition,subset,arm,quantity,kind,estimate,ci_lower,ci_upper,status,reason,n_estimable,n_cases,n_clusters
+acdc_dev_oof,all,analytical,rho_ef,estimate,0.9999999999999997,0.9999999999999996,0.9999999999999998,EVALUATED,,2.0,98,98
+acdc_dev_oof,all,primary_ridge,rho_ef,estimate,0.7087822716822069,0.6607736691246534,0.7493430611357133,EVALUATED,,2.0,98,98
+acdc_dev_oof,all,analytical,rho_ef,difference_vs_primary_ridge,0.2912177283177928,0.2506569388642864,0.33922633087534626,EVALUATED,,,98,98
+acdc_test,all,analytical,rho_ef,estimate,0.9999999999999996,0.9999999999999993,0.9999999999999997,EVALUATED,,2.0,50,50
+acdc_test,all,primary_ridge,rho_ef,estimate,0.6812246325515826,0.5950902998693051,0.7422934195390883,EVALUATED,,2.0,50,50
+acdc_test,all,analytical,rho_ef,difference_vs_primary_ridge,0.31877536744841695,0.2577065804609113,0.4049097001306944,EVALUATED,,,50,50
+mms_external,all,analytical,rho_ef,estimate,0.9999999999999996,0.9999999999999994,0.9999999999999996,EVALUATED,,2.0,319,317
+mms_external,all,primary_ridge,rho_ef,estimate,0.5609703283310578,0.5310012374620936,0.5891408701087998,EVALUATED,,2.0,319,317
+mms_external,all,analytical,rho_ef,difference_vs_primary_ridge,0.4390296716689418,0.41085912989119977,0.46899876253790596,EVALUATED,,,319,317
+mms2_external,all,analytical,rho_ef,estimate,0.9999999999999993,0.9999999999999993,0.9999999999999996,EVALUATED,,2.0,180,180
+mms2_external,all,primary_ridge,rho_ef,estimate,0.6057473369352957,0.563701557263582,0.6463733326262187,EVALUATED,,2.0,180,180
+mms2_external,all,analytical,rho_ef,difference_vs_primary_ridge,0.39425266306470363,0.3536266673737808,0.4362984427364174,EVALUATED,,,180,180

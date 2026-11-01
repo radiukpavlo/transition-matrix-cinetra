@@ -1,0 +1,255 @@
+{
+  "figure": "figure05_matched_comparators_b21_b22_accuracy",
+  "label": "EXPLORATORY_POST_HOC",
+  "run_id": "v6-postfreeze-20261028-0201",
+  "source_run_id": "v6-replication-20261003-1241",
+  "protocol_tag": "protocol-v6.0.2",
+  "date": "2026-10-28",
+  "evidence_pack_written": "2026-10-28",
+  "note": "evidence render of recorded aggregates; nothing fitted, resampled, re-estimated or recomputed",
+  "script": {
+    "path": "manuscript/scripts/render_v602_figures.py",
+    "sha256": "e41759210e7ea9b587adfa90d895a0bf6d3ce045d64e9e0a5dc05b1bddc1fcce"
+  },
+  "house_style": {
+    "path": "manuscript/scripts/render_postfreeze_figures.py",
+    "sha256": "e49a3387f14027d2b8309e8c1e7105a77a195685f1e97467b50ee75cbd9d40a6"
+  },
+  "inputs": [
+    {
+      "path": "manuscript/article/tables/v601/comparison/figure05_representation_panel.parquet",
+      "sha256": "9d8a1d9b403a20f6b2f7fb52fbb72b633280df691b87fe3ddda3ec7b28566964"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b21_rho.csv",
+      "sha256": "ab0e765575a83307d15ad2bda5643745a47ec1234e793d27350f9699b3923b39"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b21_predictor_metrics.csv",
+      "sha256": "d8542826ca6d1a4db348559e8a0291c01ff4fcc34a757bc4d0ab24959c2dafa6"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b22_f9bm_probe_rho_per_seed.csv",
+      "sha256": "4adeb28ccff0744133a4615a9bd0ac7af98970ea2e6fecac1643580fc5d37b5d"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b22_f9m_predictor_metrics_per_seed.csv",
+      "sha256": "019dd017b764982103d97472689b083515a51d31570290e8dc2b18e433ec949f"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b19_majority_class_table.csv",
+      "sha256": "2ac03654c04765e6108fa6ae4cbd8e05f5bd5cbb119d2a93255a3b33b1172870"
+    },
+    {
+      "path": "run:v6-replication-20261003-1241/probes/evaluations/f9b/acdc_test.json",
+      "sha256": "69b3a725770e94db596984a25a18b6ffc5c1402865defca17cb3939a1baef40f"
+    },
+    {
+      "path": "run:v6-replication-20261003-1241/probes/evaluations/f9b/mms_external.json",
+      "sha256": "c7436f12237df91429366a30c223980c4d72b1484ec6bee782949aa79922b7fd"
+    },
+    {
+      "path": "run:v6-replication-20261003-1241/probes/evaluations/f9b/mms2_external.json",
+      "sha256": "7b517be800ac6c80c0df368ab9e7a7604bbfa92cd52988d5e8f1ea27f6cd3a7b"
+    },
+    {
+      "path": "manuscript/article/tables/v602/provenance.json",
+      "sha256": "aae42d17aecdaf95a3b9feb86bf99021e7abdde18b4f1e61fbc8c07b263d28e1"
+    }
+  ],
+  "outputs": {
+    "pdf": {
+      "file": "figure05_matched_comparators_b21_b22_accuracy.pdf",
+      "sha256": "2ad3d05a6c9a6ef3cf7cd2627d76e39ee98921664b3ed8810396d00f067b6f4d"
+    },
+    "png": {
+      "file": "figure05_matched_comparators_b21_b22_accuracy.png",
+      "sha256": "1b2795397386a704cb271fe8b9ecba01f77363f2c5894874f27061f6bfb032a4"
+    }
+  },
+  "format": {
+    "pdf": "vector, fonts embedded (Type 42), CreationDate removed",
+    "png": "400.0 dpi (house setting), Software tag removed"
+  },
+  "metric": "accuracy",
+  "plotted": {
+    "accuracy": {
+      "acdc_test": {
+        "desc": [
+          0.88,
+          0.78,
+          0.96
+        ],
+        "d20": [
+          0.36,
+          0.24,
+          0.5
+        ],
+        "d20p": [
+          0.4,
+          0.28,
+          0.54
+        ],
+        "d20m": [
+          0.64,
+          0.5,
+          0.76
+        ],
+        "f9_20261011": [
+          0.58,
+          0.44,
+          0.72
+        ],
+        "f9m_20261011": [
+          0.72,
+          0.6,
+          0.84
+        ],
+        "f9_20261012": [
+          0.42,
+          0.28,
+          0.56
+        ],
+        "f9m_20261012": [
+          0.66,
+          0.52,
+          0.78
+        ],
+        "f9_20261013": [
+          0.7,
+          0.58,
+          0.82
+        ],
+        "f9m_20261013": [
+          0.76,
+          0.64,
+          0.86
+        ]
+      },
+      "mms_external": {
+        "desc": [
+          0.5257352941176471,
+          0.46494464944649444,
+          0.5875912408759124
+        ],
+        "d20": [
+          0.16176470588235295,
+          0.12087912087912088,
+          0.20512820512820512
+        ],
+        "d20p": [
+          0.1654411764705882,
+          0.1217712177121771,
+          0.2103321033210332
+        ],
+        "d20m": [
+          0.2794117647058823,
+          0.2242647058823529,
+          0.3321036577154093
+        ],
+        "f9_20261011": [
+          0.5588235294117647,
+          0.5,
+          0.6162361623616236
+        ],
+        "f9m_20261011": [
+          0.4411764705882353,
+          0.3809523809523809,
+          0.4982142857142854
+        ],
+        "f9_20261012": [
+          0.375,
+          0.3161764705882353,
+          0.4338235294117647
+        ],
+        "f9m_20261012": [
+          0.2904411764705882,
+          0.2361623616236162,
+          0.3443223443223443
+        ],
+        "f9_20261013": [
+          0.19852941176470587,
+          0.15129151291512916,
+          0.24723247232472326
+        ],
+        "f9m_20261013": [
+          0.1801470588235294,
+          0.1360294117647058,
+          0.2242853945083567
+        ]
+      },
+      "mms2_external": {
+        "desc": [
+          0.7058823529411765,
+          0.5882352941176471,
+          0.8088235294117647
+        ],
+        "d20": [
+          0.058823529411764705,
+          0.014705882352941176,
+          0.11764705882352941
+        ],
+        "d20p": [
+          0.0441176470588235,
+          0.0,
+          0.088235294117647
+        ],
+        "d20m": [
+          0.1176470588235294,
+          0.0441176470588235,
+          0.2058823529411764
+        ],
+        "f9_20261011": [
+          0.7205882352941176,
+          0.6176470588235294,
+          0.8235294117647058
+        ],
+        "f9m_20261011": [
+          0.4852941176470588,
+          0.3676470588235294,
+          0.6029411764705882
+        ],
+        "f9_20261012": [
+          0.5147058823529411,
+          0.39705882352941174,
+          0.6323529411764706
+        ],
+        "f9m_20261012": [
+          0.2352941176470588,
+          0.1323529411764706,
+          0.3238970588235274
+        ],
+        "f9_20261013": [
+          0.10294117647058823,
+          0.029411764705882353,
+          0.17647058823529413
+        ],
+        "f9m_20261013": [
+          0.1176470588235294,
+          0.0441176470588235,
+          0.1911764705882352
+        ]
+      }
+    },
+    "majority_rate": {
+      "acdc_test": 0.2,
+      "mms_external": 0.3529411764705882,
+      "mms2_external": 0.5735294117647058
+    }
+  },
+  "rules": [
+    "recorded representations from the v6.0.1 parquet (estimate rows; seed -1 for descriptors and D20); F9b rho of all three seeds from the frozen run's probes/evaluations/f9b/<partition>.json (the parquet holds the primary seed only and is checked against it)",
+    "D20-P, D20-M: b21_rho.csv (scope family, quantity rho) and b21_predictor_metrics.csv; F9-M: b22_f9m_predictor_metrics_per_seed.csv; F9b-M: b22_f9bm_probe_rho_per_seed.csv",
+    "B21/B22 rho on mms_external is scored on 319 cases (one critical-QC case excluded); the recorded representations on 320",
+    "accuracy: majority-class rate per partition from b19_majority_class_table.csv (solid segment), uniform chance 0.20 dotted; macro-F1: no reference line (no recorded macro-F1 reference); AUROC: chance 0.5 dotted"
+  ],
+  "encoding": {
+    "mask_descriptors": "teal #008FA8 filled circle",
+    "d20": "vermilion #E35B2C filled diamond",
+    "d20p": "vermilion open diamond",
+    "d20m": "dark vermilion #9C3510 filled diamond",
+    "f9_f9b": "violet #7D55C7; seed 20261011 filled square, 20261012 open up-triangle, 20261013 open down-triangle",
+    "f9m_f9bm": "dark violet #4B2B90; seed 20261011 filled square, 20261012 open left-triangle, 20261013 open right-triangle",
+    "slot_order": "descriptors | D20, D20-P, D20-M | F9 seeds | F9-M seeds"
+  }
+}

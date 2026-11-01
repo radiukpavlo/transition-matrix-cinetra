@@ -1,0 +1,13 @@
+tree ad4a5171861d97230d1245db0cdc0a0a7f63a4fc
+parent ddf1a0301c7b102d605ba7c344f4cca82e2adf83
+author Pavlo Radiuk <radiukpavlo@gmail.com> 1793145338 +0200
+committer Pavlo Radiuk <radiukpavlo@gmail.com> 1793145338 +0200
+
+protocol: record the new signing key of protocol-v6.0.2
+
+The owner signs protocol-v6.0.2 with a new SSH signing key
+(SHA256:c9dOTnKGvYWK6Sm1EazEB+5zVb9UfPXRHqVVWvwn+q8). protocol-v6.0.0 and
+protocol-v6.0.1 keep their signatures by SHA256:udGJ/HSuNA0hdZJhFwtj1gC7EKrCJ1cG+oQt2OsV7kw.
+The revision plan notes that the public export must list both keys.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

@@ -1,4 +1,4 @@
-# Public edition of the registered file `registry/sources/mms_full_release_receipt.yaml` (protocol-v6.0.1, git blob `11727ee97713`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
+# Public edition of the registered file `registry/sources/mms_full_release_receipt.yaml` (protocol-v6.0.5, git blob `11727ee97713`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
 # Source receipt: complete M&Ms-1 open release (protocol CMR-TRANS-AUDIT 6.0.0, Decisions D1, D2, D23).
 # Identifiers, release split, sizes and SHA-256 only. Pathology, demographics, vendor and centre are never tracked:
 # v6 code reads them at run time from the mounted information CSV (src/tmmri/ingest/mms.py).

@@ -1,0 +1,114 @@
+{
+  "figure": "figure03_median_baseline_b13",
+  "label": "EXPLORATORY_POST_HOC",
+  "run_id": "v6-postfreeze-20261028-0201",
+  "source_run_id": "v6-replication-20261003-1241",
+  "protocol_tag": "protocol-v6.0.2",
+  "date": "2026-10-28",
+  "evidence_pack_written": "2026-10-28",
+  "note": "evidence render of recorded aggregates; nothing fitted, resampled, re-estimated or recomputed",
+  "script": {
+    "path": "manuscript/scripts/render_v602_figures.py",
+    "sha256": "e41759210e7ea9b587adfa90d895a0bf6d3ce045d64e9e0a5dc05b1bddc1fcce"
+  },
+  "house_style": {
+    "path": "manuscript/scripts/render_postfreeze_figures.py",
+    "sha256": "e49a3387f14027d2b8309e8c1e7105a77a195685f1e97467b50ee75cbd9d40a6"
+  },
+  "inputs": [
+    {
+      "path": "manuscript/article/tables/v602/b13_side_by_side_with_mean_null.csv",
+      "sha256": "983047773d614c793ee78db96ffb6497a40bcca5e037492e00f0dbe04e2811c3"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b13_rho_median.csv",
+      "sha256": "6e55bf94bdf932fa4b4397a3f4daa4b89134e0586fba4625c4b79ed9a817eafd"
+    },
+    {
+      "path": "manuscript/article/tables/v602/provenance.json",
+      "sha256": "aae42d17aecdaf95a3b9feb86bf99021e7abdde18b4f1e61fbc8c07b263d28e1"
+    }
+  ],
+  "outputs": {
+    "pdf": {
+      "file": "figure03_median_baseline_b13.pdf",
+      "sha256": "e0254d7bdb84b95ca259239e385bfc9f388e012269d525b23307f69a32ffecfb"
+    },
+    "png": {
+      "file": "figure03_median_baseline_b13.png",
+      "sha256": "5deb44c09771c22b4512ace11f83f91994e79075ae53150ee11634f4da0c146d"
+    }
+  },
+  "format": {
+    "pdf": "vector, fonts embedded (Type 42), CreationDate removed",
+    "png": "400.0 dpi (house setting), Software tag removed"
+  },
+  "plotted": {
+    "acdc_dev_oof": {
+      "mean_null": [
+        0.5318344587892062,
+        0.4736202932861754,
+        0.5789434811233656
+      ],
+      "median_null": [
+        0.5222865351408946,
+        0.4656191611931992,
+        0.5672166128619961
+      ],
+      "n_clusters": 98,
+      "n_cases": 98
+    },
+    "acdc_test": {
+      "mean_null": [
+        0.5525082970070413,
+        0.473339563327321,
+        0.6192633930212394
+      ],
+      "median_null": [
+        0.5471976852415331,
+        0.4660286056025026,
+        0.611707859901507
+      ],
+      "n_clusters": 50,
+      "n_cases": 50
+    },
+    "mms_external": {
+      "mean_null": [
+        0.1833678132712849,
+        0.0210582275185283,
+        0.2899646352072752
+      ],
+      "median_null": [
+        0.0599555030308544,
+        -0.1518750733554531,
+        0.1927886025965938
+      ],
+      "n_clusters": 317,
+      "n_cases": 319
+    },
+    "mms2_external": {
+      "mean_null": [
+        0.3112415183190021,
+        0.2328466307768755,
+        0.3817447909296376
+      ],
+      "median_null": [
+        0.2931088908495186,
+        0.2115048686284622,
+        0.3636202918240337
+      ],
+      "n_clusters": 180,
+      "n_cases": 180
+    }
+  },
+  "rules": [
+    "mean null: recorded value (recorded_mean_null and its interval) where B13 reproduces it; on mms_external the recomputed mean null of arm mean_null (319 cases, one critical-QC case excluded; recorded 0.192 on 320 cases stays the reference of the house Figure 3)",
+    "median null: median_null of b13_side_by_side_with_mean_null.csv (acdc_dev_oof: outer-training median of each fold, arm median_null_outer_training)",
+    "the house Figure 3 shows the overall rho only; rho_volumes and rho_EF are not drawn; the H2 never-analyzed sensitivity row has no B13 counterpart",
+    "exposure wording follows D38 (protocol-v6.0.2): retrospective (ACDC test, M&Ms-1), preregistered held-out (M&Ms-2)"
+  ],
+  "encoding": {
+    "development_mean": "teal #008FA8 filled circle",
+    "development_median": "teal open circle"
+  }
+}

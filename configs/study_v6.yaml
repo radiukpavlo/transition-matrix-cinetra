@@ -1,4 +1,4 @@
-# Public edition of the registered file `configs/study_v6.yaml` (protocol-v6.0.1, git blob `6eca666768ad`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
+# Public edition of the registered file `configs/study_v6.yaml` (protocol-v6.0.5, git blob `6eca666768ad`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
 # CMR-TRANS-AUDIT study configuration, frozen with SPECIFICATION.md 6.0.0 (2026-09-28), Sections 0, 4, 12, 14 and 15.
 # Every value marked [PRESPEC] in the specification lives in configs/ or registry/. Changing any value after the
 # protocol-v6.0.0 tag requires a dated entry in protocol/amendments.md and a new tag protocol-v6.0.x. Decision D25.

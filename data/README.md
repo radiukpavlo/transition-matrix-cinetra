@@ -1,4 +1,4 @@
-> Public edition of the registered file `data/README.md` (protocol-v6.0.1, git blob `e6b1ad56cf18`); operational details are replaced as listed in EDITIONS.md.
+> Public edition of the registered file `data/README.md` (protocol-v6.0.5, git blob `e6b1ad56cf18`); operational details are replaced as listed in [EDITIONS.md](../protocol/registration/EDITIONS.md).
 
 # Data runtime root
 

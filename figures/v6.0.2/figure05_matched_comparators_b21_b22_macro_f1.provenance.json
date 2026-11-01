@@ -1,0 +1,250 @@
+{
+  "figure": "figure05_matched_comparators_b21_b22_macro_f1",
+  "label": "EXPLORATORY_POST_HOC",
+  "run_id": "v6-postfreeze-20261028-0201",
+  "source_run_id": "v6-replication-20261003-1241",
+  "protocol_tag": "protocol-v6.0.2",
+  "date": "2026-10-28",
+  "evidence_pack_written": "2026-10-28",
+  "note": "evidence render of recorded aggregates; nothing fitted, resampled, re-estimated or recomputed",
+  "script": {
+    "path": "manuscript/scripts/render_v602_figures.py",
+    "sha256": "e41759210e7ea9b587adfa90d895a0bf6d3ce045d64e9e0a5dc05b1bddc1fcce"
+  },
+  "house_style": {
+    "path": "manuscript/scripts/render_postfreeze_figures.py",
+    "sha256": "e49a3387f14027d2b8309e8c1e7105a77a195685f1e97467b50ee75cbd9d40a6"
+  },
+  "inputs": [
+    {
+      "path": "manuscript/article/tables/v601/comparison/figure05_representation_panel.parquet",
+      "sha256": "9d8a1d9b403a20f6b2f7fb52fbb72b633280df691b87fe3ddda3ec7b28566964"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b21_rho.csv",
+      "sha256": "ab0e765575a83307d15ad2bda5643745a47ec1234e793d27350f9699b3923b39"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b21_predictor_metrics.csv",
+      "sha256": "d8542826ca6d1a4db348559e8a0291c01ff4fcc34a757bc4d0ab24959c2dafa6"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b22_f9bm_probe_rho_per_seed.csv",
+      "sha256": "4adeb28ccff0744133a4615a9bd0ac7af98970ea2e6fecac1643580fc5d37b5d"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b22_f9m_predictor_metrics_per_seed.csv",
+      "sha256": "019dd017b764982103d97472689b083515a51d31570290e8dc2b18e433ec949f"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b19_majority_class_table.csv",
+      "sha256": "2ac03654c04765e6108fa6ae4cbd8e05f5bd5cbb119d2a93255a3b33b1172870"
+    },
+    {
+      "path": "run:v6-replication-20261003-1241/probes/evaluations/f9b/acdc_test.json",
+      "sha256": "69b3a725770e94db596984a25a18b6ffc5c1402865defca17cb3939a1baef40f"
+    },
+    {
+      "path": "run:v6-replication-20261003-1241/probes/evaluations/f9b/mms_external.json",
+      "sha256": "c7436f12237df91429366a30c223980c4d72b1484ec6bee782949aa79922b7fd"
+    },
+    {
+      "path": "run:v6-replication-20261003-1241/probes/evaluations/f9b/mms2_external.json",
+      "sha256": "7b517be800ac6c80c0df368ab9e7a7604bbfa92cd52988d5e8f1ea27f6cd3a7b"
+    },
+    {
+      "path": "manuscript/article/tables/v602/provenance.json",
+      "sha256": "aae42d17aecdaf95a3b9feb86bf99021e7abdde18b4f1e61fbc8c07b263d28e1"
+    }
+  ],
+  "outputs": {
+    "pdf": {
+      "file": "figure05_matched_comparators_b21_b22_macro_f1.pdf",
+      "sha256": "d4705f0e9527f743f0cad40270b4c508437976a3027110ccd293f3a50bed5732"
+    },
+    "png": {
+      "file": "figure05_matched_comparators_b21_b22_macro_f1.png",
+      "sha256": "7514a6830739b85e116abe67c253d1565f98653bcba9bdae87e4b9e863cd51b8"
+    }
+  },
+  "format": {
+    "pdf": "vector, fonts embedded (Type 42), CreationDate removed",
+    "png": "400.0 dpi (house setting), Software tag removed"
+  },
+  "metric": "macro_f1",
+  "plotted": {
+    "macro_f1": {
+      "acdc_test": {
+        "desc": [
+          0.8792283739652159,
+          0.7776653890249444,
+          0.9567076116689185
+        ],
+        "d20": [
+          0.35318015318015317,
+          0.22110782430130257,
+          0.4787195552985026
+        ],
+        "d20p": [
+          0.3867465867465867,
+          0.249169874472506,
+          0.5090979218594779
+        ],
+        "d20m": [
+          0.6452525252525252,
+          0.4977956474897651,
+          0.7665220701435536
+        ],
+        "f9_20261011": [
+          0.515527950310559,
+          0.402923823640128,
+          0.6095241055241053
+        ],
+        "f9m_20261011": [
+          0.7025816288974183,
+          0.5623816036045138,
+          0.8152203901495866
+        ],
+        "f9_20261012": [
+          0.3120772946859903,
+          0.21596780758556897,
+          0.40300518942754965
+        ],
+        "f9m_20261012": [
+          0.6485714285714286,
+          0.4992185592185593,
+          0.7626345898261916
+        ],
+        "f9_20261013": [
+          0.6818718791864572,
+          0.5476357142857142,
+          0.792204519989814
+        ],
+        "f9m_20261013": [
+          0.7618236768391566,
+          0.6291662749157635,
+          0.8655491851144025
+        ]
+      },
+      "mms_external": {
+        "desc": [
+          0.5011070853462157,
+          0.4169571810219569,
+          0.5759132172857465
+        ],
+        "d20": [
+          0.12860819994948852,
+          0.09777330242684451,
+          0.1610022661073652
+        ],
+        "d20p": [
+          0.1313770414983022,
+          0.0995935033915268,
+          0.1636042078668692
+        ],
+        "d20m": [
+          0.265469541614671,
+          0.2108827835141444,
+          0.3152336057268313
+        ],
+        "f9_20261011": [
+          0.526272647918789,
+          0.4559865376180495,
+          0.5913276747107347
+        ],
+        "f9m_20261011": [
+          0.4397244142024303,
+          0.3839605510234486,
+          0.4912602699338616
+        ],
+        "f9_20261012": [
+          0.23564514955243432,
+          0.201044224149822,
+          0.2682156629001317
+        ],
+        "f9m_20261012": [
+          0.2960525383301336,
+          0.2414891378472919,
+          0.3463180005469861
+        ],
+        "f9_20261013": [
+          0.19852299168649998,
+          0.1540064674883237,
+          0.24002737392070106
+        ],
+        "f9m_20261013": [
+          0.2045971061726508,
+          0.1567908354388401,
+          0.2503433659875716
+        ]
+      },
+      "mms2_external": {
+        "desc": [
+          0.7000528541226215,
+          0.5755882741027446,
+          0.8087397805507746
+        ],
+        "d20": [
+          0.11213517665130568,
+          0.021739130434782608,
+          0.20917952365320783
+        ],
+        "d20p": [
+          0.07984496124031,
+          0.0,
+          0.1630704293912686
+        ],
+        "d20m": [
+          0.1791666666666666,
+          0.075,
+          0.2869688435134658
+        ],
+        "f9_20261011": [
+          0.7638888888888888,
+          0.655525190191661,
+          0.8535050466389671
+        ],
+        "f9m_20261011": [
+          0.606060606060606,
+          0.4769660087719298,
+          0.713404151983374
+        ],
+        "f9_20261012": [
+          0.3723404255319149,
+          0.3176470588235294,
+          0.4158415841584158
+        ],
+        "f9m_20261012": [
+          0.3058275058275058,
+          0.1773617511520738,
+          0.4283943704600484
+        ],
+        "f9_20261013": [
+          0.1846590909090909,
+          0.06117424242424245,
+          0.29600058108349725
+        ],
+        "f9m_20261013": [
+          0.1917892156862745,
+          0.0763149460188934,
+          0.3035096438029034
+        ]
+      }
+    }
+  },
+  "rules": [
+    "recorded representations from the v6.0.1 parquet (estimate rows; seed -1 for descriptors and D20); F9b rho of all three seeds from the frozen run's probes/evaluations/f9b/<partition>.json (the parquet holds the primary seed only and is checked against it)",
+    "D20-P, D20-M: b21_rho.csv (scope family, quantity rho) and b21_predictor_metrics.csv; F9-M: b22_f9m_predictor_metrics_per_seed.csv; F9b-M: b22_f9bm_probe_rho_per_seed.csv",
+    "B21/B22 rho on mms_external is scored on 319 cases (one critical-QC case excluded); the recorded representations on 320",
+    "accuracy: majority-class rate per partition from b19_majority_class_table.csv (solid segment), uniform chance 0.20 dotted; macro-F1: no reference line (no recorded macro-F1 reference); AUROC: chance 0.5 dotted"
+  ],
+  "encoding": {
+    "mask_descriptors": "teal #008FA8 filled circle",
+    "d20": "vermilion #E35B2C filled diamond",
+    "d20p": "vermilion open diamond",
+    "d20m": "dark vermilion #9C3510 filled diamond",
+    "f9_f9b": "violet #7D55C7; seed 20261011 filled square, 20261012 open up-triangle, 20261013 open down-triangle",
+    "f9m_f9bm": "dark violet #4B2B90; seed 20261011 filled square, 20261012 open left-triangle, 20261013 open right-triangle",
+    "slot_order": "descriptors | D20, D20-P, D20-M | F9 seeds | F9-M seeds"
+  }
+}

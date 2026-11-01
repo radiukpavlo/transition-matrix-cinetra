@@ -1,0 +1,4 @@
+source,n_cases,n_excluded_no_decision,n_unstable_cells,n_fold1,n_fold2,n_fold3,n_fold4,n_fold5,n_decision_DCM,n_decision_HCM,n_decision_MINF,n_decision_NOR,n_decision_RV
+acdc_dev,98,0,0,20,20,20,20,18,20,20,19,19,20
+mms_external,319,0,270,65,64,64,63,63,24,62,34,186,13
+pooled,417,0,270,85,84,84,83,81,44,82,53,205,33

@@ -245,7 +245,8 @@ def test_lane_l3_stages_on_a_synthetic_run(tmp_path, monkeypatch, capsys):
     _edit_yaml(study_path.parent / "exploratory.yaml", _fast)
     run_id = "v6-l3-20261003-1000"
     common = ["--study", str(study_path), "--run-id", run_id, "--artifact-root", str(tmp_path / "artifacts"), "--data-root", str(tmp_path / "data"),
-              "--acdc-source", str(acdc), "--mms-source", str(mms), "--n-jobs", "1", "--allow-unfrozen-synthetic"]
+              "--acdc-source", str(acdc), "--mms-source", str(mms), "--mms2-source", str(tmp_path / "src" / "mms2"),
+              "--n-jobs", "1", "--allow-unfrozen-synthetic"]
     code, out = _run(["run", *common, "--until", "audit-shift"], capsys)
     assert code == 0, out
     run = tmp_path / "artifacts" / run_id

@@ -49,6 +49,14 @@ REQUIRED_DIRECTORIES = (
     "legacy/v5/data/for_rules",
     "legacy/v5/data/interim",
     "legacy/v5/data/splits",
+    "manuscript/article/figures/v601",
+    "manuscript/article/tables/v601",
+    "manuscript/article/figures/v602",
+    "manuscript/article/tables/v602",
+    "manuscript/article/tables/v603",
+    "manuscript/article/tables/v604",
+    "manuscript/archive/xai_cri_v5",
+    "manuscript/knowledge_base",
     "manuscript/scripts",
     "registry/sources",
     "scripts/clinical_validation",
@@ -76,6 +84,9 @@ REQUIRED_FILES = (
     "docs/EXPERIMENT_AGENTS_PROMPT.md",
     "docs/EXPERIMENT_EXECUTION_PLAN.md",
     "docs/V601_EXECUTION_RUNBOOK.md",
+    "manuscript/knowledge_base/README.md",
+    "manuscript/knowledge_base/00_SESSION_START.md",
+    "manuscript/article/supply.tex",
     "docs/history/README.md",
     "docs/adr/0001-acdc-development-full-mms-external.md",
     "docs/adr/0002-v6-protocol-decisions.md",
@@ -174,6 +185,16 @@ def _allowlisted_path(path: Path) -> bool:
         or text == "tests/test_clinical_workflow.py"
         or text.startswith("docs/history/")
         or text.startswith("manuscript/archive/")
+        # Paper-1 evidence pack: verbatim copies of recorded run artifacts (their TeX escapes run-root paths).
+        or text.startswith("manuscript/article/tables/v601/")
+        or text.startswith("manuscript/article/figures/v601/")
+        # Revision-4 evidence pack: aggregate exports of the post-freeze run (protocol-v6.0.2).
+        or text.startswith("manuscript/article/tables/v602/")
+        or text.startswith("manuscript/article/figures/v602/")
+        # Revision-4 evidence pack of the second post-freeze run (protocol-v6.0.3).
+        or text.startswith("manuscript/article/tables/v603/")
+        # Revision-4 evidence pack of the third post-freeze run (protocol-v6.0.4).
+        or text.startswith("manuscript/article/tables/v604/")
         or text.startswith("manuscript/reports/")
         or text.startswith("legacy/")
         or text.startswith("clinical_validation/")
@@ -191,7 +212,7 @@ def _active_markdown(path: Path) -> bool:
     return (
         text.startswith("docs/")
         and not historical
-    ) or text.startswith("manuscript/notes/") or text == "manuscript/readme.md" or text == "manuscript/reports/clinical_validation/readme.md" or text.startswith("scripts/") or text == "configs/readme.md" or text == "data/readme.md" or text == "artifacts/readme.md"
+    ) or text.startswith(("manuscript/notes/", "manuscript/knowledge_base/")) or text == "manuscript/readme.md" or text == "manuscript/reports/clinical_validation/readme.md" or text.startswith("scripts/") or text == "configs/readme.md" or text == "data/readme.md" or text == "artifacts/readme.md"
 
 
 def _read_text(root: Path, path: Path) -> str | None:
@@ -294,7 +315,7 @@ def _check_manuscript_dependencies(root: Path) -> list[str]:
             if not bib_path.is_file():
                 violations.append(f"manuscript/article/main.tex: missing bibliography {bib_path.relative_to(root).as_posix()}")
 
-    graphics_roots = [article / "figures" / "generated", article / "figures" / "clinical_validation"]
+    graphics_roots = [article / "figures" / "v601", article / "figures" / "paper1", article / "figures" / "generated", article / "figures" / "clinical_validation"]
     for graphics_root in graphics_roots:
         if not graphics_root.is_dir():
             violations.append(f"{graphics_root.relative_to(root).as_posix()}: active graphics directory is missing")

@@ -1,0 +1,188 @@
+# Post-freeze exploratory block B10-B22 (protocol-v6.0.2 amendment; SPECIFICATION.md 6.0.2, Sections 0.4 and 13.7;
+# protocol/amendments.md, row of 27 October 2026). Requested by the BDCC editorial pre-check of 26 October 2026
+# (manuscript/knowledge_base/prompts/paper1_editorial_precheck_request.md) and adopted by the owner on 27 October 2026
+# (manuscript/reports/paper1/REVISION4_IMPLEMENTATION_PLAN.md, decisions RD-1 to RD-19).
+# Declared post hoc: every partition except mms2_sealed was unblinded when this file was written. Every output and
+# provenance record is labelled EXPLORATORY_POST_HOC; the analyses explain recorded results and never confirm them.
+# Effect sizes with descriptive intervals only: no p-values, no significance language, no post-hoc power.
+# Separate lane file on purpose: configs/exploratory.yaml (B1-B9) and every file hashed by the frozen run stay unchanged.
+# Code: src/tmmri/experiments/postfreeze/ (added before the tag). CLI: run-postfreeze --analysis B<k>.
+# Nothing in this block runs on cohort data before the owner signs protocol-v6.0.2 on the commit that holds this file
+# and the code.
+specification_version: "6.0.2"
+label: EXPLORATORY_POST_HOC
+
+source_run:                                     # read-only; never written, never re-evaluated
+  run_id: v6-replication-20261003-1241
+  root: artifacts/v6-replication-20261003-1241  # container path /workspace/artifacts/<run_id> (volume tmmri_artifacts)
+  input_check: "every file read from the source run is verified against the SHA-256 recorded in its stage record or release_manifest.json; any mismatch refuses the analysis"
+  staged_data: "staged images, masks and staging manifests under /workspace/data (volume tmmri_data), read only by B12 (geometry), B21 and B22, verified against the staging manifests"
+output:
+  run_id_template: v6-postfreeze-{YYYYMMDD}-{HHMM}   # a new run root; nothing is written into the source run
+  per_analysis_dir: postfreeze/{B#}             # artifacts/<new run_id>/postfreeze/<B#>/ with provenance.json beside every output
+  repeat_policy: "a repeat needs a new run id and is reported as a repeat, never as a replacement (as D26)"
+
+policy:
+  fit_partition: acdc_dev                       # the only partition any new estimator, threshold, cut or setting is fitted on
+  folds: "the recorded outer folds (contracts/split_manifest.parquet outer_fold) and inner folds (contracts/inner_folds.parquet) of the source run"
+  evaluated_partitions: [acdc_test, mms_external, mms2_external]
+  development_report: acdc_dev_oof              # nested out-of-fold development results, labelled development
+  never: [mms2_sealed, mms_refit_eval]          # mms2_sealed is never extracted; the refit arm is not part of this block
+  no_tuning: "no hyperparameter, threshold, cut, bin count, gate bound or selection uses acdc_test, mms_external or mms2_external; every setting is fixed here or inherited from the frozen configuration"
+  freeze_before_evaluation: "each new fitted object is written and hashed in the new run root before any evaluated partition is processed; each partition is evaluated once per object"
+  locks: "mms2_external only through the M&Ms-2 lock of protocol-v6.0.1 and its passed validate-cohort record; critical-QC rows excluded as in every v6 fit and evaluation"
+  qc: "rows and cells follow the source run: critical-QC rows excluded; only OBSERVED cells of B are scored; no value of B is imputed"
+  compute: "local only (CPU, and the local GPU for B21 and B22); no cloud processing; CPE-1 and CSE-1 unchanged"
+
+statistics:
+  bootstrap: {replicates: 2000, seed: 20260928, level: 0.95, unit: cluster_id, interval: percentile, paired: true}
+  proportions: wilson                           # with numerator and denominator
+  min_cases_per_stratum: 20                     # below: point estimates with NE intervals (STRATUM_BELOW_MIN_CASES)
+  primary_targets: [lv_edv_ml, lv_esv_ml, lv_ef_percent, rv_edv_ml, rv_esv_ml, rv_ef_percent, lv_myocardial_mass_ed_g]
+  ef_targets: [lv_ef_percent, rv_ef_percent]
+  volume_targets: [lv_edv_ml, lv_esv_ml, rv_edv_ml, rv_esv_ml, lv_myocardial_mass_ed_g]
+  rho: "rho_j and rho exactly as Equation E1 (Section 3.3): MAE in physical units against the acdc_dev mean null; rho withdrawn below five estimable targets"
+  normalized_mae: "MAE divided by the acdc_dev fit-row SD s_j of the target (as nMAE of the source run)"
+  comparisons: "paired differences against the primary ridge of the source run on the same cases and the same resampled clusters"
+
+estimators:                                     # every estimator fitted by this block; fit partition acdc_dev only (the lane's registry)
+  - {id: ridge_typed_fractions17, analysis: B11, fit: acdc_dev}
+  - {id: ridge_typed_intensities40, analysis: B11, fit: acdc_dev}
+  - {id: ridge_typed_formal57_plus_geometry3, analysis: B12, fit: acdc_dev}
+  - {id: lr_decision_link_bhat7, analysis: B18, fit: acdc_dev}
+  - {id: lr_decision_link_bhat9, analysis: B18, fit: acdc_dev}
+  - {id: lr_decision_link_measured7, analysis: B18, fit: acdc_dev}
+  - {id: d20p_transition_and_predictor, analysis: B21, fit: acdc_dev}
+  - {id: d20m_transition_and_predictor, analysis: B21, fit: acdc_dev}
+  - {id: f9m_networks_and_f9bm_probes, analysis: B22, fit: acdc_dev}
+
+analyses:
+  B10:
+    title: analytical ejection fraction from the voxel fractions (no learning)
+    answers: EPC-1
+    formula: "EF_k = 100 * (f_ED,k - f_ES,k) / f_ED,k for k = LV (label 1) and RV (label 3), with f the per-phase label voxel fraction of formal A (fd_l1_fraction_ed, fd_l1_fraction_es; fd_l3_fraction_ed, fd_l3_fraction_es)"
+    not_applicable: "as the registry: NOT_APPLICABLE when the measured EDV < 1 mL; f_ED,k = 0 gives NE"
+    exactness_check: "count of cases with |EF_analytical - EF_B| > 1e-6 percentage points per partition (unequal ED and ES voxel grids or a B state other than OBSERVED); reported, never corrected"
+    partitions: [acdc_dev, acdc_test, mms_external, mms2_external]
+    outputs: [per_target_mae_bias_loa, rho_ef, rho_j, exactness_counts, paired_difference_vs_primary_ridge]
+  B11:
+    title: descriptor-family ablations of the typed transition
+    answers: EPC-1
+    families:                                   # regular expressions on the formal descriptor names (configs/formal.yaml)
+      fractions17: "fraction"                   # 8 per-phase label fractions and 9 label-fraction terms (rank <= 6)
+      intensities40: "^(?!.*fraction)"          # mean, SD, median, p25 and p75 per label and phase
+    fitting: "identical to the primary transition (configs/transition.yaml): nested outer and inner folds, the 21-value lambda grid with ties to the larger value, typed transforms, winsorization at the 1st and 99th fit percentiles, standardization fitted on the fitting rows, columns with zero fit variance dropped; only the descriptor columns differ"
+    outputs: [rho, rho_ef, rho_volumes, rho_j, per_target_mae_bias_loa, paired_difference_vs_primary_ridge]
+  B12:
+    title: geometry-aware reconstruction and error decomposition
+    answers: EPC-1
+    analytical_volumes: "V_k,phase = f_k,phase * N_phase * dx * dy * dz / 1000 mL, with N_phase the voxel count of the phase array (staging manifest image_shape), dx and dy the in-plane spacing and dz the slice increment as in B (never the slice thickness); LV mass = V_myo,ED * 1.05 g/mL; the maximum absolute difference from B is reported per partition"
+    geometry_covariates:                        # appended to the 57 descriptors for the learned variant
+      log_voxel_volume_ml: "log(dx * dy * dz / 1000)"
+      log_imaged_volume_ml: "log(N_ED * dx * dy * dz / 1000)"
+      log_slice_count: "log(number of slices of the ED array)"
+    learned_variant: ridge_typed_formal57_plus_geometry3   # fitted exactly as B11
+    decomposition: "per target, in normalized MAE (divided by s_j): approximation = learned error where the information is present (geometry-aware ridge on the volumes, primary ridge on EF; analytical error as reference, internal partitions); missing_information = primary ridge minus geometry-aware ridge on the same partition; shift = geometry-aware ridge on each external partition minus on acdc_test"
+    outputs: [analytical_exactness, rho, rho_volumes, rho_ef, rho_j, per_target_mae_bias_loa, decomposition_table]
+  B13:
+    title: development-median baseline
+    answers: EPC-6
+    "null": "the acdc_dev median of each target in physical units over the non-critical-QC rows (for acdc_dev_oof: the median of the outer-training rows of each fold)"
+    outputs: [rho_median, rho_j_median, rho_ef_median, side_by_side_with_mean_null]
+    rule: "reported beside the recorded mean-null results; it never replaces them and changes no recorded decision"
+  B14:
+    title: smallest effect of interest in physical units and a decision sweep
+    answers: EPC-6
+    translation: "0.10 * MAE_0,j (the mean-null MAE of each primary target on each partition) in physical units"
+    sweep_thresholds: [0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30]
+    sweep_rule: "for each recorded hypothesis estimate (H-primary-1, H-primary-2, its 220-case sensitivity, H-primary-3, H4a), whether the recorded lower bound exceeds each threshold; arithmetic on recorded intervals, no resampling"
+    outputs: [translation_table, sweep_table]
+  B15:
+    title: candidate-level rule ledger
+    answers: EPC-4
+    rulebooks: [d_model, dataset_label, measured_oracle]
+    concepts: "all nine rule concepts with their recorded eligibility, observed fraction, out-of-fold improvement, folds improved, minimum cut recurrence and reason"
+    candidates: "every conjunction of at most three feature-state literals on the eligible concepts with at least one supporting development patient, from the recorded granules and frozen cuts; consequent, support (patients), confidence"
+    pipeline_order: [concept_eligibility, granule_support_min_5, granule_confidence_min_0.90, crossfit_reproduction, pooled_matches_min_5, wilson_lower_min_0.60]
+    rejection_reason: "the first condition in pipeline_order that the candidate fails"
+    gate_statistics: "for every candidate reaching cross-fitting: folds reproduced, pooled held-out matches and agreements, agreement, Wilson 95% bounds, eligibility at gate bounds 0.50, 0.60 and 0.70 (recorded gate.parquet where present; otherwise recomputed with the recorded nested substrate)"
+    agreement_reference: "the fold-specific audited predictor refitted on each outer-training set (as the recorded gate); agreement with the final frozen predictor on the development rows is reported beside it, labelled in-sample"
+    outputs: [concept_table, candidate_ledger, rejection_counts_by_reason]
+  B16:
+    title: coverage-fidelity comparison of rule systems
+    answers: EPC-4
+    systems:
+      - primary_d_model                         # empty
+      - f4_discretizer_variants                 # rules/ablations/d_model_*.json, recorded settings
+      - f4_wedd_setting_variants
+      - f5_rule_policy_variants
+      - f5_gate_bounds_0.50_0.70
+      - companion_dataset_label                 # consequents are reference labels: report coverage, agreement with d_model and accuracy
+      - f8_cart_full
+      - f8_cart_selective
+    application: "each system with its own frozen cuts and rules; a variant whose cuts are not recorded is refitted on acdc_dev with its recorded settings, seeds and salts; no system is chosen or ranked by an evaluated partition"
+    metrics: "coverage (accepted / processed) and fidelity (agreement with d_model among accepted) with Wilson intervals; accuracy against the reference among accepted on the same-definition subsets"
+    partitions: [acdc_dev_oof, acdc_test, mms_external, mms2_external]
+    outputs: [coverage_fidelity_table, figure_data]
+  B17:
+    title: reliability of reconstructed concepts
+    answers: EPC-7
+    error: "per case and primary target, |B-hat - B| / s_j (raw reconstruction; OBSERVED cells)"
+    large_error_threshold: "per target, the 90th percentile of the same quantity on the acdc_dev out-of-fold reconstructions (fixed on development data)"
+    any_large: "a case is any-large if at least one primary target exceeds its threshold"
+    signals:
+      uncertainty: "1 - maximum softmax probability of the audited predictor"
+      accept_50: "not accepted at tau_50 (trust/s1_thresholds.json)"
+      accept_80: "not accepted at tau_80"
+      ood_score: "the S2 Mahalanobis score of the descriptors (trust/<p>/s2_scores.parquet)"
+      ood_flag: "the S2 flag"
+      unstable_bins: "number of the nine rule concepts with UNSTABLE_ESTIMATE (reconstructed/stability_d_model_<p>.parquet)"
+    metrics: "AUROC of each continuous signal for each large-error indicator (per target and any-large) and sensitivity, specificity and positive predictive value of each binary signal, with cluster-bootstrap or Wilson intervals"
+    symbol_errors: "for each concept with retained cuts, symbol error = bin of B-hat differs from bin of B under the frozen cuts; association of UNSTABLE_ESTIMATE with symbol error as 2 x 2 counts, sensitivity, specificity and risk ratio with intervals"
+    partitions: [acdc_test, mms_external, mms2_external]
+    outputs: [signal_auroc_table, binary_signal_table, symbol_error_table]
+  B18:
+    title: decision-link test (how much of the audited decisions the concepts carry)
+    answers: EPC-2
+    model: "multinomial logistic regression with the audited-predictor settings of configs/formal.yaml (L2, C = 1.0, no search) on standardized inputs fitted on acdc_dev"
+    target: "the final audited predictor's decisions d_model on acdc_dev (formal/d_model_ACDC_dev.parquet)"
+    inputs:
+      bhat7: "the seven primary targets of the development out-of-fold B-hat (typed transforms as the transition), applied to B-hat of each evaluated partition"
+      bhat9: "the nine rule concepts of the development out-of-fold B-hat; rows with a non-finite input are excluded and counted"
+      measured7: "the seven primary targets of measured B (same transforms), applied to measured B of each evaluated partition"
+    metrics: "fidelity (agreement with d_model of the same partition) with Wilson intervals; accuracy, macro-F1 and the majority-class rate on the same-definition subsets; beside the recorded F8 fidelity"
+    outputs: [decision_link_table]
+  B19:
+    title: majority-class references
+    answers: EPC-A2
+    source: "recorded class counts (metrics/predictor_<p>.json companions, metrics/predictor_confusion.parquet)"
+    rate: "largest reference-class count divided by the evaluable same-definition cases of each partition, with the class named; Wilson interval"
+    partitions: [acdc_test, mms_external, mms2_external]
+    outputs: [majority_class_table]
+  B20:
+    title: real processed cases for the worked example
+    answers: EPC-A4
+    cases: "the five ACDC test scans already shown in the worked-example figure (manuscript/article/figures/paper1/schematic_scans/provenance.json); ACDC only, never an M&Ms case"
+    fields: [measured_b, bhat_raw, bhat_decoded, bins_under_frozen_cuts, stability_flags, class_probabilities, accept_tau50, accept_tau80, ood_score, ood_flag, d_model_decision, reference_label, route_d_model, route_dataset_label, route_measured_oracle, f8_prediction]
+    identifiers: "outputs are keyed by figure slot (a, b1, b2, b3, b4); the slot-to-case mapping stays in the new run root and never enters the manuscript, the supplement or a public release (owner exception to manuscript evidence rule 06 for these five cases, 27 October 2026)"
+    outputs: [case_slots_table]
+  B21:
+    title: phase-preserving and mask-pooled frozen image representations (D20-P, D20-M)
+    answers: EPC-3
+    encoder: "as configs/deep_encoder.yaml: frozen ResNet-50 IMAGENET1K_V2 (registry/weights.yaml digest), canonical orientation, per-slice 1st/99th percentile normalization, bilinear antialiased resize to 224 x 224, grey replicated to 3 channels, ImageNet normalization, mean over the 8 D4 transforms"
+    d20p: "the 2048-d global-average-pooled feature averaged over the slices of each phase separately and over the D4 transforms; patient vector = [ED, ES], 4096-d"
+    d20m: "the layer4 feature map (2048 x 7 x 7) upsampled bilinearly to 224 x 224; the reference mask oriented, D4-transformed and resized to 224 x 224 by nearest neighbour exactly as the image; per phase and structure (LV cavity 1, myocardium 2, RV cavity 3) the feature mean over all structure pixels of all slices; mean over the D4 transforms; patient vector = 2 phases x 3 structures x 2048 = 12,288-d; a structure absent from a phase gives NE (INPUT_STRUCTURE_ABSENT), excluded and counted"
+    downstream: "as configs/deep_encoder.yaml downstream: standardization fitted on the fitting rows, the typed transition of configs/transition.yaml with the recorded folds, and the audited-predictor settings; no PCA"
+    outputs: [rho, rho_ef, rho_volumes, rho_j, accuracy, macro_f1, macro_auroc, chance_and_majority_rates]
+  B22:
+    title: mask-aware fine-tuned CNN (F9-M) and its concept probe (F9b-M)
+    answers: EPC-3
+    base: "F9 exactly as configs/f9_cnn.yaml and configs/neural_input.yaml (ResNet-18 IMAGENET1K_V1, 1.5 mm in-plane grid, 224 crop centred without the mask, the two geometry scalars, attention and max pooling per phase, [ED, ES, ED - ES], 64-d bottleneck, 5-class head, D4 augmentation and 8-transform inference)"
+    mask_channels: "three binary channels (LV cavity, myocardium, RV cavity) of the reference mask, resampled by nearest neighbour on the same 1.5 mm grid with the same crop or pad and the same D4 transform as the image; values 0 or 1, not ImageNet-normalized"
+    stem: "conv1 output = pretrained conv1 on the three image channels (frozen, as in F9) + a new 3-channel 7 x 7 convolution on the mask channels (64 filters, no bias, initialized at zero, trained at the new-layer rate); bn1 and everything after it unchanged"
+    settings: "for each seed (20261011, 20261012, 20261013) and fitting set (outer folds 1-5 and the final fit), the winning F9 candidate and its refit epoch count recorded in neural_f9/selection/selection_summary.json of the source run; one refit per seed and fitting set (18 fits); no selection fits and no early stopping"
+    probe: "F9b-M: the typed transition on the standardized 64 activations of each fold encoder, as configs/probes.yaml"
+    validity_gate: "development out-of-fold macro-F1 >= 0.30 per seed, reported; never used to select"
+    backend: local_gpu                          # GTX 1080 8 GB; IEEE FP32; deterministic algorithms; no cloud processing
+    fallback: "if fewer than three seeds complete, the completed seeds are reported with the missing ones marked not executed"
+    outputs: [per_seed_and_mean_rho, rho_ef, rho_volumes, accuracy, macro_f1, macro_auroc, validity_gate]

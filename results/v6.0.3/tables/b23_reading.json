@@ -1,0 +1,75 @@
+{
+  "claim": "the claim is replaced by the O2 statement",
+  "decision": "D43",
+  "descriptive_only": {
+    "acdc_test": {
+      "delta": -0.12,
+      "delta_ci_lower": -0.22000000000000008,
+      "delta_ci_upper": -0.020000000000000018,
+      "delta_status": "EVALUATED",
+      "enters_reading": false,
+      "fidelity_bhat7": 0.82,
+      "fidelity_bhat7_own_cases": 0.82,
+      "n_bhat7": 50,
+      "n_common_delta": 50,
+      "n_common_random7": 50,
+      "n_pca7": 50,
+      "n_random7": 50,
+      "outcome": "O2b",
+      "p95_random7": 0.8,
+      "partition": "acdc_test",
+      "statement": "less than the best seven-dimensional summary of the descriptors but more than random seven-dimensional projections"
+    }
+  },
+  "fixed_before_computation": true,
+  "not_executed": {},
+  "order": "O3 < O2b < O2 < O1",
+  "partitions": {
+    "mms2_external": {
+      "delta": -0.011111111111111183,
+      "delta_ci_lower": -0.07777777777777783,
+      "delta_ci_upper": 0.06666666666666665,
+      "delta_status": "EVALUATED",
+      "enters_reading": true,
+      "fidelity_bhat7": 0.7944444444444444,
+      "fidelity_bhat7_own_cases": 0.7944444444444444,
+      "n_bhat7": 180,
+      "n_common_delta": 180,
+      "n_common_random7": 180,
+      "n_pca7": 180,
+      "n_random7": 180,
+      "outcome": "O2",
+      "p95_random7": 0.6444444444444445,
+      "partition": "mms2_external",
+      "statement": "the concepts carry as much of the decision as the best seven-dimensional linear summary of the descriptors"
+    },
+    "mms_external": {
+      "delta": -0.01253918495297801,
+      "delta_ci_lower": -0.06269592476489028,
+      "delta_ci_upper": 0.037620512213875974,
+      "delta_status": "EVALUATED",
+      "enters_reading": true,
+      "fidelity_bhat7": 0.8087774294670846,
+      "fidelity_bhat7_own_cases": 0.8087774294670846,
+      "n_bhat7": 319,
+      "n_common_delta": 319,
+      "n_common_random7": 319,
+      "n_pca7": 319,
+      "n_random7": 319,
+      "outcome": "O2",
+      "p95_random7": 0.6865203761755486,
+      "partition": "mms_external",
+      "statement": "the concepts carry as much of the decision as the best seven-dimensional linear summary of the descriptors"
+    }
+  },
+  "reading": "O2",
+  "rule": "D43, fixed before computation, per external partition (mms_external, mms2_external): O1 lower bound of Delta > 0 and fidelity(bhat7) > P95(random7); O2 interval of Delta contains 0 and fidelity(bhat7) > P95; O2b upper bound of Delta < 0 and fidelity(bhat7) > P95; O3 fidelity(bhat7) <= P95. The manuscript follows the lower outcome of the two partitions (O3 < O2b < O2 < O1); acdc_test is reported but does not enter the reading",
+  "statement": "the concepts carry as much of the decision as the best seven-dimensional linear summary of the descriptors",
+  "statements": {
+    "O1": "the reconstructed concepts carry most of the audited decisions",
+    "O2": "the concepts carry as much of the decision as the best seven-dimensional linear summary of the descriptors",
+    "O2b": "less than the best seven-dimensional summary of the descriptors but more than random seven-dimensional projections",
+    "O3": "the descriptor subspace carries the decision; the concepts add nothing beyond their dimension"
+  },
+  "status": "DETERMINED"
+}

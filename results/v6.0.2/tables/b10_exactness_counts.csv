@@ -1,0 +1,9 @@
+partition,target,n_rows,n_analytical,n_ne_zero_ed_fraction,n_ne_nonfinite_fraction,n_not_applicable_edv_below_1ml,n_b_state_not_observed,n_both_finite,n_exact,n_inexact,tolerance_pp,max_abs_difference_pp
+acdc_dev_oof,lv_ef_percent,98,98,0,0,0,0,98,98,0,1e-06,2.842170943040401e-14
+acdc_dev_oof,rv_ef_percent,98,98,0,0,0,0,98,98,0,1e-06,2.842170943040401e-14
+acdc_test,lv_ef_percent,50,50,0,0,0,0,50,50,0,1e-06,2.842170943040401e-14
+acdc_test,rv_ef_percent,50,50,0,0,0,0,50,50,0,1e-06,2.842170943040401e-14
+mms_external,lv_ef_percent,319,319,0,0,0,0,319,319,0,1e-06,2.842170943040401e-14
+mms_external,rv_ef_percent,319,319,0,0,0,0,319,319,0,1e-06,2.842170943040401e-14
+mms2_external,lv_ef_percent,180,180,0,0,0,0,180,180,0,1e-06,2.842170943040401e-14
+mms2_external,rv_ef_percent,180,180,0,0,0,0,180,180,0,1e-06,2.1316282072803006e-14

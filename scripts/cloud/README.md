@@ -1,4 +1,4 @@
-> Public edition of the registered file `scripts/cloud/README.md` (protocol-v6.0.1, git blob `8fd2878ac4cd`); operational details are replaced as listed in EDITIONS.md.
+> Public edition of the registered file `scripts/cloud/README.md` (protocol-v6.0.5, git blob `8fd2878ac4cd`); operational details are replaced as listed in [EDITIONS.md](../../protocol/registration/EDITIONS.md).
 
 # Modal backend for F9 and S5 (CPE-1)
 

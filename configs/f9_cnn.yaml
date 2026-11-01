@@ -1,4 +1,4 @@
-# Public edition of the registered file `configs/f9_cnn.yaml` (protocol-v6.0.1, git blob `c575500d8062`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
+# Public edition of the registered file `configs/f9_cnn.yaml` (protocol-v6.0.5, git blob `c575500d8062`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
 # F9, the trained CNN comparator registered by the protocol-v6.0.1 amendment (docs/MANUSCRIPT_PROTOCOL_V2_2026-10-02.md,
 # Section D item 10, Section E S5 and Section H). Architecture and training are NEURAL-TM-1.0 Sections 4.1-4.2 verbatim
 # (docs/NEURAL_ENCODER_EXPERIMENT_PROTOCOL.md; protocol/neural_encoder_v6.0.1.design.json), with the F9 seeds of protocol 2.1.

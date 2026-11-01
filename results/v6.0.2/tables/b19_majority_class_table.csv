@@ -1,0 +1,4 @@
+partition,source,n_evaluable,majority_class,majority_count,majority_rate,ci_lower,ci_upper,uniform_chance_rate,n_DCM,n_HCM,n_MINF,n_NOR,n_RV,status
+acdc_test,metrics/predictor_acdc_test.json,50,DCM,10,0.2,0.1124375001577611,0.3303710593222542,0.2,10,10,10,10,10,EVALUATED
+mms_external,metrics/predictor_mms_external.json,272,DCM,96,0.35294117647058826,0.2985568923788461,0.4114214395875514,0.2,96,82,0,79,15,EVALUATED
+mms2_external,metrics/predictor_mms2_external.json,68,NOR,39,0.5735294117647058,0.45516782316555565,0.6840275685226692,0.2,0,29,0,39,0,EVALUATED

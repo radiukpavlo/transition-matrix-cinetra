@@ -1,0 +1,4 @@
+rulebook,first_failed_condition,n_candidates
+d_model_pooled,PASSED_ALL,2
+d_model_pooled,granule_confidence_min_0.90,46
+d_model_pooled,granule_support_min_5,6

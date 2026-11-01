@@ -1,0 +1,13 @@
+partition,part,reference,reference_class,recall,recall_k,recall_n,recall_ci_lower,recall_ci_upper,recall_half_up
+acdc_test,a,recorded confusion (summarize-predictor rows),DCM,0.9,9,10,0.5958499732047615,0.9821237869049271,0.900
+acdc_test,a,recorded confusion (summarize-predictor rows),HCM,0.7,7,10,0.39677814746114537,0.8922087325936989,0.700
+acdc_test,a,recorded confusion (summarize-predictor rows),MINF,1.0,10,10,0.7224672001371107,1.0,1.000
+acdc_test,a,recorded confusion (summarize-predictor rows),NOR,0.8,8,10,0.49016247153664183,0.9433178485456247,0.800
+acdc_test,a,recorded confusion (summarize-predictor rows),RV,1.0,10,10,0.7224672001371107,1.0,1.000
+mms_external,a,recorded confusion (summarize-predictor rows),DCM,0.21875,21,96,0.14776345080877545,0.31137906736116716,0.219
+mms_external,a,recorded confusion (summarize-predictor rows),HCM,0.5609756097560976,46,82,0.4532292110128184,0.6632646153664377,0.561
+mms_external,a,recorded confusion (summarize-predictor rows),MINF,,0,0,,,
+mms_external,a,recorded confusion (summarize-predictor rows),NOR,0.8987341772151899,71,79,0.8127005885203687,0.9477881920594146,0.899
+mms_external,a,recorded confusion (summarize-predictor rows),RV,0.3333333333333333,5,15,0.1517632443971473,0.5828645226148023,0.333
+mms2_external,b,same-definition crosswalk subset,HCM,0.4482758620689655,13,29,0.28413168023037194,0.6245203678902909,0.448
+mms2_external,b,same-definition crosswalk subset,NOR,0.8974358974358975,35,39,0.7642114553714348,0.9593866865533163,0.897

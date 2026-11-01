@@ -1,4 +1,4 @@
-> Public edition of the registered file `configs/README.md` (protocol-v6.0.1, git blob `ee7031684f4d`); operational details are replaced as listed in EDITIONS.md.
+> Public edition of the registered file `configs/README.md` (protocol-v6.0.5, git blob `1f38164912bc`); operational details are replaced as listed in [EDITIONS.md](../protocol/registration/EDITIONS.md).
 
 # Configurations
 
@@ -23,6 +23,12 @@ Configuration files are grouped by protocol and purpose. Paths inside them are p
 - `f9_cnn.yaml`: the F9 trained-CNN comparator (architecture, six candidates, training, selection and refit rules, seeds 20261011-20261013, fit counts) and its local and Modal backends under CPE-1 ([scripts/cloud/README.md](../scripts/cloud/README.md)).
 - `probes.yaml`, `trust.yaml` (amendment items 11-14): the F9b concept probe, the evaluation of the alternative bundles (D20, F9, F9b) with Table 4 and Figure 5, and the trust analyses S1-S4. Read by `src/tmmri/experiments/l57_stages.py` from the same configuration tree; never part of the v6.0.0 analysis bundle.
 - `data_centric.yaml`: the registered data-centric analyses S5 (data-efficiency curves on `acdc_dev`; `run-data-efficiency`, whose F9 waves write purpose-s5 spec files for `train-f9`, `import-f9-fits --specs` and the Modal app) and S6 (simulated acquisition shift on `acdc_test`; `run-simulated-shift`).
+
+**Protocol v6.0.2 amendment (`SPECIFICATION.md` 6.0.2, Sections 0.4 and 13.7; pending the owner's signature of `protocol-v6.0.2`).** `exploratory_postfreeze.yaml` holds the post-freeze exploratory block B10–B22 (`run-postfreeze --analysis B<k>`), labelled `EXPLORATORY_POST_HOC`. It is a separate lane file, so `exploratory.yaml` and every file hashed by the frozen run stay unchanged. It reads the source run `v6-replication-20261003-1241` read-only and writes to a new run id.
+
+**Protocol v6.0.3 amendment (`SPECIFICATION.md` 6.0.3, Sections 0.5 and 13.8; pending the owner's signature of `protocol-v6.0.3`).** `exploratory_postfreeze_v603.yaml` holds the second post-freeze exploratory block B23–B27 (`run-postfreeze --analysis B<k>`), labelled `EXPLORATORY_POST_HOC`. It is a separate lane file, so `exploratory_postfreeze.yaml` (frozen by `protocol-v6.0.2`) and every file hashed by the frozen run stay unchanged. It reads the source runs `v6-replication-20261003-1241` and `v6-postfreeze-20261028-0201` read-only and writes to a new run id. B25 is the one analysis in which `mms_external` cases enter a fit, as rule-admission data only (Decision D44).
+
+**Protocol v6.0.4 amendment (`SPECIFICATION.md` 6.0.4, Sections 0.6 and 13.9; pending the owner's signature of `protocol-v6.0.4`).** `exploratory_postfreeze_v604.yaml` holds the third post-freeze exploratory block B28–B31 (`run-postfreeze --analysis B<k>`), descriptive analyses of recorded outputs, labelled `EXPLORATORY_POST_HOC`. It is a separate lane file; `exploratory_postfreeze.yaml`, `exploratory_postfreeze_v603.yaml` and every file hashed by the frozen run stay unchanged. It reads the source runs `v6-replication-20261003-1241`, `v6-postfreeze-20261028-0201` and `v6-postfreeze-20261028-2135` read-only and writes to a new run id. The one new fit is the supervised ceiling of B28, on `acdc_dev`.
 
 **Governed.** clinical/ holds the clinical-validation settings of protocol v2. They are hash-locked with clinical_validation/ and are not changed by v6.
 

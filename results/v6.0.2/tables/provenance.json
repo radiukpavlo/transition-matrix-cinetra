@@ -1,0 +1,891 @@
+{
+  "schema": "tmmri.v602_evidence_pack/1",
+  "label": "EXPLORATORY_POST_HOC",
+  "run_id": "v6-postfreeze-20261028-0201",
+  "source_run_id": "v6-replication-20261003-1241",
+  "source_run": {
+    "files_sha256": "3a7bc171dbe3f4584da514e6a50454d01468fd8b3f8c57ebf876f51c6cb3c036",
+    "frozen_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+    "release_manifest_sha256": "9260dd64b8cf1738e8c7b6cc7304053f930c27ae874903aa25e5158ea78afb4d",
+    "run_id": "v6-replication-20261003-1241"
+  },
+  "protocol_tag": "protocol-v6.0.2",
+  "protocol_tag_state": "protocol_frozen",
+  "specification_version": "6.0.2",
+  "analyses": {
+    "B10": {
+      "answers": "EPC-1",
+      "title": "analytical ejection fraction from the voxel fractions (no learning)",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B11": {
+      "answers": "EPC-1",
+      "title": "descriptor-family ablations of the typed transition",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B12": {
+      "answers": "EPC-1",
+      "title": "geometry-aware reconstruction and error decomposition",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B13": {
+      "answers": "EPC-6",
+      "title": "development-median baseline",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B14": {
+      "answers": "EPC-6",
+      "title": "smallest effect of interest in physical units and a decision sweep",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B15": {
+      "answers": "EPC-4",
+      "title": "candidate-level rule ledger",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B16": {
+      "answers": "EPC-4",
+      "title": "coverage-fidelity comparison of rule systems",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B17": {
+      "answers": "EPC-7",
+      "title": "reliability of reconstructed concepts",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B18": {
+      "answers": "EPC-2",
+      "title": "decision-link test (how much of the audited decisions the concepts carry)",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B19": {
+      "answers": "EPC-A2",
+      "title": "majority-class references",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B20": {
+      "answers": "EPC-A4",
+      "title": "real processed cases for the worked example",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B21": {
+      "answers": "EPC-3",
+      "title": "phase-preserving and mask-pooled frozen image representations (D20-P, D20-M)",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B22": {
+      "answers": "EPC-3",
+      "title": "mask-aware fine-tuned CNN (F9-M) and its concept probe (F9b-M)",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.2",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.2",
+      "code_commit": "72c53952edadacc5ba515fcc63c8cf3541304c02",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    }
+  },
+  "written": "2026-10-28",
+  "script": "manuscript/scripts/export_v602_evidence_pack.py",
+  "licence": "aggregates only; no case identifiers; b20_case_slots.csv holds five ACDC test cases keyed only by slot, published without identifiers with the owner's approval",
+  "checks": {
+    "b22_probe_bundles_match_results": true,
+    "b22_probe_representation": [
+      "f9bm_activations_64"
+    ],
+    "provenance_consistent_across_analyses": true
+  },
+  "identifier_scan": {
+    "identifiers_checked": 1358,
+    "files_checked": 51,
+    "matches": 0,
+    "identifier_columns": 0,
+    "rule": "whole token (not preceded or followed by a letter, digit or underscore), case-insensitive; CSV headers must not contain sample_id, case_id, patient_id, subject_id or cluster_id",
+    "sources": [
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_ACDC.parquet",
+        "sha256": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_MMS.parquet",
+        "sha256": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "duplicate_of",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_MMS2.parquet",
+        "sha256": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "duplicate_of"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/inner_folds.parquet",
+        "sha256": "7dc447fdce15486c6ac905d9f5840eb39d9524570ba01b35f06bc3b63b00e8ee",
+        "columns": [
+          "sample_id",
+          "patient_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/split_manifest.parquet",
+        "sha256": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/split_manifest_MMS2.parquet",
+        "sha256": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_validation.json",
+        "sha256": "93ab8bc44e8144ef79a0bbb7e3f4bb49c9241e33c6099492f358aa22bfd2385c",
+        "columns": "values under identifier keys"
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_validation_MMS2.json",
+        "sha256": "fe2b24afb1fd1c9fc74781d93d4e10e852e33e68dc6b1a32f62664cd4b05d2c0",
+        "columns": "values under identifier keys"
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/mms2_duplicates.json",
+        "sha256": "8e695586458ff6dc039a6d3d44fec9302f0fff5c4774e0228f1270f4b21af21d",
+        "columns": "values under identifier keys"
+      },
+      {
+        "run": "v6-postfreeze-20261028-0201",
+        "path": "postfreeze/B11/models/ridge_typed_fractions17/oof_acdc_dev.parquet",
+        "sha256": "23f271a43c08655d72969e0276bb54c462664b0bcf48d4f51570175509eb6108",
+        "columns": [
+          "sample_id"
+        ]
+      },
+      {
+        "run": "v6-postfreeze-20261028-0201",
+        "path": "postfreeze/B11/models/ridge_typed_intensities40/oof_acdc_dev.parquet",
+        "sha256": "e708192d1f1f1908d15d31842603dcda7f8e17092358074459bdcd366be6a145",
+        "columns": [
+          "sample_id"
+        ]
+      },
+      {
+        "run": "v6-postfreeze-20261028-0201",
+        "path": "postfreeze/B12/models/ridge_typed_formal57_plus_geometry3/oof_acdc_dev.parquet",
+        "sha256": "8c550f3ca7fc532da5b038a97948f6c13c451f10c8f000f78d62fe2c0351f63b",
+        "columns": [
+          "sample_id"
+        ]
+      }
+    ]
+  },
+  "files": {
+    "b10_exactness_counts.csv": {
+      "rows": 8,
+      "sources": [
+        {
+          "path": "postfreeze/B10/exactness_counts.parquet",
+          "sha256": "8eec6ef2f6786b8346d50e48d3f6b50a2101ef299fcebccdbb3a74be1f034d52"
+        }
+      ],
+      "sha256": "222b5d9c9aaf47280def8ca0b5d7f85b05cb2a995f1af65d8548a1d853bf678d"
+    },
+    "b10_rho_ef.csv": {
+      "rows": 12,
+      "sources": [
+        {
+          "path": "postfreeze/B10/rho.parquet",
+          "sha256": "07be02dbe22dcd3509bb8d47d59fd3f6865d8eb94644dd45e5cb56ae98fdb674"
+        }
+      ],
+      "sha256": "0f0b4be10ddecbee97732913e28a2c9376407138506ff4e04a872c7feb3fb3d6"
+    },
+    "b10_paired_difference_vs_primary_ridge.csv": {
+      "rows": 20,
+      "sources": [
+        {
+          "path": "postfreeze/B10/paired_difference_vs_primary_ridge.parquet",
+          "sha256": "cdaad085d0dee522c11fb3a623a7a8bfd2ee0f5937835bdb8cb886f095e074f6"
+        }
+      ],
+      "sha256": "02bd904a163cf524d4c5c92c4fa202cacac6b8dd19f1047342646fda9882fd8d"
+    },
+    "b10_per_target_mae_bias_loa.csv": {
+      "rows": 16,
+      "sources": [
+        {
+          "path": "postfreeze/B10/per_target_mae_bias_loa.parquet",
+          "sha256": "310151060948b67dc8e532b60be0db52537e8b2311f635517ce43e4d45c7e247"
+        }
+      ],
+      "sha256": "2ed3f6b944933fe0abc2dff99d84301b8f66d1c0a6db31d0d7c7d24a899d758d"
+    },
+    "b11_rho.csv": {
+      "rows": 60,
+      "sources": [
+        {
+          "path": "postfreeze/B11/rho.parquet",
+          "sha256": "251a526585062664d2ff4f09dd9341f0e95106cfc5d3d607ada87be1133b083e"
+        }
+      ],
+      "sha256": "0ae014110efa53e3f5e7e941bdb5abb5908a753df804451cc06f08f0b2c65a1e"
+    },
+    "b11_paired_difference_vs_primary_ridge.csv": {
+      "rows": 136,
+      "sources": [
+        {
+          "path": "postfreeze/B11/paired_difference_vs_primary_ridge.parquet",
+          "sha256": "533cdc8e3014c782c016d41066cfee8656f57e84deba6275e14efebe6a56a851"
+        }
+      ],
+      "sha256": "8d92fdbf25745a5d5b4840bc1bb5239af80040677bfc74ffcc06505ddd3e153b"
+    },
+    "b11_per_target_mae_bias_loa.csv": {
+      "rows": 84,
+      "sources": [
+        {
+          "path": "postfreeze/B11/per_target_mae_bias_loa.parquet",
+          "sha256": "600c24e3e68c9a2a5b66ba6e3c1c69cf9d93682ecd0c3b9399b073666dac8be2"
+        }
+      ],
+      "sha256": "d6ffaa7f1b9af9a5a76537d2b55c661972847413cea705c5572f890ec797f5e3"
+    },
+    "b12_rho.csv": {
+      "rows": 60,
+      "sources": [
+        {
+          "path": "postfreeze/B12/rho.parquet",
+          "sha256": "30673dc6e6ebf06a58a72b53e7acd23eee85ddacfa3577616a03550e96c55733"
+        }
+      ],
+      "sha256": "e8f03ebd2421d20bc51e160871b9502f88b83a75be2923f1d514e8c17f34c0b3"
+    },
+    "b12_decomposition_table.csv": {
+      "rows": 70,
+      "sources": [
+        {
+          "path": "postfreeze/B12/decomposition_table.parquet",
+          "sha256": "9b0258d60f11497eb1799e4d9fb23caa2e5bc8428afc80024298c1ac3b03020e"
+        }
+      ],
+      "sha256": "7d81922f2d4dbdb00323f41f45e80e8bacc7a46af62d5b70b9a360b09740fe32"
+    },
+    "b12_analytical_exactness.csv": {
+      "rows": 20,
+      "sources": [
+        {
+          "path": "postfreeze/B12/analytical_exactness.parquet",
+          "sha256": "234ff91010e50950186ae47970883ccf29d8d965db6476783e1cd86e3a285f60"
+        }
+      ],
+      "sha256": "187f2635fbabc8d48bfc06e2e5effde776a9243a2c78b0d80274ac01f88c1c4a"
+    },
+    "b12_paired_differences.csv": {
+      "rows": 136,
+      "sources": [
+        {
+          "path": "postfreeze/B12/paired_differences.parquet",
+          "sha256": "5fb4270fdd4b3a94e2a456b872eb8a24c1348e5a0cba9924b308eeb0383fbe1c"
+        }
+      ],
+      "sha256": "f2cf2bb993ce5f31b04b63da75069e5de36de846a3bd44cfa6ffc03a28f4c47c"
+    },
+    "b12_per_target_mae_bias_loa.csv": {
+      "rows": 84,
+      "sources": [
+        {
+          "path": "postfreeze/B12/per_target_mae_bias_loa.parquet",
+          "sha256": "1b697d25f0ddd4d44582ff679eede507868c98556e48af94d3522a7aa181fc82"
+        }
+      ],
+      "sha256": "e57b74ddd6d0f8ac5973267383a2cd46738b60795b498eab2a5368cf3a1f5027"
+    },
+    "b13_side_by_side_with_mean_null.csv": {
+      "rows": 40,
+      "sources": [
+        {
+          "path": "postfreeze/B13/side_by_side_with_mean_null.parquet",
+          "sha256": "23a63f111beceeec9a2003caa66f0261313ae647c4ab5edc32a89fa238d7ab8b"
+        }
+      ],
+      "sha256": "983047773d614c793ee78db96ffb6497a40bcca5e037492e00f0dbe04e2811c3"
+    },
+    "b13_rho_median.csv": {
+      "rows": 42,
+      "sources": [
+        {
+          "path": "postfreeze/B13/rho_median.parquet",
+          "sha256": "b402cc513e1369d452d51e06d1e6946ad8fbf0a4fc00863bc9c96e3b0dd30123"
+        }
+      ],
+      "sha256": "6e55bf94bdf932fa4b4397a3f4daa4b89134e0586fba4625c4b79ed9a817eafd"
+    },
+    "b13_rho_j_median.csv": {
+      "rows": 63,
+      "sources": [
+        {
+          "path": "postfreeze/B13/rho_j_median.parquet",
+          "sha256": "784dcd34424f3f0671f9384c0c3a5e9f7525f7815b4f0af7170cace8173b4a0b"
+        }
+      ],
+      "sha256": "76749cffe5cc48072c9aadb3d25190b2cb19f3261e76518ddaaa0c1841f81a0a"
+    },
+    "b13_paired_difference_median_minus_mean.csv": {
+      "rows": 85,
+      "sources": [
+        {
+          "path": "postfreeze/B13/paired_difference_median_minus_mean.parquet",
+          "sha256": "bf0ae88d1e14c365623518d4c5133ba38fd945d28c6b956a2b08dec0b19769a9"
+        }
+      ],
+      "sha256": "ede7a808ca50cc515fec3119f2a78bfc0db293c105edbd84d90891b16dd69f17"
+    },
+    "b14_translation_table.csv": {
+      "rows": 28,
+      "sources": [
+        {
+          "path": "postfreeze/B14/translation_table.parquet",
+          "sha256": "525a6df11987a9632165b57379d4c0f51dadec0239c5ffaa47a0c9921fec3955"
+        }
+      ],
+      "sha256": "5384b9f9da90439e9328daca2667c7105da8b71662bdf1534e9b8b845e377ae7"
+    },
+    "b14_sweep_table.csv": {
+      "rows": 49,
+      "sources": [
+        {
+          "path": "postfreeze/B14/sweep_table.parquet",
+          "sha256": "67476a76d1256aaf655df0af569b985d12c74d992eb92226102ff9ab8fb8323f"
+        }
+      ],
+      "sha256": "82d17c37b17c624ecf82be6a42386fe0fd73b6d1321c86f2d311901a01887e79"
+    },
+    "b15_candidate_ledger.csv": {
+      "rows": 103,
+      "sources": [
+        {
+          "path": "postfreeze/B15/candidate_ledger.parquet",
+          "sha256": "61ecaaadfe2aa4faa56e8927b511320941b2119ef09bd9ae897289e40286f4a9"
+        }
+      ],
+      "sha256": "ce23acc29cf2fc1c00c904a5de6afc04ddf2dc188a1dbd7887359f8d703aff6a"
+    },
+    "b15_rejection_counts_by_reason.csv": {
+      "rows": 12,
+      "sources": [
+        {
+          "path": "postfreeze/B15/rejection_counts_by_reason.parquet",
+          "sha256": "54790e141bb6eb51ab829aba0267a24466b630bf9f5c81f22702142efb1cb832"
+        }
+      ],
+      "sha256": "437caaf779f6fda1d953bb95f25447fa8af6733f149f04cf8d2f46989d61cffa"
+    },
+    "b15_concept_table.csv": {
+      "rows": 27,
+      "sources": [
+        {
+          "path": "postfreeze/B15/concept_table.parquet",
+          "sha256": "ad3159c0cf90e90cfd22ffb69ac83c6cd4cf9b8ba5bbaa53352e169375603e36"
+        }
+      ],
+      "sha256": "4fb96c1ea54eb0916a14fc4ef5fe6fead240223853e950242beb87aeb2845f9f"
+    },
+    "b16_coverage_fidelity_table.csv": {
+      "rows": 96,
+      "sources": [
+        {
+          "path": "postfreeze/B16/coverage_fidelity_table.parquet",
+          "sha256": "c7c1211be13e5ca929339d44d44ad75001277e3b990d206abcf84b750972d445"
+        }
+      ],
+      "sha256": "f57603e244ca9175ad8183b59f83b10317468fb19c889033d07e30d93332cc8c"
+    },
+    "b16_figure_data.csv": {
+      "rows": 96,
+      "sources": [
+        {
+          "path": "postfreeze/B16/figure_data.parquet",
+          "sha256": "e17728739895f2194b29eee9711d0955a64e99c663666a7688729d6203aeaab6"
+        }
+      ],
+      "sha256": "803166a2809c703ee0303cf089cbe4c91d5950bf5e274d6638eebe6253ec1ffa"
+    },
+    "b17_signal_auroc_table.csv": {
+      "rows": 72,
+      "sources": [
+        {
+          "path": "postfreeze/B17/signal_auroc_table.parquet",
+          "sha256": "6bacefc812ee9945415c34a3348c8183fa75e4be7205285634b68d1410662be9"
+        }
+      ],
+      "sha256": "e19815c25e723621c6d32594b45d8fb90a2c3e97965981dd392e1718fa4c0cd7"
+    },
+    "b17_binary_signal_table.csv": {
+      "rows": 72,
+      "sources": [
+        {
+          "path": "postfreeze/B17/binary_signal_table.parquet",
+          "sha256": "3cb4a611f3b880a1d074b1aab37407a06f0fcaeec2b35900246b0b09a5e52abe"
+        }
+      ],
+      "sha256": "302cf3a69eb649dc14b3ce37bda9708a334039dfe54ac9fd87cba29340037959"
+    },
+    "b17_symbol_error_table.csv": {
+      "rows": 21,
+      "sources": [
+        {
+          "path": "postfreeze/B17/symbol_error_table.parquet",
+          "sha256": "2e5edbb7ccc4aff6c89568a67313dada3a1723a97f841088afd163089aa20913"
+        }
+      ],
+      "sha256": "337bc19088f9999475c9e32ef76efc948ce6437ddc5550cb45c89419b641afb4"
+    },
+    "b18_decision_link_table.csv": {
+      "rows": 12,
+      "sources": [
+        {
+          "path": "postfreeze/B18/decision_link_table.parquet",
+          "sha256": "76ab0eaa566ec6f7d81d23c044caf577370f7c9602c6b372a1e8365a43e04c74"
+        }
+      ],
+      "sha256": "9d7493ef7c7b563c985d3a140f0987939827ef145ae2bef198d058012f84094f"
+    },
+    "b19_majority_class_table.csv": {
+      "rows": 3,
+      "sources": [
+        {
+          "path": "postfreeze/B19/majority_class_table.parquet",
+          "sha256": "c207c656705f41a49043de64684ee717d6de7490398288fd4588b33cf7316b3d"
+        }
+      ],
+      "sha256": "2ac03654c04765e6108fa6ae4cbd8e05f5bd5cbb119d2a93255a3b33b1172870"
+    },
+    "b20_case_slots.csv": {
+      "rows": 5,
+      "sources": [
+        {
+          "path": "postfreeze/B20/case_slots.parquet",
+          "sha256": "fca3c1f99649661e28a09f8bee9a7de8537eeb5aa94ec8a10f7cc6178239d106"
+        }
+      ],
+      "sha256": "509b6f2b4a0eb4027b5ac8986ce5f001e0fdd2737dee0d602712272f0ed05fe1"
+    },
+    "b21_representations.csv": {
+      "rows": 2,
+      "sources": [
+        {
+          "path": "postfreeze/B21/results.json",
+          "sha256": "37d3f31eb818df6f23b4008dfb6f5e6147e33a3d9920c37f473ef500f24b78f9"
+        }
+      ],
+      "sha256": "8363d4f178eabffadba48d3e4b731daaa0eb7203f9ecab67d30b30ab2b649d43"
+    },
+    "b21_rho.csv": {
+      "rows": 136,
+      "sources": [
+        {
+          "path": "postfreeze/B21/results.json",
+          "sha256": "37d3f31eb818df6f23b4008dfb6f5e6147e33a3d9920c37f473ef500f24b78f9"
+        }
+      ],
+      "sha256": "ab0e765575a83307d15ad2bda5643745a47ec1234e793d27350f9699b3923b39"
+    },
+    "b21_rho_paired_vs_primary_ridge.csv": {
+      "rows": 64,
+      "sources": [
+        {
+          "path": "postfreeze/B21/results.json",
+          "sha256": "37d3f31eb818df6f23b4008dfb6f5e6147e33a3d9920c37f473ef500f24b78f9"
+        }
+      ],
+      "sha256": "5d82ab8989d2336f5b30da1a88a5fe4b580d1d5421b10fdbad41ac64e9e9cdde"
+    },
+    "b21_predictor_metrics.csv": {
+      "rows": 80,
+      "sources": [
+        {
+          "path": "postfreeze/B21/results.json",
+          "sha256": "37d3f31eb818df6f23b4008dfb6f5e6147e33a3d9920c37f473ef500f24b78f9"
+        }
+      ],
+      "sha256": "d8542826ca6d1a4db348559e8a0291c01ff4fcc34a757bc4d0ab24959c2dafa6"
+    },
+    "b21_predictor_per_class_recall.csv": {
+      "rows": 40,
+      "sources": [
+        {
+          "path": "postfreeze/B21/results.json",
+          "sha256": "37d3f31eb818df6f23b4008dfb6f5e6147e33a3d9920c37f473ef500f24b78f9"
+        }
+      ],
+      "sha256": "4d5b2e48201aee93df58b3977acd75fbb2d57d532bac53dd6c2a460d225c7c30"
+    },
+    "b21_predictor_confusion_matrix.csv": {
+      "rows": 200,
+      "sources": [
+        {
+          "path": "postfreeze/B21/results.json",
+          "sha256": "37d3f31eb818df6f23b4008dfb6f5e6147e33a3d9920c37f473ef500f24b78f9"
+        }
+      ],
+      "sha256": "4ed7c3e60886c7efe36c1b43c7f9e93dc1e9c225285eb1e9ef34274b7f6dd75e"
+    },
+    "b21_counts.csv": {
+      "rows": 8,
+      "sources": [
+        {
+          "path": "postfreeze/B21/results.json",
+          "sha256": "37d3f31eb818df6f23b4008dfb6f5e6147e33a3d9920c37f473ef500f24b78f9"
+        }
+      ],
+      "sha256": "bc647e4cf7a5906218e15980d843639c2fb12e5fd50ed6660505d95e037a679b"
+    },
+    "b21_d20_replication_diagnostic.csv": {
+      "rows": 4,
+      "sources": [
+        {
+          "path": "postfreeze/B21/results.json",
+          "sha256": "37d3f31eb818df6f23b4008dfb6f5e6147e33a3d9920c37f473ef500f24b78f9"
+        }
+      ],
+      "sha256": "0a2a332bd02e2a650bafc390613ade8d412b2716e3043f4082469492a77860ed"
+    },
+    "b22_inputs.csv": {
+      "rows": 4,
+      "sources": [
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        }
+      ],
+      "sha256": "22dcc9252f14ef1314d86974bf186b42a477424d368b18a3b497950c33c2fa99"
+    },
+    "b22_fits.csv": {
+      "rows": 18,
+      "sources": [
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        }
+      ],
+      "sha256": "2375f7ae4aaa9287090a44d222c4c60756efdfbd7c4c8d6d1e12e50ff6126e37"
+    },
+    "b22_validity_gate.csv": {
+      "rows": 3,
+      "sources": [
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        }
+      ],
+      "sha256": "344f77d4ec2427a8922ecd7c4694909fb86554f2319dc9fe1ecdb0e91db3188a"
+    },
+    "b22_f9m_predictor_metrics_per_seed.csv": {
+      "rows": 120,
+      "sources": [
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        }
+      ],
+      "sha256": "019dd017b764982103d97472689b083515a51d31570290e8dc2b18e433ec949f"
+    },
+    "b22_f9m_per_class_recall_per_seed.csv": {
+      "rows": 60,
+      "sources": [
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        }
+      ],
+      "sha256": "b2fa3933f40780601fa8259b4c1707f9bca8700fca219a4e779fa3a490b1b6b2"
+    },
+    "b22_f9m_confusion_matrix_per_seed.csv": {
+      "rows": 300,
+      "sources": [
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        }
+      ],
+      "sha256": "fee5d66514f49a9fde09ebf4d7502f33d36f10b0446a1a032bc48be0d2d8f348"
+    },
+    "b22_f9bm_probe_rho_per_seed.csv": {
+      "rows": 204,
+      "sources": [
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        },
+        {
+          "path": "postfreeze/B22/probes/seed20261011/FROZEN.json",
+          "sha256": "ef288616ccc50bf066f4038b8d8ee6789786ad802f3887ab2d389d57361c6622"
+        },
+        {
+          "path": "postfreeze/B22/probes/seed20261012/FROZEN.json",
+          "sha256": "10a15644a6b2efd1eaf0b65f94218ef1607c3b12e877b15a786bfd0b6f7a218c"
+        },
+        {
+          "path": "postfreeze/B22/probes/seed20261013/FROZEN.json",
+          "sha256": "3543202c4f33e2e9311f52df8386d3a710aef5537f4e222dea5f64e71655e77b"
+        }
+      ],
+      "sha256": "4adeb28ccff0744133a4615a9bd0ac7af98970ea2e6fecac1643580fc5d37b5d"
+    },
+    "b22_f9bm_probe_paired_vs_primary_ridge_per_seed.csv": {
+      "rows": 96,
+      "sources": [
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        },
+        {
+          "path": "postfreeze/B22/probes/seed20261011/FROZEN.json",
+          "sha256": "ef288616ccc50bf066f4038b8d8ee6789786ad802f3887ab2d389d57361c6622"
+        },
+        {
+          "path": "postfreeze/B22/probes/seed20261012/FROZEN.json",
+          "sha256": "10a15644a6b2efd1eaf0b65f94218ef1607c3b12e877b15a786bfd0b6f7a218c"
+        },
+        {
+          "path": "postfreeze/B22/probes/seed20261013/FROZEN.json",
+          "sha256": "3543202c4f33e2e9311f52df8386d3a710aef5537f4e222dea5f64e71655e77b"
+        }
+      ],
+      "sha256": "278d9ab97dd40743924ed352412286a641f9e71728e2bd82bddfde29c5526f85"
+    },
+    "b22_counts_per_seed.csv": {
+      "rows": 12,
+      "sources": [
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        }
+      ],
+      "sha256": "e9d22a0645d440917f09af91512fcafcdcba304de33142519f3d53a25b7c1cb3"
+    },
+    "b22_seed_mean.csv": {
+      "rows": 24,
+      "sources": [
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        }
+      ],
+      "sha256": "c1c2b548f7ed1a433ea79343609b858af732cbdb0cb00c345adcf8976e8de41d"
+    },
+    "summaries.json": {
+      "sources": [
+        {
+          "path": "postfreeze/B10/summary.json",
+          "sha256": "44fea3b01df3db0e90467da0100ec3611647039c7e25e3402decc209c5416f0d"
+        },
+        {
+          "path": "postfreeze/B11/summary.json",
+          "sha256": "9df2a342467a76c57a5cccdc7d25828a01732821493cec2b5922ab1fc92b0b91"
+        },
+        {
+          "path": "postfreeze/B12/summary.json",
+          "sha256": "6bc358c0733a18acf5f22d85497dd2f7f76cf2024fadc67defd8e32ae163c3b6"
+        },
+        {
+          "path": "postfreeze/B13/summary.json",
+          "sha256": "a4182f19f493c688d0ce49f12106aced5bc5391cdda6126ddeec75e2a7eb8827"
+        },
+        {
+          "path": "postfreeze/B14/summary.json",
+          "sha256": "2f6ac52c0f8c76b36199adf31332372e33ade5bd4b4247d338fe034bd47c28f1"
+        },
+        {
+          "path": "postfreeze/B15/summary.json",
+          "sha256": "c0226946035901e37729a516ab91a971e83a9e2dcb83498970763c17dcf631f3"
+        },
+        {
+          "path": "postfreeze/B16/summary.json",
+          "sha256": "4787065752522d7cddc6fcd78a7ab9fae7bcbff168256e6985e5cbd529b2af2f"
+        },
+        {
+          "path": "postfreeze/B17/summary.json",
+          "sha256": "1a85f04639161b7917dbfe60b8a54768fc62b9870ba296a35f17beaea4dcf8c5"
+        },
+        {
+          "path": "postfreeze/B18/summary.json",
+          "sha256": "13890e31a01997d989dce950f12ea7100bc96ef350b63b5ebba43724ba61f576"
+        },
+        {
+          "path": "postfreeze/B19/summary.json",
+          "sha256": "65f55b11d091c08152999a163c51ab5b9f998ef91cfd93332f26a4e4d653c133"
+        },
+        {
+          "path": "postfreeze/B21/results.json",
+          "sha256": "37d3f31eb818df6f23b4008dfb6f5e6147e33a3d9920c37f473ef500f24b78f9"
+        },
+        {
+          "path": "postfreeze/B22/results.json",
+          "sha256": "86ae145a039c55ac34f64469e3b60920a32cddf66736fe8055ac5cf1c6dc9c4b"
+        }
+      ],
+      "dropped_summary_keys": {
+        "B10": [
+          "exact_case_results",
+          "exactness",
+          "results"
+        ],
+        "B11": [
+          "results"
+        ],
+        "B12": [
+          "exactness",
+          "results"
+        ],
+        "B13": [
+          "results"
+        ],
+        "B14": [
+          "hypotheses"
+        ],
+        "B15": [
+          "rejection_counts"
+        ],
+        "B16": [
+          "rows"
+        ],
+        "B17": [
+          "symbol_error_table"
+        ],
+        "B18": [
+          "rows"
+        ],
+        "B19": [
+          "rows"
+        ]
+      },
+      "sha256": "eee41b885e94bd275fa1632136282b1eadc09e1697a0f05b1ba8380d1d48c805"
+    },
+    "README.md": {
+      "sources": [],
+      "sha256": "e5df8fd956665c7ab23b7d243263353d801bfb2699a893545b00a5e4bb0ba466"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-> Public edition of the registered file `artifacts/README.md` (protocol-v6.0.1, git blob `7236d3785b32`); operational details are replaced as listed in EDITIONS.md.
+> Public edition of the registered file `artifacts/README.md` (protocol-v6.0.5, git blob `7236d3785b32`); operational details are replaced as listed in [EDITIONS.md](../protocol/registration/EDITIONS.md).
 
 # Artifact runtime root
 

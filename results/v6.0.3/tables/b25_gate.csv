@@ -1,0 +1,2 @@
+rule_id,consequent,length,oof_matched,oof_agree,agreement,wilson_lb,wilson_ub,folds_reproduced,reproduced_in_folds,eligible,eligibility,eligible_at_0.50,eligible_at_0.60,eligible_at_0.70
+R_cf5ef6878625f5f6,DCM,2,27,25,0.9259259259259259,0.7663040731697686,0.9794453459390113,5,1;2;3;4;5,True,ELIGIBLE,True,True,True

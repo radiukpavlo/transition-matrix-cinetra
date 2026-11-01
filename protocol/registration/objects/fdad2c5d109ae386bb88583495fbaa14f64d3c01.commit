@@ -1,0 +1,11 @@
+tree cc3fc9cf39f932b6235f99821fe11f7a7155bb3a
+parent 4b22ef01ea43bf920c44c31237cd40579389f8f6
+author Pavlo Radiuk <radiukpavlo@gmail.com> 1793257043 +0200
+committer Pavlo Radiuk <radiukpavlo@gmail.com> 1793257043 +0200
+
+manuscript: supplement page limit 20 (RD-67)
+
+Owner decision of 29 October 2026; QA command of the session start updated
+to the revision-4 limits (main 28, supplement 20, 57 references).
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

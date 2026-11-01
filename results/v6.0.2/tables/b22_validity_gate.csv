@@ -1,0 +1,4 @@
+seed,chance_level,mask_stem_trained,n_dev_patients,n_oof_rows,oof_macro_f1,oof_rows_complete,parameter_change_check_passed,passed,rule,training_loss_check_passed
+20261011,0.2,True,98,98,0.6929666150014242,True,True,True,"development out-of-fold macro-F1 over all five classes >= 0.3; reported, never used to select",True
+20261012,0.2,True,98,98,0.5707581945696277,True,True,True,"development out-of-fold macro-F1 over all five classes >= 0.3; reported, never used to select",True
+20261013,0.2,True,98,98,0.6025904060478527,True,True,True,"development out-of-fold macro-F1 over all five classes >= 0.3; reported, never used to select",True

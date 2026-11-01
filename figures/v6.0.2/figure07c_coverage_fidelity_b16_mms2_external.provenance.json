@@ -1,0 +1,162 @@
+{
+  "figure": "figure07c_coverage_fidelity_b16_mms2_external",
+  "label": "EXPLORATORY_POST_HOC",
+  "run_id": "v6-postfreeze-20261028-0201",
+  "source_run_id": "v6-replication-20261003-1241",
+  "protocol_tag": "protocol-v6.0.2",
+  "date": "2026-10-28",
+  "evidence_pack_written": "2026-10-28",
+  "note": "evidence render of recorded aggregates; nothing fitted, resampled, re-estimated or recomputed",
+  "script": {
+    "path": "manuscript/scripts/render_v602_figures.py",
+    "sha256": "e41759210e7ea9b587adfa90d895a0bf6d3ce045d64e9e0a5dc05b1bddc1fcce"
+  },
+  "house_style": {
+    "path": "manuscript/scripts/render_postfreeze_figures.py",
+    "sha256": "e49a3387f14027d2b8309e8c1e7105a77a195685f1e97467b50ee75cbd9d40a6"
+  },
+  "inputs": [
+    {
+      "path": "manuscript/article/tables/v602/b16_figure_data.csv",
+      "sha256": "803166a2809c703ee0303cf089cbe4c91d5950bf5e274d6638eebe6253ec1ffa"
+    },
+    {
+      "path": "manuscript/article/tables/v602/b16_coverage_fidelity_table.csv",
+      "sha256": "f57603e244ca9175ad8183b59f83b10317468fb19c889033d07e30d93332cc8c"
+    },
+    {
+      "path": "manuscript/article/tables/v602/provenance.json",
+      "sha256": "aae42d17aecdaf95a3b9feb86bf99021e7abdde18b4f1e61fbc8c07b263d28e1"
+    }
+  ],
+  "outputs": {
+    "pdf": {
+      "file": "figure07c_coverage_fidelity_b16_mms2_external.pdf",
+      "sha256": "2671f1bd57bce1389b0ebd56b2c946254afb0b4ab5f4fa60fc97df8b7c3e8084"
+    },
+    "png": {
+      "file": "figure07c_coverage_fidelity_b16_mms2_external.png",
+      "sha256": "21acad474edcc7d6c68d082acc86cc983271be1e34045a79c7418a391b896045"
+    }
+  },
+  "format": {
+    "pdf": "vector, fonts embedded (Type 42), CreationDate removed",
+    "png": "400.0 dpi (house setting), Software tag removed"
+  },
+  "partition": "mms2_external",
+  "plotted": {
+    "f4_wedd_setting_variants/max_bins_2": {
+      "n_processed": 180.0,
+      "n_accepted": 61.0,
+      "coverage": 0.3388888888888889,
+      "coverage_ci_lower": 0.2737511689161314,
+      "coverage_ci_upper": 0.4107596026363883,
+      "fidelity": 0.8524590163934426,
+      "fidelity_ci_lower": 0.742767647052789,
+      "fidelity_ci_upper": 0.9203883149206724
+    },
+    "f5_rule_policy_variants/beta_0.20": {
+      "n_processed": 180.0,
+      "n_accepted": 12.0,
+      "coverage": 0.0666666666666666,
+      "coverage_ci_lower": 0.0385440749357025,
+      "coverage_ci_upper": 0.1128986899296953,
+      "fidelity": 0.4166666666666667,
+      "fidelity_ci_lower": 0.1932603136587566,
+      "fidelity_ci_upper": 0.6804886874504503
+    },
+    "f5_gate_bounds_0.50_0.70/0.50": {
+      "n_processed": 180.0,
+      "n_accepted": 24.0,
+      "coverage": 0.1333333333333333,
+      "coverage_ci_lower": 0.0912628105365939,
+      "coverage_ci_upper": 0.1907272212725888,
+      "fidelity": 0.5833333333333334,
+      "fidelity_ci_lower": 0.3883466586522876,
+      "fidelity_ci_upper": 0.7553239739018824
+    },
+    "companion_dataset_label/companion": {
+      "n_processed": 180.0,
+      "n_accepted": 25.0,
+      "coverage": 0.1388888888888889,
+      "coverage_ci_lower": 0.0958774702130528,
+      "coverage_ci_upper": 0.1969915005081121,
+      "fidelity": 0.84,
+      "fidelity_ci_lower": 0.6534637839282114,
+      "fidelity_ci_upper": 0.9359654854332357
+    },
+    "f8_cart_full/full": {
+      "n_processed": 180.0,
+      "n_accepted": 180.0,
+      "coverage": 1.0,
+      "coverage_ci_lower": 0.9791045020783868,
+      "coverage_ci_upper": 1.0,
+      "fidelity": 0.7,
+      "fidelity_ci_lower": 0.6294468133268561,
+      "fidelity_ci_upper": 0.7621949875044985
+    },
+    "f8_cart_selective/selective": {
+      "n_processed": 180.0,
+      "n_accepted": 66.0,
+      "coverage": 0.3666666666666666,
+      "coverage_ci_lower": 0.2997378771951879,
+      "coverage_ci_upper": 0.439167588917242,
+      "fidelity": 0.7272727272727273,
+      "fidelity_ci_lower": 0.6095777422224589,
+      "fidelity_ci_upper": 0.8199665500441133
+    }
+  },
+  "zero_coverage_lane": {
+    "n_systems": 18,
+    "systems": [
+      "primary_d_model/primary",
+      "f4_discretizer_variants/wedd_uniform_mm_v1",
+      "f4_discretizer_variants/three_quantile_v1",
+      "f4_wedd_setting_variants/weight_entropy_0.00",
+      "f4_wedd_setting_variants/weight_entropy_0.25",
+      "f4_wedd_setting_variants/weight_entropy_0.50",
+      "f4_wedd_setting_variants/weight_entropy_0.75",
+      "f4_wedd_setting_variants/weight_entropy_1.00",
+      "f4_wedd_setting_variants/bandwidth_multiplier_0.5",
+      "f4_wedd_setting_variants/bandwidth_multiplier_2",
+      "f4_wedd_setting_variants/max_bins_4",
+      "f4_wedd_setting_variants/max_depth_3_max_bins_4",
+      "f5_rule_policy_variants/beta_0.05",
+      "f5_rule_policy_variants/beta_0.10",
+      "f5_rule_policy_variants/strict_only",
+      "f5_rule_policy_variants/max_length_2",
+      "f5_rule_policy_variants/max_length_3",
+      "f5_gate_bounds_0.50_0.70/0.70"
+    ],
+    "coverage_ci": [
+      0.0,
+      0.020895497921613
+    ],
+    "n_processed": 180
+  },
+  "coincident_display_offsets": [],
+  "skipped_not_evaluated": [
+    {
+      "system": "f8_cart_selective",
+      "variant": "selective",
+      "partition": "acdc_dev_oof",
+      "status": "NE",
+      "reason": "F8 selective leaves are not recorded per outer fold"
+    }
+  ],
+  "rules": [
+    "coverage = accepted / processed, fidelity = agreement with d_model among accepted, each with the recorded Wilson 95% interval (b16_figure_data.csv, checked equal to b16_coverage_fidelity_table.csv)",
+    "systems with no accepted case have no fidelity; they share one marker in the lane below the fidelity axis, drawn with their recorded coverage interval",
+    "rows whose status is not EVALUATED are skipped and listed under skipped_not_evaluated",
+    "exactly coincident points are offset horizontally by 4.2 printed points per step (display only)"
+  ],
+  "encoding": {
+    "primary_d_model/primary": "Primary rulebook (d_model): #008FA8 o filled",
+    "f4_wedd_setting_variants/max_bins_2": "F4: at most 2 bins: #008FA8 s filled",
+    "f5_rule_policy_variants/beta_0.20": "F5: $\\beta$ = 0.20: #008FA8 ^ filled",
+    "f5_gate_bounds_0.50_0.70/0.50": "F5: gate bound 0.50: #008FA8 v filled",
+    "companion_dataset_label/companion": "Companion (dataset labels): #008FA8 o open",
+    "f8_cart_full/full": "F8 CART, full: #015B6C h filled",
+    "f8_cart_selective/selective": "F8 CART, selective: #015B6C h open"
+  }
+}

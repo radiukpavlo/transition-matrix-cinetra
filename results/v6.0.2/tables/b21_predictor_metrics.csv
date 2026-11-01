@@ -1,0 +1,81 @@
+representation,partition,evidence,metric,estimate,ci_lower,ci_upper,n_evaluable,n_clusters,n_boot_valid,valid_fraction,status,reason,role,note
+d20m,acdc_dev_oof,development (out-of-fold),accuracy,0.5816326530612245,0.47959183673469385,0.673469387755102,98,98,2000,1.0,EVALUATED,,,
+d20m,acdc_dev_oof,development (out-of-fold),balanced_accuracy,0.5789473684210525,0.4787475441225441,0.676867951268207,98,98,2000,1.0,EVALUATED,,,
+d20m,acdc_dev_oof,development (out-of-fold),brier,0.583122778355799,0.4572957730818518,0.7139317043317674,98,98,2000,1.0,EVALUATED,,,definition=multiclass
+d20m,acdc_dev_oof,development (out-of-fold),ece,0.19712490049895368,0.13371657903308753,0.29011690427374565,98,98,2000,1.0,EVALUATED,,,
+d20m,acdc_dev_oof,development (out-of-fold),ece_equal_width,0.1891688552420382,,,98,98,,,,,companion,bins=10
+d20m,acdc_dev_oof,development (out-of-fold),log_loss,1.4436665530356019,,,98,98,,,EVALUATED,,descriptive_companion,clip=1e-15
+d20m,acdc_dev_oof,development (out-of-fold),macro_f1,0.5757420873699943,0.47157328239681173,0.6678235830404614,98,98,2000,1.0,EVALUATED,,,
+d20m,acdc_dev_oof,development (out-of-fold),macro_ovr_auroc,0.8376811185705257,0.7809813236851888,0.8929318297384019,98,98,2000,1.0,EVALUATED,,,
+d20m,acdc_dev_oof,development (out-of-fold),majority_rate,0.20408163265306123,0.13617701138609184,0.29431032970633136,98,,,,,,reference,majority_class=DCM; majority_numerator=20; interval=majority_wilson
+d20m,acdc_dev_oof,development (out-of-fold),chance,0.2,,,98,,,,,,reference,
+d20m,acdc_test,registered after unblinding,accuracy,0.64,0.5,0.76,50,50,2000,1.0,EVALUATED,,,
+d20m,acdc_test,registered after unblinding,balanced_accuracy,0.64,0.49608485958485954,0.7782486402486403,50,50,1999,0.9995,EVALUATED,,,
+d20m,acdc_test,registered after unblinding,brier,0.5472777459273491,0.3725201869512432,0.7273902860116669,50,50,2000,1.0,EVALUATED,,,definition=multiclass
+d20m,acdc_test,registered after unblinding,ece,0.21194922386848297,0.14558943458888887,0.35346903727695256,50,50,2000,1.0,EVALUATED,,,
+d20m,acdc_test,registered after unblinding,ece_equal_width,0.22049841628763048,,,50,50,,,,,companion,bins=10
+d20m,acdc_test,registered after unblinding,log_loss,1.2361933443924327,,,50,50,,,EVALUATED,,descriptive_companion,clip=1e-15
+d20m,acdc_test,registered after unblinding,macro_f1,0.6452525252525252,0.4977956474897651,0.7665220701435536,50,50,1999,0.9995,EVALUATED,,,
+d20m,acdc_test,registered after unblinding,macro_ovr_auroc,0.866,0.7846602546615167,0.9385456715231488,50,50,1999,0.9995,EVALUATED,,,
+d20m,acdc_test,registered after unblinding,majority_rate,0.2,0.1124375001577611,0.3303710593222542,50,,,,,,reference,majority_class=DCM; majority_numerator=10; interval=majority_wilson
+d20m,acdc_test,registered after unblinding,chance,0.2,,,50,,,,,,reference,
+d20m,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),accuracy,0.11764705882352941,0.04411764705882353,0.20588235294117646,68,68,2000,1.0,EVALUATED,,,
+d20m,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),balanced_accuracy,0.10698496905393456,0.04253102836879436,0.1833917390898046,68,68,2000,1.0,EVALUATED,,,
+d20m,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),brier,1.38425573808446,1.2539456774573563,1.5068342147523137,68,68,2000,1.0,EVALUATED,,,definition=multiclass
+d20m,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),ece,0.6055299404166951,0.5201073929324409,0.6931556643898081,68,68,2000,1.0,EVALUATED,,,
+d20m,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),ece_equal_width,0.6055299404166951,,,68,68,,,,,companion,bins=10
+d20m,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),log_loss,4.813728599236991,,,68,68,,,EVALUATED,,descriptive_companion,clip=1e-15
+d20m,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),macro_f1,0.17916666666666667,0.075,0.28696884351346585,68,68,2000,1.0,EVALUATED,,,
+d20m,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),macro_ovr_auroc,0.643236074270557,0.5632068801416664,0.726287976037655,68,68,2000,1.0,EVALUATED,,,
+d20m,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),majority_rate,0.5735294117647058,0.45516782316555565,0.6840275685226692,68,,,,,,reference,majority_class=NOR; majority_numerator=39; interval=majority_wilson
+d20m,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),chance,0.2,,,68,,,,,,reference,
+d20m,mms_external,registered after unblinding,accuracy,0.27941176470588236,0.22426470588235295,0.3321036577154093,272,271,2000,1.0,EVALUATED,,,
+d20m,mms_external,registered after unblinding,balanced_accuracy,0.29423593959040856,0.21984793469018366,0.36949529095647976,272,271,2000,1.0,EVALUATED,,,
+d20m,mms_external,registered after unblinding,brier,1.132418799244039,1.0453645408551284,1.2234765796274547,272,271,2000,1.0,EVALUATED,,,definition=multiclass
+d20m,mms_external,registered after unblinding,ece,0.5060129488452387,0.4539442872681413,0.561538430922883,272,271,2000,1.0,EVALUATED,,,
+d20m,mms_external,registered after unblinding,ece_equal_width,0.5060129488452387,,,272,271,,,,,companion,bins=10
+d20m,mms_external,registered after unblinding,log_loss,3.8227909701427394,,,272,271,,,EVALUATED,,descriptive_companion,clip=1e-15
+d20m,mms_external,registered after unblinding,macro_f1,0.26546954161467107,0.21088278351414447,0.3152336057268313,272,271,2000,1.0,EVALUATED,,,
+d20m,mms_external,registered after unblinding,macro_ovr_auroc,0.6281741368730993,0.5748737023620197,0.6809528215480167,272,271,2000,1.0,EVALUATED,,,
+d20m,mms_external,registered after unblinding,majority_rate,0.35294117647058826,0.2985568923788461,0.4114214395875514,272,,,,,,reference,majority_class=DCM; majority_numerator=96; interval=majority_wilson
+d20m,mms_external,registered after unblinding,chance,0.2,,,272,,,,,,reference,
+d20p,acdc_dev_oof,development (out-of-fold),accuracy,0.45918367346938777,0.36709183673469437,0.5510204081632653,98,98,2000,1.0,EVALUATED,,,
+d20p,acdc_dev_oof,development (out-of-fold),balanced_accuracy,0.4594736842105263,0.3572081552186092,0.5522466460268316,98,98,2000,1.0,EVALUATED,,,
+d20p,acdc_dev_oof,development (out-of-fold),brier,0.7912747579406846,0.6634287400394743,0.9197126129492506,98,98,2000,1.0,EVALUATED,,,definition=multiclass
+d20p,acdc_dev_oof,development (out-of-fold),ece,0.24599585722875905,0.19707861803691917,0.36283758803018645,98,98,2000,1.0,EVALUATED,,,
+d20p,acdc_dev_oof,development (out-of-fold),ece_equal_width,0.27203005907594013,,,98,98,,,,,companion,bins=10
+d20p,acdc_dev_oof,development (out-of-fold),log_loss,1.9129094750136448,,,98,98,,,EVALUATED,,descriptive_companion,clip=1e-15
+d20p,acdc_dev_oof,development (out-of-fold),macro_f1,0.4587552213868003,0.35459362009175943,0.5407527018329964,98,98,2000,1.0,EVALUATED,,,
+d20p,acdc_dev_oof,development (out-of-fold),macro_ovr_auroc,0.7272705375903245,0.6577034331812862,0.7938972224029782,98,98,2000,1.0,EVALUATED,,,
+d20p,acdc_dev_oof,development (out-of-fold),majority_rate,0.20408163265306123,0.13617701138609184,0.29431032970633136,98,,,,,,reference,majority_class=DCM; majority_numerator=20; interval=majority_wilson
+d20p,acdc_dev_oof,development (out-of-fold),chance,0.2,,,98,,,,,,reference,
+d20p,acdc_test,registered after unblinding,accuracy,0.4,0.28,0.54,50,50,2000,1.0,EVALUATED,,,
+d20p,acdc_test,registered after unblinding,balanced_accuracy,0.4,0.2752947052947053,0.5318147685647686,50,50,1999,0.9995,EVALUATED,,,
+d20p,acdc_test,registered after unblinding,brier,0.813848726804504,0.626037047524268,0.9824443663280497,50,50,2000,1.0,EVALUATED,,,definition=multiclass
+d20p,acdc_test,registered after unblinding,ece,0.3353216336251347,0.24827737064690145,0.4667081836898278,50,50,2000,1.0,EVALUATED,,,
+d20p,acdc_test,registered after unblinding,ece_equal_width,0.33532163362513456,,,50,50,,,,,companion,bins=10
+d20p,acdc_test,registered after unblinding,log_loss,1.8702287820081114,,,50,50,,,EVALUATED,,descriptive_companion,clip=1e-15
+d20p,acdc_test,registered after unblinding,macro_f1,0.38674658674658674,0.24916987447250605,0.5090979218594779,50,50,1999,0.9995,EVALUATED,,,
+d20p,acdc_test,registered after unblinding,macro_ovr_auroc,0.7535000000000001,0.667708383043787,0.8380597622068418,50,50,1999,0.9995,EVALUATED,,,
+d20p,acdc_test,registered after unblinding,majority_rate,0.2,0.1124375001577611,0.3303710593222542,50,,,,,,reference,majority_class=DCM; majority_numerator=10; interval=majority_wilson
+d20p,acdc_test,registered after unblinding,chance,0.2,,,50,,,,,,reference,
+d20p,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),accuracy,0.04411764705882353,0.0,0.08823529411764706,68,68,2000,1.0,EVALUATED,,,
+d20p,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),balanced_accuracy,0.04288240495137047,0.0,0.0921409214092141,68,68,2000,1.0,EVALUATED,,,
+d20p,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),brier,1.4779310495055331,1.383150013261422,1.5726334195911327,68,68,2000,1.0,EVALUATED,,,definition=multiclass
+d20p,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),ece,0.6807419195879366,0.6118520039463813,0.7484347574588243,68,68,2000,1.0,EVALUATED,,,
+d20p,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),ece_equal_width,0.6807419195879366,,,68,68,,,,,companion,bins=10
+d20p,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),log_loss,4.759687705660571,,,68,68,,,EVALUATED,,descriptive_companion,clip=1e-15
+d20p,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),macro_f1,0.07984496124031007,0.0,0.16307042939126867,68,68,2000,1.0,EVALUATED,,,
+d20p,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),macro_ovr_auroc,0.5433244916003537,0.4535494171626985,0.6348400832136014,68,68,2000,1.0,EVALUATED,,,
+d20p,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),majority_rate,0.5735294117647058,0.45516782316555565,0.6840275685226692,68,,,,,,reference,majority_class=NOR; majority_numerator=39; interval=majority_wilson
+d20p,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),chance,0.2,,,68,,,,,,reference,
+d20p,mms_external,registered after unblinding,accuracy,0.16544117647058823,0.12177121771217712,0.21033210332103322,272,271,2000,1.0,EVALUATED,,,
+d20p,mms_external,registered after unblinding,balanced_accuracy,0.17511867088607594,0.11840514564999127,0.24037015483563792,272,271,2000,1.0,EVALUATED,,,
+d20p,mms_external,registered after unblinding,brier,1.3125878623398044,1.2388192833301663,1.3808466001014486,272,271,2000,1.0,EVALUATED,,,definition=multiclass
+d20p,mms_external,registered after unblinding,ece,0.5883122968554675,0.5430325866177428,0.6357508139664623,272,271,2000,1.0,EVALUATED,,,
+d20p,mms_external,registered after unblinding,ece_equal_width,0.5883122968554675,,,272,271,,,,,companion,bins=10
+d20p,mms_external,registered after unblinding,log_loss,4.07196711299502,,,272,271,,,EVALUATED,,descriptive_companion,clip=1e-15
+d20p,mms_external,registered after unblinding,macro_f1,0.13137704149830226,0.09959350339152682,0.16360420786686922,272,271,2000,1.0,EVALUATED,,,
+d20p,mms_external,registered after unblinding,macro_ovr_auroc,0.5217464892516451,0.4727235415466683,0.5737856290919768,272,271,2000,1.0,EVALUATED,,,
+d20p,mms_external,registered after unblinding,majority_rate,0.35294117647058826,0.2985568923788461,0.4114214395875514,272,,,,,,reference,majority_class=DCM; majority_numerator=96; interval=majority_wilson
+d20p,mms_external,registered after unblinding,chance,0.2,,,272,,,,,,reference,

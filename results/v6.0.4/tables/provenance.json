@@ -1,0 +1,361 @@
+{
+  "schema": "tmmri.v604_evidence_pack/1",
+  "label": "EXPLORATORY_POST_HOC",
+  "run_id": "v6-postfreeze-20261029-1008",
+  "source_run_id": "v6-replication-20261003-1241",
+  "third_run_id": "v6-postfreeze-20261028-2135",
+  "source_run": {
+    "files_sha256": "3a7bc171dbe3f4584da514e6a50454d01468fd8b3f8c57ebf876f51c6cb3c036",
+    "frozen_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+    "release_manifest_sha256": "9260dd64b8cf1738e8c7b6cc7304053f930c27ae874903aa25e5158ea78afb4d",
+    "run_id": "v6-replication-20261003-1241"
+  },
+  "protocol_tag": "protocol-v6.0.4",
+  "protocol_tag_state": "protocol_frozen",
+  "specification_version": "6.0.4",
+  "analyses": {
+    "B28": {
+      "title": "agreement and ceilings of the decision-link test",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.4",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.4",
+      "code_commit": "fdad2c5d109ae386bb88583495fbaa14f64d3c01",
+      "code_dirty": false,
+      "code_sha256": "d84149835ba8c59a9075bb3cb067ee79c1446475dcb060a6c6d6304ae81c9900",
+      "confirmatory": false,
+      "role": "exploratory_post_hoc",
+      "working_tree_equal_to_tag": true
+    },
+    "B29": {
+      "title": "ejection-fraction categories, measured against reconstructed",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.4",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.4",
+      "code_commit": "fdad2c5d109ae386bb88583495fbaa14f64d3c01",
+      "code_dirty": false,
+      "code_sha256": "d84149835ba8c59a9075bb3cb067ee79c1446475dcb060a6c6d6304ae81c9900",
+      "confirmatory": false,
+      "role": "exploratory_post_hoc",
+      "working_tree_equal_to_tag": true
+    },
+    "B30": {
+      "title": "audited decisions by reference category",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.4",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.4",
+      "code_commit": "fdad2c5d109ae386bb88583495fbaa14f64d3c01",
+      "code_dirty": true,
+      "code_sha256": "d84149835ba8c59a9075bb3cb067ee79c1446475dcb060a6c6d6304ae81c9900",
+      "confirmatory": false,
+      "role": "exploratory_post_hoc",
+      "working_tree_equal_to_tag": true
+    },
+    "B31": {
+      "title": "reconstruction plausibility",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.4",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.4",
+      "code_commit": "fdad2c5d109ae386bb88583495fbaa14f64d3c01",
+      "code_dirty": false,
+      "code_sha256": "d84149835ba8c59a9075bb3cb067ee79c1446475dcb060a6c6d6304ae81c9900",
+      "confirmatory": false,
+      "role": "exploratory_post_hoc",
+      "working_tree_equal_to_tag": true
+    }
+  },
+  "written": "2026-10-30",
+  "script": "manuscript/scripts/export_v604_evidence_pack.py",
+  "licence": "aggregates only; no case identifiers",
+  "checks": {
+    "provenance_consistent_across_analyses": true,
+    "code_tree_sha256_equal_across_analyses": true,
+    "lane_config_and_src_equal_to_tag": true
+  },
+  "identifier_scan": {
+    "identifiers_checked": 1358,
+    "files_checked": 18,
+    "matches": 0,
+    "identifier_columns": 0,
+    "rule": "whole token (not preceded or followed by a letter, digit or underscore), case-insensitive; CSV headers must not contain sample_id, case_id, patient_id, subject_id, cluster_id or anchors",
+    "sources": [
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_ACDC.parquet",
+        "sha256": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_MMS.parquet",
+        "sha256": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "duplicate_of",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_MMS2.parquet",
+        "sha256": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "duplicate_of"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/inner_folds.parquet",
+        "sha256": "7dc447fdce15486c6ac905d9f5840eb39d9524570ba01b35f06bc3b63b00e8ee",
+        "columns": [
+          "sample_id",
+          "patient_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/split_manifest.parquet",
+        "sha256": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/split_manifest_MMS2.parquet",
+        "sha256": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_validation.json",
+        "sha256": "93ab8bc44e8144ef79a0bbb7e3f4bb49c9241e33c6099492f358aa22bfd2385c",
+        "columns": "values under identifier keys"
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_validation_MMS2.json",
+        "sha256": "fe2b24afb1fd1c9fc74781d93d4e10e852e33e68dc6b1a32f62664cd4b05d2c0",
+        "columns": "values under identifier keys"
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/mms2_duplicates.json",
+        "sha256": "8e695586458ff6dc039a6d3d44fec9302f0fff5c4774e0228f1270f4b21af21d",
+        "columns": "values under identifier keys"
+      },
+      {
+        "run": "v6-postfreeze-20261028-2135",
+        "path": "postfreeze/B25/models/rulebook_pooled_d_model/rulebook.json",
+        "sha256": "5005df7a8416e6d13e61695b0804e023f86e88b6ef99f44198521d199fbb382e",
+        "columns": "anchors"
+      }
+    ]
+  },
+  "files": {
+    "b28_b23_reproduction.csv": {
+      "rows": 18,
+      "sources": [
+        {
+          "path": "postfreeze/B28/b23_reproduction.parquet",
+          "sha256": "8e6f299c391d0e15eccd94dafd470ce5d9dec740b1be34f9012690fdc5cc9160"
+        }
+      ],
+      "sha256": "a298604e4d39ae561c9720552fdd151f32fa7a259121d2fae48c6a8cad31993f"
+    },
+    "b28_kappa_table.csv": {
+      "rows": 12,
+      "sources": [
+        {
+          "path": "postfreeze/B28/kappa_table.parquet",
+          "sha256": "e0bac4f0c05682119277a2f5ccc524c2a5d3b80dc6efa2430ea003438e8a4703"
+        }
+      ],
+      "sha256": "323c129736d99345338fd39c7f92f458d07ef1a0d8e84732168dd6d12948449f"
+    },
+    "b28_kappa_null_summary.csv": {
+      "rows": 6,
+      "sources": [
+        {
+          "path": "postfreeze/B28/kappa_null_summary.parquet",
+          "sha256": "c55f379ca5bca5b101c225bc56dccaecce5bf3dafc4f50ef75d75a04460cfd81"
+        }
+      ],
+      "sha256": "a4155fbfd3b0e2f57ffd18197a8a3d7f129609d1aee742eab1cb035f1ade84ff"
+    },
+    "b28_majority_constant_table.csv": {
+      "rows": 6,
+      "sources": [
+        {
+          "path": "postfreeze/B28/majority_constant_table.parquet",
+          "sha256": "0f4b71b1c4c304c7c2f4bd1036980c250d3675fb2ece6a2c813726794053e1bd"
+        }
+      ],
+      "sha256": "2ae137f14f472e6b8eebb8716da513e4d70a6fb130d064d39aea8c0686416301"
+    },
+    "b28_ceiling_table.csv": {
+      "rows": 3,
+      "sources": [
+        {
+          "path": "postfreeze/B28/ceiling_table.parquet",
+          "sha256": "f901ac78a29cd5bbd2ea0c30a51a6a969d161270a4586b65297f832eee33a3b5"
+        }
+      ],
+      "sha256": "52de3b9d04a13664e556ced8cb780652fbd371b86ed4350a5b5c83e546f68d4d"
+    },
+    "b29_ef_category_crosstab.csv": {
+      "rows": 52,
+      "sources": [
+        {
+          "path": "postfreeze/B29/ef_category_crosstab.parquet",
+          "sha256": "e2573f69e774b6f1d16033753ec9e80aa830fe69128f532d33831340de48e275"
+        }
+      ],
+      "sha256": "66fd7d9b98743bd6b4bdf7d1f078292917b748284126d9ce88390281d8fa0ba7"
+    },
+    "b29_ef_category_agreement.csv": {
+      "rows": 8,
+      "sources": [
+        {
+          "path": "postfreeze/B29/ef_category_agreement.parquet",
+          "sha256": "730d8ad3fde49326e87dffa448bc19d846f34f8361ca762af645e9576c506f0e"
+        }
+      ],
+      "sha256": "2032a63f65292214d556b0df39ee1a7c5fcdd21501ac07bb5b419183aef2ea83"
+    },
+    "b30_confusion_table.csv": {
+      "rows": 50,
+      "sources": [
+        {
+          "path": "postfreeze/B30/confusion_table.parquet",
+          "sha256": "4aa0e223c6d02aaa5bede96b9522b50de81f8345b5cbf0cb13ed5192808418d5"
+        }
+      ],
+      "sha256": "99f5c1625a034483a456da672b79471bde3c9c74c8b8f3eac79786be444fdbd7"
+    },
+    "b30_recall_table.csv": {
+      "rows": 12,
+      "sources": [
+        {
+          "path": "postfreeze/B30/recall_table.parquet",
+          "sha256": "7f430b63221718b0a174566fa43a679ebafc90a3efd78a70ebf4c0bb4f9fd593"
+        }
+      ],
+      "sha256": "2a70e62a4b7728108c985fca5c35640a18fd1d8061e3a2a3df25b446ade6605a"
+    },
+    "b30_mms2_category_table.csv": {
+      "rows": 8,
+      "sources": [
+        {
+          "path": "postfreeze/B30/mms2_category_table.parquet",
+          "sha256": "eff5c791d57bf7de88ab4c6c0dd2ae4e554b3b7bd9a310d9906501ed04199f98"
+        }
+      ],
+      "sha256": "f06dd0391aa88796732be5d6937d7ef74fa1d5d3fd59a3d4eeca2d6a9247acbc"
+    },
+    "b30_b25_covered_table.csv": {
+      "rows": 4,
+      "sources": [
+        {
+          "path": "postfreeze/B30/b25_covered_table.parquet",
+          "sha256": "488c9b8eefbba90edad78477569ff3a9f23651a212edf30b0e5ddf18c8879dc1"
+        }
+      ],
+      "sha256": "d8a381d67a0cf24f9aab4d8b0f03506b23689cb59acc6ed0bb347b7ca35f5d00"
+    },
+    "b31_plausibility_counts.csv": {
+      "rows": 48,
+      "sources": [
+        {
+          "path": "postfreeze/B31/plausibility_counts.parquet",
+          "sha256": "6110c8309e37c8bfb53152aa34c0aa6a5867ef1754996bbc6dd267b7f293222f"
+        }
+      ],
+      "sha256": "cf9e8d4706cdd886209f18698bed102bf230457b8498fcecc130376a81237126"
+    },
+    "b31_ef_difference_distribution.csv": {
+      "rows": 8,
+      "sources": [
+        {
+          "path": "postfreeze/B31/ef_difference_distribution.parquet",
+          "sha256": "d7fb0e9cd6c718ba0286d4d013bf3a916ea02103501edd13f663b448058ef06a"
+        }
+      ],
+      "sha256": "f532705281d524cc3a9a23ae8594eb16a52a8e1b34dc9cf5cfd222fd328362bc"
+    },
+    "b31_clipped_skill_table.csv": {
+      "rows": 32,
+      "sources": [
+        {
+          "path": "postfreeze/B31/clipped_skill_table.parquet",
+          "sha256": "42343dc20dfd436f1be86a60e11be2f9edc2de1fd6f84ce9f0cbf7489b6250c7"
+        }
+      ],
+      "sha256": "cbcce8d890c2bba6670c8b061d6648cf15accf98e84135562325285bb2059855"
+    },
+    "summaries.json": {
+      "sources": [
+        {
+          "path": "postfreeze/B28/summary.json",
+          "sha256": "218fc799e4dd049a3f7e735ef7dc1fb8af7e9cc58abe73f905b9491d6dd347f4"
+        },
+        {
+          "path": "postfreeze/B29/summary.json",
+          "sha256": "3b9ca493dedc56c4d8ecc37862fa647fadcc889eb969a5d7c1cd0debb4cd88c3"
+        },
+        {
+          "path": "postfreeze/B30/summary.json",
+          "sha256": "f9d885af57b60a895bd09ca9ad03b80d8da05daf1f798bcab34d6fe2c52011bd"
+        },
+        {
+          "path": "postfreeze/B31/summary.json",
+          "sha256": "3dcdef4157d022968678f3ddb186b1f8fff2bd996fe822a61fc61f9db6c46705"
+        }
+      ],
+      "dropped_summary_keys": {
+        "B28": [
+          "ceiling_rows",
+          "kappa_rows",
+          "reproduction"
+        ],
+        "B29": [
+          "rows"
+        ],
+        "B30": [],
+        "B31": [
+          "rows"
+        ]
+      },
+      "sha256": "a1c478f9e3b94f67830f1d7bc3dd2e7a9474f619580f80411613f9a5ecad0c50"
+    },
+    "README.md": {
+      "sources": [],
+      "sha256": "59e9061fb0334efb4b8b24e4210998da6a63bd84ff8e562d1404083e023a4777"
+    }
+  }
+}

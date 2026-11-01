@@ -1129,6 +1129,9 @@ V6_COMMANDS += ("evaluate-h4",)    # protocol-v6.0.1 (Decision D36): the H4 fami
 # --- protocol-v6.0.1 lane L3: registered comparator F8 and the exploratory register B1-B8 (dispatched by _run_v6) ---
 V601_L3_COMMANDS = ("fit-cart-surrogate", "evaluate-cart-surrogate", "run-exploratory")
 # --- end lane L3 ---
+# protocol-v6.0.2: post-freeze exploratory block B10-B22 (configs/exploratory_postfreeze.yaml); dispatched by _run_v6.
+# protocol-v6.0.3: the same command runs the second block B23-B27 (configs/exploratory_postfreeze_v603.yaml).
+V602_COMMANDS = ("run-postfreeze",)
 # Lane L57 (protocol-v6.0.1 items 11-14: F9b probes, alternative bundles, trust S1-S4, comparison tables); run by _run_v6.
 from .experiments.l57_cli import L57_COMMANDS, add_l57_parsers, run_l57_command  # noqa: E402
 # L89 (protocol-v6.0.1 S5/S6, configs/data_centric.yaml): registered data-centric analyses, dispatched by _run_v6.
@@ -1194,6 +1197,20 @@ def _run_v6(args: argparse.Namespace) -> int:
     try:
         if command == "bench":
             return _run_bench(args)
+        if command == "run-postfreeze":
+            # A new run root next to the frozen source run; nothing is written below a source run (SPECIFICATION.md 13.7-13.9).
+            from .experiments.postfreeze.common import make_postfreeze_context, run_postfreeze
+            from .experiments.postfreeze.lane_v603 import ANALYSES as V603_ANALYSES, make_v603_context
+            from .experiments.postfreeze.lane_v604 import ANALYSES as V604_ANALYSES, make_v604_context
+
+            sources = {k: _cli_path(v) for k, v in (("acdc", args.acdc_source), ("mms", args.mms_source), ("mms2", args.mms2_source)) if v}
+            make = (make_v604_context if args.analysis in V604_ANALYSES else make_v603_context if args.analysis in V603_ANALYSES
+                    else make_postfreeze_context)
+            pctx = make(args.study, args.source_run, args.run_id, artifact_root=_cli_path(args.artifact_root) if args.artifact_root else None,
+                        data_root=_cli_path(args.data_root) if args.data_root else None, n_jobs=args.n_jobs,
+                        allow_unfrozen_synthetic=args.allow_unfrozen_synthetic, sources=sources)
+            _emit_json(run_postfreeze(pctx, args.analysis))
+            return 0
         ctx = _v6_context(args)
         # --- protocol-v6.0.1 (M&Ms-2; L1) ---
         if command == "extract-mms2":
@@ -1476,6 +1493,13 @@ def _add_v6_parsers(sub: argparse._SubParsersAction) -> None:
     p.add_argument("--analysis", required=True, choices=["B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9"])
     _v6_common(p)
     # --- end lane L3 ---
+    p = sub.add_parser("run-postfreeze", help="post-freeze exploratory blocks B10-B22 (v6.0.2), B23-B27 (v6.0.3) and B28-B31 (v6.0.4) "
+                                              "(EXPLORATORY_POST_HOC; reads the frozen source run, for B23-B27 also v6-postfreeze-20261028-0201 "
+                                              "and for B28-B31 also v6-postfreeze-20261028-2135, and writes only the new run root "
+                                              "artifacts/v6-postfreeze-YYYYMMDD-HHMM)")
+    p.add_argument("--analysis", required=True, choices=[f"B{k}" for k in range(10, 32)])
+    p.add_argument("--source-run", required=True, help="the frozen source run id (configs/exploratory_postfreeze.yaml source_run.run_id)")
+    _v6_common(p)
 
     p = sub.add_parser("bench", help="v6: timing benchmark (per-case seconds, throughput, projections for ACDC 150 and M&Ms 320/345)")
     p.add_argument("--cases", type=int, default=10)
@@ -1703,7 +1727,7 @@ def main(argv: list[str] | None = None) -> None:
             raise SystemExit(code)
         return
     # protocol-v6.0.1: lanes L3, L57 and L89 share the v6 dispatcher and its exit codes
-    if args.command in (*V6_COMMANDS, *V601_L3_COMMANDS, *L57_COMMANDS, *DATA_CENTRIC_COMMANDS):
+    if args.command in (*V6_COMMANDS, *V601_L3_COMMANDS, *V602_COMMANDS, *L57_COMMANDS, *DATA_CENTRIC_COMMANDS):
         code = _run_v6(args)
         if code:
             raise SystemExit(code)

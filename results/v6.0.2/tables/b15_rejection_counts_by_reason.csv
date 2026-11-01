@@ -1,0 +1,13 @@
+rulebook,first_failed_condition,n_candidates
+d_model,crossfit_reproduction,1
+d_model,granule_confidence_min_0.90,24
+d_model,granule_support_min_5,15
+d_model,pooled_matches_min_5,5
+d_model,wilson_lower_min_0.60,5
+dataset_label,PASSED_ALL,3
+dataset_label,crossfit_reproduction,1
+dataset_label,granule_confidence_min_0.90,24
+dataset_label,granule_support_min_5,15
+dataset_label,pooled_matches_min_5,5
+dataset_label,wilson_lower_min_0.60,2
+measured_oracle,granule_confidence_min_0.90,3

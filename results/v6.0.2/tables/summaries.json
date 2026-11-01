@@ -1,0 +1,951 @@
+{
+  "B10": {
+    "analysis": "B10",
+    "formula": "EF_k = 100 * (f_ED,k - f_ES,k) / f_ED,k for k = LV (label 1) and RV (label 3), with f the per-phase label voxel fraction of formal A (fd_l1_fraction_ed, fd_l1_fraction_es; fd_l3_fraction_ed, fd_l3_fraction_es)",
+    "included": [
+      "acdc_dev_oof",
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "not_executed": {},
+    "null": "acdc_dev mean of the non-critical fit rows (as the recorded rho)",
+    "tolerance_pp": 1e-06
+  },
+  "B11": {
+    "analysis": "B11",
+    "families": {
+      "fractions17": {
+        "columns": [
+          "fd_ed_l0_label_voxel_fraction",
+          "fd_ed_l1_label_voxel_fraction",
+          "fd_ed_l2_label_voxel_fraction",
+          "fd_ed_l3_label_voxel_fraction",
+          "fd_es_l0_label_voxel_fraction",
+          "fd_es_l1_label_voxel_fraction",
+          "fd_es_l2_label_voxel_fraction",
+          "fd_es_l3_label_voxel_fraction",
+          "fd_l1_fraction_ed",
+          "fd_l1_fraction_es",
+          "fd_l1_fraction_ed_minus_es",
+          "fd_l2_fraction_ed",
+          "fd_l2_fraction_es",
+          "fd_l2_fraction_ed_minus_es",
+          "fd_l3_fraction_ed",
+          "fd_l3_fraction_es",
+          "fd_l3_fraction_ed_minus_es"
+        ],
+        "n_columns": 17,
+        "pattern": "fraction"
+      },
+      "intensities40": {
+        "columns": [
+          "fd_ed_l0_mean",
+          "fd_ed_l0_sd_population",
+          "fd_ed_l0_median",
+          "fd_ed_l0_p25",
+          "fd_ed_l0_p75",
+          "fd_ed_l1_mean",
+          "fd_ed_l1_sd_population",
+          "fd_ed_l1_median",
+          "fd_ed_l1_p25",
+          "fd_ed_l1_p75",
+          "fd_ed_l2_mean",
+          "fd_ed_l2_sd_population",
+          "fd_ed_l2_median",
+          "fd_ed_l2_p25",
+          "fd_ed_l2_p75",
+          "fd_ed_l3_mean",
+          "fd_ed_l3_sd_population",
+          "fd_ed_l3_median",
+          "fd_ed_l3_p25",
+          "fd_ed_l3_p75",
+          "fd_es_l0_mean",
+          "fd_es_l0_sd_population",
+          "fd_es_l0_median",
+          "fd_es_l0_p25",
+          "fd_es_l0_p75",
+          "fd_es_l1_mean",
+          "fd_es_l1_sd_population",
+          "fd_es_l1_median",
+          "fd_es_l1_p25",
+          "fd_es_l1_p75",
+          "fd_es_l2_mean",
+          "fd_es_l2_sd_population",
+          "fd_es_l2_median",
+          "fd_es_l2_p25",
+          "fd_es_l2_p75",
+          "fd_es_l3_mean",
+          "fd_es_l3_sd_population",
+          "fd_es_l3_median",
+          "fd_es_l3_p25",
+          "fd_es_l3_p75"
+        ],
+        "n_columns": 40,
+        "pattern": "^(?!.*fraction)"
+      }
+    },
+    "fitting": "identical to the primary transition (configs/transition.yaml): nested outer and inner folds, the 21-value lambda grid with ties to the larger value, typed transforms, winsorization at the 1st and 99th fit percentiles, standardization fitted on the fitting rows, columns with zero fit variance dropped; only the descriptor columns differ",
+    "frozen": {
+      "ridge_typed_fractions17": {
+        "columns": [
+          "fd_ed_l0_label_voxel_fraction",
+          "fd_ed_l1_label_voxel_fraction",
+          "fd_ed_l2_label_voxel_fraction",
+          "fd_ed_l3_label_voxel_fraction",
+          "fd_es_l0_label_voxel_fraction",
+          "fd_es_l1_label_voxel_fraction",
+          "fd_es_l2_label_voxel_fraction",
+          "fd_es_l3_label_voxel_fraction",
+          "fd_l1_fraction_ed",
+          "fd_l1_fraction_es",
+          "fd_l1_fraction_ed_minus_es",
+          "fd_l2_fraction_ed",
+          "fd_l2_fraction_es",
+          "fd_l2_fraction_ed_minus_es",
+          "fd_l3_fraction_ed",
+          "fd_l3_fraction_es",
+          "fd_l3_fraction_ed_minus_es"
+        ],
+        "dropped_zero_variance_columns": [],
+        "estimator_id": "ridge_typed_fractions17",
+        "excluded_targets": {},
+        "files": {
+          "lambda_selection.parquet": "a033a5685f49df0bbb43a80750a7ec850df6f0ff71f82f60de70f626d190514e",
+          "oof_acdc_dev.parquet": "23f271a43c08655d72969e0276bb54c462664b0bcf48d4f51570175509eb6108",
+          "transition_model.json": "025c30144b49964993ae229475e2390c38802d2c1282f2131b002304b1be464e"
+        },
+        "fit_partition": "acdc_dev",
+        "fitted_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_sv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_sv_ml",
+          "rv_ef_percent",
+          "lv_myo_volume_es_ml",
+          "lv_myocardial_mass_ed_g",
+          "global_wall_thickness_ed_mm",
+          "global_wall_thickness_es_mm",
+          "global_wall_thickening_percent",
+          "lv_area_mean_ed_mm2",
+          "lv_area_mean_es_mm2",
+          "rv_area_mean_ed_mm2",
+          "rv_area_mean_es_mm2",
+          "lv_compactness_mean_ed",
+          "lv_compactness_mean_es",
+          "rv_compactness_mean_ed",
+          "rv_compactness_mean_es",
+          "lv_eccentricity_mean_ed",
+          "lv_eccentricity_mean_es",
+          "rv_eccentricity_mean_ed",
+          "rv_eccentricity_mean_es"
+        ],
+        "folds": "recorded outer and inner folds of the source run",
+        "n_columns": 17,
+        "n_fit_rows": 98,
+        "n_nonfinite_rows": 0,
+        "n_rows": 98
+      },
+      "ridge_typed_intensities40": {
+        "columns": [
+          "fd_ed_l0_mean",
+          "fd_ed_l0_sd_population",
+          "fd_ed_l0_median",
+          "fd_ed_l0_p25",
+          "fd_ed_l0_p75",
+          "fd_ed_l1_mean",
+          "fd_ed_l1_sd_population",
+          "fd_ed_l1_median",
+          "fd_ed_l1_p25",
+          "fd_ed_l1_p75",
+          "fd_ed_l2_mean",
+          "fd_ed_l2_sd_population",
+          "fd_ed_l2_median",
+          "fd_ed_l2_p25",
+          "fd_ed_l2_p75",
+          "fd_ed_l3_mean",
+          "fd_ed_l3_sd_population",
+          "fd_ed_l3_median",
+          "fd_ed_l3_p25",
+          "fd_ed_l3_p75",
+          "fd_es_l0_mean",
+          "fd_es_l0_sd_population",
+          "fd_es_l0_median",
+          "fd_es_l0_p25",
+          "fd_es_l0_p75",
+          "fd_es_l1_mean",
+          "fd_es_l1_sd_population",
+          "fd_es_l1_median",
+          "fd_es_l1_p25",
+          "fd_es_l1_p75",
+          "fd_es_l2_mean",
+          "fd_es_l2_sd_population",
+          "fd_es_l2_median",
+          "fd_es_l2_p25",
+          "fd_es_l2_p75",
+          "fd_es_l3_mean",
+          "fd_es_l3_sd_population",
+          "fd_es_l3_median",
+          "fd_es_l3_p25",
+          "fd_es_l3_p75"
+        ],
+        "dropped_zero_variance_columns": [],
+        "estimator_id": "ridge_typed_intensities40",
+        "excluded_targets": {},
+        "files": {
+          "lambda_selection.parquet": "ddfc6ba235b3b6cd24f2581b8a1e862959f8a1e8ec08cc6622a7bf736654d065",
+          "oof_acdc_dev.parquet": "e708192d1f1f1908d15d31842603dcda7f8e17092358074459bdcd366be6a145",
+          "transition_model.json": "0e31e17b3d30a4e4a5ed3da3dd83b5031f1883d4364ad5d73c5bb71e903e6fa9"
+        },
+        "fit_partition": "acdc_dev",
+        "fitted_targets": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_sv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_sv_ml",
+          "rv_ef_percent",
+          "lv_myo_volume_es_ml",
+          "lv_myocardial_mass_ed_g",
+          "global_wall_thickness_ed_mm",
+          "global_wall_thickness_es_mm",
+          "global_wall_thickening_percent",
+          "lv_area_mean_ed_mm2",
+          "lv_area_mean_es_mm2",
+          "rv_area_mean_ed_mm2",
+          "rv_area_mean_es_mm2",
+          "lv_compactness_mean_ed",
+          "lv_compactness_mean_es",
+          "rv_compactness_mean_ed",
+          "rv_compactness_mean_es",
+          "lv_eccentricity_mean_ed",
+          "lv_eccentricity_mean_es",
+          "rv_eccentricity_mean_ed",
+          "rv_eccentricity_mean_es"
+        ],
+        "folds": "recorded outer and inner folds of the source run",
+        "n_columns": 40,
+        "n_fit_rows": 98,
+        "n_nonfinite_rows": 0,
+        "n_rows": 98
+      }
+    },
+    "included": [
+      "acdc_dev_oof",
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "not_executed": {},
+    "null": "acdc_dev mean of the non-critical fit rows (as the recorded rho)"
+  },
+  "B12": {
+    "analysis": "B12",
+    "analytical_volumes": "V_k,phase = f_k,phase * N_phase * dx * dy * dz / 1000 mL, with N_phase the voxel count of the phase array (staging manifest image_shape), dx and dy the in-plane spacing and dz the slice increment as in B (never the slice thickness); LV mass = V_myo,ED * 1.05 g/mL; the maximum absolute difference from B is reported per partition",
+    "decomposition": "per target, in normalized MAE (divided by s_j): approximation = learned error where the information is present (geometry-aware ridge on the volumes, primary ridge on EF; analytical error as reference, internal partitions); missing_information = primary ridge minus geometry-aware ridge on the same partition; shift = geometry-aware ridge on each external partition minus on acdc_test",
+    "frozen": {
+      "columns": [
+        "fd_ed_l0_mean",
+        "fd_ed_l0_sd_population",
+        "fd_ed_l0_median",
+        "fd_ed_l0_p25",
+        "fd_ed_l0_p75",
+        "fd_ed_l0_label_voxel_fraction",
+        "fd_ed_l1_mean",
+        "fd_ed_l1_sd_population",
+        "fd_ed_l1_median",
+        "fd_ed_l1_p25",
+        "fd_ed_l1_p75",
+        "fd_ed_l1_label_voxel_fraction",
+        "fd_ed_l2_mean",
+        "fd_ed_l2_sd_population",
+        "fd_ed_l2_median",
+        "fd_ed_l2_p25",
+        "fd_ed_l2_p75",
+        "fd_ed_l2_label_voxel_fraction",
+        "fd_ed_l3_mean",
+        "fd_ed_l3_sd_population",
+        "fd_ed_l3_median",
+        "fd_ed_l3_p25",
+        "fd_ed_l3_p75",
+        "fd_ed_l3_label_voxel_fraction",
+        "fd_es_l0_mean",
+        "fd_es_l0_sd_population",
+        "fd_es_l0_median",
+        "fd_es_l0_p25",
+        "fd_es_l0_p75",
+        "fd_es_l0_label_voxel_fraction",
+        "fd_es_l1_mean",
+        "fd_es_l1_sd_population",
+        "fd_es_l1_median",
+        "fd_es_l1_p25",
+        "fd_es_l1_p75",
+        "fd_es_l1_label_voxel_fraction",
+        "fd_es_l2_mean",
+        "fd_es_l2_sd_population",
+        "fd_es_l2_median",
+        "fd_es_l2_p25",
+        "fd_es_l2_p75",
+        "fd_es_l2_label_voxel_fraction",
+        "fd_es_l3_mean",
+        "fd_es_l3_sd_population",
+        "fd_es_l3_median",
+        "fd_es_l3_p25",
+        "fd_es_l3_p75",
+        "fd_es_l3_label_voxel_fraction",
+        "fd_l1_fraction_ed",
+        "fd_l1_fraction_es",
+        "fd_l1_fraction_ed_minus_es",
+        "fd_l2_fraction_ed",
+        "fd_l2_fraction_es",
+        "fd_l2_fraction_ed_minus_es",
+        "fd_l3_fraction_ed",
+        "fd_l3_fraction_es",
+        "fd_l3_fraction_ed_minus_es",
+        "log_voxel_volume_ml",
+        "log_imaged_volume_ml",
+        "log_slice_count"
+      ],
+      "dropped_zero_variance_columns": [],
+      "estimator_id": "ridge_typed_formal57_plus_geometry3",
+      "excluded_targets": {},
+      "files": {
+        "lambda_selection.parquet": "19156e40a43f6c70e0fc699e4f3d96236d3567bf239347b7d0e51b5c2e7baf62",
+        "oof_acdc_dev.parquet": "8c550f3ca7fc532da5b038a97948f6c13c451f10c8f000f78d62fe2c0351f63b",
+        "transition_model.json": "81081c76d8d9fb8c6a033a40bd90b4b9f96cae7dd768f3ac47d8279187534260"
+      },
+      "fit_partition": "acdc_dev",
+      "fitted_targets": [
+        "lv_edv_ml",
+        "lv_esv_ml",
+        "lv_sv_ml",
+        "lv_ef_percent",
+        "rv_edv_ml",
+        "rv_esv_ml",
+        "rv_sv_ml",
+        "rv_ef_percent",
+        "lv_myo_volume_es_ml",
+        "lv_myocardial_mass_ed_g",
+        "global_wall_thickness_ed_mm",
+        "global_wall_thickness_es_mm",
+        "global_wall_thickening_percent",
+        "lv_area_mean_ed_mm2",
+        "lv_area_mean_es_mm2",
+        "rv_area_mean_ed_mm2",
+        "rv_area_mean_es_mm2",
+        "lv_compactness_mean_ed",
+        "lv_compactness_mean_es",
+        "rv_compactness_mean_ed",
+        "rv_compactness_mean_es",
+        "lv_eccentricity_mean_ed",
+        "lv_eccentricity_mean_es",
+        "rv_eccentricity_mean_ed",
+        "rv_eccentricity_mean_es"
+      ],
+      "folds": "recorded outer and inner folds of the source run",
+      "n_columns": 60,
+      "n_fit_rows": 98,
+      "n_nonfinite_rows": 0,
+      "n_rows": 98
+    },
+    "geometry_covariates": {
+      "log_imaged_volume_ml": "log(N_ED * dx * dy * dz / 1000)",
+      "log_slice_count": "log(number of slices of the ED array)",
+      "log_voxel_volume_ml": "log(dx * dy * dz / 1000)"
+    },
+    "included": [
+      "acdc_dev_oof",
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "myocardial_density_g_per_ml": 1.05,
+    "n_phase_source": "staging-manifest image_shape of the ED mask (one geometry per case; N_ES = N_ED)",
+    "not_executed": {}
+  },
+  "B13": {
+    "analysis": "B13",
+    "development_mean": {
+      "lv_edv_ml": 164.8990933767228,
+      "lv_ef_percent": 46.44472839812227,
+      "lv_esv_ml": 99.3376769375135,
+      "lv_myocardial_mass_ed_g": 130.1379878877594,
+      "rv_edv_ml": 152.47126360362222,
+      "rv_ef_percent": 46.50007754400375,
+      "rv_esv_ml": 86.1622132023842
+    },
+    "development_median": {
+      "lv_edv_ml": 148.3142868293891,
+      "lv_ef_percent": 53.6519936986726,
+      "lv_esv_ml": 64.11128447740691,
+      "lv_myocardial_mass_ed_g": 123.64369074919784,
+      "rv_edv_ml": 149.38614842792452,
+      "rv_ef_percent": 48.024511974197125,
+      "rv_esv_ml": 70.083984375
+    },
+    "included": [
+      "acdc_dev_oof",
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "not_executed": {},
+    "null": "the acdc_dev median of each target in physical units over the non-critical-QC rows (for acdc_dev_oof: the median of the outer-training rows of each fold)",
+    "rule": "reported beside the recorded mean-null results; it never replaces them and changes no recorded decision"
+  },
+  "B14": {
+    "analysis": "B14",
+    "decision_rule": "recorded 95 % lower bound > threshold (as the registered success rule)",
+    "included": [
+      "acdc_dev_oof",
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "not_executed": {},
+    "sesoi": 0.1,
+    "sweep_rule": "for each recorded hypothesis estimate (H-primary-1, H-primary-2, its 220-case sensitivity, H-primary-3, H4a), whether the recorded lower bound exceeds each threshold; arithmetic on recorded intervals, no resampling",
+    "thresholds": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3
+    ],
+    "translation": "0.10 * MAE_0,j (the mean-null MAE of each primary target on each partition) in physical units"
+  },
+  "B15": {
+    "agreement_reference": "the fold-specific audited predictor refitted on each outer-training set (as the recorded gate); agreement with the final frozen predictor on the development rows is reported beside it, labelled in-sample",
+    "analysis": "B15",
+    "candidates": "every conjunction of at most three feature-state literals on the eligible concepts with at least one supporting development patient, from the recorded granules and frozen cuts; consequent, support (patients), confidence",
+    "limits": {
+      "granule_confidence": 0.9,
+      "granule_support": 5.0,
+      "pooled_matches": 5.0,
+      "wilson_lower": 0.6
+    },
+    "max_length": 3,
+    "pipeline_order": [
+      "concept_eligibility",
+      "granule_support_min_5",
+      "granule_confidence_min_0.90",
+      "crossfit_reproduction",
+      "pooled_matches_min_5",
+      "wilson_lower_min_0.60"
+    ],
+    "rulebooks": {
+      "d_model": {
+        "agreement_reference": "fold-specific audited predictor; final frozen predictor beside it (in-sample)",
+        "attributes": [
+          "lv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "discovery_reproduced": true,
+        "gate_recomputation_matches_recorded": {
+          "R_51471d9e1ebbae7d": true,
+          "R_56b7159f0d2f25af": true,
+          "R_8e93b4c34036921a": true,
+          "R_9f66dc569c7f6329": true,
+          "R_a81d541ff3339287": true,
+          "R_cf5ef6878625f5f6": true
+        },
+        "gate_substrate": "nested_inner_oof",
+        "n_candidates": 50,
+        "n_recomputed_rules": 0,
+        "n_recorded_rules": 6,
+        "usable_attributes": [
+          "lv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ]
+      },
+      "dataset_label": {
+        "agreement_reference": "dataset label",
+        "attributes": [
+          "lv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "discovery_reproduced": true,
+        "gate_recomputation_matches_recorded": {
+          "R_1a07af9e044ae439": true,
+          "R_3aa3d48fa72f9fa8": true,
+          "R_7cfc8bf197f0ad6a": true,
+          "R_ada943ac4203660f": true,
+          "R_cfc49b9f1674cd39": true,
+          "R_e34496f973799959": true
+        },
+        "gate_substrate": "nested_inner_oof",
+        "n_candidates": 50,
+        "n_recomputed_rules": 0,
+        "n_recorded_rules": 6,
+        "usable_attributes": [
+          "lv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ]
+      },
+      "measured_oracle": {
+        "agreement_reference": "fold-specific audited predictor; final frozen predictor beside it (in-sample)",
+        "attributes": [
+          "lv_ef_percent"
+        ],
+        "discovery_reproduced": true,
+        "gate_recomputation_matches_recorded": {},
+        "gate_substrate": "measured_B",
+        "n_candidates": 3,
+        "n_recomputed_rules": 0,
+        "n_recorded_rules": 0,
+        "usable_attributes": [
+          "lv_ef_percent"
+        ]
+      }
+    }
+  },
+  "B16": {
+    "analysis": "B16",
+    "application": "each system with its own frozen cuts and rules; a variant whose cuts are not recorded is refitted on acdc_dev with its recorded settings, seeds and salts; no system is chosen or ranked by an evaluated partition",
+    "included": [
+      "acdc_dev_oof",
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "metrics": "coverage (accepted / processed) and fidelity (agreement with d_model among accepted) with Wilson intervals; accuracy against the reference among accepted on the same-definition subsets",
+    "not_executed": {},
+    "reproduction_checks": [
+      {
+        "partition": "acdc_test",
+        "recomputed_routes_equal_recorded": true,
+        "system": "primary_d_model"
+      },
+      {
+        "partition": "acdc_test",
+        "recomputed_routes_equal_recorded": true,
+        "system": "companion_dataset_label"
+      },
+      {
+        "partition": "mms_external",
+        "recomputed_routes_equal_recorded": true,
+        "system": "primary_d_model"
+      },
+      {
+        "partition": "mms_external",
+        "recomputed_routes_equal_recorded": true,
+        "system": "companion_dataset_label"
+      },
+      {
+        "partition": "mms2_external",
+        "recomputed_routes_equal_recorded": true,
+        "system": "primary_d_model"
+      },
+      {
+        "partition": "mms2_external",
+        "recomputed_routes_equal_recorded": true,
+        "system": "companion_dataset_label"
+      }
+    ],
+    "systems": {
+      "companion_dataset_label:companion": {
+        "cuts_source": "recorded",
+        "n_rules": 2,
+        "rulebook": "dataset_label",
+        "source": "rules/dataset_label"
+      },
+      "f4_discretizer_variants:three_quantile_v1": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_discretizer_three_quantile_v1.json"
+      },
+      "f4_discretizer_variants:wedd_uniform_mm_v1": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_discretizer_wedd_uniform_mm_v1.json"
+      },
+      "f4_wedd_setting_variants:bandwidth_multiplier_0.5": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_wedd_settings_bandwidth_multiplier_0.5.json"
+      },
+      "f4_wedd_setting_variants:bandwidth_multiplier_2": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_wedd_settings_bandwidth_multiplier_2.json"
+      },
+      "f4_wedd_setting_variants:max_bins_2": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 4,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_wedd_settings_max_bins_2.json"
+      },
+      "f4_wedd_setting_variants:max_bins_4": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_wedd_settings_max_bins_4.json"
+      },
+      "f4_wedd_setting_variants:max_depth_3_max_bins_4": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_wedd_settings_max_depth_3_max_bins_4.json"
+      },
+      "f4_wedd_setting_variants:weight_entropy_0.00": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_wedd_settings_weight_entropy_0.00.json"
+      },
+      "f4_wedd_setting_variants:weight_entropy_0.25": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_wedd_settings_weight_entropy_0.25.json"
+      },
+      "f4_wedd_setting_variants:weight_entropy_0.50": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_wedd_settings_weight_entropy_0.50.json"
+      },
+      "f4_wedd_setting_variants:weight_entropy_0.75": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_wedd_settings_weight_entropy_0.75.json"
+      },
+      "f4_wedd_setting_variants:weight_entropy_1.00": {
+        "cuts_source": "refitted on acdc_dev",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_wedd_settings_weight_entropy_1.00.json"
+      },
+      "f5_gate_bounds_0.50_0.70:0.50": {
+        "cuts_source": "primary (recorded)",
+        "n_rules": 2,
+        "rulebook": "d_model",
+        "source": "rules/d_model/gate.parquet re-thresholded"
+      },
+      "f5_gate_bounds_0.50_0.70:0.70": {
+        "cuts_source": "primary (recorded)",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/d_model/gate.parquet re-thresholded"
+      },
+      "f5_rule_policy_variants:beta_0.05": {
+        "cuts_source": "primary (recorded)",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_policy_beta_0.05.json"
+      },
+      "f5_rule_policy_variants:beta_0.10": {
+        "cuts_source": "primary (recorded)",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_policy_beta_0.10.json"
+      },
+      "f5_rule_policy_variants:beta_0.20": {
+        "cuts_source": "primary (recorded)",
+        "n_rules": 1,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_policy_beta_0.20.json"
+      },
+      "f5_rule_policy_variants:max_length_2": {
+        "cuts_source": "primary (recorded)",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_policy_max_length_2.json"
+      },
+      "f5_rule_policy_variants:max_length_3": {
+        "cuts_source": "primary (recorded)",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_policy_max_length_3.json"
+      },
+      "f5_rule_policy_variants:strict_only": {
+        "cuts_source": "primary (recorded)",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/ablations/d_model_policy_strict_only.json"
+      },
+      "f8_cart_full:full": {
+        "cuts_source": null,
+        "n_rules": 0,
+        "rulebook": null,
+        "source": "comparators/cart_f8"
+      },
+      "f8_cart_selective:selective": {
+        "cuts_source": null,
+        "n_rules": 0,
+        "rulebook": null,
+        "source": "comparators/cart_f8"
+      },
+      "primary_d_model:primary": {
+        "cuts_source": "recorded",
+        "n_rules": 0,
+        "rulebook": "d_model",
+        "source": "rules/d_model (EMPTY.json or rulebook.json)"
+      }
+    }
+  },
+  "B17": {
+    "analysis": "B17",
+    "any_large": "a case is any-large if at least one primary target exceeds its threshold",
+    "cuts": "thresholds/d_model_wedd_gaussian_mm_v1.json",
+    "development_n_cases": 98,
+    "development_thresholds": {
+      "lv_edv_ml": 0.8851149085582413,
+      "lv_ef_percent": 0.3879284568928318,
+      "lv_esv_ml": 0.806850355103765,
+      "lv_myocardial_mass_ed_g": 1.0888962581733033,
+      "rv_edv_ml": 1.038097706755592,
+      "rv_ef_percent": 0.6006322895828672,
+      "rv_esv_ml": 0.6635922645768234
+    },
+    "error": "per case and primary target, |B-hat - B| / s_j (raw reconstruction; OBSERVED cells)",
+    "included": [
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "large_error_threshold": "per target, the 90th percentile of the same quantity on the acdc_dev out-of-fold reconstructions (fixed on development data)",
+    "not_executed": {},
+    "signals": {
+      "accept_50": "not accepted at tau_50 (trust/s1_thresholds.json)",
+      "accept_80": "not accepted at tau_80",
+      "ood_flag": "the S2 flag",
+      "ood_score": "the S2 Mahalanobis score of the descriptors (trust/<p>/s2_scores.parquet)",
+      "uncertainty": "1 - maximum softmax probability of the audited predictor",
+      "unstable_bins": "number of the nine rule concepts with UNSTABLE_ESTIMATE (reconstructed/stability_d_model_<p>.parquet)"
+    },
+    "signals_not_recorded": {
+      "acdc_test": {},
+      "mms2_external": {},
+      "mms_external": {}
+    },
+    "symbol_concepts": [
+      "lv_esv_ml",
+      "rv_edv_ml",
+      "rv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g",
+      "global_wall_thickness_ed_mm"
+    ],
+    "symbol_errors": "for each concept with retained cuts, symbol error = bin of B-hat differs from bin of B under the frozen cuts; association of UNSTABLE_ESTIMATE with symbol error as 2 x 2 counts, sensitivity, specificity and risk ratio with intervals"
+  },
+  "B18": {
+    "analysis": "B18",
+    "excluded_nonfinite": {
+      "bhat7": {
+        "acdc_dev": 0,
+        "acdc_test": 0,
+        "mms2_external": 0,
+        "mms_external": 0
+      },
+      "bhat9": {
+        "acdc_dev": 0,
+        "acdc_test": 0,
+        "mms2_external": 0,
+        "mms_external": 0
+      },
+      "measured7": {
+        "acdc_dev": 0,
+        "acdc_test": 0,
+        "mms2_external": 0,
+        "mms_external": 0
+      }
+    },
+    "frozen_models": {
+      "bhat7": {
+        "columns": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "estimator_id": "lr_decision_link_bhat7",
+        "file": "run:postfreeze/B18/models/lr_decision_link_bhat7/predictor.json",
+        "n_fit_rows": 98,
+        "sha256": "b8c4e85e3e3f5bba7b78b37dee7e6b7817c85c641c45ca1d164bd14ed6247c51",
+        "untransformed_columns": []
+      },
+      "bhat9": {
+        "columns": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g",
+          "global_wall_thickness_ed_mm",
+          "global_wall_thickening_percent"
+        ],
+        "estimator_id": "lr_decision_link_bhat9",
+        "file": "run:postfreeze/B18/models/lr_decision_link_bhat9/predictor.json",
+        "n_fit_rows": 98,
+        "sha256": "cb60429c827144e399622cc16ba4ff34f425cb7d3378597a17cc79653a14b03f",
+        "untransformed_columns": []
+      },
+      "measured7": {
+        "columns": [
+          "lv_edv_ml",
+          "lv_esv_ml",
+          "lv_ef_percent",
+          "rv_edv_ml",
+          "rv_esv_ml",
+          "rv_ef_percent",
+          "lv_myocardial_mass_ed_g"
+        ],
+        "estimator_id": "lr_decision_link_measured7",
+        "file": "run:postfreeze/B18/models/lr_decision_link_measured7/predictor.json",
+        "n_fit_rows": 98,
+        "sha256": "e36c159ea1a165e3b4953bbed6c492b6a538095b072774cad77292991dd4d6e0",
+        "untransformed_columns": []
+      }
+    },
+    "included": [
+      "acdc_dev_oof",
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "inputs": {
+      "bhat7": "the seven primary targets of the development out-of-fold B-hat (typed transforms as the transition), applied to B-hat of each evaluated partition",
+      "bhat9": "the nine rule concepts of the development out-of-fold B-hat; rows with a non-finite input are excluded and counted",
+      "measured7": "the seven primary targets of measured B (same transforms), applied to measured B of each evaluated partition"
+    },
+    "metrics": "fidelity (agreement with d_model of the same partition) with Wilson intervals; accuracy, macro-F1 and the majority-class rate on the same-definition subsets; beside the recorded F8 fidelity",
+    "model": "multinomial logistic regression with the audited-predictor settings of configs/formal.yaml (L2, C = 1.0, no search) on standardized inputs fitted on acdc_dev",
+    "not_executed": {},
+    "target": "the final audited predictor's decisions d_model on acdc_dev (formal/d_model_ACDC_dev.parquet)",
+    "untransformed_columns": {
+      "bhat7": [],
+      "bhat9": [],
+      "measured7": []
+    }
+  },
+  "B19": {
+    "analysis": "B19",
+    "cross_checks": {
+      "acdc_test": {
+        "confusion_parquet_matches": true,
+        "n_evaluable_matches": true,
+        "n_evaluable_recorded": 50
+      },
+      "mms2_external": {
+        "n_evaluable_matches": true,
+        "n_evaluable_recorded": 68
+      },
+      "mms_external": {
+        "confusion_parquet_matches": true,
+        "n_evaluable_matches": true,
+        "n_evaluable_recorded": 272
+      }
+    },
+    "included": [
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "not_executed": {},
+    "rate": "largest reference-class count divided by the evaluable same-definition cases of each partition, with the class named; Wilson interval",
+    "source": "recorded class counts (metrics/predictor_<p>.json companions, metrics/predictor_confusion.parquet)"
+  },
+  "B21": {
+    "source": "postfreeze/B21/results.json",
+    "classes": [
+      "DCM",
+      "HCM",
+      "MINF",
+      "NOR",
+      "RV"
+    ],
+    "estimation_only": true,
+    "label": "EXPLORATORY_POST_HOC",
+    "statistics": {
+      "ef_targets": [
+        "lv_ef_percent",
+        "rv_ef_percent"
+      ],
+      "level": 0.95,
+      "min_cases": 20,
+      "min_estimable": 5,
+      "min_valid_fraction": 0.95,
+      "n_bins": 10,
+      "n_boot": 2000,
+      "seed": 20260928,
+      "volume_targets": [
+        "lv_edv_ml",
+        "lv_esv_ml",
+        "rv_edv_ml",
+        "rv_esv_ml",
+        "lv_myocardial_mass_ed_g"
+      ]
+    },
+    "failures": {
+      "acdc_dev": {
+        "d20m": {},
+        "d20p": {}
+      },
+      "acdc_test": {
+        "d20m": {},
+        "d20p": {}
+      },
+      "mms2_external": {
+        "d20m": {},
+        "d20p": {}
+      },
+      "mms_external": {
+        "d20m": {},
+        "d20p": {}
+      }
+    }
+  },
+  "B22": {
+    "source": "postfreeze/B22/results.json",
+    "classes": [
+      "DCM",
+      "HCM",
+      "MINF",
+      "NOR",
+      "RV"
+    ],
+    "estimation_only": true,
+    "label": "EXPLORATORY_POST_HOC",
+    "model_id": "f9m",
+    "fitting_rows": "F9-M networks: the recorded F9 fitting patients; F9b-M probes and every metric: rows without critical QC",
+    "networks_bundle_sha256": "9c798a894f3bc28cdbf5d5dd2eb82b556f9dc97641d3b84dae105d4e9928fbee",
+    "probe_bundle_sha256": {
+      "20261011": "eac044ac59971731c713f505bd011052071f20498dc51cea601a20b825e24355",
+      "20261012": "1425c2152451050ae483d14bf7ac5e26974ad9dd8ee7a6571820a14d330e59f8",
+      "20261013": "f779d0ecf30b329e2043ea115e8fb74da48e7e9a015b456d05658673ada63fb2"
+    },
+    "plan": {
+      "seeds": [
+        20261011,
+        20261012,
+        20261013
+      ],
+      "winners": 18,
+      "total_refit_epochs": 335,
+      "not_estimable": [],
+      "training_config_sha256": "c7cfd681a671554d8ca05719b6461dbaa0676a47d3557335c3586c2374040d4a"
+    }
+  }
+}

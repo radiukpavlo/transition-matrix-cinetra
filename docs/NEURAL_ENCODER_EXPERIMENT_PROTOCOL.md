@@ -1,4 +1,4 @@
-> Public edition of `docs/NEURAL_ENCODER_EXPERIMENT_PROTOCOL.md` of the authors' development repository (commit `5d88a3041ca9`); operational details are replaced as listed in EDITIONS.md.
+> Public edition of `docs/NEURAL_ENCODER_EXPERIMENT_PROTOCOL.md` of the authors' development repository (commit `5d88a3041ca9`); operational details are replaced as listed in [EDITIONS.md](../protocol/registration/EDITIONS.md).
 
 # Neural classifier, Transition Matrices and SEMTRA: additional experiment protocol
 

@@ -1,0 +1,4 @@
+partition,difference,rows,n_common,fidelity_a_common,fidelity_b_common,estimate,ci_lower,ci_upper,status,reason,n_pca7,n_bhat7,enters_reading
+acdc_test,fidelity(bhat7) - fidelity(pca7),cases both predict,50,0.82,0.94,-0.12,-0.22000000000000008,-0.020000000000000018,EVALUATED,,50,50,False
+mms_external,fidelity(bhat7) - fidelity(pca7),cases both predict,319,0.8087774294670846,0.8213166144200627,-0.01253918495297801,-0.06269592476489028,0.037620512213875974,EVALUATED,,319,319,True
+mms2_external,fidelity(bhat7) - fidelity(pca7),cases both predict,180,0.7944444444444444,0.8055555555555556,-0.011111111111111183,-0.07777777777777783,0.06666666666666665,EVALUATED,,180,180,True

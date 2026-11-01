@@ -1,0 +1,478 @@
+{
+  "schema": "tmmri.v603_evidence_pack/1",
+  "label": "EXPLORATORY_POST_HOC",
+  "run_id": "v6-postfreeze-20261028-2135",
+  "source_run_id": "v6-replication-20261003-1241",
+  "source_run": {
+    "files_sha256": "3a7bc171dbe3f4584da514e6a50454d01468fd8b3f8c57ebf876f51c6cb3c036",
+    "frozen_bundle_sha256": "272ec25c2b15ea290b80794654d32b97b5a88ba06d585b4706af4e14e4b563a1",
+    "release_manifest_sha256": "9260dd64b8cf1738e8c7b6cc7304053f930c27ae874903aa25e5158ea78afb4d",
+    "run_id": "v6-replication-20261003-1241"
+  },
+  "protocol_tag": "protocol-v6.0.3",
+  "protocol_tag_state": "protocol_frozen",
+  "specification_version": "6.0.3",
+  "analyses": {
+    "B23": {
+      "answers": "EPC-2; readiness review R2",
+      "title": "null references for the decision-link test",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.3",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.3",
+      "code_commit": "152e315ed4831b163e50ac20ee0feb7230026c6b",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B24": {
+      "answers": "EPC-2; readiness review R1",
+      "title": "rule audit of the image networks (F9, F9-M)",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.3",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.3",
+      "code_commit": "152e315ed4831b163e50ac20ee0feb7230026c6b",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B25": {
+      "answers": "EPC-4; readiness review R3",
+      "title": "rule admission on a pooled development sample (sample-size test of the empty rulebook)",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.3",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.3",
+      "code_commit": "152e315ed4831b163e50ac20ee0feb7230026c6b",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B26": {
+      "answers": "EPC-6; readiness review R5",
+      "title": "robust agreement and outlier description",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.3",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.3",
+      "code_commit": "152e315ed4831b163e50ac20ee0feb7230026c6b",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    },
+    "B27": {
+      "answers": "EPC-7; readiness review R7",
+      "title": "fold-spread concept-uncertainty signal",
+      "label": "EXPLORATORY_POST_HOC",
+      "protocol_tag": "protocol-v6.0.3",
+      "protocol_tag_state": "protocol_frozen",
+      "specification_version": "6.0.3",
+      "code_commit": "152e315ed4831b163e50ac20ee0feb7230026c6b",
+      "code_dirty": false,
+      "confirmatory": false,
+      "role": "exploratory_post_hoc"
+    }
+  },
+  "written": "2026-10-28",
+  "script": "manuscript/scripts/export_v603_evidence_pack.py",
+  "licence": "aggregates only; no case identifiers",
+  "checks": {
+    "provenance_consistent_across_analyses": true
+  },
+  "identifier_scan": {
+    "identifiers_checked": 1358,
+    "files_checked": 28,
+    "matches": 0,
+    "identifier_columns": 0,
+    "rule": "whole token (not preceded or followed by a letter, digit or underscore), case-insensitive; CSV headers must not contain sample_id, case_id, patient_id, subject_id, cluster_id or anchors",
+    "sources": [
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_ACDC.parquet",
+        "sha256": "c68caf8b8e6fd3918f35696008b61c3a6d816dbb86177a047007748a46be9f98",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_MMS.parquet",
+        "sha256": "58af6d2b158ed04efdaaebd93f153ccbd47e8eb1f52caeeece685acfb883a42e",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "duplicate_of",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_MMS2.parquet",
+        "sha256": "f12758a340a090d8623e4dd838d75a6b248b1e505c17e36de51fd7e9474656ed",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "duplicate_of"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/inner_folds.parquet",
+        "sha256": "7dc447fdce15486c6ac905d9f5840eb39d9524570ba01b35f06bc3b63b00e8ee",
+        "columns": [
+          "sample_id",
+          "patient_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/split_manifest.parquet",
+        "sha256": "4a1a9694111b394aca3d30a88afd49627eaa00cde3844cc769a11120ced857bf",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/split_manifest_MMS2.parquet",
+        "sha256": "c6623243b8e51cf696348007a821a456db32405f7a5e53fc911220880c041f75",
+        "columns": [
+          "sample_id",
+          "case_id",
+          "patient_id",
+          "cluster_id",
+          "duplicate_pair_id"
+        ]
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_validation.json",
+        "sha256": "93ab8bc44e8144ef79a0bbb7e3f4bb49c9241e33c6099492f358aa22bfd2385c",
+        "columns": "values under identifier keys"
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/cohort_validation_MMS2.json",
+        "sha256": "fe2b24afb1fd1c9fc74781d93d4e10e852e33e68dc6b1a32f62664cd4b05d2c0",
+        "columns": "values under identifier keys"
+      },
+      {
+        "run": "v6-replication-20261003-1241",
+        "path": "contracts/mms2_duplicates.json",
+        "sha256": "8e695586458ff6dc039a6d3d44fec9302f0fff5c4774e0228f1270f4b21af21d",
+        "columns": "values under identifier keys"
+      },
+      {
+        "run": "v6-postfreeze-20261028-2135",
+        "path": "postfreeze/B25/models/rulebook_pooled_d_model/rulebook.json",
+        "sha256": "5005df7a8416e6d13e61695b0804e023f86e88b6ef99f44198521d199fbb382e",
+        "columns": "anchors"
+      }
+    ]
+  },
+  "files": {
+    "b23_b18_reproduction.csv": {
+      "rows": 4,
+      "sources": [
+        {
+          "path": "postfreeze/B23/b18_reproduction.parquet",
+          "sha256": "f83c0ccb149b2bea0d53febc71bcd9ed3c8baa533a38d1d785fe85046fd9305f"
+        }
+      ],
+      "sha256": "d22079bb3491f27bc097c48a53050e84edc68ac806f8f0d277896ca78339556a"
+    },
+    "b23_null_fidelity_table.csv": {
+      "rows": 18,
+      "sources": [
+        {
+          "path": "postfreeze/B23/null_fidelity_table.parquet",
+          "sha256": "9364c11b12634e7707fbd7e2c6232ad0abf8ee2207a3a63f92635a79588278ae"
+        }
+      ],
+      "sha256": "ca29a580752e5d3d9da4491ff260df588774bf99e8a9af5008ba564733af4996"
+    },
+    "b23_delta_table.csv": {
+      "rows": 3,
+      "sources": [
+        {
+          "path": "postfreeze/B23/delta_table.parquet",
+          "sha256": "fd6b6128af9dc6b0932ef8780e59cf5f2981d05d636b27d19bea1e0b90f6ab8a"
+        }
+      ],
+      "sha256": "2a6bee349fcf4bc112827f87978c18effd256f97e8d2033e8a5b4264b252bb8e"
+    },
+    "b23_null_distributions.csv": {
+      "rows": 6000,
+      "sources": [
+        {
+          "path": "postfreeze/B23/null_distributions.parquet",
+          "sha256": "220d79d5d69cf55cbd462d0f426bce60c84af18bd595b91d8b32eb4786703dc3"
+        }
+      ],
+      "sha256": "039a175048a63ccc06b43b4cf250937e1a9a60207b41667b6c5e4ac79df719b3"
+    },
+    "b24_concept_table.csv": {
+      "rows": 18,
+      "sources": [
+        {
+          "path": "postfreeze/B24/concept_table.parquet",
+          "sha256": "bb6b810032f3a552a106055e870bc62d6a5bc80d0cb3ba23556b5ee44c9baf48"
+        }
+      ],
+      "sha256": "92dd4165cdc700e7a77a2ad5604d8e08fc78b55e682ceae2c94e5dc6aac4b8e7"
+    },
+    "b24_candidate_ledger.csv": {
+      "rows": 3,
+      "sources": [
+        {
+          "path": "postfreeze/B24/candidate_ledger.parquet",
+          "sha256": "c0709702a114250495a28e2dc7673da0c3137e25c517d4f4ad8c55b9d4717c01"
+        }
+      ],
+      "sha256": "7adb8f4994e4fcb1e6212663b5ece95ee55d9f1be5c797200fb07f288330ec68"
+    },
+    "b24_rejection_counts_by_reason.csv": {
+      "rows": 1,
+      "sources": [
+        {
+          "path": "postfreeze/B24/rejection_counts_by_reason.parquet",
+          "sha256": "e6701035e2fc63238fc4212b1c361dc11606ea3115e47e956c191f2623c8ec58"
+        }
+      ],
+      "sha256": "9e8e7aa3ea3e342d4db3598905bfdd1c8050afe0d8f5511df72e0d1c8316abb1"
+    },
+    "b24_coverage_fidelity_table.csv": {
+      "rows": 6,
+      "sources": [
+        {
+          "path": "postfreeze/B24/coverage_fidelity_table.parquet",
+          "sha256": "9417769e361a6742ac87fe1e38a35d068febbeddd5ec7061c07f0960f65341c4"
+        }
+      ],
+      "sha256": "d7998e00ce2fc258062387c4fb7d79f0248b8ccb811bdf5bc191e6201f0f314e"
+    },
+    "b24_decision_link_table.csv": {
+      "rows": 24,
+      "sources": [
+        {
+          "path": "postfreeze/B24/decision_link_table.parquet",
+          "sha256": "2ff3a6a33f49620a97f4f82b6df7253419a35f7e9e417db424cdeb6da386703a"
+        }
+      ],
+      "sha256": "8a225ac012fbcfffedafef0b9bd0798768e0d1c497de7e934c97c4cb4f02dfde"
+    },
+    "b24_decision_link_nulls.csv": {
+      "rows": 6000,
+      "sources": [
+        {
+          "path": "postfreeze/B24/decision_link_nulls.parquet",
+          "sha256": "943ecfa0ef8b514741ea0df5078a22509829ad2746869d5055278ec4f33ce627"
+        }
+      ],
+      "sha256": "5d24b89e58da24905509676c85b2ff88f94a3f8223a16722faadf0b36ca86e52"
+    },
+    "b25_admission_counts.csv": {
+      "rows": 3,
+      "sources": [
+        {
+          "path": "postfreeze/B25/admission_counts.parquet",
+          "sha256": "31f84e523755ef4d19f26048a30c6487fc51229b9cb54dcfbc74ed1df5b6927c"
+        }
+      ],
+      "sha256": "aa27c8d56db6312a5008883f9b8cd94dbd3b95951a9d3fcbeeecf77b38ec783a"
+    },
+    "b25_candidate_ledger.csv": {
+      "rows": 54,
+      "sources": [
+        {
+          "path": "postfreeze/B25/candidate_ledger.parquet",
+          "sha256": "5f3036c0a94225e7475084f248d69c064b2ca51d79e3f81457048ede71832a96"
+        }
+      ],
+      "sha256": "e53ea20bb935057dc28e71bc96e8be00ac55ad01f09552fd47b12560d5e226d2"
+    },
+    "b25_rejection_counts_by_reason.csv": {
+      "rows": 3,
+      "sources": [
+        {
+          "path": "postfreeze/B25/rejection_counts_by_reason.parquet",
+          "sha256": "fe973d55269bc2149f8b5d965ba3feaedbfbf9a33b69fc4571b9e7817f03f516"
+        }
+      ],
+      "sha256": "7a5dd5a786f099bf3cb95d259c0867edf3c49fef9a044a5a42f435a1650e92a8"
+    },
+    "b25_coverage_fidelity_mms2.csv": {
+      "rows": 1,
+      "sources": [
+        {
+          "path": "postfreeze/B25/coverage_fidelity_mms2.parquet",
+          "sha256": "640bf145d5e150a491891a9cb1823f2f704a7dd5819578302c84af84750c29ea"
+        }
+      ],
+      "sha256": "f69c09639b26eafefd543ddf762b445feb9b1faf9169129dfe73153f59d9ab96"
+    },
+    "b26_robust_agreement_table.csv": {
+      "rows": 21,
+      "sources": [
+        {
+          "path": "postfreeze/B26/robust_agreement_table.parquet",
+          "sha256": "a7de883c4b8767d3703863ac5635382b9ef66a978d80d05ba5ecc01596fa3111"
+        }
+      ],
+      "sha256": "879919c689524ec517f692e445a2c4f420e3b7d634dec7c8cdc4d058e4d313f0"
+    },
+    "b26_outlier_counts.csv": {
+      "rows": 21,
+      "sources": [
+        {
+          "path": "postfreeze/B26/outlier_counts.parquet",
+          "sha256": "526309710f1524bb2e7e7cc65590d2941f7eb1557ff4efc39020987063355540"
+        }
+      ],
+      "sha256": "0edd32814d6c676106bf6720da780a5be215942d0ab941ef88bce87c9622d708"
+    },
+    "b26_outlier_description.csv": {
+      "rows": 175,
+      "sources": [
+        {
+          "path": "postfreeze/B26/outlier_description.parquet",
+          "sha256": "7cf0f3fc4e46a0c3eae5ecadec547ebed5ac8a4c699db5775ad2e0764f893970"
+        }
+      ],
+      "sha256": "b712e3c1fd98a57e9bad60abe08ac81187aca8a26321e342f69cb109b6c88257"
+    },
+    "b26_geometry_check.csv": {
+      "rows": 21,
+      "sources": [
+        {
+          "path": "postfreeze/B26/geometry_check.parquet",
+          "sha256": "46c2b5103af2f6bc3576c65a16c67608136e2eb1cd03ea05d6ed9e98175b5807"
+        }
+      ],
+      "sha256": "e4294089121ad05a1147fc1b89a3aca1abc1501a86882c8445d3399cab38b442"
+    },
+    "b27_spread_auroc_table.csv": {
+      "rows": 48,
+      "sources": [
+        {
+          "path": "postfreeze/B27/spread_auroc_table.parquet",
+          "sha256": "75c8e189be07d5e11131a87d46eb28903882824a4f0ce8d5869768b422b80693"
+        }
+      ],
+      "sha256": "60eb834a4b79eadd85c5ac03342bf464f9d2fa2a6b5da41af9b5ba00dacb2052"
+    },
+    "b27_spread_spearman_table.csv": {
+      "rows": 21,
+      "sources": [
+        {
+          "path": "postfreeze/B27/spread_spearman_table.parquet",
+          "sha256": "0379aad782a560fb78cf5fe13690110a5ec3ae7421b94f9bbf3a3679c35c424b"
+        }
+      ],
+      "sha256": "fef57dd4aebff089c50dc98e346ee74464c2db5e0d81272f612499052f9e23b3"
+    },
+    "b27_b17_reread_table.csv": {
+      "rows": 72,
+      "sources": [
+        {
+          "path": "postfreeze/B27/b17_reread_table.parquet",
+          "sha256": "d689d399a1300dca3a39048a0c9ba30487919b9f54c6c1d94ccca4049ccac74d"
+        }
+      ],
+      "sha256": "1f69ed57f48b97b8f696551309d84046e83793ed2fd4dcce6a8aee56792a48e1"
+    },
+    "b25_gate.csv": {
+      "rows": 1,
+      "sources": [
+        {
+          "path": "postfreeze/B25/models/rulebook_pooled_d_model/gate.parquet",
+          "sha256": "34d837e021df468f826495b31ca69764dd2f2e402adfadebc0e5766435474de9"
+        }
+      ],
+      "sha256": "65177e1ac762877a5ef33a0554dfc1eb14ee8f879eba69ebac331e80cb0eb8fc"
+    },
+    "b23_reading.json": {
+      "sources": [
+        {
+          "path": "postfreeze/B23/reading.json",
+          "sha256": "82174e678e429fda0c29b1fa87f8f352248a304fccc44e2e0406dd798c09394d"
+        }
+      ],
+      "sha256": "82174e678e429fda0c29b1fa87f8f352248a304fccc44e2e0406dd798c09394d"
+    },
+    "b25_rule.csv": {
+      "rows": 1,
+      "sources": [
+        {
+          "path": "postfreeze/B25/models/rulebook_pooled_d_model/rulebook.json",
+          "sha256": "5005df7a8416e6d13e61695b0804e023f86e88b6ef99f44198521d199fbb382e"
+        }
+      ],
+      "note": "anchors replaced by their count per source dataset",
+      "sha256": "e20129e26f705733f327913521def44be75b77c5e42063568fe12ebbd5d5535a"
+    },
+    "summaries.json": {
+      "sources": [
+        {
+          "path": "postfreeze/B23/summary.json",
+          "sha256": "53f22dee17b98f86b02a6c2a7979d0d054f31da67558522205776498aa11e079"
+        },
+        {
+          "path": "postfreeze/B24/summary.json",
+          "sha256": "1c9d0093b4e6586707fa9e5a11b0b78cc87f07e176459a51b8acf81157b3b3dc"
+        },
+        {
+          "path": "postfreeze/B25/summary.json",
+          "sha256": "b85950f4a2a582826e2f6d83edcb3361ff6d4894221f7617d6ebb98ebfc9db44"
+        },
+        {
+          "path": "postfreeze/B26/summary.json",
+          "sha256": "446dd98597f2fd43f11e31ceaf78f48e7be842ca4fb74941786c9b9657a3a605"
+        },
+        {
+          "path": "postfreeze/B27/summary.json",
+          "sha256": "47d191c60f108dfd5e73b0dde3ee764ad0e36504ac811ea2f287287360398251"
+        }
+      ],
+      "dropped_summary_keys": {
+        "B23": [
+          "b18_reproduction",
+          "rows"
+        ],
+        "B24": [
+          "checks",
+          "coverage"
+        ],
+        "B25": [
+          "admission_counts",
+          "checks",
+          "rows"
+        ],
+        "B26": [
+          "agreement_rows",
+          "geometry_rows"
+        ],
+        "B27": [
+          "auroc"
+        ]
+      },
+      "sha256": "643440a771bd74c966639764b21bb22132b8a9bb14019fdf8d2b37fef3a32ab4"
+    },
+    "README.md": {
+      "sources": [],
+      "sha256": "a942ed24f37853aa6ed3fcc0cc6f816f5ac64f1131c396842a38f45349caeffa"
+    }
+  }
+}

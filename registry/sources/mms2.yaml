@@ -1,4 +1,4 @@
-# Public edition of the registered file `registry/sources/mms2.yaml` (protocol-v6.0.1, git blob `70e7b7196c0f`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
+# Public edition of the registered file `registry/sources/mms2.yaml` (protocol-v6.0.5, git blob `70e7b7196c0f`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
 # Source receipt: M&Ms-2 release archive (protocol-v6.0.1 amendment; configs/cohorts.yaml mms2, configs/splits.yaml mms2).
 # Archive size and SHA-256 and the split membership only. When this receipt was written, no member had been listed,
 # extracted or read. Later on 2026-10-02, with the owner's approval, the header line of the release CSV and the member

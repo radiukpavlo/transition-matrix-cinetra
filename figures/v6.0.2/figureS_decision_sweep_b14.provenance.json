@@ -1,0 +1,169 @@
+{
+  "figure": "figureS_decision_sweep_b14",
+  "label": "EXPLORATORY_POST_HOC",
+  "run_id": "v6-postfreeze-20261028-0201",
+  "source_run_id": "v6-replication-20261003-1241",
+  "protocol_tag": "protocol-v6.0.2",
+  "date": "2026-10-28",
+  "evidence_pack_written": "2026-10-28",
+  "note": "evidence render of recorded aggregates; nothing fitted, resampled, re-estimated or recomputed",
+  "script": {
+    "path": "manuscript/scripts/render_v602_figures.py",
+    "sha256": "e41759210e7ea9b587adfa90d895a0bf6d3ce045d64e9e0a5dc05b1bddc1fcce"
+  },
+  "house_style": {
+    "path": "manuscript/scripts/render_postfreeze_figures.py",
+    "sha256": "e49a3387f14027d2b8309e8c1e7105a77a195685f1e97467b50ee75cbd9d40a6"
+  },
+  "inputs": [
+    {
+      "path": "manuscript/article/tables/v602/b14_sweep_table.csv",
+      "sha256": "82d17c37b17c624ecf82be6a42386fe0fd73b6d1321c86f2d311901a01887e79"
+    },
+    {
+      "path": "manuscript/article/tables/v602/summaries.json",
+      "sha256": "eee41b885e94bd275fa1632136282b1eadc09e1697a0f05b1ba8380d1d48c805"
+    },
+    {
+      "path": "manuscript/article/tables/v602/provenance.json",
+      "sha256": "aae42d17aecdaf95a3b9feb86bf99021e7abdde18b4f1e61fbc8c07b263d28e1"
+    }
+  ],
+  "outputs": {
+    "pdf": {
+      "file": "figureS_decision_sweep_b14.pdf",
+      "sha256": "c6e9dfc0c5f3b3440fc235f8736e55d39d796db7c0930de78586ab83c45242bf"
+    },
+    "png": {
+      "file": "figureS_decision_sweep_b14.png",
+      "sha256": "caf86b1dbf261ce21a815c9ecf6018aacf44d70062221031ca9a79d083e51626"
+    }
+  },
+  "format": {
+    "pdf": "vector, fonts embedded (Type 42), CreationDate removed",
+    "png": "400.0 dpi (house setting), Software tag removed"
+  },
+  "plotted": [
+    {
+      "hypothesis_id": "H-primary-1",
+      "partition": "acdc_test",
+      "estimand": "rho",
+      "ci_lower": 0.473339563327321,
+      "exceeds": {
+        "0.00": true,
+        "0.05": true,
+        "0.10": true,
+        "0.15": true,
+        "0.20": true,
+        "0.25": true,
+        "0.30": true
+      },
+      "largest_threshold_exceeded": 0.3
+    },
+    {
+      "hypothesis_id": "H-primary-2",
+      "partition": "mms_external",
+      "estimand": "rho",
+      "ci_lower": 0.0323185604805487,
+      "exceeds": {
+        "0.00": true,
+        "0.05": false,
+        "0.10": false,
+        "0.15": false,
+        "0.20": false,
+        "0.25": false,
+        "0.30": false
+      },
+      "largest_threshold_exceeded": 0.0
+    },
+    {
+      "hypothesis_id": "H-primary-2-never-analysed",
+      "partition": "mms_external_never_analysed",
+      "estimand": "rho",
+      "ci_lower": -0.0753650991503048,
+      "exceeds": {
+        "0.00": false,
+        "0.05": false,
+        "0.10": false,
+        "0.15": false,
+        "0.20": false,
+        "0.25": false,
+        "0.30": false
+      },
+      "largest_threshold_exceeded": null
+    },
+    {
+      "hypothesis_id": "H-primary-3",
+      "partition": "mms2_external",
+      "estimand": "rho",
+      "ci_lower": 0.2328466307768755,
+      "exceeds": {
+        "0.00": true,
+        "0.05": true,
+        "0.10": true,
+        "0.15": true,
+        "0.20": true,
+        "0.25": false,
+        "0.30": false
+      },
+      "largest_threshold_exceeded": 0.2
+    },
+    {
+      "hypothesis_id": "H4a",
+      "partition": "acdc_test",
+      "estimand": "rho_EF",
+      "ci_lower": 0.5797983500921541,
+      "exceeds": {
+        "0.00": true,
+        "0.05": true,
+        "0.10": true,
+        "0.15": true,
+        "0.20": true,
+        "0.25": true,
+        "0.30": true
+      },
+      "largest_threshold_exceeded": 0.3
+    },
+    {
+      "hypothesis_id": "H4a",
+      "partition": "mms_external",
+      "estimand": "rho_EF",
+      "ci_lower": 0.5262505959013568,
+      "exceeds": {
+        "0.00": true,
+        "0.05": true,
+        "0.10": true,
+        "0.15": true,
+        "0.20": true,
+        "0.25": true,
+        "0.30": true
+      },
+      "largest_threshold_exceeded": 0.3
+    },
+    {
+      "hypothesis_id": "H4a",
+      "partition": "mms2_external",
+      "estimand": "rho_EF",
+      "ci_lower": 0.5578134272967761,
+      "exceeds": {
+        "0.00": true,
+        "0.05": true,
+        "0.10": true,
+        "0.15": true,
+        "0.20": true,
+        "0.25": true,
+        "0.30": true
+      },
+      "largest_threshold_exceeded": 0.3
+    }
+  ],
+  "rules": [
+    "values copied from b14_sweep_table.csv; thresholds and the smallest effect of interest from summaries.json (B14); the flags are the recorded lower_bound_exceeds_threshold, checked equal to (ci_lower > threshold)"
+  ],
+  "encoding": {
+    "exceeds": "teal filled dot at the threshold",
+    "does_not_exceed": "teal open dot",
+    "lower_bound": "ink vertical bar; its value in the right-hand column",
+    "sesoi": "dashed line at 0.10"
+  }
+}

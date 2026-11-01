@@ -92,6 +92,11 @@ git tag -a protocol-v6.0.0 -m "local tag for a reproduction of CMR-TRANS-AUDIT 6
 git tag -s protocol-v6.0.1 -m "local tag for a reproduction of CMR-TRANS-AUDIT 6.0.1"
 ```
 
+The post-freeze exploratory blocks (`run-postfreeze`) have the same kind of lock: each block runs only when the
+signed tag of its amendment, `protocol-v<specification_version>` of its configuration (`protocol-v6.0.2` for
+`configs/exploratory_postfreeze.yaml`, `protocol-v6.0.3` for `configs/exploratory_postfreeze_v603.yaml` and
+`protocol-v6.0.4` for `configs/exploratory_postfreeze_v604.yaml`), is contained in HEAD. To re-run a block, sign that tag locally as well.
+
 The registered tags themselves are checked in step 2. Do not push your local tags.
 
 ## 7. Run the study
@@ -165,7 +170,7 @@ $GPU run-simulated-shift --vendor all --step d20 --run-id $RUN_ID
 $GPU run-simulated-shift --vendor all --step f9 --run-id $RUN_ID
 ```
 
-**7.5 M&Ms-2 (prospective cohort).** The extraction runs on the host, because it needs `bsdtar` to read the RAR
+**7.5 M&Ms-2 (held-out cohort).** The extraction runs on the host, because it needs `bsdtar` to read the RAR
 archive; install the package on the host first (`python -m pip install -e .`).
 
 ```bash

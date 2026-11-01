@@ -1,0 +1,9 @@
+partition,side,difference,unit,n,median,p2_5,p97_5,quantile_method
+acdc_dev_oof,lv,implied lv_ef_percent - reconstructed lv_ef_percent,percentage points,98,1.0019930654704492,-14.559270897583328,11.45398533376312,numpy_linear
+acdc_dev_oof,rv,implied rv_ef_percent - reconstructed rv_ef_percent,percentage points,98,2.381325115439843,-10.634770698322836,11.215958650916082,numpy_linear
+acdc_test,lv,implied lv_ef_percent - reconstructed lv_ef_percent,percentage points,50,-0.8119032930276724,-7.9338550814674225,9.624169802804513,numpy_linear
+acdc_test,rv,implied rv_ef_percent - reconstructed rv_ef_percent,percentage points,50,1.9951357686965636,-8.09645379255949,9.982316667853858,numpy_linear
+mms_external,lv,implied lv_ef_percent - reconstructed lv_ef_percent,percentage points,319,2.344218777605491,-5.020296532659415,11.082427633714868,numpy_linear
+mms_external,rv,implied rv_ef_percent - reconstructed rv_ef_percent,percentage points,319,2.3576127728328444,-8.604416638296138,9.079165739234005,numpy_linear
+mms2_external,lv,implied lv_ef_percent - reconstructed lv_ef_percent,percentage points,180,2.7147944612738257,-7.643033547765244,9.172617200094036,numpy_linear
+mms2_external,rv,implied rv_ef_percent - reconstructed rv_ef_percent,percentage points,180,1.779640179934761,-12.787701873388823,8.952985941818682,numpy_linear

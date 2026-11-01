@@ -1,1 +1,6 @@
+# Keys that signed the CINETRA protocol tags (OpenSSH allowed_signers; see ssh-keygen(1), -Y verify).
+# Format: principals (comma-separated) options key-type public-key.
+# SHA256:udGJ/HSuNA0hdZJhFwtj1gC7EKrCJ1cG+oQt2OsV7kw: protocol-v6.0.0, protocol-v6.0.1
 radiukpavlo@gmail.com namespaces="git" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFEUkCKNbizekKXpgkNGoXkMHpNmi8Lu+fcx7Sobqu9w
+# SHA256:c9dOTnKGvYWK6Sm1EazEB+5zVb9UfPXRHqVVWvwn+q8: protocol-v6.0.2, protocol-v6.0.3, protocol-v6.0.4, protocol-v6.0.5
+radiukpavlo@gmail.com namespaces="git" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPow7cZppYIf8ah31e8fjG5SMzhZtiFMgO8YAeG926jM

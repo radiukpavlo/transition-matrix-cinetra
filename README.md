@@ -34,7 +34,7 @@ on three public cohorts, one of them held out and unread until the registration.
 - [Key results](#key-results)
 - [How CINETRA works](#how-cinetra-works)
 - [Study design](#study-design)
-- [Confirmatory scorecard](#confirmatory-scorecard)
+- [Hypothesis scorecard](#hypothesis-scorecard)
 - [Limitations and negative results](#limitations-and-negative-results)
 - [Reproduce the study](#reproduce-the-study)
 - [What is in this repository](#what-is-in-this-repository)
@@ -47,12 +47,12 @@ on three public cohorts, one of them held out and unread until the registration.
 
 | | |
 |---|---|
-| **Registered before evaluation** | The protocol was fixed in two signed git tags, on 29 September and 3 October 2026. The M&Ms-2 images stayed unread until the second; anyone can [verify the signatures and the registered files](protocol/registration/README.md). |
+| **Registered before evaluation** | The protocol was fixed in two signed git tags, on 29 September and 3 October 2026. The M&Ms-2 images stayed unread until the second. Later signed amendments add exploratory, post-hoc analyses only; anyone can [verify the signatures and the registered files](protocol/registration/README.md). |
 | **Internal transfer** | On the ACDC test set (50 patients; registered after unblinding), the frozen transition reconstructed the seven primary concepts with a skill score **ρ = 0.553** (95% CI 0.473–0.619): every concept improved on the development mean, from LV mass (0.387) to LVEF (0.794). **H1 passed.** |
-| **Prospective external transfer** | On 180 held-out M&Ms-2 subjects from three vendors, the unchanged bundle reached **ρ = 0.311** (95% CI 0.233–0.382). **H3 passed.** |
+| **Held-out external transfer** | On 180 held-out M&Ms-2 subjects from three vendors, the unchanged bundle reached **ρ = 0.311** (95% CI 0.233–0.382). **H3 passed.** |
 | **Ejection fractions transfer** | Across vendors, LVEF and RVEF kept most of their skill: **ρ_EF = 0.606** on M&Ms-2 (97.5% CI 0.558–0.652). **H4a passed.** |
 | **Descriptors beat a learned basis** | The 57 mask-conditioned descriptors reconstructed the concepts better than a frozen ImageNet ResNet-50 on every cohort; the ResNet-50 had no skill even internally (ρ = 0.038). |
-| **Reproducible to the byte** | A full re-execution reproduced 242 of 252 outputs byte for byte (the other 10 differ only in run metadata), and the code here is byte-identical to the registered commit that produced the results. |
+| **Reproducible to the byte** | A full re-execution reproduced 242 of 252 outputs byte for byte (the other 10 differ only in run metadata), and the code here is byte-identical to the registered commits: every file unchanged since the run is proven against the commit that produced the results. |
 
 <p align="center">
   <img src="figures/figure03_rho_forest.png" alt="Primary skill score by cohort with 95% intervals" width="49%">
@@ -99,19 +99,21 @@ then HCM, MINF, NOR and ARV cases. Images: ACDC, CC BY-NC-SA 4.0.</sub></p>
 | ACDC development | Fit, selection, thresholds | 98 patients, single centre, five classes | Development |
 | ACDC test | Internal test (H1) | 50 | Registered after unblinding |
 | M&Ms-1 | Historical external test (H2); 220 never-analysed cases as a sensitivity stratum | 320 (318); four vendors, five centres | Registered after unblinding |
-| M&Ms-2 | Prospective external test (H3, H4) | 180 held-out subjects; three vendors | Prospective: unread until protocol 6.0.1 was signed |
+| M&Ms-2 | Preregistered held-out external test (H3, H4) | 180 held-out subjects; three vendors | Retrospectively collected; held out and unread until protocol 6.0.1 was signed |
 | M&Ms-2 sealed half | Reserved for a later protocol | 180 | Never extracted |
 
 - **Primary estimand.** The skill score ρ, the mean over the seven primary concepts (LV and RV end-diastolic
   volume, end-systolic volume and ejection fraction, and LV mass) of one minus the ratio of the transition's mean
   absolute error to that of the development mean. ρ = 0 means no gain over the mean.
-- **Confirmatory tests.** Each hypothesis passes if the lower bound of its cluster-bootstrap interval (2000
+- **Hypothesis tests.** Each hypothesis passes if the lower bound of its cluster-bootstrap interval (2000
   replicates) exceeds the smallest effect of interest, ρ = 0.10. H1 and H2 form a fixed sequence; H3 is its own
-  family; the H4 family is Bonferroni-corrected (97.5% intervals) and confirmatory on M&Ms-2 only.
+  family; the H4 family is Bonferroni-corrected (97.5% intervals). Since amendment 6.0.2 (decision D38), H3, H4a and
+  H4b on M&Ms-2 are the confirmatory tests; H1 and H2 are retrospective evaluations under a subsequently fixed
+  protocol.
 - **Comparators** (estimation only): a frozen ImageNet ResNet-50 (D20), a fine-tuned ResNet-18 (F9) with three
   seeds, a probe of F9's activations (F9b) and a CART surrogate (F8).
 
-## Confirmatory scorecard
+## Hypothesis scorecard
 
 | Hypothesis | Cohort | Estimand | Estimate [interval] | Criterion | Decision |
 |---|---|---|---|---|---|
@@ -223,10 +225,14 @@ hash in `uv.lock`, IEEE FP32 with TF32 disabled on GPUs, and fixed seeds through
 src/tmmri/                 the pipeline package and its CLI (python -m tmmri.cli), as registered
 tests/                     the test suite (tests that need data or a GPU skip themselves)
 configs/, registry/        the frozen configuration, semantic registry, reason codes and dataset manifests
-SPECIFICATION.md           the protocol CMR-TRANS-AUDIT 6.0.1 (public edition)
-protocol/                  the amendment log and the registration proof (signed tags, git objects, PROOFS.json)
+SPECIFICATION.md           the protocol CMR-TRANS-AUDIT 6.0.5 (public edition)
+protocol/                  the amendment log and the registration proof (signed tags, signing keys, git objects)
 results/v6.0.1/            aggregate results of the frozen run, with its stage records and release manifest
 bundles/v6.0.1/            the frozen objects fitted on the ACDC development set
+results/v6.0.2/tables/     evidence pack of the post-freeze block of protocol 6.0.2 (tables; exploratory, post hoc)
+figures/v6.0.2/            evidence pack of the post-freeze block of protocol 6.0.2 (figures; exploratory, post hoc)
+results/v6.0.3/tables/     evidence pack of the post-freeze block of protocol 6.0.3 (tables; exploratory, post hoc)
+results/v6.0.4/tables/     evidence pack of the post-freeze block of protocol 6.0.4 (tables; exploratory, post hoc)
 figures/                   the figures of the article and its supplement (PNG and PDF)
 docs/                      the reproduction guide, the results-freeze record, the neural protocol and ADRs
 tools/                     verify_registration.py, verify_data.py, compare_results.py
@@ -256,7 +262,7 @@ demographic value), so that anyone can check a downloaded copy with `tools/verif
 |---|---|
 | Code (`src/`, `tests/`, `tools/`, `scripts/`, build files) | [MIT](LICENSE) |
 | Results, documentation, protocol text, dataset manifests, Figures 3–7 and S1–S3 | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| Material derived from ACDC: Figures 1 and 2 (scan crops), `bundles/` and the F9 weights | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/), as the ACDC terms require |
+| Material derived from ACDC: Figures 1 and 2 (scan crops), the values of the five worked-example cases (`b20_*` tables of the evidence packs), `bundles/` and the F9 weights | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/), as the ACDC terms require |
 
 The licence of every file is listed in `EXPORT_MANIFEST.json`. Dataset terms are set by their organizers and are not
 changed by anything here.
@@ -272,7 +278,7 @@ version, and [10.5281/zenodo.23269592](https://doi.org/10.5281/zenodo.23269592) 
   author    = {Radiuk, Pavlo and Barmak, Oleksander and Klymenko, Liliana and Krak, Iurii},
   title     = {{CINETRA}: A Multi-Vendor Audit of Semantic Concept Transfer in Cardiac MRI ({code, protocol and frozen results})},
   year      = {2026},
-  version   = {v1.0.0},
+  version   = {v1.1.0},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23269591},
   url       = {https://github.com/radiukpavlo/transition-matrix-cinetra}
@@ -281,11 +287,19 @@ version, and [10.5281/zenodo.23269592](https://doi.org/10.5281/zenodo.23269592) 
 
 ## Use of generative AI
 
-Under the authors' direction, the large language model Claude Opus 5.5 (Anthropic) drafted the study protocol and wrote the code of all figures. No image was generated or edited by a generative AI tool, and no reported number was computed by one. The authors reviewed all code, text and figures and take full responsibility for them. Cloud GPU training was supported by computing credits from Modal Labs, and the use of Claude by API credits from Anthropic's AI for Science program.
+Under the authors' direction, the large language model Claude Opus 5.5 (Anthropic) drafted the study protocol,
+wrote the code of all figures, and drew Figures 1, 2 and S1 through that code from a specification in which every
+label cites its source in the article. No image was generated or edited by a generative AI tool, and no reported
+number was computed by one: the scans are unmodified crops of ACDC test images, and every number is taken from the
+recorded outputs of the frozen pipeline and of the signed post-freeze analyses. The authors checked the numbers and citations against their sources and
+reviewed all code, text and figures.
 
 ## Acknowledgments
 
-We thank the organizers of the ACDC, M&Ms-1 and M&Ms-2 challenges and the contributing centres for making the datasets available. We are grateful to Anthropic for API credits provided through its AI for Science program, which made it possible to use Claude in this study, and to Modal Labs for cloud computing credits, which covered the cloud GPU training in this study.
+We thank the organizers of the ACDC, M&Ms-1 and M&Ms-2 challenges and the contributing centres for making the
+datasets available. We are grateful to Anthropic for API credits provided through its AI for Science program, which
+made it possible to use Claude in this study, and to Modal Labs for cloud computing credits, which covered the cloud
+GPU training in this study.
 
 ## Authors
 

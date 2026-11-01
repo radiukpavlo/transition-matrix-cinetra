@@ -1,0 +1,61 @@
+partition,role,arm,quantity,kind,estimate,ci_lower,ci_upper,status,reason,n_estimable,n_cases,n_clusters
+acdc_dev_oof,development (nested out-of-fold),primary_ridge,rho,estimate,0.5318344587892062,0.47362029328617544,0.5789434811233656,EVALUATED,,7.0,98,98
+acdc_dev_oof,development (nested out-of-fold),primary_ridge,rho_ef,estimate,0.7087822716822069,0.6607736691246534,0.7493430611357133,EVALUATED,,2.0,98,98
+acdc_dev_oof,development (nested out-of-fold),primary_ridge,rho_volumes,estimate,0.4610553336320059,0.3873750495517262,0.5251179196210908,EVALUATED,,5.0,98,98
+acdc_dev_oof,development (nested out-of-fold),ridge_typed_formal57_plus_geometry3,rho,estimate,0.7179430419111561,0.679385288687528,0.7514378944992975,EVALUATED,,7.0,98,98
+acdc_dev_oof,development (nested out-of-fold),ridge_typed_formal57_plus_geometry3,rho_ef,estimate,0.7075180579917363,0.6588777877313153,0.7487991226003263,EVALUATED,,2.0,98,98
+acdc_dev_oof,development (nested out-of-fold),ridge_typed_formal57_plus_geometry3,rho_volumes,estimate,0.7221130354789238,0.6781467239114499,0.758688413279977,EVALUATED,,5.0,98,98
+acdc_dev_oof,development (nested out-of-fold),analytical,rho,estimate,0.9999999999999999,0.9999999999999998,0.9999999999999999,EVALUATED,,7.0,98,98
+acdc_dev_oof,development (nested out-of-fold),analytical,rho_ef,estimate,0.9999999999999997,0.9999999999999996,0.9999999999999998,EVALUATED,,2.0,98,98
+acdc_dev_oof,development (nested out-of-fold),analytical,rho_volumes,estimate,0.9999999999999998,0.9999999999999998,1.0,EVALUATED,,5.0,98,98
+acdc_dev_oof,development (nested out-of-fold),primary_ridge,rho,difference_vs_ridge_typed_formal57_plus_geometry3,-0.1861085831219499,-0.23645430047159638,-0.13724690650891636,EVALUATED,,,98,98
+acdc_dev_oof,development (nested out-of-fold),primary_ridge,rho_ef,difference_vs_ridge_typed_formal57_plus_geometry3,0.0012642136904705836,-0.012515536326118326,0.01645215755285153,EVALUATED,,,98,98
+acdc_dev_oof,development (nested out-of-fold),primary_ridge,rho_volumes,difference_vs_ridge_typed_formal57_plus_geometry3,-0.2610577018469179,-0.33032757444800703,-0.19593283072014098,EVALUATED,,,98,98
+acdc_dev_oof,development (nested out-of-fold),analytical,rho,difference_vs_ridge_typed_formal57_plus_geometry3,0.2820569580888438,0.2485621055007023,0.32061471131247177,EVALUATED,,,98,98
+acdc_dev_oof,development (nested out-of-fold),analytical,rho_ef,difference_vs_ridge_typed_formal57_plus_geometry3,0.2924819420082634,0.25120087739967334,0.34112221226868417,EVALUATED,,,98,98
+acdc_dev_oof,development (nested out-of-fold),analytical,rho_volumes,difference_vs_ridge_typed_formal57_plus_geometry3,0.277886964521076,0.24131158672002298,0.32185327608854986,EVALUATED,,,98,98
+acdc_test,"evaluation (frozen objects, once)",primary_ridge,rho,estimate,0.5525082970070413,0.473339563327321,0.6192633930212394,EVALUATED,,7.0,50,50
+acdc_test,"evaluation (frozen objects, once)",primary_ridge,rho_ef,estimate,0.6812246325515826,0.5950902998693051,0.7422934195390883,EVALUATED,,2.0,50,50
+acdc_test,"evaluation (frozen objects, once)",primary_ridge,rho_volumes,estimate,0.5010217627892248,0.39640726753391603,0.5913686419153952,EVALUATED,,5.0,50,50
+acdc_test,"evaluation (frozen objects, once)",ridge_typed_formal57_plus_geometry3,rho,estimate,0.6967944385694818,0.6362077120070108,0.7483294746452418,EVALUATED,,7.0,50,50
+acdc_test,"evaluation (frozen objects, once)",ridge_typed_formal57_plus_geometry3,rho_ef,estimate,0.6919950254904037,0.6027623131921637,0.7548934173443415,EVALUATED,,2.0,50,50
+acdc_test,"evaluation (frozen objects, once)",ridge_typed_formal57_plus_geometry3,rho_volumes,estimate,0.6987142038011129,0.6368815638539819,0.7550474409678468,EVALUATED,,5.0,50,50
+acdc_test,"evaluation (frozen objects, once)",analytical,rho,estimate,0.9999999999999998,0.9999999999999997,0.9999999999999999,EVALUATED,,7.0,50,50
+acdc_test,"evaluation (frozen objects, once)",analytical,rho_ef,estimate,0.9999999999999996,0.9999999999999993,0.9999999999999997,EVALUATED,,2.0,50,50
+acdc_test,"evaluation (frozen objects, once)",analytical,rho_volumes,estimate,0.9999999999999998,0.9999999999999998,1.0,EVALUATED,,5.0,50,50
+acdc_test,"evaluation (frozen objects, once)",primary_ridge,rho,difference_vs_ridge_typed_formal57_plus_geometry3,-0.14428614156244046,-0.22946092557712378,-0.06724476001506864,EVALUATED,,,50,50
+acdc_test,"evaluation (frozen objects, once)",primary_ridge,rho_ef,difference_vs_ridge_typed_formal57_plus_geometry3,-0.010770392938821094,-0.03857773636541199,0.019258226565090686,EVALUATED,,,50,50
+acdc_test,"evaluation (frozen objects, once)",primary_ridge,rho_volumes,difference_vs_ridge_typed_formal57_plus_geometry3,-0.1976924410118881,-0.31725304104994395,-0.08994992224827811,EVALUATED,,,50,50
+acdc_test,"evaluation (frozen objects, once)",analytical,rho,difference_vs_ridge_typed_formal57_plus_geometry3,0.303205561430518,0.25167052535475787,0.36379228799298885,EVALUATED,,,50,50
+acdc_test,"evaluation (frozen objects, once)",analytical,rho_ef,difference_vs_ridge_typed_formal57_plus_geometry3,0.30800497450959585,0.24510658265565805,0.3972376868078357,EVALUATED,,,50,50
+acdc_test,"evaluation (frozen objects, once)",analytical,rho_volumes,difference_vs_ridge_typed_formal57_plus_geometry3,0.30128579619888685,0.2449525590321532,0.36311843614601785,EVALUATED,,,50,50
+mms_external,"evaluation (frozen objects, once)",primary_ridge,rho,estimate,0.18336781327128499,0.02105822751852834,0.2899646352072752,EVALUATED,,7.0,319,317
+mms_external,"evaluation (frozen objects, once)",primary_ridge,rho_ef,estimate,0.5609703283310578,0.5310012374620936,0.5891408701087998,EVALUATED,,2.0,319,317
+mms_external,"evaluation (frozen objects, once)",primary_ridge,rho_volumes,estimate,0.03232680724737584,-0.19918146628239095,0.18314689071195409,EVALUATED,,5.0,319,317
+mms_external,"evaluation (frozen objects, once)",ridge_typed_formal57_plus_geometry3,rho,estimate,0.5436304587817877,0.4165401711661781,0.6171454373006625,EVALUATED,,7.0,319,317
+mms_external,"evaluation (frozen objects, once)",ridge_typed_formal57_plus_geometry3,rho_ef,estimate,0.5759279325621933,0.547822230995542,0.6031571704802717,EVALUATED,,2.0,319,317
+mms_external,"evaluation (frozen objects, once)",ridge_typed_formal57_plus_geometry3,rho_volumes,estimate,0.5307114692696253,0.3519534716454176,0.6305769426010145,EVALUATED,,5.0,319,317
+mms_external,"evaluation (frozen objects, once)",analytical,rho,estimate,0.9999999999999997,0.9999999999999997,0.9999999999999998,EVALUATED,,7.0,319,317
+mms_external,"evaluation (frozen objects, once)",analytical,rho_ef,estimate,0.9999999999999996,0.9999999999999994,0.9999999999999996,EVALUATED,,2.0,319,317
+mms_external,"evaluation (frozen objects, once)",analytical,rho_volumes,estimate,0.9999999999999998,0.9999999999999998,0.9999999999999998,EVALUATED,,5.0,319,317
+mms_external,"evaluation (frozen objects, once)",primary_ridge,rho,difference_vs_ridge_typed_formal57_plus_geometry3,-0.36026264551050274,-0.41301522170293553,-0.31214757688281486,EVALUATED,,,319,317
+mms_external,"evaluation (frozen objects, once)",primary_ridge,rho_ef,difference_vs_ridge_typed_formal57_plus_geometry3,-0.014957604231135568,-0.028946650104130844,-0.0016514377664199641,EVALUATED,,,319,317
+mms_external,"evaluation (frozen objects, once)",primary_ridge,rho_volumes,difference_vs_ridge_typed_formal57_plus_geometry3,-0.49838466202224946,-0.5741115427311069,-0.4292331378185561,EVALUATED,,,319,317
+mms_external,"evaluation (frozen objects, once)",analytical,rho,difference_vs_ridge_typed_formal57_plus_geometry3,0.45636954121821194,0.3828545626993372,0.5834598288338215,EVALUATED,,,319,317
+mms_external,"evaluation (frozen objects, once)",analytical,rho_ef,difference_vs_ridge_typed_formal57_plus_geometry3,0.42407206743780623,0.3968428295197278,0.45217776900445766,EVALUATED,,,319,317
+mms_external,"evaluation (frozen objects, once)",analytical,rho_volumes,difference_vs_ridge_typed_formal57_plus_geometry3,0.46928853073037446,0.3694230573989853,0.6480465283545821,EVALUATED,,,319,317
+mms2_external,"evaluation (frozen objects, once)",primary_ridge,rho,estimate,0.31124151831900215,0.23284663077687554,0.3817447909296376,EVALUATED,,7.0,180,180
+mms2_external,"evaluation (frozen objects, once)",primary_ridge,rho_ef,estimate,0.6057473369352957,0.563701557263582,0.6463733326262187,EVALUATED,,2.0,180,180
+mms2_external,"evaluation (frozen objects, once)",primary_ridge,rho_volumes,estimate,0.19343919087248476,0.08787243567107166,0.2901916869344173,EVALUATED,,5.0,180,180
+mms2_external,"evaluation (frozen objects, once)",ridge_typed_formal57_plus_geometry3,rho,estimate,0.5679071226980585,0.5031685711599484,0.6240808308270881,EVALUATED,,7.0,180,180
+mms2_external,"evaluation (frozen objects, once)",ridge_typed_formal57_plus_geometry3,rho_ef,estimate,0.604396037172698,0.5600218767512795,0.6454789928305952,EVALUATED,,2.0,180,180
+mms2_external,"evaluation (frozen objects, once)",ridge_typed_formal57_plus_geometry3,rho_volumes,estimate,0.5533115569082027,0.46897152826460314,0.6246950591656206,EVALUATED,,5.0,180,180
+mms2_external,"evaluation (frozen objects, once)",analytical,rho,estimate,0.9999999999999997,0.9999999999999997,0.9999999999999998,EVALUATED,,7.0,180,180
+mms2_external,"evaluation (frozen objects, once)",analytical,rho_ef,estimate,0.9999999999999993,0.9999999999999993,0.9999999999999996,EVALUATED,,2.0,180,180
+mms2_external,"evaluation (frozen objects, once)",analytical,rho_volumes,estimate,0.9999999999999998,0.9999999999999998,0.9999999999999998,EVALUATED,,5.0,180,180
+mms2_external,"evaluation (frozen objects, once)",primary_ridge,rho,difference_vs_ridge_typed_formal57_plus_geometry3,-0.2566656043790564,-0.32488604460300513,-0.19842814916506293,EVALUATED,,,180,180
+mms2_external,"evaluation (frozen objects, once)",primary_ridge,rho_ef,difference_vs_ridge_typed_formal57_plus_geometry3,0.0013512997625977352,-0.014979912082356751,0.017003766310124496,EVALUATED,,,180,180
+mms2_external,"evaluation (frozen objects, once)",primary_ridge,rho_volumes,difference_vs_ridge_typed_formal57_plus_geometry3,-0.3598723660357179,-0.4578527843231533,-0.276745037930655,EVALUATED,,,180,180
+mms2_external,"evaluation (frozen objects, once)",analytical,rho,difference_vs_ridge_typed_formal57_plus_geometry3,0.4320928773019411,0.37591916917291157,0.49683142884005116,EVALUATED,,,180,180
+mms2_external,"evaluation (frozen objects, once)",analytical,rho_ef,difference_vs_ridge_typed_formal57_plus_geometry3,0.39560396282730137,0.3545210071694044,0.43997812324871993,EVALUATED,,,180,180
+mms2_external,"evaluation (frozen objects, once)",analytical,rho_volumes,difference_vs_ridge_typed_formal57_plus_geometry3,0.4466884430917971,0.3753049408343791,0.5310284717353967,EVALUATED,,,180,180

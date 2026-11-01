@@ -1,0 +1,5 @@
+partition,alignment_tolerance,image_alignment_max_abs_difference,image_cache_manifest,n_cases,n_cases_with_absent_structure
+acdc_dev,0.0001,0.0,neural_cache/acdc_dev/manifest.csv,98,0
+acdc_test,0.0001,0.0,neural_cache/acdc_test/manifest.csv,50,0
+mms2_external,0.0001,0.0,neural_cache/mms2_external/manifest.csv,180,0
+mms_external,0.0001,0.0,neural_cache/mms_external/manifest.csv,320,0

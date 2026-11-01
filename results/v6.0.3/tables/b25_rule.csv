@@ -1,0 +1,2 @@
+rule_id,antecedent,consequent,consequent_endpoint,length,strict,fit_antecedent_n_patients,fit_joint_n_patients,fit_confidence,crossfit_matched_n_patients,crossfit_agreement,crossfit_wilson_lower,crossfit_folds_reproduced,eligibility,n_anchors,n_anchors_acdc,n_anchors_mms,n_anchors_other,caveat
+R_cf5ef6878625f5f6,lv_esv_ml=b2of3 & rv_ef_percent=b0of3,DCM,d_model,2,False,27,26,0.9629629629629629,27,0.9259259259259259,0.7663040731697686,5,ELIGIBLE,26,14,12,0,"model decision, not diagnosis"

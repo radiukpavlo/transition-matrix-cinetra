@@ -1,0 +1,143 @@
+# Second post-freeze exploratory block B23-B27 (protocol-v6.0.3 amendment; SPECIFICATION.md 6.0.3, Sections 0.5 and
+# 13.8; protocol/amendments.md, row of 28 October 2026). Adopted by the owner on 28 October 2026 after a readiness
+# review and a risk review of the revised manuscript (manuscript/reports/paper1/REVISION4_READINESS_REVIEW_2026-10-28.md,
+# decisions RD-20 to RD-56).
+# Declared post hoc: every partition except mms2_sealed was unblinded, and the B10-B22 results of
+# v6-postfreeze-20261028-0201 had been seen, when this file was written. Every output and provenance record is labelled
+# EXPLORATORY_POST_HOC; the analyses explain recorded results and never confirm them.
+# Effect sizes with descriptive intervals only: no p-values, no significance language, no post-hoc power.
+# Separate lane file on purpose: exploratory_postfreeze.yaml (B10-B22, frozen by protocol-v6.0.2), exploratory.yaml
+# (B1-B9) and every file hashed by the frozen run stay unchanged.
+# Code: src/tmmri/experiments/postfreeze/ (added before the tag). CLI: run-postfreeze --analysis B<k> (B23-B27 read
+# this file). Nothing in this block runs on cohort data before the owner signs protocol-v6.0.3 on the commit that holds
+# this file and the code.
+specification_version: "6.0.3"
+label: EXPLORATORY_POST_HOC
+
+source_runs:                                    # read-only; never written, never re-evaluated
+  frozen:
+    run_id: v6-replication-20261003-1241
+    root: artifacts/v6-replication-20261003-1241  # container path /workspace/artifacts/<run_id> (volume tmmri_artifacts)
+  postfreeze_v602:
+    run_id: v6-postfreeze-20261028-0201
+    root: artifacts/v6-postfreeze-20261028-0201
+    used_by: "B23 (B18 fidelities, for the reproduction check), B24 (B22 F9-M predictions, activations and F9b-M probe of seed 20261011), B26 (the frozen B12 model, applied to the recorded descriptors because B12 recorded no per-case reconstructions), B27 (B17 large-error thresholds and signals)"
+  input_check: "every file read from either source run is verified against the SHA-256 recorded in its stage record, provenance record or release_manifest.json; for the second source run, which has no stage records and no release manifest, against its analysis's provenance.json, and through the FROZEN.json that the provenance lists where the file itself is not listed (the provenance must carry EXPLORATORY_POST_HOC, specification 6.0.2, its run id, the frozen run id with the SHA-256 of its release_manifest.json and the protocol-v6.0.2 tag state); any mismatch refuses the analysis"
+  staged_data: "staging manifests under /workspace/data (volume tmmri_data), read only by B26 (slice count, voxel and imaged volume); vendor and center come from contracts/cohort_<dataset>.parquet of the frozen source run (M&Ms-2 records no center)"
+output:
+  run_id_template: v6-postfreeze-{YYYYMMDD}-{HHMM}   # a new run root; nothing is written into either source run
+  per_analysis_dir: postfreeze/{B#}             # artifacts/<new run_id>/postfreeze/<B#>/ with provenance.json beside every output
+  repeat_policy: "a repeat needs a new run id and is reported as a repeat, never as a replacement (as D26)"
+  run_order: [B23, B24, B26, B25, B27]          # D45: the cut-off removes the last ones first
+
+policy:
+  fit_partition: acdc_dev                       # as D37, except the B25 admission sample (D44)
+  folds: "the recorded outer folds (contracts/split_manifest.parquet outer_fold) and inner folds (contracts/inner_folds.parquet) of the frozen source run"
+  evaluated_partitions: [acdc_test, mms_external, mms2_external]
+  never: [mms2_sealed, mms_refit_eval]          # mms2_sealed is never extracted; the refit arm is not part of this block
+  no_tuning: "no hyperparameter, threshold, cut, bin count, eligibility, gate bound or selection uses acdc_test, mms_external or mms2_external; every setting is fixed here or inherited from the frozen configuration"
+  b25_exception: "D44: mms_external cases enter the B25 rule-admission sample only (granules, candidate rules, cross-fitted reproduction, pooled matches, Wilson bounds); cuts, bins, concept eligibility, gate bounds, transition and predictor stay frozen; mms_external is not a B25 evaluation partition and mms2_external is its only one"
+  freeze_before_evaluation: "each new fitted object (decision-link models, PCA, projections, the B24 cuts and rulebooks, the B25 rulebook) is written and hashed in the new run root before any evaluated partition is processed; each partition is evaluated once per object"
+  locks: "mms2_external only through the M&Ms-2 lock of protocol-v6.0.1 and its passed validate-cohort record; critical-QC rows excluded as in every v6 fit and evaluation"
+  qc: "rows and cells follow the source run: critical-QC rows excluded; only OBSERVED cells of B are scored; no value of B is imputed"
+  identifiers: "no case or subject identifier leaves the new run root; B26 reports case attributes only in cells of at least five cases"
+  compute: "local CPU only; no network fit and no cloud processing; CPE-1 and CSE-1 unchanged"
+  reporting: "D45: every analysis is reported whatever its result; one not finished and checked by 2026-10-31 12:00 (UTC+2) is reported as registered, not run, except B23, for which the resubmission waits"
+
+statistics:
+  bootstrap: {replicates: 2000, seed: 20260928, level: 0.95, unit: cluster_id, interval: percentile, paired: true}
+  proportions: wilson                           # with numerator and denominator
+  min_cases_per_stratum: 20                     # below: point estimates with NE intervals (STRATUM_BELOW_MIN_CASES)
+  primary_targets: [lv_edv_ml, lv_esv_ml, lv_ef_percent, rv_edv_ml, rv_esv_ml, rv_ef_percent, lv_myocardial_mass_ed_g]
+  normalized_mae: "MAE divided by the acdc_dev fit-row SD s_j of the target (as nMAE of the source run)"
+  random_projections: {draws: 1000, generator: numpy_default_rng, seed: 20261028, entries: "standard normal, input_dim x 7, drawn in order"}
+  permutations: {draws: 1000, generator: numpy_default_rng, seed: 20261029}
+  b25_fold_assignment: {salt: "protocol-v6.0.3/B25", rule: "all mms_external clusters of contracts/split_manifest.parquet, before any exclusion, sorted by SHA-256 of salt + cluster_id (UTF-8 hex digest), assigned to outer folds 1-5 round robin in that order; every case of a cluster in one fold"}
+  b26_outlier_rule: "|d - median(d)| > 3 * 1.4826 * MAD(d), per target and partition"
+  b26_min_cell: 5
+
+estimators:                                     # every estimator fitted by this block (the lane's registry)
+  - {id: lr_decision_link_bhat7_refit, analysis: B23, fit: acdc_dev}        # must reproduce the recorded B18 fidelities
+  - {id: pca7_formal57, analysis: B23, fit: acdc_dev}
+  - {id: lr_decision_link_pca7, analysis: B23, fit: acdc_dev}
+  - {id: lr_decision_link_random7_x1000, analysis: B23, fit: acdc_dev}
+  - {id: lr_decision_link_permuted_bhat7_x1000, analysis: B23, fit: acdc_dev}
+  - {id: lr_decision_link_formal57, analysis: B23, fit: acdc_dev}
+  - {id: rule_layer_f9_seed20261011, analysis: B24, fit: acdc_dev}
+  - {id: rule_layer_f9m_seed20261011, analysis: B24, fit: acdc_dev}
+  - {id: lr_decision_link_f9b7_and_activation_nulls, analysis: B24, fit: acdc_dev}
+  - {id: lr_decision_link_f9bm7_and_activation_nulls, analysis: B24, fit: acdc_dev}
+  - {id: rulebook_pooled_d_model, analysis: B25, fit: "acdc_dev + mms_external, rule admission only (D44)"}
+
+analyses:
+  B23:
+    title: null references for the decision-link test
+    answers: "EPC-2; readiness review R2"
+    model: "as B18: multinomial logistic regression with the audited-predictor settings of configs/formal.yaml (L2, C = 1.0, no search) on inputs standardized on acdc_dev"
+    target: "the final audited predictor's decisions d_model on acdc_dev (formal/d_model_ACDC_dev.parquet)"
+    inputs:
+      bhat7: "the seven primary targets of the development out-of-fold B-hat, exactly as B18; its fidelities must equal the recorded B18 values to 1e-12, else the analysis refuses"
+      pca7: "the first seven principal components of the 57 formal descriptors standardized on acdc_dev, fitted on acdc_dev; scores of each partition from the frozen PCA"
+      random7: "standardized A times each of the 1,000 random 57 x 7 matrices (statistics.random_projections)"
+      permuted_bhat7: "bhat7 with its acdc_dev rows permuted against d_model, 1,000 permutations (statistics.permutations); each fitted model evaluated on the unpermuted partitions"
+      constant: "the majority d_model decision on acdc_dev for every case"
+      formal57: "all 57 standardized descriptors (upper reference)"
+    rows: "each input's fidelity on the cases it predicts, as B18; Delta and the comparison of fidelity(bhat7) with P95 on the cases both compared inputs predict, with both counts; reproduction of the recorded B18 bhat7 fidelity (k, n, estimate to 1e-12) on acdc_dev_oof and every evaluated partition, else refuse before any table; reading not determined if an external partition is not processed or yields no outcome"
+    metric: "fidelity = agreement with d_model on every processed case of the partition, with Wilson intervals; for random7 and permuted_bhat7 the median and the 95th percentile (P95) of the 1,000 fidelities"
+    comparison: "Delta = fidelity(bhat7) - fidelity(pca7) with its paired cluster-bootstrap interval"
+    reading: "D43, fixed before computation, per external partition (mms_external, mms2_external): O1 lower bound of Delta > 0 and fidelity(bhat7) > P95(random7); O2 interval of Delta contains 0 and fidelity(bhat7) > P95; O2b upper bound of Delta < 0 and fidelity(bhat7) > P95; O3 fidelity(bhat7) <= P95. The manuscript follows the lower outcome of the two partitions (O3 < O2b < O2 < O1); acdc_test is reported but does not enter the reading"
+    partitions: [acdc_test, mms_external, mms2_external]
+    outputs: [null_fidelity_table, null_distributions, delta_table, reading]
+  B24:
+    title: rule audit of the image networks (F9, F9-M)
+    answers: "EPC-2; readiness review R1"
+    networks:
+      f9: "the recorded F9 of the frozen source run (neural_f9/), seed 20261011 (f9_bundle.json primary_seed); seed selection forbidden"
+      f9m: "F9-M of v6-postfreeze-20261028-0201 (postfreeze/B22/), seed 20261011"
+    consequent: "the network's own decision (argmax of its class probabilities): on acdc_dev the out-of-fold decisions of the outer-fold networks (is_oof), on the evaluated partitions the final network"
+    concepts: "the network's probe reconstruction of the same seed: F9b (probes/f9b/seed20261011/) and F9b-M (postfreeze/B22/probes, seed 20261011); development out of fold for fitting, the frozen probe on the evaluated partitions"
+    rule_layer: "the full rule layer of Section 11 with the settings of configs/wedd.yaml and configs/rule_policy.yaml and the recorded folds: cuts, cut-stability eligibility, granules, variable-precision discovery and the cross-fitted gate fitted on acdc_dev with the network's decisions in place of d_model; frozen before evaluation"
+    gate_consequent: "in outer fold f the fold-f network's decisions; training-fold concepts from the probe refitted inside outer-train(f) on encoder f's activations with the recorded inner folds of fold f (nested, as Section 11.6); the held-out fold keeps the recorded out-of-fold probe B-hat; concept eligibility with the d_model rule-policy settings, including the reconstruction gate against the recorded comparator mean"
+    stability: "none: the outer-fold probes map the outer-fold encoders' activations, recorded on acdc_dev only; no cell is UNSTABLE_ESTIMATE on the evaluated partitions, stated in every coverage row"
+    reconstruction_check: "the evaluated-partition reconstruction is the frozen final probe applied to the recorded final-encoder activations; it must reproduce the recorded F9b evaluation metrics and, for F9b-M, the recorded B22 reconstructions, to 1e-6, else refuse"
+    ledger: "candidate ledger with the first failed condition, as B15"
+    application: "coverage and fidelity to the network's decisions on the three evaluated partitions with the frozen cuts and routing, as B16; accuracy among accepted cases on the same-definition subsets"
+    decision_link: "as B18, fitted on acdc_dev to the networks' out-of-fold decisions (the consequent; the final network's in-sample decisions are close to the labels) and evaluated against the final network's decisions, on the seven primary targets of the development out-of-fold probe reconstruction, with the PCA-7 and random-projection references of B23 computed on the final encoder's 64 activations standardized on acdc_dev; critical-QC cases excluded as in B18; descriptive, no reading"
+    note: "F9-M decisions are below the majority-class rate on mms2_external (B22); its results there carry that note"
+    partitions: [acdc_test, mms_external, mms2_external]
+    outputs: [concept_table, candidate_ledger, rulebook, coverage_fidelity_table, decision_link_table]
+  B25:
+    title: rule admission on a pooled development sample (sample-size test of the empty rulebook)
+    answers: "EPC-4; readiness review R3"
+    admission_sample:
+      acdc_dev: "the 98 development cases with the out-of-fold B-hat and the final d_model decisions (formal/d_model_ACDC_dev.parquet), as in the frozen rule layer, in their recorded outer folds"
+      mms_external: "the non-critical-QC mms_external cases with the frozen-bundle B-hat (reconstructed/bhat_mms_external.parquet) and the final d_model decision (never fitted on these cases); outer folds by statistics.b25_fold_assignment"
+    frozen: "the recorded cuts, bins and concept eligibility of the d_model rulebook, the gate bounds of configs/rule_policy.yaml, the transition and the predictor; nothing is refitted"
+    symbols: "frozen cuts applied to B-hat (mms_external before decoder domain blocking); a cell flagged UNSTABLE_ESTIMATE in the recorded stability table of mms_external satisfies no literal; the development out-of-fold B-hat has no recorded stability table and no unstable cell; class eligibility (at least five cases per class) is part of discovery on the pooled sample"
+    gate: "Section 11.6 exactly, with the pooled sample in place of acdc_dev: granules, discovery (at most three literals), support >= 5 patients, confidence >= 0.90, cross-fitted reproduction, pooled matches >= 5, Wilson lower bound >= 0.60; in each outer fold the acdc_dev rows take the substrate and decisions of the frozen Section 11.6 gate (recorded nested inner out-of-fold B-hat and the decisions of the predictor refitted without fold f, which must reproduce formal/d_model_crossfit_ACDC_dev.parquet on every held-out fold), the mms_external rows the frozen-bundle B-hat and the final d_model"
+    ledger: "candidate ledger with the first failed condition, as B15"
+    evaluation: "admitted rules applied to mms2_external only, with the frozen cuts and the routing of Section 11.7: coverage (accepted / processed), fidelity to d_model among accepted and accuracy among accepted on the same-definition subset, with Wilson intervals; an empty rulebook is reported as such"
+    partitions: [mms2_external]
+    outputs: [admission_counts, candidate_ledger, rulebook, coverage_fidelity_mms2]
+  B26:
+    title: robust agreement and outlier description
+    answers: "EPC-6; readiness review R5"
+    differences: "d = B-hat - B in physical units per primary target, frozen bundle, OBSERVED cells"
+    agreement: "median bias and the 2.5th and 97.5th percentiles of d, each with a cluster-bootstrap interval, beside the recorded Bland-Altman bias and limits"
+    outliers: "statistics.b26_outlier_rule; counts per target and partition"
+    description: "outliers against the other cases by vendor and center (M&Ms partitions), slice count, voxel volume and imaged volume (staging manifests); categorical cells with fewer than five cases merged into 'other', and the attribute suppressed for that group if 'other' still has fewer than five; a category with one to four cases in either group is merged into 'other' in both groups, and an attribute suppressed for either group is suppressed for both; vendor only for mms2_external (no center recorded); continuous attributes as median and interquartile range per group of at least five cases"
+    geometry_check: "for each outlier, whether it is still an outlier under the geometry-aware transition of B12 (same rule on its differences), with the frozen B12 model (postfreeze/B12/models/, hash-checked through the B12 provenance) applied to the 57 descriptors and the three log covariates; counts; no list of outliers is written"
+    reference: "inter-observer variability is not computed here; published values enter the manuscript only after verification at the source"
+    partitions: [acdc_test, mms_external, mms2_external]
+    outputs: [robust_agreement_table, outlier_counts, outlier_description, geometry_check]
+  B27:
+    title: fold-spread concept-uncertainty signal
+    answers: "EPC-7; readiness review R7"
+    signal: "per evaluated case and primary target, the standard deviation (ddof = 1) of the reconstructions of the five recorded outer-fold transitions (transitions/fold_models/transition_fold1-5.json) decoded to the physical scale by each fold transition with its domain guard, divided by s_j; a cell has a signal only when all five fold values exist; case-level signal the maximum over the targets that have one"
+    large_error:
+      development: "the B17 threshold: per target, the acdc_dev out-of-fold 90th percentile of |B-hat - B| / s_j (postfreeze/B17 of v6-postfreeze-20261028-0201), read from its summary and recomputed; a difference above 1e-12 refuses"
+      within_partition: "per target, the top decile of |B-hat - B| / s_j within each evaluated partition (an outcome definition, not a setting of any method)"
+    metrics: "AUROC of the signal for each large-error indicator (per target and any-large) with cluster-bootstrap intervals; Spearman correlation of the signal with |B-hat - B| / s_j per target"
+    reread: "the B17 continuous signals (uncertainty, OOD score, count of unstable bins) under the within-partition definition"
+    partitions: [acdc_test, mms_external, mms2_external]
+    outputs: [spread_auroc_table, spread_spearman_table, b17_reread_table]

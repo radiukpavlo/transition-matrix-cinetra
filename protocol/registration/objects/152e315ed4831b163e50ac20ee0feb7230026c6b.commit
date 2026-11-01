@@ -1,0 +1,15 @@
+tree eca01068efdd78dc8ae076464300faa56fee1221
+parent e0174e27bbdbaf13ed60b2f8bd09d22633c0c4e6
+parent 6e9eab6a61d2b66f0c3e6d0925bde2b738fbe4e1
+author Pavlo Radiuk <radiukpavlo@gmail.com> 1793215896 +0200
+committer Pavlo Radiuk <radiukpavlo@gmail.com> 1793215896 +0200
+
+Merge the B23-B27 exploratory block (protocol-v6.0.3) into dev
+
+Code for B23-B27 under src/tmmri/experiments/postfreeze/ and the
+run-postfreeze command, the specification check against the newest
+signed protocol tag (D47), and their tests, implemented against the
+protocol-v6.0.3 draft. Nothing has run on cohort data; the lane
+refuses until protocol-v6.0.3 is signed.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

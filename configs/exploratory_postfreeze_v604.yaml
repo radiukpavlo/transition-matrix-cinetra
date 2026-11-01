@@ -1,0 +1,103 @@
+# Third post-freeze exploratory block B28-B31 (protocol-v6.0.4 amendment; SPECIFICATION.md 6.0.4, Sections 0.6 and
+# 13.9; protocol/amendments.md, row of 29 October 2026). Adopted by the owner on 28 October 2026 (decisions RD-62 to
+# RD-66). Comments and `answers` fields reworded by the editorial amendment protocol-v6.0.5 (D53); no setting changed.
+# Declared post hoc and descriptive: every partition except mms2_sealed was unblinded, and the B10-B27 results of
+# v6-postfreeze-20261028-0201 and v6-postfreeze-20261028-2135 had been seen, when this file was written. Every output
+# and provenance record is labelled EXPLORATORY_POST_HOC; no analysis has a reading.
+# Effect sizes with descriptive intervals only: no p-values, no significance language, no post-hoc power.
+# Separate lane file on purpose: exploratory_postfreeze.yaml (B10-B22), exploratory_postfreeze_v603.yaml (B23-B27),
+# exploratory.yaml (B1-B9) and every file hashed by the frozen run stay unchanged.
+# Code: src/tmmri/experiments/postfreeze/ (added before the tag). CLI: run-postfreeze --analysis B<k> (B28-B31 read
+# this file). Nothing in this block runs on cohort data before the owner signs protocol-v6.0.4 on the commit that holds
+# this file and the code.
+specification_version: "6.0.4"
+label: EXPLORATORY_POST_HOC
+
+source_runs:                                    # read-only; never written, never re-evaluated
+  frozen:
+    run_id: v6-replication-20261003-1241
+    root: artifacts/v6-replication-20261003-1241
+  postfreeze_v602:
+    run_id: v6-postfreeze-20261028-0201
+    root: artifacts/v6-postfreeze-20261028-0201
+    used_by: "none directly; B28 reaches the recorded B18 values through B23"
+  postfreeze_v603:
+    run_id: v6-postfreeze-20261028-2135
+    root: artifacts/v6-postfreeze-20261028-2135
+    used_by: "B28 (the frozen B23 models, projections and permutations, and the recorded B23 fidelities), B30 (the frozen B25 rulebook and its recorded mms2_external coverage and fidelity)"
+  input_check: "every file read from a source run is verified against the SHA-256 recorded in its stage record, provenance record (through the FROZEN.json it lists where needed) or release_manifest.json; any mismatch refuses the analysis"
+output:
+  run_id_template: v6-postfreeze-{YYYYMMDD}-{HHMM}   # a new run root; nothing is written into any source run
+  per_analysis_dir: postfreeze/{B#}
+  repeat_policy: "a repeat needs a new run id and is reported as a repeat, never as a replacement (as D26)"
+  run_order: [B28, B29, B31, B30]               # D50: the cut-off removes the last ones first
+
+policy:
+  fit_partition: acdc_dev                       # B28 (c) only; every other quantity tabulates or recomputes recorded outputs
+  evaluated_partitions: [acdc_test, mms_external, mms2_external]
+  development_reference: acdc_dev_oof           # B29 and B31 report it beside the evaluated partitions
+  never: [mms2_sealed, mms_refit_eval]
+  no_tuning: "no category, bound, threshold or selection uses acdc_test, mms_external or mms2_external; every setting is fixed here (D49) or inherited from the frozen configuration"
+  freeze_before_evaluation: "the B28 (c) discriminant and its decision-link model are written and hashed in the new run root before any evaluated partition is processed"
+  locks: "mms2_external only through the M&Ms-2 lock of protocol-v6.0.1 and its passed validate-cohort record"
+  qc: "rows and cells follow the source runs: critical-QC rows excluded; only OBSERVED cells of B are scored; cells without a reconstructed value are counted, not scored; no value is imputed"
+  reconstructions: "the recorded frozen-bundle reconstructions on the physical scale of the recorded per-target errors; acdc_dev_oof uses the recorded out-of-fold reconstructions"
+  identifiers: "no case or subject identifier leaves the new run root; B30 (c) reports released categories only under statistics.min_cell"
+  compute: "local CPU only; no network fit and no cloud processing; CPE-1 and CSE-1 unchanged"
+  reporting: "D50: every analysis is reported whatever its result; one not finished and checked by 2026-10-31 12:00 (UTC+2) is reported as registered, not run"
+
+statistics:
+  bootstrap: {replicates: 2000, seed: 20260928, level: 0.95, unit: cluster_id, interval: percentile, paired: true}
+  proportions: wilson                           # with numerator and denominator
+  kappa: unweighted                             # Cohen's kappa
+  primary_targets: [lv_edv_ml, lv_esv_ml, lv_ef_percent, rv_edv_ml, rv_esv_ml, rv_ef_percent, lv_myocardial_mass_ed_g]
+  ef_categories:                                # D49; lower bound inclusive, upper bound exclusive, in percent
+    lv_ef_percent: [[null, 40], [40, 50], [50, null]]
+    rv_ef_percent: [[null, 40], [40, null]]
+  ef_inconsistency_points: 5                    # |EF_reconstructed - 100 * (EDV_rec - ESV_rec) / EDV_rec| > 5 percentage points
+  plausibility_bounds:                          # D49; wide bounds of physical plausibility, not reference ranges; inclusive
+    lv_edv_ml: [20, 600]
+    rv_edv_ml: [20, 600]
+    lv_esv_ml: [5, 500]
+    rv_esv_ml: [5, 500]
+    lv_ef_percent: [5, 90]
+    rv_ef_percent: [5, 90]
+    lv_myocardial_mass_ed_g: [20, 500]
+  min_cell: 5                                   # D51, B30 (c)
+  normalized_mae: "MAE divided by the acdc_dev fit-row SD s_j of the target (as nMAE of the source run)"
+
+estimators:                                     # every estimator fitted by this block (the lane's registry)
+  - {id: lda4_formal57, analysis: B28, fit: acdc_dev}
+  - {id: lr_decision_link_lda4, analysis: B28, fit: acdc_dev}
+
+analyses:
+  B28:
+    title: agreement and ceilings of the decision-link test
+    answers: "owner decision RD-64 (decision link)"
+    kappa: "Cohen's kappa against d_model for each B23 input (bhat7, pca7, formal57, constant development majority) with a cluster-bootstrap interval, and the median and 95th percentile of kappa over the 1,000 random projections and the 1,000 permutations; from the frozen B23 models applied to the recorded inputs; the fidelities must reproduce the recorded B23 values exactly (numerator and denominator), else the analysis refuses"
+    cohort_majority_constant: "per partition, the fidelity of a constant at that partition's most frequent d_model decision (an outcome-dependent reference, not a method)"
+    supervised_ceiling: "linear discriminant analysis (4 components) fitted on acdc_dev to d_model on the 57 formal descriptors standardized on acdc_dev, followed by the B18 model (multinomial L2 logistic regression, C = 1) on the 4 scores; fidelity with Wilson interval and kappa with a cluster-bootstrap interval"
+    partitions: [acdc_test, mms_external, mms2_external]
+    outputs: [kappa_table, kappa_null_summary, majority_constant_table, ceiling_table]
+  B29:
+    title: ejection-fraction categories, measured against reconstructed
+    answers: "owner decision RD-64 (ejection-fraction categories)"
+    method: "statistics.ef_categories applied to measured B and to the reconstructions; per partition the cross-tabulation, the proportion in the same category with a Wilson interval, and Cohen's kappa with a cluster-bootstrap interval"
+    partitions: [acdc_dev_oof, acdc_test, mms_external, mms2_external]
+    outputs: [ef_category_crosstab, ef_category_agreement]
+  B30:
+    title: audited decisions by reference category
+    answers: "owner decision RD-64 (reference categories)"
+    recorded_confusion: "metrics/predictor_confusion.parquet of the frozen run for acdc_test and mms_external, checked against the recorded decisions and reference labels; per-class recall with Wilson intervals"
+    mms2_categories: "on mms2_external: d_model decisions per released pathology category (contracts/cohort_MMS2.parquet, pathology); per-class recall on the same-definition subset; per category, the number of cases with measured lv_ef_percent < 40 or rv_ef_percent < 40"
+    b25_covered: "the frozen B25 rulebook (postfreeze/B25 of v6-postfreeze-20261028-2135) re-applied to mms2_external with its frozen cuts and the routing of Section 11.7; it must reproduce 12 accepted cases and 9 agreements, else the analysis refuses; reported: the released categories of the accepted cases under statistics.min_cell, and the d_model decisions of the disagreeing cases (counts)"
+    partitions: [acdc_test, mms_external, mms2_external]
+    outputs: [confusion_table, recall_table, mms2_category_table, b25_covered_table]
+  B31:
+    title: reconstruction plausibility
+    answers: "owner decision RD-64 (reconstruction plausibility)"
+    counts: "per partition, cases (Wilson intervals) with (i) |EF_reconstructed - EF implied by the reconstructed volumes| > statistics.ef_inconsistency_points, LV and RV; (ii) reconstructed ESV >= reconstructed EDV, LV and RV; (iii) a primary target outside statistics.plausibility_bounds, per target and in any target"
+    distribution: "median, 2.5th and 97.5th percentiles of EF implied minus EF reconstructed, LV and RV"
+    clipped_skill: "rho_j and rho with each reconstruction clipped to statistics.plausibility_bounds, beside the unclipped values, with the paired cluster-bootstrap difference"
+    partitions: [acdc_dev_oof, acdc_test, mms_external, mms2_external]
+    outputs: [plausibility_counts, ef_difference_distribution, clipped_skill_table]

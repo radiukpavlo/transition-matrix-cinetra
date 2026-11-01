@@ -1,0 +1,13 @@
+seed,partition,evidence,n_eval_rows,n_eval_rows_with_features,n_excluded_critical_qc,n_partition_rows,n_rows_in_b,predictor_n_clusters,predictor_n_evaluable,predictor_n_no_decision,predictor_n_reference_outside_predictor_classes,predictor_n_reference_unknown,predictor_n_rows,predictor_status,predictor_reason,representation_n_cases,representation_n_clusters
+20261011,acdc_dev_oof,development (out-of-fold),98,98,0,98,98,98,98,0,0,0,98,EVALUATED,,98,98
+20261011,acdc_test,registered after unblinding,50,50,0,50,50,50,50,0,0,0,50,EVALUATED,,50,50
+20261011,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),180,180,0,180,180,68,68,0,0,112,180,EVALUATED,,180,180
+20261011,mms_external,registered after unblinding,319,319,1,320,320,271,272,0,0,47,319,EVALUATED,,319,317
+20261012,acdc_dev_oof,development (out-of-fold),98,98,0,98,98,98,98,0,0,0,98,EVALUATED,,98,98
+20261012,acdc_test,registered after unblinding,50,50,0,50,50,50,50,0,0,0,50,EVALUATED,,50,50
+20261012,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),180,180,0,180,180,68,68,0,0,112,180,EVALUATED,,180,180
+20261012,mms_external,registered after unblinding,319,319,1,320,320,271,272,0,0,47,319,EVALUATED,,319,317
+20261013,acdc_dev_oof,development (out-of-fold),98,98,0,98,98,98,98,0,0,0,98,EVALUATED,,98,98
+20261013,acdc_test,registered after unblinding,50,50,0,50,50,50,50,0,0,0,50,EVALUATED,,50,50
+20261013,mms2_external,prospective (M&Ms-2 lock of protocol-v6.0.1),180,180,0,180,180,68,68,0,0,112,180,EVALUATED,,180,180
+20261013,mms_external,registered after unblinding,319,319,1,320,320,271,272,0,0,47,319,EVALUATED,,319,317

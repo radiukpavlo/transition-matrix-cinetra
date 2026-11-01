@@ -1,0 +1,7 @@
+partition,constant,decision,role,fidelity,fidelity_k,fidelity_n,fidelity_ci_lower,fidelity_ci_upper,fidelity_half_up,kappa_n,kappa,kappa_ci_lower,kappa_ci_upper,kappa_half_up,kappa_status,kappa_reason,kappa_n_boot_valid
+acdc_test,development_majority_b23,DCM,B23 constant (acdc_dev majority),0.18,9,50,0.09770192670234178,0.30796053674300783,0.180,50,0.0,0.0,0.0,0.000,EVALUATED,,2000
+acdc_test,cohort_majority,MINF,"outcome-dependent reference, not a method",0.24,12,50,0.1429739139699173,0.3741268375794292,0.240,50,0.0,0.0,0.0,0.000,EVALUATED,,2000
+mms_external,development_majority_b23,DCM,B23 constant (acdc_dev majority),0.07523510971786834,24,319,0.05107618282925923,0.10950250805531776,0.075,319,0.0,0.0,0.0,0.000,EVALUATED,,2000
+mms_external,cohort_majority,NOR,"outcome-dependent reference, not a method",0.5830721003134797,186,319,0.5282915476032843,0.63587571949309,0.583,319,0.0,0.0,0.0,0.000,EVALUATED,,2000
+mms2_external,development_majority_b23,DCM,B23 constant (acdc_dev majority),0.13333333333333333,24,180,0.09126281053659399,0.19072722127258887,0.133,180,0.0,0.0,0.0,0.000,EVALUATED,,2000
+mms2_external,cohort_majority,NOR,"outcome-dependent reference, not a method",0.39444444444444443,71,180,0.32596824258285667,0.46733191808948377,0.394,180,0.0,0.0,0.0,0.000,EVALUATED,,2000

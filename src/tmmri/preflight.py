@@ -1397,17 +1397,17 @@ def step_mms2_evaluate(pf: Preflight) -> None:
 
 
 def step_results_freeze(pf: Preflight) -> None:
-    from .manuscript_tables import run_protocol_tag, spec_matches_tag
+    from .manuscript_tables import spec_matches_tag, specification_tag
 
     pf.tag_v601()
     if not pf.run_root():
         return
     pf.frozen_bundle()
-    run_tag = run_protocol_tag(pf.run, pf.study)
-    matches = spec_matches_tag(PROJECT_ROOT / "SPECIFICATION.md", run_tag)
-    pf.add({True: PASS, False: FAIL, None: WARN}[matches], "SPECIFICATION.md vs run tag",
-           {True: f"equals {run_tag}:SPECIFICATION.md (Table 1)", False: f"differs from {run_tag}:SPECIFICATION.md: build-manuscript-tables refuses",
-            None: f"git cannot show {run_tag}:SPECIFICATION.md (tag absent?)"}[matches])
+    spec_tag = specification_tag(PROJECT_ROOT)              # protocol-v6.0.3 D47: the newest signed tag HEAD descends from
+    matches = spec_matches_tag(PROJECT_ROOT / "SPECIFICATION.md", spec_tag) if spec_tag else None
+    pf.add({True: PASS, False: FAIL, None: WARN}[matches], "SPECIFICATION.md vs newest signed tag",
+           {True: f"equals {spec_tag}:SPECIFICATION.md (Table 1)", False: f"differs from {spec_tag}:SPECIFICATION.md: build-manuscript-tables refuses",
+            None: f"git cannot show {spec_tag}:SPECIFICATION.md (no signed protocol tag HEAD descends from?)"}[matches])
     for split in ("acdc_test", "mms_external"):
         pf.record(f"evaluate:{split}", status="EVALUATED", verify_outputs=False)
     if pf.records().get("evaluate:mms2_external") is None:

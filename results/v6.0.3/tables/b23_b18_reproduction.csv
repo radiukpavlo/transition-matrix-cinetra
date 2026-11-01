@@ -1,0 +1,5 @@
+partition,refit_fidelity,refit_k,refit_n,recorded_fidelity,recorded_k,recorded_n,reproduced
+acdc_dev_oof,0.8979591836734694,88,98,0.8979591836734694,88,98,True
+acdc_test,0.82,41,50,0.82,41,50,True
+mms_external,0.8087774294670846,258,319,0.8087774294670846,258,319,True
+mms2_external,0.7944444444444444,143,180,0.7944444444444444,143,180,True

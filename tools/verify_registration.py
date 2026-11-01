@@ -1,9 +1,12 @@
-"""Verify the protocol registration of CINETRA (CMR-TRANS-AUDIT 6.0.0 and its 6.0.1 amendment).
+"""Verify the protocol registration of CINETRA (CMR-TRANS-AUDIT 6.0.0 and its signed amendments).
 
-The registration consists of two signed, annotated git tags in the authors' development repository. This folder
-publishes what is needed to check them without that repository (protocol/registration/):
+The registration consists of signed, annotated git tags (protocol-v6.0.0, protocol-v6.0.1, ...) in the authors'
+development repository. This folder publishes what is needed to check them without that repository
+(protocol/registration/):
 
-1. Each tag object hashes to its recorded id, and its SSH signature verifies against ``allowed_signers``.
+1. Each tag object hashes to its recorded id, and its SSH signature verifies against ``allowed_signers``, which
+   lists every key that signed a tag (the owner changed signing keys at protocol-v6.0.2); each tag must be signed
+   by the key PROOFS.json records for it. Every tag in tags/ is checked, and PROOFS.json must list exactly those.
 2. Each tag points to a commit, and the commit and tree objects hash to their ids, so they cannot be altered.
 3. Walking those trees, each registered path resolves to the recorded blob id (PROOFS.json).
 4. Each file published verbatim in this repository has exactly that blob id, so it is byte-identical to the
@@ -57,7 +60,9 @@ def file_blob(path: Path) -> str:
     return oid("blob", path.read_bytes())
 
 
-def verify_signature(tag: str, text: str) -> str:
+def verify_signature(tag: str, text: str, key: str | None = None) -> str:
+    """``ssh-keygen -Y verify`` of a tag object; ``key`` is the SHA256 fingerprint the tag must be signed with."""
+
     keygen = shutil.which("ssh-keygen")
     if not keygen:
         return "SKIPPED (ssh-keygen not found)"
@@ -70,11 +75,20 @@ def verify_signature(tag: str, text: str) -> str:
                                "-s", str(sig_file)], input=payload.encode("utf-8"), capture_output=True)
     if proc.returncode != 0:
         raise SystemExit(f"FAIL {tag}: signature does not verify\n{proc.stderr.decode(errors='replace')}")
+    said = (proc.stdout + proc.stderr).decode(errors="replace")
+    if key and "SHA256:" in said and key not in said:
+        raise SystemExit(f"FAIL {tag}: signed with another key than the recorded {key}\n{said}")
     return proc.stdout.decode(errors="replace").strip() or "Good signature"
 
 
 def main() -> int:
     proofs = json.loads((REG / "PROOFS.json").read_text(encoding="utf-8"))
+    tag_files = sorted(f.name[:-len(".tag")] for f in (REG / "tags").glob("*.tag"))
+    if sorted(proofs["tags"]) != tag_files:
+        raise SystemExit(f"FAIL tags/ holds {tag_files}, but PROOFS.json lists {sorted(proofs['tags'])}")
+    keys = [ln for ln in (REG / "allowed_signers").read_text(encoding="utf-8").splitlines()
+            if ln.strip() and not ln.startswith("#")]
+    print(f"tags: {len(tag_files)} signed protocol tags; allowed_signers lists {len(keys)} key(s)")
     objects: dict[str, tuple[str, bytes]] = {}
     for f in sorted((REG / "objects").iterdir()):
         name, kind = f.name.split(".", 1)
@@ -96,7 +110,7 @@ def main() -> int:
         tz = dt.timezone(dt.timedelta(hours=int(rec["tagger_tz"][:3]), minutes=int(rec["tagger_tz"][0] + rec["tagger_tz"][3:])))
         when = dt.datetime.fromtimestamp(rec["tagger_epoch"], tz).strftime("%Y-%m-%d %H:%M:%S %z")
         print(f"{tag}: tag {rec['tag_object'][:12]} -> commit {commit[:12]}, signed {when} (signer's clock); "
-              f"signature: {verify_signature(tag, text)}")
+              f"signature: {verify_signature(tag, text, rec.get('signing_key'))}")
 
     counts: dict[str, int] = {}
     for rec in proofs["files"]:

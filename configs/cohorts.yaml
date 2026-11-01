@@ -1,4 +1,4 @@
-# Public edition of the registered file `configs/cohorts.yaml` (protocol-v6.0.1, git blob `8a2920739495`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
+# Public edition of the registered file `configs/cohorts.yaml` (protocol-v6.0.5, git blob `8a2920739495`); operational details are replaced as listed in protocol/registration/EDITIONS.md.
 # Cohort definitions, eligibility and QC severity (SPECIFICATION.md 6.0.0, Sections 4, 7 and 12.4). Decisions D1, D2, D7, D8, D16, D21.
 # Tracked manifests carry identifiers, release split, relative paths, sizes, SHA-256 and eligibility/membership flags only;
 # vendor and centre are read from the mounted information CSV at run time; never pathology or demographics.

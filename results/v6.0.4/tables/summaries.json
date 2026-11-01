@@ -1,0 +1,242 @@
+{
+  "B28": {
+    "analysis": "B28",
+    "b23_reproduced": true,
+    "b23_source": "v6-postfreeze-20261028-2135:postfreeze/B23",
+    "cohort_majority_constant": "per partition, the fidelity of a constant at that partition's most frequent d_model decision (an outcome-dependent reference, not a method)",
+    "development_majority": "DCM",
+    "frozen": {
+      "lda4_formal57": {
+        "estimator_id": "lda4_formal57",
+        "files": {
+          "lda.json": "d9a1970a9bec4167286cc0b699ba5c92572a7f543673a73e6f74c9138ab4c09c"
+        },
+        "fit_partition": "acdc_dev",
+        "input": "57 formal descriptors standardized on acdc_dev",
+        "n_components": 4,
+        "n_fit_rows": 98,
+        "solver": "svd",
+        "target": "d_model (formal/d_model_ACDC_dev.parquet)"
+      },
+      "lr_decision_link_lda4": {
+        "estimator_id": "lr_decision_link_lda4",
+        "files": {
+          "predictor.json": "8ed9460a0235a45609d12f5106073da183050f669fb82c810d5184f4f0f20720"
+        },
+        "fit_partition": "acdc_dev",
+        "input": "the 4 scores of lda4_formal57",
+        "model": "B18 (configs/formal.yaml audited_predictor settings)",
+        "target": "d_model (formal/d_model_ACDC_dev.parquet)"
+      }
+    },
+    "included": [
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "kappa": "Cohen's kappa against d_model for each B23 input (bhat7, pca7, formal57, constant development majority) with a cluster-bootstrap interval, and the median and 95th percentile of kappa over the 1,000 random projections and the 1,000 permutations; from the frozen B23 models applied to the recorded inputs; the fidelities must reproduce the recorded B23 values exactly (numerator and denominator), else the analysis refuses",
+    "label": "EXPLORATORY_POST_HOC",
+    "not_executed": {},
+    "reading": null,
+    "supervised_ceiling": "linear discriminant analysis (4 components) fitted on acdc_dev to d_model on the 57 formal descriptors standardized on acdc_dev, followed by the B18 model (multinomial L2 logistic regression, C = 1) on the 4 scores; fidelity with Wilson interval and kappa with a cluster-bootstrap interval"
+  },
+  "B29": {
+    "analysis": "B29",
+    "bounds": "lower bound inclusive, upper bound exclusive (D49)",
+    "categories": {
+      "lv_ef_percent": {
+        "40-<50": [
+          40,
+          50
+        ],
+        "<40": [
+          null,
+          40
+        ],
+        ">=50": [
+          50,
+          null
+        ]
+      },
+      "rv_ef_percent": {
+        "<40": [
+          null,
+          40
+        ],
+        ">=40": [
+          40,
+          null
+        ]
+      }
+    },
+    "included": [
+      "acdc_dev_oof",
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "label": "EXPLORATORY_POST_HOC",
+    "method": "statistics.ef_categories applied to measured B and to the reconstructions; per partition the cross-tabulation, the proportion in the same category with a Wilson interval, and Cohen's kappa with a cluster-bootstrap interval",
+    "not_executed": {},
+    "reading": null
+  },
+  "B30": {
+    "analysis": "B30",
+    "b25_covered": "the frozen B25 rulebook (postfreeze/B25 of v6-postfreeze-20261028-2135) re-applied to mms2_external with its frozen cuts and the routing of Section 11.7; it must reproduce 12 accepted cases and 9 agreements, else the analysis refuses; reported: the released categories of the accepted cases under statistics.min_cell, and the d_model decisions of the disagreeing cases (counts)",
+    "checks": {
+      "acdc_test": {
+        "confusion_reproduced": true,
+        "n_cells_nonzero": 9,
+        "n_rows": 50
+      },
+      "b25_covered": {
+        "declared_checked": true,
+        "n_accepted": 12,
+        "n_category_missing": 0,
+        "n_disagreeing": 3,
+        "n_rules": 1,
+        "reproduction": [
+          {
+            "quantity": "n_attempted",
+            "recomputed": 180,
+            "recorded": 180,
+            "reproduced": true
+          },
+          {
+            "quantity": "n_processed",
+            "recomputed": 180,
+            "recorded": 180,
+            "reproduced": true
+          },
+          {
+            "quantity": "n_accepted",
+            "recomputed": 12,
+            "recorded": 12,
+            "reproduced": true
+          },
+          {
+            "quantity": "coverage_k",
+            "recomputed": 12,
+            "recorded": 12,
+            "reproduced": true
+          },
+          {
+            "quantity": "coverage_n",
+            "recomputed": 180,
+            "recorded": 180,
+            "reproduced": true
+          },
+          {
+            "quantity": "fidelity_k",
+            "recomputed": 9,
+            "recorded": 9,
+            "reproduced": true
+          },
+          {
+            "quantity": "fidelity_n",
+            "recomputed": 12,
+            "recorded": 12,
+            "reproduced": true
+          },
+          {
+            "quantity": "n_accepted (Section 13.9)",
+            "recomputed": 12,
+            "recorded": 12,
+            "reproduced": true
+          },
+          {
+            "quantity": "fidelity_k (Section 13.9)",
+            "recomputed": 9,
+            "recorded": 9,
+            "reproduced": true
+          }
+        ],
+        "routing": "Section 11.7 (route_records with the frozen cuts and the decoded stability)",
+        "status": "EVALUATED"
+      },
+      "mms2_external": {
+        "n_no_decision": 0,
+        "n_rows": 180,
+        "n_same_definition": 68,
+        "n_same_definition_without_decision": 0
+      },
+      "mms_external": {
+        "confusion_reproduced": true,
+        "n_cells_nonzero": 18,
+        "n_rows": 319
+      }
+    },
+    "included": [
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "label": "EXPLORATORY_POST_HOC",
+    "min_cell": 5,
+    "mms2_categories": "on mms2_external: d_model decisions per released pathology category (contracts/cohort_MMS2.parquet, pathology); per-class recall on the same-definition subset; per category, the number of cases with measured lv_ef_percent < 40 or rv_ef_percent < 40",
+    "not_executed": {},
+    "reading": null,
+    "recorded_confusion": "metrics/predictor_confusion.parquet of the frozen run for acdc_test and mms_external, checked against the recorded decisions and reference labels; per-class recall with Wilson intervals",
+    "small_cells": "D51: categories below min_cell pooled as other; other suppressed below min_cell"
+  },
+  "B31": {
+    "analysis": "B31",
+    "bounds_rule": "inclusive; a value below the lower or above the upper bound is outside (D49)",
+    "clipped_skill": "rho_j and rho with each reconstruction clipped to statistics.plausibility_bounds, beside the unclipped values, with the paired cluster-bootstrap difference",
+    "counts": "per partition, cases (Wilson intervals) with (i) |EF_reconstructed - EF implied by the reconstructed volumes| > statistics.ef_inconsistency_points, LV and RV; (ii) reconstructed ESV >= reconstructed EDV, LV and RV; (iii) a primary target outside statistics.plausibility_bounds, per target and in any target",
+    "distribution": "median, 2.5th and 97.5th percentiles of EF implied minus EF reconstructed, LV and RV",
+    "ef_inconsistency_points": 5.0,
+    "included": [
+      "acdc_dev_oof",
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "label": "EXPLORATORY_POST_HOC",
+    "not_executed": {},
+    "plausibility_bounds": {
+      "lv_edv_ml": [
+        20.0,
+        600.0
+      ],
+      "lv_ef_percent": [
+        5.0,
+        90.0
+      ],
+      "lv_esv_ml": [
+        5.0,
+        500.0
+      ],
+      "lv_myocardial_mass_ed_g": [
+        20.0,
+        500.0
+      ],
+      "rv_edv_ml": [
+        20.0,
+        600.0
+      ],
+      "rv_ef_percent": [
+        5.0,
+        90.0
+      ],
+      "rv_esv_ml": [
+        5.0,
+        500.0
+      ]
+    },
+    "reading": null,
+    "rho": {
+      "bootstrap": {
+        "paired": true,
+        "replicates": 2000,
+        "seed": 20260928,
+        "unit": "cluster_id"
+      },
+      "estimand": "v6 rho_j = 1 - MAE_model,j / MAE_mean,j (OBSERVED cells, patient weighted, acdc_dev fit-row SD and mean)",
+      "in_sample": {
+        "acdc_dev_oof": "in-sample and descriptive only: the reference mean and SD are those of the acdc_dev fit rows (Section 13.9 B31)"
+      },
+      "min_estimable_targets": 5
+    }
+  }
+}

@@ -1,0 +1,5 @@
+part,min_cell,category,rule_label,d_model,n,status
+accepted_by_released_category,5.0,LV,,,6,REPORTED
+accepted_by_released_category,5.0,other,,,6,REPORTED
+disagreement_d_model_decision,,,DCM,MINF,2,REPORTED
+disagreement_d_model_decision,,,DCM,RV,1,REPORTED

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, results or protocol, please cite it as below, and cite the article once it is published."
 title: "CINETRA: A Multi-Vendor Audit of Semantic Concept Transfer in Cardiac MRI (code, protocol and frozen results)"
 type: software
-version: v1.0.0
+version: v1.1.0
 doi: 10.5281/zenodo.23269591
 identifiers:
   - type: doi
@@ -17,9 +17,10 @@ abstract: >-
   CINETRA audits a frozen multinomial logistic regression on 57 mask descriptors of cine cardiac MRI: a typed
   transition maps the descriptors to measured ventricular concepts, variable-precision rough-set rules must pass a
   cross-fitted gate, and every case receives a reason-coded label or computational abstention. This repository holds
-  the registered protocol CMR-TRANS-AUDIT 6.0.1, the code that produced the results (byte-identical to the
-  registered commit), the aggregate results of the frozen run, the bundles fitted on the ACDC development set, and
-  the tools to verify the registration and reproduce the study.
+  the registered protocol CMR-TRANS-AUDIT with its signed amendments, the code that produced the results and the
+  post-freeze exploratory code (byte-identical to the registered commits), the aggregate results of the frozen run,
+  the evidence packs of the post-freeze exploratory blocks, the bundles fitted on the ACDC development set, and the
+  tools to verify the registration and reproduce the study.
 keywords:
   - explainable artificial intelligence
   - cardiac magnetic resonance imaging

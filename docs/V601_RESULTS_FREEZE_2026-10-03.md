@@ -1,4 +1,4 @@
-> Public edition of `docs/V601_RESULTS_FREEZE_2026-10-03.md` of the authors' development repository (commit `590196aa9241`); operational details are replaced as listed in EDITIONS.md.
+> Public edition of `docs/V601_RESULTS_FREEZE_2026-10-03.md` of the authors' development repository (commit `590196aa9241`); operational details are replaced as listed in [EDITIONS.md](../protocol/registration/EDITIONS.md).
 
 # protocol-v6.0.1 results freeze (3 October 2026)
 

@@ -1,6 +1,7 @@
 """Protocol-v6.0.1 integration checks that run on the host (no torch; synthetic fixtures under tmp_path only).
 
-* Owner decision F: Table 1 is checked against ``SPECIFICATION.md`` of the protocol tag a run was executed under.
+* Owner decision F: the protocol tag a run was executed under (since protocol-v6.0.3 D47, Table 1 is checked against
+  ``SPECIFICATION.md`` of the newest signed protocol tag HEAD descends from; ``tests/test_manuscript_spec_tag.py``).
 * Owner decision C: the case-identifier guard of tables and figures covers prefixed M&Ms-2 ids and never trips on counts.
 * C3 (L4a with L89): the S6 hook ``tmmri.neural.preprocess.case_tensors`` is the ``build-tensor-cache`` transform.
 * C5 (L4b with L89): purpose-s5 spec files import after the F9 freeze; F9 spec files do not.
@@ -38,10 +39,11 @@ def test_run_protocol_tag_follows_the_protocol_the_run_was_executed_under(tmp_pa
     atomic_write_json(other.frozen_path, {"protocol_tag": "protocol-v6.0.0", "protocol_version_tag": "protocol-v6.0.1"})
     assert mt.run_protocol_tag(other, study) == "protocol-v6.0.1"            # frozen with protocol-v6.0.1 code
     seen = []
+    monkeypatch.setattr(mt, "specification_tag", lambda root: "protocol-v6.0.2")
     monkeypatch.setattr(mt, "spec_matches_tag", lambda path, tag: seen.append(tag) or False)
-    with pytest.raises(mt.TableBuildError, match="protocol-v6.0.0"):
+    with pytest.raises(mt.TableBuildError, match="protocol-v6.0.2"):
         mt.build_tables(_run_root(tmp_path, "v6-integration-20261003-1302"), study, include_mms=False, out_dir=tmp_path / "tables")
-    assert seen == ["protocol-v6.0.0"]                                        # no FROZEN.json and no record: the freeze tag
+    assert seen == ["protocol-v6.0.2"]            # D47: the newest signed ancestor tag, not the run's tag (protocol-v6.0.0 here)
 
 
 def test_freeze_records_only_a_protocol_tag_that_exists(tmp_path, monkeypatch):

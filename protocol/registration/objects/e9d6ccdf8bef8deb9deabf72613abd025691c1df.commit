@@ -1,0 +1,8 @@
+tree db3aa6e215964c357ba954fb253f3a6c2c204896
+parent 656713dcf1c556a33c6e55d5ae2ef917633a36e9
+author Pavlo Radiuk <radiukpavlo@gmail.com> 1793476667 +0200
+committer Pavlo Radiuk <radiukpavlo@gmail.com> 1793476667 +0200
+
+manuscript: record the commit of the resubmission edits
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

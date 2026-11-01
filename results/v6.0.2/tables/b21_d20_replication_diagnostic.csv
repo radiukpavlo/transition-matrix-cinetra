@@ -1,0 +1,5 @@
+partition,max_abs_difference,median_case_max_abs_difference,n_compared,n_here,n_recorded,role
+acdc_dev,4.470348358154297e-08,0.0,98,98,98,"diagnostic; reported, never used"
+acdc_test,1.6391277335436882e-08,0.0,50,50,50,"diagnostic; reported, never used"
+mms2_external,0.0,0.0,180,180,180,"diagnostic; reported, never used"
+mms_external,0.0,0.0,319,319,320,"diagnostic; reported, never used"

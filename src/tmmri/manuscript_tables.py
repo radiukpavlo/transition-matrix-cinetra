@@ -325,6 +325,38 @@ def spec_matches_tag(spec_path: Path, tag: str) -> bool | None:
     return proc.stdout.replace(b"\r\n", b"\n") == spec_path.read_bytes().replace(b"\r\n", b"\n")
 
 
+# --- protocol-v6.0.3 (Decision D47): the specification check compares with the newest signed protocol tag
+
+PROTOCOL_TAG = re.compile(r"^protocol-v(\d+)\.(\d+)\.(\d+)$")
+
+
+def protocol_tag_names(root: Path) -> list[str]:
+    """Every ``protocol-vX.Y.Z`` tag of the repository at ``root``; empty when git cannot answer."""
+
+    try:
+        proc = subprocess.run(["git", "--no-optional-locks", "tag", "-l", "protocol-v*"], cwd=root, capture_output=True, text=True, timeout=30)
+    except (OSError, subprocess.SubprocessError):
+        return []
+    return [t for t in proc.stdout.split() if PROTOCOL_TAG.match(t)] if proc.returncode == 0 else []
+
+
+def specification_tag(root: Path) -> str | None:
+    """The newest protocol tag (by version, amendment tags included) that is annotated, carries a signature block and
+    that the checked-out commit descends from (:func:`tmmri.stages.protocol_frozen` with ``signed=True``); ``None``
+    when there is none.  ``configs/study_v6.yaml`` lists the tags only up to protocol-v6.0.1, so it is not consulted."""
+
+    from .stages import protocol_frozen
+
+    def version(tag: str) -> tuple[int, ...]:
+        return tuple(int(x) for x in PROTOCOL_TAG.match(tag).groups())
+
+    for tag in sorted(protocol_tag_names(root), key=version, reverse=True):
+        if protocol_frozen(tag, root, signed=True):
+            return tag
+    return None
+# --- end protocol-v6.0.3
+
+
 # --- protocol-v6.0.1 (owner decision F): the protocol tag a run was executed under
 
 V601_STAGES = frozenset({
@@ -347,7 +379,8 @@ def run_protocol_tag(run: RunRoot, study: Any) -> str:
     signed; freeze-analysis-bundle records only a tag that exists with HEAD descending from it); otherwise the newest
     protocol tag of the configuration once the run holds a record of a protocol-v6.0.1 stage (for example
     ``evaluate:mms2_external`` on the frozen v6.0.0 bundle); otherwise the recorded ``protocol_version_tag`` or freeze
-    tag (``protocol-v6.0.0`` for v6.0.0 runs).  Table 1 is checked against ``SPECIFICATION.md`` of that tag."""
+    tag (``protocol-v6.0.0`` for v6.0.0 runs).  Recorded in ``provenance_v6_0_1.json``; since protocol-v6.0.3 (D47)
+    Table 1 is checked against ``SPECIFICATION.md`` of :func:`specification_tag` instead."""
 
     frozen: dict[str, Any] = {}
     if run.frozen_path.is_file():
@@ -1440,10 +1473,12 @@ def build_tables(run: RunRoot, study: Any, *, include_mms: bool, out_dir: Path, 
     spec_path = Path(spec_path) if spec_path is not None else PROJECT_ROOT / "SPECIFICATION.md"
     registry_path = Path(registry_path) if registry_path is not None else registry_file(study)
     run_tag = run_protocol_tag(run, study)                   # protocol-v6.0.1 decision F (protocol-v6.0.0 for v6.0.0 runs)
-    matches = spec_matches_tag(spec_path, run_tag)
+    compared_tag = specification_tag(spec_path.parent)      # protocol-v6.0.3 D47: the newest signed tag HEAD descends from
+    matches = spec_matches_tag(spec_path, compared_tag) if compared_tag else None
     if matches is False:
-        raise TableBuildError(f"{spec_path} differs from {run_tag}:SPECIFICATION.md, the protocol run {run.run_id} was executed under; "
-                              "Table 1 must come from that frozen protocol")
+        raise TableBuildError(f"{spec_path} differs from {compared_tag}:SPECIFICATION.md, the newest signed protocol tag the checked-out "
+                              "commit descends from (D47); Table 1 must come from a signed protocol")
+    matches_run = matches if run_tag == compared_tag else spec_matches_tag(spec_path, run_tag)
     allowed = source_paths(run, study, include_mms=include_mms, spec_path=spec_path, registry_path=registry_path, include_mms2=include_mms2)
     sources = Sources(run, allowed)
     cx = Context(run, study, sources, include_mms=include_mms, registry_path=registry_path, include_mms2=include_mms2)
@@ -1462,7 +1497,8 @@ def build_tables(run: RunRoot, study: Any, *, include_mms: bool, out_dir: Path, 
         rendered[table.name] = (csv, tex)
     provenance = {
         "schema": "tmmri.manuscript_tables_provenance/1", "run_id": run.run_id, "protocol_tag": study.freeze_tag,
-        "specification": {"path": sources.label(spec_path), "sha256": hash_path(spec_path), "matches_protocol_tag": matches},
+        "specification": {"path": sources.label(spec_path), "sha256": hash_path(spec_path), "compared_tag": compared_tag,
+                          "matches_protocol_tag": matches},
         "min_cases_per_stratum": cx.min_cases, "small_stratum_rule": f"n shown; estimates {cx.small}", "descriptive_strata": cx.descriptive,
         "licence": "aggregates only; no case identifiers; no per-case M&Ms content (SPECIFICATION.md 14.5)", "manuscript_directory_written": False,
         "tables": {},
@@ -1471,7 +1507,7 @@ def build_tables(run: RunRoot, study: Any, *, include_mms: bool, out_dir: Path, 
         provenance["tables"][table.name] = _table_provenance(table, *rendered[table.name], sources)
     provenance_v601 = {
         "schema": "tmmri.manuscript_tables_provenance/1", "run_id": run.run_id, "protocol_tag": study.freeze_tag,
-        "run_protocol_tag": run_tag, "specification_matches_run_protocol_tag": matches,
+        "run_protocol_tag": run_tag, "specification_matches_run_protocol_tag": matches_run,
         "amendment": "protocol-v6.0.1 (docs/MANUSCRIPT_PROTOCOL_V2_2026-10-02.md Section K numbering)", "include_mms": include_mms,
         "include_mms2": include_mms2, "min_cases_per_stratum": cx.min_cases, "small_stratum_rule": f"n shown; estimates {cx.small} (clusters)",
         "licence": "aggregates only; no case identifiers; no per-case M&Ms content (SPECIFICATION.md 14.5)", "manuscript_directory_written": False,

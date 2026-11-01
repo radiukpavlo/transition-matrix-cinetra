@@ -1,0 +1,571 @@
+{
+  "B23": {
+    "analysis": "B23",
+    "comparison": "Delta = fidelity(bhat7) - fidelity(pca7) with its paired cluster-bootstrap interval",
+    "excluded_nonfinite": {
+      "acdc_test": {
+        "bhat7": 0,
+        "formal57": 0,
+        "pca7": 0
+      },
+      "mms2_external": {
+        "bhat7": 0,
+        "formal57": 0,
+        "pca7": 0
+      },
+      "mms_external": {
+        "bhat7": 0,
+        "formal57": 0,
+        "pca7": 0
+      }
+    },
+    "frozen": {
+      "constant_majority": {
+        "estimator_id": "constant_majority",
+        "files": {
+          "constant.json": "8c6392dd3292877043d58a0c19a3140c15fadd608028c13cbc01f031c49fa809"
+        },
+        "fit_partition": "acdc_dev",
+        "input": "constant"
+      },
+      "lr_decision_link_bhat7_refit": {
+        "estimator_id": "lr_decision_link_bhat7_refit",
+        "files": {
+          "predictor.json": "9fab6573497f09501b4e322129dd3c4f088d5d472c7a9fa49c90aa153a916665"
+        },
+        "fit_partition": "acdc_dev",
+        "input": "bhat7",
+        "target": "d_model (formal/d_model_ACDC_dev.parquet)",
+        "untransformed_columns": []
+      },
+      "lr_decision_link_formal57": {
+        "estimator_id": "lr_decision_link_formal57",
+        "files": {
+          "predictor.json": "beb41a01d64c00ffb87478a27459e263e1bc015f707550cb65b166638a9ab212"
+        },
+        "fit_partition": "acdc_dev",
+        "input": "formal57",
+        "target": "d_model (formal/d_model_ACDC_dev.parquet)",
+        "untransformed_columns": []
+      },
+      "lr_decision_link_pca7": {
+        "estimator_id": "lr_decision_link_pca7",
+        "files": {
+          "predictor.json": "6b8b7dd20772cca54c1625bba69a3b8e9c1a76141595a26ef7759f3c721786f4"
+        },
+        "fit_partition": "acdc_dev",
+        "input": "pca7",
+        "target": "d_model (formal/d_model_ACDC_dev.parquet)",
+        "untransformed_columns": []
+      },
+      "lr_decision_link_permuted_bhat7_x1000": {
+        "draws": 1000,
+        "estimator_id": "lr_decision_link_permuted_bhat7_x1000",
+        "files": {
+          "permutations.npy": "23b7f35e9682a94c6ffde3cdecf1950364df4f0f26faaedf0d6133bf2210bf37",
+          "predictors.json": "f8f34640bab9790db929a0f764cf797835961999dc3f58fc2f4f400c01a78f4f"
+        },
+        "fit_partition": "acdc_dev",
+        "generator": "numpy_default_rng",
+        "input": "permuted_bhat7",
+        "n_fit_rows": 98,
+        "permuted": "the acdc_dev fit rows of bhat7 against d_model",
+        "seed": 20261029
+      },
+      "lr_decision_link_random7_x1000": {
+        "draws": 1000,
+        "estimator_id": "lr_decision_link_random7_x1000",
+        "files": {
+          "predictors.json": "cf5d45260914eb6fbfb5911b9e4c0cfb87eef6cb695fdc871019d346b6dd5a2d",
+          "projections.npy": "92a39293e5816e4f3da554327567952646f3a352ecdf184051e749f9ef3c5df0"
+        },
+        "fit_partition": "acdc_dev",
+        "generator": "numpy_default_rng",
+        "input": "random7",
+        "seed": 20261028,
+        "shape": [
+          57,
+          7
+        ]
+      },
+      "pca7_formal57": {
+        "columns": "57 formal descriptors",
+        "estimator_id": "pca7_formal57",
+        "files": {
+          "pca.json": "6e750676fe1361e390810467dad230fc059fc9c55db4631551f2b13ffd2f0f73"
+        },
+        "fit_partition": "acdc_dev",
+        "n_components": 7,
+        "n_fit_rows": 98
+      }
+    },
+    "included": [
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "inputs": {
+      "bhat7": "the seven primary targets of the development out-of-fold B-hat, exactly as B18; its fidelities must equal the recorded B18 values to 1e-12, else the analysis refuses",
+      "constant": "the majority d_model decision on acdc_dev for every case",
+      "formal57": "all 57 standardized descriptors (upper reference)",
+      "pca7": "the first seven principal components of the 57 formal descriptors standardized on acdc_dev, fitted on acdc_dev; scores of each partition from the frozen PCA",
+      "permuted_bhat7": "bhat7 with its acdc_dev rows permuted against d_model, 1,000 permutations (statistics.permutations); each fitted model evaluated on the unpermuted partitions",
+      "random7": "standardized A times each of the 1,000 random 57 x 7 matrices (statistics.random_projections)"
+    },
+    "majority_decision": "DCM",
+    "metric": "fidelity = agreement with d_model on every processed case of the partition, with Wilson intervals; for random7 and permuted_bhat7 the median and the 95th percentile (P95) of the 1,000 fidelities",
+    "model": "as B18: multinomial logistic regression with the audited-predictor settings of configs/formal.yaml (L2, C = 1.0, no search) on inputs standardized on acdc_dev",
+    "not_executed": {},
+    "reading": {
+      "claim": "the claim is replaced by the O2 statement",
+      "decision": "D43",
+      "descriptive_only": {
+        "acdc_test": {
+          "delta": -0.12,
+          "delta_ci_lower": -0.22000000000000008,
+          "delta_ci_upper": -0.020000000000000018,
+          "delta_status": "EVALUATED",
+          "enters_reading": false,
+          "fidelity_bhat7": 0.82,
+          "fidelity_bhat7_own_cases": 0.82,
+          "n_bhat7": 50,
+          "n_common_delta": 50,
+          "n_common_random7": 50,
+          "n_pca7": 50,
+          "n_random7": 50,
+          "outcome": "O2b",
+          "p95_random7": 0.8,
+          "partition": "acdc_test",
+          "statement": "less than the best seven-dimensional summary of the descriptors but more than random seven-dimensional projections"
+        }
+      },
+      "fixed_before_computation": true,
+      "not_executed": {},
+      "order": "O3 < O2b < O2 < O1",
+      "partitions": {
+        "mms2_external": {
+          "delta": -0.011111111111111183,
+          "delta_ci_lower": -0.07777777777777783,
+          "delta_ci_upper": 0.06666666666666665,
+          "delta_status": "EVALUATED",
+          "enters_reading": true,
+          "fidelity_bhat7": 0.7944444444444444,
+          "fidelity_bhat7_own_cases": 0.7944444444444444,
+          "n_bhat7": 180,
+          "n_common_delta": 180,
+          "n_common_random7": 180,
+          "n_pca7": 180,
+          "n_random7": 180,
+          "outcome": "O2",
+          "p95_random7": 0.6444444444444445,
+          "partition": "mms2_external",
+          "statement": "the concepts carry as much of the decision as the best seven-dimensional linear summary of the descriptors"
+        },
+        "mms_external": {
+          "delta": -0.01253918495297801,
+          "delta_ci_lower": -0.06269592476489028,
+          "delta_ci_upper": 0.037620512213875974,
+          "delta_status": "EVALUATED",
+          "enters_reading": true,
+          "fidelity_bhat7": 0.8087774294670846,
+          "fidelity_bhat7_own_cases": 0.8087774294670846,
+          "n_bhat7": 319,
+          "n_common_delta": 319,
+          "n_common_random7": 319,
+          "n_pca7": 319,
+          "n_random7": 319,
+          "outcome": "O2",
+          "p95_random7": 0.6865203761755486,
+          "partition": "mms_external",
+          "statement": "the concepts carry as much of the decision as the best seven-dimensional linear summary of the descriptors"
+        }
+      },
+      "reading": "O2",
+      "rule": "D43, fixed before computation, per external partition (mms_external, mms2_external): O1 lower bound of Delta > 0 and fidelity(bhat7) > P95(random7); O2 interval of Delta contains 0 and fidelity(bhat7) > P95; O2b upper bound of Delta < 0 and fidelity(bhat7) > P95; O3 fidelity(bhat7) <= P95. The manuscript follows the lower outcome of the two partitions (O3 < O2b < O2 < O1); acdc_test is reported but does not enter the reading",
+      "statement": "the concepts carry as much of the decision as the best seven-dimensional linear summary of the descriptors",
+      "statements": {
+        "O1": "the reconstructed concepts carry most of the audited decisions",
+        "O2": "the concepts carry as much of the decision as the best seven-dimensional linear summary of the descriptors",
+        "O2b": "less than the best seven-dimensional summary of the descriptors but more than random seven-dimensional projections",
+        "O3": "the descriptor subspace carries the decision; the concepts add nothing beyond their dimension"
+      },
+      "status": "DETERMINED"
+    },
+    "target": "the final audited predictor's decisions d_model on acdc_dev (formal/d_model_ACDC_dev.parquet)"
+  },
+  "B24": {
+    "analysis": "B24",
+    "application": "coverage and fidelity to the network's decisions on the three evaluated partitions with the frozen cuts and routing, as B16; accuracy among accepted cases on the same-definition subsets",
+    "concepts": "the network's probe reconstruction of the same seed: F9b (probes/f9b/seed20261011/) and F9b-M (postfreeze/B22/probes, seed 20261011); development out of fold for fitting, the frozen probe on the evaluated partitions",
+    "consequent": "the network's own decision (argmax of its class probabilities): on acdc_dev the out-of-fold decisions of the outer-fold networks (is_oof), on the evaluated partitions the final network",
+    "decision_link": "as B18, fitted on acdc_dev to the networks' out-of-fold decisions (the consequent; the final network's in-sample decisions are close to the labels) and evaluated against the final network's decisions, on the seven primary targets of the development out-of-fold probe reconstruction, with the PCA-7 and random-projection references of B23 computed on the final encoder's 64 activations standardized on acdc_dev; critical-QC cases excluded as in B18; descriptive, no reading",
+    "frozen": {
+      "lr_decision_link_f9b7_and_activation_nulls": {
+        "activations": "final encoder, 64 columns",
+        "draws": 1000,
+        "estimator_id": "lr_decision_link_f9b7_and_activation_nulls",
+        "files": {
+          "pca.json": "226ef3d2807ccfea3a1b7e0f974762b69d516441387c548a49a338653a44bb1e",
+          "predictor_pca7.json": "08a40cf1c55b25e5e271e7c79d802eabcdf19d15c23b7b5de7275313e749ab9f",
+          "predictor_probe7.json": "7573f9dc57080fd975a4e9a1282746f5c2cce29ecad90bb849a060cb8a5790a2",
+          "predictors_random7.json": "198b2ddd2574bf9538ca38102c62b719b59af0198de65df4c5e624665e859f49",
+          "projections.npy": "da90f5697bf5690d2f991ea1404f596c456721bad00655ff0ab39ee735fa879b"
+        },
+        "fit_partition": "acdc_dev",
+        "seed": 20261028,
+        "target": "out-of-fold network decisions (the consequent); evaluated against the final network",
+        "untransformed_columns": []
+      },
+      "lr_decision_link_f9bm7_and_activation_nulls": {
+        "activations": "final encoder, 64 columns",
+        "draws": 1000,
+        "estimator_id": "lr_decision_link_f9bm7_and_activation_nulls",
+        "files": {
+          "pca.json": "d1ee1073590072678c76bac021ec7650f632cd9fa245a15521de086aa2fdbf86",
+          "predictor_pca7.json": "109a1110c01f00b5dee517f0c2717b14e8dba893c6a95a14aab86a9635265ed4",
+          "predictor_probe7.json": "a9ea8a35d05288eb73f843bd043d013b4e08d45979f1c2a010402ea611a2d418",
+          "predictors_random7.json": "35cc8b8e927138c803751db784d9ec857a901b6fe92346166051414715dc9b70",
+          "projections.npy": "da90f5697bf5690d2f991ea1404f596c456721bad00655ff0ab39ee735fa879b"
+        },
+        "fit_partition": "acdc_dev",
+        "seed": 20261028,
+        "target": "out-of-fold network decisions (the consequent); evaluated against the final network",
+        "untransformed_columns": []
+      },
+      "rule_layer_f9_seed20261011": {
+        "analysis": "B24",
+        "attributes": [],
+        "concepts": "F9b probe reconstruction",
+        "consequent": "network decision (argmax)",
+        "estimator_id": "rule_layer_f9_seed20261011",
+        "files": {
+          "EMPTY.json": "06fadde0d3a4dc0dfef63ae98baea426e3733b8736a14bacb96ef3670ba6e2b2",
+          "cuts_wedd_gaussian_mm_v1.json": "121523c07e0154980bab547420f883966d6a22d733272703fa5cbc55abec09ca",
+          "eligibility.parquet": "79f217da01f45bc8510551e3887d382b0552879898ebdf0ed58c8e5f4cc1f998",
+          "gate.parquet": "79031bd90d32b030f91c501f333625b7892fc2728dafc8d40fb48068a6c8b2a7",
+          "stability.parquet": "c6b0108a01e5aca9141e8e573ac326545f54e30dc05e53fdda192f290bb5c5c7"
+        },
+        "fit_partition": "acdc_dev",
+        "gate_substrate": "nested_inner_oof of the probe (encoder f, inner folds of fold f)",
+        "n_eligible_rules": 0,
+        "n_rows": 98,
+        "network": "F9",
+        "rulebook_file": "EMPTY.json",
+        "seed": 20261011
+      },
+      "rule_layer_f9m_seed20261011": {
+        "analysis": "B24",
+        "attributes": [
+          "global_wall_thickness_ed_mm"
+        ],
+        "concepts": "F9b-M probe reconstruction",
+        "consequent": "network decision (argmax)",
+        "estimator_id": "rule_layer_f9m_seed20261011",
+        "files": {
+          "EMPTY.json": "0cfb02661a4e9ee1d6e56dfc871844f636eacf7c4f719cf2312db8f8e09754f8",
+          "cuts_wedd_gaussian_mm_v1.json": "d80afb23592ce7b16c697326c13c0b3685f4786511482d1f0ee6dddf757a73a8",
+          "eligibility.parquet": "5e3733cc6babd5bf021a29559f52ce20d3c583c568fac11324c4266f02a6e3b3",
+          "gate.parquet": "79031bd90d32b030f91c501f333625b7892fc2728dafc8d40fb48068a6c8b2a7",
+          "stability.parquet": "64ae6df95130f9e50320da08bc58c1417aa20889e2e44081e1876c6e2c49914c"
+        },
+        "fit_partition": "acdc_dev",
+        "gate_substrate": "nested_inner_oof of the probe (encoder f, inner folds of fold f)",
+        "n_eligible_rules": 0,
+        "n_rows": 98,
+        "network": "F9-M",
+        "rulebook_file": "EMPTY.json",
+        "seed": 20261011
+      }
+    },
+    "included": [
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "ledger": {
+      "f9": {
+        "attributes": [],
+        "discovery_reproduced": true,
+        "limits": {
+          "granule_confidence": 0.9,
+          "granule_support": 5.0,
+          "pooled_matches": 5.0,
+          "wilson_lower": 0.6
+        },
+        "n_candidates": 0,
+        "n_induced_rules": 0,
+        "n_rules_gated_outside_discovery": 0,
+        "passed_all": 0,
+        "pipeline_order": [
+          "concept_eligibility",
+          "granule_support_min_5",
+          "granule_confidence_min_0.90",
+          "crossfit_reproduction",
+          "pooled_matches_min_5",
+          "wilson_lower_min_0.60"
+        ],
+        "rejection_counts": [],
+        "usable_attributes": []
+      },
+      "f9m": {
+        "attributes": [
+          "global_wall_thickness_ed_mm"
+        ],
+        "discovery_reproduced": true,
+        "limits": {
+          "granule_confidence": 0.9,
+          "granule_support": 5.0,
+          "pooled_matches": 5.0,
+          "wilson_lower": 0.6
+        },
+        "n_candidates": 3,
+        "n_induced_rules": 0,
+        "n_rules_gated_outside_discovery": 0,
+        "passed_all": 0,
+        "pipeline_order": [
+          "concept_eligibility",
+          "granule_support_min_5",
+          "granule_confidence_min_0.90",
+          "crossfit_reproduction",
+          "pooled_matches_min_5",
+          "wilson_lower_min_0.60"
+        ],
+        "rejection_counts": [
+          {
+            "first_failed_condition": "granule_confidence_min_0.90",
+            "n_candidates": 3,
+            "rulebook": "f9m"
+          }
+        ],
+        "usable_attributes": [
+          "global_wall_thickness_ed_mm"
+        ]
+      }
+    },
+    "networks": {
+      "f9": {
+        "attributes": [],
+        "decision_mismatch_y_pred": {
+          "acdc_dev_final": 0,
+          "acdc_dev_oof": 0
+        },
+        "n_eligible_rules": 0,
+        "n_gate_rows": 98,
+        "network": "F9",
+        "primary_seed": 20261011,
+        "probe": "F9b",
+        "rulebook_file": "EMPTY.json",
+        "seed": 20261011,
+        "source": "frozen source run (neural_f9/, probes/f9b/)"
+      },
+      "f9m": {
+        "attributes": [
+          "global_wall_thickness_ed_mm"
+        ],
+        "completed_seeds": [
+          20261011,
+          20261012,
+          20261013
+        ],
+        "decision_mismatch_y_pred": {
+          "acdc_dev_final": 0,
+          "acdc_dev_oof": 0
+        },
+        "n_eligible_rules": 0,
+        "n_gate_rows": 98,
+        "network": "F9-M",
+        "probe": "F9b-M",
+        "rulebook_file": "EMPTY.json",
+        "seed": 20261011,
+        "source": "second source run (postfreeze/B22/)"
+      }
+    },
+    "not_executed": {},
+    "note": "F9-M decisions are below the majority-class rate on mms2_external (B22); its results there carry that note",
+    "per_object_stability": "not applied: the outer-fold probes map the outer-fold encoders' activations, which are recorded on acdc_dev only; no cell is UNSTABLE_ESTIMATE",
+    "rule_layer": "the full rule layer of Section 11 with the settings of configs/wedd.yaml and configs/rule_policy.yaml and the recorded folds: cuts, cut-stability eligibility, granules, variable-precision discovery and the cross-fitted gate fitted on acdc_dev with the network's decisions in place of d_model; frozen before evaluation"
+  },
+  "B25": {
+    "admission_sample": {
+      "acdc_dev": "the 98 development cases with the out-of-fold B-hat and the final d_model decisions (formal/d_model_ACDC_dev.parquet), as in the frozen rule layer, in their recorded outer folds",
+      "mms_external": "the non-critical-QC mms_external cases with the frozen-bundle B-hat (reconstructed/bhat_mms_external.parquet) and the final d_model decision (never fitted on these cases); outer folds by statistics.b25_fold_assignment"
+    },
+    "analysis": "B25",
+    "attributes": [
+      "lv_esv_ml",
+      "rv_ef_percent",
+      "lv_myocardial_mass_ed_g"
+    ],
+    "decision": "D44",
+    "empty_rulebook": false,
+    "evaluation": "admitted rules applied to mms2_external only, with the frozen cuts and the routing of Section 11.7: coverage (accepted / processed), fidelity to d_model among accepted and accuracy among accepted on the same-definition subset, with Wilson intervals; an empty rulebook is reported as such",
+    "frozen": {
+      "attributes": [
+        "lv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g"
+      ],
+      "cuts_equal_recorded": true,
+      "cuts_file": "thresholds/d_model_wedd_gaussian_mm_v1.json",
+      "cuts_sha256": "016731f90c5c6a392f2080872fd1cc8656c8794b6318390bf281e3d9929f00e9",
+      "estimator_id": "rulebook_pooled_d_model",
+      "files": {
+        "gate.parquet": "34d837e021df468f826495b31ca69764dd2f2e402adfadebc0e5766435474de9",
+        "rulebook.json": "5005df7a8416e6d13e61695b0804e023f86e88b6ef99f44198521d199fbb382e"
+      },
+      "fit": "acdc_dev + mms_external, rule admission only (D44)",
+      "fold_assignment": {
+        "rule": "all mms_external clusters of contracts/split_manifest.parquet, before any exclusion, sorted by SHA-256 of salt + cluster_id (UTF-8 hex digest), assigned to outer folds 1-5 round robin in that order; every case of a cluster in one fold",
+        "salt": "protocol-v6.0.3/B25"
+      },
+      "n_eligible_rules": 1,
+      "rulebook_file": "rulebook.json"
+    },
+    "frozen_objects": "the recorded cuts, bins and concept eligibility of the d_model rulebook, the gate bounds of configs/rule_policy.yaml, the transition and the predictor; nothing is refitted",
+    "gate": "Section 11.6 exactly, with the pooled sample in place of acdc_dev: granules, discovery (at most three literals), support >= 5 patients, confidence >= 0.90, cross-fitted reproduction, pooled matches >= 5, Wilson lower bound >= 0.60; in each outer fold the acdc_dev rows take the substrate and decisions of the frozen Section 11.6 gate (recorded nested inner out-of-fold B-hat and the decisions of the predictor refitted without fold f, which must reproduce formal/d_model_crossfit_ACDC_dev.parquet on every held-out fold), the mms_external rows the frozen-bundle B-hat and the final d_model",
+    "gate_source": {
+      "acdc_dev_rows": 98,
+      "decisions": "audited predictor refitted without fold f on the frozen gate rows (gate_rules); reproduces formal/d_model_crossfit_ACDC_dev.parquet on every held-out fold",
+      "fold_decisions_reproduced": true,
+      "mms_external": "frozen-bundle B-hat and final d_model in every fold",
+      "substrate": "recorded oof/inner_oof_ACDC_dev_fold1-5.parquet in outer-train(f), outer OOF B-hat held out"
+    },
+    "included": [
+      "mms2_external"
+    ],
+    "ledger": {
+      "attributes": [
+        "lv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g"
+      ],
+      "discovery_reproduced": true,
+      "limits": {
+        "granule_confidence": 0.9,
+        "granule_support": 5.0,
+        "pooled_matches": 5.0,
+        "wilson_lower": 0.6
+      },
+      "n_candidates": 54,
+      "n_induced_rules": 1,
+      "n_rules_gated_outside_discovery": 0,
+      "passed_all": 2,
+      "pipeline_order": [
+        "concept_eligibility",
+        "granule_support_min_5",
+        "granule_confidence_min_0.90",
+        "crossfit_reproduction",
+        "pooled_matches_min_5",
+        "wilson_lower_min_0.60"
+      ],
+      "rejection_counts": [
+        {
+          "first_failed_condition": "PASSED_ALL",
+          "n_candidates": 2,
+          "rulebook": "d_model_pooled"
+        },
+        {
+          "first_failed_condition": "granule_confidence_min_0.90",
+          "n_candidates": 46,
+          "rulebook": "d_model_pooled"
+        },
+        {
+          "first_failed_condition": "granule_support_min_5",
+          "n_candidates": 6,
+          "rulebook": "d_model_pooled"
+        }
+      ],
+      "usable_attributes": [
+        "lv_esv_ml",
+        "rv_ef_percent",
+        "lv_myocardial_mass_ed_g"
+      ]
+    },
+    "n_eligible_rules": 1,
+    "not_executed": {},
+    "symbols": "frozen cuts applied to B-hat (mms_external before decoder domain blocking); a cell flagged UNSTABLE_ESTIMATE in the recorded stability table of mms_external satisfies no literal; the development out-of-fold B-hat has no recorded stability table and no unstable cell; class eligibility (at least five cases per class) is part of discovery on the pooled sample"
+  },
+  "B26": {
+    "agreement": "median bias and the 2.5th and 97.5th percentiles of d, each with a cluster-bootstrap interval, beside the recorded Bland-Altman bias and limits",
+    "analysis": "B26",
+    "attributes_not_recorded": {
+      "mms2_external": "centre"
+    },
+    "description": "outliers against the other cases by vendor and center (M&Ms partitions), slice count, voxel volume and imaged volume (staging manifests); categorical cells with fewer than five cases merged into 'other', and the attribute suppressed for that group if 'other' still has fewer than five; a category with one to four cases in either group is merged into 'other' in both groups, and an attribute suppressed for either group is suppressed for both; vendor only for mms2_external (no center recorded); continuous attributes as median and interquartile range per group of at least five cases",
+    "differences": "d = B-hat - B in physical units per primary target, frozen bundle, OBSERVED cells",
+    "geometry_check": "for each outlier, whether it is still an outlier under the geometry-aware transition of B12 (same rule on its differences), with the frozen B12 model (postfreeze/B12/models/, hash-checked through the B12 provenance) applied to the 57 descriptors and the three log covariates; counts; no list of outliers is written",
+    "included": [
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "min_cell": 5,
+    "not_executed": {},
+    "outliers": "statistics.b26_outlier_rule; counts per target and partition",
+    "quantile_method": "numpy_linear",
+    "reference": "inter-observer variability is not computed here; published values enter the manuscript only after verification at the source"
+  },
+  "B27": {
+    "analysis": "B27",
+    "development_thresholds": {
+      "lv_edv_ml": 0.8851149085582413,
+      "lv_ef_percent": 0.3879284568928318,
+      "lv_esv_ml": 0.806850355103765,
+      "lv_myocardial_mass_ed_g": 1.0888962581733033,
+      "rv_edv_ml": 1.038097706755592,
+      "rv_ef_percent": 0.6006322895828672,
+      "rv_esv_ml": 0.6635922645768234
+    },
+    "development_thresholds_reproduced": true,
+    "development_thresholds_source": "postfreeze/B17/summary.json (second source run)",
+    "fold_models": [
+      "transitions/fold_models/transition_fold1.json",
+      "transitions/fold_models/transition_fold2.json",
+      "transitions/fold_models/transition_fold3.json",
+      "transitions/fold_models/transition_fold4.json",
+      "transitions/fold_models/transition_fold5.json"
+    ],
+    "included": [
+      "acdc_test",
+      "mms_external",
+      "mms2_external"
+    ],
+    "large_error": {
+      "development": "the B17 threshold: per target, the acdc_dev out-of-fold 90th percentile of |B-hat - B| / s_j (postfreeze/B17 of v6-postfreeze-20261028-0201), read from its summary and recomputed; a difference above 1e-12 refuses",
+      "within_partition": "per target, the top decile of |B-hat - B| / s_j within each evaluated partition (an outcome definition, not a setting of any method)"
+    },
+    "metrics": "AUROC of the signal for each large-error indicator (per target and any-large) with cluster-bootstrap intervals; Spearman correlation of the signal with |B-hat - B| / s_j per target",
+    "not_executed": {},
+    "reread": "the B17 continuous signals (uncertainty, OOD score, count of unstable bins) under the within-partition definition",
+    "signal": "per evaluated case and primary target, the standard deviation (ddof = 1) of the reconstructions of the five recorded outer-fold transitions (transitions/fold_models/transition_fold1-5.json) decoded to the physical scale by each fold transition with its domain guard, divided by s_j; a cell has a signal only when all five fold values exist; case-level signal the maximum over the targets that have one",
+    "within_partition_thresholds": {
+      "acdc_test": {
+        "lv_edv_ml": 0.838184972416193,
+        "lv_ef_percent": 0.40600940317205364,
+        "lv_esv_ml": 0.8917147277426042,
+        "lv_myocardial_mass_ed_g": 0.8189673894767007,
+        "rv_edv_ml": 0.9339250959152583,
+        "rv_ef_percent": 0.41060434675681323,
+        "rv_esv_ml": 0.6824509894181339
+      },
+      "mms2_external": {
+        "lv_edv_ml": 1.103477719479228,
+        "lv_ef_percent": 0.4459316430119686,
+        "lv_esv_ml": 0.5711907484136232,
+        "lv_myocardial_mass_ed_g": 1.00260937784226,
+        "rv_edv_ml": 1.3920586419766015,
+        "rv_ef_percent": 0.5102816676140323,
+        "rv_esv_ml": 1.0055295941159617
+      },
+      "mms_external": {
+        "lv_edv_ml": 1.4310185042438266,
+        "lv_ef_percent": 0.5861919960636345,
+        "lv_esv_ml": 0.6243073213104438,
+        "lv_myocardial_mass_ed_g": 1.3485892460699211,
+        "rv_edv_ml": 1.7281468793223294,
+        "rv_ef_percent": 0.6283459445968737,
+        "rv_esv_ml": 0.9116752395834876
+      }
+    }
+  }
+}
