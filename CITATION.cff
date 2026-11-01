@@ -11,6 +11,9 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.23269592
     description: "Zenodo archive of v1.0.0"
+  - type: doi
+    value: 10.5281/zenodo.23856801
+    description: "Zenodo archive of v1.1.0"
 repository-code: "https://github.com/radiukpavlo/transition-matrix-cinetra"
 license: [MIT, CC-BY-4.0, CC-BY-NC-SA-4.0]
 abstract: >-

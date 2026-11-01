@@ -7459,8 +7459,8 @@
    "path": "CITATION.cff",
    "kind": "authored",
    "source": "scripts/release/public/CITATION.cff",
-   "sha256": "e54bbdb496130cddf15f81fb6fadf5c9896fe619e006485173728f656045114b",
-   "blob": "2bc1edf9e9f13405f5db7af188162cde9c0e46f8",
+   "sha256": "d510b837d4f9fd34241cc04cf1f0b5ebbce28da99efb29aa3df31b6981525f05",
+   "blob": "c0ede32779584841800b4781ffd48ccf456e61d7",
    "licence": "MIT"
   },
   {
@@ -7499,8 +7499,8 @@
    "path": "README.md",
    "kind": "authored",
    "source": "scripts/release/public/README.md.tmpl",
-   "sha256": "a2ad3595eab8a933709f59b307a2bbbcdb5bc44d6f77d207906015e7ae099c0f",
-   "blob": "ff1d5d762ca9cfa3ce8737898a41ead9fb069f16",
+   "sha256": "5f56f989b1fe6745600f918f0aab3cceba612025a233be9da5a3d7128b947e89",
+   "blob": "bbb49edbd14de3e6b65ec13cd5496e6231fc0935",
    "licence": "CC-BY-4.0"
   },
   {

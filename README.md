@@ -271,7 +271,8 @@ changed by anything here.
 
 Please cite the article once it is published; until then, cite this repository ([CITATION.cff](CITATION.cff)). It is
 archived at Zenodo: [10.5281/zenodo.23269591](https://doi.org/10.5281/zenodo.23269591) resolves to the latest
-version, and [10.5281/zenodo.23269592](https://doi.org/10.5281/zenodo.23269592) to v1.0.0.
+version, [10.5281/zenodo.23269592](https://doi.org/10.5281/zenodo.23269592) to v1.0.0 and
+[10.5281/zenodo.23856801](https://doi.org/10.5281/zenodo.23856801) to v1.1.0.
 
 ```bibtex
 @software{radiuk2026cinetra,
